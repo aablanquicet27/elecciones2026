@@ -1,0 +1,33 @@
+Candidato,Intención_Voto_Porcentaje,Tendencia_Política,Favorabilidad,Desfavorabilidad,Partido_Movimiento,Región_Origen,Cargo_Actual,Edad,Ranking,Generación,Tipo_Candidatura
+Gustavo Bolívar,12.6,Izquierda,34,48,Pacto Histórico,Bogotá,Ex-director Prosperidad Social,63,1.0,Senior (>60),Por partido
+Vicky Dávila,11.6,Derecha,38,44,Candidata por firmas,Valle del Cauca,Ex-Directora Semana,58,2.0,Mayor (51-60),Por firmas
+Sergio Fajardo,11.4,Centro,42,32,Centro Esperanza,Antioquia,Ex-Gobernador de Antioquia,67,3.0,Senior (>60),Por partido
+Germán Vargas Lleras,5.6,Derecha,29,54,Cambio Radical,Cundinamarca,Ex-Vicepresidente,65,4.0,Senior (>60),Por partido
+Claudia López,4.7,Centro,31,45,Candidata por firmas,Bogotá,Ex-Alcaldesa de Bogotá,54,5.0,Mayor (51-60),Por firmas
+María Fernanda Cabal,4.6,Derecha,27,56,Centro Democrático,Valle del Cauca,Senadora,58,6.0,Mayor (51-60),Por partido
+Miguel Uribe Turbay,4.5,Derecha,32,40,Centro Democrático,Bogotá,Senador,39,7.0,Joven (≤40),Por partido
+Juan Manuel Galán,4.0,Centro,40,28,Nuevo Liberalismo,Bogotá,Ex-Senador,61,8.0,Senior (>60),Por partido
+Daniel Quintero,3.8,Izquierda,23,58,Candidato por firmas,Antioquia,Ex-Alcalde de Medellín,44,9.0,Adulto (41-50),Por firmas
+María José Pizarro,2.6,Izquierda,29,41,Pacto Histórico,Bogotá,Senadora,46,10.0,Adulto (41-50),Por partido
+Jota Pe Hernández,1.8,Derecha,35,38,Candidato por firmas,Antioquia,Senador,44,11.0,Adulto (41-50),Por firmas
+Juan Daniel Oviedo,1.5,Centro,31,35,Candidato por firmas,Bogotá,Ex-Concejal,40,12.0,Joven (≤40),Por firmas
+David Luna,1.2,Derecha,28,42,Candidato por firmas,Caldas,Ex-Senador,54,13.0,Mayor (51-60),Por firmas
+Paloma Valencia,1.0,Derecha,24,48,Centro Democrático,Cauca,Senadora,47,14.0,Adulto (41-50),Por partido
+Alejandro Gaviria,1.0,Centro,35,38,TBD,Bogotá,Ex-Rector Universidad de los Andes,65,14.0,Senior (>60),Por partido
+Paola Holguín,0.8,Derecha,26,46,Centro Democrático,Antioquia,Senadora,51,16.0,Mayor (51-60),Por partido
+Aníbal Gaviria,0.6,Centro,28,44,TBD,Antioquia,Ex-Gobernador Antioquia,65,17.0,Senior (>60),Por partido
+Andrés Guerra Hoyos,0.5,Derecha,23,47,Centro Democrático,Antioquia,Senador,52,18.0,Mayor (51-60),Por partido
+Juan Guillermo Zuluaga,0.5,Derecha,25,48,Centro Democrático,Antioquia,Ex-Alcalde de Medellín,70,18.0,Senior (>60),Por partido
+Carlos Caicedo,0.4,Izquierda,18,45,Fuerza Ciudadana,Magdalena,Ex-Gobernador Magdalena,62,20.0,Senior (>60),Por partido
+Mauricio Cárdenas,0.4,Centro,30,42,TBD,Bogotá,Ex-Ministro de Hacienda,63,20.0,Senior (>60),Por partido
+Maurice Armitage,0.4,Centro,26,43,TBD,Valle del Cauca,Ex-Alcalde de Cali,68,20.0,Senior (>60),Por partido
+Susana Muhammad,0.3,Izquierda,22,42,Pacto Histórico,La Guajira,Senadora,42,23.0,Adulto (41-50),Por partido
+Roy Barreras,0.3,Izquierda,21,52,Pacto Histórico,Santander,Ex-Embajador,62,23.0,Senior (>60),Por partido
+Juan Carlos Cárdenas,0.3,Centro,25,46,TBD,TBD,TBD,55,23.0,Mayor (51-60),Por partido
+Juan Carlos Saldarriaga,0.3,Centro,24,48,TBD,TBD,TBD,65,23.0,Senior (>60),Por partido
+Jaime Pumarejo,0.3,Centro,22,43,TBD,Atlántico,Alcalde de Barranquilla,56,23.0,Mayor (51-60),Por partido
+Luis Gilberto Murillo,0.2,Centro,25,38,TBD,Chocó,Ex-Ministro del Interior,69,28.0,Senior (>60),Por partido
+Mauricio Lizcano,0.2,Centro,26,39,Candidato por firmas,TBD,Ex-Ministro TIC,65,28.0,Senior (>60),Por firmas
+Héctor Olimpo,0.2,Derecha,20,55,TBD,TBD,TBD,60,28.0,Mayor (51-60),Por partido
+Camilo Romero,0.2,Centro,21,49,TBD,TBD,TBD,48,28.0,Adulto (41-50),Por partido
+Alfredo Saade,0.1,Centro,19,51,TBD,Atlántico,TBD,50,32.0,Adulto (41-50),Por partido
