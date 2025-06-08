@@ -28,7 +28,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center">
         <div className="text-center text-white">
           <div className="text-2xl font-bold mb-4">Candidato no encontrado</div>
-          <Link to="/" className="inline-flex items-center space-x-2 bg-white text-purple-900 px-4 py-2 rounded-lg">
+          <Link to="/" className="inline-flex items-center space-x-2 bg-[#F7F0E8] text-purple-900 px-4 py-2 rounded-lg">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al inicio</span>
           </Link>
@@ -59,7 +59,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F7F0E8]">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 text-white">
         <div className="container mx-auto px-6 py-12">
@@ -82,14 +82,14 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1 flex flex-col items-center">
               <div className="relative">
-                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#F7F0E8] shadow-xl">
                   <img 
                     src={getPlaceholderImage(candidate.Candidato)} 
                     alt={candidate.Candidato}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-purple-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">
+                <div className="absolute -bottom-4 -right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
                   #{candidate.Ranking}
                 </div>
               </div>
@@ -258,7 +258,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                     </ul>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className="bg-[#F7F0E8] p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">Desafíos</h3>
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start">
@@ -291,7 +291,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                 
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">Proyección Electoral</h3>
-                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-4 rounded-lg">
+                  <div className="bg-gradient-to-r from-purple-50 to-[#F7F0E8] p-4 rounded-lg">
                     <p className="text-gray-700">
                       {candidate.Intención_Voto_Porcentaje > 10 ? 
                         `Con una intención de voto del ${candidate.Intención_Voto_Porcentaje}%, ${candidate.Candidato} se posiciona entre los candidatos con mayores posibilidades de pasar a segunda vuelta.` : 
@@ -528,7 +528,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
         
         {/* Bottom Section */}
         <div className="mt-12">
-          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8 border border-purple-100">
+          <div className="bg-gradient-to-r from-[#F7F0E8] to-purple-50 rounded-xl p-8 border border-purple-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Escenarios de Segunda Vuelta</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -674,7 +674,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
       </div>
       
       {/* Footer */}
-      <div className="bg-gray-100 py-8">
+      <div className="bg-[#F7F0E8] py-8">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-600">
             Panorama Electoral Colombia 2026: Análisis Estadístico Integral
