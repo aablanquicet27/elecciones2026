@@ -24,7 +24,7 @@ const ComparisonChart: React.FC = () => {
                 <span className="text-green-600 font-semibold">
                   2026: {item.porcentaje2026}%
                 </span>
-                <span className={`font-bold ${
+                <span className={`font-bold text-lg ${
                   item.porcentaje2026 > item.porcentaje2022 ? 'text-green-600' : 'text-red-600'
                 }`}>
                   {item.porcentaje2026 > item.porcentaje2022 ? '+' : ''}
@@ -59,17 +59,35 @@ const ComparisonChart: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="text-sm text-gray-600">
-          <p className="mb-2">
-            <strong>Principales cambios:</strong>
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 className="font-semibold text-gray-800 mb-3">Principales Cambios</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• <strong>Izquierda:</strong> Caída drástica de -17.3 puntos (40.3% → 23.0%)</li>
+              <li>• <strong>Otros/Indecisos:</strong> Aumento dramático de +18.0 puntos (3.0% → 21.0%)</li>
+              <li>• <strong>Derecha:</strong> Crecimiento moderado de +0.5 puntos (28.5% → 29.0%)</li>
+              <li>• <strong>Centro:</strong> Estabilidad relativa con -1.2 puntos (28.2% → 27.0%)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-800 mb-3">Factores Explicativos</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• <strong>Desgaste gubernamental:</strong> Evaluación del gobierno Petro</li>
+              <li>• <strong>Fragmentación política:</strong> Ruptura de coaliciones tradicionales</li>
+              <li>• <strong>Nuevos liderazgos:</strong> Emergencia de figuras independientes</li>
+              <li>• <strong>Desconfianza institucional:</strong> Aumento significativo de indecisos</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg">
+          <h4 className="font-semibold text-red-900 mb-2">Recomposición del Mapa Político</h4>
+          <p className="text-sm text-red-800">
+            La transformación más significativa es el colapso del bloque de izquierda (-17.3 puntos) 
+            y el aumento exponencial de indecisos (+18.0 puntos), evidenciando una crisis de 
+            representación política y alta volatilidad electoral que caracterizará las elecciones 2026.
           </p>
-          <ul className="space-y-1 text-xs">
-            <li>• La izquierda experimentó una caída drástica de -20.3 puntos</li>
-            <li>• La derecha registró crecimiento de +3.8 puntos</li>
-            <li>• Los indecisos aumentaron significativamente (+19.1 puntos)</li>
-            <li>• El centro mantuvo relativa estabilidad (-2.6 puntos)</li>
-          </ul>
         </div>
       </div>
     </div>

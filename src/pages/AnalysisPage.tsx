@@ -15,6 +15,7 @@ import RegionalChart from '../components/RegionalChart';
 import DemographicChart from '../components/DemographicChart';
 import SocialMediaChart from '../components/SocialMediaChart';
 import ScenarioChart from '../components/ScenarioChart';
+import ElectoralInsights from '../components/ElectoralInsights';
 import { getTrendData } from '../utils/csvParser';
 import { TrendingUp, Users, Award, BarChart3, AlertTriangle, Target } from 'lucide-react';
 
@@ -46,8 +47,8 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             </Link>
             
             <div className="text-center">
-              <h1 className="text-xl font-bold text-gray-900">Panel de Análisis Electoral</h1>
-              <p className="text-sm text-gray-500">Colombia 2026 • Datos Abril-Junio 2025</p>
+              <h1 className="text-xl font-bold text-gray-900">Panel de Análisis Electoral Completo</h1>
+              <p className="text-sm text-gray-500">Colombia 2026 • Datos Abril-Junio 2025 • Muestra: 3,200 personas</p>
             </div>
             
             <div className="w-32"></div> {/* Spacer for centering */}
@@ -94,6 +95,11 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
           />
         </div>
 
+        {/* Electoral Insights */}
+        <section className="mb-12">
+          <ElectoralInsights />
+        </section>
+
         {/* Main Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <VotingIntentionChart candidates={candidates} limit={10} />
@@ -101,7 +107,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <FavorabilityChart candidates={candidates} limit={8} />
+          <FavorabilityChart limit={10} />
           <GenerationChart candidates={candidates} />
         </div>
 
@@ -142,77 +148,125 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
         {/* Complete Table */}
         <CandidateTable candidates={candidates} />
 
-        {/* Key Insights */}
-        <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 mb-8 mt-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
-            Hallazgos Principales del Análisis
+        {/* Comprehensive Analysis */}
+        <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 mb-8 mt-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            Análisis Integral del Panorama Electoral 2026
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Liderazgo Fragmentado</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Gustavo Bolívar lidera con 12.6% pero sin mayoría clara</li>
-                <li>• Empate técnico entre los tres primeros lugares</li>
-                <li>• Alto nivel de indecisión electoral (22.1%)</li>
+              <h4 className="font-semibold text-gray-800 mb-3">Fragmentación Sin Precedentes</h4>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li>• Gustavo Bolívar lidera con apenas 12.6% de intención de voto</li>
+                <li>• Empate técnico entre los tres primeros lugares (diferencia de 1.2%)</li>
+                <li>• Ningún candidato supera el 15%, evidenciando máxima dispersión</li>
+                <li>• 32 candidatos registrados, la mayor oferta electoral histórica</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Reconfiguración Política</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Caída significativa de la izquierda (-20.3 puntos)</li>
-                <li>• Crecimiento de la derecha (+3.8 puntos)</li>
-                <li>• Aumento dramático de indecisos (+19.1 puntos)</li>
+              <h4 className="font-semibold text-gray-800 mb-3">Recomposición Política Drástica</h4>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li>• Izquierda: Caída del 40.3% al 23.0% (-17.3 puntos)</li>
+                <li>• Indecisos: Aumento del 3.0% al 21.0% (+18.0 puntos)</li>
+                <li>• Derecha: Crecimiento moderado del 28.5% al 29.0% (+0.5 puntos)</li>
+                <li>• Centro: Estabilidad relativa del 28.2% al 27.0% (-1.2 puntos)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-3">Dinámicas Emergentes</h4>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li>• Factor digital determinante: Dávila y López lideran redes</li>
+                <li>• Polarización generacional: Jóvenes vs adultos mayores</li>
+                <li>• Diferenciación regional: Caribe progresista, Orinoquía conservadora</li>
+                <li>• Candidatos de centro mejor posicionados para segunda vuelta</li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Final Analysis */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+        {/* Scenarios and Projections */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mb-8">
           <div className="flex items-start space-x-4">
-            <div className="bg-blue-600 p-2 rounded-full">
-              <Target className="h-6 w-6 text-white" />
+            <div className="bg-blue-600 p-3 rounded-full">
+              <Target className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Conclusiones del Análisis Electoral 2026
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Proyecciones y Escenarios Electorales
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-700">
                 <div>
-                  <p className="mb-3">
-                    <strong>Fragmentación sin precedentes:</strong> Ningún candidato supera el 15% de intención de voto, 
-                    evidenciando la mayor fragmentación electoral en la historia reciente de Colombia.
-                  </p>
-                  <p className="mb-3">
-                    <strong>Debilitamiento del petrismo:</strong> La izquierda experimentó una caída drástica del 40.3% 
-                    al 20.0%, mientras que la derecha se fortaleció relativamente.
-                  </p>
+                  <h4 className="font-semibold text-gray-800 mb-3">Escenarios Más Probables</h4>
+                  <ul className="space-y-2">
+                    <li>• <strong>Bolívar vs. Dávila (25% probabilidad):</strong> Dávila 46.8% vs Bolívar 43.5%</li>
+                    <li>• <strong>Bolívar vs. Fajardo (20% probabilidad):</strong> Fajardo 48.5% vs Bolívar 41.2%</li>
+                    <li>• <strong>Fajardo vs. Dávila (18% probabilidad):</strong> Fajardo 38.6% vs Dávila 35.2%</li>
+                    <li>• Alta indecisión en todos los escenarios (9.7% - 30.0%)</li>
+                  </ul>
                 </div>
                 <div>
-                  <p className="mb-3">
-                    <strong>Centro como bisagra:</strong> Los candidatos de centro, especialmente Sergio Fajardo, 
-                    emergen como los más competitivos para segunda vuelta debido a su menor polarización.
-                  </p>
-                  <p className="mb-3">
-                    <strong>Alta incertidumbre:</strong> Con más del 22% de indecisos, los factores coyunturales 
-                    y las campañas electorales tendrán un impacto decisivo en los resultados finales.
-                  </p>
+                  <h4 className="font-semibold text-gray-800 mb-3">Factores de Incertidumbre</h4>
+                  <ul className="space-y-2">
+                    <li>• <strong>Volatilidad electoral:</strong> 21% de indecisos puede cambiar resultado</li>
+                    <li>• <strong>Evaluación gubernamental:</strong> Impacto del gobierno Petro (34% aprobación)</li>
+                    <li>• <strong>Coaliciones políticas:</strong> Capacidad de unificación por bloques</li>
+                    <li>• <strong>Coyuntura económica:</strong> Situación económica al momento electoral</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Methodology */}
+        <div className="bg-gray-100 rounded-xl p-6 border border-gray-200">
+          <h3 className="text-lg font-bold text-gray-900 mb-4">
+            Metodología y Fuentes
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">Encuestas de Intención</h4>
+              <ul className="space-y-1">
+                <li>• Muestra: 3,200 personas</li>
+                <li>• Período: Abril-Junio 2025</li>
+                <li>• Margen de error: ±3.2%</li>
+                <li>• Cobertura: Nacional</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">Análisis de Favorabilidad</h4>
+              <ul className="space-y-1">
+                <li>• Métricas de aceptación/rechazo</li>
+                <li>• Balance neto de favorabilidad</li>
+                <li>• Techos electorales por candidato</li>
+                <li>• Competitividad en segunda vuelta</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-800 mb-2">Presencia Digital</h4>
+              <ul className="space-y-1">
+                <li>• Seguidores en redes sociales</li>
+                <li>• Análisis de engagement</li>
+                <li>• Crecimiento y tendencias</li>
+                <li>• Impacto en intención de voto</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <footer className="text-center py-8 border-t border-gray-200 mt-8">
-          <p className="text-gray-600 font-medium">
+          <p className="text-gray-600 font-medium text-lg">
             Panorama Político Electoral Colombia 2026: Análisis Estadístico Integral
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital • Abril-Junio 2025
+            Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital
           </p>
-          <p className="text-xs text-gray-400 mt-1">
-            Muestra: 3,200 personas • Margen de error: ±3.2% • Cobertura nacional
+          <p className="text-sm text-gray-500">
+            Período de campo: Abril-Junio 2025 • Muestra: 3,200 personas • Margen de error: ±3.2% • Cobertura nacional
+          </p>
+          <p className="text-xs text-gray-400 mt-2">
+            Fuentes: Encuestas Guarumo/EcoAnalítica, análisis de redes sociales, datos históricos electorales
           </p>
         </footer>
       </main>

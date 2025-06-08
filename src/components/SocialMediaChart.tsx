@@ -37,6 +37,9 @@ const SocialMediaChart: React.FC = () => {
                 <span className="text-blue-800 font-semibold">
                   Facebook: {formatNumber(candidate.facebook)}
                 </span>
+                <span className="text-gray-800 font-bold">
+                  Total: {formatNumber(candidate.total)}
+                </span>
               </div>
             </div>
             
@@ -75,16 +78,35 @@ const SocialMediaChart: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="grid grid-cols-2 gap-4 text-sm">
+      <div className="mt-8 pt-6 border-t border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <span className="text-gray-600">Líder digital:</span>
-            <span className="font-semibold ml-2">Vicky Dávila</span>
+            <h4 className="font-semibold text-gray-800 mb-3">Liderazgo Digital</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• <strong>Vicky Dávila:</strong> Líder absoluto con 3.6M seguidores totales</li>
+              <li>• <strong>Claudia López:</strong> Segunda con 3.5M, fuerte en Facebook</li>
+              <li>• <strong>Gustavo Bolívar:</strong> 1.95M seguidores, equilibrado en plataformas</li>
+              <li>• <strong>Sergio Fajardo:</strong> 1.91M seguidores, crecimiento sostenido</li>
+            </ul>
           </div>
           <div>
-            <span className="text-gray-600">Mayor crecimiento:</span>
-            <span className="font-semibold ml-2">Jota Pe Hernández</span>
+            <h4 className="font-semibold text-gray-800 mb-3">Estrategias Digitales</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li>• <strong>Twitter:</strong> Debate político y noticias en tiempo real</li>
+              <li>• <strong>Instagram:</strong> Contenido visual y conexión personal</li>
+              <li>• <strong>Facebook:</strong> Alcance masivo y segmentación demográfica</li>
+              <li>• <strong>Engagement:</strong> Interacción directa con electores</li>
+            </ul>
           </div>
+        </div>
+        
+        <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+          <h4 className="font-semibold text-blue-900 mb-2">Impacto Electoral Digital</h4>
+          <p className="text-sm text-blue-800">
+            La presencia digital se ha convertido en un factor determinante. Vicky Dávila y 
+            Claudia López lideran con estrategias multimedia efectivas, mientras que candidatos 
+            tradicionales muestran menor adaptación a las nuevas dinámicas de comunicación política.
+          </p>
         </div>
       </div>
     </div>

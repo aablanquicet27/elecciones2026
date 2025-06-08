@@ -34,6 +34,7 @@ export interface SocialMediaData {
   twitter: number;
   instagram: number;
   facebook: number;
+  total: number;
 }
 
 export interface ComparisonData {
@@ -49,4 +50,56 @@ export interface ScenarioData {
   candidate2: string;
   percentage2: number;
   undecided: number;
+  probability: number;
+}
+
+export interface FavorabilityData {
+  candidate: string;
+  favorabilidad: number;
+  desfavorabilidad: number;
+  balance: number;
+}
+
+export interface ElectoralInsights {
+  fragmentacion: {
+    title: string;
+    description: string;
+    impact: string;
+    percentage: string;
+  };
+  recomposicion: {
+    title: string;
+    description: string;
+    impact: string;
+    change: string;
+  };
+  volatilidad: {
+    title: string;
+    description: string;
+    impact: string;
+    uncertainty: string;
+  };
+  digital: {
+    title: string;
+    description: string;
+    leaders: string[];
+    impact: string;
+  };
+  regional: {
+    title: string;
+    description: string;
+    highlights: {
+      caribe: string;
+      andina: string;
+      orinoquia: string;
+    };
+  };
+  generacional: {
+    title: string;
+    description: string;
+    trends: {
+      jovenes: string;
+      mayores: string;
+    };
+  };
 }
