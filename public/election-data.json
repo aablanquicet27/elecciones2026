@@ -1,0 +1,16 @@
+[
+  {
+    "Candidato": "Candidatos",
+    "Intención_Voto_Porcentaje": null,
+    "Tendencia_Política": "Desconocido",
+    "Favorabilidad": 30,
+    "Desfavorabilidad": 40,
+    "Partido_Movimiento": "TBD",
+    "Región_Origen": "TBD",
+    "Cargo_Actual": "TBD",
+    "Edad": 50,
+    "Ranking": 1,
+    "Generación": "Adulto (41-50)",
+    "Tipo_Candidatura": "Por partido"
+  }
+]
