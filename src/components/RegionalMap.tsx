@@ -81,7 +81,7 @@ const RegionalMap: React.FC = () => {
         <h2 className="text-4xl font-bold text-white mb-4">
           Comportamiento Electoral Regional
         </h2>
-        <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+        <p className="text-xl text-purple-100 max-w-3xl mx-auto">
           Análisis del voto por regiones y dinámicas territoriales específicas
         </p>
       </div>
@@ -93,7 +93,7 @@ const RegionalMap: React.FC = () => {
             <div
               key={region.region}
               className={`bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 cursor-pointer transition-all duration-300 transform hover:scale-105 ${
-                selectedRegion === region.region ? 'ring-2 ring-white/50 bg-white/20' : ''
+                selectedRegion === region.region ? 'ring-2 ring-purple-400 bg-white/20' : ''
               }`}
               onClick={() => setSelectedRegion(selectedRegion === region.region ? null : region.region)}
             >
@@ -110,13 +110,13 @@ const RegionalMap: React.FC = () => {
                   <div className="text-2xl font-bold text-white">
                     {region.percentage}%
                   </div>
-                  <div className="text-sm text-blue-200">
+                  <div className="text-sm text-purple-200">
                     {region.leader}
                   </div>
                 </div>
               </div>
 
-              <p className="text-blue-100 mb-4">
+              <p className="text-purple-100 mb-4">
                 {region.description}
               </p>
 
@@ -163,7 +163,7 @@ const RegionalMap: React.FC = () => {
                     {/* Leader Info */}
                     <div className="bg-white/10 rounded-xl p-4">
                       <div className="flex items-center space-x-3 mb-3">
-                        <div className="bg-yellow-500 p-2 rounded-full">
+                        <div className="bg-purple-500 p-2 rounded-full">
                           <TrendingUp className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-white font-semibold">Líder Regional</span>
@@ -171,7 +171,7 @@ const RegionalMap: React.FC = () => {
                       <div className="text-xl font-bold text-white mb-1">
                         {region.leader}
                       </div>
-                      <div className="text-blue-200">
+                      <div className="text-purple-200">
                         {region.percentage}% de intención de voto
                       </div>
                     </div>
@@ -183,8 +183,8 @@ const RegionalMap: React.FC = () => {
                       </h4>
                       <ul className="space-y-2">
                         {region.insights.map((insight, index) => (
-                          <li key={index} className="flex items-start space-x-2 text-blue-100">
-                            <span className="text-yellow-400 mt-1">•</span>
+                          <li key={index} className="flex items-start space-x-2 text-purple-100">
+                            <span className="text-purple-400 mt-1">•</span>
                             <span>{insight}</span>
                           </li>
                         ))}
@@ -194,12 +194,12 @@ const RegionalMap: React.FC = () => {
                     {/* Competition Level */}
                     <div className="bg-white/10 rounded-xl p-4">
                       <div className="flex items-center space-x-3 mb-3">
-                        <div className="bg-blue-500 p-2 rounded-full">
+                        <div className="bg-purple-500 p-2 rounded-full">
                           <BarChart3 className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-white font-semibold">Nivel de Competencia</span>
                       </div>
-                      <div className="text-blue-200">
+                      <div className="text-purple-200">
                         {region.region === 'Andina' ? 'Muy Alta - Distribución equilibrada' :
                          region.region === 'Caribe' ? 'Baja - Liderazgo claro' :
                          region.region === 'Orinoquía' ? 'Media - Preferencia definida' :
@@ -218,7 +218,7 @@ const RegionalMap: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-4">
                 Selecciona una Región
               </h3>
-              <p className="text-blue-100 mb-6">
+              <p className="text-purple-100 mb-6">
                 Haz clic en cualquier región para ver el análisis detallado 
                 del comportamiento electoral y factores determinantes.
               </p>
@@ -226,11 +226,11 @@ const RegionalMap: React.FC = () => {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="bg-white/10 rounded-lg p-3">
                   <div className="text-white font-semibold">Más Competitiva</div>
-                  <div className="text-blue-200">Región Andina</div>
+                  <div className="text-purple-200">Región Andina</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-3">
                   <div className="text-white font-semibold">Liderazgo Claro</div>
-                  <div className="text-blue-200">Región Caribe</div>
+                  <div className="text-purple-200">Región Caribe</div>
                 </div>
               </div>
             </div>

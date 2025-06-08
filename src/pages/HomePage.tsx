@@ -41,7 +41,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 p-2 rounded-lg">
+              <div className="bg-purple-600 p-2 rounded-lg">
                 <Vote className="h-6 w-6 text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900">Colombia 2026</span>
@@ -51,7 +51,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('hero')}
                 className={`text-sm font-medium transition-colors ${
-                  activeSection === 'hero' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                  activeSection === 'hero' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
                 }`}
               >
                 Inicio
@@ -59,7 +59,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('candidates')}
                 className={`text-sm font-medium transition-colors ${
-                  activeSection === 'candidates' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                  activeSection === 'candidates' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
                 }`}
               >
                 Candidatos
@@ -67,7 +67,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('insights')}
                 className={`text-sm font-medium transition-colors ${
-                  activeSection === 'insights' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                  activeSection === 'insights' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
                 }`}
               >
                 Hallazgos
@@ -75,14 +75,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('analysis')}
                 className={`text-sm font-medium transition-colors ${
-                  activeSection === 'analysis' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                  activeSection === 'analysis' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
                 }`}
               >
                 Análisis
               </button>
               <Link 
                 to="/analisis"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
               >
                 Panel Completo
               </Link>
@@ -133,7 +133,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
           <div className="text-center mt-12">
             <Link 
               to="/analisis"
-              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center space-x-2 bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <BarChart3 className="h-5 w-5" />
               <span className="font-semibold">Ver Análisis Completo</span>
@@ -151,7 +151,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       </section>
 
       {/* Regional Analysis */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+      <section className="py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
         <RegionalMap />
       </section>
 
@@ -173,8 +173,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl border border-red-200">
-              <div className="bg-red-600 p-3 rounded-full w-fit mb-4">
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
+              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
                 <TrendingUp className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -184,13 +184,13 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Ningún candidato supera el 15% de intención de voto, evidenciando 
                 la mayor fragmentación electoral en la historia reciente.
               </p>
-              <div className="text-sm text-red-600 font-semibold">
+              <div className="text-sm text-purple-600 font-semibold">
                 Líder actual: 12.6% (Bolívar)
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200">
-              <div className="bg-blue-600 p-3 rounded-full w-fit mb-4">
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
+              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
                 <Users className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -200,13 +200,13 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 La izquierda cayó del 40.3% al 23%, mientras que los indecisos 
                 aumentaron dramáticamente al 21.0%.
               </p>
-              <div className="text-sm text-blue-600 font-semibold">
+              <div className="text-sm text-purple-600 font-semibold">
                 Cambio: -17.3 puntos (izquierda)
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200">
-              <div className="bg-green-600 p-3 rounded-full w-fit mb-4">
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
+              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
                 <Target className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -216,14 +216,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Los candidatos de centro emergen como los más competitivos 
                 para segunda vuelta debido a su menor polarización.
               </p>
-              <div className="text-sm text-green-600 font-semibold">
+              <div className="text-sm text-purple-600 font-semibold">
                 Mejor balance: Fajardo (+10 puntos)
               </div>
             </div>
           </div>
 
           {/* Additional insights */}
-          <div className="mt-12 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
+          <div className="mt-12 bg-gradient-to-r from-gray-50 to-purple-50 rounded-2xl p-8 border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Factores Determinantes para 2026
             </h3>
@@ -238,7 +238,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-orange-600 p-3 rounded-full w-fit mx-auto mb-3">
+                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Dinámicas Regionales</h4>
@@ -247,7 +247,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-indigo-600 p-3 rounded-full w-fit mx-auto mb-3">
+                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <Calendar className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Polarización Generacional</h4>
@@ -256,7 +256,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-green-600 p-3 rounded-full w-fit mx-auto mb-3">
+                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <Award className="h-6 w-6 text-white" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Competitividad</h4>
@@ -270,25 +270,25 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Mantente Informado del Proceso Electoral
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
             Accede al análisis más completo y actualizado de las elecciones presidenciales Colombia 2026
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/analisis"
-              className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
+              className="inline-flex items-center space-x-2 bg-white text-purple-600 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
             >
               <BarChart3 className="h-5 w-5" />
               <span>Panel de Análisis Completo</span>
             </Link>
             
-            <button className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 font-semibold">
+            <button className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-purple-600 transition-all duration-300 font-semibold">
               <Calendar className="h-5 w-5" />
               <span>Calendario Electoral</span>
             </button>

@@ -10,7 +10,7 @@ interface CandidateGridProps {
 const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
   const getPlaceholderImage = (name: string) => {
     const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=200&background=1e40af&color=ffffff&bold=true`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=200&background=7c3aed&color=ffffff&bold=true`;
   };
 
   const getTrendColor = (trend: string) => {
@@ -42,7 +42,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
             {/* Ranking Badge */}
             <div className="relative">
               <div className="absolute top-4 left-4 z-10">
-                <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-lg">
+                <div className="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-lg">
                   {index + 1}
                 </div>
               </div>
@@ -54,7 +54,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               )}
 
               {/* Candidate Photo */}
-              <div className="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+              <div className="relative h-48 bg-gradient-to-br from-purple-50 to-indigo-100 flex items-center justify-center">
                 <img
                   src={getPlaceholderImage(candidate.Candidato)}
                   alt={candidate.Candidato}
@@ -66,10 +66,10 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
             <div className="p-6">
               {/* Name and Voting Intention */}
               <div className="text-center mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
                   {candidate.Candidato}
                 </h3>
-                <div className="text-3xl font-bold text-blue-600 mb-2">
+                <div className="text-3xl font-bold text-purple-600 mb-2">
                   {candidate.Intención_Voto_Porcentaje}%
                 </div>
                 <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${getTrendColor(candidate.Tendencia_Política)}`}>
@@ -118,7 +118,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               <div className="mb-4">
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div
-                    className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 8, 100)}%` }}
                   ></div>
                 </div>
@@ -133,7 +133,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               {/* Action Button */}
               <Link
                 to={`/candidato/${slug}`}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg"
+                className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg"
               >
                 <span className="text-sm font-medium">Ver Perfil</span>
                 <ExternalLink className="h-4 w-4" />

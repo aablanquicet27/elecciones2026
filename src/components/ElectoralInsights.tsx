@@ -9,23 +9,23 @@ const ElectoralInsights: React.FC = () => {
     {
       ...insights.fragmentacion,
       icon: TrendingDown,
-      color: 'from-red-500 to-red-600',
-      bgColor: 'from-red-50 to-red-100',
-      textColor: 'text-red-900'
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100',
+      textColor: 'text-purple-900'
     },
     {
       ...insights.recomposicion,
       icon: Users,
-      color: 'from-blue-500 to-blue-600',
-      bgColor: 'from-blue-50 to-blue-100',
-      textColor: 'text-blue-900'
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100',
+      textColor: 'text-purple-900'
     },
     {
       ...insights.volatilidad,
       icon: AlertTriangle,
-      color: 'from-orange-500 to-orange-600',
-      bgColor: 'from-orange-50 to-orange-100',
-      textColor: 'text-orange-900'
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100',
+      textColor: 'text-purple-900'
     },
     {
       ...insights.digital,
@@ -37,16 +37,16 @@ const ElectoralInsights: React.FC = () => {
     {
       ...insights.regional,
       icon: MapPin,
-      color: 'from-green-500 to-green-600',
-      bgColor: 'from-green-50 to-green-100',
-      textColor: 'text-green-900'
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100',
+      textColor: 'text-purple-900'
     },
     {
       ...insights.generacional,
       icon: Clock,
-      color: 'from-indigo-500 to-indigo-600',
-      bgColor: 'from-indigo-50 to-indigo-100',
-      textColor: 'text-indigo-900'
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-50 to-purple-100',
+      textColor: 'text-purple-900'
     }
   ];
 
@@ -148,12 +148,12 @@ const ElectoralInsights: React.FC = () => {
       </div>
 
       {/* Summary Section */}
-      <div className="mt-16 bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 rounded-3xl p-12 text-white">
+      <div className="mt-16 bg-gradient-to-r from-gray-900 via-purple-900 to-indigo-900 rounded-3xl p-12 text-white">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold mb-4">
             Síntesis del Panorama Electoral 2026
           </h3>
-          <p className="text-xl text-blue-100 max-w-4xl mx-auto">
+          <p className="text-xl text-purple-100 max-w-4xl mx-auto">
             Una elección marcada por la fragmentación, la recomposición política y la alta incertidumbre
           </p>
         </div>
@@ -164,8 +164,8 @@ const ElectoralInsights: React.FC = () => {
               <TrendingDown className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-bold mb-2">Fragmentación Histórica</h4>
-            <p className="text-blue-100 text-sm">
-              Ningún candidato supera el 15%, evidenciando la mayor dispersión 
+            <p className="text-purple-100 text-sm">
+              Ningún candidato supera el 15%, evidenciando la mayor fragmentación 
               electoral en la historia reciente de Colombia.
             </p>
           </div>
@@ -175,7 +175,7 @@ const ElectoralInsights: React.FC = () => {
               <Users className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-bold mb-2">Reconfiguración Política</h4>
-            <p className="text-blue-100 text-sm">
+            <p className="text-purple-100 text-sm">
               Colapso de la izquierda (-17.3 puntos) y aumento exponencial 
               de indecisos (+18.0 puntos) redefinen el mapa electoral.
             </p>
@@ -186,7 +186,7 @@ const ElectoralInsights: React.FC = () => {
               <AlertTriangle className="h-8 w-8 text-white" />
             </div>
             <h4 className="text-lg font-bold mb-2">Alta Incertidumbre</h4>
-            <p className="text-blue-100 text-sm">
+            <p className="text-purple-100 text-sm">
               El 21% de indecisos convierte las campañas electorales en 
               factor determinante del resultado final.
             </p>

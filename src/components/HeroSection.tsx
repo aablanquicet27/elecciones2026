@@ -21,11 +21,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
 
   const getPlaceholderImage = (name: string) => {
     const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=1e40af&color=ffffff&bold=true`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=6b46c1&color=ffffff&bold=true`;
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div 
@@ -42,19 +42,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
           <div className="text-white space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">Datos Actualizados • Junio 2025</span>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 Elecciones
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                   Colombia
                 </span>
                 <span className="block">2026</span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
                 El análisis más completo del panorama electoral presidencial. 
                 32 candidatos, encuestas en tiempo real y proyecciones estadísticas.
               </p>
@@ -63,16 +63,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">32</div>
-                <div className="text-sm text-blue-200">Candidatos</div>
+                <div className="text-3xl font-bold text-purple-400">32</div>
+                <div className="text-sm text-purple-200">Candidatos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-400">3,200</div>
-                <div className="text-sm text-blue-200">Encuestados</div>
+                <div className="text-3xl font-bold text-purple-400">3,200</div>
+                <div className="text-sm text-purple-200">Encuestados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">±3.2%</div>
-                <div className="text-sm text-blue-200">Margen Error</div>
+                <div className="text-3xl font-bold text-purple-400">±3.2%</div>
+                <div className="text-sm text-purple-200">Margen Error</div>
               </div>
             </div>
 
@@ -80,13 +80,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/analisis"
-                className="inline-flex items-center justify-center space-x-2 bg-white text-blue-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
+                className="inline-flex items-center justify-center space-x-2 bg-white text-purple-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
               >
                 <TrendingUp className="h-5 w-5" />
                 <span>Ver Análisis Completo</span>
               </Link>
               
-              <button className="inline-flex items-center justify-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-900 transition-all duration-300 font-semibold">
+              <button className="inline-flex items-center justify-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-purple-900 transition-all duration-300 font-semibold">
                 <Play className="h-5 w-5" />
                 <span>Video Resumen</span>
               </button>
@@ -98,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Líderes Actuales</h3>
-                <p className="text-blue-200">Intención de voto • Empate técnico</p>
+                <p className="text-purple-200">Intención de voto • Empate técnico</p>
               </div>
 
               {/* Candidate Slider */}
@@ -118,14 +118,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                       <img
                         src={getPlaceholderImage(candidate.Candidato)}
                         alt={candidate.Candidato}
-                        className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-blue-200"
+                        className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-purple-200"
                       />
                       
                       <h4 className="text-xl font-bold text-gray-900 mb-2">
                         {candidate.Candidato}
                       </h4>
                       
-                      <div className="text-3xl font-bold text-blue-600 mb-2">
+                      <div className="text-3xl font-bold text-purple-600 mb-2">
                         {candidate.Intención_Voto_Porcentaje}%
                       </div>
                       
@@ -139,14 +139,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                       
                       <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                         <div
-                          className="bg-blue-600 h-2 rounded-full transition-all duration-1000"
+                          className="bg-purple-600 h-2 rounded-full transition-all duration-1000"
                           style={{ width: `${(candidate.Intención_Voto_Porcentaje / 15) * 100}%` }}
                         ></div>
                       </div>
                       
                       <Link
                         to={`/candidato/${candidate.Candidato.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-blue-600 hover:text-blue-800 font-medium text-sm"
+                        className="text-purple-600 hover:text-purple-800 font-medium text-sm"
                       >
                         Ver perfil completo →
                       </Link>
@@ -170,12 +170,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             </div>
 
             {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl font-bold shadow-lg">
+            <div className="absolute -bottom-6 -left-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
               <div className="text-sm">Indecisos</div>
               <div className="text-xl">{undecided.toFixed(1)}%</div>
             </div>
             
-            <div className="absolute -top-6 -right-6 bg-green-400 text-green-900 px-4 py-2 rounded-xl font-bold shadow-lg">
+            <div className="absolute -top-6 -right-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
               <div className="text-sm">Margen</div>
               <div className="text-xl">1.2%</div>
             </div>

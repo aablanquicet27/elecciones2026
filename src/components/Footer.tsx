@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 p-2 rounded-lg">
+              <div className="bg-purple-600 p-2 rounded-lg">
                 <Vote className="h-6 w-6 text-white" />
               </div>
               <span className="text-xl font-bold">Colombia 2026</span>
@@ -133,6 +133,9 @@ const Footer: React.FC = () => {
             <p className="text-xs text-gray-500">
               <strong>Metodología:</strong> Muestra de 3,200 personas • Margen de error: ±3.2% • Cobertura nacional • 
               Período de campo: Abril-Junio 2025 • Análisis estadístico integral
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              Desarrollado por <a href="https://brochure.agapai.com.co" className="text-purple-400 hover:text-purple-300">AGAPAI</a>
             </p>
           </div>
         </div>

@@ -20,7 +20,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${topCandidate.Intención_Voto_Porcentaje}%`,
       subtitle: topCandidate.Candidato,
       icon: Award,
-      color: "from-blue-500 to-blue-600",
+      color: "from-purple-500 to-purple-600",
       description: "Empate técnico con segundo lugar",
       trend: { value: "1.2%", label: "diferencia" }
     },
@@ -29,7 +29,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: candidates.length.toString(),
       subtitle: "Aspirantes confirmados",
       icon: Users,
-      color: "from-green-500 to-green-600",
+      color: "from-purple-500 to-purple-600",
       description: "Mayor fragmentación histórica",
       trend: { value: "32", label: "registrados" }
     },
@@ -38,7 +38,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${undecided.toFixed(1)}%`,
       subtitle: "Del electorado",
       icon: AlertTriangle,
-      color: "from-orange-500 to-orange-600",
+      color: "from-purple-500 to-purple-600",
       description: "Factor determinante",
       trend: { value: "+19.1%", label: "vs 2022" }
     },
@@ -56,7 +56,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: "Abr-Jun",
       subtitle: "2025",
       icon: Calendar,
-      color: "from-indigo-500 to-indigo-600",
+      color: "from-purple-500 to-purple-600",
       description: "Datos más recientes",
       trend: { value: "Actualizado", label: "estado" }
     },
@@ -65,7 +65,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: "5",
       subtitle: "Analizadas",
       icon: MapPin,
-      color: "from-teal-500 to-teal-600",
+      color: "from-purple-500 to-purple-600",
       description: "Comportamiento diferenciado",
       trend: { value: "Caribe", label: "más activo" }
     }
@@ -115,7 +115,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
 
               {/* Trend */}
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <span className="text-sm font-semibold text-blue-600">
+                <span className="text-sm font-semibold text-purple-600">
                   {stat.trend.value}
                 </span>
                 <span className="text-xs text-gray-500">
@@ -131,7 +131,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       </div>
 
       {/* Key Insights */}
-      <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-200">
+      <div className="mt-16 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
             Contexto Electoral 2026
@@ -143,7 +143,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="bg-blue-600 p-3 rounded-full w-fit mx-auto mb-4">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
               <Target className="h-6 w-6 text-white" />
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
@@ -156,7 +156,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
           </div>
 
           <div className="text-center">
-            <div className="bg-green-600 p-3 rounded-full w-fit mx-auto mb-4">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
               <TrendingUp className="h-6 w-6 text-white" />
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
@@ -169,7 +169,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
           </div>
 
           <div className="text-center">
-            <div className="bg-orange-600 p-3 rounded-full w-fit mx-auto mb-4">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
               <AlertTriangle className="h-6 w-6 text-white" />
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
