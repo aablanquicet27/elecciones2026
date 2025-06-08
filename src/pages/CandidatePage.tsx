@@ -1,297 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, TrendingDown, Users, Award, MapPin, Calendar, ExternalLink } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
+import { ArrowLeft, TrendingUp, TrendingDown, Users, Award, MapPin, Calendar } from 'lucide-react';
 import { Candidate } from '../types/election';
-
-// --- Data Start ---
-// This data is embedded here because creating a separate JSON file failed.
-interface ProfileSection {
-  titulo: string;
-  contenido: string;
-}
-
-interface CandidateProfile {
-  candidato: string;
-  imageUrl: string;
-  perfil: ProfileSection[];
-}
-
-const candidateProfiles: CandidateProfile[] = [
-  {
-    "candidato": "Gustavo Bolívar",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvX2NlD04S3Kyzp2T3e2L6iGzuF5-8Y5M5i2sD8P8i2t9n4n4K4i4x3n3v2Q8b4Y4y3A6v3c2E3e3r2w8z4U5u4t3s2r1q1p0o9n8m7l6k5j4i3h2g1f0e9d8c7b6a5/s1600/gustavo_bolivar.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Gustavo Adolfo Bolívar Moreno\n- **Fecha de nacimiento**: 27 de agosto de 1960\n- **Lugar de nacimiento**: Girardot, Cundinamarca\n- **Edad**: 64 años\n- **Profesión**: Escritor, productor de televisión, político\n- **Estado civil**: Casado"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Gustavo Bolívar es reconocido principalmente como escritor y productor de televisión, siendo el creador de exitosas producciones que marcaron la televisión colombiana. Su carrera en el entretenimiento le dio la plataforma y reconocimiento que posteriormente utilizaría para incursionar en la política.\n\n**Carrera en televisión y literatura:**\n- Creador y productor de \"Sin Senos No Hay Paraíso\" (2008-2009), una de las telenovelas más exitosas de la televisión colombiana\n- Autor de múltiples novelas, incluyendo \"Sin Senos No Hay Paraíso\", \"El Capo\" y \"Las Muñecas de la Mafia\"\n- Productor de otras exitosas series como \"El Capo\", \"Las Muñecas de la Mafia\" y \"Rosario Tijeras\"\n- Sus obras han sido adaptadas en múltiples países de América Latina\n\n**Transición a la política:**\nSu entrada a la política estuvo motivada por su interés en temas sociales y su crítica al establecimiento político tradicional. Bolívar ha sido un defensor de causas progresistas y ha utilizado su plataforma mediática para promover cambios sociales."
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Senador de la República (2018-2022, 2022-2026):**\n- Elegido por primera vez en 2018 por el partido Alianza Verde\n- Reelegido en 2022 como parte del Pacto Histórico\n- Miembro de diversas comisiones del Senado\n- Ha presentado múltiples proyectos de ley relacionados con temas sociales\n\n**Vicepresidente del Senado:**\n- Ocupó la segunda vicepresidencia del Senado durante parte de su mandato\n- Posteriormente recuperó este cargo tras controversias políticas"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Gustavo Bolívar se ha caracterizado por mantener posiciones progresistas y de izquierda a lo largo de su carrera política:\n\n**Ideología progresista:**\n- Defensor de políticas sociales inclusivas\n- Promotor de la equidad de género y derechos LGBTI+\n- Crítico del neoliberalismo y las políticas económicas tradicionales\n- Partidario de reformas estructurales en Colombia\n\n**Política de drogas:**\n- Defensor de la legalización del cannabis\n- Crítico de la política prohibicionista tradicional\n- Promotor de enfoques de salud pública para el consumo de drogas\n\n**Derechos humanos:**\n- Defensor constante de los derechos humanos\n- Crítico de la violencia estatal y paramilitar\n- Promotor de la implementación del Acuerdo de Paz"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**En el ámbito cultural:**\n- Revolucionó la televisión colombiana con sus producciones\n- Sus obras han sido exportadas a más de 50 países\n- Contribuyó significativamente a la industria del entretenimiento en Colombia\n- Generó miles de empleos en el sector audiovisual\n\n**En el ámbito político:**\n- Presentación de proyectos de ley progresistas\n- Defensa constante de causas sociales desde el Congreso\n- Utilización efectiva de redes sociales para comunicación política\n- Construcción de puentes entre el mundo del entretenimiento y la política\n\n**Proyectos legislativos destacados:**\n- Proyectos relacionados con la legalización del cannabis\n- Iniciativas para la protección de derechos de las mujeres\n- Propuestas para la reforma del sistema de salud\n- Proyectos de ley para la protección de animales"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Declaraciones polémicas:**\n- Ha generado controversia por algunas de sus declaraciones en redes sociales\n- Críticas por su estilo directo y confrontacional\n- Debates sobre la mezcla entre entretenimiento y política\n\n**Conflictos internos en partidos:**\n- Tensiones dentro de la Alianza Verde durante su primer período\n- Cambios de partido político que generaron críticas\n- Diferencias con otros líderes políticos de izquierda\n\n**Críticas a sus obras:**\n- Cuestionamientos sobre la glorificación del narcotráfico en sus producciones\n- Debates sobre el impacto social de las \"narconovelas\"\n- Críticas por estereotipos de género en algunas de sus obras"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Gustavo Bolívar mantiene una influencia significativa en la política colombiana actual:\n\n**Liderazgo en redes sociales:**\n- Uno de los políticos colombianos con mayor seguimiento en redes sociales\n- Utiliza efectivamente Twitter para comunicar sus posiciones\n- Influencia en la opinión pública a través de medios digitales\n\n**Rol en el Pacto Histórico:**\n- Figura importante dentro de la coalición de gobierno\n- Defensor de las políticas del presidente Gustavo Petro\n- Promotor de reformas progresistas desde el Congreso\n\n**Impacto mediático:**\n- Sus declaraciones generan amplia cobertura mediática\n- Capacidad de influir en la agenda política nacional\n- Puente entre el mundo del entretenimiento y la política\n\n**Proyección futura:**\n- Continúa siendo una figura relevante en la izquierda colombiana\n- Potencial candidato a cargos ejecutivos en el futuro\n- Influencia en la formación de nuevas generaciones de políticos progresistas"
-      }
-    ]
-  },
-  {
-    "candidato": "Vicky Dávila",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsV-YxXyW2Z2Z1X1XyWzZ2Y1XzXyWzZ1XyWzZ2Y1XzXyWzZ1XyWzZ2Y1XzXyWzZ1XyWzZ2Y1XzXyWzZ1XyWzZ2Y1XzXyWzZ1XyWzZ2Y1/s1600/vicky_davila.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Victoria Eugenia Dávila Hoyos\n- **Fecha de nacimiento**: 28 de agosto de 1971\n- **Lugar de nacimiento**: Bogotá, Colombia\n- **Edad**: 53 años\n- **Profesión**: Periodista, directora de medios, política\n- **Estado civil**: Casada"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Vicky Dávila es una de las periodistas más influyentes y reconocidas de Colombia, con una carrera de más de tres décadas en medios de comunicación. Su trabajo ha estado marcado por investigaciones de alto impacto y una línea editorial que ha generado tanto admiración como controversia.\n\n**Inicios en el periodismo:**\n- Comenzó su carrera en medios locales de Bogotá\n- Se especializó en periodismo investigativo desde sus primeros años\n- Desarrolló una reputación por su tenacidad y rigor en la investigación\n\n**Carrera en Caracol Radio:**\n- Trabajó durante varios años en Caracol Radio\n- Condujo programas de alta audiencia\n- Se consolidó como una voz influyente en el periodismo radial colombiano\n\n**Liderazgo en Semana:**\n- Directora de la revista Semana desde 2017\n- Bajo su dirección, Semana mantuvo su posición como uno de los medios más influyentes del país\n- Implementó estrategias digitales para modernizar la revista\n- Lideró investigaciones que tuvieron impacto nacional\n\n**Transición a la política:**\nEn 2024, Dávila anunció su intención de incursionar en la política activa, marcando una transición significativa desde el periodismo hacia la arena política, siguiendo el ejemplo de otros periodistas que han hecho esta transición en América Latina."
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Candidata presidencial (2026):**\n- Anunció oficialmente su candidatura presidencial para las elecciones de 2026\n- Representa una opción de centro-derecha en el espectro político colombiano\n- Su candidatura marca la transición definitiva del periodismo a la política activa"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Las posiciones políticas de Vicky Dávila se han manifestado principalmente a través de su trabajo periodístico, aunque con su incursión en la política activa ha comenzado a articular una plataforma más definida:\n\n**Línea editorial conservadora:**\n- Ha mantenido una línea editorial crítica hacia gobiernos de izquierda\n- Defensora de políticas económicas de libre mercado\n- Promotora de la inversión privada y el empresariado\n\n**Seguridad y orden público:**\n- Defensora de políticas de mano dura contra la criminalidad\n- Crítica de enfoques que considera permisivos hacia la delincuencia\n- Promotora del fortalecimiento de las fuerzas de seguridad\n\n**Política internacional:**\n- Crítica del régimen venezolano de Nicolás Maduro\n- Defensora de políticas de presión internacional contra dictaduras\n- Promotora de alianzas con democracias occidentales\n\n**Anticorrupción:**\n- A través de su trabajo periodístico ha denunciado múltiples casos de corrupción\n- Defensora de la transparencia en la gestión pública\n- Promotora de reformas institucionales para combatir la corrupción"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**En el periodismo investigativo:**\n- Ha liderado investigaciones que han destapado múltiples escándalos de corrupción\n- Sus reportajes han llevado a investigaciones judiciales y renuncias de funcionarios\n- Ha recibido reconocimientos nacionales e internacionales por su trabajo periodístico\n\n**Impacto en la opinión pública:**\n- Sus investigaciones han influido significativamente en el debate público nacional\n- Ha contribuido a la formación de opinión en temas políticos y sociales\n- Su trabajo ha sido referencia para otros medios de comunicación\n\n**Modernización de medios:**\n- Lideró la transformación digital de la revista Semana\n- Implementó nuevas estrategias de comunicación digital\n- Adaptó formatos tradicionales a plataformas digitales\n\n**Reconocimientos profesionales:**\n- Ha recibido múltiples premios de periodismo\n- Reconocida como una de las periodistas más influyentes de Colombia\n- Sus investigaciones han sido citadas en medios internacionales"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Críticas por sesgo político:**\n- Ha sido criticada por supuesto sesgo en su cobertura periodística\n- Acusaciones de utilizar su posición mediática para promover agendas políticas específicas\n- Debates sobre la objetividad en su trabajo periodístico\n\n**Conflictos con el gobierno actual:**\n- Ha mantenido una posición crítica constante hacia el gobierno de Gustavo Petro\n- Sus investigaciones han generado tensiones con el ejecutivo\n- Ha sido objeto de críticas por parte de funcionarios del gobierno\n\n**Polarización mediática:**\n- Su estilo periodístico ha contribuido a la polarización del debate público\n- Críticas por promover narrativas que dividen la opinión pública\n- Debates sobre el rol de los medios en la democracia\n\n**Transición periodismo-política:**\n- Cuestionamientos sobre la ética de la transición del periodismo a la política\n- Debates sobre conflictos de interés\n- Críticas por utilizar su plataforma mediática para fines políticos"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Vicky Dávila ejerce una influencia considerable en la política colombiana, tanto desde su rol periodístico como desde su nueva posición como candidata presidencial:\n\n**Poder mediático:**\n- Mantiene una influencia significativa en la formación de opinión pública\n- Sus investigaciones y opiniones tienen amplio alcance mediático\n- Capacidad de establecer temas en la agenda política nacional\n\n**Liderazgo de oposición:**\n- Se ha consolidado como una de las principales voces de oposición al gobierno actual\n- Lidera críticas sistemáticas a las políticas del Pacto Histórico\n- Articula alternativas políticas desde la centro-derecha\n\n**Candidatura presidencial:**\n- Su candidatura representa una opción significativa para las elecciones de 2026\n- Cuenta con reconocimiento nacional y capacidad de movilización\n- Representa la continuidad de políticas conservadoras y de centro-derecha\n\n**Influencia en medios:**\n- Su experiencia y conexiones en medios le dan ventajas en comunicación política\n- Capacidad de influir en la narrativa mediática nacional\n- Experiencia en manejo de crisis de comunicación\n\n**Proyección futura:**\n- Potencial candidata competitiva para la presidencia en 2026\n- Influencia en la reconfiguración del espectro político colombiano\n- Capacidad de articular una coalición de centro-derecha"
-      }
-    ]
-  },
-  {
-    "candidato": "Sergio Fajardo",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ9Z9Y8X8W7V6U5T4S3R2Q1P0O9N8M7L6K5J4I3H2G1F0E9D8C7B6A5/s1600/sergio_fajardo.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Sergio Fajardo Valderrama\n- **Fecha de nacimiento**: 19 de junio de 1956\n- **Lugar de nacimiento**: Medellín, Antioquia\n- **Edad**: 68 años\n- **Profesión**: Matemático, académico, político\n- **Estado civil**: Casado con Lucrecia Ramírez"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Sergio Fajardo es una figura emblemática de la política colombiana, reconocido por su enfoque técnico y académico en la gestión pública. Su carrera combina la excelencia académica con una visión transformadora de la administración pública que ha marcado un antes y un después en la política colombiana.\n\n**Formación académica excepcional:**\n- Matemático de la Universidad de los Andes (1977)\n- Magíster en Matemáticas de la Universidad de los Andes (1979)\n- Doctor en Matemáticas de la Universidad de Wisconsin-Madison (1984)\n- Profesor universitario durante más de dos décadas\n\n**Carrera académica:**\n- Profesor de la Universidad Nacional de Colombia\n- Profesor de la Universidad de los Andes\n- Investigador en matemáticas aplicadas\n- Consultor en educación y desarrollo urbano\n\n**Entrada a la política:**\nSu incursión en la política estuvo motivada por su deseo de aplicar metodologías rigurosas y enfoques científicos a la gestión pública, buscando transformar la forma tradicional de hacer política en Colombia."
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Alcalde de Medellín (2004-2007):**\n- Elegido como candidato independiente con una propuesta de transformación urbana\n- Implementó el modelo de \"urbanismo social\"\n- Revolucionó la educación pública en Medellín\n- Transformó la imagen internacional de la ciudad\n\n**Gobernador de Antioquia (2012-2015):**\n- Primer gobernador independiente de Antioquia en décadas\n- Continuó con su modelo de gestión basado en educación e innovación\n- Implementó programas de desarrollo regional\n\n**Candidato presidencial:**\n- **2010**: Primera candidatura presidencial, obtuvo el tercer lugar\n- **2018**: Candidato por la Coalición Colombia, llegó a segunda vuelta\n- **2022**: Candidato por la Coalición Centro Esperanza, obtuvo el tercer lugar"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Sergio Fajardo ha mantenido una línea política consistente centrada en la educación, la innovación y la transparencia:\n\n**Centro político:**\n- Se posiciona en el centro del espectro político colombiano\n- Crítico tanto de la extrema izquierda como de la extrema derecha\n- Promotor de políticas basadas en evidencia científica\n\n**Educación como eje central:**\n- La educación como motor de transformación social\n- Inversión masiva en infraestructura educativa\n- Promoción de la educación superior y técnica\n- Integración de tecnología en procesos educativos\n\n**Innovación y desarrollo:**\n- Promoción de la economía del conocimiento\n- Apoyo a emprendimientos tecnológicos\n- Desarrollo de clusters de innovación\n- Integración de universidades con el sector productivo\n\n**Transparencia y buen gobierno:**\n- Defensor de la transparencia en la gestión pública\n- Promotor de la participación ciudadana\n- Crítico de la corrupción tradicional\n- Implementación de sistemas de rendición de cuentas"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**Transformación de Medellín (2004-2007):**\n- Construcción de bibliotecas públicas de clase mundial\n- Implementación del sistema de transporte Metrocable\n- Creación de parques educativos y espacios públicos\n- Reducción significativa de índices de violencia\n- Posicionamiento de Medellín como ciudad innovadora\n\n**Modelo de urbanismo social:**\n- Inversión prioritaria en las zonas más pobres de la ciudad\n- Arquitectura de calidad en sectores marginales\n- Integración urbana a través del transporte público\n- Creación de espacios públicos de calidad\n\n**Gobernación de Antioquia (2012-2015):**\n- Construcción de colegios de calidad en municipios rurales\n- Implementación de programas de conectividad digital\n- Promoción del turismo y desarrollo económico regional\n- Fortalecimiento de la educación superior en regiones\n\n**Reconocimientos internacionales:**\n- Medellín reconocida como \"Ciudad más innovadora del mundo\" (2013)\n- Múltiples premios internacionales por gestión urbana\n- Invitado como conferencista en universidades y foros mundiales\n- Modelo replicado en otras ciudades de América Latina"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Caso Hidroituango:**\n- Principal controversia durante su gobernación de Antioquia\n- Cuestionamientos sobre la gestión del proyecto hidroeléctrico\n- Investigaciones judiciales sobre posibles irregularidades\n- Impacto en su imagen política y candidaturas posteriores\n\n**Críticas por elitismo:**\n- Señalamientos de desconexión con sectores populares\n- Críticas por su lenguaje técnico y académico\n- Cuestionamientos sobre su capacidad de conectar con el pueblo\n\n**Posiciones en temas polémicos:**\n- Posición ambigua frente al Acuerdo de Paz\n- Críticas por no tomar posiciones claras en temas divisivos\n- Cuestionamientos sobre su liderazgo político\n\n**Relaciones con otros políticos:**\n- Tensiones con líderes tradicionales de Antioquia\n- Diferencias con otros candidatos de centro\n- Críticas por su independencia política"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Sergio Fajardo mantiene una influencia significativa en la política colombiana, especialmente en temas de educación y desarrollo urbano:\n\n**Referente de gestión pública:**\n- Su modelo de gestión sigue siendo referencia nacional e internacional\n- Influencia en políticas públicas de educación y desarrollo urbano\n- Consultor y asesor en temas de innovación y educación\n\n**Liderazgo del centro político:**\n- Principal referente del centro político en Colombia\n- Capacidad de articular coaliciones centristas\n- Influencia en la formación de nuevos líderes políticos\n\n**Legado en Medellín y Antioquia:**\n- Sus políticas continúan implementándose en administraciones posteriores\n- Transformación duradera de la infraestructura educativa\n- Cambio en la cultura política regional\n\n**Proyección futura:**\n- Potencial candidato presidencial en futuras elecciones\n- Influencia en la formación de políticas educativas nacionales\n- Liderazgo en temas de innovación y desarrollo tecnológico\n\n**Academia y consultoría:**\n- Continúa su trabajo académico y de consultoría\n- Influencia en la formación de políticas públicas\n- Participación en foros internacionales sobre desarrollo urbano"
-      }
-    ]
-  },
-  {
-    "candidato": "Germán Vargas Lleras",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-f5e4d3c2b1a0z9y8x7w6v5u4t3s2r1q0p9o8n7m6l5k4j3i2h1g0f9e8d7c6b5a4/s1600/german_vargas_lleras.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Germán Vargas Lleras\n- **Fecha de nacimiento**: 19 de octubre de 1962\n- **Lugar de nacimiento**: Bogotá, Colombia\n- **Edad**: 62 años\n- **Profesión**: Abogado, político\n- **Estado civil**: Casado con Esperanza Lozano"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Germán Vargas Lleras proviene de una de las familias políticas más tradicionales e influyentes de Colombia. Su carrera política ha estado marcada por una ambición constante de llegar a la presidencia y por su capacidad de articular coaliciones políticas significativas.\n\n**Formación y antecedentes familiares:**\n- Abogado de la Universidad del Rosario\n- Nieto de Carlos Lleras Restrepo (Presidente 1966-1970)\n- Sobrino nieto de Alberto Lleras Camargo (Presidente 1945-1946 y 1958-1962)\n- Heredero de una tradición política liberal centenaria\n\n**Inicios en la política:**\n- Comenzó su carrera política desde muy joven\n- Influenciado por la tradición familiar en el Partido Liberal\n- Desarrolló habilidades de negociación y articulación política"
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Senador de la República (1994-2010):**\n- Elegido senador por primera vez a los 32 años\n- Reelegido en múltiples ocasiones\n- Presidente del Senado en varias oportunidades\n- Líder de bancadas y coaliciones legislativas\n\n**Ministro del Interior y de Justicia (2010-2012):**\n- Nombrado por el presidente Juan Manuel Santos\n- Responsable de políticas de seguridad y justicia\n- Articulador de reformas institucionales importantes\n- Gestor de políticas de paz y reconciliación\n\n**Vicepresidente de la República (2014-2017):**\n- Elegido como fórmula vicepresidencial de Juan Manuel Santos\n- Responsable de la coordinación del gabinete ministerial\n- Líder en temas de infraestructura y desarrollo económico\n- Renunció en 2017 para buscar la candidatura presidencial\n\n**Candidato presidencial:**\n- **2018**: Candidato presidencial, obtuvo el tercer lugar en primera vuelta\n- Líder de una coalición de centro-derecha\n- Articulador de sectores empresariales y políticos tradicionales"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Germán Vargas Lleras ha mantenido posiciones políticas que lo ubican en el centro-derecha del espectro político colombiano:\n\n**Liberalismo económico:**\n- Defensor del libre mercado y la inversión privada\n- Promotor de políticas pro-empresariales\n- Crítico de intervenciones estatales excesivas en la economía\n- Defensor de tratados de libre comercio\n\n**Infraestructura y desarrollo:**\n- Gran impulsor de proyectos de infraestructura\n- Promotor de las concesiones viales y de infraestructura\n- Defensor de la modernización del transporte público\n- Impulsor del desarrollo urbano y regional\n\n**Seguridad y orden público:**\n- Defensor de políticas de seguridad robustas\n- Crítico de enfoques que considera permisivos hacia la criminalidad\n- Promotor del fortalecimiento de las fuerzas armadas\n- Partidario de políticas de mano dura contra el narcotráfico\n\n**Política internacional:**\n- Defensor de alianzas con Estados Unidos y países occidentales\n- Crítico de regímenes autoritarios en América Latina\n- Promotor de la integración económica regional\n- Defensor de políticas de presión contra Venezuela"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**En el Senado:**\n- Liderazgo en la aprobación de reformas constitucionales importantes\n- Articulación de coaliciones legislativas efectivas\n- Promoción de leyes de modernización del Estado\n- Liderazgo en temas de descentralización y autonomía regional\n\n**Como Ministro del Interior:**\n- Gestión de crisis de orden público\n- Articulación de políticas de seguridad integral\n- Promoción de reformas al sistema de justicia\n- Coordinación de políticas de paz y reconciliación\n\n**Como Vicepresidente:**\n- Liderazgo en el programa de infraestructura \"Cuarta Generación\" (4G)\n- Coordinación efectiva del gabinete ministerial\n- Promoción de políticas de desarrollo económico\n- Articulación de relaciones entre el ejecutivo y el legislativo\n\n**Proyectos de infraestructura:**\n- Impulso decisivo a múltiples proyectos viales\n- Modernización de aeropuertos y puertos\n- Promoción del transporte público masivo\n- Desarrollo de proyectos de vivienda social"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Escándalo de Odebrecht:**\n- Investigaciones sobre vínculos con la constructora brasileña\n- Cuestionamientos sobre financiación de campañas\n- Impacto en su imagen política y aspiraciones presidenciales\n- Procesos judiciales y investigaciones fiscales\n\n**Críticas por clientelismo:**\n- Señalamientos de prácticas clientelistas tradicionales\n- Críticas por el manejo de contratos públicos\n- Cuestionamientos sobre el uso de recursos públicos\n- Debates sobre ética en la gestión pública\n\n**Conflictos con Juan Manuel Santos:**\n- Tensiones crecientes durante la vicepresidencia\n- Diferencias sobre el proceso de paz con las FARC\n- Renuncia anticipada para buscar la candidatura presidencial\n- Críticas públicas mutuas\n\n**Posición frente al Acuerdo de Paz:**\n- Crítico del Acuerdo de Paz con las FARC\n- Promotor del \"No\" en el plebiscito de 2016\n- Defensor de modificaciones sustanciales al acuerdo\n- Generador de polarización en torno al tema"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Germán Vargas Lleras mantiene una influencia considerable en la política colombiana, aunque su protagonismo ha disminuido en años recientes:\n\n**Liderazgo en el Partido de la U:**\n- Continúa siendo una figura influyente en su partido\n- Capacidad de articular coaliciones políticas\n- Influencia en decisiones electorales y alianzas\n\n**Sector empresarial:**\n- Mantiene vínculos estrechos con el sector empresarial\n- Influencia en políticas económicas y de infraestructura\n- Consultor y asesor en temas de desarrollo\n\n**Oposición política:**\n- Crítico constante del gobierno del Pacto Histórico\n- Articulador de sectores de oposición\n- Promotor de alternativas políticas de centro-derecha\n\n**Legado en infraestructura:**\n- Sus políticas de infraestructura continúan implementándose\n- Influencia duradera en el desarrollo vial del país\n- Referente en temas de modernización del transporte\n\n**Proyección futura:**\n- Potencial candidato en futuras elecciones\n- Influencia en la articulación de coaliciones de centro-derecha\n- Capacidad de movilizar sectores empresariales y políticos tradicionales\n\n**Desafíos actuales:**\n- Necesidad de renovar su imagen política\n- Superación de controversias judiciales\n- Adaptación a nuevas dinámicas políticas del país"
-      }
-    ]
-  },
-  {
-    "candidato": "Claudia López",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-y9x8w7v6u5t4s3r2q1p0o9n8m7l6k5j4i3h2g1f0e9d8c7b6a5/s1600/claudia_lopez.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Claudia Nayibe López Hernández\n- **Fecha de nacimiento**: 9 de marzo de 1970\n- **Lugar de nacimiento**: Bogotá, Colombia\n- **Edad**: 55 años\n- **Profesión**: Politóloga, académica, política\n- **Estado civil**: Casada con Angélica Lozano (senadora)"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Claudia López es una figura destacada de la política colombiana contemporánea, reconocida por su trabajo académico, su activismo político y su liderazgo como la primera mujer alcaldesa de Bogotá. Su carrera combina la investigación académica rigurosa con un compromiso político progresista.\n\n**Formación académica:**\n- Politóloga de la Universidad Javeriana\n- Magíster en Administración Pública de la Universidad de Harvard\n- Especialización en políticas públicas y gestión urbana\n- Investigadora en temas de conflicto, paz y desarrollo\n\n**Carrera académica y de investigación:**\n- Investigadora del Programa de las Naciones Unidas para el Desarrollo (PNUD)\n- Consultora en temas de paz, conflicto y desarrollo\n- Autora de múltiples publicaciones académicas\n- Experta en análisis de políticas públicas\n\n**Activismo y sociedad civil:**\n- Fundadora y directora de la Fundación Paz y Reconciliación (PARES)\n- Activista por los derechos humanos y la paz\n- Promotora de la participación ciudadana y la transparencia\n- Defensora de los derechos LGBTI+"
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Senadora de la República (2014-2019):**\n- Elegida por la Alianza Verde con una votación histórica\n- Senadora más votada en las elecciones de 2014\n- Líder en temas de paz, transparencia y anticorrupción\n- Promotora de reformas institucionales importantes\n\n**Alcaldesa de Bogotá (2020-2023):**\n- Primera mujer elegida alcaldesa de Bogotá\n- Elegida con la votación más alta en la historia de la ciudad\n- Gestión marcada por la pandemia de COVID-19\n- Implementación de políticas progresistas y de género"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Claudia López se ha caracterizado por mantener posiciones progresistas y de centro-izquierda:\n\n**Progresismo social:**\n- Defensora de los derechos de las mujeres y la equidad de género\n- Promotora de los derechos LGBTI+ (primera alcaldesa abiertamente lesbiana)\n- Defensora de políticas inclusivas y de diversidad\n- Promotora de la justicia social y la reducción de desigualdades\n\n**Paz y derechos humanos:**\n- Defensora del Acuerdo de Paz con las FARC\n- Promotora de la implementación integral del acuerdo\n- Crítica de la violencia y defensora de los derechos humanos\n- Promotora de la reconciliación nacional\n\n**Transparencia y anticorrupción:**\n- Crítico férreo de la corrupción en todas sus formas\n- Promotora de reformas para la transparencia\n- Defensor de la participación ciudadana en el control social\n- Impulsora de gobierno abierto y rendición de cuentas\n\n**Medio ambiente y sostenibilidad:**\n- Defensora de políticas ambientales robustas\n- Promotora de la transición energética\n- Crítica de proyectos que afecten el medio ambiente\n- Impulsora de políticas de sostenibilidad urbana"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**Como Senadora (2014-2019):**\n- Liderazgo en la aprobación del Acuerdo de Paz\n- Promoción de leyes anticorrupción\n- Defensa de los derechos de las víctimas del conflicto\n- Impulso a reformas de transparencia y participación ciudadana\n\n**Investigación y denuncia:**\n- Destapó múltiples casos de corrupción y parapolítica\n- Sus investigaciones llevaron a procesos judiciales importantes\n- Contribuyó al esclarecimiento de vínculos entre políticos y paramilitares\n- Promovió la cultura de la transparencia y la rendición de cuentas\n\n**Como Alcaldesa de Bogotá (2020-2023):**\n- Gestión de la pandemia de COVID-19 con enfoque de derechos humanos\n- Implementación de políticas de género y diversidad\n- Promoción del transporte sostenible y la movilidad activa\n- Fortalecimiento de políticas sociales y de protección\n\n**Reconocimientos:**\n- Múltiples premios por su trabajo en paz y derechos humanos\n- Reconocimiento internacional por su liderazgo político\n- Premios por su gestión como alcaldesa\n- Reconocimiento como líder LGBTI+ destacada"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Gestión de la pandemia:**\n- Críticas por algunas medidas restrictivas durante COVID-19\n- Debates sobre el equilibrio entre salud pública y economía\n- Tensiones con el gobierno nacional sobre políticas sanitarias\n- Cuestionamientos sobre la gestión de recursos durante la emergencia\n\n**Conflictos con el gobierno nacional:**\n- Tensiones constantes con el gobierno de Iván Duque\n- Diferencias sobre políticas de seguridad y orden público\n- Conflictos sobre recursos y competencias entre nación y distrito\n- Críticas mutuas sobre gestión y políticas públicas\n\n**Declaraciones polémicas:**\n- Algunas declaraciones han generado controversia\n- Críticas por su estilo directo y confrontacional\n- Debates sobre sus posiciones en temas sensibles\n- Tensiones con sectores conservadores de la sociedad\n\n**Gestión del orden público:**\n- Críticas por el manejo de protestas sociales\n- Debates sobre el equilibrio entre derecho a la protesta y orden público\n- Cuestionamientos sobre la coordinación con la Policía Nacional\n- Tensiones sobre políticas de seguridad ciudadana"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Claudia López mantiene una influencia significativa en la política colombiana, especialmente en temas progresistas y de derechos humanos:\n\n**Liderazgo progresista:**\n- Principal referente del progresismo en Colombia\n- Influencia en la agenda de derechos humanos y género\n- Liderazgo en temas de diversidad e inclusión\n- Referente para nuevas generaciones de políticos progresistas\n\n**Influencia en políticas urbanas:**\n- Su gestión en Bogotá influye en políticas de otras ciudades\n- Referente en temas de sostenibilidad urbana\n- Promotora de modelos de gestión participativa\n- Influencia en políticas de movilidad y transporte\n\n**Activismo y sociedad civil:**\n- Continúa su trabajo desde la sociedad civil\n- Influencia en organizaciones de derechos humanos\n- Liderazgo en temas de paz y reconciliación\n- Promoción de la participación ciudadana\n\n**Proyección futura:**\n- Potencial candidata a cargos ejecutivos en el futuro\n- Influencia en la formación de coaliciones progresistas\n- Liderazgo en temas de género y diversidad\n- Referente internacional en políticas urbanas progresistas\n\n**Legado como alcaldesa:**\n- Transformación de políticas de género en Bogotá\n- Implementación de enfoques de derechos humanos en la gestión pública\n- Promoción de la participación ciudadana y la transparencia\n- Modelo de gestión progresista para otras administraciones"
-      }
-    ]
-  },
-  {
-    "candidato": "María Fernanda Cabal",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEho8n7m6l5k4j3i2h1g0f9e8d7c6b5a4z9y8x7w6v5u4t3s2r1q0p/s1600/maria_fernanda_cabal.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: María Fernanda Cabal Molina\n- **Fecha de nacimiento**: 8 de agosto de 1966\n- **Lugar de nacimiento**: Cali, Valle del Cauca\n- **Edad**: 58 años\n- **Profesión**: Empresaria, politóloga, política\n- **Estado civil**: Casada con José Félix Lafaurie"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "María Fernanda Cabal es una de las figuras más polémicas y reconocibles de la política colombiana contemporánea. Su carrera combina la experiencia empresarial con una militancia política caracterizada por posiciones ultraconservadoras y declaraciones que generan amplio debate público.\n\n**Formación académica:**\n- Politóloga de la Universidad de los Andes\n- Estudios de Literatura e Historia en el Instituto Universitario de Investigación Ortega y Gasset (España)\n- Directora del Programa Democracia del Departamento de Ciencia Política (Universidad de los Andes)\n- Formación en gestión pública y administración\n\n**Carrera empresarial:**\n- Fundadora de Student Travel Center (2003), agencia de viajes para estudiantes\n- Presidenta de la Fundación Colombia Ganadera\n- Experiencia en el sector privado y organizaciones gremiales\n- Vínculos estrechos con el sector ganadero y agrícola\n\n**Carrera en el sector público:**\n- Directora de Asuntos Internacionales de la Fiscalía General de la Nación (2006-2007)\n- Experiencia en cooperación internacional y relaciones diplomáticas\n- Trabajo en fortalecimiento institucional y lucha contra el crimen"
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Directora de Asuntos Internacionales - Fiscalía General (2006-2007):**\n- Nombrada por el Fiscal General Mario Iguarán\n- Responsable de cooperación internacional en temas judiciales\n- Fortalecimiento de lazos con países aliados\n- Reconocimiento del Departamento de Justicia de Estados Unidos\n\n**Representante a la Cámara (2014-2018):**\n- Elegida por Bogotá en lista del Centro Democrático\n- Primer renglón de la lista cerrada\n- Miembro de comisiones legislativas importantes\n- Promotora de proyectos de ley conservadores\n\n**Senadora de la República (2018-presente):**\n- Elegida en 2018 (quinto lugar en votación)\n- Reelecta en 2022 (segundo lugar, mujer más votada)\n- Co-fundadora del partido Centro Democrático\n- Figura prominente del uribismo\n\n**Precandidata presidencial (2025):**\n- Anunció oficialmente su candidatura presidencial para 2026\n- Competencia interna en el Centro Democrático\n- Favorita en encuestas internas del partido"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "María Fernanda Cabal se ha consolidado como una de las voces más representativas de la extrema derecha en Colombia:\n\n**Extrema derecha y ultraconservadurismo:**\n- Se autodefine como \"radical\" en sus posiciones\n- Defensora de valores tradicionales y conservadores\n- Crítica férrea de movimientos progresistas\n- Promotora de políticas autoritarias\n\n**Seguridad y mano dura:**\n- Defensora del derecho de civiles a portar armas\n- Promotora de políticas de seguridad robustas\n- Crítica de enfoques de derechos humanos en seguridad\n- Defensora del fortalecimiento de las fuerzas armadas\n\n**Anti-acuerdo de paz:**\n- Oposición total al Acuerdo de Paz con las FARC\n- Crítica de procesos de justicia transicional\n- Promotora de políticas de confrontación armada\n- Defensora de soluciones militares al conflicto\n\n**Posiciones sociales conservadoras:**\n- Oposición al aborto y matrimonio homosexual\n- Crítica del feminismo y movimientos de género\n- Defensora de la familia tradicional\n- Promotora de valores religiosos en política"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**En el sector privado:**\n- Exitosa carrera empresarial en turismo estudiantil\n- Liderazgo en organizaciones gremiales\n- Contribución al desarrollo del sector ganadero\n- Experiencia en gestión empresarial\n\n**En la Fiscalía General:**\n- Fortalecimiento de cooperación internacional\n- Mejoramiento de relaciones con países aliados\n- Contribución a la lucha contra el crimen organizado\n- Reconocimiento por gestión institucional\n\n**Como congresista:**\n- Liderazgo en el Centro Democrático\n- Capacidad de movilización de bases conservadoras\n- Influencia en agenda legislativa del partido\n- Representación efectiva de sectores de derecha\n\n**Reconocimiento electoral:**\n- Mujer más votada en elecciones legislativas de 2022\n- Consolidación como líder del uribismo\n- Capacidad de movilización electoral\n- Influencia en sectores conservadores del país"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Declaraciones polémicas:**\n- Comentario sobre Gabriel García Márquez: \"Pronto estarán juntos en el infierno\"\n- Comparaciones controvertidas sobre atentados de París con proceso de paz\n- Múltiples declaraciones que generan polarización\n- Críticas por lenguaje divisivo y confrontacional\n\n**Problemas legales y éticos:**\n- Renuncia de la Fiscalía por filtraciones de información (2007)\n- Investigaciones sobre constreñimiento electoral (2018)\n- Cuestionamientos sobre su nombramiento en la Fiscalía\n- Procesos judiciales relacionados con su gestión\n\n**Vínculos familiares controvertidos:**\n- Matrimonio con José Félix Lafaurie (líder ganadero)\n- Cuestionamientos sobre conflictos de interés\n- Críticas por vínculos con sectores económicos específicos\n- Debates sobre influencia de intereses privados\n\n**Posiciones extremas:**\n- Críticas por promover polarización política\n- Cuestionamientos sobre su retórica divisiva\n- Debates sobre límites del discurso político\n- Preocupaciones sobre radicalización del debate público"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "María Fernanda Cabal ejerce una influencia considerable en la política colombiana, especialmente en sectores conservadores:\n\n**Liderazgo de la extrema derecha:**\n- Principal referente de posiciones ultraconservadoras\n- Influencia en la agenda del Centro Democrático\n- Capacidad de movilizar bases radicales\n- Articuladora de sectores de extrema derecha\n\n**Influencia mediática:**\n- Gran seguimiento en redes sociales\n- Capacidad de generar debate público\n- Influencia en medios de comunicación\n- Habilidad para establecer agenda mediática\n\n**Conexiones internacionales:**\n- Vínculos con extrema derecha global (Foro Madrid)\n- Relaciones con figuras como Trump y Bolsonaro\n- Participación en redes conservadoras internacionales\n- Influencia en movimientos de derecha regional\n\n**Candidatura presidencial 2026:**\n- Precandidata favorita en el Centro Democrático\n- Capacidad de articular coalición de derecha\n- Influencia en definición de agenda conservadora\n- Potencial de polarizar elecciones presidenciales\n\n**Proyección futura:**\n- Consolidación como líder de extrema derecha\n- Influencia en reconfiguración del espectro político\n- Capacidad de movilizar sectores conservadores\n- Potencial impacto en futuras elecciones"
-      }
-    ]
-  },
-  {
-    "candidato": "Miguel Uribe Turbay",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8w7v6u5t4s3r2q1p0o9n8m7l6k5j4i3h2g1f0e9d8c7b6a5z9y8x/s1600/miguel_uribe_turbay.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Miguel Uribe Turbay\n- **Fecha de nacimiento**: 28 de enero de 1986\n- **Lugar de nacimiento**: Bogotá, Colombia\n- **Edad**: 39 años\n- **Profesión**: Abogado, político\n- **Estado civil**: Casado con Claudia Tarazona"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Miguel Uribe Turbay representa una nueva generación de liderazgo político en Colombia, combinando una sólida formación académica con experiencia en gestión pública y una herencia política significativa. Su carrera ha estado marcada por la tragedia familiar y una determinación de servir al país desde diferentes roles públicos.\n\n**Formación académica excepcional:**\n- Educación básica en el Colegio Los Nogales\n- Abogado de la Universidad de los Andes\n- Maestría en Políticas Públicas, Universidad de los Andes\n- Maestría en Administración Pública, Universidad de Harvard\n- Formación integral en derecho y gestión pública\n\n**Tragedia familiar formativa:**\n- Hijo de Diana Turbay (periodista asesinada por Los Extraditables en 1991)\n- Nieto de Julio César Turbay Ayala (Presidente 1978-1982)\n- Víctima del conflicto armado desde los 5 años\n- Experiencia personal que marcó su vocación de servicio público\n\n**Desarrollo profesional:**\n- Experiencia en sector privado y consultoría\n- Formación en políticas públicas y administración\n- Desarrollo de habilidades de liderazgo desde joven\n- Combinación de herencia política con mérito propio"
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Concejal de Bogotá (2012-2015):**\n- Elegido a los 26 años por el Partido Liberal\n- Campaña junto a David Luna, Juan Manuel Galán y Simón Gaviria\n- Elegido \"concejal revelación\" por periodistas (2013)\n- Presidente del Concejo de Bogotá (2014) - el más joven en la historia\n\n**Secretario de Gobierno de Bogotá (2016-2018):**\n- Nombrado por el alcalde Enrique Peñalosa a los 30 años\n- Secretario de Gobierno más joven en la historia de Bogotá\n- Respaldado por el vicepresidente Germán Vargas Lleras\n- Gestión enfocada en seguridad ciudadana y orden público\n\n**Candidato a Alcaldía de Bogotá (2019):**\n- Candidatura independiente con movimiento \"Avancemos\"\n- Respaldado por 400,000 firmas ciudadanas\n- Coalición multipartidista (Liberal, Conservador, Centro Democrático, MIRA)\n- Obtuvo 426,982 votos (no resultó elegido)\n\n**Senador de la República (2022-presente):**\n- Cabeza de lista del Centro Democrático\n- Senador más votado en lista abierta del país\n- Líder de bancada del Centro Democrático\n- Precandidato presidencial para 2026"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Miguel Uribe Turbay ha evolucionado políticamente desde el liberalismo hacia el centro-derecha:\n\n**Evolución política:**\n- Inicios en el Partido Liberal (2012-2018)\n- Transición al Centro Democrático (2018)\n- Posiciones de centro-derecha moderadas\n- Enfoque pragmático en políticas públicas\n\n**Seguridad ciudadana:**\n- Experiencia directa como víctima del conflicto\n- Defensor de políticas de seguridad robustas\n- Promotor del fortalecimiento institucional\n- Equilibrio entre seguridad y derechos humanos\n\n**Desarrollo urbano:**\n- Defensor del Metro elevado de Bogotá\n- Promotor de sistemas de transporte multimodal\n- Impulsor de desarrollo urbano sostenible\n- Experiencia en gestión de grandes ciudades\n\n**Política económica:**\n- Defensor de la inversión privada\n- Promotor del emprendimiento y la innovación\n- Partidario de políticas pro-empresariales\n- Enfoque en generación de empleo"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**Como Concejal (2012-2015):**\n- Concejal revelación reconocido por medios\n- Presidente del Concejo más joven de la historia\n- Liderazgo efectivo en oposición a Gustavo Petro\n- Construcción de coaliciones políticas amplias\n\n**Como Secretario de Gobierno (2016-2018):**\n- Gestión exitosa en seguridad ciudadana\n- Continuidad en reducción de homicidios en Bogotá\n- Coordinación efectiva con fuerzas de seguridad\n- Manejo de crisis y situaciones complejas\n\n**Como Senador (2022-presente):**\n- Mayor votación en lista abierta a nivel nacional\n- Liderazgo del Centro Democrático en el Senado\n- Articulación de oposición constructiva\n- Proyección como líder nacional\n\n**Reconocimientos:**\n- Múltiples reconocimientos por gestión pública\n- Liderazgo juvenil destacado\n- Capacidad de construcción de consensos\n- Reconocimiento bipartidista por su trabajo"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Tragedia familiar:**\n- Asesinato de su madre Diana Turbay (1991)\n- Impacto del conflicto armado en su vida personal\n- Utilización política de la tragedia familiar\n- Debates sobre victimización y política\n\n**Gestión como Secretario:**\n- Controversia por concepto jurídico sobre feminicidio de Rosa Elvira Cely\n- Aumento de hurtos durante su gestión\n- Críticas por manejo de algunos temas de género\n- Tensiones con organizaciones sociales\n\n**Cambio de partido:**\n- Críticas por abandono del Partido Liberal\n- Cuestionamientos sobre oportunismo político\n- Debates sobre coherencia ideológica\n- Tensiones con antiguos aliados liberales\n\n**Atentado reciente (2025):**\n- Víctima de atentado en evento político (junio 2025)\n- Impacto en su candidatura presidencial\n- Debates sobre seguridad de candidatos\n- Solidaridad transversal del espectro político"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Miguel Uribe Turbay ejerce una influencia creciente en la política colombiana:\n\n**Liderazgo generacional:**\n- Representante de nueva generación política\n- Puente entre política tradicional y renovación\n- Influencia en jóvenes políticos\n- Modelo de carrera política ascendente\n\n**Centro Democrático:**\n- Líder principal del partido en el Senado\n- Articulador de estrategias de oposición\n- Candidato presidencial favorito del partido\n- Influencia en definición de agenda partidista\n\n**Experiencia ejecutiva:**\n- Única experiencia ejecutiva entre precandidatos de su partido\n- Conocimiento profundo de gestión pública\n- Experiencia en manejo de crisis\n- Credenciales de gestión en Bogotá\n\n**Víctima del conflicto:**\n- Legitimidad como víctima del conflicto armado\n- Perspectiva única sobre paz y reconciliación\n- Capacidad de hablar con autoridad moral\n- Puente entre víctimas y política tradicional\n\n**Proyección presidencial 2026:**\n- Favorito en encuestas internas del Centro Democrático\n- Capacidad de articular coalición amplia\n- Experiencia y juventud como activos electorales\n- Potencial de renovación del liderazgo conservador\n\n**Influencia futura:**\n- Líder natural del Centro Democrático post-Uribe\n- Potencial presidente de Colombia\n- Influencia en redefinición de la derecha colombiana\n- Capacidad de modernizar el conservadurismo"
-      }
-    ]
-  },
-  {
-    "candidato": "Juan Manuel Galán",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-g1f0e9d8c7b6a5z9y8x7w6v5u4t3s2r1q0p9o8n7m6l5k4j3i2h/s1600/juan_manuel_galan.jpg",
-    "perfil": [
-      {
-        "titulo": "Información Personal",
-        "contenido": "- **Nombre completo**: Juan Manuel Galán Pachón\n- **Fecha de nacimiento**: 29 de julio de 1972\n- **Lugar de nacimiento**: Bogotá, Colombia\n- **Edad**: 52 años\n- **Profesión**: Político, internacionalista, politólogo\n- **Estado civil**: Casado con Andrés Villamizar"
-      },
-      {
-        "titulo": "Trayectoria Profesional",
-        "contenido": "Juan Manuel Galán encarna la continuidad del legado político del Nuevo Liberalismo en Colombia. Su carrera ha estado marcada por la herencia de su padre Luis Carlos Galán, el compromiso con la renovación política y la defensa de causas progresistas que han definido su trayectoria pública.\n\n**Formación académica internacional:**\n- Ciencias Políticas, Instituto de Estudios Políticos de París\n- Maestría en Política Internacional, Escuela de Altos Estudios Internacionales (París)\n- Maestría en Relaciones Internacionales y Seguridad, Universidad de Georgetown\n- Tesis doctoral sobre la historia del Nuevo Liberalismo\n\n**Tragedia familiar formativa:**\n- Hijo de Luis Carlos Galán Sarmiento (asesinado en 1989)\n- Exilio por motivos de seguridad tras el asesinato de su padre\n- Entrega simbólica de banderas del partido a César Gaviria\n- Formación política marcada por el legado paterno\n\n**Carrera profesional temprana:**\n- Viceministro de la Juventud (1998-2000)\n- Director del programa presidencial Colombia Joven (2000-2003)\n- Analista de noticias internacionales para RCN Radio desde Washington\n- Ministro Plenipotenciario en Londres (2004-2005)"
-      },
-      {
-        "titulo": "Cargos Públicos Ocupados",
-        "contenido": "**Viceministro de la Juventud (1998-2000):**\n- Liderazgo de proyectos innovadores como \"Expocamello\"\n- Creación de Consejos Municipales de Juventud\n- Uso innovador de medios como \"Francisco el Matemático\"\n- Diseño de políticas públicas de juventud con financiación del Banco Mundial\n\n**Director Colombia Joven (2000-2003):**\n- Liderazgo de la política nacional de juventud\n- Implementación de programas integrales para jóvenes\n- Coordinación con organismos internacionales\n- Desarrollo de metodologías innovadoras de participación juvenil\n\n**Ministro Plenipotenciario en Londres (2004-2005):**\n- Representación diplomática de Colombia en Reino Unido\n- Fortalecimiento de relaciones bilaterales\n- Experiencia en diplomacia internacional\n- Preparación para carrera política nacional\n\n**Senador de la República (2006-2018):**\n- **Primer período (2006-2010)**: Comisión Segunda y Relaciones Exteriores\n- **Segundo período (2010-2014)**: Segunda votación más alta del Partido Liberal\n- **Tercer período (2014-2018)**: 77,088 votos, consolidación como líder liberal\n- Vocero del Partido Liberal en el Senado\n\n**Presidente del Partido Nuevo Liberalismo (2021-presente):**\n- Liderazgo del partido fundado por su padre\n- Renovación y modernización del movimiento\n- Articulación de coaliciones de centro\n- Preservación del legado del Nuevo Liberalismo"
-      },
-      {
-        "titulo": "Posiciones Políticas Históricas",
-        "contenido": "Juan Manuel Galán ha mantenido una línea política consistente heredada del Nuevo Liberalismo:\n\n**Liberal progresista:**\n- Continuidad del legado del Nuevo Liberalismo\n- Defensa de valores democráticos y pluralistas\n- Promoción de políticas sociales inclusivas\n- Equilibrio entre libertad individual y justicia social\n\n**Pionero en política de drogas:**\n- Primer impulsor de reforma en política antidrogas en Colombia\n- Crítico del enfoque prohibicionista tradicional\n- Promotor de enfoques de salud pública\n- Defensor de la descriminalización del consumo\n\n**Derechos humanos y paz:**\n- Defensor histórico de los derechos humanos\n- Crítico de violaciones por parte del Estado\n- Promotor de políticas de paz y reconciliación\n- Opositor a políticas autoritarias\n\n**Transparencia y anticorrupción:**\n- Crítico constante de la corrupción política\n- Promotor de reformas institucionales\n- Defensor de la transparencia en la gestión pública\n- Impulsor de controles democráticos"
-      },
-      {
-        "titulo": "Principales Logros",
-        "contenido": "**Reforma de política de drogas:**\n- Pionero en Colombia en proponer cambios al enfoque antidrogas\n- Debates históricos: \"La Década Perdida contra el Narcotráfico\" (2008)\n- Proyecto de ley para incluir adicción en Plan Obligatorio de Salud\n- Influencia en cambio de paradigma sobre política de drogas\n\n**Debate sobre falsos positivos:**\n- Debate histórico en Soacha sobre ejecuciones extrajudiciales\n- Logró disculpas públicas de la cúpula militar a familias de víctimas\n- Demostró condiciones estructurales que favorecían estas conductas\n- Advirtió sobre riesgo de \"falsos positivos judiciales\"\n\n**Legislación anticorrupción:**\n- Múltiples proyectos de ley contra la corrupción\n- Denuncias del sistema carcelario y mercado negro en cárceles\n- Exposición de vínculos entre política y grupos armados ilegales\n- Promoción de reformas de transparencia\n\n**Liderazgo en relaciones internacionales:**\n- Debates sobre política exterior colombiana\n- Análisis de relaciones con China, Francia y Unión Europea\n- Evaluación de acuerdos militares con Estados Unidos\n- Expertise en diplomacia y relaciones internacionales"
-      },
-      {
-        "titulo": "Controversias Principales",
-        "contenido": "**Herencia política:**\n- Debates sobre nepotismo y herencia política\n- Cuestionamientos sobre mérito propio vs. legado familiar\n- Presión por mantener el legado paterno\n- Expectativas públicas por el apellido Galán\n\n**Posiciones en temas divisivos:**\n- Críticas por no tomar posiciones más radicales\n- Debates sobre su moderación política\n- Cuestionamientos sobre liderazgo en momentos críticos\n- Tensiones entre pragmatismo y principios\n\n**Candidatura presidencial 2022:**\n- Resultados electorales por debajo de expectativas\n- Críticas por estrategia de campaña\n- Debates sobre viabilidad electoral del centro\n- Cuestionamientos sobre capacidad de movilización\n\n**Vida personal:**\n- Debates sobre su orientación sexual en contexto conservador\n- Matrimonio con Andrés Villamizar como tema de discusión\n- Manejo de vida privada en política pública\n- Representación de diversidad en política tradicional"
-      },
-      {
-        "titulo": "Influencia Actual en la Política Colombiana",
-        "contenido": "Juan Manuel Galán mantiene una influencia significativa en la política colombiana:\n\n**Liderazgo del centro político:**\n- Principal referente del liberalismo progresista\n- Articulador de coaliciones de centro\n- Puente entre izquierda moderada y liberalismo tradicional\n- Influencia en definición de agenda centrista\n\n**Autoridad en política de drogas:**\n- Reconocido experto nacional e internacional\n- Influencia en debates sobre reforma de política antidrogas\n- Consultor en organismos internacionales\n- Referente en enfoques alternativos al prohibicionismo\n\n**Legado del Nuevo Liberalismo:**\n- Preservación y modernización del movimiento\n- Influencia en nuevas generaciones de liberales\n- Mantenimiento de valores democráticos y pluralistas\n- Continuidad de tradición política renovadora\n\n**Representación LGBTI+:**\n- Figura visible de diversidad en política colombiana\n- Influencia en agenda de derechos LGBTI+\n- Modelo de inclusión en política tradicional\n- Promoción de tolerancia y diversidad\n\t\n**Proyección futura:**\n- Potencial candidato presidencial en futuras elecciones\n- Influencia en formación de coaliciones de centro\n- Liderazgo en temas de derechos humanos y paz\n- Continuidad del legado familiar en política colombiana\n\n**Academia y consultoría:**\n- Trabajo académico en temas de política pública\n- Consultoría internacional en política de drogas\n- Influencia en formación de políticas públicas\n- Participación en foros académicos y políticos"
-      }
-    ]
-  }
-];
-// --- Data End ---
 
 interface CandidatePageProps {
   candidates: Candidate[];
@@ -299,22 +9,28 @@ interface CandidatePageProps {
 
 const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
   const { slug } = useParams<{ slug: string }>();
+  const [candidate, setCandidate] = useState<Candidate | null>(null);
   
-  const candidate = candidates.find(c => 
-    c.Candidato.toLowerCase().replace(/\s+/g, '-') === slug
-  );
-
-  const profile = candidate 
-    ? candidateProfiles.find(p => p.candidato === candidate.Candidato)
-    : undefined;
+  useEffect(() => {
+    if (slug && candidates.length > 0) {
+      const foundCandidate = candidates.find(
+        c => c.Candidato.toLowerCase().replace(/\s+/g, '-') === slug
+      );
+      
+      if (foundCandidate) {
+        setCandidate(foundCandidate);
+      }
+    }
+  }, [slug, candidates]);
 
   if (!candidate) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Candidato no encontrado</h1>
-          <Link to="/" className="text-blue-600 hover:text-blue-800">
-            Volver al inicio
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center">
+        <div className="text-center text-white">
+          <div className="text-2xl font-bold mb-4">Candidato no encontrado</div>
+          <Link to="/" className="inline-flex items-center space-x-2 bg-white text-purple-900 px-4 py-2 rounded-lg">
+            <ArrowLeft className="h-4 w-4" />
+            <span>Volver al inicio</span>
           </Link>
         </div>
       </div>
@@ -323,7 +39,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
 
   const getPlaceholderImage = (name: string) => {
     const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=1e40af&color=ffffff&bold=true`;
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=7c3aed&color=ffffff&bold=true`;
   };
 
   const getTrendColor = (trend: string) => {
@@ -336,301 +52,641 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
   };
 
   const balance = candidate.Favorabilidad - candidate.Desfavorabilidad;
-  const ranking = candidate.Ranking;
+  const getBalanceColor = (balance: number) => {
+    if (balance > 0) return 'text-green-600';
+    if (balance < -10) return 'text-red-600';
+    return 'text-orange-600';
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link 
-              to="/"
-              className="flex items-center space-x-2 text-gray-600 hover:text-rose-600 transition-colors"
-            >
+      {/* Header */}
+      <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 text-white">
+        <div className="container mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+            <Link to="/" className="inline-flex items-center space-x-2 text-purple-200 hover:text-white mb-4 md:mb-0">
               <ArrowLeft className="h-5 w-5" />
-              <span>Volver al inicio</span>
+              <span>Volver al listado</span>
             </Link>
             
-            <div className="flex items-center space-x-3">
-              <span className="text-sm text-gray-500">Ranking Nacional:</span>
-              <span className="bg-gradient-to-r from-rose-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
-                #{ranking}
-              </span>
+            <div className="flex items-center space-x-4">
+              <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                <span className="text-sm font-medium">Actualizado: Junio 2025</span>
+              </div>
+              <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                <span className="text-sm font-medium">Elecciones 2026</span>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-rose-900 via-pink-800 to-rose-900 text-white py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Candidate Info */}
-            <div>
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="bg-white/20 p-2 rounded-full">
-                  <Award className="h-6 w-6 text-white" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="md:col-span-1 flex flex-col items-center">
+              <div className="relative">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+                  <img 
+                    src={getPlaceholderImage(candidate.Candidato)} 
+                    alt={candidate.Candidato}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <span className="text-rose-200">Candidato Presidencial 2026</span>
-              </div>
-              
-              <h1 className="text-5xl font-bold mb-4">
-                {candidate.Candidato}
-              </h1>
-              
-              <div className="flex items-center space-x-4 mb-6">
-                <div className={`px-4 py-2 rounded-full border ${getTrendColor(candidate.Tendencia_Política)}`}>
-                  {candidate.Tendencia_Política}
-                </div>
-                <div className="text-rose-200">
-                  {candidate.Edad} años • {candidate.Generación}
+                <div className="absolute -bottom-4 -right-4 bg-purple-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">
+                  #{candidate.Ranking}
                 </div>
               </div>
               
-              <p className="text-xl text-rose-100 mb-8">
-                {candidate.Cargo_Actual}
-              </p>
+              <div className={`mt-6 px-4 py-2 rounded-full text-sm font-medium border ${getTrendColor(candidate.Tendencia_Política)}`}>
+                {candidate.Tendencia_Política}
+              </div>
+            </div>
+            
+            <div className="md:col-span-2">
+              <h1 className="text-4xl font-bold mb-2">{candidate.Candidato}</h1>
+              <p className="text-xl text-purple-200 mb-6">{candidate.Cargo_Actual}</p>
               
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">
-                    {candidate.Intención_Voto_Porcentaje}%
-                  </div>
-                  <div className="text-sm text-rose-200">Intención de Voto</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-white">{candidate.Intención_Voto_Porcentaje}%</div>
+                  <div className="text-sm text-purple-200">Intención de voto</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">
-                    {candidate.Favorabilidad}%
-                  </div>
-                  <div className="text-sm text-rose-200">Favorabilidad</div>
+                <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-white">{candidate.Favorabilidad}%</div>
+                  <div className="text-sm text-purple-200">Favorabilidad</div>
                 </div>
-                <div className="text-center">
+                <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-white">{candidate.Desfavorabilidad}%</div>
+                  <div className="text-sm text-purple-200">Desfavorabilidad</div>
+                </div>
+                <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <div className={`text-3xl font-bold ${balance >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {balance > 0 ? '+' : ''}{balance}
                   </div>
-                  <div className="text-sm text-rose-200">Balance Neto</div>
+                  <div className="text-sm text-purple-200">Balance</div>
                 </div>
               </div>
-            </div>
-
-            {/* Candidate Photo */}
-            <div className="text-center">
-              <div className="relative inline-block">
-                <img
-                  src={profile?.imageUrl || getPlaceholderImage(candidate.Candidato)}
-                  alt={candidate.Candidato}
-                  className="w-80 h-80 rounded-full object-cover border-8 border-white/20 shadow-2xl"
-                />
-                <div className="absolute -top-4 -right-4 bg-yellow-500 text-yellow-900 px-4 py-2 rounded-xl font-bold shadow-lg">
-                  #{ranking}
+              
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full">
+                  <MapPin className="h-4 w-4" />
+                  <span>{candidate.Región_Origen}</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full">
+                  <Calendar className="h-4 w-4" />
+                  <span>{candidate.Edad} años</span>
+                </div>
+                <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full">
+                  <Users className="h-4 w-4" />
+                  <span>{candidate.Generación}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Detailed Analysis */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Stats */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Electoral Performance */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Rendimiento Electoral
-                </h2>
+      </div>
+      
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Perfil Político</h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Partido / Movimiento</h3>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <div className="text-xl font-medium text-purple-800">{candidate.Partido_Movimiento}</div>
+                    <div className="text-sm text-gray-600 mt-1">{candidate.Tipo_Candidatura}</div>
+                  </div>
+                </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                      Intención de Voto
-                    </h3>
-                    <div className="text-4xl font-bold text-rose-600 mb-2">
-                      {candidate.Intención_Voto_Porcentaje}%
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
-                      <div
-                        className="bg-rose-600 h-4 rounded-full transition-all duration-1000"
-                        style={{ width: `${(candidate.Intención_Voto_Porcentaje / 15) * 100}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Posición #{ranking} en el ranking nacional de candidatos
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Trayectoria Política</h3>
+                  <div className="prose text-gray-600">
+                    <p>
+                      {candidate.Candidato} es un político colombiano con experiencia en {candidate.Cargo_Actual.toLowerCase()}. 
+                      Pertenece a la tendencia {candidate.Tendencia_Política.toLowerCase()} del espectro político y 
+                      actualmente se desempeña como {candidate.Cargo_Actual}.
+                    </p>
+                    <p>
+                      Originario de {candidate.Región_Origen}, ha desarrollado su carrera política 
+                      representando los intereses de esta región y promoviendo políticas alineadas 
+                      con su visión {candidate.Tendencia_Política.toLowerCase()} del país.
                     </p>
                   </div>
-                  
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                      Favorabilidad vs Desfavorabilidad
-                    </h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">Favorabilidad</span>
-                        <span className="text-lg font-bold text-green-600">
-                          {candidate.Favorabilidad}%
-                        </span>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Posicionamiento Electoral</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-sm font-medium text-gray-700">Intención de voto</span>
+                        <span className="text-sm font-bold text-purple-600">{candidate.Intención_Voto_Porcentaje}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-green-500 h-2 rounded-full"
-                          style={{ width: `${candidate.Favorabilidad}%` }}
-                        ></div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">Desfavorabilidad</span>
-                        <span className="text-lg font-bold text-red-600">
-                          {candidate.Desfavorabilidad}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-red-500 h-2 rounded-full"
-                          style={{ width: `${candidate.Desfavorabilidad}%` }}
+                      <div className="w-full bg-gray-200 rounded-full h-2.5">
+                        <div 
+                          className="bg-purple-600 h-2.5 rounded-full" 
+                          style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 6, 100)}%` }}
                         ></div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Political Profile */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100">
-                <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white p-6 rounded-t-2xl">
-                  <h2 className="text-3xl font-bold mb-2">
-                    Perfil Político
-                  </h2>
-                  <p className="text-rose-100">Información detallada del candidato</p>
-                </div>
-                
-                <div className="p-8 space-y-8">
-                  {profile?.perfil.map((section, index) => (
-                    <div key={index} className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 border border-rose-100 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <div className="w-2 h-8 bg-gradient-to-b from-rose-500 to-pink-600 rounded-full mr-4"></div>
-                        <h3 className="text-2xl font-bold text-gray-800">
-                          {section.titulo}
-                        </h3>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm font-medium text-gray-700">Favorabilidad</span>
+                          <span className="text-sm font-bold text-green-600">{candidate.Favorabilidad}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5">
+                          <div 
+                            className="bg-green-500 h-2.5 rounded-full" 
+                            style={{ width: `${candidate.Favorabilidad}%` }}
+                          ></div>
+                        </div>
                       </div>
-                      <div className="ml-6">
-                        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                          <ReactMarkdown 
-                            components={{
-                              p: ({node, ...props}) => <p className="mb-4 text-gray-700 leading-relaxed" {...props} />,
-                              strong: ({node, ...props}) => <strong className="font-bold text-gray-900" {...props} />,
-                              ul: ({node, ...props}) => <ul className="list-disc list-inside mb-4 space-y-2 text-gray-700" {...props} />,
-                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                              h4: ({node, ...props}) => <h4 className="text-lg font-bold text-gray-800 mt-6 mb-3" {...props} />,
-                              h5: ({node, ...props}) => <h5 className="text-base font-semibold text-gray-800 mt-4 mb-2" {...props} />
-                            }}
-                          >
-                            {section.contenido}
-                          </ReactMarkdown>
+                      
+                      <div>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm font-medium text-gray-700">Desfavorabilidad</span>
+                          <span className="text-sm font-bold text-red-600">{candidate.Desfavorabilidad}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5">
+                          <div 
+                            className="bg-red-500 h-2.5 rounded-full" 
+                            style={{ width: `${candidate.Desfavorabilidad}%` }}
+                          ></div>
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Quick Stats */}
-              <div className="bg-white rounded-2xl shadow-lg border border-rose-100 overflow-hidden">
-                <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white p-4">
-                  <h3 className="text-lg font-bold">
-                    Estadísticas Rápidas
-                  </h3>
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-rose-50 rounded-lg">
-                    <span className="text-sm font-medium text-gray-700">Ranking Nacional</span>
-                    <span className="font-bold text-rose-600 text-lg">#{ranking}</span>
+            
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Análisis Electoral</h2>
+              
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-purple-800 mb-2">Fortalezas</h3>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        <span>
+                          {candidate.Favorabilidad > 35 ? 'Alta favorabilidad entre el electorado' : 
+                           candidate.Favorabilidad > 25 ? 'Favorabilidad moderada' : 
+                           'Base de apoyo leal aunque reducida'}
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        <span>
+                          {candidate.Tendencia_Política === 'Centro' ? 'Posición centrista atractiva para votantes moderados' : 
+                           candidate.Tendencia_Política === 'Izquierda' ? 'Fuerte apoyo en sectores progresistas' : 
+                           'Respaldo significativo en sectores conservadores'}
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2">•</span>
+                        <span>
+                          {candidate.Región_Origen === 'Bogotá' ? 'Fuerte presencia en la capital' : 
+                           `Arraigo regional en ${candidate.Región_Origen}`}
+                        </span>
+                      </li>
+                    </ul>
                   </div>
                   
-                  <div className="flex items-center justify-between p-3 bg-rose-50 rounded-lg">
-                    <span className="text-sm font-medium text-gray-700">Balance Neto</span>
-                    <span className={`font-bold text-lg ${balance >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {balance > 0 ? '+' : ''}{balance}%
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Desafíos</h3>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-gray-500 mr-2">•</span>
+                        <span>
+                          {candidate.Desfavorabilidad > 45 ? 'Alta desfavorabilidad limita crecimiento potencial' : 
+                           candidate.Desfavorabilidad > 35 ? 'Desfavorabilidad moderada a superar' : 
+                           'Necesita aumentar reconocimiento entre el electorado'}
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-gray-500 mr-2">•</span>
+                        <span>
+                          {candidate.Intención_Voto_Porcentaje < 5 ? 'Baja intención de voto actual' : 
+                           candidate.Intención_Voto_Porcentaje < 10 ? 'Intención de voto moderada' : 
+                           'Consolidar apoyo frente a competencia directa'}
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-gray-500 mr-2">•</span>
+                        <span>
+                          {candidate.Tendencia_Política === 'Centro' ? 'Competencia en el espacio de centro político' : 
+                           candidate.Tendencia_Política === 'Izquierda' ? 'Fragmentación en el espectro de izquierda' : 
+                           'Disputas internas en el sector de derecha'}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Proyección Electoral</h3>
+                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-4 rounded-lg">
+                    <p className="text-gray-700">
+                      {candidate.Intención_Voto_Porcentaje > 10 ? 
+                        `Con una intención de voto del ${candidate.Intención_Voto_Porcentaje}%, ${candidate.Candidato} se posiciona entre los candidatos con mayores posibilidades de pasar a segunda vuelta.` : 
+                        candidate.Intención_Voto_Porcentaje > 5 ? 
+                        `Con ${candidate.Intención_Voto_Porcentaje}% de intención de voto, ${candidate.Candidato} necesita consolidar alianzas para mejorar sus perspectivas electorales.` : 
+                        `Con ${candidate.Intención_Voto_Porcentaje}% de intención actual, ${candidate.Candidato} enfrenta el desafío de aumentar significativamente su apoyo para ser competitivo.`
+                      }
+                    </p>
+                    <p className="text-gray-700 mt-2">
+                      {balance > 0 ? 
+                        `Su balance de favorabilidad positivo (+${balance}) le otorga potencial de crecimiento en segunda vuelta.` : 
+                        balance > -15 ? 
+                        `Su balance de favorabilidad (${balance}) representa un desafío moderado para crecer en segunda vuelta.` : 
+                        `Su alto nivel de rechazo (balance de ${balance}) limita significativamente su techo electoral en segunda vuelta.`
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Datos Demográficos</h2>
+              
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
+                    <span>Edad</span>
+                    <span className="font-medium">{candidate.Edad} años</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div 
+                      className="bg-purple-600 h-1.5 rounded-full" 
+                      style={{ width: `${(candidate.Edad / 80) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Generación</span>
+                  <span className="font-medium text-gray-900">{candidate.Generación}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Región de origen</span>
+                  <span className="font-medium text-gray-900">{candidate.Región_Origen}</span>
+                </div>
+                
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="text-gray-600">Tipo de candidatura</span>
+                  <span className="font-medium text-gray-900">{candidate.Tipo_Candidatura}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Comparativa</h2>
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Intención de voto</span>
+                  </div>
+                  <span className="font-bold text-purple-600">{candidate.Intención_Voto_Porcentaje}%</span>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Promedio {candidate.Tendencia_Política}</span>
+                  </div>
+                  <span className="font-bold text-green-600">
+                    {candidate.Tendencia_Política === 'Izquierda' ? '23.0%' : 
+                     candidate.Tendencia_Política === 'Centro' ? '27.0%' : 
+                     '29.0%'}
+                  </span>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Promedio general</span>
+                  </div>
+                  <span className="font-bold text-red-600">8.2%</span>
+                </div>
+                
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                  <div className="text-sm text-gray-600 mb-2">Posición relativa</div>
+                  <div className="flex items-center">
+                    <div className="flex-1 bg-gray-200 h-2 rounded-l-full overflow-hidden">
+                      <div className="bg-purple-600 h-full" style={{ width: '100%' }}></div>
+                    </div>
+                    <div className="px-2 text-sm font-bold">#{candidate.Ranking}</div>
+                    <div className="flex-1 bg-gray-200 h-2 rounded-r-full"></div>
+                  </div>
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>1°</span>
+                    <span>32°</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Análisis Regional</h2>
+              
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-gray-600">Caribe</span>
+                    <span className="font-medium text-gray-900">
+                      {candidate.Candidato === 'Gustavo Bolívar' ? '25.9%' : 
+                       candidate.Candidato === 'Sergio Fajardo' ? '20.1%' : 
+                       candidate.Candidato === 'Vicky Dávila' ? '8.4%' : 
+                       candidate.Candidato === 'María Fernanda Cabal' ? '6.2%' : 
+                       candidate.Candidato === 'Germán Vargas Lleras' ? '7.5%' : '5.2%'}
                     </span>
                   </div>
-                  
-                  <div className="flex items-center justify-between p-3 bg-rose-50 rounded-lg">
-                    <span className="text-sm font-medium text-gray-700">Edad</span>
-                    <span className="font-bold text-gray-900 text-lg">{candidate.Edad} años</span>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div 
+                      className="bg-purple-600 h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${
+                          candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
+                          candidate.Candidato === 'Sergio Fajardo' ? 78 : 
+                          candidate.Candidato === 'Vicky Dávila' ? 32 : 
+                          candidate.Candidato === 'María Fernanda Cabal' ? 24 : 
+                          candidate.Candidato === 'Germán Vargas Lleras' ? 29 : 20
+                        }%` 
+                      }}
+                    ></div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-gray-600">Andina</span>
+                    <span className="font-medium text-gray-900">
+                      {candidate.Candidato === 'Gustavo Bolívar' ? '10.2%' : 
+                       candidate.Candidato === 'Sergio Fajardo' ? '12.8%' : 
+                       candidate.Candidato === 'Vicky Dávila' ? '12.5%' : 
+                       candidate.Candidato === 'María Fernanda Cabal' ? '8.4%' : 
+                       candidate.Candidato === 'Germán Vargas Lleras' ? '6.2%' : '5.8%'}
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div 
+                      className="bg-purple-600 h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${
+                          candidate.Candidato === 'Gustavo Bolívar' ? 80 : 
+                          candidate.Candidato === 'Sergio Fajardo' ? 100 : 
+                          candidate.Candidato === 'Vicky Dávila' ? 98 : 
+                          candidate.Candidato === 'María Fernanda Cabal' ? 66 : 
+                          candidate.Candidato === 'Germán Vargas Lleras' ? 48 : 45
+                        }%` 
+                      }}
+                    ></div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-gray-600">Pacífica</span>
+                    <span className="font-medium text-gray-900">
+                      {candidate.Candidato === 'Gustavo Bolívar' ? '15.8%' : 
+                       candidate.Candidato === 'Sergio Fajardo' ? '14.3%' : 
+                       candidate.Candidato === 'Vicky Dávila' ? '9.6%' : 
+                       candidate.Candidato === 'María Fernanda Cabal' ? '4.1%' : 
+                       candidate.Candidato === 'Germán Vargas Lleras' ? '4.5%' : '4.0%'}
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div 
+                      className="bg-purple-600 h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${
+                          candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
+                          candidate.Candidato === 'Sergio Fajardo' ? 90 : 
+                          candidate.Candidato === 'Vicky Dávila' ? 61 : 
+                          candidate.Candidato === 'María Fernanda Cabal' ? 26 : 
+                          candidate.Candidato === 'Germán Vargas Lleras' ? 28 : 25
+                        }%` 
+                      }}
+                    ></div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-gray-600">Orinoquía</span>
+                    <span className="font-medium text-gray-900">
+                      {candidate.Candidato === 'Gustavo Bolívar' ? '5.4%' : 
+                       candidate.Candidato === 'Sergio Fajardo' ? '8.2%' : 
+                       candidate.Candidato === 'Vicky Dávila' ? '15.7%' : 
+                       candidate.Candidato === 'María Fernanda Cabal' ? '12.3%' : 
+                       candidate.Candidato === 'Germán Vargas Lleras' ? '8.9%' : '5.0%'}
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-1.5">
+                    <div 
+                      className="bg-purple-600 h-1.5 rounded-full" 
+                      style={{ 
+                        width: `${
+                          candidate.Candidato === 'Gustavo Bolívar' ? 34 : 
+                          candidate.Candidato === 'Sergio Fajardo' ? 52 : 
+                          candidate.Candidato === 'Vicky Dávila' ? 100 : 
+                          candidate.Candidato === 'María Fernanda Cabal' ? 78 : 
+                          candidate.Candidato === 'Germán Vargas Lleras' ? 57 : 32
+                        }%` 
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>
-
-              {/* Competitive Analysis */}
-              <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl border border-rose-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white p-4">
-                  <h3 className="text-lg font-bold">
-                    Análisis Competitivo
-                  </h3>
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  {ranking <= 3 && (
-                    <div className="flex items-center space-x-3 p-3 bg-green-100 rounded-lg border border-green-200">
-                      <Award className="h-5 w-5 text-green-700" />
-                      <span className="font-medium text-green-800">Top 3 nacional</span>
-                    </div>
-                  )}
-                  
-                  {balance > 0 && (
-                    <div className="flex items-center space-x-3 p-3 bg-green-100 rounded-lg border border-green-200">
-                      <TrendingUp className="h-5 w-5 text-green-700" />
-                      <span className="font-medium text-green-800">Balance positivo de favorabilidad</span>
-                    </div>
-                  )}
-                  
-                  {candidate.Intención_Voto_Porcentaje > 10 && (
-                    <div className="flex items-center space-x-3 p-3 bg-blue-100 rounded-lg border border-blue-200">
-                      <Users className="h-5 w-5 text-blue-700" />
-                      <span className="font-medium text-blue-800">Candidato con opciones reales</span>
-                    </div>
-                  )}
-                  
-                  <div className="flex items-center space-x-3 p-3 bg-gray-100 rounded-lg border border-gray-200">
-                    <MapPin className="h-5 w-5 text-gray-700" />
-                    <span className="font-medium text-gray-800">Origen: {candidate.Región_Origen}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Actions */}
-              <div className="bg-white rounded-2xl shadow-lg border border-rose-100 overflow-hidden">
-                <div className="bg-gradient-to-r from-rose-500 to-pink-600 text-white p-4">
-                  <h3 className="text-lg font-bold">
-                    Más Información
-                  </h3>
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <Link
-                    to="/analisis"
-                    className="w-full bg-gradient-to-r from-rose-600 to-pink-600 text-white py-3 px-4 rounded-lg hover:from-rose-700 hover:to-pink-700 transition-all shadow-md flex items-center justify-center space-x-2 font-medium"
-                  >
-                    <span>Ver Análisis Completo</span>
-                    <ExternalLink className="h-4 w-4" />
-                  </Link>
-                  
-                  <button className="w-full border-2 border-rose-200 text-rose-700 bg-rose-50 py-3 px-4 rounded-lg hover:bg-rose-100 hover:border-rose-300 transition-all flex items-center justify-center space-x-2 font-medium">
-                    <Calendar className="h-4 w-4" />
-                    <span>Cronograma Electoral</span>
-                  </button>
+              
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="text-sm text-gray-500">
+                  {candidate.Candidato === 'Gustavo Bolívar' ? 'Mayor fortaleza en región Caribe y Pacífica' : 
+                   candidate.Candidato === 'Sergio Fajardo' ? 'Distribución equilibrada en todas las regiones' : 
+                   candidate.Candidato === 'Vicky Dávila' ? 'Dominio en Orinoquía y competitiva en región Andina' : 
+                   candidate.Candidato === 'María Fernanda Cabal' ? 'Fuerte en Orinoquía, débil en Pacífica' : 
+                   candidate.Candidato === 'Germán Vargas Lleras' ? 'Presencia moderada en todas las regiones' : 
+                   'Distribución regional variable'}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+        
+        {/* Bottom Section */}
+        <div className="mt-12">
+          <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8 border border-purple-100">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Escenarios de Segunda Vuelta</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Probabilidades</h3>
+                <div className="space-y-4">
+                  {candidate.Candidato === 'Gustavo Bolívar' ? (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Vicky Dávila</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">43.5%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">46.8%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Sergio Fajardo</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">41.2%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">48.5%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. María F. Cabal</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">42.3%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">44.7%</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : candidate.Candidato === 'Vicky Dávila' ? (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Gustavo Bolívar</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">46.8%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">43.5%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Sergio Fajardo</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">35.2%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">38.6%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Germán Vargas</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">37.4%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">32.6%</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : candidate.Candidato === 'Sergio Fajardo' ? (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Gustavo Bolívar</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">48.5%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">41.2%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Vicky Dávila</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">38.6%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">35.2%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Germán Vargas</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">45.2%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">28.8%</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Líder 1</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">38.5%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">42.3%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Líder 2</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">36.2%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">44.5%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Líder 3</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">37.8%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">41.2%</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Análisis de Competitividad</h3>
+                <div className="prose text-sm text-gray-600">
+                  <p>
+                    {balance > 0 ? 
+                      `${candidate.Candidato} presenta un balance de favorabilidad positivo (+${balance}), lo que le otorga ventaja competitiva en escenarios de segunda vuelta donde la capacidad de atraer votantes indecisos es crucial.` : 
+                      balance > -15 ? 
+                      `Con un balance de favorabilidad de ${balance} puntos, ${candidate.Candidato} enfrenta desafíos moderados para expandir su base electoral en segunda vuelta, aunque mantiene opciones viables.` : 
+                      `El alto nivel de rechazo (${balance} puntos) limita significativamente el techo electoral de ${candidate.Candidato} en escenarios de segunda vuelta, requiriendo estrategias para mejorar su imagen.`
+                    }
+                  </p>
+                  <p>
+                    {candidate.Tendencia_Política === 'Centro' ? 
+                      `Su posición de centro le permite atraer votantes de ambos extremos del espectro político, aumentando su competitividad en segunda vuelta.` : 
+                      candidate.Tendencia_Política === 'Izquierda' ? 
+                      `Como candidato de izquierda, su desafío será ampliar su base más allá de su núcleo ideológico para ser competitivo en segunda vuelta.` : 
+                      `Su perfil de derecha le otorga una base sólida, pero necesitará moderar su discurso para atraer votantes de centro en un eventual balotaje.`
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Footer */}
+      <div className="bg-gray-100 py-8">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-gray-600">
+            Panorama Electoral Colombia 2026: Análisis Estadístico Integral
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Datos actualizados a Junio 2025 • Margen de error: ±3.2%
+          </p>
+          <p className="text-xs text-purple-500 mt-2">
+            Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
