@@ -9,6 +9,7 @@ import TrendAnalysis from '../components/TrendAnalysis';
 import RegionalMap from '../components/RegionalMap';
 import TimelineSection from '../components/TimelineSection';
 import ElectoralInsights from '../components/ElectoralInsights';
+import NoticiasDelDia from '../components/NoticiasDelDia';
 import Footer from '../components/Footer';
 
 interface HomePageProps {
@@ -63,6 +64,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 }`}
               >
                 Candidatos
+              </button>
+              <button 
+                onClick={() => scrollToSection('noticias')}
+                className={`text-sm font-medium transition-colors ${
+                  activeSection === 'noticias' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                }`}
+              >
+                Noticias
               </button>
               <button 
                 onClick={() => scrollToSection('insights')}
@@ -142,10 +151,20 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
         </div>
       </section>
 
+      {/* Noticias del Día Section */}
+      <section 
+        ref={el => sectionsRef.current['noticias'] = el}
+        className="py-20 bg-gray-50"
+      >
+        <div className="container mx-auto px-6">
+          <NoticiasDelDia />
+        </div>
+      </section>
+
       {/* Analysis Section */}
       <section 
         ref={el => sectionsRef.current['analysis'] = el}
-        className="py-20 bg-gray-50"
+        className="py-20 bg-white"
       >
         <TrendAnalysis candidates={candidates} />
       </section>
