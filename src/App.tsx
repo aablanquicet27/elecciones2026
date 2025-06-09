@@ -5,6 +5,7 @@ import CandidatePage from './pages/CandidatePage';
 import AnalysisPage from './pages/AnalysisPage';
 import { Candidate } from './types/election';
 import { parseCandidateData } from './utils/csvParser';
+import AIChatBubble from './components/AIChatBubble';
 
 function App() {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
@@ -45,6 +46,7 @@ function App() {
         <Route path="/candidato/:slug" element={<CandidatePage candidates={candidates} />} />
         <Route path="/analisis" element={<AnalysisPage candidates={candidates} />} />
       </Routes>
+      <AIChatBubble />
     </Router>
   );
 }
