@@ -1,64 +1,60 @@
-import React, { useState, useEffect, useRef } from ‘react’;
-import { MessageSquare, X, Send, Minimize2, ChevronDown, Bot } from ‘lucide-react’;
+import React, { useState, useEffect, useRef } from 'react';
+import { MessageSquare, X, Send, Minimize2, ChevronDown, Bot } from 'lucide-react';
 
 interface Message {
-id: string;
-content: string;
-sender: ‘user’ | ‘ai’;
-timestamp: Date;
+  id: string;
+  content: string;
+  sender: 'user' | 'ai';
+  timestamp: Date;
 }
 
 const AIChatBubble: React.FC = () => {
-const [isOpen, setIsOpen] = useState(false);
-const [messages, setMessages] = useState<Message[]>([
-{
-id: ‘1’,
-content: ‘Hola, soy tu asistente electoral especializado en Colombia 2026. Tengo acceso a toda la información actualizada sobre candidatos, encuestas, análisis regional y proyecciones. ¿En qué puedo ayudarte?’,
-sender: ‘ai’,
-timestamp: new Date(),
-},
-]);
-const [inputValue, setInputValue] = useState(’’);
-const [isTyping, setIsTyping] = useState(false);
-const [isLoading, setIsLoading] = useState(false);
-const messagesEndRef = useRef<HTMLDivElement>(null);
-const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: '1',
+      content: 'Hola, soy tu asistente electoral especializado en Colombia 2026. Tengo acceso a toda la información actualizada sobre candidatos, encuestas, análisis regional y proyecciones. ¿En qué puedo ayudarte?',
+      sender: 'ai',
+      timestamp: new Date(),
+    },
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-const checkMobile = () => {
-setIsMobile(window.innerWidth < 768);
-};
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-```
-checkMobile();
-window.addEventListener('resize', checkMobile);
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
-return () => window.removeEventListener('resize', checkMobile);
-```
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+  };
 
-}, []);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
 
-useEffect(() => {
-if (messagesEndRef.current) {
-messagesEndRef.current.scrollIntoView({ behavior: ‘smooth’ });
-}
-}, [messages]);
-
-const toggleChat = () => {
-setIsOpen(!isOpen);
-};
-
-const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-setInputValue(e.target.value);
-};
-
-const SYSTEM_CONTEXT = `
+  const SYSTEM_CONTEXT = `
 Eres un asistente conversacional inteligente y amigable. Aunque tienes especialización en las elecciones presidenciales de Colombia 2026, puedes conversar sobre cualquier tema de manera natural y útil.
 
 INFORMACIÓN ESPECIALIZADA SOBRE ELECCIONES COLOMBIA 2026:
 
 DATOS GENERALES:
-
 - Período de encuestas: Abril-Junio 2025
 - Muestra: 3,200 personas encuestadas
 - Margen de error: ±3.2%
@@ -69,7 +65,6 @@ DATOS GENERALES:
 CANDIDATOS PRINCIPALES (TOP 10):
 
 1. GUSTAVO BOLÍVAR (Líder actual)
-
 - Intención de voto: 12.6%
 - Tendencia política: Izquierda
 - Favorabilidad: 34% | Desfavorabilidad: 48% | Balance: -14
@@ -77,8 +72,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Bogotá | Edad: 63 años | Generación: Senior (>60)
 - Cargo: Ex-director Prosperidad Social
 
-1. VICKY DÁVILA
-
+2. VICKY DÁVILA
 - Intención de voto: 11.6%
 - Tendencia política: Derecha
 - Favorabilidad: 38% | Desfavorabilidad: 44% | Balance: -6
@@ -87,8 +81,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Cargo: Ex-Directora Semana
 - Líder en redes sociales: 3.6M seguidores totales
 
-1. SERGIO FAJARDO
-
+3. SERGIO FAJARDO
 - Intención de voto: 11.4%
 - Tendencia política: Centro
 - Favorabilidad: 42% | Desfavorabilidad: 32% | Balance: +10
@@ -96,8 +89,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Antioquia | Edad: 67 años
 - Cargo: Ex-Gobernador de Antioquia
 
-1. GERMÁN VARGAS LLERAS
-
+4. GERMÁN VARGAS LLERAS
 - Intención de voto: 5.6%
 - Tendencia política: Derecha
 - Favorabilidad: 29% | Desfavorabilidad: 54% | Balance: -25
@@ -105,8 +97,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Cundinamarca | Edad: 65 años
 - Cargo: Ex-Vicepresidente
 
-1. CLAUDIA LÓPEZ
-
+5. CLAUDIA LÓPEZ
 - Intención de voto: 4.7%
 - Tendencia política: Centro
 - Favorabilidad: 31% | Desfavorabilidad: 45% | Balance: -14
@@ -115,8 +106,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Cargo: Ex-Alcaldesa de Bogotá
 - Redes sociales: 3.5M seguidores totales
 
-1. MARÍA FERNANDA CABAL
-
+6. MARÍA FERNANDA CABAL
 - Intención de voto: 4.6%
 - Tendencia política: Derecha
 - Favorabilidad: 27% | Desfavorabilidad: 56% | Balance: -29
@@ -124,8 +114,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Valle del Cauca | Edad: 58 años
 - Cargo: Senadora
 
-1. MIGUEL URIBE TURBAY
-
+7. MIGUEL URIBE TURBAY
 - Intención de voto: 4.5%
 - Tendencia política: Derecha
 - Favorabilidad: 32% | Desfavorabilidad: 40% | Balance: -8
@@ -133,8 +122,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Bogotá | Edad: 39 años
 - Cargo: Senador
 
-1. JUAN MANUEL GALÁN
-
+8. JUAN MANUEL GALÁN
 - Intención de voto: 4.0%
 - Tendencia política: Centro
 - Favorabilidad: 40% | Desfavorabilidad: 28% | Balance: +12
@@ -142,8 +130,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Bogotá | Edad: 61 años
 - Cargo: Ex-Senador
 
-1. DANIEL QUINTERO
-
+9. DANIEL QUINTERO
 - Intención de voto: 3.8%
 - Tendencia política: Izquierda
 - Favorabilidad: 23% | Desfavorabilidad: 58% | Balance: -35
@@ -151,8 +138,7 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Región: Antioquia | Edad: 44 años
 - Cargo: Ex-Alcalde de Medellín
 
-1. MARÍA JOSÉ PIZARRO
-
+10. MARÍA JOSÉ PIZARRO
 - Intención de voto: 2.6%
 - Tendencia política: Izquierda
 - Favorabilidad: 29% | Desfavorabilidad: 41% | Balance: -12
@@ -161,7 +147,6 @@ CANDIDATOS PRINCIPALES (TOP 10):
 - Cargo: Senadora
 
 ANÁLISIS POR TENDENCIAS POLÍTICAS:
-
 - Izquierda: 23.0% (caída de -17.3 puntos vs 2022)
 - Centro: 27.0% (caída de -1.2 puntos vs 2022)
 - Derecha: 29.0% (crecimiento de +0.5 puntos vs 2022)
@@ -182,254 +167,238 @@ Adultos 45-54: Dávila 13.5% | Fajardo 11.8% | Bolívar 8.6%
 Adultos Mayores 55+: Dávila 14.2% | Fajardo 10.9% | Vargas 8.2%
 
 ESCENARIOS DE SEGUNDA VUELTA:
-
 1. Bolívar vs. Dávila (25% probabilidad): Dávila 46.8% vs Bolívar 43.5%
-1. Bolívar vs. Fajardo (20% probabilidad): Fajardo 48.5% vs Bolívar 41.2%
-1. Fajardo vs. Dávila (18% probabilidad): Fajardo 38.6% vs Dávila 35.2%
-1. Dávila vs. Vargas (15% probabilidad): Dávila 37.4% vs Vargas 32.6%
-1. Bolívar vs. Cabal (12% probabilidad): Cabal 44.7% vs Bolívar 42.3%
+2. Bolívar vs. Fajardo (20% probabilidad): Fajardo 48.5% vs Bolívar 41.2%
+3. Fajardo vs. Dávila (18% probabilidad): Fajardo 38.6% vs Dávila 35.2%
+4. Dávila vs. Vargas (15% probabilidad): Dávila 37.4% vs Vargas 32.6%
+5. Bolívar vs. Cabal (12% probabilidad): Cabal 44.7% vs Bolívar 42.3%
 
 HALLAZGOS PRINCIPALES:
-
 1. Fragmentación histórica: Ningún candidato supera el 15%
-1. Colapso de la izquierda: Caída de 20.3 puntos vs 2022
-1. Aumento exponencial de indecisos: +18.0 puntos
-1. Factor digital determinante en campañas
-1. Polarización generacional marcada
-1. Dinámicas regionales diferenciadas
-1. Candidatos de centro mejor posicionados para segunda vuelta
+2. Colapso de la izquierda: Caída de 20.3 puntos vs 2022
+3. Aumento exponencial de indecisos: +18.0 puntos
+4. Factor digital determinante en campañas
+5. Polarización generacional marcada
+6. Dinámicas regionales diferenciadas
+7. Candidatos de centro mejor posicionados para segunda vuelta
 
 CRONOGRAMA ELECTORAL:
-
 - Agosto 2025: Cierre de inscripciones
 - Octubre 2025: Inicio campaña oficial
 - Mayo 2026: Primera vuelta
 - Junio 2026: Segunda vuelta (si es necesaria)
 
 INSTRUCCIONES DE CONVERSACIÓN:
-
 1. Sé natural, amigable y conversacional
-1. Puedes hablar de cualquier tema, no solo elecciones
-1. Cuando hables de elecciones, usa esta información especializada
-1. Mantén un tono profesional pero cercano
-1. Haz preguntas de seguimiento cuando sea apropiado
-1. Ofrece análisis y perspectivas cuando sea relevante
-1. Responde siempre en español
-1. Si no sabes algo, admítelo honestamente
-1. Puedes hacer chistes apropiados y ser empático
-1. Adapta tu respuesta al contexto de la conversación
+2. Puedes hablar de cualquier tema, no solo elecciones
+3. Cuando hables de elecciones, usa esta información especializada
+4. Mantén un tono profesional pero cercano
+5. Haz preguntas de seguimiento cuando sea apropiado
+6. Ofrece análisis y perspectivas cuando sea relevante
+7. Responde siempre en español
+8. Si no sabes algo, admítelo honestamente
+9. Puedes hacer chistes apropiados y ser empático
+10. Adapta tu respuesta al contexto de la conversación
 
 Recuerda: Eres un asistente conversacional completo, no solo un bot de elecciones. Puedes ayudar con muchos temas diferentes mientras mantienes tu especialización electoral cuando sea relevante.
 `;
 
-const callOpenAI = async (userMessage: string, conversationHistory: Message[]) => {
-try {
-const recentMessages = conversationHistory.slice(-20);
+  const callOpenAI = async (userMessage: string, conversationHistory: Message[]) => {
+    try {
+      const recentMessages = conversationHistory.slice(-20);
+      
+      const messages = [
+        {
+          role: 'system',
+          content: SYSTEM_CONTEXT
+        },
+        ...recentMessages.map(msg => ({
+          role: msg.sender === 'user' ? 'user' : 'assistant',
+          content: msg.content
+        })),
+        {
+          role: 'user',
+          content: userMessage
+        }
+      ];
 
-```
-  const messages = [
-    {
-      role: 'system',
-      content: SYSTEM_CONTEXT
-    },
-    ...recentMessages.map(msg => ({
-      role: msg.sender === 'user' ? 'user' : 'assistant',
-      content: msg.content
-    })),
-    {
-      role: 'user',
-      content: userMessage
-    }
-  ];
-
-const response = await fetch('https://api.openai.com/v1/chat/completions', {
-```
-
-method: ‘POST’,
-headers: {
-‘Content-Type’: ‘application/json’,
-‘Authorization’: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-},
-body: JSON.stringify({
-model: ‘gpt-4.1’,
-messages: messages,
-max_tokens: 1000,
-temperature: 0.7,
-}),
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+  },
+  body: JSON.stringify({
+    model: 'gpt-4.1',
+    messages: messages,
+    max_tokens: 1000,
+    temperature: 0.7,
+  }),
 });
 
-```
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.choices[0].message.content;
+    } catch (error) {
+      console.error('Error calling OpenAI:', error);
+      return 'Lo siento, hubo un error al procesar tu consulta. Por favor, intenta de nuevo.';
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!inputValue.trim() || isLoading) return;
+    
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      content: inputValue,
+      sender: 'user',
+      timestamp: new Date(),
+    };
+    
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInputValue('');
+    setIsLoading(true);
+    setIsTyping(true);
+    
+    try {
+      const aiResponse = await callOpenAI(inputValue, messages);
+      
+      const aiMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: aiResponse,
+        sender: 'ai',
+        timestamp: new Date(),
+      };
+      
+      setMessages(prev => [...prev, aiMessage]);
+    } catch (error) {
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: 'Lo siento, hubo un error al procesar tu consulta. Por favor, intenta de nuevo.',
+        sender: 'ai',
+        timestamp: new Date(),
+      };
+      
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+      setIsTyping(false);
+    }
+  };
+
+  if (!isOpen) {
+    return (
+      <button
+        onClick={toggleChat}
+        className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 z-50"
+        aria-label="Abrir chat"
+      >
+        <MessageSquare className="w-7 h-7" />
+      </button>
+    );
   }
 
-  const data = await response.json();
-  return data.choices[0].message.content;
-} catch (error) {
-  console.error('Error calling OpenAI:', error);
-  return 'Lo siento, hubo un error al procesar tu consulta. Por favor, intenta de nuevo.';
-}
-```
-
-};
-
-const handleSubmit = async (e: React.FormEvent) => {
-e.preventDefault();
-
-```
-if (!inputValue.trim() || isLoading) return;
-
-const userMessage: Message = {
-  id: Date.now().toString(),
-  content: inputValue,
-  sender: 'user',
-  timestamp: new Date(),
-};
-
-const updatedMessages = [...messages, userMessage];
-setMessages(updatedMessages);
-setInputValue('');
-setIsLoading(true);
-setIsTyping(true);
-
-try {
-  const aiResponse = await callOpenAI(inputValue, messages);
-  
-  const aiMessage: Message = {
-    id: (Date.now() + 1).toString(),
-    content: aiResponse,
-    sender: 'ai',
-    timestamp: new Date(),
-  };
-  
-  setMessages(prev => [...prev, aiMessage]);
-} catch (error) {
-  const errorMessage: Message = {
-    id: (Date.now() + 1).toString(),
-    content: 'Lo siento, hubo un error al procesar tu consulta. Por favor, intenta de nuevo.',
-    sender: 'ai',
-    timestamp: new Date(),
-  };
-  
-  setMessages(prev => [...prev, errorMessage]);
-} finally {
-  setIsLoading(false);
-  setIsTyping(false);
-}
-```
-
-};
-
-if (!isOpen) {
-return (
-<button
-onClick={toggleChat}
-className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-gradient-to-r from-purple-700 to-purple-900 text-white shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300 z-50"
-aria-label="Abrir chat"
->
-<MessageSquare className="w-7 h-7" />
-</button>
-);
-}
-
-return (
-<div
-className={`fixed ${isMobile ? 'inset-0' : 'bottom-6 right-6 w-96 h-[500px]'} bg-[#F7F0E8] rounded-lg shadow-2xl flex flex-col overflow-hidden z-50 transition-all duration-300`}
->
-<div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white p-4 flex items-center justify-between">
-<div className="flex items-center space-x-3">
-<div className="bg-white/20 p-2 rounded-full">
-<Bot className="w-5 h-5" />
-</div>
-<div>
-<h3 className="font-semibold">Asistente Inteligente</h3>
-<p className="text-xs text-purple-200">Especialista en Colombia 2026</p>
-</div>
-</div>
-<div className="flex items-center space-x-2">
-{!isMobile && (
-<button
-onClick={() => setIsOpen(false)}
-className=“p-1 hover:bg-white/20 rounded-full transition-colors”
-aria-label=“Minimizar”
->
-<Minimize2 className="w-5 h-5" />
-</button>
-)}
-<button 
-onClick={toggleChat} 
-className="p-1 hover:bg-white/20 rounded-full transition-colors"
-aria-label="Cerrar"
->
-{isMobile ? <ChevronDown className="w-5 h-5" /> : <X className="w-5 h-5" />}
-</button>
-</div>
-</div>
-
-```
-  <div className="flex-1 overflow-y-auto p-4 space-y-4">
-    {messages.map((message) => (
-      <div 
-        key={message.id} 
-        className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-      >
-        <div 
-          className={`max-w-[80%] rounded-lg p-3 ${
-            message.sender === 'user' 
-              ? 'bg-purple-600 text-white rounded-tr-none' 
-              : 'bg-white border border-gray-200 text-gray-800 rounded-tl-none'
-          }`}
-        >
-          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-          <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-purple-200' : 'text-gray-500'}`}>
-            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-          </p>
-        </div>
-      </div>
-    ))}
-    
-    {isTyping && (
-      <div className="flex justify-start">
-        <div className="bg-white border border-gray-200 text-gray-800 rounded-lg rounded-tl-none p-3 max-w-[80%]">
-          <div className="flex space-x-2">
-            <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '0ms' }}></div>
-            <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '150ms' }}></div>
-            <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '300ms' }}></div>
+  return (
+    <div 
+      className={`fixed ${isMobile ? 'inset-0' : 'bottom-6 right-6 w-96 h-[500px]'} bg-[#F7F0E8] rounded-lg shadow-2xl flex flex-col overflow-hidden z-50 transition-all duration-300`}
+    >
+      <div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white p-4 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <div className="bg-white/20 p-2 rounded-full">
+            <Bot className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-semibold">Asistente Inteligente</h3>
+            <p className="text-xs text-purple-200">Especialista en Colombia 2026</p>
           </div>
         </div>
+        <div className="flex items-center space-x-2">
+          {!isMobile && (
+            <button 
+              onClick={() => setIsOpen(false)} 
+              className="p-1 hover:bg-white/20 rounded-full transition-colors"
+              aria-label="Minimizar"
+            >
+              <Minimize2 className="w-5 h-5" />
+            </button>
+          )}
+          <button 
+            onClick={toggleChat} 
+            className="p-1 hover:bg-white/20 rounded-full transition-colors"
+            aria-label="Cerrar"
+          >
+            {isMobile ? <ChevronDown className="w-5 h-5" /> : <X className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
-    )}
-    
-    <div ref={messagesEndRef} />
-  </div>
-  
-  <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 bg-white">
-    <div className="flex items-center space-x-2">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        placeholder="Pregúntame lo que quieras..."
-        className="flex-1 border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-        disabled={isLoading}
-      />
-      <button
-        type="submit"
-        className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-2 rounded-full hover:shadow-md transition-all duration-200 disabled:opacity-50"
-        disabled={!inputValue.trim() || isLoading}
-        aria-label="Enviar"
-      >
-        <Send className="w-5 h-5" />
-      </button>
+      
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        {messages.map((message) => (
+          <div 
+            key={message.id} 
+            className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div 
+              className={`max-w-[80%] rounded-lg p-3 ${
+                message.sender === 'user' 
+                  ? 'bg-purple-600 text-white rounded-tr-none' 
+                  : 'bg-white border border-gray-200 text-gray-800 rounded-tl-none'
+              }`}
+            >
+              <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+              <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-purple-200' : 'text-gray-500'}`}>
+                {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </p>
+            </div>
+          </div>
+        ))}
+        
+        {isTyping && (
+          <div className="flex justify-start">
+            <div className="bg-white border border-gray-200 text-gray-800 rounded-lg rounded-tl-none p-3 max-w-[80%]">
+              <div className="flex space-x-2">
+                <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                <div className="w-2 h-2 rounded-full bg-purple-600 animate-bounce" style={{ animationDelay: '300ms' }}></div>
+              </div>
+            </div>
+          </div>
+        )}
+        
+        <div ref={messagesEndRef} />
+      </div>
+      
+      <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 bg-white">
+        <div className="flex items-center space-x-2">
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Pregúntame lo que quieras..."
+            className="flex-1 border border-gray-300 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            disabled={isLoading}
+          />
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-2 rounded-full hover:shadow-md transition-all duration-200 disabled:opacity-50"
+            disabled={!inputValue.trim() || isLoading}
+            aria-label="Enviar"
+          >
+            <Send className="w-5 h-5" />
+          </button>
+        </div>
+        <div className="mt-2 text-center">
+          <p className="text-xs text-gray-500">Desarrollado por <a href="https://brochure.agapai.com.co" className="text-purple-600 hover:underline">AGAPAI</a></p>
+        </div>
+      </form>
     </div>
-    <div className="mt-2 text-center">
-      <p className="text-xs text-gray-500">Desarrollado por <a href="https://brochure.agapai.com.co" className="text-purple-600 hover:underline">AGAPAI</a></p>
-    </div>
-  </form>
-</div>
-```
-
-);
+  );
 };
 
 export default AIChatBubble;
