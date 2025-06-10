@@ -222,19 +222,19 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
         }
       ];
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-  },
-  body: JSON.stringify({
-    model: 'gpt-4.1',
-    messages: messages,
-    max_tokens: 1000,
-    temperature: 0.7,
-  }),
-});
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: 'gpt-4',
+          messages: messages,
+          max_tokens: 1000,
+          temperature: 0.7,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
