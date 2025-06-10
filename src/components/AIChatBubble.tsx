@@ -225,19 +225,19 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
         }
       ];
 
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`,
-        },
-        body: JSON.stringify({
-          model: 'gpt-4',
-          messages: messages,
-          max_tokens: 1000,
-          temperature: 0.7,
-        }),
-      });
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+  },
+  body: JSON.stringify({
+    model: 'gpt-4.1',
+    messages: messages,
+    max_tokens: 1000,
+    temperature: 0.7,
+  }),
+});
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
