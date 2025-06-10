@@ -205,7 +205,6 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
 
   const callOpenAI = async (userMessage: string, conversationHistory: Message[]) => {
     try {
-      // Preparar el historial de conversación (últimos 20 mensajes)
       const recentMessages = conversationHistory.slice(-20);
       
       const messages = [
@@ -213,12 +212,10 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
           role: 'system',
           content: SYSTEM_CONTEXT
         },
-        // Agregar historial de conversación
         ...recentMessages.map(msg => ({
           role: msg.sender === 'user' ? 'user' : 'assistant',
           content: msg.content
         })),
-        // Agregar el mensaje actual
         {
           role: 'user',
           content: userMessage
@@ -229,7 +226,7 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`,
+          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
           model: 'gpt-4',
@@ -270,7 +267,6 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
     setIsTyping(true);
     
     try {
-      // Pasar el historial completo para mantener contexto
       const aiResponse = await callOpenAI(inputValue, messages);
       
       const aiMessage: Message = {
@@ -312,7 +308,6 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
     <div 
       className={`fixed ${isMobile ? 'inset-0' : 'bottom-6 right-6 w-96 h-[500px]'} bg-[#F7F0E8] rounded-lg shadow-2xl flex flex-col overflow-hidden z-50 transition-all duration-300`}
     >
-      {/* Header */}
       <div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white p-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="bg-white/20 p-2 rounded-full">
@@ -343,7 +338,6 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
         </div>
       </div>
       
-      {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
           <div 
@@ -380,7 +374,6 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
         <div ref={messagesEndRef} />
       </div>
       
-      {/* Input */}
       <form onSubmit={handleSubmit} className="p-4 border-t border-gray-200 bg-white">
         <div className="flex items-center space-x-2">
           <input
