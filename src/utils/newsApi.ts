@@ -11,6 +11,36 @@
  * - datos (Array): La lista de artículos validados.
  * - error (string|null): Un mensaje de error si algo falló.
  */
+
+// Definir tipos para mejor manejo de TypeScript
+interface Articulo {
+  title: string;
+  date: string;
+  source: string;
+  content: string;
+  candidates: string[];
+  political_parties: string[];
+  [key: string]: any; // Para campos adicionales
+}
+
+interface RespuestaAPI {
+  success: boolean;
+  data: {
+    data: {
+      articles: Articulo[];
+    };
+    schema?: {
+      properties?: {
+        articles?: {
+          items?: {
+            required?: string[];
+          };
+        };
+      };
+    };
+  };
+}
+
 export async function obtenerNoticiasProcesadas() {
   const url = 'https://elecciones202.onrender.com/daily-news';
 
@@ -20,26 +50,54 @@ export async function obtenerNoticiasProcesadas() {
     if (!respuestaServidor.ok) {
       throw new Error(`Error de red del servidor: ${respuestaServidor.status}`);
     }
-    const jsonCompleto = await respuestaServidor.json();
+    const jsonCompleto: RespuestaAPI = await respuestaServidor.json();
 
     // --- PASO 2: PROCESAR EL JSON Y VALIDAR CON EL SCHEMA ---
     if (!jsonCompleto || !jsonCompleto.success || !jsonCompleto.data?.data?.articles) {
       throw new Error("La respuesta de la API es inválida o no contiene la estructura esperada.");
     }
 
-    const articulosCrudos = jsonCompleto.data.data.articles;
+    const articulosCrudos: Articulo[] = jsonCompleto.data.data.articles;
     const schema = jsonCompleto.data.schema;
-    const camposRequeridos = schema?.properties?.articles?.items?.required;
+    const camposRequeridos: string[] | undefined = schema?.properties?.articles?.items?.required;
 
-    if (!camposRequeridos) {
-      console.warn("No se encontró un schema para validar. Se devolverán los datos sin filtrar.");
+    // Si no hay schema o campos requeridos, devolver todos los artículos sin filtrar
+    if (!camposRequeridos || camposRequeridos.length === 0) {
+      console.warn("No se encontró un schema para validar. Se devolverán todos los artículos sin filtrar.");
       return { exito: true, datos: articulosCrudos, error: null };
     }
     
-    const articulosValidados = articulosCrudos.filter(articulo => {
+    // Validar artículos con el schema
+    const articulosValidados = articulosCrudos.filter((articulo: Articulo) => {
       // Valida que cada artículo tenga todos los campos requeridos por el schema.
-      return camposRequeridos.every(campo => articulo.hasOwnProperty(campo));
+      const esValido = camposRequeridos.every((campo: string) => {
+        const tienePropiedad = articulo.hasOwnProperty(campo);
+        const valorNoEsNulo = articulo[campo] !== null && articulo[campo] !== undefined;
+        
+        // Para arrays, verificar que no esté vacío si es requerido
+        if (Array.isArray(articulo[campo])) {
+          return tienePropiedad && valorNoEsNulo;
+        }
+        
+        // Para strings, verificar que no esté vacío
+        if (typeof articulo[campo] === 'string') {
+          return tienePropiedad && valorNoEsNulo && articulo[campo].trim() !== '';
+        }
+        
+        return tienePropiedad && valorNoEsNulo;
+      });
+      
+      if (!esValido) {
+        console.warn('Artículo descartado por no cumplir schema:', {
+          titulo: articulo.title || 'Sin título',
+          camposFaltantes: camposRequeridos.filter(campo => !articulo.hasOwnProperty(campo) || articulo[campo] === null || articulo[campo] === undefined)
+        });
+      }
+      
+      return esValido;
     });
+
+    console.log(`Artículos procesados: ${articulosCrudos.length} recibidos, ${articulosValidados.length} validados`);
 
     // --- PASO 3: DEVOLVER EL RESULTADO FINAL ---
     return {
@@ -48,13 +106,14 @@ export async function obtenerNoticiasProcesadas() {
       error: null
     };
 
-  } catch (err) {
+  } catch (err: unknown) {
     // --- MANEJO DE CUALQUIER ERROR ---
+    const mensajeError = err instanceof Error ? err.message : String(err);
     console.error("Falló el proceso de obtención de noticias:", err);
     return {
       exito: false,
       datos: [],
-      error: err.message
+      error: mensajeError
     };
   }
 }
