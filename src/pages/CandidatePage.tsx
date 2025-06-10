@@ -7,6 +7,21 @@ interface CandidatePageProps {
   candidates: Candidate[];
 }
 
+const biographies: { [key: string]: string } = {
+  "Gustavo Bolívar": "Gustavo Bolívar Moreno, nacido el 22 de julio de 1966 en Girardot, Cundinamarca, es un reconocido escritor, guionista y político colombiano. Antes de incursionar en la política, se destacó por su trabajo en la televisión, siendo autor de exitosas series. Su carrera política lo ha llevado a ser Senador de la República y, más recientemente, director del Departamento de Prosperidad Social. Bolívar es una figura prominente de la izquierda colombiana y miembro del Pacto Histórico, conocido por sus posturas críticas y su activismo social.",
+  "Vicky Dávila": "Victoria Eugenia Dávila Hoyos, conocida como Vicky Dávila, nació el 30 de mayo de 1973 en Buga, Valle del Cauca. Es una destacada periodista, presentadora de radio y televisión colombiana con una larga trayectoria en los medios de comunicación. Fue directora de la Revista Semana, cargo desde el cual generó gran impacto y controversia. Recientemente, ha incursionado en la política como candidata por firmas, representando una postura de derecha. Su carrera ha estado marcada por su estilo directo y sus opiniones firmes.",
+  "Sergio Fajardo": "Sergio Fajardo Valderrama, nacido el 19 de junio de 1956 en Medellín, es un matemático, académico y político colombiano. Reconocido por su enfoque en la educación y la innovación, ha ocupado importantes cargos como Alcalde de Medellín y Gobernador de Antioquia, donde impulsó proyectos de transformación urbana y social. Es una figura central en la política colombiana, representando al centro y siendo parte de la coalición Centro Esperanza. Su trayectoria se caracteriza por su discurso moderado y su énfasis en la gestión pública transparente.",
+  "Germán Vargas Lleras": "Germán Vargas Lleras, nacido el 19 de febrero de 1962 en Bogotá, es un abogado y político colombiano con una extensa trayectoria. Ha ocupado importantes cargos como Vicepresidente de Colombia, Ministro del Interior, Ministro de Vivienda y Senador de la República. Es una figura influyente del partido Cambio Radical y ha sido un actor clave en la política nacional durante varias décadas. Su carrera se ha caracterizado por su liderazgo en proyectos de infraestructura y su postura de derecha.",
+  "Claudia López": "Claudia Nayibe López Hernández, nacida el 9 de marzo de 1970 en Bogotá, es una política y activista colombiana. Fue la primera mujer en ser elegida Alcaldesa Mayor de Bogotá, cargo que ocupó entre 2020 y 2023. Anteriormente, se desempeñó como Senadora de la República. López es una figura destacada del centro político, conocida por su lucha contra la corrupción y su activismo por los derechos de las mujeres y la comunidad LGBTQ+. Su gestión en la alcaldía se centró en temas de movilidad, seguridad y medio ambiente.",
+  "María Fernanda Cabal": "María Fernanda Cabal Molina, nacida el 8 de agosto de 1966 en Cali, es una politóloga, empresaria y política colombiana. Es una de las senadoras más representativas del Centro Democrático, partido de derecha. Conocida por sus posturas firmes y conservadoras, Cabal ha sido una voz activa en temas como la seguridad, la economía y la defensa de la propiedad privada. Su carrera política se ha caracterizado por su fuerte oposición a los gobiernos de izquierda y su defensa de los principios de su partido.",
+  "Miguel Uribe Turbay": "Miguel Uribe Turbay, nacido el 28 de enero de 1986 en Bogotá, es un abogado y político colombiano. Miembro del partido Centro Democrático, ha escalado rápidamente en la política nacional, desempeñándose como Concejal de Bogotá y actualmente como Senador de la República. Es nieto del expresidente Julio César Turbay Ayala y ha sido una figura activa en la oposición al gobierno actual. Su carrera se ha enfocado en temas de seguridad y desarrollo urbano, consolidándose como una de las voces jóvenes de la derecha colombiana.",
+  "Juan Manuel Galán": "Juan Manuel Galán Pachón, nacido el 29 de julio de 1972 en Bogotá, es un político colombiano, hijo del asesinado líder liberal Luis Carlos Galán Sarmiento. Ha sido Senador de la República por varios periodos, destacándose por su trabajo en temas de salud, educación y lucha contra las drogas. Es una figura importante del Nuevo Liberalismo, partido que busca rescatar los ideales de su padre. Su trayectoria política ha estado marcada por su compromiso con la renovación de la política y la construcción de una sociedad más justa.",
+  "Daniel Quintero": "Daniel Quintero Calle, nacido el 26 de julio de 1980 en Medellín, es un ingeniero electrónico, empresario de software y político colombiano. Se desempeñó como Alcalde de Medellín, cargo desde el cual impulsó proyectos de innovación y desarrollo tecnológico. Es una figura de izquierda, conocido por su gestión en la capital antioqueña y su activismo en redes sociales. Su carrera política ha estado marcada por su cercanía con el Pacto Histórico y su enfoque en la transformación digital y social de la ciudad.",
+  "María José Pizarro": "María José Pizarro Rodríguez, nacida el 30 de marzo de 1978 en Bogotá, es una artista, activista y política colombiana. Hija del líder del M-19 Carlos Pizarro Leongómez, ha dedicado su carrera a la defensa de la paz, los derechos humanos y la memoria histórica. Actualmente es Senadora de la República por el Pacto Histórico y ha sido una voz importante en el Congreso en temas relacionados con el conflicto armado y la reconciliación. Su trayectoria está marcada por su historia familiar y su compromiso con la construcción de un país más justo y equitativo.",
+  "Jota Pe Hernández": "Jonathan Ferney Pulido Hernández, conocido como Jota Pe Hernández, nacido el 6 de enero de 1992 en Bucaramanga, es un youtuber, predicador, músico cristiano y político colombiano. Ganó reconocimiento por su activismo en redes sociales antes de incursionar en la política. Actualmente es Senador de la República, llegando al Congreso como candidato por firmas. Su trayectoria se ha caracterizado por su cercanía con movimientos ciudadanos y su defensa de causas sociales, utilizando las plataformas digitales como herramienta de comunicación y movilización.",
+  "Juan Daniel Oviedo": "Juan Daniel Oviedo Arango, nacido el 16 de marzo de 1977 en Bogotá, es un economista y político colombiano. Reconocido por su gestión como director del Departamento Administrativo Nacional de Estadística (DANE), donde modernizó la recolección y difusión de datos en Colombia. Su perfil técnico y su enfoque en la información basada en evidencia lo han llevado a incursionar en la política, siendo considerado una figura independiente. Su trayectoria se ha caracterizado por su transparencia y su interés en la resolución de problemas estructurales del país a través de datos y análisis."
+};
+
 const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
   const { slug } = useParams<{ slug: string }>();
   const [candidate, setCandidate] = useState<Candidate | null>(null);
@@ -163,16 +178,22 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">Trayectoria Política</h3>
                   <div className="prose text-gray-600">
-                    <p>
-                      {candidate.Candidato} es un político colombiano con experiencia en {candidate.Cargo_Actual.toLowerCase()}. 
-                      Pertenece a la tendencia {candidate.Tendencia_Política.toLowerCase()} del espectro político y 
-                      actualmente se desempeña como {candidate.Cargo_Actual}.
-                    </p>
-                    <p>
-                      Originario de {candidate.Región_Origen}, ha desarrollado su carrera política 
-                      representando los intereses de esta región y promoviendo políticas alineadas 
-                      con su visión {candidate.Tendencia_Política.toLowerCase()} del país.
-                    </p>
+                    {biographies[candidate.Candidato] ? (
+                      <p>{biographies[candidate.Candidato]}</p>
+                    ) : (
+                      <>
+                        <p>
+                          {candidate.Candidato} es un político colombiano con experiencia en {candidate.Cargo_Actual.toLowerCase()}. 
+                          Pertenece a la tendencia {candidate.Tendencia_Política.toLowerCase()} del espectro político y 
+                          actualmente se desempeña como {candidate.Cargo_Actual}.
+                        </p>
+                        <p>
+                          Originario de {candidate.Región_Origen}, ha desarrollado su carrera política 
+                          representando los intereses de esta región y promoviendo políticas alineadas 
+                          con su visión {candidate.Tendencia_Política.toLowerCase()} del país.
+                        </p>
+                      </>
+                    )}
                   </div>
                 </div>
                 
