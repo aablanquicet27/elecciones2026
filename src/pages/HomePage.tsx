@@ -95,6 +95,12 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               >
                 Panel Completo
               </Link>
+              <Link 
+                to="/analisis-tiempo-real"
+                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm font-medium animate-pulse"
+              >
+                Análisis en Vivo
+              </Link>
             </div>
           </div>
         </div>

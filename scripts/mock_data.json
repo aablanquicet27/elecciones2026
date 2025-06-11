@@ -1,0 +1,406 @@
+{
+  "voting_intention": [
+    {
+      "date": "2025-06-08",
+      "pollster": "Guarumo/EcoAnalítica",
+      "candidates": [
+        {
+          "name": "Gustavo Bolívar",
+          "percentage": "12.6%"
+        },
+        {
+          "name": "Vicky Dávila",
+          "percentage": "11.6%"
+        },
+        {
+          "name": "Sergio Fajardo",
+          "percentage": "11.4%"
+        },
+        {
+          "name": "Claudia López",
+          "percentage": "10.1%"
+        },
+        {
+          "name": "Alejandro Gaviria",
+          "percentage": "9.5%"
+        },
+        {
+          "name": "Francia Márquez",
+          "percentage": "8.3%"
+        },
+        {
+          "name": "Germán Vargas",
+          "percentage": "7.7%"
+        },
+        {
+          "name": "Daniel Quintero",
+          "percentage": "7.2%"
+        },
+        {
+          "name": "María José Pizarro",
+          "percentage": "6.9%"
+        },
+        {
+          "name": "David Luna",
+          "percentage": "6.8%"
+        },
+        {
+          "name": "Carlos Caicedo",
+          "percentage": "6.5%"
+        },
+        {
+          "name": "Luis Gilberto Murillo",
+          "percentage": "6.2%"
+        },
+        {
+          "name": "Paloma Valencia",
+          "percentage": "5.9%"
+        },
+        {
+          "name": "Miguel Uribe",
+          "percentage": "5.6%"
+        },
+        {
+          "name": "María Fernanda Cabal",
+          "percentage": "5.5%"
+        },
+        {
+          "name": "Enrique Peñalosa",
+          "percentage": "5.0%"
+        },
+        {
+          "name": "Juan Manuel Galán",
+          "percentage": "4.7%"
+        },
+        {
+          "name": "Santiago Botero",
+          "percentage": "4.5%"
+        },
+        {
+          "name": "Camilo Romero",
+          "percentage": "4.2%"
+        },
+        {
+          "name": "Iván Cepeda",
+          "percentage": "4.1%"
+        },
+        {
+          "name": "Susana Muhamad",
+          "percentage": "3.8%"
+        },
+        {
+          "name": "Luis Fernando Velasco",
+          "percentage": "3.5%"
+        },
+        {
+          "name": "Ninguno",
+          "percentage": "2.5%"
+        }
+      ],
+      "sample_size": 2159,
+      "error_margin": "4.0%"
+    },
+    {
+      "date": "2025-03-21",
+      "pollster": "Invamer",
+      "candidates": [
+        {
+          "name": "Sergio Fajardo",
+          "percentage": "14.5%"
+        },
+        {
+          "name": "Vicky Dávila",
+          "percentage": "13.6%"
+        },
+        {
+          "name": "Gustavo Bolívar",
+          "percentage": "12.7%"
+        },
+        {
+          "name": "Claudia López",
+          "percentage": "11.5%"
+        },
+        {
+          "name": "Alejandro Gaviria",
+          "percentage": "10.5%"
+        },
+        {
+          "name": "Francia Márquez",
+          "percentage": "10.1%"
+        },
+        {
+          "name": "Germán Vargas",
+          "percentage": "9.7%"
+        },
+        {
+          "name": "Daniel Quintero",
+          "percentage": "9.5%"
+        },
+        {
+          "name": "María José Pizarro",
+          "percentage": "8.9%"
+        },
+        {
+          "name": "David Luna",
+          "percentage": "8.5%"
+        },
+        {
+          "name": "Carlos Caicedo",
+          "percentage": "8.2%"
+        },
+        {
+          "name": "Luis Gilberto Murillo",
+          "percentage": "7.9%"
+        },
+        {
+          "name": "Paloma Valencia",
+          "percentage": "7.5%"
+        },
+        {
+          "name": "Miguel Uribe",
+          "percentage": "7.2%"
+        },
+        {
+          "name": "María Fernanda Cabal",
+          "percentage": "6.8%"
+        },
+        {
+          "name": "Enrique Peñalosa",
+          "percentage": "6.5%"
+        },
+        {
+          "name": "Juan Manuel Galán",
+          "percentage": "6.2%"
+        },
+        {
+          "name": "Santiago Botero",
+          "percentage": "5.9%"
+        },
+        {
+          "name": "Camilo Romero",
+          "percentage": "5.5%"
+        },
+        {
+          "name": "Iván Cepeda",
+          "percentage": "5.0%"
+        },
+        {
+          "name": "Susana Muhamad",
+          "percentage": "4.5%"
+        },
+        {
+          "name": "Luis Fernando Velasco",
+          "percentage": "4.0%"
+        },
+        {
+          "name": "Ninguno",
+          "percentage": "3.5%"
+        }
+      ],
+      "sample_size": 1200,
+      "error_margin": "2.83%"
+    },
+    {
+      "date": "2025-02-10",
+      "pollster": "Guarumo/EcoAnalítica",
+      "candidates": [
+        {
+          "name": "Gustavo Bolívar",
+          "percentage": "15.1%"
+        },
+        {
+          "name": "Vicky Dávila",
+          "percentage": "14.5%"
+        },
+        {
+          "name": "Sergio Fajardo",
+          "percentage": "13.6%"
+        },
+        {
+          "name": "Claudia López",
+          "percentage": "12.5%"
+        },
+        {
+          "name": "Alejandro Gaviria",
+          "percentage": "11.5%"
+        },
+        {
+          "name": "Francia Márquez",
+          "percentage": "10.1%"
+        },
+        {
+          "name": "Germán Vargas",
+          "percentage": "9.7%"
+        },
+        {
+          "name": "Daniel Quintero",
+          "percentage": "9.5%"
+        },
+        {
+          "name": "María José Pizarro",
+          "percentage": "8.9%"
+        },
+        {
+          "name": "David Luna",
+          "percentage": "8.5%"
+        },
+        {
+          "name": "Carlos Caicedo",
+          "percentage": "8.2%"
+        },
+        {
+          "name": "Luis Gilberto Murillo",
+          "percentage": "7.9%"
+        },
+        {
+          "name": "Paloma Valencia",
+          "percentage": "7.5%"
+        },
+        {
+          "name": "Miguel Uribe",
+          "percentage": "7.2%"
+        },
+        {
+          "name": "María Fernanda Cabal",
+          "percentage": "6.8%"
+        },
+        {
+          "name": "Enrique Peñalosa",
+          "percentage": "6.5%"
+        },
+        {
+          "name": "Juan Manuel Galán",
+          "percentage": "6.2%"
+        },
+        {
+          "name": "Santiago Botero",
+          "percentage": "5.9%"
+        },
+        {
+          "name": "Camilo Romero",
+          "percentage": "5.5%"
+        },
+        {
+          "name": "Iván Cepeda",
+          "percentage": "5.0%"
+        },
+        {
+          "name": "Susana Muhamad",
+          "percentage": "4.5%"
+        },
+        {
+          "name": "Luis Fernando Velasco",
+          "percentage": "4.0%"
+        },
+        {
+          "name": "Ninguno",
+          "percentage": "3.5%"
+        }
+      ],
+      "sample_size": 2140,
+      "error_margin": "4.0%"
+    },
+    {
+      "date": "2025-01-27",
+      "pollster": "CNC",
+      "candidates": [
+        {
+          "name": "Gustavo Bolívar",
+          "percentage": "12.7%"
+        },
+        {
+          "name": "Vicky Dávila",
+          "percentage": "11.5%"
+        },
+        {
+          "name": "Sergio Fajardo",
+          "percentage": "10.5%"
+        },
+        {
+          "name": "Claudia López",
+          "percentage": "10.1%"
+        },
+        {
+          "name": "Alejandro Gaviria",
+          "percentage": "9.5%"
+        },
+        {
+          "name": "Francia Márquez",
+          "percentage": "9.0%"
+        },
+        {
+          "name": "Germán Vargas",
+          "percentage": "8.5%"
+        },
+        {
+          "name": "Daniel Quintero",
+          "percentage": "8.0%"
+        },
+        {
+          "name": "María José Pizarro",
+          "percentage": "7.5%"
+        },
+        {
+          "name": "David Luna",
+          "percentage": "7.0%"
+        },
+        {
+          "name": "Carlos Caicedo",
+          "percentage": "6.5%"
+        },
+        {
+          "name": "Luis Gilberto Murillo",
+          "percentage": "6.0%"
+        },
+        {
+          "name": "Paloma Valencia",
+          "percentage": "5.5%"
+        },
+        {
+          "name": "Miguel Uribe",
+          "percentage": "5.0%"
+        },
+        {
+          "name": "María Fernanda Cabal",
+          "percentage": "4.5%"
+        },
+        {
+          "name": "Enrique Peñalosa",
+          "percentage": "4.0%"
+        },
+        {
+          "name": "Juan Manuel Galán",
+          "percentage": "3.5%"
+        },
+        {
+          "name": "Santiago Botero",
+          "percentage": "3.0%"
+        },
+        {
+          "name": "Camilo Romero",
+          "percentage": "2.5%"
+        },
+        {
+          "name": "Iván Cepeda",
+          "percentage": "2.0%"
+        },
+        {
+          "name": "Susana Muhamad",
+          "percentage": "1.5%"
+        },
+        {
+          "name": "Luis Fernando Velasco",
+          "percentage": "1.0%"
+        },
+        {
+          "name": "Ninguno",
+          "percentage": "0.5%"
+        }
+      ],
+      "sample_size": 1513,
+      "error_margin": "3.1%"
+    }
+  ],
+  "last_updated": "2025-01-10T15:30:00.000Z",
+  "source": "Wikipedia - Sondeos de intención de voto Colombia 2026"
+} 

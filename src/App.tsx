@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CandidatePage from './pages/CandidatePage';
 import AnalysisPage from './pages/AnalysisPage';
+import RealTimeAnalysisPage from './pages/RealTimeAnalysisPage';
 import { Candidate } from './types/election';
 import { parseCandidateData } from './utils/csvParser';
 import AIChatBubble from './components/AIChatBubble';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/" element={<HomePage candidates={candidates} />} />
         <Route path="/candidato/:slug" element={<CandidatePage candidates={candidates} />} />
         <Route path="/analisis" element={<AnalysisPage candidates={candidates} />} />
+        <Route path="/analisis-tiempo-real" element={<RealTimeAnalysisPage />} />
       </Routes>
       <AIChatBubble />
     </Router>

@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scrape": "node scripts/scraper.js",
+    "analyze": "python scripts/real_time_analysis.py",
+    "update-full": "node scripts/automation.js full",
+    "update-quick": "node scripts/automation.js quick"
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.25.5",
@@ -17,7 +21,8 @@
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.8.1",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "zod": "^3.25.58"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
