@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, X, Send, Minimize2, ChevronDown, Bot } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface Message {
   id: string;
@@ -351,7 +353,22 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
                   : 'bg-white border border-gray-200 text-gray-800 rounded-tl-none'
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+              {message.sender === 'ai' ? (
+                <ReactMarkdown
+                  className="prose prose-sm max-w-none"
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                    ol: ({node, ...props}) => <ol className="list-decimal list-inside" {...props} />,
+                    ul: ({node, ...props}) => <ul className="list-disc list-inside" {...props} />,
+                    li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                  }}
+                >
+                  {message.content}
+                </ReactMarkdown>
+              ) : (
+                <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+              )}
               <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-purple-200' : 'text-gray-500'}`}>
                 {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>
