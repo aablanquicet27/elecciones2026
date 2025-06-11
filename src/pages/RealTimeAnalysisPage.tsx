@@ -123,7 +123,7 @@ function RealTimeAnalysisPage() {
       </nav>
 
       {/* Main content */}
-      <div className="min-h-screen bg-gray-50 text-gray-900 pt-32 p-6 md:p-10">
+      <div className="min-h-screen bg-gray-50 text-gray-900 pt-48 p-6 md:p-10">
         <div className="max-w-7xl mx-auto">
           <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
             <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
