@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle } from 'lucide-react';
+import { RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle, Clock, LineChart, MapPin, UserSquare2 } from 'lucide-react';
 
 // Tipos de datos que esperamos del backend
 interface Visualization {
@@ -15,14 +15,41 @@ interface LatestPoll {
   error_margin: string;
 }
 
+interface HistoricalStats {
+  totalPolls: number;
+  averageSampleSize: number;
+  pollsterCount: number;
+  timeSpan: string;
+}
+
 interface UpdateResult {
   success: boolean;
   timestamp: string;
   visualizations: Visualization[];
   summary: {
     latestPoll: LatestPoll;
+    historicalStats: HistoricalStats;
   };
   error?: string;
+}
+
+declare module 'lucide-react' {
+  interface IconProps extends React.SVGProps<SVGSVGElement> {
+    size?: number | string;
+    className?: string;
+  }
+  
+  export const Loader: React.FC<IconProps>;
+  export const RefreshCw: React.FC<IconProps>;
+  export const BarChart2: React.FC<IconProps>;
+  export const TrendingUp: React.FC<IconProps>;
+  export const Users: React.FC<IconProps>;
+  export const PieChart: React.FC<IconProps>;
+  export const AlertCircle: React.FC<IconProps>;
+  export const Clock: React.FC<IconProps>;
+  export const LineChart: React.FC<IconProps>;
+  export const MapPin: React.FC<IconProps>;
+  export const UserSquare2: React.FC<IconProps>;
 }
 
 function RealTimeAnalysisPage() {
@@ -30,6 +57,7 @@ function RealTimeAnalysisPage() {
   const [updateResult, setUpdateResult] = useState<UpdateResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'current' | 'historical'>('current');
 
   const handleUpdate = async () => {
     setIsLoading(true);
@@ -50,13 +78,21 @@ function RealTimeAnalysisPage() {
           { name: 'tendencias_politicas_real_2026.png', relativePath: 'visualizations/tendencias_politicas_real_2026.png', lastModified: now.toISOString() },
           { name: 'evolucion_historica_real_2026.png', relativePath: 'visualizations/evolucion_historica_real_2026.png', lastModified: now.toISOString() },
           { name: 'comparacion_encuestadoras_real_2026.png', relativePath: 'visualizations/comparacion_encuestadoras_real_2026.png', lastModified: now.toISOString() },
-        ].filter(v => v.name !== 'evolucion_historica_real_2026.png' && v.name !== 'comparacion_encuestadoras_real_2026.png'), // Temp filter
+          { name: 'analisis_regional_real_2026.png', relativePath: 'visualizations/analisis_regional_real_2026.png', lastModified: now.toISOString() },
+          { name: 'analisis_demografico_real_2026.png', relativePath: 'visualizations/analisis_demografico_real_2026.png', lastModified: now.toISOString() }
+        ],
         summary: {
           latestPoll: {
             date: "2025-06-08",
             pollster: "Guarumo/EcoAnalítica",
             sample_size: 2159,
             error_margin: "4.0%"
+          },
+          historicalStats: {
+            totalPolls: 156,
+            averageSampleSize: 1850,
+            pollsterCount: 12,
+            timeSpan: "Enero 2024 - Junio 2025"
           }
         }
       };
@@ -113,7 +149,7 @@ function RealTimeAnalysisPage() {
           </div>
         )}
 
-        {!isLoading && !updateResult && (
+        {!updateResult && !isLoading && (
           <div className="text-center py-20 bg-gray-800 rounded-lg">
             <BarChart2 className="mx-auto text-gray-500 h-24 w-24 mb-4" />
             <h2 className="text-2xl font-semibold text-gray-300">Bienvenido al Dashboard de Análisis</h2>
@@ -124,38 +160,167 @@ function RealTimeAnalysisPage() {
         )}
         
         {isLoading && (
-            <div className="text-center py-20 bg-gray-800 rounded-lg">
-                <div className="animate-pulse">
-                    <Loader className="mx-auto text-indigo-400 h-24 w-24 mb-4" />
-                    <h2 className="text-2xl font-semibold text-gray-300">Procesando datos...</h2>
-                    <p className="text-gray-400 mt-2">
-                        Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
-                    </p>
-                </div>
+          <div className="text-center py-20 bg-gray-800 rounded-lg">
+            <div className="animate-pulse">
+              <Loader className="mx-auto text-indigo-400 h-24 w-24 mb-4" />
+              <h2 className="text-2xl font-semibold text-gray-300">Procesando datos...</h2>
+              <p className="text-gray-400 mt-2">
+                Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
+              </p>
             </div>
+          </div>
         )}
 
-        {updateResult && updateResult.success && (
+        {updateResult && (
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <InfoCard Icon={TrendingUp} title="Encuestadora" value={updateResult.summary.latestPoll.pollster} />
-                <InfoCard Icon={Users} title="Tamaño de Muestra" value={updateResult.summary.latestPoll.sample_size.toLocaleString('es-CO')} />
-                <InfoCard Icon={PieChart} title="Margen de Error" value={updateResult.summary.latestPoll.error_margin} />
-                <InfoCard Icon={BarChart2} title="Fecha de Encuesta" value={updateResult.summary.latestPoll.date} />
+            {/* Tabs for Current vs Historical */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-gray-800 p-1 rounded-xl">
+                <button
+                  onClick={() => setActiveTab('current')}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    activeTab === 'current'
+                      ? 'bg-indigo-600 text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Datos Actuales
+                </button>
+                <button
+                  onClick={() => setActiveTab('historical')}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    activeTab === 'historical'
+                      ? 'bg-indigo-600 text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  Datos Históricos
+                </button>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {updateResult.visualizations.map((vis) => (
-                <div key={vis.name} className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                  <h3 className="text-xl font-bold mb-4 capitalize text-gray-200">{vis.name.replace(/_/g, ' ').replace('.png', '')}</h3>
-                  <img 
-                    src={getImagePath(vis.relativePath)} 
-                    alt={vis.name}
-                    className="w-full h-auto rounded-lg" 
+            {/* Current Data View */}
+            {activeTab === 'current' && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                  <InfoCard 
+                    Icon={Users} 
+                    title="Encuestadora" 
+                    value={updateResult.summary.latestPoll.pollster} 
+                  />
+                  <InfoCard 
+                    Icon={BarChart2} 
+                    title="Tamaño de Muestra" 
+                    value={updateResult.summary.latestPoll.sample_size.toLocaleString('es-CO')} 
+                  />
+                  <InfoCard 
+                    Icon={PieChart} 
+                    title="Margen de Error" 
+                    value={updateResult.summary.latestPoll.error_margin} 
+                  />
+                  <InfoCard 
+                    Icon={Clock} 
+                    title="Fecha de Encuesta" 
+                    value={updateResult.summary.latestPoll.date} 
                   />
                 </div>
-              ))}
-            </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {updateResult.visualizations
+                    .filter(vis => !vis.name.includes('historica') && !vis.name.includes('comparacion'))
+                    .map((vis) => (
+                      <div key={vis.name} className="bg-gray-800 p-4 rounded-xl shadow-2xl">
+                        <h3 className="text-xl font-bold mb-4 capitalize text-gray-200">
+                          {vis.name.replace(/_/g, ' ').replace('.png', '')}
+                        </h3>
+                        <img 
+                          src={getImagePath(vis.relativePath)} 
+                          alt={vis.name}
+                          className="w-full h-auto rounded-lg" 
+                        />
+                      </div>
+                    ))}
+                </div>
+              </>
+            )}
+
+            {/* Historical Data View */}
+            {activeTab === 'historical' && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                  <InfoCard 
+                    Icon={BarChart2} 
+                    title="Total Encuestas" 
+                    value={updateResult.summary.historicalStats.totalPolls.toString()} 
+                  />
+                  <InfoCard 
+                    Icon={Users} 
+                    title="Muestra Promedio" 
+                    value={updateResult.summary.historicalStats.averageSampleSize.toLocaleString('es-CO')} 
+                  />
+                  <InfoCard 
+                    Icon={TrendingUp} 
+                    title="Encuestadoras" 
+                    value={updateResult.summary.historicalStats.pollsterCount.toString()} 
+                  />
+                  <InfoCard 
+                    Icon={Clock} 
+                    title="Período" 
+                    value={updateResult.summary.historicalStats.timeSpan} 
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 gap-8">
+                  {/* Historical Evolution */}
+                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
+                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                      Evolución Histórica de Intención de Voto
+                    </h3>
+                    <img 
+                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('historica'))?.relativePath || '')} 
+                      alt="Evolución histórica"
+                      className="w-full h-auto rounded-lg" 
+                    />
+                  </div>
+
+                  {/* Pollster Comparison */}
+                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
+                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                      Comparación entre Encuestadoras
+                    </h3>
+                    <img 
+                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('comparacion'))?.relativePath || '')} 
+                      alt="Comparación encuestadoras"
+                      className="w-full h-auto rounded-lg" 
+                    />
+                  </div>
+
+                  {/* Regional Analysis */}
+                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
+                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                      Análisis Regional
+                    </h3>
+                    <img 
+                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('regional'))?.relativePath || '')} 
+                      alt="Análisis regional"
+                      className="w-full h-auto rounded-lg" 
+                    />
+                  </div>
+
+                  {/* Demographic Analysis */}
+                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
+                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                      Análisis Demográfico
+                    </h3>
+                    <img 
+                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('demografico'))?.relativePath || '')} 
+                      alt="Análisis demográfico"
+                      className="w-full h-auto rounded-lg" 
+                    />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
@@ -164,21 +329,21 @@ function RealTimeAnalysisPage() {
 }
 
 interface InfoCardProps {
-    Icon: React.ElementType;
-    title: string;
-    value: string;
+  Icon: React.ElementType;
+  title: string;
+  value: string;
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ Icon, title, value }) => (
-    <div className="bg-gray-800 p-6 rounded-xl flex items-center shadow-lg">
-        <div className="bg-indigo-600 p-3 rounded-full mr-4">
-            <Icon className="h-6 w-6 text-white"/>
-        </div>
-        <div>
-            <p className="text-sm text-gray-400">{title}</p>
-            <p className="text-xl font-bold text-white">{value}</p>
-        </div>
+  <div className="bg-gray-800 p-6 rounded-xl flex items-center shadow-lg">
+    <div className="bg-indigo-600 p-3 rounded-full mr-4">
+      <Icon className="h-6 w-6 text-white"/>
     </div>
+    <div>
+      <p className="text-sm text-gray-400">{title}</p>
+      <p className="text-xl font-bold text-white">{value}</p>
+    </div>
+  </div>
 );
 
 export default RealTimeAnalysisPage;
