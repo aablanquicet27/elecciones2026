@@ -104,7 +104,7 @@ function RealTimeAnalysisPage() {
   return (
     <>
       {/* Navigation (copied from HomePage for consistency) */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -123,7 +123,7 @@ function RealTimeAnalysisPage() {
       </nav>
 
       {/* Main content */}
-      <div className="min-h-screen bg-gray-50 text-gray-900 pt-48 p-6 md:p-10">
+      <div className="min-h-screen bg-gray-50 text-gray-900 pt-32 p-6 md:p-10">
         <div className="max-w-7xl mx-auto">
           <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
             <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
