@@ -241,7 +241,7 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
           'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         body: JSON.stringify({
-          model: 'gpt-4',
+          model: 'gpt-4.1',
           messages: messages,
           max_tokens: 1000,
           temperature: 0.7,
