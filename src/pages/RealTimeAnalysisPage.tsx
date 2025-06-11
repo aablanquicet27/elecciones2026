@@ -102,7 +102,7 @@ function RealTimeAnalysisPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 pt-28 p-6 md:p-10">
+    <>
       {/* Navigation (copied from HomePage for consistency) */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
@@ -122,216 +122,219 @@ function RealTimeAnalysisPage() {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto">
-        <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
-          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
-            Análisis en Tiempo Real
-          </h1>
-          <div className="flex flex-col items-center">
-            <button
-              onClick={handleUpdate}
-              disabled={isLoading}
-              className="flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold shadow-lg transition-transform transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
-            >
-              {isLoading ? (
-                <>
-                  <Loader className="animate-spin mr-2" />
-                  Actualizando...
-                </>
-              ) : (
-                <>
-                  <RefreshCw className="mr-2" />
-                  Actualizar Datos
-                </>
-              )}
-            </button>
-            {lastUpdated && <p className="text-sm text-gray-400 mt-2">Última actualización: {lastUpdated}</p>}
-          </div>
-        </header>
+      {/* Main content */}
+      <div className="min-h-screen bg-gray-50 text-gray-900 pt-36 p-6 md:p-10">
+        <div className="max-w-7xl mx-auto">
+          <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
+            <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
+              Análisis en Tiempo Real
+            </h1>
+            <div className="flex flex-col items-center">
+              <button
+                onClick={handleUpdate}
+                disabled={isLoading}
+                className="flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold shadow-lg transition-transform transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader className="animate-spin mr-2" />
+                    Actualizando...
+                  </>
+                ) : (
+                  <>
+                    <RefreshCw className="mr-2" />
+                    Actualizar Datos
+                  </>
+                )}
+              </button>
+              {lastUpdated && <p className="text-sm text-gray-400 mt-2">Última actualización: {lastUpdated}</p>}
+            </div>
+          </header>
 
-        {error && (
-          <div className="bg-red-100 border border-red-300 text-red-700 p-4 rounded-lg mb-6 flex items-center">
-            <AlertCircle className="mr-3" />
-            <p>{error}</p>
-          </div>
-        )}
+          {error && (
+            <div className="bg-red-100 border border-red-300 text-red-700 p-4 rounded-lg mb-6 flex items-center">
+              <AlertCircle className="mr-3" />
+              <p>{error}</p>
+            </div>
+          )}
 
-        {!updateResult && !isLoading && (
-          <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
-            <BarChart2 className="mx-auto text-gray-500 h-24 w-24 mb-4" />
-            <h2 className="text-2xl font-semibold text-gray-800">Bienvenido al Dashboard de Análisis</h2>
-            <p className="text-gray-600 mt-2">
-              Haz clic en "Actualizar Datos" para obtener las últimas encuestas y visualizaciones.
-            </p>
-          </div>
-        )}
-        
-        {isLoading && (
-          <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
-            <div className="animate-pulse">
-              <Loader className="mx-auto text-purple-500 h-24 w-24 mb-4" />
-              <h2 className="text-2xl font-semibold text-gray-800">Procesando datos...</h2>
+          {!updateResult && !isLoading && (
+            <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
+              <BarChart2 className="mx-auto text-gray-500 h-24 w-24 mb-4" />
+              <h2 className="text-2xl font-semibold text-gray-800">Bienvenido al Dashboard de Análisis</h2>
               <p className="text-gray-600 mt-2">
-                Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
+                Haz clic en "Actualizar Datos" para obtener las últimas encuestas y visualizaciones.
               </p>
             </div>
-          </div>
-        )}
-
-        {updateResult && (
-          <div>
-            {/* Tabs for Current vs Historical */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 p-1 rounded-xl shadow-inner">
-                <button
-                  onClick={() => setActiveTab('current')}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    activeTab === 'current'
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-600 hover:text-purple-600'
-                  }`}
-                >
-                  Datos Actuales
-                </button>
-                <button
-                  onClick={() => setActiveTab('historical')}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    activeTab === 'historical'
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-600 hover:text-purple-600'
-                  }`}
-                >
-                  Datos Históricos
-                </button>
+          )}
+          
+          {isLoading && (
+            <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
+              <div className="animate-pulse">
+                <Loader className="mx-auto text-purple-500 h-24 w-24 mb-4" />
+                <h2 className="text-2xl font-semibold text-gray-800">Procesando datos...</h2>
+                <p className="text-gray-600 mt-2">
+                  Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
+                </p>
               </div>
             </div>
+          )}
 
-            {/* Current Data View */}
-            {activeTab === 'current' && (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  <InfoCard 
-                    Icon={Users} 
-                    title="Encuestadora" 
-                    value={updateResult.summary.latestPoll.pollster} 
-                  />
-                  <InfoCard 
-                    Icon={BarChart2} 
-                    title="Tamaño de Muestra" 
-                    value={updateResult.summary.latestPoll.sample_size.toLocaleString('es-CO')} 
-                  />
-                  <InfoCard 
-                    Icon={PieChart} 
-                    title="Margen de Error" 
-                    value={updateResult.summary.latestPoll.error_margin} 
-                  />
-                  <InfoCard 
-                    Icon={Clock} 
-                    title="Fecha de Encuesta" 
-                    value={updateResult.summary.latestPoll.date} 
-                  />
+          {updateResult && (
+            <div>
+              {/* Tabs for Current vs Historical */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-gray-100 p-1 rounded-xl shadow-inner">
+                  <button
+                    onClick={() => setActiveTab('current')}
+                    className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      activeTab === 'current'
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-600 hover:text-purple-600'
+                    }`}
+                  >
+                    Datos Actuales
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('historical')}
+                    className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                      activeTab === 'historical'
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-600 hover:text-purple-600'
+                    }`}
+                  >
+                    Datos Históricos
+                  </button>
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {updateResult.visualizations
-                    .filter(vis => !vis.name.includes('historica') && !vis.name.includes('comparacion'))
-                    .map((vis) => (
-                      <div key={vis.name} className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                        <h3 className="text-xl font-bold mb-4 capitalize text-gray-900">
-                          {vis.name.replace(/_/g, ' ').replace('.png', '')}
-                        </h3>
-                        <img 
-                          src={getImagePath(vis.relativePath)} 
-                          alt={vis.name}
-                          className="w-full h-auto rounded-lg" 
-                        />
-                      </div>
-                    ))}
-                </div>
-              </>
-            )}
-
-            {/* Historical Data View */}
-            {activeTab === 'historical' && (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  <InfoCard 
-                    Icon={BarChart2} 
-                    title="Total Encuestas" 
-                    value={updateResult.summary.historicalStats.totalPolls.toString()} 
-                  />
-                  <InfoCard 
-                    Icon={Users} 
-                    title="Muestra Promedio" 
-                    value={updateResult.summary.historicalStats.averageSampleSize.toLocaleString('es-CO')} 
-                  />
-                  <InfoCard 
-                    Icon={TrendingUp} 
-                    title="Encuestadoras" 
-                    value={updateResult.summary.historicalStats.pollsterCount.toString()} 
-                  />
-                  <InfoCard 
-                    Icon={Clock} 
-                    title="Período" 
-                    value={updateResult.summary.historicalStats.timeSpan} 
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 gap-8">
-                  {/* Historical Evolution */}
-                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 className="text-xl font-bold mb-4 text-gray-900">
-                      Evolución Histórica de Intención de Voto
-                    </h3>
-                    <img 
-                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('historica'))?.relativePath || '')} 
-                      alt="Evolución histórica"
-                      className="w-full h-auto rounded-lg" 
+              {/* Current Data View */}
+              {activeTab === 'current' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <InfoCard 
+                      Icon={Users} 
+                      title="Encuestadora" 
+                      value={updateResult.summary.latestPoll.pollster} 
+                    />
+                    <InfoCard 
+                      Icon={BarChart2} 
+                      title="Tamaño de Muestra" 
+                      value={updateResult.summary.latestPoll.sample_size.toLocaleString('es-CO')} 
+                    />
+                    <InfoCard 
+                      Icon={PieChart} 
+                      title="Margen de Error" 
+                      value={updateResult.summary.latestPoll.error_margin} 
+                    />
+                    <InfoCard 
+                      Icon={Clock} 
+                      title="Fecha de Encuesta" 
+                      value={updateResult.summary.latestPoll.date} 
                     />
                   </div>
 
-                  {/* Pollster Comparison */}
-                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 className="text-xl font-bold mb-4 text-gray-900">
-                      Comparación entre Encuestadoras
-                    </h3>
-                    <img 
-                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('comparacion'))?.relativePath || '')} 
-                      alt="Comparación encuestadoras"
-                      className="w-full h-auto rounded-lg" 
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {updateResult.visualizations
+                      .filter(vis => !vis.name.includes('historica') && !vis.name.includes('comparacion'))
+                      .map((vis) => (
+                        <div key={vis.name} className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                          <h3 className="text-xl font-bold mb-4 capitalize text-gray-900">
+                            {vis.name.replace(/_/g, ' ').replace('.png', '')}
+                          </h3>
+                          <img 
+                            src={getImagePath(vis.relativePath)} 
+                            alt={vis.name}
+                            className="w-full h-auto rounded-lg" 
+                          />
+                        </div>
+                      ))}
+                  </div>
+                </>
+              )}
+
+              {/* Historical Data View */}
+              {activeTab === 'historical' && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <InfoCard 
+                      Icon={BarChart2} 
+                      title="Total Encuestas" 
+                      value={updateResult.summary.historicalStats.totalPolls.toString()} 
+                    />
+                    <InfoCard 
+                      Icon={Users} 
+                      title="Muestra Promedio" 
+                      value={updateResult.summary.historicalStats.averageSampleSize.toLocaleString('es-CO')} 
+                    />
+                    <InfoCard 
+                      Icon={TrendingUp} 
+                      title="Encuestadoras" 
+                      value={updateResult.summary.historicalStats.pollsterCount.toString()} 
+                    />
+                    <InfoCard 
+                      Icon={Clock} 
+                      title="Período" 
+                      value={updateResult.summary.historicalStats.timeSpan} 
                     />
                   </div>
 
-                  {/* Regional Analysis */}
-                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 className="text-xl font-bold mb-4 text-gray-900">
-                      Análisis Regional
-                    </h3>
-                    <img 
-                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('regional'))?.relativePath || '')} 
-                      alt="Análisis regional"
-                      className="w-full h-auto rounded-lg" 
-                    />
-                  </div>
+                  <div className="grid grid-cols-1 gap-8">
+                    {/* Historical Evolution */}
+                    <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                      <h3 className="text-xl font-bold mb-4 text-gray-900">
+                        Evolución Histórica de Intención de Voto
+                      </h3>
+                      <img 
+                        src={getImagePath(updateResult.visualizations.find(v => v.name.includes('historica'))?.relativePath || '')} 
+                        alt="Evolución histórica"
+                        className="w-full h-auto rounded-lg" 
+                      />
+                    </div>
 
-                  {/* Demographic Analysis */}
-                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
-                    <h3 className="text-xl font-bold mb-4 text-gray-900">
-                      Análisis Demográfico
-                    </h3>
-                    <img 
-                      src={getImagePath(updateResult.visualizations.find(v => v.name.includes('demografico'))?.relativePath || '')} 
-                      alt="Análisis demográfico"
-                      className="w-full h-auto rounded-lg" 
-                    />
+                    {/* Pollster Comparison */}
+                    <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                      <h3 className="text-xl font-bold mb-4 text-gray-900">
+                        Comparación entre Encuestadoras
+                      </h3>
+                      <img 
+                        src={getImagePath(updateResult.visualizations.find(v => v.name.includes('comparacion'))?.relativePath || '')} 
+                        alt="Comparación encuestadoras"
+                        className="w-full h-auto rounded-lg" 
+                      />
+                    </div>
+
+                    {/* Regional Analysis */}
+                    <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                      <h3 className="text-xl font-bold mb-4 text-gray-900">
+                        Análisis Regional
+                      </h3>
+                      <img 
+                        src={getImagePath(updateResult.visualizations.find(v => v.name.includes('regional'))?.relativePath || '')} 
+                        alt="Análisis regional"
+                        className="w-full h-auto rounded-lg" 
+                      />
+                    </div>
+
+                    {/* Demographic Analysis */}
+                    <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                      <h3 className="text-xl font-bold mb-4 text-gray-900">
+                        Análisis Demográfico
+                      </h3>
+                      <img 
+                        src={getImagePath(updateResult.visualizations.find(v => v.name.includes('demografico'))?.relativePath || '')} 
+                        alt="Análisis demográfico"
+                        className="w-full h-auto rounded-lg" 
+                      />
+                    </div>
                   </div>
-                </div>
-              </>
-            )}
-          </div>
-        )}
+                </>
+              )}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
