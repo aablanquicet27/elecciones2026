@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle, Clock, LineChart, MapPin, UserSquare2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Vote, RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle, Clock, LineChart, MapPin, UserSquare2 } from 'lucide-react';
 
 // Tipos de datos que esperamos del backend
 interface Visualization {
@@ -39,6 +40,12 @@ function RealTimeAnalysisPage() {
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'current' | 'historical'>('current');
+
+  // Cargar datos automáticamente al montar la página
+  useEffect(() => {
+    handleUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleUpdate = async () => {
     setIsLoading(true);
@@ -95,7 +102,26 @@ function RealTimeAnalysisPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 p-6 md:p-10">
+    <div className="min-h-screen bg-gray-50 text-gray-900 pt-28 p-6 md:p-10">
+      {/* Navigation (copied from HomePage for consistency) */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="bg-purple-600 p-2 rounded-lg">
+                <Vote className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xl font-bold text-gray-900">Colombia 2026</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-sm font-medium text-gray-600 hover:text-purple-600">Inicio</Link>
+              <Link to="/analisis" className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium">Panel Completo</Link>
+              <Link to="/analisis-tiempo-real" className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm font-medium">Análisis en Vivo</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       <div className="max-w-7xl mx-auto">
         <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
@@ -105,7 +131,7 @@ function RealTimeAnalysisPage() {
             <button
               onClick={handleUpdate}
               disabled={isLoading}
-              className="flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-white font-semibold shadow-lg transition-transform transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
+              className="flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-semibold shadow-lg transition-transform transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
@@ -143,7 +169,7 @@ function RealTimeAnalysisPage() {
         {isLoading && (
           <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
             <div className="animate-pulse">
-              <Loader className="mx-auto text-indigo-400 h-24 w-24 mb-4" />
+              <Loader className="mx-auto text-purple-500 h-24 w-24 mb-4" />
               <h2 className="text-2xl font-semibold text-gray-800">Procesando datos...</h2>
               <p className="text-gray-600 mt-2">
                 Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
