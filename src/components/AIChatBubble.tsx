@@ -15,7 +15,17 @@ const AIChatBubble: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: 'Hola, soy tu asistente electoral especializado en Colombia 2026. Tengo acceso a toda la información actualizada sobre candidatos, encuestas, análisis regional y proyecciones. ¿En qué puedo ayudarte?',
+      content: `# ¡Bienvenido a tu Asistente Electoral! 🗳️
+
+**Especializado en las Elecciones Colombia 2026**
+
+Tengo acceso a información actualizada sobre:
+* Candidatos y sus perfiles
+* Encuestas y tendencias
+* Análisis regional detallado
+* Proyecciones electorales
+
+¿En qué puedo ayudarte hoy?`,
       sender: 'ai',
       timestamp: new Date(),
     },
@@ -355,13 +365,30 @@ Recuerda: Eres un asistente conversacional completo, no solo un bot de eleccione
             >
               {message.sender === 'ai' ? (
                 <ReactMarkdown
-                  className="prose prose-sm max-w-none"
+                  className="prose prose-sm max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:font-bold prose-strong:text-gray-900"
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
-                    ol: ({node, ...props}) => <ol className="list-decimal list-inside" {...props} />,
-                    ul: ({node, ...props}) => <ul className="list-disc list-inside" {...props} />,
-                    li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                    p: ({node, ...props}) => <p className="mb-2 last:mb-0 text-gray-800" {...props} />,
+                    strong: ({node, ...props}) => <strong className="font-bold text-gray-900" {...props} />,
+                    em: ({node, ...props}) => <em className="italic text-gray-800" {...props} />,
+                    h1: ({node, ...props}) => <h1 className="text-xl font-bold mb-2 text-gray-900" {...props} />,
+                    h2: ({node, ...props}) => <h2 className="text-lg font-bold mb-2 text-gray-900" {...props} />,
+                    h3: ({node, ...props}) => <h3 className="text-base font-bold mb-1 text-gray-900" {...props} />,
+                    ol: ({node, ordered, ...props}) => <ol className="list-decimal list-inside mb-2 pl-2 space-y-1" {...props} />,
+                    ul: ({node, ordered, ...props}) => <ul className="list-disc list-inside mb-2 pl-2 space-y-1" {...props} />,
+                    li: ({node, ordered, ...props}) => (
+                      <li className="text-gray-800" {...props}>
+                        <span className="ml-1">{props.children}</span>
+                      </li>
+                    ),
+                    a: ({node, ...props}) => <a className="text-purple-600 hover:underline" {...props} />,
+                    blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-gray-200 pl-4 italic my-2" {...props} />,
+                    code: ({node, inline, ...props}) => 
+                      inline ? (
+                        <code className="bg-gray-100 rounded px-1 py-0.5 text-sm font-mono" {...props} />
+                      ) : (
+                        <code className="block bg-gray-100 rounded p-2 text-sm font-mono my-2 whitespace-pre-wrap" {...props} />
+                      ),
                   }}
                 >
                   {message.content}
