@@ -33,25 +33,6 @@ interface UpdateResult {
   error?: string;
 }
 
-declare module 'lucide-react' {
-  interface IconProps extends React.SVGProps<SVGSVGElement> {
-    size?: number | string;
-    className?: string;
-  }
-  
-  export const Loader: React.FC<IconProps>;
-  export const RefreshCw: React.FC<IconProps>;
-  export const BarChart2: React.FC<IconProps>;
-  export const TrendingUp: React.FC<IconProps>;
-  export const Users: React.FC<IconProps>;
-  export const PieChart: React.FC<IconProps>;
-  export const AlertCircle: React.FC<IconProps>;
-  export const Clock: React.FC<IconProps>;
-  export const LineChart: React.FC<IconProps>;
-  export const MapPin: React.FC<IconProps>;
-  export const UserSquare2: React.FC<IconProps>;
-}
-
 function RealTimeAnalysisPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [updateResult, setUpdateResult] = useState<UpdateResult | null>(null);
