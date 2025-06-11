@@ -95,9 +95,9 @@ function RealTimeAnalysisPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 md:p-10">
+    <div className="min-h-screen bg-gray-50 text-gray-900 p-6 md:p-10">
       <div className="max-w-7xl mx-auto">
-        <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-700">
+        <header className="flex flex-col md:flex-row justify-between items-center mb-8 pb-4 border-b border-gray-200">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500 mb-4 md:mb-0">
             Análisis en Tiempo Real
           </h1>
@@ -124,28 +124,28 @@ function RealTimeAnalysisPage() {
         </header>
 
         {error && (
-          <div className="bg-red-900 border border-red-700 text-red-200 p-4 rounded-lg mb-6 flex items-center">
+          <div className="bg-red-100 border border-red-300 text-red-700 p-4 rounded-lg mb-6 flex items-center">
             <AlertCircle className="mr-3" />
             <p>{error}</p>
           </div>
         )}
 
         {!updateResult && !isLoading && (
-          <div className="text-center py-20 bg-gray-800 rounded-lg">
+          <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
             <BarChart2 className="mx-auto text-gray-500 h-24 w-24 mb-4" />
-            <h2 className="text-2xl font-semibold text-gray-300">Bienvenido al Dashboard de Análisis</h2>
-            <p className="text-gray-400 mt-2">
+            <h2 className="text-2xl font-semibold text-gray-800">Bienvenido al Dashboard de Análisis</h2>
+            <p className="text-gray-600 mt-2">
               Haz clic en "Actualizar Datos" para obtener las últimas encuestas y visualizaciones.
             </p>
           </div>
         )}
         
         {isLoading && (
-          <div className="text-center py-20 bg-gray-800 rounded-lg">
+          <div className="text-center py-20 bg-gray-100 rounded-xl border border-gray-200">
             <div className="animate-pulse">
               <Loader className="mx-auto text-indigo-400 h-24 w-24 mb-4" />
-              <h2 className="text-2xl font-semibold text-gray-300">Procesando datos...</h2>
-              <p className="text-gray-400 mt-2">
+              <h2 className="text-2xl font-semibold text-gray-800">Procesando datos...</h2>
+              <p className="text-gray-600 mt-2">
                 Estamos obteniendo y analizando la información más reciente. Esto puede tardar un momento.
               </p>
             </div>
@@ -156,13 +156,13 @@ function RealTimeAnalysisPage() {
           <div>
             {/* Tabs for Current vs Historical */}
             <div className="flex justify-center mb-8">
-              <div className="bg-gray-800 p-1 rounded-xl">
+              <div className="bg-gray-100 p-1 rounded-xl shadow-inner">
                 <button
                   onClick={() => setActiveTab('current')}
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeTab === 'current'
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-400 hover:text-white'
+                      ? 'bg-purple-600 text-white'
+                      : 'text-gray-600 hover:text-purple-600'
                   }`}
                 >
                   Datos Actuales
@@ -171,8 +171,8 @@ function RealTimeAnalysisPage() {
                   onClick={() => setActiveTab('historical')}
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeTab === 'historical'
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-400 hover:text-white'
+                      ? 'bg-purple-600 text-white'
+                      : 'text-gray-600 hover:text-purple-600'
                   }`}
                 >
                   Datos Históricos
@@ -210,8 +210,8 @@ function RealTimeAnalysisPage() {
                   {updateResult.visualizations
                     .filter(vis => !vis.name.includes('historica') && !vis.name.includes('comparacion'))
                     .map((vis) => (
-                      <div key={vis.name} className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                        <h3 className="text-xl font-bold mb-4 capitalize text-gray-200">
+                      <div key={vis.name} className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 className="text-xl font-bold mb-4 capitalize text-gray-900">
                           {vis.name.replace(/_/g, ' ').replace('.png', '')}
                         </h3>
                         <img 
@@ -253,8 +253,8 @@ function RealTimeAnalysisPage() {
 
                 <div className="grid grid-cols-1 gap-8">
                   {/* Historical Evolution */}
-                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">
                       Evolución Histórica de Intención de Voto
                     </h3>
                     <img 
@@ -265,8 +265,8 @@ function RealTimeAnalysisPage() {
                   </div>
 
                   {/* Pollster Comparison */}
-                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">
                       Comparación entre Encuestadoras
                     </h3>
                     <img 
@@ -277,8 +277,8 @@ function RealTimeAnalysisPage() {
                   </div>
 
                   {/* Regional Analysis */}
-                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">
                       Análisis Regional
                     </h3>
                     <img 
@@ -289,8 +289,8 @@ function RealTimeAnalysisPage() {
                   </div>
 
                   {/* Demographic Analysis */}
-                  <div className="bg-gray-800 p-4 rounded-xl shadow-2xl">
-                    <h3 className="text-xl font-bold mb-4 text-gray-200">
+                  <div className="bg-white p-4 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">
                       Análisis Demográfico
                     </h3>
                     <img 
@@ -316,13 +316,13 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ Icon, title, value }) => (
-  <div className="bg-gray-800 p-6 rounded-xl flex items-center shadow-lg">
-    <div className="bg-indigo-600 p-3 rounded-full mr-4">
+  <div className="bg-white p-6 rounded-xl flex items-center shadow-lg border border-gray-100">
+    <div className="bg-purple-600 p-3 rounded-full mr-4">
       <Icon className="h-6 w-6 text-white"/>
     </div>
     <div>
-      <p className="text-sm text-gray-400">{title}</p>
-      <p className="text-xl font-bold text-white">{value}</p>
+      <p className="text-sm text-gray-600">{title}</p>
+      <p className="text-xl font-bold text-gray-900">{value}</p>
     </div>
   </div>
 );
