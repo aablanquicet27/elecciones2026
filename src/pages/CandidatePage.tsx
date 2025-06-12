@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, TrendingDown, Users, Award, MapPin, Calendar } from 'lucide-react';
+import { getCandidateImage } from '../utils/candidateImages';
 import { Candidate } from '../types/election';
 
 interface CandidatePageProps {
@@ -52,10 +53,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
     );
   }
 
-  const getPlaceholderImage = (name: string) => {
-    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=7c3aed&color=ffffff&bold=true`;
-  };
+  const getImage = (name: string) => getCandidateImage(name, 400);
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
@@ -99,7 +97,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
               <div className="relative">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#F7F0E8] shadow-xl">
                   <img 
-                    src={getPlaceholderImage(candidate.Candidato)} 
+                    src={getImage(candidate.Candidato)} 
                     alt={candidate.Candidato}
                     className="w-full h-full object-cover"
                   />

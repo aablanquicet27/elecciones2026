@@ -1,6 +1,7 @@
 import React from 'react';
 import { Candidate } from '../types/election';
 import { TrendingUp, TrendingDown, Users, Award } from 'lucide-react';
+import { getCandidateImage } from '../utils/candidateImages';
 
 interface CandidateCardProps {
   candidate: Candidate;
@@ -25,11 +26,8 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, rank }) => {
 
   const balance = candidate.Favorabilidad - candidate.Desfavorabilidad;
 
-  // Placeholder image for candidates
-  const getPlaceholderImage = (name: string) => {
-    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=120&background=7c3aed&color=ffffff&bold=true`;
-  };
+  // Get official photo if available, otherwise fallback to initials avatar
+  const getImage = (name: string) => getCandidateImage(name, 120);
 
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
@@ -44,7 +42,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, rank }) => {
         {/* Candidate Photo */}
         <div className="flex-shrink-0">
           <img
-            src={getPlaceholderImage(candidate.Candidato)}
+            src={getImage(candidate.Candidato)}
             alt={candidate.Candidato}
             className="w-16 h-16 rounded-full object-cover border-2 border-gray-200"
           />

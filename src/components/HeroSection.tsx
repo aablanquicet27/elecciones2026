@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Users, Award, ChevronDown, Play } from 'lucide-react';
 import { Candidate } from '../types/election';
+import { getCandidateImage } from '../utils/candidateImages';
 
 interface HeroSectionProps {
   candidates: Candidate[];
@@ -19,10 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
     return () => clearInterval(timer);
   }, [topThree.length]);
 
-  const getPlaceholderImage = (name: string) => {
-    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=400&background=6b46c1&color=ffffff&bold=true`;
-  };
+  const getImage = (name: string) => getCandidateImage(name, 400);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 overflow-hidden">
@@ -116,7 +114,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                   >
                     <div className="bg-white rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center">
                       <img
-                        src={getPlaceholderImage(candidate.Candidato)}
+                        src={getImage(candidate.Candidato)}
                         alt={candidate.Candidato}
                         className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-purple-200"
                       />

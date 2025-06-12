@@ -2,16 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, TrendingDown, Users, Award, ExternalLink } from 'lucide-react';
 import { Candidate } from '../types/election';
+import { getCandidateImage } from '../utils/candidateImages';
 
 interface CandidateGridProps {
   candidates: Candidate[];
 }
 
 const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
-  const getPlaceholderImage = (name: string) => {
-    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2);
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=200&background=7c3aed&color=ffffff&bold=true`;
-  };
+  const getImage = (name: string) => getCandidateImage(name, 200);
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
@@ -56,7 +54,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               {/* Candidate Photo */}
               <div className="relative h-48 bg-gradient-to-br from-purple-50 to-indigo-100 flex items-center justify-center">
                 <img
-                  src={getPlaceholderImage(candidate.Candidato)}
+                  src={getImage(candidate.Candidato)}
                   alt={candidate.Candidato}
                   className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-500"
                 />
