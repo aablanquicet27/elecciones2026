@@ -11,12 +11,17 @@
     "scrape": "node scripts/scraper.js",
     "analyze": "python scripts/real_time_analysis.py",
     "update-full": "node scripts/automation.js full",
-    "update-quick": "node scripts/automation.js quick"
+    "update-quick": "node scripts/automation.js quick",
+    "start:server": "node server/server.js"
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.25.5",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "exa-js": "^1.0.2",
     "lucide-react": "^0.344.0",
     "node-fetch": "^2.7.0",
+    "openai": "^4.52.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
