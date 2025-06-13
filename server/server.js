@@ -7,7 +7,13 @@ import path from 'path';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CACHE_FILE_PATH = path.join(path.dirname(new URL(import.meta.url).pathname), 'cache.json');
+
+const CACHE_DIR = process.env.RENDER_DISK_MOUNT_PATH || path.dirname(new URL(import.meta.url).pathname.substring(1));
+const CACHE_FILE_PATH = path.join(CACHE_DIR, 'cache.json');
+
+if (!process.env.RENDER_DISK_MOUNT_PATH) {
+    fs.mkdir(CACHE_DIR, { recursive: true }).catch(console.error);
+}
 
 // --- INICIO: JSON Schema Definido ---
 // Esta es la plantilla que Exa usará para estructurar la respuesta.
@@ -101,7 +107,7 @@ let ultimasNoticias = {
 async function guardarNoticiasEnCache() {
   try {
     await fs.writeFile(CACHE_FILE_PATH, JSON.stringify(ultimasNoticias, null, 2));
-    console.log('💾 Cache de noticias guardado en archivo.');
+    console.log(`💾 Cache de noticias guardado en: ${CACHE_FILE_PATH}`);
   } catch (error) {
     console.error('❌ Error al guardar el cache en archivo:', error);
   }
@@ -109,9 +115,10 @@ async function guardarNoticiasEnCache() {
 
 async function cargarNoticiasDesdeCache() {
   try {
+    await fs.access(CACHE_FILE_PATH);
     const data = await fs.readFile(CACHE_FILE_PATH, 'utf-8');
     ultimasNoticias = JSON.parse(data);
-    console.log('✅ Cache de noticias cargado desde archivo.');
+    console.log(`✅ Cache de noticias cargado desde: ${CACHE_FILE_PATH}`);
   } catch (error) {
     if (error.code === 'ENOENT') {
       console.log('ℹ️ No se encontró archivo de cache. Se creará uno en la primera actualización.');
@@ -125,60 +132,70 @@ async function cargarNoticiasDesdeCache() {
 // --- FUNCIÓN PRINCIPAL CON SCHEMA ---
 async function actualizarNoticiasConResearchTask() {
   try {
-    console.log('🔄 Iniciando actualización ESTRUCTURADA con imágenes...');
+    console.log('🔄 Iniciando actualización y acumulación de noticias...');
     ultimasNoticias.status = 'updating';
-    
-    // Obtiene la fecha actual en el formato que espera la instrucción (ej: 8/6/2025)
+
+    // 1. Cargar noticias viejas del caché
+    let noticiasViejas = [];
+    try {
+      const data = await fs.readFile(CACHE_FILE_PATH, 'utf-8');
+      const cacheViejo = JSON.parse(data);
+      if (cacheViejo.data && cacheViejo.data.data && cacheViejo.data.data.articles) {
+        noticiasViejas = cacheViejo.data.data.articles;
+      }
+    } catch (e) {
+      console.log('ℹ️ No hay caché previo o es inválido. Se creará desde cero.');
+    }
+    console.log(`🔍 Encontradas ${noticiasViejas.length} noticias en el caché existente.`);
+
+    // 2. Buscar noticias nuevas en Exa
     const today = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' });
     const currentTime = new Date().toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
-    
-    // INSTRUCCIONES MEJORADAS PARA INCLUIR IMÁGENES
-    const instructions = `ENCUENTRA TODAS LAS NOTICIAS RELACIONADAS CON LAS ELECCIONES DE COLOMBIA DE 2026 del ${today} a las ${currentTime}. 
-    
-    INSTRUCCIONES ESPECÍFICAS:
-    - Incluye información sobre precandidatos, partidos políticos, encuestas, y cualquier desarrollo electoral relevante
-    - IMPORTANTE: Para cada noticia, busca e incluye imágenes cuando estén disponibles (fotos de candidatos, eventos, infografías, etc.)
-    - Prioriza noticias con contenido visual rico
-    - Incluye noticias de las últimas 2 horas si están disponibles, o las más recientes del día
-    - Responde en español
-    - Asegúrate de incluir las URLs de las imágenes y descripciones alternativas`;
+    const instructions = `ENCUENTRA TODAS LAS NOTICIAS RELACIONADAS CON LAS ELECCIONES DE COLOMBIA DE 2026 del ${today}. Incluye información sobre precandidatos, partidos políticos, encuestas, y cualquier desarrollo electoral relevante. Prioriza noticias de las últimas 2 horas.`;
 
-    // Crear tarea de investigación con configuración para obtener contenido rico
     const { id: taskId } = await exa.research.createTask({
-      instructions: instructions,
-      output: {
-        schema: noticiasSchema,
-        inferSchema: false
-      },
-      // CONFIGURACIÓN ADICIONAL PARA CONTENIDO MULTIMEDIA
+      instructions,
+      output: { schema: noticiasSchema, inferSchema: false },
       includeContent: true,
-      includeImages: true, // Si esta opción está disponible en tu versión de Exa
+      includeImages: true,
     });
 
-    // Esperar y obtener resultado
     const task = await exa.research.pollTask(taskId);
+    const noticiasNuevas = task?.data?.articles || [];
+    console.log(`📰 Exa encontró ${noticiasNuevas.length} noticias nuevas.`);
 
-    // Guardar las noticias actualizadas
-    ultimasNoticias = {
-      data: task,
+    // 3. Combinar y eliminar duplicados por título
+    const titulosViejos = new Set(noticiasViejas.map(n => n.title));
+    const noticiasFiltradas = noticiasNuevas.filter(noticiaNueva => !titulosViejos.has(noticiaNueva.title));
+    console.log(`➕ Se agregarán ${noticiasFiltradas.length} noticias únicas.`);
+    
+    const articulosCombinados = [...noticiasViejas, ...noticiasFiltradas];
+
+    // 4. Reconstruir el objeto de caché y guardarlo
+    const nuevoCache = {
+      data: {
+        data: { articles: articulosCombinados },
+        id: task.id,
+        status: task.status
+      },
       lastUpdate: new Date().toISOString(),
       status: 'completed',
       date: today,
       time: currentTime,
-      taskId: taskId,
-      updateType: 'external-cron' // Cambiado para reflejar el origen
+      taskId,
+      updateType: 'external-cron-accumulative'
     };
 
-    await guardarNoticiasEnCache(); // Guardar en archivo
-
-    console.log(`✅ Noticias con imágenes actualizadas exitosamente: ${new Date().toLocaleString('es-CO')}`);
-    console.log(`📊 Total noticias encontradas: ${task?.data?.articles?.length || 0}`);
+    ultimasNoticias = nuevoCache;
+    await guardarNoticiasEnCache();
     
+    console.log(`✅ Actualización completada. Total de noticias en caché: ${articulosCombinados.length}`);
+
   } catch (error) {
-    console.error('❌ Error en actualización con imágenes:', error.message);
+    console.error('❌ Error en la actualización acumulativa:', error.message);
     ultimasNoticias.status = 'error';
     ultimasNoticias.lastError = error.message;
-    await guardarNoticiasEnCache(); // Guardar también en caso de error
+    // No guardamos el caché si hay un error para no sobreescribir uno bueno.
   }
 }
 
@@ -186,74 +203,29 @@ async function actualizarNoticiasConResearchTask() {
 
 // Endpoint raíz que muestra el estado y los endpoints disponibles
 app.get('/', (req, res) => {
+  const totalNoticias = ultimasNoticias.data?.data?.articles?.length || 0;
   res.json({ 
-    message: 'API de Noticias Colombia 2026 con imágenes - Persistencia en Archivo',
+    message: 'API de Noticias Colombia 2026 - Modo Acumulativo',
     status: 'active',
-    cronJob: {
-      active: false, // El cron job ya no se gestiona aquí
-      recommendation: 'Usar Cron Job de Render apuntando a /force-update',
-      schedule: 'Configurar en Render como `0 */2 * * *`',
-      timezone: 'UTC (Render default)',
-      lastUpdate: ultimasNoticias.lastUpdate,
-      cacheStatus: ultimasNoticias.status,
-    },
-    features: [
-      '📰 Noticias estructuradas con JSON Schema',
-      '🖼️ Imágenes incluidas cuando están disponibles',
-      '⏰ Actualización mediante endpoint para cron externo',
-      '🇨🇴 Zona horaria Colombia para la búsqueda',
-      '💾 Sistema de caché basado en archivo JSON'
-    ],
-    endpoints: [
-      'GET / - Estado de la API',
-      'GET /daily-news - Noticias con imágenes (formato estructurado)',
-      'GET /daily-news-chat - Noticias del día (formato texto)',
-      'POST /force-update - Forzar actualización manual',
-      'GET /cache-status - Ver el estado del caché interno',
-      'GET /images-stats - Estadísticas de imágenes encontradas'
-    ]
+    total_noticias_en_cache: totalNoticias,
+    lastUpdate: ultimasNoticias.lastUpdate,
+    cacheStatus: ultimasNoticias.status,
   });
 });
 
 // Endpoint principal para obtener las noticias diarias estructuradas
-app.get('/daily-news', async (req, res) => {
-  try {
-    const today = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' });
-    
-    // Si el servidor acaba de iniciar y no hay datos, intentar una actualización
-    if (!ultimasNoticias.data) {
-      console.log('ℹ️ No hay datos en memoria, forzando primera actualización...');
-      await actualizarNoticiasConResearchTask();
-    } else {
-      // Comprobar si los datos tienen más de 2 horas
-      const needsUpdate = !ultimasNoticias.lastUpdate ||
-                         (Date.now() - new Date(ultimasNoticias.lastUpdate).getTime()) > (2 * 60 * 60 * 1000);
-
-      if (needsUpdate) {
-        console.log('🔄 Datos en caché tienen más de 2 horas. Se recomienda una actualización vía /force-update.');
-        // Opcional: podrías auto-actualizar aquí, pero es mejor que lo controle el cron
-        // await actualizarNoticiasConResearchTask();
-      }
-    }
-
-    if (ultimasNoticias.status === 'completed') {
-      res.json({
-        success: true,
-        message: "Noticias con imágenes obtenidas exitosamente",
-        cached: true, // Se asume que siempre se sirve de caché
-        update_frequency: "external-cron-every-2-hours",
-        ...ultimasNoticias
-      });
-    } else {
-      throw new Error(ultimasNoticias.lastError || 'Error desconocido durante la actualización');
-    }
-
-  } catch (error) {
-    console.error('Error en GET /daily-news:', error);
-    res.status(500).json({ 
+app.get('/daily-news', (req, res) => {
+  if (ultimasNoticias.status === 'completed' && ultimasNoticias.data) {
+    res.json({
+      success: true,
+      message: "Noticias acumuladas obtenidas exitosamente desde el caché",
+      ...ultimasNoticias
+    });
+  } else {
+    res.status(503).json({ 
       success: false, 
-      error: "Error al obtener las noticias con imágenes", 
-      details: error.message 
+      error: "Las noticias no están disponibles o se están actualizando.",
+      details: ultimasNoticias.lastError || `Estado actual: ${ultimasNoticias.status}`
     });
   }
 });
@@ -335,18 +307,13 @@ app.get('/images-stats', (req, res) => {
 });
 
 // Endpoint para forzar una actualización manual (útil para pruebas y para el Cron Job de Render)
-app.post('/force-update', async (req, res) => {
-  try {
-    console.log(`🔄 Actualización manual/externa solicitada...`);
-    await actualizarNoticiasConResearchTask();
-    res.json({
-      success: true,
-      message: `Actualización manual completada`,
-      data: ultimasNoticias,
-    });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'Error en actualización manual', details: error.message });
-  }
+app.post('/force-update', (req, res) => {
+  console.log(`🔄 Petición recibida en /force-update. Iniciando actualización acumulativa...`);
+  actualizarNoticiasConResearchTask(); 
+  res.status(202).json({
+    success: true,
+    message: `Actualización acumulativa iniciada. El proceso corre en segundo plano.`,
+  });
 });
 
 // Manejo de errores global
@@ -364,7 +331,7 @@ async function iniciarServidor() {
     console.log(`📡 API disponible en: http://localhost:${PORT}`);
     console.log(`📰 Endpoint principal (JSON con imágenes): http://localhost:${PORT}/daily-news`);
     console.log(`📊 Estadísticas de imágenes: http://localhost:${PORT}/images-stats`);
-    console.log(`⚙️ Para actualizar, envía una petición POST a /force-update.`);
+    console.log(`⚙️  Modo de acumulación activado. El Cron Job debe hacer un POST a /force-update`);
   });
 }
 
