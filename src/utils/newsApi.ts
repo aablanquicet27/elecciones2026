@@ -25,7 +25,7 @@ interface Articulo {
 
 interface RespuestaAPI {
   success: boolean;
-  data: {
+  data?: { // Hacemos opcional por si hay error
     data: {
       articles: Articulo[];
     };
@@ -39,18 +39,41 @@ interface RespuestaAPI {
       };
     };
   };
+  // Añadimos campos que pueden venir en una respuesta de error
+  error?: string;
+  details?: string;
 }
 
-export async function obtenerNoticiasProcesadas() {
+// Definimos una interfaz para la respuesta de nuestra función
+interface ResultadoProcesado {
+  exito: boolean;
+  datos: Articulo[];
+  error: string | null;
+  statusCode?: number | null; // <-- Incluimos el código de estado
+}
+
+export async function obtenerNoticiasProcesadas(): Promise<ResultadoProcesado> {
   const url = 'https://elecciones202.onrender.com/daily-news';
 
   try {
     // --- PASO 1: CONECTAR Y OBTENER EL JSON ---
     const respuestaServidor = await fetch(url);
-    if (!respuestaServidor.ok) {
-      throw new Error(`Error de red del servidor: ${respuestaServidor.status}`);
-    }
+    
+    // Leemos el JSON en cualquier caso, porque puede contener el mensaje de error
     const jsonCompleto: RespuestaAPI = await respuestaServidor.json();
+
+    if (!respuestaServidor.ok) {
+      const mensajeServidor = jsonCompleto.error || `Error de red del servidor`;
+      console.warn(`Respuesta no exitosa del servidor (${respuestaServidor.status}):`, mensajeServidor);
+      
+      // Devolvemos una estructura de error enriquecida
+      return { 
+        exito: false, 
+        datos: [], 
+        error: mensajeServidor, 
+        statusCode: respuestaServidor.status 
+      };
+    }
 
     // --- PASO 2: PROCESAR EL JSON Y VALIDAR CON EL SCHEMA ---
     if (!jsonCompleto || !jsonCompleto.success || !jsonCompleto.data?.data?.articles) {
@@ -107,13 +130,14 @@ export async function obtenerNoticiasProcesadas() {
     };
 
   } catch (err: unknown) {
-    // --- MANEJO DE CUALQUIER ERROR ---
+    // --- MANEJO DE CUALQUIER ERROR DE RED O PARSEO ---
     const mensajeError = err instanceof Error ? err.message : String(err);
-    console.error("Falló el proceso de obtención de noticias:", err);
+    console.error("Falló la conexión o el parseo de noticias:", err);
     return {
       exito: false,
       datos: [],
-      error: mensajeError
+      error: "No se pudo conectar con el servidor de noticias. Revisa tu conexión a internet.",
+      statusCode: null // No hay código de estado en este tipo de error
     };
   }
 }

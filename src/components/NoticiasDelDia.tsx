@@ -28,12 +28,14 @@ const NoticiasDelDia: React.FC = () => {
   const [noticias, setNoticias] = useState<Noticia[]>([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [statusCode, setStatusCode] = useState<number | null>(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState<Date | null>(null);
   const [noticiaExpandida, setNoticiaExpandida] = useState<number | null>(null);
 
   const cargarNoticias = async () => {
     setCargando(true);
     setError(null);
+    setStatusCode(null);
     
     const resultado = await obtenerNoticiasProcesadas();
     
@@ -43,6 +45,7 @@ const NoticiasDelDia: React.FC = () => {
       console.log('Noticias cargadas:', resultado.datos); // Para debugging
     } else {
       setError(resultado.error);
+      setStatusCode(resultado.statusCode || null);
     }
     
     setCargando(false);
@@ -125,6 +128,33 @@ const NoticiasDelDia: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error && statusCode === 503) {
+    return (
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12">
+          <div className="text-center">
+            <div className="bg-blue-100 p-6 rounded-full w-fit mx-auto mb-6">
+              <Clock className="h-12 w-12 text-blue-600 animate-pulse" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Servidor Ocupado</h2>
+            <p className="text-gray-600 mb-8 text-base sm:text-lg max-w-2xl mx-auto">
+              El servidor está buscando y procesando las noticias más recientes. Esto puede tardar uno o dos minutos.
+              <br/>
+              Por favor, intenta de nuevo en un momento.
+            </p>
+            <button
+              onClick={cargarNoticias}
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg text-base font-semibold"
+            >
+              <RefreshCw className="h-5 w-5" />
+              <span>Reintentar Ahora</span>
+            </button>
           </div>
         </div>
       </div>
