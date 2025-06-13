@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Vote, TrendingUp, Users, BarChart3, ChevronDown, Play, Award, Target, Calendar, MapPin } from 'lucide-react';
+import { TrendingUp, Users, BarChart3, ChevronDown, Play, Award, Target, Calendar, MapPin } from 'lucide-react';
 import { Candidate } from '../types/election';
 import HeroSection from '../components/HeroSection';
 import CandidateGrid from '../components/CandidateGrid';
@@ -42,9 +42,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-purple-600 p-2 rounded-lg">
-                <Vote className="h-6 w-6 text-white" />
-              </div>
+              <img src="/logoagapai.png" alt="Logo" className="h-8 w-8" />
               <span className="text-xl font-bold text-gray-900">Colombia 2026</span>
             </div>
             

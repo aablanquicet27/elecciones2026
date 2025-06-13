@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Vote, RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle, Clock, LineChart, MapPin, UserSquare2 } from 'lucide-react';
+import { RefreshCw, Loader, BarChart2, TrendingUp, Users, PieChart, AlertCircle, Clock, LineChart, MapPin, UserSquare2 } from 'lucide-react';
 
 // Tipos de datos que esperamos del backend
 interface Visualization {
@@ -108,9 +108,7 @@ function RealTimeAnalysisPage() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-purple-600 p-2 rounded-lg">
-                <Vote className="h-6 w-6 text-white" />
-              </div>
+              <img src="/logoagapai.png" alt="Logo" className="h-8 w-8" />
               <span className="text-xl font-bold text-gray-900">Colombia 2026</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">

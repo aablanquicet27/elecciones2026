@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Mail, CheckCircle, Loader, Vote, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Mail, CheckCircle, Loader, ChevronDown, ChevronUp } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { getCandidateImage } from '../utils/candidateImages';
 
@@ -150,9 +150,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
           </button>
           
           <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
-            <div className="bg-white/20 p-2 rounded-full">
-              <Vote className="h-5 w-5 sm:h-6 sm:w-6" />
-            </div>
+            <img src="/logoagapai.png" alt="Logo" className="h-6 w-6 sm:h-8 sm:w-8 bg-white/20 rounded-full p-1" />
             <h2 className="text-xl sm:text-2xl font-bold">
               {step === 'email' ? '¡Únete a ElectoralAI!' : 'Encuesta Electoral 2026'}
             </h2>

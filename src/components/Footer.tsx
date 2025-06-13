@@ -1,5 +1,5 @@
 import React from 'react';
-import { Vote, Mail, Phone, MapPin, ExternalLink, Calendar, BarChart3 } from 'lucide-react';
+import { MapPin, ExternalLink, Calendar, BarChart3 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,9 +9,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-purple-600 p-2 rounded-lg">
-                <Vote className="h-6 w-6 text-white" />
-              </div>
+              <img src="/logoagapai.png" alt="Logo" className="h-8 w-8" />
               <span className="text-xl font-bold">Colombia 2026</span>
             </div>
             <p className="text-gray-400 text-sm">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Vote, TrendingUp, Users, Calendar } from 'lucide-react';
+import { TrendingUp, Users, Calendar } from 'lucide-react';
 
 const Header: React.FC = () => {
   return (
