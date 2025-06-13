@@ -4,13 +4,16 @@ import HomePage from './pages/HomePage';
 import CandidatePage from './pages/CandidatePage';
 import AnalysisPage from './pages/AnalysisPage';
 import RealTimeAnalysisPage from './pages/RealTimeAnalysisPage';
+import SubscriptionModal from './components/SubscriptionModal';
+import AIChatBubble from './components/AIChatBubble';
+import { useSubscription } from './hooks/useSubscription';
 import { Candidate } from './types/election';
 import { parseCandidateData } from './utils/csvParser';
-import AIChatBubble from './components/AIChatBubble';
 
 function App() {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [loading, setLoading] = useState(true);
+  const { isSubscribed, userEmail, showModal, handleSubscribe, handleCloseModal } = useSubscription();
 
   useEffect(() => {
     const loadData = async () => {
@@ -41,15 +44,26 @@ function App() {
   }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage candidates={candidates} />} />
-        <Route path="/candidato/:slug" element={<CandidatePage candidates={candidates} />} />
-        <Route path="/analisis" element={<AnalysisPage candidates={candidates} />} />
-        <Route path="/analisis-tiempo-real" element={<RealTimeAnalysisPage />} />
-      </Routes>
-      <AIChatBubble />
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage candidates={candidates} />} />
+          <Route path="/candidato/:slug" element={<CandidatePage candidates={candidates} />} />
+          <Route path="/analisis" element={<AnalysisPage candidates={candidates} />} />
+          <Route path="/analisis-tiempo-real" element={<RealTimeAnalysisPage />} />
+        </Routes>
+        
+        {/* Modal de suscripción */}
+        <SubscriptionModal
+          isOpen={showModal}
+          onClose={handleCloseModal}
+          onSubscribe={handleSubscribe}
+        />
+        
+        {/* Chat bubble solo si está suscrito */}
+        {isSubscribed && <AIChatBubble />}
+      </Router>
+    </>
   );
 }
 
