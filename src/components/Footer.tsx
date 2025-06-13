@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src="/logoagapai.png" alt="Logo" className="h-8 w-8" />
+              <img src="/logoagapai.png" alt="Logo" className="h-10 w-10" />
               <span className="text-xl font-bold">Colombia 2026</span>
             </div>
             <p className="text-gray-400 text-sm">

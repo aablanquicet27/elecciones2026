@@ -7,7 +7,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <img src="/logoagapai.png" alt="Agapai Logo" className="h-14 w-14" />
+            <img src="/logoagapai.png" alt="Agapai Logo" className="h-16 w-16" />
             <div>
               <h1 className="text-3xl font-bold tracking-tight">
                 Panorama Electoral Colombia 2026

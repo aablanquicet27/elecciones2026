@@ -42,7 +42,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src="/logoagapai.png" alt="Logo" className="h-8 w-8" />
+              <img src="/logoagapai.png" alt="Logo" className="h-10 w-10" />
               <span className="text-xl font-bold text-gray-900">Colombia 2026</span>
             </div>
             
