@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.25.5",
+    "@supabase/supabase-js": "^2.39.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "exa-js": "^1.0.2",
