@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Candidate } from '../types/election';
 
 interface VotingIntentionChartProps {
@@ -10,17 +10,51 @@ const VotingIntentionChart: React.FC<VotingIntentionChartProps> = ({
   candidates, 
   limit = 10 
 }) => {
-  const topCandidates = candidates
-    .sort((a, b) => b.Intención_Voto_Porcentaje - a.Intención_Voto_Porcentaje)
-    .slice(0, limit);
+  const [shuffledCandidates, setShuffledCandidates] = useState<Candidate[]>([]);
 
-  const maxPercentage = Math.max(...topCandidates.map(c => c.Intención_Voto_Porcentaje));
+  useEffect(() => {
+    const votoEnBlanco: Candidate = {
+      ID: 999,
+      Candidato: "VOTO EN BLANCO",
+      Partido_Movimiento: "Opción Ciudadana",
+      Cargo_Actual: "N/A",
+      Tendencia_Política: "Neutral",
+      Intención_Voto_Porcentaje: 5.0, // Example percentage
+      Favorabilidad: 0,
+      Desfavorabilidad: 0,
+      Edad: 0,
+      Generación: "N/A",
+      Imagen_URL: "/voto_en_blanco.png", // Using from public folder
+      Región_Origen: "N/A",
+      Ranking: 99,
+      Tipo_Candidatura: "N/A"
+    };
+
+    const candidatesWithBlanco = [...candidates, votoEnBlanco];
+
+    const shuffleArray = (array: Candidate[]) => {
+      let currentIndex = array.length, randomIndex;
+      const newArray = [...array];
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [newArray[currentIndex], newArray[randomIndex]] = [
+          newArray[randomIndex], newArray[currentIndex]];
+      }
+      return newArray;
+    };
+
+    setShuffledCandidates(shuffleArray(candidatesWithBlanco).slice(0, limit));
+  }, [candidates, limit]);
+
+  const maxPercentage = Math.max(...shuffledCandidates.map(c => c.Intención_Voto_Porcentaje));
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
       case 'Izquierda': return 'bg-red-500';
       case 'Centro': return 'bg-blue-500';
       case 'Derecha': return 'bg-green-500';
+      case 'Neutral': return 'bg-gray-400';
       default: return 'bg-gray-500';
     }
   };
@@ -29,7 +63,7 @@ const VotingIntentionChart: React.FC<VotingIntentionChartProps> = ({
     <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-gray-900">
-          Intención de Voto - Top {limit}
+          Intención de Voto
         </h3>
         <div className="flex items-center space-x-4 text-sm">
           <div className="flex items-center space-x-2">
@@ -48,13 +82,11 @@ const VotingIntentionChart: React.FC<VotingIntentionChartProps> = ({
       </div>
       
       <div className="space-y-4">
-        {topCandidates.map((candidate, index) => (
-          <div key={candidate.Candidato} className="group">
+        {shuffledCandidates.map((candidate) => (
+          <div key={candidate.ID} className="group">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-3">
-                <span className="text-sm font-medium text-gray-600 w-6">
-                  #{index + 1}
-                </span>
+                <img src={candidate.Imagen_URL || '/placeholder.png'} alt={candidate.Candidato} className="w-8 h-8 rounded-full object-cover" />
                 <span className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
                   {candidate.Candidato}
                 </span>

@@ -1,4 +1,5 @@
 export interface Candidate {
+  ID: number;
   Candidato: string;
   Intención_Voto_Porcentaje: number;
   Tendencia_Política: string;
@@ -11,6 +12,7 @@ export interface Candidate {
   Ranking: number;
   Generación: string;
   Tipo_Candidatura: string;
+  Imagen_URL?: string;
 }
 
 export interface TrendData {

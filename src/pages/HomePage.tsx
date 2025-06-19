@@ -102,6 +102,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               >
                 Análisis en Vivo
               </Link>
+              <a 
+                href="https://wsp.registraduria.gov.co/censo/consultar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium"
+              >
+                Consultar Votación
+              </a>
             </div>
           </div>
         </div>
