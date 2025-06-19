@@ -22,7 +22,8 @@ const mainCandidates = [
   'Daniel Quintero',
   'María José Pizarro',
   'Jota Pe Hernández',
-  'Juan Daniel Oviedo'
+  'Juan Daniel Oviedo',
+  'Voto en Blanco'
 ];
 
 // Lista completa de candidatos adicionales
@@ -57,12 +58,28 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const [shuffledCandidates, setShuffledCandidates] = useState<string[]>([]);
 
   useEffect(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsValid(emailRegex.test(email));
     setError('');
   }, [email]);
+
+  useEffect(() => {
+    const shuffleArray = (array: string[]) => {
+      let currentIndex = array.length, randomIndex;
+      const newArray = [...array];
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [newArray[currentIndex], newArray[randomIndex]] = [
+          newArray[randomIndex], newArray[currentIndex]];
+      }
+      return newArray;
+    };
+    setShuffledCandidates(shuffleArray(mainCandidates));
+  }, []);
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -245,7 +262,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
 
               {/* Grid de candidatos principales - Muy responsive */}
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
-                {mainCandidates.map((candidate) => (
+                {shuffledCandidates.map((candidate) => (
                   <button
                     key={candidate}
                     onClick={() => setSelectedCandidate(candidate)}
