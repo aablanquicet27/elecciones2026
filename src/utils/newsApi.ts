@@ -4,13 +4,16 @@
  * 1. Conectarse a la URL.
  * 2. Obtener el JSON.
  * 3. Validar los artículos usando el schema que viene en la misma respuesta.
- * 4. Devolver un objeto con los datos listos o un error.
+ * 4. Guardar las noticias en Supabase para historial.
+ * 5. Devolver un objeto con los datos listos o un error.
  *
  * @returns {Promise<object>} Una promesa que resuelve a un objeto con:
  * - exito (boolean): true si todo fue correcto.
  * - datos (Array): La lista de artículos validados.
  * - error (string|null): Un mensaje de error si algo falló.
  */
+
+import { guardarNoticias } from '../lib/supabase';
 
 // Definir tipos para mejor manejo de TypeScript
 interface Articulo {
@@ -87,6 +90,16 @@ export async function obtenerNoticiasProcesadas(): Promise<ResultadoProcesado> {
     // Si no hay schema o campos requeridos, devolver todos los artículos sin filtrar
     if (!camposRequeridos || camposRequeridos.length === 0) {
       console.warn("No se encontró un schema para validar. Se devolverán todos los artículos sin filtrar.");
+      
+      // Guardar en Supabase antes de devolver
+      try {
+        await guardarNoticias(articulosCrudos);
+        console.log('✅ Noticias guardadas en Supabase exitosamente');
+      } catch (dbError) {
+        console.warn('⚠️ Error guardando en Supabase:', dbError);
+        // No interrumpimos el flujo por error de guardado
+      }
+      
       return { exito: true, datos: articulosCrudos, error: null };
     }
     
@@ -122,7 +135,22 @@ export async function obtenerNoticiasProcesadas(): Promise<ResultadoProcesado> {
 
     console.log(`Artículos procesados: ${articulosCrudos.length} recibidos, ${articulosValidados.length} validados`);
 
-    // --- PASO 3: DEVOLVER EL RESULTADO FINAL ---
+    // --- PASO 3: GUARDAR EN SUPABASE ---
+    if (articulosValidados.length > 0) {
+      try {
+        const resultado = await guardarNoticias(articulosValidados);
+        if (resultado.success) {
+          console.log(`✅ ${articulosValidados.length} noticias guardadas en Supabase exitosamente`);
+        } else {
+          console.warn('⚠️ Error guardando noticias en Supabase:', resultado.error);
+        }
+      } catch (dbError) {
+        console.warn('⚠️ Error de conexión con Supabase:', dbError);
+        // No interrumpimos el flujo por error de guardado
+      }
+    }
+
+    // --- PASO 4: DEVOLVER EL RESULTADO FINAL ---
     return {
       exito: true,
       datos: articulosValidados,

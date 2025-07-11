@@ -16,10 +16,11 @@
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.25.5",
-    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/supabase-js": "^2.50.5",
     "cors": "^2.8.5",
-    "express": "^4.19.2",
+    "dotenv": "^17.2.0",
     "exa-js": "^1.0.2",
+    "express": "^4.19.2",
     "lucide-react": "^0.344.0",
     "node-fetch": "^2.7.0",
     "openai": "^4.52.7",
