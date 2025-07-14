@@ -4,9 +4,19 @@ import Exa from 'exa-js';
 import { OpenAI } from 'openai';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { createClient } from '@supabase/supabase-js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Configurar Supabase
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY;
+const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
+
+if (!supabase) {
+  console.warn('⚠️ Supabase no configurado. Las noticias no se guardarán en la base de datos.');
+}
 
 const CACHE_DIR = process.env.RENDER_DISK_MOUNT_PATH || path.dirname(new URL(import.meta.url).pathname.substring(1));
 const CACHE_FILE_PATH = path.join(CACHE_DIR, 'cache.json');
@@ -103,6 +113,51 @@ let ultimasNoticias = {
   date: null
 };
 
+// --- FUNCIÓN PARA GUARDAR EN SUPABASE ---
+async function guardarNoticiasEnSupabase(noticias) {
+  if (!supabase) {
+    console.warn('⚠️ Supabase no configurado, saltando guardado en BD');
+    return { success: false, error: 'Supabase no configurado' };
+  }
+
+  try {
+    console.log(`💾 Guardando ${noticias.length} noticias en Supabase...`);
+    
+    const noticiasParaGuardar = noticias.map(noticia => ({
+      title: noticia.title,
+      content: noticia.content,
+      date: noticia.date,
+      source: noticia.source,
+      candidates: noticia.candidates || [],
+      political_parties: noticia.political_parties || [],
+      image_url: noticia.image_url || null,
+      image_alt: noticia.image_alt || null,
+      has_media: noticia.has_media || false,
+      url_hash: Buffer.from(noticia.title + noticia.source + noticia.date).toString('base64')
+    }));
+
+    const { data, error } = await supabase
+      .from('noticias_historial')
+      .upsert(noticiasParaGuardar, { 
+        onConflict: 'url_hash',
+        ignoreDuplicates: true 
+      })
+      .select();
+
+    if (error) {
+      console.error('❌ Error guardando en Supabase:', error);
+      return { success: false, error: error.message };
+    }
+
+    console.log(`✅ ${data?.length || 0} noticias guardadas en Supabase`);
+    return { success: true, data, count: data?.length || 0 };
+    
+  } catch (error) {
+    console.error('❌ Error de conexión con Supabase:', error);
+    return { success: false, error: error.message };
+  }
+}
+
 // --- INICIO: FUNCIONES DE CACHÉ ---
 async function guardarNoticiasEnCache() {
   try {
@@ -129,7 +184,7 @@ async function cargarNoticiasDesdeCache() {
 }
 // --- FIN: FUNCIONES DE CACHÉ ---
 
-// --- FUNCIÓN PRINCIPAL CON SCHEMA ---
+// --- FUNCIÓN PRINCIPAL CON SCHEMA Y SUPABASE ---
 async function actualizarNoticiasConResearchTask() {
   try {
     console.log('🔄 Iniciando actualización y acumulación de noticias...');
@@ -151,7 +206,7 @@ async function actualizarNoticiasConResearchTask() {
     // 2. Buscar noticias nuevas en Exa
     const today = new Date().toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' });
     const currentTime = new Date().toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit' });
-    const instructions = `ENCUENTRA TODAS LAS NOTICIAS RELACIONADAS CON LAS ELECCIONES DE COLOMBIA DE 2026 del ${today}. Incluye información sobre precandidatos, partidos políticos, encuestas, y cualquier desarrollo electoral relevante. Prioriza noticias de las últimas 2 horas.`;
+    const instructions = `ENCUENTRA TODAS LAS NOTICIAS RELACIONADAS CON LAS ELECCIONES DE COLOMBIA DE 2026 del ${today}. Incluye información sobre precandidatos, partidos políticos, encuestas, y cualquier desarrollo electoral relevante. Prioriza noticias de las últimas 2 horas. INCLUYE IMÁGENES cuando estén disponibles.`;
 
     const { id: taskId } = await exa.research.createTask({
       instructions,
@@ -169,9 +224,19 @@ async function actualizarNoticiasConResearchTask() {
     const noticiasFiltradas = noticiasNuevas.filter(noticiaNueva => !titulosViejos.has(noticiaNueva.title));
     console.log(`➕ Se agregarán ${noticiasFiltradas.length} noticias únicas.`);
     
+    // 4. Guardar SOLO las noticias nuevas en Supabase
+    if (noticiasFiltradas.length > 0) {
+      const resultadoSupabase = await guardarNoticiasEnSupabase(noticiasFiltradas);
+      if (resultadoSupabase.success) {
+        console.log(`✅ ${resultadoSupabase.count} noticias nuevas guardadas en Supabase`);
+      } else {
+        console.warn(`⚠️ Error guardando en Supabase: ${resultadoSupabase.error}`);
+      }
+    }
+    
     const articulosCombinados = [...noticiasViejas, ...noticiasFiltradas];
 
-    // 4. Reconstruir el objeto de caché y guardarlo
+    // 5. Reconstruir el objeto de caché y guardarlo
     const nuevoCache = {
       data: {
         data: { articles: articulosCombinados },
@@ -183,13 +248,15 @@ async function actualizarNoticiasConResearchTask() {
       date: today,
       time: currentTime,
       taskId,
-      updateType: 'external-cron-accumulative'
+      updateType: 'automated-2hour-with-supabase',
+      supabaseSync: noticiasFiltradas.length > 0
     };
 
     ultimasNoticias = nuevoCache;
     await guardarNoticiasEnCache();
     
     console.log(`✅ Actualización completada. Total de noticias en caché: ${articulosCombinados.length}`);
+    console.log(`💾 Noticias nuevas guardadas en Supabase: ${noticiasFiltradas.length}`);
 
   } catch (error) {
     console.error('❌ Error en la actualización acumulativa:', error.message);
@@ -199,19 +266,23 @@ async function actualizarNoticiasConResearchTask() {
   }
 }
 
-// --- ENDPOINTS DE LA API ---
+// --- PROGRAMACIÓN AUTOMÁTICA CADA 2 HORAS ---
+function iniciarActualizacionAutomatica() {
+  console.log('⏰ Configurando actualización automática cada 2 horas...');
+  
+  // Ejecutar inmediatamente
+  actualizarNoticiasConResearchTask();
+  
+  // Programar cada 2 horas (2 * 60 * 60 * 1000 = 7,200,000 ms)
+  setInterval(async () => {
+    console.log('🔄 Ejecutando actualización automática programada...');
+    await actualizarNoticiasConResearchTask();
+  }, 2 * 60 * 60 * 1000);
+  
+  console.log('✅ Actualización automática configurada exitosamente');
+}
 
-// Endpoint raíz que muestra el estado y los endpoints disponibles
-app.get('/', (req, res) => {
-  const totalNoticias = ultimasNoticias.data?.data?.articles?.length || 0;
-  res.json({ 
-    message: 'API de Noticias Colombia 2026 - Modo Acumulativo',
-    status: 'active',
-    total_noticias_en_cache: totalNoticias,
-    lastUpdate: ultimasNoticias.lastUpdate,
-    cacheStatus: ultimasNoticias.status,
-  });
-});
+// --- ENDPOINTS ---
 
 // Endpoint principal para obtener las noticias diarias estructuradas
 app.get('/daily-news', (req, res) => {
@@ -228,6 +299,74 @@ app.get('/daily-news', (req, res) => {
       details: ultimasNoticias.lastError || `Estado actual: ${ultimasNoticias.status}`
     });
   }
+});
+
+// Endpoint para forzar una actualización manual (útil para pruebas y para el Cron Job de Render)
+app.post('/force-update', async (req, res) => {
+  console.log(`🔄 Petición recibida en /force-update. Iniciando actualización acumulativa...`);
+  
+  // Ejecutar en segundo plano para responder rápidamente
+  actualizarNoticiasConResearchTask();
+  
+  res.status(202).json({
+    success: true,
+    message: `Actualización acumulativa iniciada. El proceso corre en segundo plano.`,
+    timestamp: new Date().toISOString(),
+    updateType: 'manual-force-update'
+  });
+});
+
+// Endpoint para obtener estadísticas de Supabase
+app.get('/supabase-stats', async (req, res) => {
+  if (!supabase) {
+    return res.status(503).json({ 
+      success: false, 
+      error: 'Supabase no configurado' 
+    });
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('noticias_historial')
+      .select('id, created_at, source, candidates, political_parties')
+      .order('created_at', { ascending: false })
+      .limit(50);
+
+    if (error) throw error;
+
+    const stats = {
+      totalNoticias: data.length,
+      fuentesUnicas: [...new Set(data.map(n => n.source))],
+      candidatosMencionados: [...new Set(data.flatMap(n => n.candidates || []))],
+      partidosMencionados: [...new Set(data.flatMap(n => n.political_parties || []))],
+      ultimaActualizacion: data[0]?.created_at || null
+    };
+
+    res.json({
+      success: true,
+      stats,
+      recentArticles: data.slice(0, 10)
+    });
+
+  } catch (error) {
+    console.error('Error obteniendo estadísticas de Supabase:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: error.message 
+    });
+  }
+});
+
+// Endpoint de salud
+app.get('/health', (req, res) => {
+  res.json({
+    success: true,
+    server: 'running',
+    cache: ultimasNoticias.status,
+    lastUpdate: ultimasNoticias.lastUpdate,
+    supabase: supabase ? 'configured' : 'not configured',
+    timestamp: new Date().toISOString()
+  });
 });
 
 // Endpoint alternativo que usa Chat Completions para obtener texto plano
@@ -254,84 +393,50 @@ app.get('/daily-news-chat', async (req, res) => {
   }
 });
 
-// Endpoint para ver el estado del cache
-app.get('/cache-status', (req, res) => {
-  res.json({
-    success: true,
-    serverTime: new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' }),
-    cache: ultimasNoticias
-  });
-});
-
-// NUEVO ENDPOINT para estadísticas de imágenes
+// Endpoint para obtener estadísticas de imágenes
 app.get('/images-stats', (req, res) => {
-  try {
-    if (!ultimasNoticias.data || !ultimasNoticias.data.data || !ultimasNoticias.data.data.articles) {
-      return res.json({
-        success: true,
-        message: "No hay datos disponibles",
-        stats: { total: 0, with_images: 0, without_images: 0 }
-      });
-    }
-
-    const articles = ultimasNoticias.data.data.articles;
-    const totalArticles = articles.length;
-    const withImages = articles.filter(article => article.image_url && article.image_url.trim() !== '').length;
-    const withoutImages = totalArticles - withImages;
-
+  if (ultimasNoticias.status === 'completed' && ultimasNoticias.data) {
+    const articles = ultimasNoticias.data.data.articles || [];
+    const withImages = articles.filter(article => article.image_url);
+    
     res.json({
       success: true,
       stats: {
-        total_articles: totalArticles,
-        articles_with_images: withImages,
-        articles_without_images: withoutImages,
-        image_coverage_percentage: totalArticles > 0 ? ((withImages / totalArticles) * 100).toFixed(2) : 0
+        totalArticles: articles.length,
+        articlesWithImages: withImages.length,
+        imagePercentage: ((withImages.length / articles.length) * 100).toFixed(1),
+        lastUpdate: ultimasNoticias.lastUpdate
       },
-      last_update: ultimasNoticias.lastUpdate,
-      sample_images: articles
-        .filter(article => article.image_url)
-        .slice(0, 3)
-        .map(article => ({
-          title: article.title,
-          image_url: article.image_url,
-          image_alt: article.image_alt
-        }))
+      samples: withImages.slice(0, 5).map(article => ({
+        title: article.title,
+        source: article.source,
+        imageUrl: article.image_url,
+        imageAlt: article.image_alt || 'Sin descripción'
+      }))
     });
-  } catch (error) {
-    res.status(500).json({ 
+  } else {
+    res.status(503).json({ 
       success: false, 
-      error: "Error al obtener estadísticas de imágenes", 
-      details: error.message 
+      error: "Las estadísticas de imágenes no están disponibles en este momento."
     });
   }
-});
-
-// Endpoint para forzar una actualización manual (útil para pruebas y para el Cron Job de Render)
-app.post('/force-update', (req, res) => {
-  console.log(`🔄 Petición recibida en /force-update. Iniciando actualización acumulativa...`);
-  actualizarNoticiasConResearchTask(); 
-  res.status(202).json({
-    success: true,
-    message: `Actualización acumulativa iniciada. El proceso corre en segundo plano.`,
-  });
-});
-
-// Manejo de errores global
-app.use((error, req, res, next) => {
-  console.error('Error no manejado:', error);
-  res.status(500).json({ success: false, error: "Error interno del servidor", details: error.message });
 });
 
 // Iniciar servidor
 async function iniciarServidor() {
   await cargarNoticiasDesdeCache();
   
+  // Iniciar actualización automática
+  iniciarActualizacionAutomatica();
+  
   app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
     console.log(`📡 API disponible en: http://localhost:${PORT}`);
     console.log(`📰 Endpoint principal (JSON con imágenes): http://localhost:${PORT}/daily-news`);
     console.log(`📊 Estadísticas de imágenes: http://localhost:${PORT}/images-stats`);
-    console.log(`⚙️  Modo de acumulación activado. El Cron Job debe hacer un POST a /force-update`);
+    console.log(`💾 Estadísticas de Supabase: http://localhost:${PORT}/supabase-stats`);
+    console.log(`⚙️  Actualización automática: Cada 2 horas`);
+    console.log(`🔄 Cron Job: POST a /force-update`);
   });
 }
 

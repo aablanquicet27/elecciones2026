@@ -13,7 +13,7 @@
  * - error (string|null): Un mensaje de error si algo falló.
  */
 
-import { guardarNoticias } from '../lib/supabase';
+import { guardarNoticias, obtenerHistorialNoticias } from '../lib/supabase';
 
 // Definir tipos para mejor manejo de TypeScript
 interface Articulo {
@@ -23,6 +23,8 @@ interface Articulo {
   content: string;
   candidates: string[];
   political_parties: string[];
+  created_at?: string;
+  url_hash?: string;
   [key: string]: any; // Para campos adicionales
 }
 
@@ -55,10 +57,90 @@ interface ResultadoProcesado {
   statusCode?: number | null; // <-- Incluimos el código de estado
 }
 
+// Nueva función optimizada que combina historial + noticias actuales
+export async function obtenerTodasLasNoticias(): Promise<ResultadoProcesado> {
+  try {
+    console.log('🔄 Obteniendo todas las noticias (historial + actuales)...');
+    
+    // PASO 1: Obtener historial de Supabase
+    const historialResult = await obtenerHistorialNoticias(200, 60); // Últimos 60 días, máximo 200 noticias
+    let noticiasHistorial: Articulo[] = [];
+    
+    if (historialResult.success && historialResult.data) {
+      noticiasHistorial = historialResult.data.map((item: any) => ({
+        title: item.title,
+        content: item.content,
+        date: item.date,
+        source: item.source,
+        candidates: item.candidates || [],
+        political_parties: item.political_parties || [],
+        created_at: item.created_at,
+        url_hash: item.url_hash
+      }));
+      console.log(`📚 Historial cargado: ${noticiasHistorial.length} noticias`);
+    }
+    
+    // PASO 2: Obtener noticias actuales de la API
+    const noticiasActuales = await obtenerNoticiasProcesadas();
+    let noticiasNuevas: Articulo[] = [];
+    
+    if (noticiasActuales.exito) {
+      noticiasNuevas = noticiasActuales.datos;
+      console.log(`🆕 Noticias nuevas obtenidas: ${noticiasNuevas.length} noticias`);
+    } else {
+      console.warn('⚠️ No se pudieron obtener noticias actuales:', noticiasActuales.error);
+    }
+    
+    // PASO 3: Combinar y eliminar duplicados
+    const hashesExistentes = new Set(noticiasHistorial.map(n => n.url_hash).filter(Boolean));
+    const noticiasUnicas = new Map<string, Articulo>();
+    
+    // Agregar noticias del historial
+    noticiasHistorial.forEach(noticia => {
+      const hash = noticia.url_hash || btoa(noticia.title + noticia.source + noticia.date);
+      noticiasUnicas.set(hash, noticia);
+    });
+    
+    // Agregar noticias nuevas (solo si no están en el historial)
+    noticiasNuevas.forEach(noticia => {
+      const hash = btoa(noticia.title + noticia.source + noticia.date);
+      if (!hashesExistentes.has(hash)) {
+        noticiasUnicas.set(hash, noticia);
+      }
+    });
+    
+    // Convertir a array y ordenar por fecha
+    const todasLasNoticias = Array.from(noticiasUnicas.values()).sort((a, b) => {
+      const fechaA = new Date(a.created_at || a.date);
+      const fechaB = new Date(b.created_at || b.date);
+      return fechaB.getTime() - fechaA.getTime();
+    });
+    
+    console.log(`✅ Total de noticias combinadas: ${todasLasNoticias.length}`);
+    
+    return {
+      exito: true,
+      datos: todasLasNoticias,
+      error: null
+    };
+    
+  } catch (error) {
+    console.error('❌ Error obteniendo todas las noticias:', error);
+    return {
+      exito: false,
+      datos: [],
+      error: 'Error obteniendo noticias. Intenta de nuevo.',
+      statusCode: null
+    };
+  }
+}
+
 export async function obtenerNoticiasProcesadas(): Promise<ResultadoProcesado> {
   const url = 'https://elecciones202.onrender.com/daily-news';
 
   try {
+    console.log('🔄 Obteniendo noticias desde API...');
+    
     // --- PASO 1: CONECTAR Y OBTENER EL JSON ---
     const respuestaServidor = await fetch(url);
     
@@ -92,12 +174,18 @@ export async function obtenerNoticiasProcesadas(): Promise<ResultadoProcesado> {
       console.warn("No se encontró un schema para validar. Se devolverán todos los artículos sin filtrar.");
       
       // Guardar en Supabase antes de devolver
-      try {
-        await guardarNoticias(articulosCrudos);
-        console.log('✅ Noticias guardadas en Supabase exitosamente');
-      } catch (dbError) {
-        console.warn('⚠️ Error guardando en Supabase:', dbError);
-        // No interrumpimos el flujo por error de guardado
+      if (articulosCrudos.length > 0) {
+        try {
+          const resultado = await guardarNoticias(articulosCrudos);
+          if (resultado.success) {
+            console.log('✅ Noticias guardadas en Supabase exitosamente');
+          } else {
+            console.warn('⚠️ Error guardando en Supabase:', resultado.error);
+          }
+        } catch (dbError) {
+          console.warn('⚠️ Error guardando en Supabase:', dbError);
+          // No interrumpimos el flujo por error de guardado
+        }
       }
       
       return { exito: true, datos: articulosCrudos, error: null };

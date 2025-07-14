@@ -11,11 +11,9 @@ import {
   Eye,
   TrendingUp,
   Star,
-  History,
   Database
 } from 'lucide-react';
-import { obtenerNoticiasProcesadas } from '../utils/newsApi';
-import { obtenerHistorialNoticias } from '../lib/supabase';
+import { obtenerTodasLasNoticias } from '../utils/newsApi';
 
 // Actualizar interfaz para coincidir con los datos reales
 interface Noticia {
@@ -26,6 +24,7 @@ interface Noticia {
   candidates: string[];
   political_parties: string[];
   created_at?: string; // Para noticias del historial
+  url_hash?: string;
 }
 
 const NoticiasDelDia: React.FC = () => {
@@ -35,71 +34,31 @@ const NoticiasDelDia: React.FC = () => {
   const [statusCode, setStatusCode] = useState<number | null>(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState<Date | null>(null);
   const [noticiaExpandida, setNoticiaExpandida] = useState<number | null>(null);
-  const [modoHistorial, setModoHistorial] = useState(false);
 
-  const cargarNoticias = async () => {
+  const cargarTodasLasNoticias = async () => {
     setCargando(true);
     setError(null);
     setStatusCode(null);
     
-    const resultado = await obtenerNoticiasProcesadas();
+    console.log('🔄 Iniciando carga de todas las noticias...');
+    
+    const resultado = await obtenerTodasLasNoticias();
     
     if (resultado.exito) {
       setNoticias(resultado.datos);
       setUltimaActualizacion(new Date());
-      console.log('Noticias cargadas:', resultado.datos); // Para debugging
+      console.log('✅ Todas las noticias cargadas:', resultado.datos.length);
     } else {
       setError(resultado.error);
       setStatusCode(resultado.statusCode || null);
+      console.error('❌ Error cargando noticias:', resultado.error);
     }
     
     setCargando(false);
-  };
-
-  const cargarHistorial = async () => {
-    setCargando(true);
-    setError(null);
-    
-    try {
-      const resultado = await obtenerHistorialNoticias(100, 30); // Últimos 30 días, máximo 100 noticias
-      
-      if (resultado.success && resultado.data) {
-        // Convertir formato de historial al formato esperado
-        const noticiasHistorial = resultado.data.map((item: any) => ({
-          title: item.title,
-          content: item.content,
-          date: item.date,
-          source: item.source,
-          candidates: item.candidates || [],
-          political_parties: item.political_parties || [],
-          created_at: item.created_at
-        }));
-        
-        setNoticias(noticiasHistorial);
-        setUltimaActualizacion(new Date());
-        console.log('Historial cargado:', noticiasHistorial.length, 'noticias');
-      } else {
-        setError('No se pudo cargar el historial de noticias');
-      }
-    } catch (err) {
-      setError('Error conectando con la base de datos');
-      console.error('Error cargando historial:', err);
-    }
-    
-    setCargando(false);
-  };
-
-  const toggleModo = async (esHistorial: boolean) => {
-    setModoHistorial(esHistorial);
-    if (esHistorial) {
-      await cargarHistorial();
-    } else {
-      await cargarNoticias();
-    }
   };
 
   useEffect(() => {
-    cargarNoticias();
+    cargarTodasLasNoticias();
   }, []);
 
   const formatearFecha = (fechaString: string) => {
@@ -169,87 +128,75 @@ const NoticiasDelDia: React.FC = () => {
     return colores[index % colores.length];
   };
 
-
+  const esNoticiaDelHistorial = (noticia: Noticia) => {
+    return noticia.created_at && noticia.url_hash;
+  };
 
   // Estadísticas generales
   const totalCandidatos = [...new Set(noticias.flatMap((n: Noticia) => n.candidates || []))].length;
   const totalPartidos = [...new Set(noticias.flatMap((n: Noticia) => n.political_parties || []))].length;
   const fuentesUnicas = [...new Set(noticias.map((n: Noticia) => n.source))].length;
+  const noticiasHistorial = noticias.filter(esNoticiaDelHistorial).length;
+  const noticiasRecientes = noticias.length - noticiasHistorial;
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-        {/* Header Mejorado con Toggle de Historial */}
+        {/* Header Simplificado */}
         <div className="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 p-6 sm:p-8 lg:p-10">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="flex items-center space-x-4">
               <div className="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
-                {modoHistorial ? (
-                  <History className="h-7 sm:h-8 w-7 sm:w-8 text-white" />
-                ) : (
-                  <Newspaper className="h-7 sm:h-8 w-7 sm:w-8 text-white" />
-                )}
+                <Newspaper className="h-7 sm:h-8 w-7 sm:w-8 text-white" />
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  {modoHistorial ? 'Historial de Noticias' : 'Noticias Electorales 2026'}
+                  Noticias Electorales 2026
                 </h1>
                 <p className="text-purple-100 text-base sm:text-lg mt-1">
-                  {modoHistorial ? 'Archivo completo de noticias guardadas' : 'Últimas noticias y desarrollos políticos'}
+                  Todas las noticias electorales actuales e históricas
                 </p>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
-              {/* Toggle Historial/Actual */}
-              <div className="bg-white/20 rounded-xl p-1 backdrop-blur-sm">
-                <div className="flex">
-                  <button
-                    onClick={() => toggleModo(false)}
-                    disabled={cargando}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      !modoHistorial 
-                        ? 'bg-white text-purple-600 shadow-lg' 
-                        : 'text-white/80 hover:text-white'
-                    }`}
-                  >
-                    <Newspaper className="h-4 w-4 inline mr-2" />
-                    Actual
-                  </button>
-                  <button
-                    onClick={() => toggleModo(true)}
-                    disabled={cargando}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      modoHistorial 
-                        ? 'bg-white text-purple-600 shadow-lg' 
-                        : 'text-white/80 hover:text-white'
-                    }`}
-                  >
-                    <History className="h-4 w-4 inline mr-2" />
-                    Historial
-                  </button>
-                </div>
-              </div>
-              
               <button
-                onClick={modoHistorial ? cargarHistorial : cargarNoticias}
+                onClick={cargarTodasLasNoticias}
                 disabled={cargando}
                 className="bg-white/20 hover:bg-white/30 text-white p-3 rounded-xl transition-all duration-300 disabled:opacity-50 backdrop-blur-sm"
-                title="Actualizar noticias"
+                title="Actualizar todas las noticias"
               >
                 <RefreshCw className={`h-6 w-6 ${cargando ? 'animate-spin' : ''}`} />
               </button>
             </div>
           </div>
           
-          {/* Estadísticas Responsive */}
-          <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Estadísticas Mejoradas */}
+          <div className="mt-8 grid grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
               <div className="flex items-center space-x-3">
                 <Newspaper className="h-5 w-5 text-white/80 flex-shrink-0" />
                 <div className="min-w-0">
-                  <p className="text-white/80 text-sm">Noticias</p>
+                  <p className="text-white/80 text-sm">Total</p>
                   <p className="text-white text-xl font-bold">{noticias.length}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+              <div className="flex items-center space-x-3">
+                <TrendingUp className="h-5 w-5 text-white/80 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-white/80 text-sm">Recientes</p>
+                  <p className="text-white text-xl font-bold">{noticiasRecientes}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+              <div className="flex items-center space-x-3">
+                <Database className="h-5 w-5 text-white/80 flex-shrink-0" />
+                <div className="min-w-0">
+                  <p className="text-white/80 text-sm">Historial</p>
+                  <p className="text-white text-xl font-bold">{noticiasHistorial}</p>
                 </div>
               </div>
             </div>
@@ -271,19 +218,6 @@ const NoticiasDelDia: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
-              <div className="flex items-center space-x-3">
-                {modoHistorial ? (
-                  <Database className="h-5 w-5 text-white/80 flex-shrink-0" />
-                ) : (
-                  <TrendingUp className="h-5 w-5 text-white/80 flex-shrink-0" />
-                )}
-                <div className="min-w-0">
-                  <p className="text-white/80 text-sm">Fuentes</p>
-                  <p className="text-white text-xl font-bold">{fuentesUnicas}</p>
-                </div>
-              </div>
-            </div>
           </div>
           
           {ultimaActualizacion && (
@@ -297,17 +231,15 @@ const NoticiasDelDia: React.FC = () => {
                   })}
                 </span>
               </div>
-              {modoHistorial && (
-                <div className="bg-white/20 px-3 py-1 rounded-full text-white/90 text-sm font-medium">
-                  <Database className="h-4 w-4 inline mr-1" />
-                  Últimos 30 días
-                </div>
-              )}
+              <div className="bg-white/20 px-3 py-1 rounded-full text-white/90 text-sm font-medium">
+                <Database className="h-4 w-4 inline mr-1" />
+                Combinado (API + Historial)
+              </div>
             </div>
           )}
         </div>
 
-        {/* Content Mejorado con más espacio */}
+        {/* Content */}
         <div className="p-6 sm:p-8 lg:p-10">
           {cargando ? (
             <div className="space-y-6">
@@ -332,11 +264,11 @@ const NoticiasDelDia: React.FC = () => {
                 <AlertCircle className="h-12 w-12 text-red-600" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
-                Error al Cargar {modoHistorial ? 'Historial' : 'Noticias'}
+                Error al Cargar Noticias
               </h3>
               <p className="text-gray-600 text-base sm:text-lg max-w-md mx-auto mb-8">{error}</p>
               <button
-                onClick={modoHistorial ? cargarHistorial : cargarNoticias}
+                onClick={cargarTodasLasNoticias}
                 className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg text-base font-semibold"
               >
                 <RefreshCw className="h-5 w-5" />
@@ -346,211 +278,210 @@ const NoticiasDelDia: React.FC = () => {
           ) : noticias.length === 0 ? (
             <div className="text-center py-12">
               <div className="bg-gray-100 p-6 rounded-full w-fit mx-auto mb-6">
-                {modoHistorial ? (
-                  <History className="h-12 w-12 text-gray-400" />
-                ) : (
-                  <Newspaper className="h-12 w-12 text-gray-400" />
-                )}
+                <Newspaper className="h-12 w-12 text-gray-400" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
-                No hay {modoHistorial ? 'historial' : 'noticias'} disponibles
+                No hay noticias disponibles
               </h3>
               <p className="text-gray-600 text-base sm:text-lg max-w-md mx-auto">
-                {modoHistorial 
-                  ? 'No se encontraron noticias guardadas en el historial.'
-                  : 'No se encontraron noticias electorales para mostrar en este momento.'
-                }
+                No se encontraron noticias electorales para mostrar en este momento.
               </p>
             </div>
           ) : (
             <div className="space-y-8 lg:space-y-10">
-              {noticias.map((noticia: Noticia, index: number) => (
-                <article
-                  key={index}
-                  className={`border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 ${
-                    modoHistorial 
-                      ? 'bg-gradient-to-br from-blue-50 to-indigo-50' 
-                      : 'bg-gradient-to-br from-white to-gray-50'
-                  }`}
-                >
-                  {/* Header de la noticia con más espacio */}
-                  <div className={`p-6 sm:p-8 border-b ${
-                    modoHistorial ? 'border-blue-100 bg-blue-50/50' : 'border-gray-100'
-                  }`}>
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
-                      <div className="flex-1 min-w-0">
-                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-4">
-                          {noticia.title}
-                        </h2>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-gray-600">
-                          <div className="flex items-center space-x-2">
-                            <Calendar className="h-4 w-4 flex-shrink-0" />
-                            <span className="font-medium">{formatearFecha(noticia.date)}</span>
+              {noticias.map((noticia: Noticia, index: number) => {
+                const esHistorial = esNoticiaDelHistorial(noticia);
+                return (
+                  <article
+                    key={index}
+                    className={`border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 ${
+                      esHistorial 
+                        ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200' 
+                        : 'bg-gradient-to-br from-white to-gray-50'
+                    }`}
+                  >
+                    {/* Header de la noticia */}
+                    <div className={`p-6 sm:p-8 border-b ${
+                      esHistorial ? 'border-blue-100 bg-blue-50/50' : 'border-gray-100'
+                    }`}>
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center space-x-3 mb-3">
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                              {noticia.title}
+                            </h2>
+                            {esHistorial && (
+                              <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center space-x-1">
+                                <Database className="h-3 w-3" />
+                                <span>Historial</span>
+                              </div>
+                            )}
                           </div>
-                          <div className="flex items-center space-x-2">
-                            <Newspaper className="h-4 w-4 flex-shrink-0" />
-                            <span className="font-medium">{noticia.source}</span>
-                          </div>
-                          {modoHistorial && noticia.created_at && (
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-gray-600">
                             <div className="flex items-center space-x-2">
-                              <Database className="h-4 w-4 flex-shrink-0 text-blue-600" />
-                              <span className="font-medium text-blue-600">
-                                Guardada: {formatearFechaCreacion(noticia.created_at)}
+                              <Calendar className="h-4 w-4 flex-shrink-0" />
+                              <span className="font-medium">{formatearFecha(noticia.date)}</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Newspaper className="h-4 w-4 flex-shrink-0" />
+                              <span className="font-medium">{noticia.source}</span>
+                            </div>
+                            {esHistorial && noticia.created_at && (
+                              <div className="flex items-center space-x-2">
+                                <Clock className="h-4 w-4 flex-shrink-0 text-blue-600" />
+                                <span className="font-medium text-blue-600">
+                                  {formatearFechaCreacion(noticia.created_at)}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => toggleExpansion(index)}
+                          className={`${
+                            esHistorial 
+                              ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' 
+                              : 'bg-purple-100 hover:bg-purple-200 text-purple-700'
+                          } p-3 rounded-lg transition-colors flex-shrink-0`}
+                          title={noticiaExpandida === index ? "Contraer" : "Expandir"}
+                        >
+                          <Eye className="h-5 w-5" />
+                        </button>
+                      </div>
+
+                      {/* Candidatos y Partidos */}
+                      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        {/* Candidatos */}
+                        {noticia.candidates && noticia.candidates.length > 0 && (
+                          <div className="min-w-0">
+                            <div className="flex items-center space-x-2 mb-4">
+                              <Users className={`h-5 w-5 flex-shrink-0 ${
+                                esHistorial ? 'text-blue-600' : 'text-purple-600'
+                              }`} />
+                              <span className="font-semibold text-gray-700 text-base">
+                                Candidatos Mencionados:
                               </span>
                             </div>
+                            <div className="flex flex-wrap gap-2">
+                              {noticia.candidates.map((candidato: string, idx: number) => (
+                                <span
+                                  key={idx}
+                                  className={`px-3 py-2 rounded-full text-sm font-medium ${obtenerColorCandidato(idx)} break-words`}
+                                >
+                                  {candidato}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Partidos Políticos */}
+                        {noticia.political_parties && noticia.political_parties.length > 0 && (
+                          <div className="min-w-0">
+                            <div className="flex items-center space-x-2 mb-4">
+                              <Building className={`h-5 w-5 flex-shrink-0 ${
+                                esHistorial ? 'text-blue-600' : 'text-indigo-600'
+                              }`} />
+                              <span className="font-semibold text-gray-700 text-base">
+                                Partidos Políticos:
+                              </span>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {noticia.political_parties.map((partido: string, idx: number) => (
+                                <span
+                                  key={idx}
+                                  className={`px-3 py-2 rounded-full text-sm font-medium ${obtenerColorPartido(partido)} break-words`}
+                                >
+                                  {partido}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Contenido de la noticia */}
+                    <div className="p-6 sm:p-8">
+                      <div className="prose prose-lg max-w-none">
+                        <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                          {noticiaExpandida === index 
+                            ? noticia.content 
+                            : truncarTexto(noticia.content, 350)
+                          }
+                        </p>
+                      </div>
+
+                      {noticia.content && noticia.content.length > 350 && (
+                        <button
+                          onClick={() => toggleExpansion(index)}
+                          className={`mt-6 font-medium transition-colors inline-flex items-center space-x-2 text-base ${
+                            esHistorial 
+                              ? 'text-blue-600 hover:text-blue-700' 
+                              : 'text-purple-600 hover:text-purple-700'
+                          }`}
+                        >
+                          <span>{noticiaExpandida === index ? 'Ver menos' : 'Leer más'}</span>
+                          <ExternalLink className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Footer */}
+                    <div className={`px-6 sm:px-8 py-4 border-t ${
+                      esHistorial ? 'bg-blue-50/50 border-blue-200' : 'bg-gray-50 border-gray-200'
+                    }`}>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
+                        <div className="flex flex-wrap items-center gap-4 text-gray-600">
+                          <span className="flex items-center space-x-1">
+                            <Star className="h-4 w-4 flex-shrink-0" />
+                            <span>Noticia #{index + 1}</span>
+                          </span>
+                          {noticia.candidates && (
+                            <span>
+                              {noticia.candidates.length} candidato{noticia.candidates.length !== 1 ? 's' : ''}
+                            </span>
+                          )}
+                          {noticia.political_parties && (
+                            <span>
+                              {noticia.political_parties.length} partido{noticia.political_parties.length !== 1 ? 's' : ''}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-gray-500 text-right">
+                          {noticia.content ? `${noticia.content.length} caracteres` : 'Sin contenido'}
+                          {esHistorial && (
+                            <span className="ml-2 text-blue-600 font-medium">• Guardado</span>
                           )}
                         </div>
                       </div>
-                      <button
-                        onClick={() => toggleExpansion(index)}
-                        className={`${
-                          modoHistorial 
-                            ? 'bg-blue-100 hover:bg-blue-200 text-blue-700' 
-                            : 'bg-purple-100 hover:bg-purple-200 text-purple-700'
-                        } p-3 rounded-lg transition-colors flex-shrink-0`}
-                        title={noticiaExpandida === index ? "Contraer" : "Expandir"}
-                      >
-                        <Eye className="h-5 w-5" />
-                      </button>
                     </div>
-
-                    {/* Candidatos y Partidos con mejor responsive */}
-                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-                      {/* Candidatos */}
-                      {noticia.candidates && noticia.candidates.length > 0 && (
-                        <div className="min-w-0">
-                          <div className="flex items-center space-x-2 mb-4">
-                            <Users className={`h-5 w-5 flex-shrink-0 ${
-                              modoHistorial ? 'text-blue-600' : 'text-purple-600'
-                            }`} />
-                            <span className="font-semibold text-gray-700 text-base">
-                              Candidatos Mencionados:
-                            </span>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {noticia.candidates.map((candidato: string, idx: number) => (
-                              <span
-                                key={idx}
-                                className={`px-3 py-2 rounded-full text-sm font-medium ${obtenerColorCandidato(idx)} break-words`}
-                              >
-                                {candidato}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Partidos Políticos */}
-                      {noticia.political_parties && noticia.political_parties.length > 0 && (
-                        <div className="min-w-0">
-                          <div className="flex items-center space-x-2 mb-4">
-                            <Building className={`h-5 w-5 flex-shrink-0 ${
-                              modoHistorial ? 'text-blue-600' : 'text-indigo-600'
-                            }`} />
-                            <span className="font-semibold text-gray-700 text-base">
-                              Partidos Políticos:
-                            </span>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {noticia.political_parties.map((partido: string, idx: number) => (
-                              <span
-                                key={idx}
-                                className={`px-3 py-2 rounded-full text-sm font-medium ${obtenerColorPartido(partido)} break-words`}
-                              >
-                                {partido}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Contenido de la noticia con más espacio */}
-                  <div className="p-6 sm:p-8">
-                    <div className="prose prose-lg max-w-none">
-                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                        {noticiaExpandida === index 
-                          ? noticia.content 
-                          : truncarTexto(noticia.content, 350)
-                        }
-                      </p>
-                    </div>
-
-                    {noticia.content && noticia.content.length > 350 && (
-                      <button
-                        onClick={() => toggleExpansion(index)}
-                        className={`mt-6 font-medium transition-colors inline-flex items-center space-x-2 text-base ${
-                          modoHistorial 
-                            ? 'text-blue-600 hover:text-blue-700' 
-                            : 'text-purple-600 hover:text-purple-700'
-                        }`}
-                      >
-                        <span>{noticiaExpandida === index ? 'Ver menos' : 'Leer más'}</span>
-                        <ExternalLink className="h-4 w-4" />
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Footer con estadísticas mejorado */}
-                  <div className={`px-6 sm:px-8 py-4 border-t ${
-                    modoHistorial ? 'bg-blue-50/50 border-blue-200' : 'bg-gray-50 border-gray-200'
-                  }`}>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-                      <div className="flex flex-wrap items-center gap-4 text-gray-600">
-                        <span className="flex items-center space-x-1">
-                          <Star className="h-4 w-4 flex-shrink-0" />
-                          <span>Noticia #{index + 1}</span>
-                        </span>
-                        {noticia.candidates && (
-                          <span>
-                            {noticia.candidates.length} candidato{noticia.candidates.length !== 1 ? 's' : ''}
-                          </span>
-                        )}
-                        {noticia.political_parties && (
-                          <span>
-                            {noticia.political_parties.length} partido{noticia.political_parties.length !== 1 ? 's' : ''}
-                          </span>
-                        )}
-                      </div>
-                      <div className="text-gray-500 text-right">
-                        {noticia.content ? `${noticia.content.length} caracteres` : 'Sin contenido'}
-                        {modoHistorial && (
-                          <span className="ml-2 text-blue-600">• Historial</span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           )}
         </div>
         
-        {/* Footer Global Mejorado */}
+        {/* Footer Global */}
         {noticias.length > 0 && (
-          <div className={`px-6 sm:px-8 lg:px-10 py-6 border-t ${
-            modoHistorial 
-              ? 'bg-gradient-to-r from-blue-50 to-indigo-100 border-blue-200' 
-              : 'bg-gradient-to-r from-gray-50 to-gray-100 border-gray-200'
-          }`}>
+          <div className="px-6 sm:px-8 lg:px-10 py-6 border-t bg-gradient-to-r from-gray-50 to-gray-100 border-gray-200">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="text-sm text-gray-600">
                 <span className="font-semibold text-gray-900 text-base">
-                  📊 Resumen: {noticias.length} noticias • {totalCandidatos} candidatos • {totalPartidos} partidos
-                  {modoHistorial && ' • Historial completo guardado 💾'}
+                  📊 Resumen: {noticias.length} noticias totales • {noticiasRecientes} recientes • {noticiasHistorial} del historial
+                </span>
+                <br />
+                <span className="text-gray-500 text-sm">
+                  {totalCandidatos} candidatos • {totalPartidos} partidos • {fuentesUnicas} fuentes
                 </span>
               </div>
               <button
-                onClick={modoHistorial ? cargarHistorial : cargarNoticias}
-                className={`inline-flex items-center space-x-2 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium shadow-lg text-base ${
-                  modoHistorial 
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700' 
-                    : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700'
-                }`}
+                onClick={cargarTodasLasNoticias}
+                className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium shadow-lg text-base bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
               >
                 <RefreshCw className="h-4 w-4" />
-                <span>Actualizar</span>
+                <span>Actualizar Todo</span>
               </button>
             </div>
           </div>
