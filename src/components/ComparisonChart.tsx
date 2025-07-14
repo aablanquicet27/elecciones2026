@@ -64,10 +64,10 @@ const ComparisonChart: React.FC = () => {
           <div>
             <h4 className="font-semibold text-gray-800 mb-3">Principales Cambios</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• <strong>Izquierda:</strong> Caída drástica de -17.3 puntos (40.3% → 23.0%)</li>
-              <li>• <strong>Otros/Indecisos:</strong> Aumento dramático de +18.0 puntos (3.0% → 21.0%)</li>
-              <li>• <strong>Derecha:</strong> Crecimiento moderado de +0.5 puntos (28.5% → 29.0%)</li>
-              <li>• <strong>Centro:</strong> Estabilidad relativa con -1.2 puntos (28.2% → 27.0%)</li>
+              <li>• <strong>Izquierda:</strong> Caída de -10.6 puntos (40.3% → 29.7%)</li>
+                              <li>• <strong>Otros/Indecisos:</strong> Reducción de -11.3 puntos (21.0% → 9.7%)</li>
+                <li>• <strong>Derecha:</strong> Crecimiento significativo de +7.7 puntos (28.5% → 36.2%)</li>
+                <li>• <strong>Centro:</strong> Reducción de -3.8 puntos (28.2% → 24.4%)</li>
             </ul>
           </div>
           <div>

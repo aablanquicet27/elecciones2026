@@ -132,7 +132,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
               </div>
               <div className="text-3xl font-bold text-red-600 mb-2">20.0%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Liderada por Gustavo Bolívar (12.6%), la izquierda experimenta 
+                Con Gustavo Bolívar en tercer lugar (10.5%), la izquierda experimenta 
                 una fragmentación significativa tras el gobierno Petro.
               </p>
               <div className="text-xs text-red-600 font-semibold">

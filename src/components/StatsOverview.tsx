@@ -44,16 +44,16 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
     },
     {
       title: "Muestra",
-      value: "3,200",
+      value: "2,122",
       subtitle: "Personas encuestadas",
       icon: BarChart3,
       color: "from-purple-500 to-purple-600",
-      description: "Margen de error ±3.2%",
+      description: "Margen de error ±2.2%",
       trend: { value: "Nacional", label: "cobertura" }
     },
     {
       title: "Período",
-      value: "Abr-Jun",
+      value: "Julio",
       subtitle: "2025",
       icon: Calendar,
       color: "from-purple-500 to-purple-600",

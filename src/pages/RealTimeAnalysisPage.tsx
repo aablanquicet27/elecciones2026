@@ -80,7 +80,7 @@ function RealTimeAnalysisPage() {
             totalPolls: 156,
             averageSampleSize: 1850,
             pollsterCount: 12,
-            timeSpan: "Enero 2024 - Junio 2025"
+            timeSpan: "Enero 2024 - Julio 2025"
           }
         }
       };

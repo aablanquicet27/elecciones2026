@@ -48,7 +48,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             
             <div className="text-center">
               <h1 className="text-xl font-bold text-gray-900">Panel de Análisis Electoral Completo</h1>
-              <p className="text-sm text-gray-500">Colombia 2026 • Datos Abril-Junio 2025 • Muestra: 3,200 personas</p>
+              <p className="text-sm text-gray-500">Colombia 2026 • Datos Julio 2025 • Muestra: 2,122 personas</p>
             </div>
             
             <div className="w-32"></div> {/* Spacer for centering */}
@@ -157,8 +157,8 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Fragmentación Sin Precedentes</h4>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Gustavo Bolívar lidera con apenas 12.6% de intención de voto</li>
-                <li>• Empate técnico entre los tres primeros lugares (diferencia de 1.2%)</li>
+                <li>• Miguel Uribe Turbay lidera con 13.7% de intención de voto</li>
+                                  <li>• Empate técnico entre los tres primeros lugares (diferencia de 3.2%)</li>
                 <li>• Ningún candidato supera el 15%, evidenciando máxima dispersión</li>
                 <li>• 32 candidatos registrados, la mayor oferta electoral histórica</li>
               </ul>
@@ -166,10 +166,10 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Recomposición Política Drástica</h4>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Izquierda: Caída del 40.3% al 23.0% (-17.3 puntos)</li>
-                <li>• Indecisos: Aumento del 3.0% al 21.0% (+18.0 puntos)</li>
-                <li>• Derecha: Crecimiento moderado del 28.5% al 29.0% (+0.5 puntos)</li>
-                <li>• Centro: Estabilidad relativa del 28.2% al 27.0% (-1.2 puntos)</li>
+                <li>• Izquierda: Caída del 40.3% al 29.7% (-10.6 puntos)</li>
+                                  <li>• Indecisos: Reducción del 21.0% al 9.7% (-11.3 puntos)</li>
+                  <li>• Derecha: Crecimiento significativo del 28.5% al 36.2% (+7.7 puntos)</li>
+                  <li>• Centro: Reducción moderada del 28.2% al 24.4% (-3.8 puntos)</li>
               </ul>
             </div>
             <div>
@@ -227,9 +227,9 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-2">Encuestas de Intención</h4>
               <ul className="space-y-1">
-                <li>• Muestra: 3,200 personas</li>
-                <li>• Período: Abril-Junio 2025</li>
-                <li>• Margen de error: ±3.2%</li>
+                <li>• Muestra: 2,122 personas</li>
+                <li>• Período: Julio 2025</li>
+                                  <li>• Margen de error: ±2.2%</li>
                 <li>• Cobertura: Nacional</li>
               </ul>
             </div>
@@ -263,7 +263,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital
           </p>
           <p className="text-sm text-gray-500">
-            Período de campo: Abril-Junio 2025 • Muestra: 3,200 personas • Margen de error: ±3.2% • Cobertura nacional
+            Período de campo: Julio 2025 • Muestra: 2,122 personas • Margen de error: ±2.2% • Cobertura nacional
           </p>
           <p className="text-xs text-gray-400 mt-2">
             Fuentes: Encuestas Guarumo/EcoAnalítica, análisis de redes sociales, datos históricos electorales

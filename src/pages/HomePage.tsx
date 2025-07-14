@@ -219,7 +219,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 la mayor fragmentación electoral en la historia reciente.
               </p>
               <div className="text-sm text-purple-600 font-semibold">
-                Líder actual: 12.6% (Bolívar)
+                Líder actual: 13.7% (Uribe)
               </div>
             </div>
 

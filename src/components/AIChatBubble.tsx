@@ -67,9 +67,9 @@ Eres un asistente conversacional inteligente y amigable. Aunque tienes especiali
 INFORMACIÓN ESPECIALIZADA SOBRE ELECCIONES COLOMBIA 2026:
 
 DATOS GENERALES:
-- Período de encuestas: Abril-Junio 2025
-- Muestra: 3,200 personas encuestadas
-- Margen de error: ±3.2%
+- Período de encuestas: Julio 2025
+  - Muestra: 2,122 personas encuestadas
+  - Margen de error: ±2.2%
 - Cobertura: Nacional
 - Total candidatos registrados: 32
 - Indecisos: 21.0% del electorado

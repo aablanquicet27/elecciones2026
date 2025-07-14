@@ -11,9 +11,9 @@ const TimelineSection: React.FC = () => {
       icon: CheckCircle
     },
     {
-      date: 'Abril-Junio 2025',
+      date: 'Julio 2025',
       title: 'Encuestas de Intención',
-      description: 'Período de medición actual - 3,200 personas encuestadas',
+      description: 'Período de medición actual - 2,122 personas encuestadas',
       status: 'current',
       icon: Clock
     },
@@ -129,7 +129,7 @@ const TimelineSection: React.FC = () => {
               Período Actual
             </div>
             <div className="text-purple-400 text-sm">
-              Abril-Junio 2025
+              Julio 2025
             </div>
             <div className="text-gray-300 text-xs mt-1">
               Medición de intención de voto
