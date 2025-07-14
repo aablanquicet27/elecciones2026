@@ -257,7 +257,7 @@ const NoticiasDelDia: React.FC = () => {
               </div>
               <div className="bg-white/20 px-3 py-1 rounded-full text-white/90 text-sm font-medium">
                 <Database className="h-4 w-4 inline mr-1" />
-                Supabase Database
+                Noticias
               </div>
             </div>
           )}
