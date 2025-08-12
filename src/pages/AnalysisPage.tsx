@@ -157,10 +157,10 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-3">Fragmentación Sin Precedentes</h4>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Miguel Uribe Turbay lidera con 13.7% de intención de voto</li>
-                                  <li>• Empate técnico entre los tres primeros lugares (diferencia de 3.2%)</li>
-                <li>• Ningún candidato supera el 15%, evidenciando máxima dispersión</li>
-                <li>• 32 candidatos registrados, la mayor oferta electoral histórica</li>
+                <li>• Vicky Dávila lidera con 11.5% de intención de voto</li>
+                <li>• Empate técnico entre los tres primeros lugares (diferencia de 1.0%)</li>
+                <li>• Ningún candidato supera el 12%, evidenciando máxima dispersión</li>
+                <li>• 31 candidatos registrados, la mayor oferta electoral histórica</li>
               </ul>
             </div>
             <div>

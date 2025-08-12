@@ -101,6 +101,59 @@ export async function obtenerTodasLasNoticias(
 }
 
 /**
+ * Función para agregar manualmente una noticia a la base de datos
+ * @param noticia - Datos de la noticia a agregar
+ * @returns Promesa con el resultado de la operación
+ */
+export async function agregarNoticiaManual(noticia: {
+  title: string;
+  content: string;
+  date: string;
+  source: string;
+  candidates?: string[];
+  political_parties?: string[];
+}) {
+  try {
+    console.log('📝 Agregando noticia manual:', noticia.title);
+    
+    const noticiaParaGuardar = {
+      title: noticia.title,
+      content: noticia.content,
+      date: noticia.date,
+      source: noticia.source,
+      candidates: noticia.candidates || [],
+      political_parties: noticia.political_parties || [],
+      url_hash: btoa(noticia.title + noticia.source + noticia.date + Date.now()) // Hash único
+    };
+
+    const { data, error } = await supabase
+      .from('noticias_historial')
+      .insert([noticiaParaGuardar])
+      .select();
+
+    if (error) {
+      console.error('❌ Error agregando noticia manual:', error);
+      throw new Error(`Error de base de datos: ${error.message}`);
+    }
+
+    console.log('✅ Noticia manual agregada exitosamente');
+    return {
+      exito: true,
+      datos: data,
+      error: null
+    };
+
+  } catch (error) {
+    console.error('❌ Error agregando noticia manual:', error);
+    return {
+      exito: false,
+      datos: null,
+      error: error instanceof Error ? error.message : 'Error desconocido agregando noticia'
+    };
+  }
+}
+
+/**
  * Función para obtener estadísticas rápidas de las noticias
  */
 export async function obtenerEstadisticasNoticias() {

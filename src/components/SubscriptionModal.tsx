@@ -17,7 +17,6 @@ const mainCandidates = [
   'Germán Vargas Lleras',
   'Claudia López',
   'María Fernanda Cabal',
-  'Miguel Uribe Turbay',
   'Juan Manuel Galán',
   'Daniel Quintero',
   'María José Pizarro',
