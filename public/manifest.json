@@ -1,0 +1,95 @@
+{
+  "name": "Elecciones Colombia 2026 - Análisis Electoral",
+  "short_name": "Elecciones2026",
+  "description": "Análisis en tiempo real de las elecciones presidenciales de Colombia 2026. Encuestas, candidatos, tendencias y predicciones electorales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-CO",
+  "dir": "ltr",
+  "categories": ["news", "politics", "government"],
+  "icons": [
+    {
+      "src": "/logoagapai.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logoagapai.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Logo AG Illuminado en Neo Púrpura (1) (1) (2) (1) (1).svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/visualizations/intencion_voto_real_2026.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Análisis de intención de voto"
+    },
+    {
+      "src": "/visualizations/tendencias_politicas_real_2026.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tendencias políticas"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Candidatos",
+      "short_name": "Candidatos",
+      "description": "Ver perfiles de candidatos presidenciales",
+      "url": "/candidates",
+      "icons": [
+        {
+          "src": "/logoagapai.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Análisis",
+      "short_name": "Análisis",
+      "description": "Análisis electoral en tiempo real",
+      "url": "/analysis",
+      "icons": [
+        {
+          "src": "/logoagapai.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Encuestas",
+      "short_name": "Encuestas",
+      "description": "Últimas encuestas electorales",
+      "url": "/real-time",
+      "icons": [
+        {
+          "src": "/logoagapai.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}
