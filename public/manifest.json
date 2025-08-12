@@ -16,13 +16,25 @@
       "src": "/logoagapai.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/logoagapai.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/logoagapai.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/logoagapai.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/Logo AG Illuminado en Neo Púrpura (1) (1) (2) (1) (1).svg",
@@ -86,6 +98,23 @@
     }
   ],
   "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay", "standalone"],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/json": [".json"]
+      }
+    }
+  ],
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+elecciones",
+      "url": "/?action=%s"
+    }
+  ],
   "edge_side_panel": {
     "preferred_width": 400
   },
