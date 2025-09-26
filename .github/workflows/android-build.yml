@@ -49,10 +49,22 @@ jobs:
     - name: Sync Capacitor
       run: npx cap sync android
       
+    - name: Create release keystore
+      run: |
+        mkdir -p android/app
+        keytool -genkey -v -keystore android/app/release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000 -storepass elecciones2026 -keypass elecciones2026 -dname "CN=Elecciones Colombia 2026, OU=AgapaiApp, O=AgapaiApp, L=Bogota, ST=Cundinamarca, C=CO"
+        
+    - name: Configure signing
+      run: |
+        echo "MYAPP_UPLOAD_STORE_FILE=release.keystore" >> android/gradle.properties
+        echo "MYAPP_UPLOAD_KEY_ALIAS=release" >> android/gradle.properties
+        echo "MYAPP_UPLOAD_STORE_PASSWORD=elecciones2026" >> android/gradle.properties
+        echo "MYAPP_UPLOAD_KEY_PASSWORD=elecciones2026" >> android/gradle.properties
+        
     - name: Make gradlew executable
       run: chmod +x android/gradlew
       
-    - name: Build AAB
+    - name: Build signed AAB
       run: |
         cd android
         ./gradlew bundleRelease --no-daemon
