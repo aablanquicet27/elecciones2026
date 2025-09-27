@@ -1,0 +1,205 @@
+name: Generate Play Store Screenshots
+
+on:
+  push:
+    paths:
+      - 'play-store-assets/*.html'
+  workflow_dispatch:
+
+jobs:
+  generate-screenshots:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install Puppeteer
+      run: npm install puppeteer
+    
+    - name: Create screenshots directory
+      run: mkdir -p screenshots
+    
+    - name: Generate Screenshots with Puppeteer
+      run: |
+        node -e "
+        const puppeteer = require('puppeteer');
+        const fs = require('fs');
+        const path = require('path');
+        
+        (async () => {
+          console.log('🚀 Iniciando generación de screenshots...');
+          
+          const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+          });
+          
+          const screenshots = [
+            {
+              file: 'play-store-assets/tablet-screenshot-1-landscape.html',
+              output: 'screenshots/1-dashboard-landscape.png',
+              width: 1920,
+              height: 1080
+            },
+            {
+              file: 'play-store-assets/tablet-screenshot-2-portrait.html', 
+              output: 'screenshots/2-candidates-portrait.png',
+              width: 1080,
+              height: 1920
+            },
+            {
+              file: 'play-store-assets/tablet-screenshot-3-landscape.html',
+              output: 'screenshots/3-regional-maps-landscape.png', 
+              width: 1920,
+              height: 1080
+            },
+            {
+              file: 'play-store-assets/tablet-screenshot-4-portrait.html',
+              output: 'screenshots/4-news-portrait.png',
+              width: 1080, 
+              height: 1920
+            },
+            {
+              file: 'play-store-assets/tablet-screenshot-5-landscape.html',
+              output: 'screenshots/5-predictions-landscape.png',
+              width: 1920,
+              height: 1080
+            },
+            {
+              file: 'play-store-assets/tablet-screenshot-6-portrait.html',
+              output: 'screenshots/6-comparison-portrait.png',
+              width: 1080,
+              height: 1920
+            }
+          ];
+          
+          for (const screenshot of screenshots) {
+            if (fs.existsSync(screenshot.file)) {
+              console.log(\`📸 Generando: \${screenshot.output}\`);
+              
+              const page = await browser.newPage();
+              await page.setViewport({
+                width: screenshot.width,
+                height: screenshot.height,
+                deviceScaleFactor: 1
+              });
+              
+              const htmlPath = path.resolve(screenshot.file);
+              await page.goto(\`file://\${htmlPath}\`, { 
+                waitUntil: 'networkidle0',
+                timeout: 30000 
+              });
+              
+              await page.screenshot({
+                path: screenshot.output,
+                fullPage: false,
+                type: 'png'
+              });
+              
+              await page.close();
+              console.log(\`✅ Generado: \${screenshot.output}\`);
+            } else {
+              console.log(\`⚠️  No encontrado: \${screenshot.file}\`);
+            }
+          }
+          
+          await browser.close();
+          console.log('🎉 ¡Todos los screenshots generados!');
+        })();
+        "
+    
+    - name: Generate promotional banner
+      run: |
+        node -e "
+        const puppeteer = require('puppeteer');
+        const fs = require('fs');
+        const path = require('path');
+        
+        (async () => {
+          console.log('🎨 Generando banner promocional...');
+          
+          const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+          });
+          
+          const page = await browser.newPage();
+          await page.setViewport({
+            width: 1024,
+            height: 500,
+            deviceScaleFactor: 2
+          });
+          
+          if (fs.existsSync('public/promotional-banner.html')) {
+            const htmlPath = path.resolve('public/promotional-banner.html');
+            await page.goto(\`file://\${htmlPath}\`, { 
+              waitUntil: 'networkidle0',
+              timeout: 30000 
+            });
+            
+            await page.screenshot({
+              path: 'screenshots/promotional-banner-1024x500.png',
+              fullPage: false,
+              type: 'png'
+            });
+            
+            console.log('✅ Banner promocional generado');
+          } else {
+            console.log('⚠️  Banner HTML no encontrado');
+          }
+          
+          await page.close();
+          await browser.close();
+        })();
+        "
+    
+    - name: List generated files
+      run: |
+        echo "📂 Archivos generados:"
+        ls -la screenshots/
+        echo ""
+        echo "📊 Tamaños de archivo:"
+        du -h screenshots/*
+    
+    - name: Verify image dimensions
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+        echo "📐 Verificando dimensiones:"
+        for file in screenshots/*.png; do
+          if [ -f "$file" ]; then
+            identify "$file"
+          fi
+        done
+    
+    - name: Upload Screenshots as Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: play-store-screenshots
+        path: screenshots/
+        retention-days: 30
+    
+    - name: Create download info
+      run: |
+        echo "🎉 ¡Screenshots generados exitosamente!" > screenshots/README.txt
+        echo "" >> screenshots/README.txt
+        echo "📱 Archivos para Play Store:" >> screenshots/README.txt
+        echo "✅ 1-dashboard-landscape.png (1920x1080)" >> screenshots/README.txt
+        echo "✅ 2-candidates-portrait.png (1080x1920)" >> screenshots/README.txt  
+        echo "✅ 3-regional-maps-landscape.png (1920x1080)" >> screenshots/README.txt
+        echo "✅ 4-news-portrait.png (1080x1920)" >> screenshots/README.txt
+        echo "✅ 5-predictions-landscape.png (1920x1080)" >> screenshots/README.txt
+        echo "✅ 6-comparison-portrait.png (1080x1920)" >> screenshots/README.txt
+        echo "✅ promotional-banner-1024x500.png (1024x500)" >> screenshots/README.txt
+        echo "" >> screenshots/README.txt
+        echo "🏪 Para subir a Play Store:" >> screenshots/README.txt
+        echo "1. Descarga este ZIP desde GitHub Actions" >> screenshots/README.txt
+        echo "2. Ve a Play Store Console → Store listing → Graphics" >> screenshots/README.txt  
+        echo "3. Sube los 6 screenshots en 'Tablet screenshots (10 inch)'" >> screenshots/README.txt
+        echo "4. Sube el banner en 'Promotional graphic' (opcional)" >> screenshots/README.txt
+        echo "5. ¡Listo!" >> screenshots/README.txt
