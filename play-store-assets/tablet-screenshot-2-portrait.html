@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatos Presidenciales - Elecciones Colombia 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(180deg, #7C3AED 0%, #A855F7 50%, #F59E0B 100%);
+            color: white;
+            height: 1920px;
+            width: 1080px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .candidates-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .candidate-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .candidate-photo {
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 60px;
+            border: 3px solid rgba(255,255,255,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+        .candidate-info {
+            flex: 1;
+        }
+        .candidate-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .candidate-name {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .candidate-party {
+            font-size: 16px;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 15px;
+        }
+        .stats-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            text-align: center;
+            flex: 1;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #F59E0B;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .progress-section {
+            margin-top: 15px;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .progress-label {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .progress-percentage {
+            font-size: 18px;
+            font-weight: bold;
+            color: #F59E0B;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #F59E0B, #FBBF24);
+            border-radius: 6px;
+            transition: width 0.3s ease;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .ranking-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #F59E0B;
+            color: #1F2937;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .candidate-card:nth-child(1) .ranking-badge { background: #EF4444; }
+        .candidate-card:nth-child(2) .ranking-badge { background: #F59E0B; }
+        .candidate-card:nth-child(3) .ranking-badge { background: #10B981; }
+        .year-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="year-badge">2026</div>
+    
+    <div class="header">
+        <h1>Candidatos Presidenciales</h1>
+        <p>Análisis Comparativo y Intención de Voto</p>
+    </div>
+    
+    <div class="candidates-container">
+        <div class="candidate-card" style="position: relative;">
+            <div class="ranking-badge">#1</div>
+            <div class="candidate-photo">👨‍💼</div>
+            <div class="candidate-info">
+                <div class="candidate-header">
+                    <div class="candidate-name">Candidato Principal</div>
+                    <div class="candidate-party">Partido A</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">35.2%</div>
+                        <div class="stat-label">Intención de Voto</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">68%</div>
+                        <div class="stat-label">Favorabilidad</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Reconocimiento</div>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">Tendencia Nacional</span>
+                        <span class="progress-percentage">↗ +2.1%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 35.2%"></div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Experiencia</span>
+                    <span class="tag">Economía</span>
+                    <span class="tag">Líder Nacional</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="candidate-card" style="position: relative;">
+            <div class="ranking-badge">#2</div>
+            <div class="candidate-photo">👩‍💼</div>
+            <div class="candidate-info">
+                <div class="candidate-header">
+                    <div class="candidate-name">Segunda Candidata</div>
+                    <div class="candidate-party">Partido B</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">28.7%</div>
+                        <div class="stat-label">Intención de Voto</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">71%</div>
+                        <div class="stat-label">Favorabilidad</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">82%</div>
+                        <div class="stat-label">Reconocimiento</div>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">Tendencia Nacional</span>
+                        <span class="progress-percentage">↗ +1.5%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 28.7%"></div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Renovación</span>
+                    <span class="tag">Social</span>
+                    <span class="tag">Juventud</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="candidate-card" style="position: relative;">
+            <div class="ranking-badge">#3</div>
+            <div class="candidate-photo">👨‍🏫</div>
+            <div class="candidate-info">
+                <div class="candidate-header">
+                    <div class="candidate-name">Tercer Candidato</div>
+                    <div class="candidate-party">Partido C</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">22.1%</div>
+                        <div class="stat-label">Intención de Voto</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">58%</div>
+                        <div class="stat-label">Favorabilidad</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">76%</div>
+                        <div class="stat-label">Reconocimiento</div>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">Tendencia Nacional</span>
+                        <span class="progress-percentage">→ +0.3%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 22.1%"></div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Academia</span>
+                    <span class="tag">Educación</span>
+                    <span class="tag">Centro</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="candidate-card" style="position: relative;">
+            <div class="ranking-badge">#4</div>
+            <div class="candidate-photo">👨‍💻</div>
+            <div class="candidate-info">
+                <div class="candidate-header">
+                    <div class="candidate-name">Cuarto Candidato</div>
+                    <div class="candidate-party">Partido D</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">8.9%</div>
+                        <div class="stat-label">Intención de Voto</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">45%</div>
+                        <div class="stat-label">Favorabilidad</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">63%</div>
+                        <div class="stat-label">Reconocimiento</div>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <span class="progress-label">Tendencia Nacional</span>
+                        <span class="progress-percentage">↘ -0.8%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 8.9%"></div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Tecnología</span>
+                    <span class="tag">Innovación</span>
+                    <span class="tag">Emergente</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Regional - Elecciones Colombia 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #F59E0B 100%);
+            color: white;
+            height: 1080px;
+            width: 1920px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .title-section h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .title-section p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .year-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+        .map-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .map-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .map-legend {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        .map-container {
+            flex: 1;
+            position: relative;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .colombia-map {
+            width: 400px;
+            height: 450px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            position: relative;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .region {
+            position: absolute;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .region-1 { background: #EF4444; top: 20px; left: 120px; width: 80px; height: 60px; }
+        .region-2 { background: #F59E0B; top: 90px; left: 80px; width: 100px; height: 80px; }
+        .region-3 { background: #10B981; top: 100px; left: 200px; width: 90px; height: 70px; }
+        .region-4 { background: #3B82F6; top: 180px; left: 150px; width: 110px; height: 90px; }
+        .region-5 { background: #8B5CF6; top: 280px; left: 100px; width: 130px; height: 100px; }
+        .region-6 { background: #EC4899; top: 190px; left: 270px; width: 100px; height: 80px; }
+        .region-7 { background: #14B8A6; top: 320px; left: 250px; width: 120px; height: 90px; }
+        .analytics-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .regional-stats {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .regional-stats h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .region-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+        .region-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .region-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .region-name {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .region-percentage {
+            font-size: 18px;
+            font-weight: bold;
+            color: #F59E0B;
+        }
+        .trends-panel {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .trends-panel h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: end;
+            gap: 15px;
+            justify-content: center;
+        }
+        .chart-bar {
+            flex: 1;
+            max-width: 30px;
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            font-size: 12px;
+            transform: rotate(-45deg);
+            transform-origin: center;
+        }
+        .insights-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .insights-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .insight-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            font-size: 16px;
+        }
+        .insight-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title-section">
+            <h1>Análisis Regional</h1>
+            <p>Intención de Voto por Departamentos y Regiones</p>
+        </div>
+        <div class="year-badge">2026</div>
+    </div>
+    
+    <div class="content">
+        <div class="map-section">
+            <div class="map-header">
+                <div class="map-title">Mapa Electoral Colombia</div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #EF4444;"></div>
+                        <span>30%+</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #F59E0B;"></div>
+                        <span>20-30%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #10B981;"></div>
+                        <span>10-20%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3B82F6;"></div>
+                        <span><10%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="colombia-map">
+                    <div class="region region-1">Caribe<br>32%</div>
+                    <div class="region region-2">Pacífico<br>28%</div>
+                    <div class="region region-3">Andina<br>35%</div>
+                    <div class="region region-4">Central<br>30%</div>
+                    <div class="region region-5">Amazónica<br>18%</div>
+                    <div class="region region-6">Oriental<br>25%</div>
+                    <div class="region region-7">Bogotá<br>38%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="analytics-panel">
+            <div class="regional-stats">
+                <h3>Top Regiones</h3>
+                
+                <div class="region-item">
+                    <div class="region-info">
+                        <div class="region-color" style="background: #EF4444;"></div>
+                        <div class="region-name">Bogotá D.C.</div>
+                    </div>
+                    <div class="region-percentage">38.2%</div>
+                </div>
+                
+                <div class="region-item">
+                    <div class="region-info">
+                        <div class="region-color" style="background: #F59E0B;"></div>
+                        <div class="region-name">Región Andina</div>
+                    </div>
+                    <div class="region-percentage">35.1%</div>
+                </div>
+                
+                <div class="region-item">
+                    <div class="region-info">
+                        <div class="region-color" style="background: #10B981;"></div>
+                        <div class="region-name">Costa Caribe</div>
+                    </div>
+                    <div class="region-percentage">32.4%</div>
+                </div>
+                
+                <div class="region-item">
+                    <div class="region-info">
+                        <div class="region-color" style="background: #3B82F6;"></div>
+                        <div class="region-name">Región Central</div>
+                    </div>
+                    <div class="region-percentage">29.8%</div>
+                </div>
+            </div>
+            
+            <div class="trends-panel">
+                <h3>Tendencias por Región</h3>
+                <div class="chart-container">
+                    <div class="chart-bar" style="height: 80%; background: #EF4444;">
+                        <div class="bar-label">Bogotá</div>
+                    </div>
+                    <div class="chart-bar" style="height: 70%; background: #F59E0B;">
+                        <div class="bar-label">Andina</div>
+                    </div>
+                    <div class="chart-bar" style="height: 65%; background: #10B981;">
+                        <div class="bar-label">Caribe</div>
+                    </div>
+                    <div class="chart-bar" style="height: 60%; background: #3B82F6;">
+                        <div class="bar-label">Central</div>
+                    </div>
+                    <div class="chart-bar" style="height: 45%; background: #8B5CF6;">
+                        <div class="bar-label">Oriental</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insights-box">
+                <h3>Insights Clave</h3>
+                <div class="insight-item">
+                    <span class="insight-icon">📊</span>
+                    Bogotá lidera con 38% de intención
+                </div>
+                <div class="insight-item">
+                    <span class="insight-icon">📈</span>
+                    Región Andina muestra crecimiento
+                </div>
+                <div class="insight-item">
+                    <span class="insight-icon">🗺️</span>
+                    Costa Caribe mantiene estabilidad
+                </div>
+                <div class="insight-item">
+                    <span class="insight-icon">⚡</span>
+                    Región Oriental en ascenso
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
