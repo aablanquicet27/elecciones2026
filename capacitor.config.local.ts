@@ -1,12 +1,11 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
+// Configuración para desarrollo LOCAL (usa archivos del directorio dist)
 const config: CapacitorConfig = {
   appId: 'com.agapaibro.elecciones2026',
   appName: 'Elecciones Colombia 2026',
   webDir: 'dist',
   server: {
-    url: 'https://www.eleccionescolombia.org',
-    cleartext: false,
     androidScheme: 'https'
   },
   plugins: {
