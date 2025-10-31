@@ -7,9 +7,28 @@ interface Message {
   timestamp: Date;
 }
 
-const SYSTEM_CONTEXT = `Eres un asistente pol?tico experto en an?lisis electoral de Colombia. 
-Ayudas a los usuarios a entender las tendencias electorales, candidatos presidenciales 2026, 
-y an?lisis de favorabilidad. Responde de manera clara, concisa y profesional.`;
+const SYSTEM_CONTEXT = `Eres un asistente pol?tico experto en an?lisis electoral de Colombia para las elecciones presidenciales 2026.
+
+DATOS ELECTORALES ACTUALES (TOP 10 CANDIDATOS):
+
+1. **Vicky D?vila** - 11.5% intenci?n de voto, Derecha, 38% favorabilidad, Candidata por firmas
+2. **Gustavo Bol?var** - 10.5%, Izquierda, 34% favorabilidad, Pacto Hist?rico
+3. **Sergio Fajardo** - 8.7%, Centro, 42% favorabilidad, Centro Esperanza
+4. **Daniel Quintero** - 8.1%, Izquierda, 23% favorabilidad, Candidato por firmas
+5. **Claudia L?pez** - 5.3%, Centro, 31% favorabilidad, Candidata por firmas
+6. **Mar?a Jos? Pizarro** - 3.2%, Izquierda, 29% favorabilidad, Pacto Hist?rico
+7. **Juan Manuel Gal?n** - 3.0%, Centro, 40% favorabilidad, Nuevo Liberalismo
+8. **Germ?n Vargas Lleras** - 2.9%, Derecha, 29% favorabilidad, Cambio Radical
+9. **Jota Pe Hern?ndez** - 2.5%, Derecha, 35% favorabilidad, Candidato por firmas
+10. **Carolina Corcho** - 2.4%, Izquierda, 25% favorabilidad, Pacto Hist?rico
+
+INSTRUCCIONES:
+- Responde SOLO en espa?ol de forma clara y concisa
+- Usa estos datos para an?lisis y predicciones
+- NO muestres tu pensamiento interno (thinking)
+- S? directo y profesional
+- Si preguntan por candidatos espec?ficos, usa los datos de arriba
+- Menciona que los datos pueden cambiar hasta las elecciones`;
 
 const AIChatBubble: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +50,20 @@ const AIChatBubble: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Funci?n para limpiar el contenido del agente
+  const cleanAgentResponse = (content: string): string => {
+    // Remover tags <think>...</think> y su contenido
+    let cleaned = content.replace(/<think>[\s\S]*?<\/think>/gi, '');
+    
+    // Remover tags <think> sin cerrar (por si acaso)
+    cleaned = cleaned.replace(/<\/?think>/gi, '');
+    
+    // Limpiar espacios en blanco extra
+    cleaned = cleaned.trim();
+    
+    return cleaned;
+  };
 
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
@@ -71,7 +104,7 @@ const AIChatBubble: React.FC = () => {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${accessKey}`,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json; charset=UTF-8'
         },
         body: JSON.stringify({
           messages: conversationHistory,
@@ -85,10 +118,14 @@ const AIChatBubble: React.FC = () => {
       }
 
       const data = await response.json();
+      
+      // Limpiar el contenido de la respuesta
+      const rawContent = data.choices[0].message.content;
+      const cleanedContent = cleanAgentResponse(rawContent);
 
       const assistantMessage: Message = {
         role: 'assistant',
-        content: data.choices[0].message.content,
+        content: cleanedContent,
         timestamp: new Date()
       };
 
