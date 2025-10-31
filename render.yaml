@@ -1,4 +1,32 @@
 services:
+  # Frontend - Aplicación React
+  - type: web
+    name: elecciones-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
+      - key: VITE_DO_AGENT_ENDPOINT
+        sync: false
+      - key: VITE_DO_AGENT_ACCESS_KEY
+        sync: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+  
+  # Backend - API y scraper de noticias
   - type: web
     name: elecciones-api
     env: node
@@ -17,11 +45,12 @@ services:
         sync: false
     healthCheckPath: /health
     
+  # Cron job - Actualizador de noticias
   - type: cron
     name: noticias-updater
     schedule: "0 */2 * * *" # Cada 2 horas
     buildCommand: npm install
-    startCommand: curl -X POST https://elecciones202.onrender.com/force-update
+    startCommand: curl -X POST https://elecciones-api.onrender.com/force-update
     envVars:
       - key: NODE_ENV
         value: production 
