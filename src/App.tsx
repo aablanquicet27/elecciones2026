@@ -60,8 +60,8 @@ function App() {
           onSubscribe={handleSubscribe}
         />
         
-        {/* Chat bubble solo si está suscrito */}
-        {isSubscribed && <AIChatBubble />}
+        {/* Chat bubble siempre visible */}
+        <AIChatBubble />
       </Router>
     </>
   );
