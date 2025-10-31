@@ -1,11 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
-const SYSTEM_CONTEXT = 'Eres un asistente de IA especializado en an?lisis pol?tico y electoral de Colombia. Ayudas a los usuarios a entender datos electorales, tendencias de candidatos y an?lisis pol?tico. Responde en espa?ol de forma clara y estructurada, usando markdown para mejor legibilidad: usa **negritas** para puntos importantes, listas numeradas o con bullets, y p?rrafos separados para mayor claridad.';
+const SYSTEM_CONTEXT = `Eres un asistente pol?tico experto en an?lisis electoral de Colombia para las elecciones presidenciales 2026.
+
+DATOS ELECTORALES ACTUALES (TOP 10 CANDIDATOS):
+
+1. **Vicky D?vila** - 11.5% intenci?n de voto, Derecha, 38% favorabilidad, Candidata por firmas
+2. **Gustavo Bol?var** - 10.5%, Izquierda, 34% favorabilidad, Pacto Hist?rico
+3. **Sergio Fajardo** - 8.7%, Centro, 42% favorabilidad, Centro Esperanza
+4. **Daniel Quintero** - 8.1%, Izquierda, 23% favorabilidad, Candidato por firmas
+5. **Claudia L?pez** - 5.3%, Centro, 31% favorabilidad, Candidata por firmas
+6. **Mar?a Jos? Pizarro** - 3.2%, Izquierda, 29% favorabilidad, Pacto Hist?rico
+7. **Juan Manuel Gal?n** - 3.0%, Centro, 40% favorabilidad, Nuevo Liberalismo
+8. **Germ?n Vargas Lleras** - 2.9%, Derecha, 29% favorabilidad, Cambio Radical
+9. **Jota Pe Hern?ndez** - 2.5%, Derecha, 35% favorabilidad, Candidato por firmas
+10. **Carolina Corcho** - 2.4%, Izquierda, 25% favorabilidad, Pacto Hist?rico
+
+INSTRUCCIONES:
+- Responde SOLO en espa?ol de forma clara, concisa y estructurada
+- Usa markdown para mejor legibilidad: **negritas** para puntos importantes, listas con bullets
+- Usa estos datos para an?lisis y predicciones
+- NO muestres tu pensamiento interno (thinking)
+- S? directo y profesional
+- Si preguntan por candidatos espec?ficos, usa los datos de arriba
+- Menciona que los datos pueden cambiar hasta las elecciones`;
 
 interface Message {
   role: 'user' | 'assistant';
   content: string;
+  timestamp: Date;
 }
 
 // Componente minimalista para renderizar Markdown
@@ -91,31 +114,76 @@ const AIChatBubble = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Funci?n para limpiar el contenido del agente
+  const cleanAgentResponse = (content: string): string => {
+    // Remover tags <think>...</think> y su contenido
+    let cleaned = content.replace(/<think>[\s\S]*?<\/think>/gi, '');
+    
+    // Remover tags <think> sin cerrar (por si acaso)
+    cleaned = cleaned.replace(/<\/?think>/gi, '');
+    
+    // Limpiar espacios en blanco extra
+    cleaned = cleaned.trim();
+    
+    return cleaned;
+  };
+
   const callDigitalOceanAgent = async (userMessage: string) => {
     try {
       setIsLoading(true);
       
       // Agregar mensaje del usuario
-      const newUserMessage: Message = { role: 'user', content: userMessage };
+      const newUserMessage: Message = { role: 'user', content: userMessage, timestamp: new Date() };
       setMessages(prevMessages => [...prevMessages, newUserMessage]);
       
-      const response = await axios.post(`${import.meta.env.VITE_DO_AGENT_ENDPOINT}/chat/completions`, {
-        messages: [...messages, newUserMessage].map(m => ({ role: m.role, content: m.content })),
-        system_context: SYSTEM_CONTEXT
+      // Preparar el historial de mensajes
+      const conversationHistory = [...messages, newUserMessage].map(m => ({ 
+        role: m.role, 
+        content: m.content 
+      }));
+
+      // Obtener las variables de entorno
+      const endpoint = import.meta.env.VITE_DO_AGENT_ENDPOINT;
+      const accessKey = import.meta.env.VITE_DO_AGENT_ACCESS_KEY;
+
+      if (!endpoint || !accessKey) {
+        throw new Error('Las variables de entorno del agente de IA no est?n configuradas');
+      }
+
+      const response = await axios.post(`${endpoint}/api/v1/chat/completions`, {
+        messages: conversationHistory,
+        instruction_override: SYSTEM_CONTEXT
       }, {
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_DO_AGENT_ACCESS_KEY}`,
+          'Authorization': `Bearer ${accessKey}`,
           'Content-Type': 'application/json'
         }
       });
 
-      const agentMessage = response.data.choices[0].message.content;
-      setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: agentMessage }]);
-    } catch (error) {
-      console.error('Error communicating with DigitalOcean Agent:', error);
+      // Limpiar el contenido de la respuesta
+      const rawContent = response.data.choices[0].message.content;
+      const cleanedContent = cleanAgentResponse(rawContent);
+
       setMessages(prevMessages => [...prevMessages, { 
         role: 'assistant', 
-        content: 'Lo siento, hubo un error al comunicarme con el asistente. Por favor intenta de nuevo.' 
+        content: cleanedContent,
+        timestamp: new Date()
+      }]);
+    } catch (error) {
+      console.error('Error communicating with DigitalOcean Agent:', error);
+      
+      let errorMessage = 'Lo siento, hubo un error al comunicarme con el asistente. Por favor intenta de nuevo.';
+      
+      if (error instanceof Error) {
+        if (error.message.includes('variables de entorno')) {
+          errorMessage = 'Error de configuraci?n: ' + error.message;
+        }
+      }
+
+      setMessages(prevMessages => [...prevMessages, { 
+        role: 'assistant', 
+        content: errorMessage,
+        timestamp: new Date()
       }]);
     } finally {
       setIsLoading(false);
@@ -213,11 +281,27 @@ const AIChatBubble = () => {
                     }`}
                   >
                     {message.role === 'user' ? (
-                      <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                      <>
+                        <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                        <p className="text-xs mt-1 text-purple-100">
+                          {message.timestamp.toLocaleTimeString('es-CO', {
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}
+                        </p>
+                      </>
                     ) : (
-                      <div className="text-sm">
-                        <MarkdownText content={message.content} />
-                      </div>
+                      <>
+                        <div className="text-sm">
+                          <MarkdownText content={message.content} />
+                        </div>
+                        <p className="text-xs mt-1 text-gray-400">
+                          {message.timestamp.toLocaleTimeString('es-CO', {
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}
+                        </p>
+                      </>
                     )}
                   </div>
                 </div>
