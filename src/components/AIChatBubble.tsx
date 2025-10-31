@@ -7,27 +7,28 @@ interface Message {
   timestamp: Date;
 }
 
-const SYSTEM_CONTEXT = `Eres un asistente pol?tico experto en an?lisis electoral de Colombia para las elecciones presidenciales 2026.
+const SYSTEM_CONTEXT = `Eres un asistente político experto en análisis electoral de Colombia para las elecciones presidenciales 2026.
 
 DATOS ELECTORALES ACTUALES (TOP 10 CANDIDATOS):
 
-1. **Vicky D?vila** - 11.5% intenci?n de voto, Derecha, 38% favorabilidad, Candidata por firmas
-2. **Gustavo Bol?var** - 10.5%, Izquierda, 34% favorabilidad, Pacto Hist?rico
+1. **Vicky Dávila** - 11.5% intención de voto, Derecha, 38% favorabilidad, Candidata por firmas
+2. **Gustavo Bolívar** - 10.5%, Izquierda, 34% favorabilidad, Pacto Histórico
 3. **Sergio Fajardo** - 8.7%, Centro, 42% favorabilidad, Centro Esperanza
 4. **Daniel Quintero** - 8.1%, Izquierda, 23% favorabilidad, Candidato por firmas
-5. **Claudia L?pez** - 5.3%, Centro, 31% favorabilidad, Candidata por firmas
-6. **Mar?a Jos? Pizarro** - 3.2%, Izquierda, 29% favorabilidad, Pacto Hist?rico
-7. **Juan Manuel Gal?n** - 3.0%, Centro, 40% favorabilidad, Nuevo Liberalismo
-8. **Germ?n Vargas Lleras** - 2.9%, Derecha, 29% favorabilidad, Cambio Radical
-9. **Jota Pe Hern?ndez** - 2.5%, Derecha, 35% favorabilidad, Candidato por firmas
-10. **Carolina Corcho** - 2.4%, Izquierda, 25% favorabilidad, Pacto Hist?rico
+5. **Claudia López** - 5.3%, Centro, 31% favorabilidad, Candidata por firmas
+6. **María José Pizarro** - 3.2%, Izquierda, 29% favorabilidad, Pacto Histórico
+7. **Juan Manuel Galán** - 3.0%, Centro, 40% favorabilidad, Nuevo Liberalismo
+8. **Germán Vargas Lleras** - 2.9%, Derecha, 29% favorabilidad, Cambio Radical
+9. **Jota Pe Hernández** - 2.5%, Derecha, 35% favorabilidad, Candidato por firmas
+10. **Carolina Corcho** - 2.4%, Izquierda, 25% favorabilidad, Pacto Histórico
 
 INSTRUCCIONES:
-- Responde SOLO en espa?ol de forma clara y concisa
-- Usa estos datos para an?lisis y predicciones
+- Responde SOLO en español de forma clara, concisa y estructurada
+- Usa markdown para mejor legibilidad: **negritas** para puntos importantes, listas con bullets
+- Usa estos datos para análisis y predicciones
 - NO muestres tu pensamiento interno (thinking)
-- S? directo y profesional
-- Si preguntan por candidatos espec?ficos, usa los datos de arriba
+- Sé directo y profesional
+- Si preguntan por candidatos específicos, usa los datos de arriba
 - Menciona que los datos pueden cambiar hasta las elecciones`;
 
 const AIChatBubble: React.FC = () => {
@@ -35,7 +36,7 @@ const AIChatBubble: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: '?Hola! ?? Soy tu asistente de an?lisis electoral. ?En qu? puedo ayudarte hoy?',
+      content: '¡Hola! 👋 Soy tu asistente de análisis electoral. ¿En qué puedo ayudarte hoy?',
       timestamp: new Date()
     }
   ]);
@@ -51,7 +52,7 @@ const AIChatBubble: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Funci?n para limpiar el contenido del agente
+  // Función para limpiar el contenido del agente
   const cleanAgentResponse = (content: string): string => {
     // Remover tags <think>...</think> y su contenido
     let cleaned = content.replace(/<think>[\s\S]*?<\/think>/gi, '');
@@ -96,7 +97,7 @@ const AIChatBubble: React.FC = () => {
       const accessKey = import.meta.env.VITE_DO_AGENT_ACCESS_KEY;
 
       if (!endpoint || !accessKey) {
-        throw new Error('Las variables de entorno del agente de IA no est?n configuradas');
+        throw new Error('Las variables de entorno del agente de IA no están configuradas');
       }
 
       // Llamar al agente de DigitalOcean usando fetch
@@ -139,9 +140,9 @@ const AIChatBubble: React.FC = () => {
         if (error.message.includes('Error del servidor')) {
           errorMessage = error.message;
         } else if (error.message.includes('fetch') || error.message.includes('Network')) {
-          errorMessage = 'No se pudo conectar con el servidor. Verifica tu conexi?n a internet.';
+          errorMessage = 'No se pudo conectar con el servidor. Verifica tu conexión a internet.';
         } else if (error.message.includes('variables de entorno')) {
-          errorMessage = 'Error de configuraci?n: ' + error.message;
+          errorMessage = 'Error de configuración: ' + error.message;
         }
       }
 
@@ -166,7 +167,7 @@ const AIChatBubble: React.FC = () => {
 
   return (
     <>
-      {/* Bot?n flotante */}
+      {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${
@@ -198,7 +199,7 @@ const AIChatBubble: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Asistente Electoral IA</h3>
-                  <p className="text-xs text-purple-100">An?lisis electoral inteligente</p>
+                  <p className="text-xs text-purple-100">Análisis electoral inteligente</p>
                 </div>
               </div>
             </div>
@@ -282,7 +283,7 @@ const AIChatBubble: React.FC = () => {
               </button>
             </div>
             <p className="text-xs text-gray-400 mt-2 text-center">
-              Presiona Enter para enviar ? Shift + Enter para nueva l?nea
+              Presiona Enter para enviar • Shift + Enter para nueva línea
             </p>
           </div>
         </div>
