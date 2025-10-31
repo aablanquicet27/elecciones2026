@@ -42,38 +42,70 @@ const AIChatBubble = () => {
       const accessKey = import.meta.env.VITE_DO_AGENT_ACCESS_KEY;
 
       if (!endpoint || !accessKey) {
-        throw new Error('Configuración de Digital Ocean Agent no encontrada');
+        console.warn('⚠️ Digital Ocean Agent no configurado. Mostrando respuesta de demostración.');
+        return 'Gracias por tu pregunta sobre las elecciones en Colombia 2026. Para activar el asistente de IA completo, configura las credenciales de Digital Ocean Agent. Mientras tanto, puedes explorar los datos y análisis disponibles en la aplicación.';
       }
 
+      // Construir el historial de mensajes para el contexto
+      const conversationHistory = messages
+        .filter(m => m.role !== 'assistant' || m.content !== messages[0].content) // Excluir mensaje de bienvenida
+        .map(m => ({
+          role: m.role,
+          content: m.content
+        }));
+
+      // Digital Ocean AI Agents API - el endpoint correcto NO incluye /chat/completions
+      // La URL debe ser directamente la del agent: https://[agent-id].agents.do-ai.run
       const response = await axios.post(
-        `${endpoint}/chat/completions`,
+        endpoint, // Sin /chat/completions
         {
           messages: [
             { role: 'system', content: SYSTEM_CONTEXT },
-            ...messages.filter(m => m.role !== 'assistant' || m.content !== messages[0].content),
+            ...conversationHistory,
             { role: 'user', content: userMessage }
           ],
           max_tokens: 500,
-          temperature: 0.7
+          temperature: 0.7,
+          stream: false
         },
         {
           headers: {
             'Authorization': `Bearer ${accessKey}`,
-            'Content-Type': 'application/json'
-          }
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          timeout: 30000 // 30 segundos timeout
         }
       );
 
-      const agentMessage = response.data.choices?.[0]?.message?.content || 'Lo siento, no pude procesar tu mensaje.';
+      // Digital Ocean puede devolver diferentes formatos
+      const agentMessage = 
+        response.data?.choices?.[0]?.message?.content || 
+        response.data?.response || 
+        response.data?.message ||
+        'Lo siento, no pude procesar tu mensaje.';
+      
       return agentMessage;
     } catch (error: any) {
-      console.error('Error communicating with DigitalOcean Agent:', error);
+      console.error('❌ Error communicating with DigitalOcean Agent:', error);
       
       if (error.response) {
         console.error('Error response:', error.response.data);
-        return `Error del servidor: ${error.response.status}. Por favor, verifica la configuración.`;
+        const status = error.response.status;
+        
+        if (status === 404) {
+          return '⚠️ El endpoint del agente de IA no es válido. Verifica que la URL del agente en VITE_DO_AGENT_ENDPOINT sea correcta y NO incluya /chat/completions al final.';
+        } else if (status === 401 || status === 403) {
+          return '🔐 La clave de acceso es inválida o ha expirado. Verifica tu VITE_DO_AGENT_ACCESS_KEY.';
+        } else if (status === 429) {
+          return '⏱️ Has alcanzado el límite de solicitudes. Por favor, espera un momento e intenta de nuevo.';
+        } else {
+          return `Error del servidor (${status}). Por favor, intenta más tarde.`;
+        }
       } else if (error.request) {
-        return 'No se pudo conectar con el servicio de IA. Verifica tu conexión.';
+        return '📡 No se pudo conectar con el servicio de IA. Verifica tu conexión a internet.';
+      } else if (error.code === 'ECONNABORTED') {
+        return '⏱️ La solicitud tomó demasiado tiempo. Por favor, intenta de nuevo.';
       } else {
         return `Error: ${error.message}`;
       }
