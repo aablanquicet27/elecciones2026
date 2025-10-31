@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CandidatePage from './pages/CandidatePage';
@@ -13,7 +13,7 @@ import { parseCandidateData } from './utils/csvParser';
 function App() {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [loading, setLoading] = useState(true);
-  const { isSubscribed, userEmail, showModal, handleSubscribe, handleCloseModal } = useSubscription();
+  const { showModal, handleSubscribe, handleCloseModal } = useSubscription();
 
   useEffect(() => {
     const loadData = async () => {
@@ -60,8 +60,8 @@ function App() {
           onSubscribe={handleSubscribe}
         />
         
-        {/* Chat bubble solo si está suscrito */}
-        {isSubscribed && <AIChatBubble />}
+        {/* Chat bubble de IA siempre visible */}
+        <AIChatBubble />
       </Router>
     </>
   );
