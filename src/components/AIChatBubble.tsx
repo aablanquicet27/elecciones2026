@@ -8,20 +8,35 @@ const AIChatBubble = () => {
 
   const callDigitalOceanAgent = async (userMessage) => {
     try {
-      const response = await axios.post(`${process.env.VITE_DO_AGENT_ENDPOINT}/chat/completions`, {
+      const agentEndpoint = import.meta.env.VITE_DO_AGENT_ENDPOINT;
+      const agentAccessKey = import.meta.env.VITE_DO_AGENT_ACCESS_KEY;
+      
+      if (!agentEndpoint || !agentAccessKey) {
+        console.error('Error: DigitalOcean Agent credentials not configured');
+        setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: 'Lo siento, el servicio de chat no está disponible en este momento.' }]);
+        return;
+      }
+
+      const response = await axios.post(`${agentEndpoint}/api/v1/chat/completions`, {
         messages: [{ role: 'user', content: userMessage }],
-        system_context: SYSTEM_CONTEXT
+        stream: false,
+        include_functions_info: false,
+        include_retrieval_info: false,
+        include_guardrails_info: false
       }, {
         headers: {
-          'Authorization': `Bearer ${process.env.VITE_DO_AGENT_ACCESS_KEY}`
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${agentAccessKey}`
         }
       });
 
       const agentMessage = response.data.choices[0].message.content;
       setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: agentMessage }]);
     } catch (error) {
-      console.error('Error communicating with DigitalOcean Agent:', error);
-      setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: 'Error communicating with DigitalOcean Agent.' }]);
+      console.error('Error calling DigitalOcean Agent:', error);
+      const errorMessage = error.response?.data?.detail || error.message || 'Error desconocido';
+      console.error('Error details:', { status: error.response?.status, message: errorMessage });
+      setMessages(prevMessages => [...prevMessages, { role: 'assistant', content: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta de nuevo más tarde.' }]);
     }
   };
 
