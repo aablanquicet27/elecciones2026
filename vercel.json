@@ -25,13 +25,6 @@
       "dest": "/$1"
     },
     {
-      "src": "/index.html",
-      "headers": {
-        "cache-control": "public, max-age=0, must-revalidate"
-      },
-      "dest": "/index.html"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
