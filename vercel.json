@@ -18,7 +18,7 @@
       "dest": "/assets/$1"
     },
     {
-      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|json|txt|html|xml))",
+      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|json|txt|xml))",
       "headers": {
         "cache-control": "public, max-age=0, must-revalidate"
       },
@@ -26,6 +26,9 @@
     },
     {
       "src": "/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
       "dest": "/index.html"
     }
   ]
