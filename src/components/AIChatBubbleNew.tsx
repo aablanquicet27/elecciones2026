@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2, Sparkles, Mail } from 'lucide-react';
-import { useChat } from '@ai-sdk/react';
+import { useOpenAIChat } from '../hooks/useOpenAIChat';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { parseCandidatesData } from '../lib/ai-tools';
@@ -64,8 +64,8 @@ const AIChatBubbleNew: React.FC = () => {
     }
   }, []);
 
-  // Usar el hook de AI SDK con streaming
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+  // Usar el hook personalizado para streaming de OpenAI
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useOpenAIChat({
     api: import.meta.env.VITE_SUPABASE_FUNCTIONS_URL + '/chat-ai',
     headers: {
       'Content-Type': 'application/json',
