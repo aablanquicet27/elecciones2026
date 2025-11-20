@@ -190,16 +190,31 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
                 }
                 
                 // Actualizar el mensaje con los tool calls acumulados
+                // NO parseamos los argumentos aquí porque pueden estar incompletos
                 setMessages(prev => 
                   prev.map(msg => 
                     msg.id === assistantMessageId
                       ? { 
                           ...msg, 
                           content: accumulatedContent,
-                          toolCalls: accumulatedToolCalls.map(tc => ({
-                            toolName: tc.function.name,
-                            args: tc.function.arguments ? JSON.parse(tc.function.arguments) : {},
-                          })),
+                          toolCalls: accumulatedToolCalls.map(tc => {
+                            // Intentar parsear solo si los argumentos parecen completos
+                            let parsedArgs = {};
+                            try {
+                              if (tc.function.arguments && tc.function.arguments.trim()) {
+                                parsedArgs = JSON.parse(tc.function.arguments);
+                              }
+                            } catch (e) {
+                              // Si falla el parsing, dejamos los args vacíos
+                              // Se parseará en el siguiente chunk
+                              parsedArgs = {};
+                            }
+                            
+                            return {
+                              toolName: tc.function.name,
+                              args: parsedArgs,
+                            };
+                          }),
                         }
                       : msg
                   )
@@ -210,6 +225,35 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
             }
           }
         }
+      }
+
+      // Al finalizar el stream, hacer un parsing final de los tool calls
+      if (accumulatedToolCalls.length > 0) {
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === assistantMessageId
+              ? { 
+                  ...msg, 
+                  content: accumulatedContent,
+                  toolCalls: accumulatedToolCalls.map(tc => {
+                    let parsedArgs = {};
+                    try {
+                      if (tc.function.arguments && tc.function.arguments.trim()) {
+                        parsedArgs = JSON.parse(tc.function.arguments);
+                      }
+                    } catch (e) {
+                      console.error('Error parseando argumentos finales:', e, 'Args:', tc.function.arguments);
+                    }
+                    
+                    return {
+                      toolName: tc.function.name,
+                      args: parsedArgs,
+                    };
+                  }),
+                }
+              : msg
+          )
+        );
       }
 
       // Si no se recibió ningún dato, mostrar error
