@@ -377,7 +377,7 @@ const AIChatBubbleNew: React.FC = () => {
                           </ReactMarkdown>
 
                           {/* Renderizar tool calls si existen */}
-                          {message.toolInvocations?.map((toolCall: any, index: number) => (
+                          {message.toolCalls?.map((toolCall: any, index: number) => (
                             <div key={index} className="mt-3">
                               {renderToolCall(toolCall)}
                             </div>
