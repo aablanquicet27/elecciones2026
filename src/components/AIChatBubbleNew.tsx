@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Sparkles, Mail } from 'lucide-react';
 import { useChat } from '@ai-sdk/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -49,8 +49,20 @@ const generateSystemContext = () => {
 
 const AIChatBubbleNew: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const systemContext = generateSystemContext();
+
+  // Verificar si hay email guardado en localStorage
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('chat_user_email');
+    if (savedEmail) {
+      setUserEmail(savedEmail);
+      setEmailSubmitted(true);
+    }
+  }, []);
 
   // Usar el hook de AI SDK con streaming
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
@@ -69,6 +81,9 @@ const AIChatBubbleNew: React.FC = () => {
         content: '¡Hola! 👋 Soy tu **Asistente Electoral IA** especializado en las elecciones presidenciales de Colombia 2026.\n\n**Puedo ayudarte con:**\n\n• 📊 Análisis de intención de voto y favorabilidad\n• 🔍 Información detallada de candidatos\n• 📈 Comparaciones entre candidatos\n• 🎯 Tendencias políticas y proyecciones\n• 📉 Estadísticas electorales actualizadas\n\n**¿Qué te gustaría saber?**',
       },
     ],
+    onError: (error) => {
+      console.error('Error en chat:', error);
+    },
   });
 
   const scrollToBottom = () => {
@@ -79,85 +94,126 @@ const AIChatBubbleNew: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Validar email
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Manejar envío de email
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!userEmail || !userEmail.trim()) {
+      setEmailError('Por favor ingresa tu correo electrónico');
+      return;
+    }
+
+    if (!validateEmail(userEmail)) {
+      setEmailError('Por favor ingresa un correo electrónico válido');
+      return;
+    }
+
+    // Guardar email en localStorage
+    localStorage.setItem('chat_user_email', userEmail);
+    setEmailSubmitted(true);
+    setEmailError('');
+  };
+
   // Renderizar componentes de UI generativa basados en tool calls
   const renderToolCall = (toolCall: any) => {
+    if (!toolCall || !toolCall.toolName) return null;
+    
     const allCandidates = parseCandidatesData();
 
-    switch (toolCall.toolName) {
-      case 'showCandidateCard': {
-        const { candidateName } = toolCall.args;
-        const candidate = allCandidates.find(c =>
-          c.nombre.toLowerCase().includes(candidateName.toLowerCase())
-        );
-        return candidate ? <CandidateCard candidate={candidate} /> : null;
-      }
+    try {
+      switch (toolCall.toolName) {
+        case 'showCandidateCard': {
+          const { candidateName } = toolCall.args || {};
+          if (!candidateName) return null;
+          
+          const candidate = allCandidates.find(c =>
+            c.nombre.toLowerCase().includes(candidateName.toLowerCase())
+          );
+          return candidate ? <CandidateCard candidate={candidate} /> : null;
+        }
 
-      case 'compareCandidates': {
-        const { candidateNames, title } = toolCall.args;
-        const candidates = candidateNames
-          .map((name: string) => allCandidates.find(c => c.nombre.toLowerCase().includes(name.toLowerCase())))
-          .filter(Boolean)
-          .map((c: any) => ({
-            nombre: c.nombre,
-            intencionVoto: c.intencionVoto,
-            favorabilidad: c.favorabilidad,
-            tendenciaPolitica: c.tendenciaPolitica,
-            partido: c.partido,
-          }));
-        return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={title} /> : null;
-      }
+        case 'compareCandidates': {
+          const { candidateNames, title } = toolCall.args || {};
+          if (!candidateNames || !Array.isArray(candidateNames)) return null;
+          
+          const candidates = candidateNames
+            .map((name: string) => allCandidates.find(c => c.nombre.toLowerCase().includes(name.toLowerCase())))
+            .filter(Boolean)
+            .map((c: any) => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={title} /> : null;
+        }
 
-      case 'showTopCandidates': {
-        const { count, filterBy = 'intencionVoto' } = toolCall.args;
-        const candidates = allCandidates
-          .sort((a, b) => {
-            if (filterBy === 'favorabilidad') {
-              return b.favorabilidad - a.favorabilidad;
-            }
-            return b.intencionVoto - a.intencionVoto;
-          })
-          .slice(0, count)
-          .map(c => ({
-            nombre: c.nombre,
-            intencionVoto: c.intencionVoto,
-            favorabilidad: c.favorabilidad,
-            tendenciaPolitica: c.tendenciaPolitica,
-            partido: c.partido,
-          }));
-        const title = filterBy === 'favorabilidad'
-          ? `Top ${count} Candidatos por Favorabilidad`
-          : `Top ${count} Candidatos por Intención de Voto`;
-        return <CandidateComparison candidates={candidates} title={title} />;
-      }
+        case 'showTopCandidates': {
+          const { count, filterBy = 'intencionVoto' } = toolCall.args || {};
+          const candidates = allCandidates
+            .sort((a, b) => {
+              if (filterBy === 'favorabilidad') {
+                return b.favorabilidad - a.favorabilidad;
+              }
+              return b.intencionVoto - a.intencionVoto;
+            })
+            .slice(0, count || 5)
+            .map(c => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          const title = filterBy === 'favorabilidad'
+            ? `Top ${count || 5} Candidatos por Favorabilidad`
+            : `Top ${count || 5} Candidatos por Intención de Voto`;
+          return <CandidateComparison candidates={candidates} title={title} />;
+        }
 
-      case 'showElectoralStats': {
-        const { title, stats, description } = toolCall.args;
-        return <ElectoralStats title={title} stats={stats} description={description} />;
-      }
+        case 'showElectoralStats': {
+          const { title, stats, description } = toolCall.args || {};
+          if (!title || !stats) return null;
+          return <ElectoralStats title={title} stats={stats} description={description} />;
+        }
 
-      case 'showInsight': {
-        const { type, title, message, details } = toolCall.args;
-        return <ElectoralInsight type={type} title={title} message={message} details={details} />;
-      }
+        case 'showInsight': {
+          const { type, title, message, details } = toolCall.args || {};
+          if (!type || !title || !message) return null;
+          return <ElectoralInsight type={type} title={title} message={message} details={details} />;
+        }
 
-      case 'showCandidatesByTendency': {
-        const { tendency, limit } = toolCall.args;
-        const candidates = allCandidates
-          .filter(c => c.tendenciaPolitica.toLowerCase() === tendency.toLowerCase())
-          .sort((a, b) => b.intencionVoto - a.intencionVoto)
-          .slice(0, limit)
-          .map(c => ({
-            nombre: c.nombre,
-            intencionVoto: c.intencionVoto,
-            favorabilidad: c.favorabilidad,
-            tendenciaPolitica: c.tendenciaPolitica,
-            partido: c.partido,
-          }));
-        return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={`Candidatos de ${tendency}`} /> : null;
-      }
+        case 'showCandidatesByTendency': {
+          const { tendency, limit } = toolCall.args || {};
+          if (!tendency) return null;
+          
+          const candidates = allCandidates
+            .filter(c => c.tendenciaPolitica.toLowerCase() === tendency.toLowerCase())
+            .sort((a, b) => b.intencionVoto - a.intencionVoto)
+            .slice(0, limit || 5)
+            .map(c => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={`Candidatos de ${tendency}`} /> : null;
+        }
 
-      default:
-        return null;
+        default:
+          return null;
+      }
+    } catch (error) {
+      console.error('Error renderizando tool call:', error);
+      return null;
     }
   };
 
@@ -202,120 +258,173 @@ const AIChatBubbleNew: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Asistente Electoral IA</h3>
-                  <p className="text-xs text-purple-100">Powered by GPT-5.1</p>
+                  <p className="text-xs text-purple-100">Powered by GPT-4</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Mensajes */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 ${
-                    message.role === 'user'
-                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
-                      : 'bg-white text-gray-800 shadow-md rounded-bl-sm border border-gray-100'
-                  }`}
-                >
-                  {message.role === 'assistant' ? (
-                    <div className="prose prose-sm max-w-none">
-                      <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                          h1: ({ children }) => <h1 className="text-lg font-bold mb-2 text-gray-900">{children}</h1>,
-                          h2: ({ children }) => <h2 className="text-base font-bold mb-2 text-gray-800">{children}</h2>,
-                          h3: ({ children }) => <h3 className="text-sm font-bold mb-1 text-gray-800">{children}</h3>,
-                          p: ({ children }) => <p className="text-sm mb-2 text-gray-700 leading-relaxed">{children}</p>,
-                          ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ul>,
-                          ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ol>,
-                          li: ({ children }) => <li className="text-sm text-gray-700">{children}</li>,
-                          strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
-                          em: ({ children }) => <em className="italic text-gray-600">{children}</em>,
-                          code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono text-purple-700">{children}</code>,
-                        }}
-                      >
-                        {message.content}
-                      </ReactMarkdown>
-
-                      {/* Renderizar tool calls si existen */}
-                      {message.toolInvocations?.map((toolCall: any, index: number) => (
-                        <div key={index} className="mt-3">
-                          {renderToolCall(toolCall)}
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-white text-gray-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <Loader2 className="w-4 h-4 animate-spin text-purple-600" />
-                    <span className="text-sm text-gray-500">Generando respuesta...</span>
+          {/* Formulario de email si no está enviado */}
+          {!emailSubmitted ? (
+            <div className="flex-1 flex items-center justify-center p-6 bg-gray-50">
+              <div className="w-full max-w-sm">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-purple-600" />
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Bienvenido al Chat Electoral</h3>
+                  <p className="text-sm text-gray-600">
+                    Para comenzar a usar el asistente de IA, por favor ingresa tu correo electrónico
+                  </p>
                 </div>
-              </div>
-            )}
 
-            {error && (
-              <div className="flex justify-start">
-                <div className="bg-red-50 text-red-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-red-200">
-                  <p className="text-sm">Error: {error.message}</p>
-                </div>
-              </div>
-            )}
+                <form onSubmit={handleEmailSubmit} className="space-y-4">
+                  <div>
+                    <input
+                      type="email"
+                      value={userEmail}
+                      onChange={(e) => {
+                        setUserEmail(e.target.value);
+                        setEmailError('');
+                      }}
+                      placeholder="tu@email.com"
+                      className={`w-full px-4 py-3 rounded-xl border ${
+                        emailError ? 'border-red-500' : 'border-gray-300'
+                      } focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all`}
+                      required
+                    />
+                    {emailError && (
+                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                    )}
+                  </div>
 
-            <div ref={messagesEndRef} />
-          </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+                  >
+                    Comenzar Chat
+                  </button>
 
-          {/* Input */}
-          <div className="p-4 bg-white border-t border-gray-200">
-            <form onSubmit={handleSubmit} className="flex items-end space-x-2">
-              <div className="flex-1 relative">
-                <textarea
-                  value={input}
-                  onChange={handleInputChange}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Escribe tu pregunta..."
-                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none transition-all"
-                  rows={1}
-                  style={{
-                    minHeight: '48px',
-                    maxHeight: '120px',
-                  }}
-                  disabled={isLoading}
-                />
+                  <p className="text-xs text-gray-500 text-center">
+                    Tu email solo se usa para personalizar la experiencia
+                  </p>
+                </form>
               </div>
-              <button
-                type="submit"
-                disabled={!input.trim() || isLoading}
-                className={`p-3 rounded-xl transition-all duration-200 ${
-                  input.trim() && !isLoading
-                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
-                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                }`}
-              >
-                {isLoading ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : (
-                  <Send className="w-5 h-5" />
+            </div>
+          ) : (
+            <>
+              {/* Mensajes */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+                        message.role === 'user'
+                          ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
+                          : 'bg-white text-gray-800 shadow-md rounded-bl-sm border border-gray-100'
+                      }`}
+                    >
+                      {message.role === 'assistant' ? (
+                        <div className="prose prose-sm max-w-none">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              h1: ({ children }) => <h1 className="text-lg font-bold mb-2 text-gray-900">{children}</h1>,
+                              h2: ({ children }) => <h2 className="text-base font-bold mb-2 text-gray-800">{children}</h2>,
+                              h3: ({ children }) => <h3 className="text-sm font-bold mb-1 text-gray-800">{children}</h3>,
+                              p: ({ children }) => <p className="text-sm mb-2 text-gray-700 leading-relaxed">{children}</p>,
+                              ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ul>,
+                              ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ol>,
+                              li: ({ children }) => <li className="text-sm text-gray-700">{children}</li>,
+                              strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
+                              em: ({ children }) => <em className="italic text-gray-600">{children}</em>,
+                              code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono text-purple-700">{children}</code>,
+                            }}
+                          >
+                            {message.content || ''}
+                          </ReactMarkdown>
+
+                          {/* Renderizar tool calls si existen */}
+                          {message.toolInvocations?.map((toolCall: any, index: number) => (
+                            <div key={index} className="mt-3">
+                              {renderToolCall(toolCall)}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-sm whitespace-pre-wrap break-words">{message.content || ''}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-white text-gray-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100">
+                      <div className="flex items-center space-x-2">
+                        <Loader2 className="w-4 h-4 animate-spin text-purple-600" />
+                        <span className="text-sm text-gray-500">Generando respuesta...</span>
+                      </div>
+                    </div>
+                  </div>
                 )}
-              </button>
-            </form>
-            <p className="text-xs text-gray-400 mt-2 text-center">
-              Presiona Enter para enviar • Shift + Enter para nueva línea
-            </p>
-          </div>
+
+                {error && (
+                  <div className="flex justify-start">
+                    <div className="bg-red-50 text-red-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-red-200">
+                      <p className="text-sm">
+                        <strong>Error:</strong> {error.message || 'Hubo un problema al conectar con el servidor. Por favor intenta de nuevo.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input */}
+              <div className="p-4 bg-white border-t border-gray-200">
+                <form onSubmit={handleSubmit} className="flex items-end space-x-2">
+                  <div className="flex-1 relative">
+                    <textarea
+                      value={input || ''}
+                      onChange={handleInputChange}
+                      onKeyPress={handleKeyPress}
+                      placeholder="Escribe tu pregunta..."
+                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none transition-all"
+                      rows={1}
+                      style={{
+                        minHeight: '48px',
+                        maxHeight: '120px',
+                      }}
+                      disabled={isLoading}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={!input || !input.trim() || isLoading}
+                    className={`p-3 rounded-xl transition-all duration-200 ${
+                      input && input.trim() && !isLoading
+                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
+                        : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    }`}
+                  >
+                    {isLoading ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
+                  </button>
+                </form>
+                <p className="text-xs text-gray-400 mt-2 text-center">
+                  Presiona Enter para enviar • Shift + Enter para nueva línea
+                </p>
+              </div>
+            </>
+          )}
         </div>
       )}
     </>

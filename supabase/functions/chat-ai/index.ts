@@ -24,6 +24,11 @@ Deno.serve(async (req: Request) => {
   try {
     const { messages, systemContext }: ChatRequest = await req.json();
 
+    // Validar que los mensajes existen
+    if (!messages || !Array.isArray(messages)) {
+      throw new Error('Mensajes inválidos');
+    }
+
     // Obtener la API key de OpenAI desde las variables de entorno
     const openaiApiKey = Deno.env.get('OPENAI_API_KEY');
     if (!openaiApiKey) {
@@ -32,7 +37,7 @@ Deno.serve(async (req: Request) => {
 
     // Preparar los mensajes con el contexto del sistema
     const allMessages = [
-      { role: 'system', content: systemContext },
+      { role: 'system', content: systemContext || 'Eres un asistente electoral experto.' },
       ...messages,
     ];
 
@@ -44,7 +49,7 @@ Deno.serve(async (req: Request) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4-turbo', // Cambiar a 'gpt-5' cuando esté disponible
+        model: 'gpt-4-turbo',
         messages: allMessages,
         stream: true,
         temperature: 0.7,
@@ -210,22 +215,90 @@ Deno.serve(async (req: Request) => {
 
     if (!response.ok) {
       const error = await response.text();
+      console.error('OpenAI API error:', error);
       throw new Error(`OpenAI API error: ${error}`);
     }
 
-    // Retornar el stream directamente
-    return new Response(response.body, {
+    // Crear un TransformStream para convertir el formato de OpenAI al formato de Vercel AI SDK
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+
+    const stream = new ReadableStream({
+      async start(controller) {
+        const reader = response.body?.getReader();
+        if (!reader) {
+          controller.close();
+          return;
+        }
+
+        try {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value);
+            const lines = chunk.split('\n').filter(line => line.trim() !== '');
+
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                const data = line.slice(6);
+                if (data === '[DONE]') continue;
+
+                try {
+                  const parsed = JSON.parse(data);
+                  const delta = parsed.choices?.[0]?.delta;
+                  
+                  if (delta?.content) {
+                    // Formato compatible con Vercel AI SDK
+                    const aiSDKChunk = `0:${JSON.stringify(delta.content)}\n`;
+                    controller.enqueue(encoder.encode(aiSDKChunk));
+                  }
+
+                  if (delta?.tool_calls) {
+                    // Enviar tool calls en formato AI SDK
+                    for (const toolCall of delta.tool_calls) {
+                      if (toolCall.function) {
+                        const toolChunk = `9:${JSON.stringify({
+                          toolCallId: toolCall.id || `call_${Date.now()}`,
+                          toolName: toolCall.function.name,
+                          args: toolCall.function.arguments ? JSON.parse(toolCall.function.arguments) : {}
+                        })}\n`;
+                        controller.enqueue(encoder.encode(toolChunk));
+                      }
+                    }
+                  }
+                } catch (e) {
+                  console.error('Error parsing chunk:', e);
+                }
+              }
+            }
+          }
+        } catch (error) {
+          console.error('Stream error:', error);
+          controller.error(error);
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    // Retornar el stream con los headers correctos para Vercel AI SDK
+    return new Response(stream, {
       headers: {
         ...corsHeaders,
-        'Content-Type': 'text/event-stream',
+        'Content-Type': 'text/plain; charset=utf-8',
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
+        'X-Content-Type-Options': 'nosniff',
       },
     });
   } catch (error) {
     console.error('Error en chat-ai:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message || 'Error desconocido',
+        details: error.toString()
+      }),
       {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
