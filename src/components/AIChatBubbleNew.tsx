@@ -287,7 +287,6 @@ const AIChatBubbleNew: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Asistente Electoral IA</h3>
-                  <p className="text-xs text-purple-100">Powered by GPT-4</p>
                 </div>
               </div>
             </div>
