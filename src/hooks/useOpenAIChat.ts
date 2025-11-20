@@ -51,6 +51,8 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
       content: input.trim(),
     };
 
+    console.log('[Chat] Enviando mensaje:', userMessage.content);
+
     // Agregar mensaje del usuario
     setMessages(prev => [...prev, userMessage]);
     setInput('');
@@ -78,6 +80,9 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
         content: msg.content,
       }));
 
+      console.log('[Chat] Llamando a API:', api);
+      console.log('[Chat] Mensajes a enviar:', messagesToSend.length);
+
       const response = await fetch(api, {
         method: 'POST',
         headers: {
@@ -91,7 +96,12 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
         signal: abortControllerRef.current.signal,
       });
 
+      console.log('[Chat] Response status:', response.status);
+      console.log('[Chat] Response headers:', Object.fromEntries(response.headers.entries()));
+
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('[Chat] Error response:', errorText);
         throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
 
@@ -105,17 +115,25 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
       let accumulatedToolCalls: any[] = [];
       let buffer = '';
       let receivedData = false;
+      let chunkCount = 0;
+
+      console.log('[Chat] Iniciando lectura del stream...');
 
       while (true) {
         const { done, value } = await reader.read();
         
         if (done) {
+          console.log('[Chat] Stream completado. Total chunks:', chunkCount);
           break;
         }
+
+        chunkCount++;
 
         // Decodificar el chunk
         const text = decoder.decode(value, { stream: true });
         buffer += text;
+
+        console.log('[Chat] Chunk #' + chunkCount + ':', text.substring(0, 100));
 
         // Procesar líneas completas
         const lines = buffer.split('\n');
@@ -124,7 +142,12 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
         for (const line of lines) {
           const trimmedLine = line.trim();
           
-          if (!trimmedLine || trimmedLine === 'data: [DONE]') {
+          if (!trimmedLine) {
+            continue;
+          }
+
+          if (trimmedLine === 'data: [DONE]') {
+            console.log('[Chat] Recibido [DONE]');
             continue;
           }
 
@@ -135,11 +158,14 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
               const parsed = JSON.parse(data);
               receivedData = true;
               
+              console.log('[Chat] Parsed data:', parsed);
+              
               // Extraer el contenido del delta
               const delta = parsed.choices?.[0]?.delta;
               
               if (delta?.content) {
                 accumulatedContent += delta.content;
+                console.log('[Chat] Content acumulado:', accumulatedContent.length, 'chars');
                 
                 // Actualizar el mensaje del asistente con el contenido
                 setMessages(prev => 
@@ -153,6 +179,8 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
               
               // Manejar tool calls
               if (delta?.tool_calls) {
+                console.log('[Chat] Tool calls detectados:', delta.tool_calls);
+                
                 for (const toolCall of delta.tool_calls) {
                   const index = toolCall.index;
                   
@@ -189,6 +217,8 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
                   }
                 }
                 
+                console.log('[Chat] Tool calls acumulados:', accumulatedToolCalls);
+                
                 // Actualizar el mensaje con los tool calls acumulados
                 // NO parseamos los argumentos aquí porque pueden estar incompletos
                 setMessages(prev => 
@@ -207,6 +237,7 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
                             } catch (e) {
                               // Si falla el parsing, dejamos los args vacíos
                               // Se parseará en el siguiente chunk
+                              console.log('[Chat] Argumentos incompletos, esperando más chunks...');
                               parsedArgs = {};
                             }
                             
@@ -221,7 +252,7 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
                 );
               }
             } catch (parseError) {
-              console.error('Error parseando JSON:', parseError, 'Data:', data);
+              console.error('[Chat] Error parseando JSON:', parseError, 'Data:', data);
             }
           }
         }
@@ -229,6 +260,8 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
 
       // Al finalizar el stream, hacer un parsing final de los tool calls
       if (accumulatedToolCalls.length > 0) {
+        console.log('[Chat] Parsing final de tool calls...');
+        
         setMessages(prev => 
           prev.map(msg => 
             msg.id === assistantMessageId
@@ -240,9 +273,10 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
                     try {
                       if (tc.function.arguments && tc.function.arguments.trim()) {
                         parsedArgs = JSON.parse(tc.function.arguments);
+                        console.log('[Chat] Tool call parseado:', tc.function.name, parsedArgs);
                       }
                     } catch (e) {
-                      console.error('Error parseando argumentos finales:', e, 'Args:', tc.function.arguments);
+                      console.error('[Chat] Error parseando argumentos finales:', e, 'Args:', tc.function.arguments);
                     }
                     
                     return {
@@ -256,8 +290,12 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
         );
       }
 
+      console.log('[Chat] Contenido final:', accumulatedContent);
+      console.log('[Chat] Tool calls finales:', accumulatedToolCalls.length);
+
       // Si no se recibió ningún dato, mostrar error
       if (!receivedData) {
+        console.error('[Chat] No se recibió ningún dato del servidor');
         throw new Error('No se recibió respuesta del servidor');
       }
 
@@ -266,10 +304,11 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
       
       // Ignorar errores de abort
       if (error.name === 'AbortError') {
+        console.log('[Chat] Request abortado');
         return;
       }
 
-      console.error('Error en chat:', error);
+      console.error('[Chat] Error en chat:', error);
       setError(error);
       
       // Remover el mensaje del asistente vacío
@@ -281,6 +320,7 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
     } finally {
       setIsLoading(false);
       abortControllerRef.current = null;
+      console.log('[Chat] Proceso completado');
     }
   }, [input, isLoading, messages, api, headers, body, onError]);
 
