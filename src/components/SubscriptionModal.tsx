@@ -9,27 +9,27 @@ interface SubscriptionModalProps {
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los 12 principales candidatos
+// Lista de los 10 principales candidatos según encuesta noviembre 2025
 const mainCandidates = [
-  'Gustavo Bolívar',
-  'Vicky Dávila', 
+  'Iván Cepeda',
+  'Abelardo de la Espriella',
   'Sergio Fajardo',
   'Germán Vargas Lleras',
   'Claudia López',
-  'María Fernanda Cabal',
+  'Alejandro Gaviria',
+  'Paloma Valencia',
   'Juan Manuel Galán',
-  'Daniel Quintero',
-  'María José Pizarro',
-  'Jota Pe Hernández',
-  'Juan Daniel Oviedo',
+  'Vicky Dávila',
   'Voto en Blanco'
 ];
 
 // Lista completa de candidatos adicionales
 const additionalCandidates = [
+  'Camilo Romero',
+  'Susana Muhamad',
+  'María Fernanda Cabal',
+  'Gustavo Bolívar',
   'David Luna',
-  'Paloma Valencia',
-  'Alejandro Gaviria',
   'Paola Holguín',
   'Aníbal Gaviria',
   'Andrés Guerra Hoyos',
@@ -37,7 +37,6 @@ const additionalCandidates = [
   'Carlos Caicedo',
   'Mauricio Cárdenas',
   'Maurice Armitage',
-  'Susana Muhammad',
   'Roy Barreras',
   'Juan Carlos Cárdenas',
   'Juan Carlos Saldarriaga',
@@ -45,8 +44,11 @@ const additionalCandidates = [
   'Luis Gilberto Murillo',
   'Mauricio Lizcano',
   'Héctor Olimpo',
-  'Camilo Romero',
-  'Alfredo Saade'
+  'Alfredo Saade',
+  'Daniel Quintero',
+  'María José Pizarro',
+  'Jota Pe Hernández',
+  'Juan Daniel Oviedo'
 ];
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, onSubscribe }) => {
@@ -89,11 +91,11 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
 
     try {
       // Verificar si el email ya existe
-      const { data: existingSubscription } = await supabase
+      const { data: existingSubscription, error: selectError } = await supabase
         .from('subscriptions')
         .select('email')
         .eq('email', email)
-        .single();
+        .maybeSingle();
 
       if (!existingSubscription) {
         // Crear nueva suscripción

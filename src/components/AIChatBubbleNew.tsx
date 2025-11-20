@@ -67,8 +67,9 @@ const AIChatBubbleNew: React.FC = () => {
   }, []);
 
   // Usar el hook personalizado para streaming de OpenAI
+  const supabaseFunctionsUrl = import.meta.env.VITE_SUPABASE_FUNCTIONS_URL || import.meta.env.VITE_SUPABASE_URL?.replace('.supabase.co', '.supabase.co/functions/v1');
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useOpenAIChat({
-    api: import.meta.env.VITE_SUPABASE_FUNCTIONS_URL + '/chat-ai',
+    api: `${supabaseFunctionsUrl}/chat-ai`,
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
@@ -118,11 +119,11 @@ const AIChatBubbleNew: React.FC = () => {
 
     try {
       // Verificar si el email ya existe en Supabase
-      const { data: existingSubscription } = await supabase
+      const { data: existingSubscription, error: selectError } = await supabase
         .from('subscriptions')
         .select('email')
         .eq('email', userEmail)
-        .single();
+        .maybeSingle();
 
       if (!existingSubscription) {
         // Crear nueva suscripción en Supabase
@@ -276,7 +277,7 @@ const AIChatBubbleNew: React.FC = () => {
 
       {/* Ventana de chat */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[450px] h-[650px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-24 right-4 z-50 w-[90vw] max-w-[420px] h-[70vh] max-h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 text-white">
             <div className="flex items-center justify-between">
