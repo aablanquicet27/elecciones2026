@@ -55,10 +55,11 @@ const AIChatBubbleNew: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const systemContext = generateSystemContext();
 
-  // Verificar si hay email guardado en localStorage
+  // Verificar si hay email guardado en localStorage (usar la misma clave que SubscriptionModal)
   useEffect(() => {
-    const savedEmail = localStorage.getItem('chat_user_email');
-    if (savedEmail) {
+    const savedEmail = localStorage.getItem('electoral_ai_email');
+    const isSubscribed = localStorage.getItem('electoral_ai_subscribed');
+    if (savedEmail && isSubscribed === 'true') {
       setUserEmail(savedEmail);
       setEmailSubmitted(true);
     }
@@ -114,8 +115,9 @@ const AIChatBubbleNew: React.FC = () => {
       return;
     }
 
-    // Guardar email en localStorage
-    localStorage.setItem('chat_user_email', userEmail);
+    // Guardar email en localStorage (usar la misma clave que SubscriptionModal)
+    localStorage.setItem('electoral_ai_email', userEmail);
+    localStorage.setItem('electoral_ai_subscribed', 'true');
     setEmailSubmitted(true);
     setEmailError('');
   };
