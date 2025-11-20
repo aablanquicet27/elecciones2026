@@ -4,6 +4,7 @@ import { useOpenAIChat } from '../hooks/useOpenAIChat';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { parseCandidatesData } from '../lib/ai-tools';
+import { supabase } from '../lib/supabase';
 import { CandidateCard } from './chat/CandidateCard';
 import { CandidateComparison } from './chat/CandidateComparison';
 import { ElectoralStats } from './chat/ElectoralStats';
@@ -102,7 +103,7 @@ const AIChatBubbleNew: React.FC = () => {
   };
 
   // Manejar envío de email
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!userEmail || !userEmail.trim()) {
@@ -115,11 +116,36 @@ const AIChatBubbleNew: React.FC = () => {
       return;
     }
 
-    // Guardar email en localStorage (usar la misma clave que SubscriptionModal)
-    localStorage.setItem('electoral_ai_email', userEmail);
-    localStorage.setItem('electoral_ai_subscribed', 'true');
-    setEmailSubmitted(true);
-    setEmailError('');
+    try {
+      // Verificar si el email ya existe en Supabase
+      const { data: existingSubscription } = await supabase
+        .from('subscriptions')
+        .select('email')
+        .eq('email', userEmail)
+        .single();
+
+      if (!existingSubscription) {
+        // Crear nueva suscripción en Supabase
+        const { error: insertError } = await supabase
+          .from('subscriptions')
+          .insert([{ email: userEmail, active: true }]);
+
+        if (insertError) {
+          console.error('Error al guardar en Supabase:', insertError);
+          setEmailError('Hubo un error al procesar tu email. Inténtalo de nuevo.');
+          return;
+        }
+      }
+
+      // Guardar email en localStorage (usar la misma clave que SubscriptionModal)
+      localStorage.setItem('electoral_ai_email', userEmail);
+      localStorage.setItem('electoral_ai_subscribed', 'true');
+      setEmailSubmitted(true);
+      setEmailError('');
+    } catch (error) {
+      console.error('Error al procesar email:', error);
+      setEmailError('Hubo un error al procesar tu email. Inténtalo de nuevo.');
+    }
   };
 
   // Renderizar componentes de UI generativa basados en tool calls
