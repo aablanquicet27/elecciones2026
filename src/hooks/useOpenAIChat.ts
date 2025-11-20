@@ -63,6 +63,7 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
       id: assistantMessageId,
       role: 'assistant',
       content: '',
+      toolCalls: [],
     };
     
     setMessages(prev => [...prev, assistantMessage]);
@@ -101,7 +102,9 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
 
       const decoder = new TextDecoder();
       let accumulatedContent = '';
+      let accumulatedToolCalls: any[] = [];
       let buffer = '';
+      let receivedData = false;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -130,17 +133,74 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
             
             try {
               const parsed = JSON.parse(data);
+              receivedData = true;
               
               // Extraer el contenido del delta
               const delta = parsed.choices?.[0]?.delta;
+              
               if (delta?.content) {
                 accumulatedContent += delta.content;
                 
-                // Actualizar el mensaje del asistente
+                // Actualizar el mensaje del asistente con el contenido
                 setMessages(prev => 
                   prev.map(msg => 
                     msg.id === assistantMessageId
                       ? { ...msg, content: accumulatedContent }
+                      : msg
+                  )
+                );
+              }
+              
+              // Manejar tool calls
+              if (delta?.tool_calls) {
+                for (const toolCall of delta.tool_calls) {
+                  const index = toolCall.index;
+                  
+                  // Inicializar el tool call si no existe
+                  if (!accumulatedToolCalls[index]) {
+                    accumulatedToolCalls[index] = {
+                      id: toolCall.id || '',
+                      type: toolCall.type || 'function',
+                      function: {
+                        name: '',
+                        arguments: '',
+                      },
+                    };
+                  }
+                  
+                  // Actualizar el ID si está presente
+                  if (toolCall.id) {
+                    accumulatedToolCalls[index].id = toolCall.id;
+                  }
+                  
+                  // Actualizar el tipo si está presente
+                  if (toolCall.type) {
+                    accumulatedToolCalls[index].type = toolCall.type;
+                  }
+                  
+                  // Acumular el nombre de la función
+                  if (toolCall.function?.name) {
+                    accumulatedToolCalls[index].function.name += toolCall.function.name;
+                  }
+                  
+                  // Acumular los argumentos
+                  if (toolCall.function?.arguments) {
+                    accumulatedToolCalls[index].function.arguments += toolCall.function.arguments;
+                  }
+                }
+                
+                // Actualizar el mensaje con los tool calls acumulados
+                setMessages(prev => 
+                  prev.map(msg => 
+                    msg.id === assistantMessageId
+                      ? { 
+                          ...msg, 
+                          content: accumulatedContent,
+                          toolCalls: accumulatedToolCalls.map(tc => ({
+                            toolName: tc.function.name,
+                            args: tc.function.arguments ? JSON.parse(tc.function.arguments) : {},
+                          })),
+                        }
                       : msg
                   )
                 );
@@ -152,8 +212,8 @@ export function useOpenAIChat(options: UseOpenAIChatOptions): UseOpenAIChatRetur
         }
       }
 
-      // Si no se acumuló contenido, mostrar error
-      if (!accumulatedContent) {
+      // Si no se recibió ningún dato, mostrar error
+      if (!receivedData) {
         throw new Error('No se recibió respuesta del servidor');
       }
 
