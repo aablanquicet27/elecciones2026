@@ -21,8 +21,8 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       subtitle: topCandidate.Candidato,
       icon: Award,
       color: "from-purple-500 to-purple-600",
-      description: "Empate técnico con segundo lugar",
-      trend: { value: "1.2%", label: "diferencia" }
+      description: "Lidera con ventaja clara",
+      trend: { value: "6.5%", label: "diferencia" }
     },
     {
       title: "Total Candidatos",
@@ -31,7 +31,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       icon: Users,
       color: "from-purple-500 to-purple-600",
       description: "Mayor fragmentación histórica",
-      trend: { value: "32", label: "registrados" }
+      trend: { value: "30", label: "registrados" }
     },
     {
       title: "Indecisos",
@@ -44,16 +44,16 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
     },
     {
       title: "Muestra",
-      value: "2,122",
+      value: "2,140",
       subtitle: "Personas encuestadas",
       icon: BarChart3,
       color: "from-purple-500 to-purple-600",
-      description: "Margen de error ±2.2%",
+      description: "Margen de error ±3.0%",
       trend: { value: "Nacional", label: "cobertura" }
     },
     {
       title: "Período",
-      value: "Julio",
+      value: "Noviembre",
       subtitle: "2025",
       icon: Calendar,
       color: "from-purple-500 to-purple-600",

@@ -41,7 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Datos Actualizados • Julio 2025</span>
+                <span className="text-sm font-medium">Datos Actualizados • Noviembre 2025</span>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
@@ -54,22 +54,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
               
               <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
                 El análisis más completo del panorama electoral presidencial. 
-                32 candidatos, encuestas en tiempo real y proyecciones estadísticas.
+                30 candidatos, encuestas actualizadas y proyecciones estadísticas.
               </p>
             </div>
 
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">32</div>
+                <div className="text-3xl font-bold text-purple-400">30</div>
                 <div className="text-sm text-purple-200">Candidatos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">2,122</div>
+                <div className="text-3xl font-bold text-purple-400">2,140</div>
                 <div className="text-sm text-purple-200">Encuestados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">±2.2%</div>
+                <div className="text-3xl font-bold text-purple-400">±3.0%</div>
                 <div className="text-sm text-purple-200">Margen Error</div>
               </div>
             </div>
@@ -138,7 +138,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                       <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
                         <div
                           className="bg-purple-600 h-2 rounded-full transition-all duration-1000"
-                          style={{ width: `${(candidate.Intención_Voto_Porcentaje / 15) * 100}%` }}
+                          style={{ width: `${(candidate.Intención_Voto_Porcentaje / 25) * 100}%` }}
                         ></div>
                       </div>
                       
@@ -175,7 +175,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             
             <div className="absolute -top-6 -right-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
               <div className="text-sm">Margen</div>
-              <div className="text-xl">1.2%</div>
+              <div className="text-xl">6.5%</div>
             </div>
           </div>
         </div>

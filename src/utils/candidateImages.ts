@@ -8,6 +8,8 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
 
   // Map of normalised candidate names to their file names inside the public folder
   const images: Record<string, string> = {
+    'ivan cepeda': 'Ivan_Cepeda.jpg',
+    'abelardo de la espriella': 'Abelardo_Espriella.jpg',
     'juan daniel oviedo': 'Juan_Daniel_Oviedo.jpg',
     'jota pe hernandez': 'Jota_Pe_Hernandez.jpg',
     'maria jose pizarro': 'Maria_Jose_Pizarro.jpg',
@@ -19,7 +21,13 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
     'german vargas lleras': 'German_Vargas_Lleras.jpg',
     'sergio fajardo': 'Sergio_Fajardo.jpg',
     'vicky davila': 'Vicky_Davila.jpg',
-    'gustavo bolivar': 'Gustavo_Bolivar.jpg'
+    'gustavo bolivar': 'Gustavo_Bolivar.jpg',
+    'paloma valencia': 'Paloma_Valencia.jpg',
+    'francia marquez': 'Francia_Marquez.jpg',
+    'alejandro gaviria': 'Alejandro_Gaviria.jpg',
+    'david luna': 'David_Luna.jpg',
+    'susana muhamad': 'Susana_Muhamad.jpg',
+    'camilo romero': 'Camilo_Romero.jpg'
   };
 
   const fileName = images[key];
