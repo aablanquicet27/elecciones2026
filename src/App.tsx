@@ -5,7 +5,7 @@ import CandidatePage from './pages/CandidatePage';
 import AnalysisPage from './pages/AnalysisPage';
 import RealTimeAnalysisPage from './pages/RealTimeAnalysisPage';
 import SubscriptionModal from './components/SubscriptionModal';
-import AIChatBubble from './components/AIChatBubble';
+import AIChatBubble from './components/AIChatBubbleNew';
 import { useSubscription } from './hooks/useSubscription';
 import { Candidate } from './types/election';
 import { parseCandidateData } from './utils/csvParser';
