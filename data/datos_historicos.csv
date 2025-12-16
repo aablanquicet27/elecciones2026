@@ -1,93 +1,71 @@
 Fecha,Encuestadora,Candidato,Porcentaje,Muestra,Margen_Error
-2025-06-08,Guarumo/EcoAnalítica,Gustavo Bolívar,12.6,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Vicky Dávila,11.6,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Sergio Fajardo,11.4,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Claudia López,10.1,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Alejandro Gaviria,9.5,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Francia Márquez,8.3,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Germán Vargas,7.7,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Daniel Quintero,7.2,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,María José Pizarro,6.9,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,David Luna,6.8,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Carlos Caicedo,6.5,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Luis Gilberto Murillo,6.2,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Paloma Valencia,5.9,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Miguel Uribe,5.6,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,María Fernanda Cabal,5.5,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Enrique Peñalosa,5.0,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Juan Manuel Galán,4.7,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Santiago Botero,4.5,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Camilo Romero,4.2,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Iván Cepeda,4.1,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Susana Muhamad,3.8,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Luis Fernando Velasco,3.5,2159,4.0%
-2025-06-08,Guarumo/EcoAnalítica,Ninguno,2.5,2159,4.0%
-2025-03-21,Invamer,Sergio Fajardo,14.5,1200,2.83%
-2025-03-21,Invamer,Vicky Dávila,13.6,1200,2.83%
-2025-03-21,Invamer,Gustavo Bolívar,12.7,1200,2.83%
-2025-03-21,Invamer,Claudia López,11.5,1200,2.83%
-2025-03-21,Invamer,Alejandro Gaviria,10.5,1200,2.83%
-2025-03-21,Invamer,Francia Márquez,10.1,1200,2.83%
-2025-03-21,Invamer,Germán Vargas,9.7,1200,2.83%
-2025-03-21,Invamer,Daniel Quintero,9.5,1200,2.83%
-2025-03-21,Invamer,María José Pizarro,8.9,1200,2.83%
-2025-03-21,Invamer,David Luna,8.5,1200,2.83%
-2025-03-21,Invamer,Carlos Caicedo,8.2,1200,2.83%
-2025-03-21,Invamer,Luis Gilberto Murillo,7.9,1200,2.83%
-2025-03-21,Invamer,Paloma Valencia,7.5,1200,2.83%
-2025-03-21,Invamer,Miguel Uribe,7.2,1200,2.83%
-2025-03-21,Invamer,María Fernanda Cabal,6.8,1200,2.83%
-2025-03-21,Invamer,Enrique Peñalosa,6.5,1200,2.83%
-2025-03-21,Invamer,Juan Manuel Galán,6.2,1200,2.83%
-2025-03-21,Invamer,Santiago Botero,5.9,1200,2.83%
-2025-03-21,Invamer,Camilo Romero,5.5,1200,2.83%
-2025-03-21,Invamer,Iván Cepeda,5.0,1200,2.83%
-2025-03-21,Invamer,Susana Muhamad,4.5,1200,2.83%
-2025-03-21,Invamer,Luis Fernando Velasco,4.0,1200,2.83%
-2025-03-21,Invamer,Ninguno,3.5,1200,2.83%
-2025-02-10,Guarumo/EcoAnalítica,Gustavo Bolívar,15.1,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Vicky Dávila,14.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Sergio Fajardo,13.6,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Claudia López,12.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Alejandro Gaviria,11.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Francia Márquez,10.1,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Germán Vargas,9.7,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Daniel Quintero,9.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,María José Pizarro,8.9,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,David Luna,8.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Carlos Caicedo,8.2,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Luis Gilberto Murillo,7.9,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Paloma Valencia,7.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Miguel Uribe,7.2,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,María Fernanda Cabal,6.8,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Enrique Peñalosa,6.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Juan Manuel Galán,6.2,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Santiago Botero,5.9,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Camilo Romero,5.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Iván Cepeda,5.0,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Susana Muhamad,4.5,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Luis Fernando Velasco,4.0,2140,4.0%
-2025-02-10,Guarumo/EcoAnalítica,Ninguno,3.5,2140,4.0%
-2025-01-27,CNC,Gustavo Bolívar,12.7,1513,3.1%
-2025-01-27,CNC,Vicky Dávila,11.5,1513,3.1%
-2025-01-27,CNC,Sergio Fajardo,10.5,1513,3.1%
-2025-01-27,CNC,Claudia López,10.1,1513,3.1%
-2025-01-27,CNC,Alejandro Gaviria,9.5,1513,3.1%
-2025-01-27,CNC,Francia Márquez,9.0,1513,3.1%
-2025-01-27,CNC,Germán Vargas,8.5,1513,3.1%
-2025-01-27,CNC,Daniel Quintero,8.0,1513,3.1%
-2025-01-27,CNC,María José Pizarro,7.5,1513,3.1%
-2025-01-27,CNC,David Luna,7.0,1513,3.1%
-2025-01-27,CNC,Carlos Caicedo,6.5,1513,3.1%
-2025-01-27,CNC,Luis Gilberto Murillo,6.0,1513,3.1%
-2025-01-27,CNC,Paloma Valencia,5.5,1513,3.1%
-2025-01-27,CNC,Miguel Uribe,5.0,1513,3.1%
-2025-01-27,CNC,María Fernanda Cabal,4.5,1513,3.1%
-2025-01-27,CNC,Enrique Peñalosa,4.0,1513,3.1%
-2025-01-27,CNC,Juan Manuel Galán,3.5,1513,3.1%
-2025-01-27,CNC,Santiago Botero,3.0,1513,3.1%
-2025-01-27,CNC,Camilo Romero,2.5,1513,3.1%
-2025-01-27,CNC,Iván Cepeda,2.0,1513,3.1%
-2025-01-27,CNC,Susana Muhamad,1.5,1513,3.1%
-2025-01-27,CNC,Luis Fernando Velasco,1.0,1513,3.1%
-2025-01-27,CNC,Ninguno,0.5,1513,3.1%
+2025-11-27,Invamer,Iván Cepeda,31.9,2080,2.3%
+2025-11-27,Invamer,Abelardo de la Espriella,18.2,2080,2.3%
+2025-11-27,Invamer,Sergio Fajardo,8.5,2080,2.3%
+2025-11-27,Invamer,Claudia López,4.1,2080,2.3%
+2025-11-27,Invamer,Vicky Dávila,3.7,2080,2.3%
+2025-11-27,Invamer,Daniel Quintero,2.9,2080,2.3%
+2025-11-27,Invamer,Juan Manuel Galán,1.6,2080,2.3%
+2025-11-27,Invamer,Alejandro Gaviria,1.3,2080,2.3%
+2025-11-27,Invamer,María Fernanda Cabal,1.1,2080,2.3%
+2025-11-27,Invamer,Germán Vargas Lleras,1.1,2080,2.3%
+2025-11-27,Invamer,Paloma Valencia,1.0,2080,2.3%
+2025-11-27,Invamer,Juan Daniel Oviedo,0.9,2080,2.3%
+2025-11-27,Invamer,Carlos Caicedo,0.8,2080,2.3%
+2025-11-27,Invamer,Roy Barreras,0.6,2080,2.3%
+2025-11-27,Invamer,Susana Muhamad,0.6,2080,2.3%
+2025-11-27,Invamer,David Luna,0.6,2080,2.3%
+2025-11-27,Invamer,Luis Gilberto Murillo,0.5,2080,2.3%
+2025-11-27,Invamer,Ninguno,4.5,2080,2.3%
+2025-11-14,CNC,Iván Cepeda,20.9,2140,3.0%
+2025-11-14,CNC,Abelardo de la Espriella,14.4,2140,3.0%
+2025-11-14,CNC,Sergio Fajardo,7.8,2140,3.0%
+2025-11-14,CNC,Claudia López,5.0,2140,3.0%
+2025-11-14,CNC,Juan Manuel Galán,3.3,2140,3.0%
+2025-11-14,CNC,Vicky Dávila,3.2,2140,3.0%
+2025-11-14,CNC,Germán Vargas Lleras,1.6,2140,3.0%
+2025-11-14,CNC,Enrique Peñalosa,1.4,2140,3.0%
+2025-11-14,CNC,Alejandro Gaviria,1.0,2140,3.0%
+2025-11-14,CNC,María Fernanda Cabal,0.9,2140,3.0%
+2025-11-14,CNC,Ninguno,18.5,2140,3.0%
+2025-11-15,Yamil Cure,Iván Cepeda,19.6,2250,3.0%
+2025-11-15,Yamil Cure,Abelardo de la Espriella,15.6,2250,3.0%
+2025-11-15,Yamil Cure,Sergio Fajardo,10.6,2250,3.0%
+2025-11-15,Yamil Cure,Claudia López,7.1,2250,3.0%
+2025-11-15,Yamil Cure,Juan Manuel Galán,5.2,2250,3.0%
+2025-11-15,Yamil Cure,Daniel Quintero,5.0,2250,3.0%
+2025-11-15,Yamil Cure,Vicky Dávila,4.2,2250,3.0%
+2025-11-15,Yamil Cure,Ninguno,13.7,2250,3.0%
+2025-10-16,CNC,Abelardo de la Espriella,13.7,1803,2.4%
+2025-10-16,CNC,Daniel Quintero,9.7,1803,2.4%
+2025-10-16,CNC,Sergio Fajardo,8.9,1803,2.4%
+2025-10-16,CNC,Iván Cepeda,8.0,1803,2.4%
+2025-10-16,CNC,Efraín Cepeda,8.1,1803,2.4%
+2025-10-16,CNC,Vicky Dávila,6.4,1803,2.4%
+2025-10-16,CNC,Claudia López,5.5,1803,2.4%
+2025-10-16,CNC,Ninguno,9.9,1803,2.4%
+2025-07-05,Guarumo,Vicky Dávila,11.5,2122,2.2%
+2025-07-05,Guarumo,Gustavo Bolívar,10.5,2122,2.2%
+2025-07-05,Guarumo,Sergio Fajardo,8.7,2122,2.2%
+2025-07-05,Guarumo,Daniel Quintero,8.1,2122,2.2%
+2025-07-05,Guarumo,Claudia López,5.3,2122,2.2%
+2025-07-05,Guarumo,Juan Manuel Galán,3.0,2122,2.2%
+2025-07-05,Guarumo,Germán Vargas Lleras,2.9,2122,2.2%
+2025-07-05,Guarumo,Carolina Corcho,2.4,2122,2.2%
+2025-07-05,Guarumo,Juan Daniel Oviedo,2.2,2122,2.2%
+2025-07-05,Guarumo,Iván Cepeda,2.1,2122,2.2%
+2025-07-05,Guarumo,María Fernanda Cabal,1.9,2122,2.2%
+2025-07-05,Guarumo,Susana Muhamad,1.7,2122,2.2%
+2025-07-05,Guarumo,David Luna,1.2,2122,2.2%
+2025-07-05,Guarumo,Abelardo de la Espriella,1.1,2122,2.2%
+2025-07-05,Guarumo,Ninguno,5.3,2122,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Sergio Fajardo,14.5,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Vicky Dávila,13.1,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Gustavo Bolívar,8.9,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Claudia López,5.7,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Juan Manuel Galán,5.0,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Germán Vargas Lleras,5.0,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Francia Márquez,3.7,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,María Fernanda Cabal,3.0,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Alejandro Gaviria,2.8,2018,2.2%
+2024-12-12,Guarumo/EcoAnalítica,Ninguno,7.7,2018,2.2%

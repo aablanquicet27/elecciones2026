@@ -1,6 +1,4 @@
-Escenario,Candidato1,Porcentaje1,Candidato2,Porcentaje2,Indecisos,Probabilidad
-Cepeda vs. Espriella,Cepeda,48.5,Espriella,42.8,8.7,35
-Cepeda vs. Cabal,Cepeda,49.2,Cabal,41.5,9.3,25
-Cepeda vs. Fajardo,Cepeda,46.8,Fajardo,44.2,9.0,18
-Espriella vs. Fajardo,Espriella,45.5,Fajardo,43.8,10.7,15
-Cepeda vs. Bolívar,Cepeda,51.2,Bolívar,38.5,10.3,7
+Escenario,Candidato1,Porcentaje1,Candidato2,Porcentaje2,Voto_Blanco,Probabilidad
+Cepeda vs. Espriella,Cepeda,59.1,Espriella,36.2,4.6,45
+Cepeda vs. Fajardo,Cepeda,48.9,Fajardo,46.4,4.8,35
+Fajardo vs. Espriella,Fajardo,51.7,Espriella,38.9,9.4,20
