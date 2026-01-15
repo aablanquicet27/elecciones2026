@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import HomePage from './pages/HomePage';
 import CandidatePage from './pages/CandidatePage';
 import AnalysisPage from './pages/AnalysisPage';
@@ -63,6 +64,7 @@ function App() {
         {/* Chat bubble siempre visible */}
         <AIChatBubble />
       </Router>
+      <Analytics />
     </>
   );
 }

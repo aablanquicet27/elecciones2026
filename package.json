@@ -23,6 +23,7 @@
     "@ai-sdk/react": "^2.0.98",
     "@mendable/firecrawl-js": "^1.25.5",
     "@supabase/supabase-js": "^2.50.5",
+    "@vercel/analytics": "^1.6.1",
     "ai": "^5.0.98",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
