@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, Users, BarChart3, ChevronDown, Play, Award, Target, Calendar, MapPin } from 'lucide-react';
+import { TrendingUp, Users, BarChart3, ArrowRight, Award, Target, Calendar, MapPin } from 'lucide-react';
 import { Candidate } from '../types/election';
 import HeroSection from '../components/HeroSection';
 import CandidateGrid from '../components/CandidateGrid';
@@ -36,80 +36,72 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
   const undecided = 100 - totalIntention;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
+    <main className="min-h-screen bg-white">
+      {/* Premium Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 nav-premium" role="navigation" aria-label="Navegación principal">
+        <div className="container mx-auto px-6 lg:px-12 py-5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <img src="/logoagapai.png" alt="Logo" className="h-12 w-12" />
+            <Link to="/" className="flex items-center space-x-4 group" aria-label="Ir al inicio">
+              <img src="/logoagapai.png" alt="Logo Elecciones Colombia 2026" className="h-12 w-12" />
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900 leading-tight">Colombia 2026</span>
-                <span className="text-sm text-gray-600 leading-tight">Elecciones Presidenciales</span>
+                <span className="text-2xl font-bold text-gray-900 tracking-tight leading-tight">Colombia 2026</span>
+                <span className="text-sm text-gray-500 leading-tight">Elecciones Presidenciales</span>
               </div>
-            </div>
+            </Link>
             
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-10">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === 'hero' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                className={`text-base font-medium transition-colors ${
+                  activeSection === 'hero' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Inicio
               </button>
               <button 
                 onClick={() => scrollToSection('candidates')}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === 'candidates' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                className={`text-base font-medium transition-colors ${
+                  activeSection === 'candidates' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Candidatos
               </button>
               <button 
                 onClick={() => scrollToSection('noticias')}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === 'noticias' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                className={`text-base font-medium transition-colors ${
+                  activeSection === 'noticias' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Noticias
               </button>
               <button 
                 onClick={() => scrollToSection('insights')}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === 'insights' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                className={`text-base font-medium transition-colors ${
+                  activeSection === 'insights' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Hallazgos
               </button>
               <button 
                 onClick={() => scrollToSection('analysis')}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === 'analysis' ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                className={`text-base font-medium transition-colors ${
+                  activeSection === 'analysis' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Análisis
               </button>
               <Link 
                 to="/analisis"
-                className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm font-medium"
+                className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition-all text-base font-semibold shadow-lg shadow-purple-500/20"
               >
                 Panel Completo
               </Link>
               <Link 
                 to="/analisis-tiempo-real"
-                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm font-medium animate-pulse"
+                className="bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-all text-base font-semibold"
               >
-                Análisis en Vivo
+                En Vivo
               </Link>
-              <a 
-                href="https://wsp.registraduria.gov.co/censo/consultar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium"
-              >
-                Tu lugar de votación
-              </a>
             </div>
           </div>
         </div>
@@ -117,50 +109,56 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 
       {/* Hero Section */}
       <section 
-        ref={el => sectionsRef.current['hero'] = el}
-        className="pt-20"
+        ref={(el) => { sectionsRef.current['hero'] = el; }}
+        id="hero"
       >
         <HeroSection candidates={topCandidates} undecided={undecided} />
       </section>
 
       {/* Stats Overview */}
-      <section className="py-20 bg-white">
+      <section className="section-premium bg-white" aria-label="Estadísticas electorales">
         <StatsOverview candidates={candidates} />
       </section>
 
       {/* Electoral Insights */}
       <section 
-        ref={el => sectionsRef.current['insights'] = el}
-        className="py-20 bg-gray-50"
+        ref={(el) => { sectionsRef.current['insights'] = el; }}
+        id="insights"
+        className="section-premium bg-purple-pastel"
+        aria-label="Hallazgos electorales"
       >
         <ElectoralInsights />
       </section>
 
       {/* Candidates Section */}
       <section 
-        ref={el => sectionsRef.current['candidates'] = el}
-        className="py-20 bg-white"
+        ref={(el) => { sectionsRef.current['candidates'] = el; }}
+        id="candidates"
+        className="section-premium bg-gradient-to-b from-white via-purple-50/30 to-white"
+        aria-label="Candidatos presidenciales"
       >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Candidatos Presidenciales 2026
+        <div className="container mx-auto px-6 lg:px-12">
+          <header className="text-center mb-20">
+            <h2 className="text-gray-900 mb-6">
+              Candidatos Presidenciales
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-large max-w-3xl mx-auto">
               Conoce a los principales aspirantes a la presidencia de Colombia. 
               Explora sus propuestas, trayectoria y posicionamiento en las encuestas.
             </p>
-          </div>
+          </header>
           
           <CandidateGrid candidates={topCandidates} />
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link 
               to="/analisis"
-              className="inline-flex items-center space-x-2 bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="btn-primary inline-flex items-center space-x-3"
+              aria-label="Ver análisis electoral completo"
             >
               <BarChart3 className="h-5 w-5" />
-              <span className="font-semibold">Ver Análisis Completo</span>
+              <span>Ver Análisis Completo</span>
+              <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
         </div>
@@ -168,133 +166,137 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 
       {/* Noticias del Día Section */}
       <section 
-        ref={el => sectionsRef.current['noticias'] = el}
-        className="py-20 bg-gray-50"
+        ref={(el) => { sectionsRef.current['noticias'] = el; }}
+        id="noticias"
+        className="section-premium bg-purple-pastel"
+        aria-label="Noticias del día"
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 lg:px-12">
           <NoticiasDelDia />
         </div>
       </section>
 
       {/* Analysis Section */}
       <section 
-        ref={el => sectionsRef.current['analysis'] = el}
-        className="py-20 bg-white"
+        ref={(el) => { sectionsRef.current['analysis'] = el; }}
+        id="analysis"
+        className="section-premium bg-gradient-to-b from-white to-purple-50/50"
+        aria-label="Análisis de tendencias"
       >
         <TrendAnalysis candidates={candidates} />
       </section>
 
       {/* Regional Analysis */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900">
+      <section className="section-premium bg-gray-900" aria-label="Análisis regional">
         <RegionalMap />
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gray-900">
+      <section className="section-premium bg-gray-950" aria-label="Cronograma electoral">
         <TimelineSection />
       </section>
 
       {/* Key Insights Summary */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      <section className="section-premium bg-purple-pastel" aria-label="Conclusiones del análisis">
+        <div className="container mx-auto px-6 lg:px-12">
+          <header className="text-center mb-20">
+            <h2 className="text-gray-900 mb-6">
               Conclusiones del Análisis Electoral
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-large">
               Los puntos clave que definen el panorama electoral 2026
             </p>
-          </div>
+          </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
-              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
-                <TrendingUp className="h-6 w-6 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <article className="card-premium p-10">
+              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
+                <TrendingUp className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-4">
                 Carrera Electoral Reñida
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-600 text-lg mb-6">
                 Empate técnico entre los dos líderes con apenas 1.5 puntos de diferencia, 
                 marcando una competencia histórica sin precedentes.
               </p>
-              <div className="text-sm text-purple-600 font-semibold">
-                Líder: De la Espriella 28.0% vs Cepeda 26.5%
+              <div className="text-purple-600 font-semibold text-lg">
+                De la Espriella 28.0% vs Cepeda 26.5%
               </div>
-            </div>
+            </article>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
-              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
-                <Users className="h-6 w-6 text-white" />
+            <article className="card-premium p-10">
+              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
+                <Users className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-4">
                 Derecha Recupera Terreno
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-600 text-lg mb-6">
                 De la Espriella lidera con +9.8 puntos desde diciembre 2025. 
                 La derecha consolida 34% del electorado.
               </p>
-              <div className="text-sm text-purple-600 font-semibold">
-                Cambio: +9.8 puntos (De la Espriella)
+              <div className="text-purple-600 font-semibold text-lg">
+                Cambio: +9.8 puntos
               </div>
-            </div>
+            </article>
 
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200">
-              <div className="bg-purple-600 p-3 rounded-full w-fit mb-4">
-                <Target className="h-6 w-6 text-white" />
+            <article className="card-premium p-10">
+              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
+                <Target className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-gray-900 mb-4">
                 Segunda Vuelta Definida
               </h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-600 text-lg mb-6">
                 De la Espriella vence a Cepeda 44.2% vs 34.9% en balotaje. 
                 20.9% de voto en blanco e indecisos.
               </p>
-              <div className="text-sm text-purple-600 font-semibold">
+              <div className="text-purple-600 font-semibold text-lg">
                 Ventaja segunda vuelta: +9.3 puntos
               </div>
-            </div>
+            </article>
           </div>
 
           {/* Additional insights */}
-          <div className="mt-12 bg-gradient-to-r from-gray-50 to-purple-50 rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <div className="mt-20 bg-gray-50 rounded-[2rem] p-12 border border-gray-100">
+            <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">
               Factores Determinantes para 2026
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               <div className="text-center">
-                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-                  <Users className="h-6 w-6 text-white" />
+                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Users className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Favorabilidad Líder</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Favorabilidad Líder</h4>
+                <p className="text-gray-600">
                   De la Espriella lidera favorabilidad con +6.4 de balance, Pinzón +4.6 y Valencia +3.7
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-                  <MapPin className="h-6 w-6 text-white" />
+                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <MapPin className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Dinámicas Regionales</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Dinámicas Regionales</h4>
+                <p className="text-gray-600">
                   Caribe favorece Espriella (32.8%), Andina competida, Pacífica pro-Cepeda (28.2%)
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-                  <Calendar className="h-6 w-6 text-white" />
+                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Calendar className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Consultas Internas</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Consultas Internas</h4>
+                <p className="text-gray-600">
                   Pacto Amplio: Cepeda 92.3%. Gran Consulta: Valencia 19.1%, Pinzón 13.1%
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-                  <Award className="h-6 w-6 text-white" />
+                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Award className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Centro Fortalecido</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Centro Fortalecido</h4>
+                <p className="text-gray-600">
                   Fajardo sube a 9.4%, Pinzón 5.1%. El centro suma 24.7% del electorado
                 </p>
               </div>
@@ -304,34 +306,37 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Mantente Informado del Proceso Electoral
+      <section className="py-32 bg-gray-900" aria-label="Llamada a la acción">
+        <div className="container mx-auto px-6 lg:px-12 text-center">
+          <h2 className="text-white mb-8">
+            Mantente Informado
           </h2>
-          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto">
             Accede al análisis más completo y actualizado de las elecciones presidenciales Colombia 2026
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
               to="/analisis"
-              className="inline-flex items-center space-x-2 bg-white text-purple-600 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
+              className="btn-primary inline-flex items-center space-x-3"
             >
               <BarChart3 className="h-5 w-5" />
               <span>Panel de Análisis Completo</span>
             </Link>
             
-            <button className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-purple-600 transition-all duration-300 font-semibold">
+            <Link 
+              to="/analisis-tiempo-real"
+              className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all inline-flex items-center space-x-3"
+            >
               <Calendar className="h-5 w-5" />
-              <span>Calendario Electoral</span>
-            </button>
+              <span>Análisis en Tiempo Real</span>
+            </Link>
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, Users, Award, ChevronDown, Play } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Candidate } from '../types/election';
 import { getCandidateImage } from '../utils/candidateImages';
 
@@ -23,169 +23,140 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
   const getImage = (name: string) => getCandidateImage(name, 400);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}
-        ></div>
-      </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden" aria-label="Panorama electoral Colombia 2026">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
-      <div className="relative container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="relative container mx-auto px-6 lg:px-12 pt-32 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[85vh]">
           {/* Left Content */}
-          <div className="text-white space-y-8">
+          <div className="space-y-10">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
+              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+              <span className="text-base font-medium text-purple-700">Datos Actualizados · Enero 2026 · Atlas Intel</span>
+            </div>
+            
+            {/* Main Headline */}
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Datos Actualizados • Enero 2026 • Atlas Intel</span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <h1 className="headline-hero text-gray-900">
                 Elecciones
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Colombia
-                </span>
+                <span className="block text-purple-600">Colombia</span>
                 <span className="block">2026</span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
+              <p className="text-large max-w-xl">
                 El análisis más completo del panorama electoral presidencial. 
-                De la Espriella 28% vs Cepeda 26.5% - Empate técnico histórico.
+                Empate técnico histórico entre los líderes.
               </p>
             </div>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">18</div>
-                <div className="text-sm text-purple-200">Candidatos</div>
+            {/* Key Stats - Minimal */}
+            <div className="flex flex-wrap gap-8 md:gap-12 pt-4">
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">28%</div>
+                <div className="text-sm text-gray-500 mt-1">De la Espriella</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">3,000</div>
-                <div className="text-sm text-purple-200">Encuestados</div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">26.5%</div>
+                <div className="text-sm text-gray-500 mt-1">Cepeda</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">±1.8%</div>
-                <div className="text-sm text-purple-200">Margen Error</div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">{undecided.toFixed(0)}%</div>
+                <div className="text-sm text-gray-500 mt-1">Indecisos</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link 
                 to="/analisis"
-                className="inline-flex items-center justify-center space-x-2 bg-white text-purple-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
+                className="btn-primary inline-flex items-center justify-center space-x-3"
+                aria-label="Ver análisis electoral completo"
               >
-                <TrendingUp className="h-5 w-5" />
                 <span>Ver Análisis Completo</span>
+                <ArrowRight className="h-5 w-5" />
               </Link>
               
-              <button className="inline-flex items-center justify-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-purple-900 transition-all duration-300 font-semibold">
-                <Play className="h-5 w-5" />
-                <span>Video Resumen</span>
-              </button>
+              <a 
+                href="https://wsp.registraduria.gov.co/censo/consultar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center justify-center space-x-3"
+                aria-label="Consultar lugar de votación"
+              >
+                <span>Tu Lugar de Votación</span>
+                <ArrowRight className="h-5 w-5" />
+              </a>
             </div>
           </div>
 
-          {/* Right Content - Candidate Carousel */}
+          {/* Right Content - Top Candidates */}
           <div className="relative">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+            <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-purple-100 shadow-xl shadow-purple-500/10">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Líderes Actuales</h3>
-                <p className="text-purple-200">Intención de voto • Empate técnico</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-1">Líderes Actuales</h2>
+                <p className="text-gray-500">Intención de voto · Primera vuelta</p>
               </div>
 
-              {/* Candidate Slider */}
-              <div className="relative h-96 overflow-hidden rounded-2xl">
+              {/* Candidate Cards */}
+              <div className="space-y-4">
                 {topThree.map((candidate, index) => (
-                  <div
+                  <Link
                     key={candidate.Candidato}
-                    className={`absolute inset-0 transition-all duration-1000 transform ${
-                      index === currentSlide 
-                        ? 'translate-x-0 opacity-100' 
-                        : index < currentSlide 
-                          ? '-translate-x-full opacity-0' 
-                          : 'translate-x-full opacity-0'
+                    to={`/candidato/${candidate.Candidato.toLowerCase().replace(/\s+/g, '-')}`}
+                    className={`block bg-white rounded-2xl p-6 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-purple-200 ${
+                      index === currentSlide ? 'ring-2 ring-purple-500 ring-offset-2' : ''
                     }`}
+                    aria-label={`Ver perfil de ${candidate.Candidato}`}
                   >
-                    <div className="bg-white rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center">
-                      <img
-                        src={getImage(candidate.Candidato)}
-                        alt={candidate.Candidato}
-                        className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-purple-200"
-                      />
-                      
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {candidate.Candidato}
-                      </h4>
-                      
-                      <div className="text-3xl font-bold text-purple-600 mb-2">
-                        {candidate.Intención_Voto_Porcentaje}%
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-5">
+                        <div className="relative">
+                          <span className="absolute -top-1 -left-1 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            {index + 1}
+                          </span>
+                          <img
+                            src={getImage(candidate.Candidato)}
+                            alt={`Foto de ${candidate.Candidato}`}
+                            className="w-16 h-16 rounded-full object-cover border-2 border-gray-100"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900">{candidate.Candidato}</h3>
+                          <span className={`inline-block mt-1 px-3 py-1 rounded-full text-sm font-medium ${
+                            candidate.Tendencia_Política === 'Izquierda' ? 'bg-red-50 text-red-700' :
+                            candidate.Tendencia_Política === 'Centro' ? 'bg-blue-50 text-blue-700' :
+                            'bg-green-50 text-green-700'
+                          }`}>
+                            {candidate.Tendencia_Política}
+                          </span>
+                        </div>
                       </div>
-                      
-                      <div className={`px-3 py-1 rounded-full text-sm font-medium mb-4 ${
-                        candidate.Tendencia_Política === 'Izquierda' ? 'bg-red-100 text-red-800' :
-                        candidate.Tendencia_Política === 'Centro' ? 'bg-blue-100 text-blue-800' :
-                        'bg-green-100 text-green-800'
-                      }`}>
-                        {candidate.Tendencia_Política}
+                      <div className="text-right">
+                        <div className="percentage-large">{candidate.Intención_Voto_Porcentaje}%</div>
                       </div>
-                      
-                      <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-                        <div
-                          className="bg-purple-600 h-2 rounded-full transition-all duration-1000"
-                          style={{ width: `${(candidate.Intención_Voto_Porcentaje / 25) * 100}%` }}
-                        ></div>
-                      </div>
-                      
-                      <Link
-                        to={`/candidato/${candidate.Candidato.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-purple-600 hover:text-purple-800 font-medium text-sm"
-                      >
-                        Ver perfil completo →
-                      </Link>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 
-              {/* Slider Indicators */}
-              <div className="flex justify-center space-x-2 mt-4">
-                {topThree.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentSlide ? 'bg-white' : 'bg-white/40'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
-              <div className="text-sm">Indecisos</div>
-              <div className="text-xl">{undecided.toFixed(1)}%</div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
-              <div className="text-sm">2da Vuelta</div>
-              <div className="text-xl">+9.3%</div>
+              {/* Methodology note */}
+              <p className="text-center text-sm text-gray-400 mt-6">
+                Muestra: 3,000 personas · Margen de error: ±1.8%
+              </p>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-gray-400 animate-bounce">
           <ChevronDown className="h-8 w-8" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

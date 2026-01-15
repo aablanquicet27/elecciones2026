@@ -20,163 +20,132 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${topCandidate.Intención_Voto_Porcentaje}%`,
       subtitle: topCandidate.Candidato,
       icon: Award,
-      color: "from-purple-500 to-purple-600",
-      description: "Lidera con ventaja clara",
-      trend: { value: "6.5%", label: "diferencia" }
+      description: "Lidera con ventaja clara"
     },
     {
       title: "Total Candidatos",
       value: candidates.length.toString(),
       subtitle: "Aspirantes confirmados",
       icon: Users,
-      color: "from-purple-500 to-purple-600",
-      description: "Mayor fragmentación histórica",
-      trend: { value: "30", label: "registrados" }
+      description: "Mayor fragmentación histórica"
     },
     {
       title: "Indecisos",
-      value: `${undecided.toFixed(1)}%`,
+      value: `${undecided.toFixed(0)}%`,
       subtitle: "Del electorado",
       icon: AlertTriangle,
-      color: "from-purple-500 to-purple-600",
-      description: "Factor determinante",
-      trend: { value: "+19.1%", label: "vs 2022" }
+      description: "Factor determinante"
     },
     {
       title: "Muestra",
-      value: "2,140",
+      value: "3,000",
       subtitle: "Personas encuestadas",
       icon: BarChart3,
-      color: "from-purple-500 to-purple-600",
-      description: "Margen de error ±3.0%",
-      trend: { value: "Nacional", label: "cobertura" }
+      description: "Margen de error ±1.8%"
     },
     {
       title: "Período",
-      value: "Noviembre",
-      subtitle: "2025",
+      value: "Enero",
+      subtitle: "2026",
       icon: Calendar,
-      color: "from-purple-500 to-purple-600",
-      description: "Datos más recientes",
-      trend: { value: "Actualizado", label: "estado" }
+      description: "Datos Atlas Intel"
     },
     {
       title: "Regiones",
       value: "5",
       subtitle: "Analizadas",
       icon: MapPin,
-      color: "from-purple-500 to-purple-600",
-      description: "Comportamiento diferenciado",
-      trend: { value: "Caribe", label: "más activo" }
+      description: "Cobertura nacional"
     }
   ];
 
   return (
-    <div className="container mx-auto px-6">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+    <div className="container mx-auto px-6 lg:px-12">
+      <header className="text-center mb-20">
+        <h2 className="text-gray-900 mb-6">
           Panorama Electoral en Cifras
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-large max-w-3xl mx-auto">
           Los datos más relevantes del proceso electoral presidencial Colombia 2026
         </p>
-      </div>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {stats.map((stat, index) => (
-          <div 
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
+        {stats.map((stat) => (
+          <article 
             key={stat.title}
-            className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+            className="text-center group"
           >
-            {/* Background Gradient */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-            
-            <div className="relative p-8">
-              {/* Icon */}
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${stat.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                <stat.icon className="h-8 w-8 text-white" />
-              </div>
-
-              {/* Main Content */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-600 mb-2">
-                  {stat.title}
-                </h3>
-                <div className="text-4xl font-bold text-gray-900 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-medium text-gray-500 mb-3">
-                  {stat.subtitle}
-                </div>
-                <p className="text-sm text-gray-600">
-                  {stat.description}
-                </p>
-              </div>
-
-              {/* Trend */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <span className="text-sm font-semibold text-purple-600">
-                  {stat.trend.value}
-                </span>
-                <span className="text-xs text-gray-500">
-                  {stat.trend.label}
-                </span>
-              </div>
+            {/* Icon */}
+            <div className="inline-flex p-5 rounded-2xl bg-purple-50 mb-6 group-hover:bg-purple-100 transition-colors duration-300">
+              <stat.icon className="h-8 w-8 text-purple-600" />
             </div>
 
-            {/* Hover Effect Border */}
-            <div className={`absolute inset-0 border-2 border-transparent group-hover:border-gradient-to-br group-hover:${stat.color} rounded-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}></div>
-          </div>
+            {/* Value */}
+            <div className="text-4xl lg:text-5xl font-bold text-gray-900 tracking-tighter mb-2">
+              {stat.value}
+            </div>
+            
+            {/* Subtitle */}
+            <div className="text-base font-medium text-gray-600 mb-1">
+              {stat.subtitle}
+            </div>
+            
+            {/* Description */}
+            <p className="text-sm text-gray-500">
+              {stat.description}
+            </p>
+          </article>
         ))}
       </div>
 
       {/* Key Insights */}
-      <div className="mt-16 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-200">
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      <div className="mt-20 bg-white rounded-[2rem] p-10 lg:p-14 border border-purple-100 shadow-lg shadow-purple-500/5">
+        <header className="text-center mb-12">
+          <h3 className="text-3xl font-bold text-gray-900 mb-3">
             Contexto Electoral 2026
           </h3>
-          <p className="text-gray-600">
+          <p className="text-lg text-gray-600">
             Factores que definen el panorama político actual
           </p>
-        </div>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
-              <Target className="h-6 w-6 text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
+            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <Target className="h-8 w-8 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">
-              Fragmentación Histórica
+            <h4 className="font-bold text-xl text-gray-900 mb-3">
+              Empate Técnico Histórico
             </h4>
-            <p className="text-sm text-gray-600">
-              Ningún candidato supera el 15% de intención de voto, 
-              evidenciando la mayor dispersión electoral registrada.
+            <p className="text-gray-600">
+              De la Espriella y Cepeda separados por apenas 1.5 puntos,
+              la competencia más reñida en décadas.
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
-              <TrendingUp className="h-6 w-6 text-white" />
+          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
+            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <TrendingUp className="h-7 w-7 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">
+            <h4 className="font-bold text-xl text-gray-900 mb-3">
               Reconfiguración Política
             </h4>
-            <p className="text-sm text-gray-600">
-              Caída significativa de la izquierda (-20.3 puntos) y 
-              crecimiento de indecisos (+19.1 puntos).
+            <p className="text-gray-600">
+              La derecha recupera terreno significativo mientras el centro
+              gana protagonismo con Fajardo al 9.4%.
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-4">
-              <AlertTriangle className="h-6 w-6 text-white" />
+          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
+            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <AlertTriangle className="h-7 w-7 text-purple-600" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">
+            <h4 className="font-bold text-xl text-gray-900 mb-3">
               Alta Volatilidad
             </h4>
-            <p className="text-sm text-gray-600">
-              El 22.1% de indecisos convierte las campañas electorales 
+            <p className="text-gray-600">
+              El alto porcentaje de indecisos convierte las campañas electorales 
               en factor determinante del resultado.
             </p>
           </div>

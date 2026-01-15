@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, TrendingDown, Users, Award, ExternalLink } from 'lucide-react';
+import { TrendingUp, TrendingDown, ArrowRight } from 'lucide-react';
 import { Candidate } from '../types/election';
 import { getCandidateImage } from '../utils/candidateImages';
 
@@ -13,117 +13,114 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
-      case 'Izquierda': return 'bg-red-100 text-red-800 border-red-200';
-      case 'Centro': return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'Derecha': return 'bg-green-100 text-green-800 border-green-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'Izquierda': return 'bg-red-50 text-red-700 border-red-100';
+      case 'Centro': return 'bg-blue-50 text-blue-700 border-blue-100';
+      case 'Derecha': return 'bg-green-50 text-green-700 border-green-100';
+      default: return 'bg-gray-50 text-gray-700 border-gray-100';
     }
   };
 
   const getBalanceColor = (balance: number) => {
     if (balance > 0) return 'text-green-600';
     if (balance < -10) return 'text-red-600';
-    return 'text-orange-600';
+    return 'text-amber-600';
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {candidates.map((candidate, index) => {
         const balance = candidate.Favorabilidad - candidate.Desfavorabilidad;
         const slug = candidate.Candidato.toLowerCase().replace(/\s+/g, '-');
         
         return (
-          <div 
+          <article 
             key={candidate.Candidato}
-            className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+            className="group bg-white rounded-2xl border border-purple-100 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-200 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
           >
-            {/* Ranking Badge */}
-            <div className="relative">
-              <div className="absolute top-4 left-4 z-10">
-                <div className="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-lg">
+            {/* Header with photo */}
+            <div className="relative p-8 pb-0">
+              {/* Ranking Badge */}
+              <div className="absolute top-6 left-6 z-10">
+                <span className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg">
                   {index + 1}
-                </div>
+                </span>
               </div>
-              
-              {index < 3 && (
-                <div className="absolute top-4 right-4 z-10">
-                  <Award className="h-6 w-6 text-yellow-500" />
-                </div>
-              )}
 
               {/* Candidate Photo */}
-              <div className="relative h-48 bg-gradient-to-br from-purple-50 to-indigo-100 flex items-center justify-center">
+              <div className="flex justify-center">
                 <img
                   src={getImage(candidate.Candidato)}
-                  alt={candidate.Candidato}
-                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-500"
+                  alt={`Foto de ${candidate.Candidato}, candidato presidencial Colombia 2026`}
+                  className="w-36 h-36 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-8 pt-6">
               {/* Name and Voting Intention */}
-              <div className="text-center mb-4">
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+              <div className="text-center mb-6">
+                <h3 className="candidate-name text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                   {candidate.Candidato}
                 </h3>
-                <div className="text-3xl font-bold text-purple-600 mb-2">
+                <div className="percentage-large mb-3">
                   {candidate.Intención_Voto_Porcentaje}%
                 </div>
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${getTrendColor(candidate.Tendencia_Política)}`}>
+                <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-semibold border ${getTrendColor(candidate.Tendencia_Política)}`}>
                   {candidate.Tendencia_Política}
-                </div>
+                </span>
               </div>
 
               {/* Current Position */}
-              <div className="text-center mb-4">
-                <p className="text-sm text-gray-600">{candidate.Cargo_Actual}</p>
-                <p className="text-xs text-gray-500">{candidate.Partido_Movimiento}</p>
+              <div className="text-center mb-6">
+                <p className="text-gray-700 font-medium">{candidate.Cargo_Actual}</p>
+                <p className="text-gray-500 text-sm mt-1">{candidate.Partido_Movimiento}</p>
               </div>
 
               {/* Favorability Metrics */}
-              <div className="grid grid-cols-3 gap-2 mb-4">
+              <div className="grid grid-cols-3 gap-4 mb-6 py-4 border-t border-b border-gray-100">
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-1">
-                    <TrendingUp className="h-3 w-3 text-green-600" />
-                    <span className="text-sm font-semibold text-green-600">
+                  <div className="flex items-center justify-center space-x-1 mb-1">
+                    <TrendingUp className="h-4 w-4 text-green-600" />
+                    <span className="text-lg font-bold text-green-600">
                       {candidate.Favorabilidad}%
                     </span>
                   </div>
-                  <div className="text-xs text-gray-500">Favorab.</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Favorab.</div>
                 </div>
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-1">
-                    <TrendingDown className="h-3 w-3 text-red-600" />
-                    <span className="text-sm font-semibold text-red-600">
+                  <div className="flex items-center justify-center space-x-1 mb-1">
+                    <TrendingDown className="h-4 w-4 text-red-600" />
+                    <span className="text-lg font-bold text-red-600">
                       {candidate.Desfavorabilidad}%
                     </span>
                   </div>
-                  <div className="text-xs text-gray-500">Desfavorab.</div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Desfavorab.</div>
                 </div>
                 <div className="text-center">
-                  <div className="flex items-center justify-center space-x-1">
-                    <Users className="h-3 w-3 text-gray-600" />
-                    <span className={`text-sm font-semibold ${getBalanceColor(balance)}`}>
-                      {balance > 0 ? '+' : ''}{balance}
-                    </span>
-                  </div>
-                  <div className="text-xs text-gray-500">Balance</div>
+                  <span className={`text-lg font-bold ${getBalanceColor(balance)}`}>
+                    {balance > 0 ? '+' : ''}{balance}
+                  </span>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide">Balance</div>
                 </div>
               </div>
 
               {/* Progress Bar */}
-              <div className="mb-4">
-                <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="mb-6">
+                <div className="w-full bg-gray-100 rounded-full h-2">
                   <div
                     className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 8, 100)}%` }}
+                    style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 3.5, 100)}%` }}
+                    role="progressbar"
+                    aria-valuenow={candidate.Intención_Voto_Porcentaje}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
                   ></div>
                 </div>
               </div>
 
               {/* Additional Info */}
-              <div className="flex justify-between items-center text-xs text-gray-500 mb-4">
+              <div className="flex justify-between items-center text-sm text-gray-500 mb-6">
                 <span>{candidate.Edad} años</span>
                 <span>{candidate.Generación}</span>
               </div>
@@ -131,13 +128,14 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               {/* Action Button */}
               <Link
                 to={`/candidato/${slug}`}
-                className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg"
+                className="w-full bg-gray-900 text-white py-4 px-6 rounded-xl hover:bg-purple-600 transition-all duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg font-semibold text-lg"
+                aria-label={`Ver perfil completo de ${candidate.Candidato}`}
               >
-                <span className="text-sm font-medium">Ver Perfil</span>
-                <ExternalLink className="h-4 w-4" />
+                <span>Ver Perfil</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
+          </article>
         );
       })}
     </div>
