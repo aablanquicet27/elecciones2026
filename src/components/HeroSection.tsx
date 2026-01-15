@@ -41,7 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">Datos Actualizados • Noviembre 2025</span>
+                <span className="text-sm font-medium">Datos Actualizados • Enero 2026 • Atlas Intel</span>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
@@ -54,22 +54,22 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
               
               <p className="text-xl lg:text-2xl text-purple-100 leading-relaxed">
                 El análisis más completo del panorama electoral presidencial. 
-                30 candidatos, encuestas actualizadas y proyecciones estadísticas.
+                De la Espriella 28% vs Cepeda 26.5% - Empate técnico histórico.
               </p>
             </div>
 
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">30</div>
+                <div className="text-3xl font-bold text-purple-400">18</div>
                 <div className="text-sm text-purple-200">Candidatos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">2,140</div>
+                <div className="text-3xl font-bold text-purple-400">3,000</div>
                 <div className="text-sm text-purple-200">Encuestados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">±3.0%</div>
+                <div className="text-3xl font-bold text-purple-400">±1.8%</div>
                 <div className="text-sm text-purple-200">Margen Error</div>
               </div>
             </div>
@@ -174,8 +174,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             </div>
             
             <div className="absolute -top-6 -right-6 bg-purple-400 text-purple-900 px-4 py-2 rounded-xl font-bold shadow-lg">
-              <div className="text-sm">Margen</div>
-              <div className="text-xl">6.5%</div>
+              <div className="text-sm">2da Vuelta</div>
+              <div className="text-xl">+9.3%</div>
             </div>
           </div>
         </div>

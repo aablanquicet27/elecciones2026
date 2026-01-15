@@ -11,25 +11,25 @@ const TimelineSection: React.FC = () => {
       icon: CheckCircle
     },
     {
-      date: 'Julio 2025',
-      title: 'Encuestas de Intención',
-      description: 'Período de medición actual - 2,122 personas encuestadas',
+      date: 'Diciembre 2025',
+      title: 'Encuesta WAA',
+      description: 'Cepeda lideraba con 30.7%, Espriella segundo con 16.2%',
+      status: 'completed',
+      icon: CheckCircle
+    },
+    {
+      date: 'Enero 2026',
+      title: 'Encuesta Atlas Intel',
+      description: 'Espriella 28.0% vs Cepeda 26.5% - Empate técnico',
       status: 'current',
       icon: Clock
     },
     {
-      date: 'Agosto 2025',
-      title: 'Cierre Inscripciones',
-      description: 'Fecha límite para inscripción de candidaturas',
+      date: 'Marzo 2026',
+      title: 'Consultas Internas',
+      description: 'Gran Consulta por Colombia y Pacto Amplio',
       status: 'upcoming',
       icon: AlertCircle
-    },
-    {
-      date: 'Octubre 2025',
-      title: 'Inicio Campaña Oficial',
-      description: 'Arranque formal de campañas presidenciales',
-      status: 'upcoming',
-      icon: Calendar
     },
     {
       date: 'Mayo 2026',
@@ -129,10 +129,10 @@ const TimelineSection: React.FC = () => {
               Período Actual
             </div>
             <div className="text-purple-400 text-sm">
-              Julio 2025
+              Enero 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
-              Medición de intención de voto
+              Encuesta Atlas Intel - 3,000 personas
             </div>
           </div>
 
@@ -144,10 +144,10 @@ const TimelineSection: React.FC = () => {
               Próximo Hito
             </div>
             <div className="text-purple-400 text-sm">
-              Agosto 2025
+              Marzo 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
-              Cierre de inscripciones
+              Consultas internas
             </div>
           </div>
 

@@ -212,14 +212,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <TrendingUp className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Fragmentación Sin Precedentes
+                Carrera Electoral Reñida
               </h3>
               <p className="text-gray-700 mb-4">
-                Ningún candidato supera el 15% de intención de voto, evidenciando 
-                la mayor fragmentación electoral en la historia reciente.
+                Empate técnico entre los dos líderes con apenas 1.5 puntos de diferencia, 
+                marcando una competencia histórica sin precedentes.
               </p>
               <div className="text-sm text-purple-600 font-semibold">
-                Líder actual: 13.7% (Uribe)
+                Líder: De la Espriella 28.0% vs Cepeda 26.5%
               </div>
             </div>
 
@@ -228,14 +228,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Users className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Reconfiguración Política
+                Derecha Recupera Terreno
               </h3>
               <p className="text-gray-700 mb-4">
-                La izquierda cayó del 40.3% al 23%, mientras que los indecisos 
-                aumentaron dramáticamente al 21.0%.
+                De la Espriella lidera con +9.8 puntos desde diciembre 2025. 
+                La derecha consolida 34% del electorado.
               </p>
               <div className="text-sm text-purple-600 font-semibold">
-                Cambio: -17.3 puntos (izquierda)
+                Cambio: +9.8 puntos (De la Espriella)
               </div>
             </div>
 
@@ -244,14 +244,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Target className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Centro Como Bisagra
+                Segunda Vuelta Definida
               </h3>
               <p className="text-gray-700 mb-4">
-                Los candidatos de centro emergen como los más competitivos 
-                para segunda vuelta debido a su menor polarización.
+                De la Espriella vence a Cepeda 44.2% vs 34.9% en balotaje. 
+                20.9% de voto en blanco e indecisos.
               </p>
               <div className="text-sm text-purple-600 font-semibold">
-                Mejor balance: Fajardo (+10 puntos)
+                Ventaja segunda vuelta: +9.3 puntos
               </div>
             </div>
           </div>
@@ -266,9 +266,9 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Factor Digital</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">Favorabilidad Líder</h4>
                 <p className="text-sm text-gray-600">
-                  Dávila y López lideran en redes sociales con 3.6M y 3.5M seguidores respectivamente
+                  De la Espriella lidera favorabilidad con +6.4 de balance, Pinzón +4.6 y Valencia +3.7
                 </p>
               </div>
               <div className="text-center">
@@ -277,25 +277,25 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-2">Dinámicas Regionales</h4>
                 <p className="text-sm text-gray-600">
-                  Caribe favorece izquierda (Bolívar 25.9%), Orinoquía prefiere derecha (Dávila 15.7%)
+                  Caribe favorece Espriella (32.8%), Andina competida, Pacífica pro-Cepeda (28.2%)
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <Calendar className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Polarización Generacional</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">Consultas Internas</h4>
                 <p className="text-sm text-gray-600">
-                  Jóvenes favorecen Bolívar (18.5%), adultos mayores prefieren Dávila (14.2%)
+                  Pacto Amplio: Cepeda 92.3%. Gran Consulta: Valencia 19.1%, Pinzón 13.1%
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
                   <Award className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Competitividad</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">Centro Fortalecido</h4>
                 <p className="text-sm text-gray-600">
-                  Fajardo y Galán mejor posicionados para segunda vuelta por menor rechazo
+                  Fajardo sube a 9.4%, Pinzón 5.1%. El centro suma 24.7% del electorado
                 </p>
               </div>
             </div>

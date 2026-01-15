@@ -100,11 +100,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2 text-gray-400">
                 <Calendar className="h-4 w-4" />
-                <span>Actualizado: Julio 2025</span>
+                <span>Actualizado: Enero 2026</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <BarChart3 className="h-4 w-4" />
-                <span>Muestra: 2,122 personas</span>
+                <span>Muestra: 3,000 personas</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400">
                 <MapPin className="h-4 w-4" />
@@ -122,15 +122,15 @@ const Footer: React.FC = () => {
                 <strong>Panorama Político Electoral Colombia 2026:</strong> Análisis Estadístico Integral
               </p>
               <p className="mt-1">
-                Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital • Julio 2025
+                Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital • Enero 2026
               </p>
             </div>
           </div>
           
           <div className="mt-4 pt-4 border-t border-gray-800 text-center">
             <p className="text-xs text-gray-500">
-                              <strong>Metodología:</strong> Muestra de 2,122 personas • Margen de error: ±2.2% • Cobertura nacional • 
-              Período de campo: Julio 2025 • Análisis estadístico integral
+                              <strong>Metodología:</strong> Muestra de 3,000 personas • Margen de error: ±1.8% • Cobertura nacional • 
+              Período de campo: Enero 2026 • Atlas Intel • Análisis estadístico integral
             </p>
             <p className="text-xs text-gray-500 mt-2">
               Desarrollado por <a href="https://brochure.agapai.com.co" className="text-purple-400 hover:text-purple-300">AGAPAI</a>

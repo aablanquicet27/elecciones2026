@@ -71,16 +71,16 @@ function RealTimeAnalysisPage() {
         ],
         summary: {
           latestPoll: {
-            date: "2025-06-08",
-            pollster: "Guarumo/EcoAnalítica",
-            sample_size: 2159,
-            error_margin: "4.0%"
+            date: "2026-01-10",
+            pollster: "Atlas Intel",
+            sample_size: 3000,
+            error_margin: "1.8%"
           },
           historicalStats: {
-            totalPolls: 156,
-            averageSampleSize: 1850,
-            pollsterCount: 12,
-            timeSpan: "Enero 2024 - Julio 2025"
+            totalPolls: 162,
+            averageSampleSize: 2100,
+            pollsterCount: 14,
+            timeSpan: "Enero 2024 - Enero 2026"
           }
         }
       };

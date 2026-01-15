@@ -20,15 +20,15 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center space-x-6">
             <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
               <Calendar className="h-5 w-5" />
-                              <span className="text-sm font-medium">Julio 2025</span>
+                              <span className="text-sm font-medium">Enero 2026</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
               <TrendingUp className="h-5 w-5" />
-              <span className="text-sm font-medium">Datos Actualizados</span>
+              <span className="text-sm font-medium">Atlas Intel</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
               <Users className="h-5 w-5" />
-              <span className="text-sm font-medium">32 Candidatos</span>
+              <span className="text-sm font-medium">18 Candidatos</span>
             </div>
           </div>
         </div>

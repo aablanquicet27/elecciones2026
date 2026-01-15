@@ -48,7 +48,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             
             <div className="text-center">
               <h1 className="text-xl font-bold text-gray-900">Panel de Análisis Electoral Completo</h1>
-              <p className="text-sm text-gray-500">Colombia 2026 • Datos Julio 2025 • Muestra: 2,122 personas</p>
+              <p className="text-sm text-gray-500">Colombia 2026 • Datos Enero 2026 • Atlas Intel • Muestra: 3,000 personas</p>
             </div>
             
             <div className="w-32"></div> {/* Spacer for centering */}
@@ -227,9 +227,9 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             <div>
               <h4 className="font-semibold text-gray-800 mb-2">Encuestas de Intención</h4>
               <ul className="space-y-1">
-                <li>• Muestra: 2,122 personas</li>
-                <li>• Período: Julio 2025</li>
-                                  <li>• Margen de error: ±2.2%</li>
+                <li>• Muestra: 3,000 personas</li>
+                <li>• Período: Enero 2026</li>
+                                  <li>• Margen de error: ±1.8%</li>
                 <li>• Cobertura: Nacional</li>
               </ul>
             </div>
@@ -263,10 +263,10 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             Basado en encuestas de intención de voto, métricas de favorabilidad y presencia digital
           </p>
           <p className="text-sm text-gray-500">
-            Período de campo: Julio 2025 • Muestra: 2,122 personas • Margen de error: ±2.2% • Cobertura nacional
+            Período de campo: Enero 2026 • Atlas Intel • Muestra: 3,000 personas • Margen de error: ±1.8% • Cobertura nacional
           </p>
           <p className="text-xs text-gray-400 mt-2">
-            Fuentes: Encuestas Guarumo/EcoAnalítica, análisis de redes sociales, datos históricos electorales
+            Fuentes: Encuestas Atlas Intel, WAA, análisis de redes sociales, datos históricos electorales
           </p>
           <p className="text-xs text-purple-500 mt-2">
             Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>
