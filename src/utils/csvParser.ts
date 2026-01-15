@@ -48,21 +48,21 @@ export const getTrendData = (candidates: Candidate[]) => {
 
 export const getRegionalData = () => {
   return [
-    { region: 'Caribe', Cepeda: 18.2, Espriella: 16.5, Cabal: 10.1, Bolívar: 12.8, Fajardo: 7.2, Otros: 35.2 },
-    { region: 'Andina', Cepeda: 21.5, Espriella: 13.8, Cabal: 11.8, Bolívar: 10.5, Fajardo: 8.9, Otros: 33.5 },
-    { region: 'Pacífica', Cepeda: 22.8, Espriella: 12.2, Cabal: 9.5, Bolívar: 13.2, Fajardo: 6.8, Otros: 35.5 },
-    { region: 'Orinoquía', Cepeda: 16.5, Espriella: 17.2, Cabal: 13.5, Bolívar: 8.1, Fajardo: 6.5, Otros: 38.2 },
-    { region: 'Amazonía', Cepeda: 19.8, Espriella: 11.5, Cabal: 8.8, Bolívar: 11.2, Fajardo: 7.5, Otros: 41.2 }
+    { region: 'Caribe', Cepeda: 22.5, Espriella: 32.8, Fajardo: 8.2, Valencia: 5.8, Pinzón: 4.5, Otros: 26.2 },
+    { region: 'Andina', Cepeda: 27.8, Espriella: 26.5, Fajardo: 10.5, Valencia: 5.2, Pinzón: 5.8, Otros: 24.2 },
+    { region: 'Pacífica', Cepeda: 28.2, Espriella: 24.5, Fajardo: 9.8, Valencia: 4.8, Pinzón: 5.2, Otros: 27.5 },
+    { region: 'Orinoquía', Cepeda: 23.5, Espriella: 31.2, Fajardo: 8.5, Valencia: 6.2, Pinzón: 5.5, Otros: 25.1 },
+    { region: 'Amazonía', Cepeda: 26.8, Espriella: 25.5, Fajardo: 9.2, Valencia: 4.5, Pinzón: 4.8, Otros: 29.2 }
   ];
 };
 
 export const getDemographicData = () => {
   return [
-    { ageGroup: 'Jóvenes 18-24', Cepeda: 24.5, Espriella: 11.2, Cabal: 8.5, Bolívar: 14.2, Quintero: 12.5, Otros: 29.1 },
-    { ageGroup: 'Adultos 25-34', Cepeda: 22.8, Espriella: 13.5, Cabal: 10.2, Bolívar: 12.5, Quintero: 11.2, Otros: 29.8 },
-    { ageGroup: 'Adultos 35-44', Cepeda: 20.5, Espriella: 14.8, Cabal: 11.5, Bolívar: 11.2, Quintero: 10.5, Otros: 31.5 },
-    { ageGroup: 'Adultos 45-54', Cepeda: 19.2, Espriella: 15.5, Cabal: 12.2, Bolívar: 10.5, Quintero: 9.2, Otros: 33.4 },
-    { ageGroup: 'Adultos Mayores 55+', Cepeda: 18.5, Espriella: 16.2, Cabal: 13.5, Bolívar: 9.2, Quintero: 7.8, Otros: 34.8 }
+    { ageGroup: 'Jóvenes 18-24', Cepeda: 28.5, Espriella: 22.2, Fajardo: 11.5, Valencia: 6.2, Pinzón: 5.8, Otros: 25.8 },
+    { ageGroup: 'Adultos 25-34', Cepeda: 27.2, Espriella: 24.5, Fajardo: 10.2, Valencia: 5.8, Pinzón: 5.5, Otros: 26.8 },
+    { ageGroup: 'Adultos 35-44', Cepeda: 26.5, Espriella: 27.8, Fajardo: 9.5, Valencia: 5.2, Pinzón: 5.2, Otros: 25.8 },
+    { ageGroup: 'Adultos 45-54', Cepeda: 25.2, Espriella: 29.5, Fajardo: 9.2, Valencia: 4.8, Pinzón: 4.9, Otros: 26.4 },
+    { ageGroup: 'Adultos Mayores 55+', Cepeda: 24.5, Espriella: 31.2, Fajardo: 8.5, Valencia: 4.5, Pinzón: 4.5, Otros: 26.8 }
   ];
 };
 
@@ -82,101 +82,112 @@ export const getSocialMediaData = () => {
 
 export const getComparisonData = () => {
   return [
-    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 52.7 },
-    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 28.9 },
-    { tendencia: 'Derecha', porcentaje2022: 28.5, porcentaje2026: 50.4 },
-    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 18.5 }
+    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 27.1 },
+    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 24.7 },
+    { tendencia: 'Derecha', porcentaje2022: 28.5, porcentaje2026: 34.0 },
+    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 14.0 }
   ];
 };
 
 export const getScenarioData = () => {
   return [
     { 
-      scenario: 'Cepeda vs. Espriella', 
-      candidate1: 'Cepeda', 
-      percentage1: 48.5, 
-      candidate2: 'Espriella', 
-      percentage2: 42.8, 
-      undecided: 8.7,
-      probability: 35
-    },
-    { 
-      scenario: 'Cepeda vs. Cabal', 
-      candidate1: 'Cepeda', 
-      percentage1: 49.2, 
-      candidate2: 'Cabal', 
-      percentage2: 41.5, 
-      undecided: 9.3,
-      probability: 25
-    },
-    { 
-      scenario: 'Cepeda vs. Fajardo', 
-      candidate1: 'Cepeda', 
-      percentage1: 46.8, 
-      candidate2: 'Fajardo', 
-      percentage2: 44.2, 
-      undecided: 9.0,
-      probability: 18
-    },
-    { 
-      scenario: 'Espriella vs. Fajardo', 
+      scenario: 'De la Espriella vs. Cepeda', 
       candidate1: 'Espriella', 
-      percentage1: 45.5, 
-      candidate2: 'Fajardo', 
-      percentage2: 43.8, 
-      undecided: 10.7,
+      percentage1: 44.2, 
+      candidate2: 'Cepeda', 
+      percentage2: 34.9, 
+      undecided: 20.9,
+      probability: 55
+    },
+    { 
+      scenario: 'Fajardo vs. Cepeda', 
+      candidate1: 'Fajardo', 
+      percentage1: 39.6, 
+      candidate2: 'Cepeda', 
+      percentage2: 32.1, 
+      undecided: 28.3,
       probability: 15
     },
     { 
-      scenario: 'Cepeda vs. Bolívar', 
+      scenario: 'Valencia vs. Cepeda', 
+      candidate1: 'Valencia', 
+      percentage1: 38.2, 
+      candidate2: 'Cepeda', 
+      percentage2: 35.8, 
+      undecided: 26.0,
+      probability: 10
+    },
+    { 
+      scenario: 'De la Espriella vs. Fajardo', 
+      candidate1: 'Espriella', 
+      percentage1: 37.9, 
+      candidate2: 'Fajardo', 
+      percentage2: 23.2, 
+      undecided: 38.9,
+      probability: 12
+    },
+    { 
+      scenario: 'De la Espriella vs. Valencia', 
+      candidate1: 'Espriella', 
+      percentage1: 40.5, 
+      candidate2: 'Valencia', 
+      percentage2: 35.2, 
+      undecided: 24.3,
+      probability: 5
+    },
+    { 
+      scenario: 'Cepeda vs. Pinzón', 
       candidate1: 'Cepeda', 
-      percentage1: 51.2, 
-      candidate2: 'Bolívar', 
-      percentage2: 38.5, 
-      undecided: 10.3,
-      probability: 7
+      percentage1: 36.4, 
+      candidate2: 'Pinzón', 
+      percentage2: 31.9, 
+      undecided: 31.7,
+      probability: 3
     }
   ];
 };
 
 export const getFavorabilityData = () => {
   return [
-    { candidate: 'Iván Cepeda', favorabilidad: 42, desfavorabilidad: 38, balance: 4 },
-    { candidate: 'Sergio Fajardo', favorabilidad: 42, desfavorabilidad: 32, balance: 10 },
-    { candidate: 'Juan Manuel Galán', favorabilidad: 40, desfavorabilidad: 28, balance: 12 },
-    { candidate: 'Abelardo de la Espriella', favorabilidad: 38, desfavorabilidad: 44, balance: -6 },
-    { candidate: 'Vicky Dávila', favorabilidad: 38, desfavorabilidad: 44, balance: -6 },
-    { candidate: 'Francia Márquez', favorabilidad: 36, desfavorabilidad: 45, balance: -9 },
-    { candidate: 'María F. Cabal', favorabilidad: 35, desfavorabilidad: 56, balance: -21 },
-    { candidate: 'Alejandro Gaviria', favorabilidad: 35, desfavorabilidad: 38, balance: -3 },
-    { candidate: 'Gustavo Bolívar', favorabilidad: 34, desfavorabilidad: 48, balance: -14 },
-    { candidate: 'Claudia López', favorabilidad: 31, desfavorabilidad: 45, balance: -14 },
-    { candidate: 'Paloma Valencia', favorabilidad: 30, desfavorabilidad: 48, balance: -18 },
-    { candidate: 'Germán Vargas', favorabilidad: 29, desfavorabilidad: 54, balance: -25 },
-    { candidate: 'Susana Muhamad', favorabilidad: 28, desfavorabilidad: 42, balance: -14 },
-    { candidate: 'Daniel Quintero', favorabilidad: 23, desfavorabilidad: 58, balance: -35 }
+    { candidate: 'Abelardo de la Espriella', favorabilidad: 44.2, desfavorabilidad: 37.8, balance: 6.4 },
+    { candidate: 'Iván Cepeda', favorabilidad: 39.6, desfavorabilidad: 43.2, balance: -3.6 },
+    { candidate: 'Paloma Valencia', favorabilidad: 38.2, desfavorabilidad: 34.5, balance: 3.7 },
+    { candidate: 'Sergio Fajardo', favorabilidad: 37.9, desfavorabilidad: 35.1, balance: 2.8 },
+    { candidate: 'Juan Carlos Pinzón', favorabilidad: 36.4, desfavorabilidad: 31.8, balance: 4.6 },
+    { candidate: 'Roy Barreras', favorabilidad: 32.1, desfavorabilidad: 38.9, balance: -6.8 },
+    { candidate: 'Aníbal Gaviria', favorabilidad: 31.5, desfavorabilidad: 32.8, balance: -1.3 },
+    { candidate: 'Juan Daniel Oviedo', favorabilidad: 30.9, desfavorabilidad: 33.2, balance: -2.3 },
+    { candidate: 'Vicky Dávila', favorabilidad: 28.7, desfavorabilidad: 45.2, balance: -16.5 },
+    { candidate: 'Enrique Peñalosa', favorabilidad: 25.3, desfavorabilidad: 48.1, balance: -22.8 },
+    { candidate: 'Claudia López', favorabilidad: 24.5, desfavorabilidad: 51.2, balance: -26.7 },
+    { candidate: 'Mauricio Cárdenas', favorabilidad: 22.8, desfavorabilidad: 38.2, balance: -15.4 },
+    { candidate: 'Juan Manuel Galán', favorabilidad: 21.4, desfavorabilidad: 35.7, balance: -14.3 },
+    { candidate: 'David Luna', favorabilidad: 19.2, desfavorabilidad: 41.3, balance: -22.1 },
+    { candidate: 'Daniel Quintero', favorabilidad: 18.3, desfavorabilidad: 52.1, balance: -33.8 },
+    { candidate: 'Juan Fernando Cristo', favorabilidad: 16.8, desfavorabilidad: 43.5, balance: -26.7 }
   ];
 };
 
 export const getElectoralInsights = () => {
   return {
     fragmentacion: {
-      title: "Nueva Reconfiguración Electoral",
-      description: "Iván Cepeda lidera con 20.9% de intención de voto",
-      impact: "Mayor consolidación en la izquierda con liderazgo claro",
-      percentage: "20.9%"
+      title: "Carrera Electoral Reñida - Enero 2026",
+      description: "Abelardo de la Espriella lidera con 28.0%, seguido por Iván Cepeda con 26.5%",
+      impact: "Margen técnico de empate entre los dos líderes",
+      percentage: "28.0% vs 26.5%"
     },
     recomposicion: {
-      title: "Recomposición del Mapa Político",
-      description: "Fortalecimiento de la izquierda y fragmentación de la derecha",
-      impact: "Izquierda suma 52.7%, derecha fragmentada en múltiples candidatos",
-      change: "+12.4 puntos izquierda"
+      title: "Reconfiguración del Mapa Político",
+      description: "Derecha recupera terreno con De la Espriella al frente",
+      impact: "Centro fortalecido con Fajardo (9.4%) y nuevos competidores",
+      change: "+9.8 puntos para De la Espriella desde diciembre"
     },
     volatilidad: {
-      title: "Alta Indecisión Electoral",
-      description: "18.5% de indecisos marca el panorama",
-      impact: "Factores coyunturales serán determinantes en los próximos meses",
-      uncertainty: "18.5%"
+      title: "Volatilidad Electoral Moderada",
+      description: "14.0% de indecisos (Ninguno, Blanco, NS/NR)",
+      impact: "Definición electoral clara con margen para cambios",
+      uncertainty: "14.0%"
     },
     digital: {
       title: "Factor Digital Determinante",
@@ -188,17 +199,17 @@ export const getElectoralInsights = () => {
       title: "Dinámicas Regionales Diferenciadas",
       description: "Comportamiento electoral heterogéneo por regiones",
       highlights: {
-        caribe: "Cepeda lidera con 18.2%, Espriella con 16.5%",
-        andina: "Cepeda domina con 21.5%",
-        orinoquia: "Espriella lidera con 17.2%"
+        caribe: "Espriella fortalecido en su región de origen (Atlántico)",
+        andina: "Competencia cerrada entre Cepeda y Espriella",
+        orinoquia: "Derecha mantiene ventaja en regiones tradicionales"
       }
     },
     generacional: {
       title: "Polarización Generacional",
       description: "Diferencias marcadas por grupos etarios",
       trends: {
-        jovenes: "Cepeda 24.5% en 18-24 años, Bolívar 14.2%",
-        mayores: "Espriella 16.2% en 55+ años, Cabal 13.5%"
+        jovenes: "Cepeda mantiene ventaja en votantes jóvenes",
+        mayores: "Espriella lidera en electores mayores de 50 años"
       }
     }
   };
