@@ -1,47 +1,102 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Sparkles, Mail } from 'lucide-react';
+import { useOpenAIChat } from '../hooks/useOpenAIChat';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { parseCandidatesData } from '../utils/csvParser';
+import { supabase } from '../lib/supabase';
+import { CandidateCard } from './chat/CandidateCard';
+import { CandidateComparison } from './chat/CandidateComparison';
+import { ElectoralStats } from './chat/ElectoralStats';
+import { ElectoralInsight } from './chat/ElectoralInsight';
 
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-  timestamp: Date;
-}
+// Generar contexto del sistema con datos actualizados del CSV
+const generateSystemContext = () => {
+  const candidates = parseCandidatesData();
+  const top10 = candidates
+    .sort((a, b) => b.intencionVoto - a.intencionVoto)
+    .slice(0, 10);
 
-const SYSTEM_CONTEXT = `Eres un asistente pol?tico experto en an?lisis electoral de Colombia para las elecciones presidenciales 2026.
+  const contextLines = [
+    'Eres un asistente político experto en análisis electoral de Colombia para las elecciones presidenciales 2026.',
+    '',
+    '**DATOS ELECTORALES ACTUALES (TOP 10 CANDIDATOS):**',
+    '',
+  ];
 
-DATOS ELECTORALES ACTUALES (TOP 10 CANDIDATOS):
+  top10.forEach((candidate, index) => {
+    contextLines.push(
+      `${index + 1}. **${candidate.nombre}** - ${candidate.intencionVoto}% intención de voto, ${candidate.tendenciaPolitica}, ${candidate.favorabilidad}% favorabilidad, ${candidate.partido}`
+    );
+  });
 
-1. **Vicky D?vila** - 11.5% intenci?n de voto, Derecha, 38% favorabilidad, Candidata por firmas
-2. **Gustavo Bol?var** - 10.5%, Izquierda, 34% favorabilidad, Pacto Hist?rico
-3. **Sergio Fajardo** - 8.7%, Centro, 42% favorabilidad, Centro Esperanza
-4. **Daniel Quintero** - 8.1%, Izquierda, 23% favorabilidad, Candidato por firmas
-5. **Claudia L?pez** - 5.3%, Centro, 31% favorabilidad, Candidata por firmas
-6. **Mar?a Jos? Pizarro** - 3.2%, Izquierda, 29% favorabilidad, Pacto Hist?rico
-7. **Juan Manuel Gal?n** - 3.0%, Centro, 40% favorabilidad, Nuevo Liberalismo
-8. **Germ?n Vargas Lleras** - 2.9%, Derecha, 29% favorabilidad, Cambio Radical
-9. **Jota Pe Hern?ndez** - 2.5%, Derecha, 35% favorabilidad, Candidato por firmas
-10. **Carolina Corcho** - 2.4%, Izquierda, 25% favorabilidad, Pacto Hist?rico
+  contextLines.push(
+    '',
+    '**INSTRUCCIONES PRINCIPALES:**',
+    '- Responde SOLO en español de forma clara, profesional y contextualizada',
+    '- Usa formato Markdown para estructurar tus respuestas',
+    '- Los datos pueden cambiar hasta las elecciones',
+    '',
+    '**REGLAS CRÍTICAS PARA HERRAMIENTAS VISUALES:**',
+    '',
+    '**RESPONDE CON TEXTO NATURAL (sin herramientas) cuando:**',
+    '- El usuario hace preguntas de SEGUIMIENTO sobre un candidato ya mencionado (ej: "cuándo nació", "háblame más", "qué más sabes")',
+    '- Preguntas puntuales de datos específicos (fechas, números, hechos)',
+    '- Conversaciones generales sobre política colombiana',
+    '- Ya mostraste la tarjeta de ese candidato antes en la conversación',
+    '- El usuario NO pide explícitamente VER o MOSTRAR algo visual',
+    '',
+    '**USA herramientas visuales SOLO cuando:**',
+    '- El usuario pide EXPLÍCITAMENTE "muéstrame" o "quiero ver" la tarjeta de un candidato por PRIMERA VEZ',
+    '- El usuario pide COMPARAR candidatos específicamente',
+    '- El usuario pide ver un RANKING o TOP',
+    '',
+    '**IMPORTANTE:** Si el usuario pregunta algo sobre un candidato del que YA mostraste tarjeta, responde con texto natural. No vuelvas a invocar la tarjeta.',
+  );
 
-INSTRUCCIONES:
-- Responde SOLO en espa?ol de forma clara y concisa
-- Usa estos datos para an?lisis y predicciones
-- NO muestres tu pensamiento interno (thinking)
-- S? directo y profesional
-- Si preguntan por candidatos espec?ficos, usa los datos de arriba
-- Menciona que los datos pueden cambiar hasta las elecciones`;
+  return contextLines.join('\n');
+};
 
 const AIChatBubble: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'assistant',
-      content: '?Hola! ?? Soy tu asistente de an?lisis electoral. ?En qu? puedo ayudarte hoy?',
-      timestamp: new Date()
-    }
-  ]);
-  const [inputMessage, setInputMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const systemContext = generateSystemContext();
+
+  // Verificar si hay email guardado en localStorage (usar la misma clave que SubscriptionModal)
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('electoral_ai_email');
+    const isSubscribed = localStorage.getItem('electoral_ai_subscribed');
+    if (savedEmail && isSubscribed === 'true') {
+      setUserEmail(savedEmail);
+      setEmailSubmitted(true);
+    }
+  }, []);
+
+  // Usar el hook personalizado para streaming de OpenAI
+  const supabaseFunctionsUrl = import.meta.env.VITE_SUPABASE_FUNCTIONS_URL || import.meta.env.VITE_SUPABASE_URL?.replace('.supabase.co', '.supabase.co/functions/v1');
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useOpenAIChat({
+    api: `${supabaseFunctionsUrl}/chat-ai`,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+    },
+    body: {
+      systemContext,
+    },
+    initialMessages: [
+      {
+        id: 'welcome',
+        role: 'assistant',
+        content: '¡Hola! 👋 Soy tu **Asistente Electoral IA** especializado en las elecciones presidenciales de Colombia 2026.\n\n**Puedo ayudarte con:**\n\n• 📊 Análisis de intención de voto y favorabilidad\n• 🔍 Información detallada de candidatos\n• 📈 Comparaciones entre candidatos\n• 🎯 Tendencias políticas y proyecciones\n• 📉 Estadísticas electorales actualizadas\n\n**¿Qué te gustaría saber?**',
+      },
+    ],
+    onError: (error) => {
+      console.error('Error en chat:', error);
+    },
+  });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -51,128 +106,171 @@ const AIChatBubble: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Funci?n para limpiar el contenido del agente
-  const cleanAgentResponse = (content: string): string => {
-    // Remover tags <think>...</think> y su contenido
-    let cleaned = content.replace(/<think>[\s\S]*?<\/think>/gi, '');
-    
-    // Remover tags <think> sin cerrar (por si acaso)
-    cleaned = cleaned.replace(/<\/?think>/gi, '');
-    
-    // Limpiar espacios en blanco extra
-    cleaned = cleaned.trim();
-    
-    return cleaned;
+  // Validar email
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
-  const sendMessage = async () => {
-    if (!inputMessage.trim() || isLoading) return;
+  // Manejar envío de email
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!userEmail || !userEmail.trim()) {
+      setEmailError('Por favor ingresa tu correo electrónico');
+      return;
+    }
 
-    const userMessage: Message = {
-      role: 'user',
-      content: inputMessage,
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    setInputMessage('');
-    setIsLoading(true);
+    if (!validateEmail(userEmail)) {
+      setEmailError('Por favor ingresa un correo electrónico válido');
+      return;
+    }
 
     try {
-      // Preparar el historial de mensajes para el agente
-      const conversationHistory = messages.map(msg => ({
-        role: msg.role,
-        content: msg.content
-      }));
+      // Verificar si el email ya existe en Supabase
+      const { data: existingSubscription, error: selectError } = await supabase
+        .from('subscriptions')
+        .select('email')
+        .eq('email', userEmail)
+        .maybeSingle();
 
-      // Agregar el nuevo mensaje del usuario
-      conversationHistory.push({
-        role: 'user',
-        content: inputMessage
-      });
+      if (!existingSubscription) {
+        // Crear nueva suscripción en Supabase
+        const { error: insertError } = await supabase
+          .from('subscriptions')
+          .insert([{ email: userEmail, active: true }]);
 
-      // Obtener las variables de entorno correctamente en Vite
-      const endpoint = import.meta.env.VITE_DO_AGENT_ENDPOINT;
-      const accessKey = import.meta.env.VITE_DO_AGENT_ACCESS_KEY;
-
-      if (!endpoint || !accessKey) {
-        throw new Error('Las variables de entorno del agente de IA no est?n configuradas');
-      }
-
-      // Llamar al agente de DigitalOcean usando fetch
-      const response = await fetch(`${endpoint}/api/v1/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${accessKey}`,
-          'Content-Type': 'application/json; charset=UTF-8'
-        },
-        body: JSON.stringify({
-          messages: conversationHistory,
-          instruction_override: SYSTEM_CONTEXT
-        })
-      });
-
-      if (!response.ok) {
-        const errorData = await response.text();
-        throw new Error(`Error del servidor: ${response.status} - ${errorData}`);
-      }
-
-      const data = await response.json();
-      
-      // Limpiar el contenido de la respuesta
-      const rawContent = data.choices[0].message.content;
-      const cleanedContent = cleanAgentResponse(rawContent);
-
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: cleanedContent,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error('Error al comunicarse con el agente de DigitalOcean:', error);
-      
-      let errorMessage = 'Lo siento, hubo un error al procesar tu mensaje. Por favor intenta de nuevo.';
-      
-      if (error instanceof Error) {
-        if (error.message.includes('Error del servidor')) {
-          errorMessage = error.message;
-        } else if (error.message.includes('fetch') || error.message.includes('Network')) {
-          errorMessage = 'No se pudo conectar con el servidor. Verifica tu conexi?n a internet.';
-        } else if (error.message.includes('variables de entorno')) {
-          errorMessage = 'Error de configuraci?n: ' + error.message;
+        if (insertError) {
+          console.error('Error al guardar en Supabase:', insertError);
+          setEmailError('Hubo un error al procesar tu email. Inténtalo de nuevo.');
+          return;
         }
       }
 
-      const errorMessageObj: Message = {
-        role: 'assistant',
-        content: errorMessage,
-        timestamp: new Date()
-      };
+      // Guardar email en localStorage (usar la misma clave que SubscriptionModal)
+      localStorage.setItem('electoral_ai_email', userEmail);
+      localStorage.setItem('electoral_ai_subscribed', 'true');
+      setEmailSubmitted(true);
+      setEmailError('');
+    } catch (error) {
+      console.error('Error al procesar email:', error);
+      setEmailError('Hubo un error al procesar tu email. Inténtalo de nuevo.');
+    }
+  };
 
-      setMessages(prev => [...prev, errorMessageObj]);
-    } finally {
-      setIsLoading(false);
+  // Renderizar componentes de UI generativa basados en tool calls
+  const renderToolCall = (toolCall: any) => {
+    if (!toolCall || !toolCall.toolName) return null;
+    
+    const allCandidates = parseCandidatesData();
+
+    try {
+      switch (toolCall.toolName) {
+        case 'showCandidateCard': {
+          const { candidateName } = toolCall.args || {};
+          if (!candidateName) return null;
+          
+          const candidate = allCandidates.find(c =>
+            c.nombre.toLowerCase().includes(candidateName.toLowerCase())
+          );
+          return candidate ? <CandidateCard candidate={candidate} /> : null;
+        }
+
+        case 'compareCandidates': {
+          const { candidateNames, title } = toolCall.args || {};
+          if (!candidateNames || !Array.isArray(candidateNames)) return null;
+          
+          const candidates = candidateNames
+            .map((name: string) => allCandidates.find(c => c.nombre.toLowerCase().includes(name.toLowerCase())))
+            .filter(Boolean)
+            .map((c: any) => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={title} /> : null;
+        }
+
+        case 'showTopCandidates': {
+          const { count, filterBy = 'intencionVoto' } = toolCall.args || {};
+          const candidates = allCandidates
+            .sort((a, b) => {
+              if (filterBy === 'favorabilidad') {
+                return b.favorabilidad - a.favorabilidad;
+              }
+              return b.intencionVoto - a.intencionVoto;
+            })
+            .slice(0, count || 5)
+            .map(c => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          const title = filterBy === 'favorabilidad'
+            ? `Top ${count || 5} Candidatos por Favorabilidad`
+            : `Top ${count || 5} Candidatos por Intención de Voto`;
+          return <CandidateComparison candidates={candidates} title={title} />;
+        }
+
+        case 'showElectoralStats': {
+          const { title, stats, description } = toolCall.args || {};
+          if (!title || !stats) return null;
+          return <ElectoralStats title={title} stats={stats} description={description} />;
+        }
+
+        case 'showInsight': {
+          const { type, title, message, details } = toolCall.args || {};
+          if (!type || !title || !message) return null;
+          return <ElectoralInsight type={type} title={title} message={message} details={details} />;
+        }
+
+        case 'showCandidatesByTendency': {
+          const { tendency, limit } = toolCall.args || {};
+          if (!tendency) return null;
+          
+          const candidates = allCandidates
+            .filter(c => c.tendenciaPolitica.toLowerCase() === tendency.toLowerCase())
+            .sort((a, b) => b.intencionVoto - a.intencionVoto)
+            .slice(0, limit || 5)
+            .map(c => ({
+              nombre: c.nombre,
+              intencionVoto: c.intencionVoto,
+              favorabilidad: c.favorabilidad,
+              tendenciaPolitica: c.tendenciaPolitica,
+              partido: c.partido,
+            }));
+          return candidates.length > 0 ? <CandidateComparison candidates={candidates} title={`Candidatos de ${tendency}`} /> : null;
+        }
+
+        default:
+          return null;
+      }
+    } catch (error) {
+      console.error('Error renderizando tool call:', error);
+      return null;
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      sendMessage();
+      handleSubmit(e as any);
     }
   };
 
   return (
     <>
-      {/* Bot?n flotante */}
+      {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${
           isOpen
             ? 'bg-red-500 hover:bg-red-600'
-            : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700'
+            : 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700'
         }`}
         aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat de IA'}
       >
@@ -188,9 +286,9 @@ const AIChatBubble: React.FC = () => {
 
       {/* Ventana de chat */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-24 right-4 z-50 w-[90vw] max-w-[420px] h-[70vh] max-h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 text-white">
+          <div className="bg-gradient-to-r from-teal-600 to-teal-600 p-4 text-white">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -198,93 +296,172 @@ const AIChatBubble: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">Asistente Electoral IA</h3>
-                  <p className="text-xs text-purple-100">An?lisis electoral inteligente</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Mensajes */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-            {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                    message.role === 'user'
-                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
-                      : 'bg-white text-gray-800 shadow-md rounded-bl-sm border border-gray-100'
-                  }`}
-                >
-                  <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
-                  <p
-                    className={`text-xs mt-1 ${
-                      message.role === 'user' ? 'text-purple-100' : 'text-gray-400'
-                    }`}
-                  >
-                    {message.timestamp.toLocaleTimeString('es-CO', {
-                      hour: '2-digit',
-                      minute: '2-digit'
-                    })}
+          {/* Formulario de email si no está enviado */}
+          {!emailSubmitted ? (
+            <div className="flex-1 flex items-center justify-center p-6 bg-gray-50">
+              <div className="w-full max-w-sm">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-teal-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Bienvenido al Chat Electoral</h3>
+                  <p className="text-sm text-gray-600">
+                    Para comenzar a usar el asistente de IA, por favor ingresa tu correo electrónico
                   </p>
                 </div>
-              </div>
-            ))}
 
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-white text-gray-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100">
-                  <div className="flex items-center space-x-2">
-                    <Loader2 className="w-4 h-4 animate-spin text-purple-600" />
-                    <span className="text-sm text-gray-500">Escribiendo...</span>
+                <form onSubmit={handleEmailSubmit} className="space-y-4">
+                  <div>
+                    <input
+                      type="email"
+                      value={userEmail}
+                      onChange={(e) => {
+                        setUserEmail(e.target.value);
+                        setEmailError('');
+                      }}
+                      placeholder="tu@email.com"
+                      className={`w-full px-4 py-3 rounded-xl border ${
+                        emailError ? 'border-red-500' : 'border-gray-300'
+                      } focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all`}
+                      required
+                    />
+                    {emailError && (
+                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                    )}
                   </div>
-                </div>
-              </div>
-            )}
 
-            <div ref={messagesEndRef} />
-          </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+                  >
+                    Comenzar Chat
+                  </button>
 
-          {/* Input */}
-          <div className="p-4 bg-white border-t border-gray-200">
-            <div className="flex items-end space-x-2">
-              <div className="flex-1 relative">
-                <textarea
-                  value={inputMessage}
-                  onChange={(e) => setInputMessage(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Escribe tu pregunta..."
-                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none transition-all"
-                  rows={1}
-                  style={{
-                    minHeight: '48px',
-                    maxHeight: '120px'
-                  }}
-                  disabled={isLoading}
-                />
+                  <p className="text-xs text-gray-500 text-center">
+                    Tu email solo se usa para personalizar la experiencia
+                  </p>
+                </form>
               </div>
-              <button
-                onClick={sendMessage}
-                disabled={!inputMessage.trim() || isLoading}
-                className={`p-3 rounded-xl transition-all duration-200 ${
-                  inputMessage.trim() && !isLoading
-                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
-                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                }`}
-              >
-                {isLoading ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : (
-                  <Send className="w-5 h-5" />
-                )}
-              </button>
             </div>
-            <p className="text-xs text-gray-400 mt-2 text-center">
-              Presiona Enter para enviar ? Shift + Enter para nueva l?nea
-            </p>
-          </div>
+          ) : (
+            <>
+              {/* Mensajes */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                {messages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+                        message.role === 'user'
+                          ? 'bg-gradient-to-r from-teal-600 to-teal-600 text-white rounded-br-sm'
+                          : 'bg-white text-gray-800 shadow-md rounded-bl-sm border border-gray-100'
+                      }`}
+                    >
+                      {message.role === 'assistant' ? (
+                        <div className="prose prose-sm max-w-none">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              h1: ({ children }) => <h1 className="text-lg font-bold mb-2 text-gray-900">{children}</h1>,
+                              h2: ({ children }) => <h2 className="text-base font-bold mb-2 text-gray-800">{children}</h2>,
+                              h3: ({ children }) => <h3 className="text-sm font-bold mb-1 text-gray-800">{children}</h3>,
+                              p: ({ children }) => <p className="text-sm mb-2 text-gray-700 leading-relaxed">{children}</p>,
+                              ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ul>,
+                              ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1 text-sm text-gray-700">{children}</ol>,
+                              li: ({ children }) => <li className="text-sm text-gray-700">{children}</li>,
+                              strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
+                              em: ({ children }) => <em className="italic text-gray-600">{children}</em>,
+                              code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono text-teal-700">{children}</code>,
+                            }}
+                          >
+                            {message.content || ''}
+                          </ReactMarkdown>
+
+                          {/* Renderizar tool calls si existen */}
+                          {message.toolCalls?.map((toolCall: any, index: number) => (
+                            <div key={index} className="mt-3">
+                              {renderToolCall(toolCall)}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-sm whitespace-pre-wrap break-words">{message.content || ''}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-white text-gray-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100">
+                      <div className="flex items-center space-x-2">
+                        <Loader2 className="w-4 h-4 animate-spin text-teal-600" />
+                        <span className="text-sm text-gray-500">Generando respuesta...</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="flex justify-start">
+                    <div className="bg-red-50 text-red-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-red-200">
+                      <p className="text-sm">
+                        <strong>Error:</strong> {error.message || 'Hubo un problema al conectar con el servidor. Por favor intenta de nuevo.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input */}
+              <div className="p-4 bg-white border-t border-gray-200">
+                <form onSubmit={handleSubmit} className="flex items-end space-x-2">
+                  <div className="flex-1 relative">
+                    <textarea
+                      value={input || ''}
+                      onChange={handleInputChange}
+                      onKeyPress={handleKeyPress}
+                      placeholder="Escribe tu pregunta..."
+                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none resize-none transition-all"
+                      rows={1}
+                      style={{
+                        minHeight: '48px',
+                        maxHeight: '120px',
+                      }}
+                      disabled={isLoading}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={!input || !input.trim() || isLoading}
+                    className={`p-3 rounded-xl transition-all duration-200 ${
+                      input && input.trim() && !isLoading
+                        ? 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
+                        : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    }`}
+                  >
+                    {isLoading ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : (
+                      <Send className="w-5 h-5" />
+                    )}
+                  </button>
+                </form>
+                <p className="text-xs text-gray-400 mt-2 text-center">
+                  Presiona Enter para enviar • Shift + Enter para nueva línea
+                </p>
+              </div>
+            </>
+          )}
         </div>
       )}
     </>

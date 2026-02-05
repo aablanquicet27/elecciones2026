@@ -100,7 +100,7 @@ const SocialMediaChart: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+        <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg">
           <h4 className="font-semibold text-blue-900 mb-2">Impacto Electoral Digital</h4>
           <p className="text-sm text-blue-800">
             La presencia digital se ha convertido en un factor determinante. Vicky Dávila y 

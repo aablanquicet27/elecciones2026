@@ -23,26 +23,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
   const getImage = (name: string) => getCandidateImage(name, 400);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden" aria-label="Panorama electoral Colombia 2026">
+    <section className="relative min-h-screen bg-gradient-to-br from-teal-100 via-teal-50 to-white overflow-hidden" aria-label="Panorama electoral Colombia 2026">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="relative container mx-auto px-6 lg:px-12 pt-32 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[85vh]">
           {/* Left Content */}
           <div className="space-y-10">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
-              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-              <span className="text-base font-medium text-purple-700">Datos Actualizados · Enero 2026 · Atlas Intel</span>
+            <div className="inline-flex items-center space-x-3 bg-teal-50 px-5 py-2.5 rounded-full border border-teal-100">
+              <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>
+              <span className="text-base font-medium text-teal-700">Datos Actualizados · Enero 2026 · Atlas Intel</span>
             </div>
             
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="headline-hero text-gray-900">
                 Elecciones
-                <span className="block text-purple-600">Colombia</span>
+                <span className="block text-teal-600">Colombia</span>
                 <span className="block">2026</span>
               </h1>
               
@@ -63,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                 <div className="text-sm text-gray-500 mt-1">Cepeda</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">{undecided.toFixed(0)}%</div>
+                <div className="text-3xl md:text-4xl font-bold text-teal-600 tracking-tight">{undecided.toFixed(0)}%</div>
                 <div className="text-sm text-gray-500 mt-1">Indecisos</div>
               </div>
             </div>
@@ -94,7 +94,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
 
           {/* Right Content - Top Candidates */}
           <div className="relative">
-            <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-purple-100 shadow-xl shadow-purple-500/10">
+            <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-teal-100 shadow-xl shadow-teal-500/10">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-1">Líderes Actuales</h2>
                 <p className="text-gray-500">Intención de voto · Primera vuelta</p>
@@ -106,15 +106,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                   <Link
                     key={candidate.Candidato}
                     to={`/candidato/${candidate.Candidato.toLowerCase().replace(/\s+/g, '-')}`}
-                    className={`block bg-white rounded-2xl p-6 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-purple-200 ${
-                      index === currentSlide ? 'ring-2 ring-purple-500 ring-offset-2' : ''
+                    className={`block bg-white rounded-2xl p-6 border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-teal-200 ${
+                      index === currentSlide ? 'ring-2 ring-teal-500 ring-offset-2' : ''
                     }`}
                     aria-label={`Ver perfil de ${candidate.Candidato}`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-5">
                         <div className="relative">
-                          <span className="absolute -top-1 -left-1 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                          <span className="absolute -top-1 -left-1 w-6 h-6 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
                             {index + 1}
                           </span>
                           <img

@@ -29,7 +29,7 @@ export const CandidateComparison: React.FC<ComparisonData> = ({ candidates, titl
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden max-w-2xl">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-4">
+      <div className="bg-gradient-to-r from-teal-600 to-teal-600 px-5 py-4">
         <h3 className="text-white font-bold text-lg flex items-center">
           <Award className="w-5 h-5 mr-2" />
           {title || 'Comparación de Candidatos'}
@@ -58,11 +58,11 @@ export const CandidateComparison: React.FC<ComparisonData> = ({ candidates, titl
                     <TrendingUp className="w-3 h-3 mr-1" />
                     Intención de Voto
                   </span>
-                  <span className="text-sm font-bold text-purple-700">{candidate.intencionVoto}%</span>
+                  <span className="text-sm font-bold text-teal-700">{candidate.intencionVoto}%</span>
                 </div>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full transition-all duration-500"
+                    className="h-full bg-gradient-to-r from-teal-500 to-teal-500 rounded-full transition-all duration-500"
                     style={{ width: `${candidate.intencionVoto}%` }}
                   />
                 </div>

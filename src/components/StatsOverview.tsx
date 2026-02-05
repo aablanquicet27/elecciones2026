@@ -77,8 +77,8 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             className="text-center group"
           >
             {/* Icon */}
-            <div className="inline-flex p-5 rounded-2xl bg-purple-50 mb-6 group-hover:bg-purple-100 transition-colors duration-300">
-              <stat.icon className="h-8 w-8 text-purple-600" />
+            <div className="inline-flex p-5 rounded-2xl bg-teal-50 mb-6 group-hover:bg-teal-100 transition-colors duration-300">
+              <stat.icon className="h-8 w-8 text-teal-600" />
             </div>
 
             {/* Value */}
@@ -100,7 +100,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       </div>
 
       {/* Key Insights */}
-      <div className="mt-20 bg-white rounded-[2rem] p-10 lg:p-14 border border-purple-100 shadow-lg shadow-purple-500/5">
+      <div className="mt-20 bg-white rounded-[2rem] p-10 lg:p-14 border border-teal-100 shadow-lg shadow-teal-500/5">
         <header className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-3">
             Contexto Electoral 2026
@@ -111,9 +111,9 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
-            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-              <Target className="h-8 w-8 text-purple-600" />
+          <div className="text-center p-6 rounded-2xl bg-teal-50/50">
+            <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <Target className="h-8 w-8 text-teal-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
               Empate Técnico Histórico
@@ -124,9 +124,9 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             </p>
           </div>
 
-          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
-            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-              <TrendingUp className="h-7 w-7 text-purple-600" />
+          <div className="text-center p-6 rounded-2xl bg-teal-50/50">
+            <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <TrendingUp className="h-7 w-7 text-teal-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
               Reconfiguración Política
@@ -137,9 +137,9 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             </p>
           </div>
 
-          <div className="text-center p-6 rounded-2xl bg-purple-50/50">
-            <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-              <AlertTriangle className="h-7 w-7 text-purple-600" />
+          <div className="text-center p-6 rounded-2xl bg-teal-50/50">
+            <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+              <AlertTriangle className="h-7 w-7 text-teal-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
               Alta Volatilidad

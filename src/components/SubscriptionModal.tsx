@@ -159,7 +159,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
       {/* Modal */}
       <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[95vh] overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-white relative">
+        <div className="bg-gradient-to-r from-teal-600 to-teal-600 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 text-white relative">
           <button
             onClick={onClose}
             className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
@@ -173,7 +173,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
               {step === 'email' ? '¡Únete a ElectoralAI!' : 'Encuesta Electoral 2026'}
             </h2>
           </div>
-          <p className="text-purple-100 text-sm sm:text-base">
+          <p className="text-teal-100 text-sm sm:text-base">
             {step === 'email' 
               ? 'Análisis electoral inteligente para Colombia 2026'
               : 'Si las elecciones fueran el día de hoy, ¿por quién votarías?'
@@ -201,7 +201,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="tu@email.com"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                     required
                   />
                   {isValid && (
@@ -220,7 +220,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                 <button
                   type="submit"
                   disabled={!isValid || isLoading}
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
+                  className="w-full bg-gradient-to-r from-teal-600 to-teal-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-teal-700 hover:to-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
                 >
                   {isLoading ? (
                     <>
@@ -269,7 +269,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                     onClick={() => setSelectedCandidate(candidate)}
                     className={`relative group transition-all duration-200 ${
                       selectedCandidate === candidate
-                        ? 'ring-2 ring-purple-500 ring-offset-2'
+                        ? 'ring-2 ring-teal-500 ring-offset-2'
                         : 'hover:scale-105'
                     }`}
                   >
@@ -282,12 +282,12 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                     </div>
                     <div className={`absolute inset-0 rounded-lg sm:rounded-xl transition-all duration-200 ${
                       selectedCandidate === candidate
-                        ? 'bg-purple-600/20 border-2 border-purple-500'
+                        ? 'bg-teal-600/20 border-2 border-teal-500'
                         : 'bg-black/0 group-hover:bg-black/10'
                     }`}>
                       {selectedCandidate === candidate && (
                         <div className="absolute top-1 right-1">
-                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600 bg-white rounded-full" />
+                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-teal-600 bg-white rounded-full" />
                         </div>
                       )}
                     </div>
@@ -323,7 +323,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                           setShowOthers(false);
                         }}
                         className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 text-sm sm:text-base ${
-                          selectedCandidate === candidate ? 'bg-purple-50 text-purple-700 font-medium' : 'text-gray-700'
+                          selectedCandidate === candidate ? 'bg-teal-50 text-teal-700 font-medium' : 'text-gray-700'
                         }`}
                       >
                         {candidate}
@@ -335,8 +335,8 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
 
               {/* Candidato seleccionado */}
               {selectedCandidate && (
-                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-purple-50 rounded-lg border border-purple-200">
-                  <p className="text-sm sm:text-base text-purple-800">
+                <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-teal-50 rounded-lg border border-teal-200">
+                  <p className="text-sm sm:text-base text-teal-800">
                     <strong>Candidato seleccionado:</strong> {selectedCandidate}
                   </p>
                 </div>
@@ -359,7 +359,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                 <button
                   onClick={handleVoteSubmit}
                   disabled={!selectedCandidate || isLoading}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
+                  className="flex-1 bg-gradient-to-r from-teal-600 to-teal-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-teal-700 hover:to-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
                 >
                   {isLoading ? (
                     <>

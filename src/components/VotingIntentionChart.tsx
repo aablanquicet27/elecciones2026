@@ -55,7 +55,7 @@ const VotingIntentionChart: React.FC<VotingIntentionChartProps> = ({
                 <span className="text-sm font-medium text-gray-600 w-6">
                   #{index + 1}
                 </span>
-                <span className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
+                <span className="font-medium text-gray-900 group-hover:text-teal-600 transition-colors">
                   {candidate.Candidato}
                 </span>
                 <span className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">

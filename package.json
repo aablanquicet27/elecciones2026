@@ -7,37 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "scrape": "node scripts/scraper.js",
-    "analyze": "python scripts/real_time_analysis.py",
-    "update-full": "node scripts/automation.js full",
-    "update-quick": "node scripts/automation.js quick",
-    "start:server": "node server/server.js",
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^2.0.69",
-    "@ai-sdk/react": "^2.0.98",
-    "@mendable/firecrawl-js": "^1.25.5",
     "@supabase/supabase-js": "^2.50.5",
     "@vercel/analytics": "^1.6.1",
-    "ai": "^5.0.98",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.0",
-    "exa-js": "^1.0.2",
-    "express": "^4.19.2",
     "lucide-react": "^0.469.0",
-    "node-fetch": "^2.7.0",
-    "openai": "^4.52.7",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.8.1",
-    "remark-gfm": "^4.0.1",
-    "zod": "^3.25.76"
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -53,7 +33,6 @@
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"

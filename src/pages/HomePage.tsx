@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Users, BarChart3, ArrowRight, Award, Target, Calendar, MapPin } from 'lucide-react';
 import { Candidate } from '../types/election';
@@ -53,7 +53,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('hero')}
                 className={`text-base font-medium transition-colors ${
-                  activeSection === 'hero' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
+                  activeSection === 'hero' ? 'text-teal-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Inicio
@@ -61,7 +61,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('candidates')}
                 className={`text-base font-medium transition-colors ${
-                  activeSection === 'candidates' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
+                  activeSection === 'candidates' ? 'text-teal-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Candidatos
@@ -69,7 +69,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('noticias')}
                 className={`text-base font-medium transition-colors ${
-                  activeSection === 'noticias' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
+                  activeSection === 'noticias' ? 'text-teal-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Noticias
@@ -77,7 +77,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('insights')}
                 className={`text-base font-medium transition-colors ${
-                  activeSection === 'insights' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
+                  activeSection === 'insights' ? 'text-teal-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Hallazgos
@@ -85,22 +85,16 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <button 
                 onClick={() => scrollToSection('analysis')}
                 className={`text-base font-medium transition-colors ${
-                  activeSection === 'analysis' ? 'text-purple-600' : 'text-gray-600 hover:text-gray-900'
+                  activeSection === 'analysis' ? 'text-teal-600' : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 Análisis
               </button>
-              <Link 
+              <Link
                 to="/analisis"
-                className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition-all text-base font-semibold shadow-lg shadow-purple-500/20"
+                className="bg-teal-600 text-white px-6 py-3 rounded-xl hover:bg-teal-700 transition-all text-base font-semibold shadow-lg shadow-teal-500/20"
               >
                 Panel Completo
-              </Link>
-              <Link 
-                to="/analisis-tiempo-real"
-                className="bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-all text-base font-semibold"
-              >
-                En Vivo
               </Link>
             </div>
           </div>
@@ -124,7 +118,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       <section 
         ref={(el) => { sectionsRef.current['insights'] = el; }}
         id="insights"
-        className="section-premium bg-purple-pastel"
+        className="section-premium bg-teal-pastel"
         aria-label="Hallazgos electorales"
       >
         <ElectoralInsights />
@@ -134,7 +128,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       <section 
         ref={(el) => { sectionsRef.current['candidates'] = el; }}
         id="candidates"
-        className="section-premium bg-gradient-to-b from-white via-purple-50/30 to-white"
+        className="section-premium bg-gradient-to-b from-white via-teal-50/30 to-white"
         aria-label="Candidatos presidenciales"
       >
         <div className="container mx-auto px-6 lg:px-12">
@@ -168,7 +162,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       <section 
         ref={(el) => { sectionsRef.current['noticias'] = el; }}
         id="noticias"
-        className="section-premium bg-purple-pastel"
+        className="section-premium bg-teal-pastel"
         aria-label="Noticias del día"
       >
         <div className="container mx-auto px-6 lg:px-12">
@@ -180,7 +174,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       <section 
         ref={(el) => { sectionsRef.current['analysis'] = el; }}
         id="analysis"
-        className="section-premium bg-gradient-to-b from-white to-purple-50/50"
+        className="section-premium bg-gradient-to-b from-white to-teal-50/50"
         aria-label="Análisis de tendencias"
       >
         <TrendAnalysis candidates={candidates} />
@@ -197,7 +191,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       </section>
 
       {/* Key Insights Summary */}
-      <section className="section-premium bg-purple-pastel" aria-label="Conclusiones del análisis">
+      <section className="section-premium bg-teal-pastel" aria-label="Conclusiones del análisis">
         <div className="container mx-auto px-6 lg:px-12">
           <header className="text-center mb-20">
             <h2 className="text-gray-900 mb-6">
@@ -210,8 +204,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <article className="card-premium p-10">
-              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
-                <TrendingUp className="h-8 w-8 text-purple-600" />
+              <div className="bg-teal-100 p-4 rounded-2xl w-fit mb-6">
+                <TrendingUp className="h-8 w-8 text-teal-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
                 Carrera Electoral Reñida
@@ -220,14 +214,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Empate técnico entre los dos líderes con apenas 1.5 puntos de diferencia, 
                 marcando una competencia histórica sin precedentes.
               </p>
-              <div className="text-purple-600 font-semibold text-lg">
+              <div className="text-teal-600 font-semibold text-lg">
                 De la Espriella 28.0% vs Cepeda 26.5%
               </div>
             </article>
 
             <article className="card-premium p-10">
-              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
-                <Users className="h-8 w-8 text-purple-600" />
+              <div className="bg-teal-100 p-4 rounded-2xl w-fit mb-6">
+                <Users className="h-8 w-8 text-teal-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
                 Derecha Recupera Terreno
@@ -236,14 +230,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 De la Espriella lidera con +9.8 puntos desde diciembre 2025. 
                 La derecha consolida 34% del electorado.
               </p>
-              <div className="text-purple-600 font-semibold text-lg">
+              <div className="text-teal-600 font-semibold text-lg">
                 Cambio: +9.8 puntos
               </div>
             </article>
 
             <article className="card-premium p-10">
-              <div className="bg-purple-100 p-4 rounded-2xl w-fit mb-6">
-                <Target className="h-8 w-8 text-purple-600" />
+              <div className="bg-teal-100 p-4 rounded-2xl w-fit mb-6">
+                <Target className="h-8 w-8 text-teal-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
                 Segunda Vuelta Definida
@@ -252,7 +246,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 De la Espriella vence a Cepeda 44.2% vs 34.9% en balotaje. 
                 20.9% de voto en blanco e indecisos.
               </p>
-              <div className="text-purple-600 font-semibold text-lg">
+              <div className="text-teal-600 font-semibold text-lg">
                 Ventaja segunda vuelta: +9.3 puntos
               </div>
             </article>
@@ -265,8 +259,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               <div className="text-center">
-                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-                  <Users className="h-8 w-8 text-purple-600" />
+                <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Users className="h-8 w-8 text-teal-600" />
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Favorabilidad Líder</h4>
                 <p className="text-gray-600">
@@ -274,8 +268,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-                  <MapPin className="h-8 w-8 text-purple-600" />
+                <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <MapPin className="h-8 w-8 text-teal-600" />
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Dinámicas Regionales</h4>
                 <p className="text-gray-600">
@@ -283,8 +277,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-                  <Calendar className="h-8 w-8 text-purple-600" />
+                <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Calendar className="h-8 w-8 text-teal-600" />
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Consultas Internas</h4>
                 <p className="text-gray-600">
@@ -292,8 +286,8 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-                  <Award className="h-8 w-8 text-purple-600" />
+                <div className="bg-teal-100 p-4 rounded-2xl w-fit mx-auto mb-4">
+                  <Award className="h-8 w-8 text-teal-600" />
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Centro Fortalecido</h4>
                 <p className="text-gray-600">
@@ -324,13 +318,6 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               <span>Panel de Análisis Completo</span>
             </Link>
             
-            <Link 
-              to="/analisis-tiempo-real"
-              className="bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all inline-flex items-center space-x-3"
-            >
-              <Calendar className="h-5 w-5" />
-              <span>Análisis en Tiempo Real</span>
-            </Link>
           </div>
         </div>
       </section>

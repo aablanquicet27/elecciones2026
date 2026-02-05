@@ -57,8 +57,8 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
             onClick={() => setActiveView('current')}
             className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
               activeView === 'current'
-                ? 'bg-white text-purple-600 shadow-md'
-                : 'text-gray-600 hover:text-purple-600'
+                ? 'bg-white text-teal-600 shadow-md'
+                : 'text-gray-600 hover:text-teal-600'
             }`}
           >
             <div className="flex items-center space-x-2">
@@ -70,8 +70,8 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
             onClick={() => setActiveView('comparison')}
             className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
               activeView === 'comparison'
-                ? 'bg-white text-purple-600 shadow-md'
-                : 'text-gray-600 hover:text-purple-600'
+                ? 'bg-white text-teal-600 shadow-md'
+                : 'text-gray-600 hover:text-teal-600'
             }`}
           >
             <div className="flex items-center space-x-2">
@@ -96,7 +96,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 <div key={item.trend} className="group">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-3">
-                      <span className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
+                      <span className="font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">
                         {item.trend}
                       </span>
                       <span className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">
@@ -188,14 +188,14 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
             {comparisonData.map((item) => (
               <div key={item.trend} className="group">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-semibold text-gray-900 text-lg group-hover:text-purple-600 transition-colors">
+                  <span className="font-semibold text-gray-900 text-lg group-hover:text-teal-600 transition-colors">
                     {item.trend}
                   </span>
                   <div className="flex items-center space-x-6 text-sm">
-                    <span className="text-purple-600 font-semibold">
+                    <span className="text-teal-600 font-semibold">
                       2022: {item[2022]}%
                     </span>
-                    <span className="text-purple-600 font-semibold">
+                    <span className="text-teal-600 font-semibold">
                       2026: {item[2026]}%
                     </span>
                     <span className={`font-bold text-lg ${
@@ -212,7 +212,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                       <div className="text-xs text-gray-500 mb-2">2022</div>
                       <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
                         <div
-                          className="h-full bg-purple-500 transition-all duration-1000 ease-out"
+                          className="h-full bg-teal-500 transition-all duration-1000 ease-out"
                           style={{ width: `${(item[2022] / 50) * 100}%` }}
                         ></div>
                       </div>
@@ -221,7 +221,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                       <div className="text-xs text-gray-500 mb-2">2026</div>
                       <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
                         <div
-                          className="h-full bg-purple-500 transition-all duration-1000 ease-out"
+                          className="h-full bg-teal-500 transition-all duration-1000 ease-out"
                           style={{ width: `${(item[2026] / 50) * 100}%` }}
                         ></div>
                       </div>

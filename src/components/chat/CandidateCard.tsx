@@ -40,7 +40,7 @@ export const CandidateCard: React.FC<{ candidate: CandidateData }> = ({ candidat
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 max-w-md">
       {/* Header con ranking */}
-      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-3 flex items-center justify-between">
+      <div className="bg-gradient-to-r from-teal-600 to-teal-600 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Award className="w-5 h-5 text-yellow-300" />
           <span className="text-white font-bold text-sm">Posición #{candidate.ranking}</span>
@@ -60,12 +60,12 @@ export const CandidateCard: React.FC<{ candidate: CandidateData }> = ({ candidat
 
         {/* Métricas principales */}
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="bg-purple-50 rounded-lg p-3 border border-purple-200">
+          <div className="bg-teal-50 rounded-lg p-3 border border-teal-200">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-gray-600 font-medium">Intención de Voto</span>
               {getTrendIcon()}
             </div>
-            <div className="text-2xl font-bold text-purple-700">{candidate.intencionVoto}%</div>
+            <div className="text-2xl font-bold text-teal-700">{candidate.intencionVoto}%</div>
           </div>
 
           <div className="bg-green-50 rounded-lg p-3 border border-green-200">

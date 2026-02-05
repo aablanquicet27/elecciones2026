@@ -1,5 +1,39 @@
 import { Candidate } from '../types/election';
 
+import candidatosRaw from '../../public/candidatos_presidenciales_2026_completo.csv?raw';
+
+export interface ChatCandidate {
+  nombre: string;
+  intencionVoto: number;
+  tendenciaPolitica: string;
+  favorabilidad: number;
+  desfavorabilidad: number;
+  partido: string;
+  region: string;
+  profesion: string;
+  edad: number;
+  ranking: number;
+}
+
+export const parseCandidatesData = (): ChatCandidate[] => {
+  const lines = candidatosRaw.trim().split('\n');
+  return lines.slice(1).map(line => {
+    const values = line.split(',');
+    return {
+      nombre: values[0]?.trim() || '',
+      intencionVoto: parseFloat(values[1]) || 0,
+      tendenciaPolitica: values[2]?.trim() || '',
+      favorabilidad: parseFloat(values[3]) || 0,
+      desfavorabilidad: parseFloat(values[4]) || 0,
+      partido: values[5]?.trim() || '',
+      region: values[6]?.trim() || '',
+      profesion: values[7]?.trim() || '',
+      edad: parseInt(values[8]) || 0,
+      ranking: parseFloat(values[9]) || 0,
+    };
+  });
+};
+
 export const parseCandidateData = (csvText: string): Candidate[] => {
   const lines = csvText.trim().split('\n');
   const headers = lines[0].split(',');
