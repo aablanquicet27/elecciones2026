@@ -13,11 +13,11 @@ export const ElectoralInsight: React.FC<InsightData> = ({ type, title, message, 
     switch (type) {
       case 'insight':
         return {
-          bg: 'bg-teal-50',
-          border: 'border-teal-300',
-          icon: <Lightbulb className="w-6 h-6 text-teal-600" />,
-          titleColor: 'text-teal-900',
-          textColor: 'text-teal-800',
+          bg: 'bg-purple-50',
+          border: 'border-purple-300',
+          icon: <Lightbulb className="w-6 h-6 text-purple-600" />,
+          titleColor: 'text-purple-900',
+          textColor: 'text-purple-800',
         };
       case 'warning':
         return {

@@ -41,10 +41,10 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
 
   if (!candidate) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-900 via-teal-800 to-teal-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center">
         <div className="text-center text-white">
           <div className="text-2xl font-bold mb-4">Candidato no encontrado</div>
-          <Link to="/" className="inline-flex items-center space-x-2 bg-[#F7F0E8] text-teal-900 px-4 py-2 rounded-lg">
+          <Link to="/" className="inline-flex items-center space-x-2 bg-[#F7F0E8] text-purple-900 px-4 py-2 rounded-lg">
             <ArrowLeft className="h-4 w-4" />
             <span>Volver al inicio</span>
           </Link>
@@ -74,10 +74,10 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
   return (
     <div className="min-h-screen bg-[#F7F0E8]">
       {/* Header */}
-      <div className="bg-gradient-to-r from-teal-900 via-teal-800 to-teal-900 text-white">
+      <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 text-white">
         <div className="container mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
-            <Link to="/" className="inline-flex items-center space-x-2 text-teal-200 hover:text-white mb-4 md:mb-0">
+            <Link to="/" className="inline-flex items-center space-x-2 text-purple-200 hover:text-white mb-4 md:mb-0">
               <ArrowLeft className="h-5 w-5" />
               <span>Volver al listado</span>
             </Link>
@@ -102,7 +102,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 bg-teal-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
+                <div className="absolute -bottom-4 -right-4 bg-purple-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
                   #{candidate.Ranking}
                 </div>
               </div>
@@ -114,26 +114,26 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
             
             <div className="md:col-span-2">
               <h1 className="text-4xl font-bold mb-2">{candidate.Candidato}</h1>
-              <p className="text-xl text-teal-200 mb-6">{candidate.Cargo_Actual}</p>
+              <p className="text-xl text-purple-200 mb-6">{candidate.Cargo_Actual}</p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <div className="text-3xl font-bold text-white">{candidate.Intención_Voto_Porcentaje}%</div>
-                  <div className="text-sm text-teal-200">Intención de voto</div>
+                  <div className="text-sm text-purple-200">Intención de voto</div>
                 </div>
                 <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <div className="text-3xl font-bold text-white">{candidate.Favorabilidad}%</div>
-                  <div className="text-sm text-teal-200">Favorabilidad</div>
+                  <div className="text-sm text-purple-200">Favorabilidad</div>
                 </div>
                 <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <div className="text-3xl font-bold text-white">{candidate.Desfavorabilidad}%</div>
-                  <div className="text-sm text-teal-200">Desfavorabilidad</div>
+                  <div className="text-sm text-purple-200">Desfavorabilidad</div>
                 </div>
                 <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
                   <div className={`text-3xl font-bold ${balance >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {balance > 0 ? '+' : ''}{balance}
                   </div>
-                  <div className="text-sm text-teal-200">Balance</div>
+                  <div className="text-sm text-purple-200">Balance</div>
                 </div>
               </div>
               
@@ -167,8 +167,8 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">Partido / Movimiento</h3>
-                  <div className="bg-teal-50 p-4 rounded-lg">
-                    <div className="text-xl font-medium text-teal-800">{candidate.Partido_Movimiento}</div>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <div className="text-xl font-medium text-purple-800">{candidate.Partido_Movimiento}</div>
                     <div className="text-sm text-gray-600 mt-1">{candidate.Tipo_Candidatura}</div>
                   </div>
                 </div>
@@ -201,11 +201,11 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm font-medium text-gray-700">Intención de voto</span>
-                        <span className="text-sm font-bold text-teal-600">{candidate.Intención_Voto_Porcentaje}%</span>
+                        <span className="text-sm font-bold text-purple-600">{candidate.Intención_Voto_Porcentaje}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2.5">
                         <div 
-                          className="bg-teal-600 h-2.5 rounded-full" 
+                          className="bg-purple-600 h-2.5 rounded-full" 
                           style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 6, 100)}%` }}
                         ></div>
                       </div>
@@ -248,11 +248,11 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
               
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-teal-50 p-4 rounded-lg">
-                    <h3 className="text-lg font-semibold text-teal-800 mb-2">Fortalezas</h3>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-purple-800 mb-2">Fortalezas</h3>
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
+                        <span className="text-purple-500 mr-2">•</span>
                         <span>
                           {candidate.Favorabilidad > 35 ? 'Alta favorabilidad entre el electorado' : 
                            candidate.Favorabilidad > 25 ? 'Favorabilidad moderada' : 
@@ -260,7 +260,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
+                        <span className="text-purple-500 mr-2">•</span>
                         <span>
                           {candidate.Tendencia_Política === 'Centro' ? 'Posición centrista atractiva para votantes moderados' : 
                            candidate.Tendencia_Política === 'Izquierda' ? 'Fuerte apoyo en sectores progresistas' : 
@@ -268,7 +268,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                         </span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
+                        <span className="text-purple-500 mr-2">•</span>
                         <span>
                           {candidate.Región_Origen === 'Bogotá' ? 'Fuerte presencia en la capital' : 
                            `Arraigo regional en ${candidate.Región_Origen}`}
@@ -310,7 +310,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                 
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-3">Proyección Electoral</h3>
-                  <div className="bg-gradient-to-r from-teal-50 to-[#F7F0E8] p-4 rounded-lg">
+                  <div className="bg-gradient-to-r from-purple-50 to-[#F7F0E8] p-4 rounded-lg">
                     <p className="text-gray-700">
                       {candidate.Intención_Voto_Porcentaje > 10 ? 
                         `Con una intención de voto del ${candidate.Intención_Voto_Porcentaje}%, ${candidate.Candidato} se posiciona entre los candidatos con mayores posibilidades de pasar a segunda vuelta.` : 
@@ -346,7 +346,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <div 
-                      className="bg-teal-600 h-1.5 rounded-full" 
+                      className="bg-purple-600 h-1.5 rounded-full" 
                       style={{ width: `${(candidate.Edad / 80) * 100}%` }}
                     ></div>
                   </div>
@@ -375,10 +375,10 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                     <span className="text-sm text-gray-600">Intención de voto</span>
                   </div>
-                  <span className="font-bold text-teal-600">{candidate.Intención_Voto_Porcentaje}%</span>
+                  <span className="font-bold text-purple-600">{candidate.Intención_Voto_Porcentaje}%</span>
                 </div>
                 
                 <div className="flex items-center justify-between">
@@ -405,7 +405,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   <div className="text-sm text-gray-600 mb-2">Posición relativa</div>
                   <div className="flex items-center">
                     <div className="flex-1 bg-gray-200 h-2 rounded-l-full overflow-hidden">
-                      <div className="bg-teal-600 h-full" style={{ width: '100%' }}></div>
+                      <div className="bg-purple-600 h-full" style={{ width: '100%' }}></div>
                     </div>
                     <div className="px-2 text-sm font-bold">#{candidate.Ranking}</div>
                     <div className="flex-1 bg-gray-200 h-2 rounded-r-full"></div>
@@ -435,7 +435,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <div 
-                      className="bg-teal-600 h-1.5 rounded-full" 
+                      className="bg-purple-600 h-1.5 rounded-full" 
                       style={{ 
                         width: `${
                           candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
@@ -462,7 +462,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <div 
-                      className="bg-teal-600 h-1.5 rounded-full" 
+                      className="bg-purple-600 h-1.5 rounded-full" 
                       style={{ 
                         width: `${
                           candidate.Candidato === 'Gustavo Bolívar' ? 80 : 
@@ -489,7 +489,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <div 
-                      className="bg-teal-600 h-1.5 rounded-full" 
+                      className="bg-purple-600 h-1.5 rounded-full" 
                       style={{ 
                         width: `${
                           candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
@@ -516,7 +516,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
                     <div 
-                      className="bg-teal-600 h-1.5 rounded-full" 
+                      className="bg-purple-600 h-1.5 rounded-full" 
                       style={{ 
                         width: `${
                           candidate.Candidato === 'Gustavo Bolívar' ? 34 : 
@@ -547,7 +547,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
         
         {/* Bottom Section */}
         <div className="mt-12">
-          <div className="bg-gradient-to-r from-[#F7F0E8] to-teal-50 rounded-xl p-8 border border-teal-100">
+          <div className="bg-gradient-to-r from-[#F7F0E8] to-purple-50 rounded-xl p-8 border border-purple-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Escenarios de Segunda Vuelta</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -559,7 +559,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Vicky Dávila</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">43.5%</span>
+                          <span className="text-purple-600 font-semibold">43.5%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">46.8%</span>
                         </div>
@@ -567,7 +567,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Sergio Fajardo</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">41.2%</span>
+                          <span className="text-purple-600 font-semibold">41.2%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">48.5%</span>
                         </div>
@@ -575,7 +575,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. María F. Cabal</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">42.3%</span>
+                          <span className="text-purple-600 font-semibold">42.3%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">44.7%</span>
                         </div>
@@ -586,7 +586,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Gustavo Bolívar</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">46.8%</span>
+                          <span className="text-purple-600 font-semibold">46.8%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">43.5%</span>
                         </div>
@@ -594,7 +594,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Sergio Fajardo</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">35.2%</span>
+                          <span className="text-purple-600 font-semibold">35.2%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">38.6%</span>
                         </div>
@@ -602,7 +602,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Germán Vargas</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">37.4%</span>
+                          <span className="text-purple-600 font-semibold">37.4%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">32.6%</span>
                         </div>
@@ -613,7 +613,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Gustavo Bolívar</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">48.5%</span>
+                          <span className="text-purple-600 font-semibold">48.5%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">41.2%</span>
                         </div>
@@ -621,7 +621,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Vicky Dávila</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">38.6%</span>
+                          <span className="text-purple-600 font-semibold">38.6%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">35.2%</span>
                         </div>
@@ -629,7 +629,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Germán Vargas</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">45.2%</span>
+                          <span className="text-purple-600 font-semibold">45.2%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">28.8%</span>
                         </div>
@@ -640,7 +640,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Líder 1</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">38.5%</span>
+                          <span className="text-purple-600 font-semibold">38.5%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">42.3%</span>
                         </div>
@@ -648,7 +648,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Líder 2</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">36.2%</span>
+                          <span className="text-purple-600 font-semibold">36.2%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">44.5%</span>
                         </div>
@@ -656,7 +656,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                       <div className="flex justify-between items-center">
                         <span className="text-gray-700">vs. Líder 3</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-teal-600 font-semibold">37.8%</span>
+                          <span className="text-purple-600 font-semibold">37.8%</span>
                           <span className="text-gray-400">|</span>
                           <span className="text-gray-600 font-semibold">41.2%</span>
                         </div>
@@ -701,8 +701,8 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
           <p className="text-sm text-gray-500 mt-2">
             Datos actualizados a Enero 2026 • Atlas Intel • Margen de error: ±1.8%
           </p>
-          <p className="text-xs text-teal-500 mt-2">
-            Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-teal-700">AGAPAI</a>
+          <p className="text-xs text-purple-500 mt-2">
+            Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>
           </p>
         </div>
       </div>

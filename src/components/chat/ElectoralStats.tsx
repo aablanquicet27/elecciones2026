@@ -30,8 +30,8 @@ export const ElectoralStats: React.FC<StatsData> = ({ title, stats, description 
 
   const getColorClasses = (color?: string) => {
     switch (color) {
-      case 'teal':
-        return 'bg-teal-100 text-teal-700 border-teal-300';
+      case 'purple':
+        return 'bg-purple-100 text-purple-700 border-purple-300';
       case 'blue':
         return 'bg-blue-100 text-blue-700 border-blue-300';
       case 'green':
@@ -41,17 +41,17 @@ export const ElectoralStats: React.FC<StatsData> = ({ title, stats, description 
       case 'yellow':
         return 'bg-yellow-100 text-yellow-700 border-yellow-300';
       default:
-        return 'bg-teal-100 text-teal-700 border-teal-300';
+        return 'bg-purple-100 text-purple-700 border-purple-300';
     }
   };
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden max-w-lg">
       {/* Header */}
-      <div className="bg-gradient-to-r from-teal-600 to-teal-600 px-5 py-4">
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-5 py-4">
         <h3 className="text-white font-bold text-lg">{title}</h3>
         {description && (
-          <p className="text-teal-100 text-sm mt-1">{description}</p>
+          <p className="text-purple-100 text-sm mt-1">{description}</p>
         )}
       </div>
 

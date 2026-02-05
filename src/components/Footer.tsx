@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                   href="https://brochure.agapai.com.co" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-teal-400 hover:text-teal-300 font-medium transition-colors"
+                  className="text-purple-400 hover:text-purple-300 font-medium transition-colors"
                 >
                   AGAPAI
                 </a>

@@ -71,9 +71,9 @@ const DemographicChart: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-6 p-4 bg-gradient-to-r from-teal-50 to-blue-50 rounded-lg">
-          <h4 className="font-semibold text-teal-900 mb-2">Análisis Generacional</h4>
-          <p className="text-sm text-teal-800">
+        <div className="mt-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
+          <h4 className="font-semibold text-purple-900 mb-2">Análisis Generacional</h4>
+          <p className="text-sm text-purple-800">
             La polarización generacional es evidente: los jóvenes favorecen candidatos de izquierda 
             (Bolívar 18.5%), mientras los adultos mayores prefieren opciones de centro-derecha 
             (Dávila 14.2%, Vargas 8.2%). Esta división generacional será determinante en la 

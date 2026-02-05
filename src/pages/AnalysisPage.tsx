@@ -38,7 +38,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
           <div className="flex items-center justify-between">
             <Link 
               to="/"
-              className="flex items-center space-x-2 text-gray-600 hover:text-teal-600 transition-colors"
+              className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
               <span>Volver al inicio</span>
@@ -62,7 +62,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             value={`${topCandidate.Intención_Voto_Porcentaje}%`}
             subtitle={topCandidate.Candidato}
             icon={Award}
-            color="bg-teal-500"
+            color="bg-purple-500"
             trend={{ value: "Empate técnico", isPositive: false }}
             description="Diferencia de 1.2% con segundo lugar"
           />
@@ -71,7 +71,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             value={candidates.length.toString()}
             subtitle="Registrados"
             icon={Users}
-            color="bg-teal-500"
+            color="bg-purple-500"
             description="32 aspirantes confirmados"
           />
           <StatCard
@@ -79,7 +79,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             value={`${undecided.toFixed(1)}%`}
             subtitle="Del electorado"
             icon={AlertTriangle}
-            color="bg-teal-500"
+            color="bg-purple-500"
             trend={{ value: "Alta volatilidad", isPositive: false }}
             description="Factor determinante"
           />
@@ -88,7 +88,7 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
             value="Máxima"
             subtitle="Sin mayoría clara"
             icon={BarChart3}
-            color="bg-teal-500"
+            color="bg-purple-500"
             description="Ningún candidato >15%"
           />
         </div>
@@ -183,9 +183,9 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
         </div>
 
         {/* Scenarios and Projections */}
-        <div className="bg-gradient-to-r from-teal-50 to-teal-50 rounded-xl p-8 border border-teal-200 mb-8">
+        <div className="bg-gradient-to-r from-purple-50 to-purple-50 rounded-xl p-8 border border-purple-200 mb-8">
           <div className="flex items-start space-x-4">
-            <div className="bg-teal-600 p-3 rounded-full">
+            <div className="bg-purple-600 p-3 rounded-full">
               <Target className="h-8 w-8 text-white" />
             </div>
             <div>
@@ -266,8 +266,8 @@ const AnalysisPage: React.FC<AnalysisPageProps> = ({ candidates }) => {
           <p className="text-xs text-gray-400 mt-2">
             Fuentes: Encuestas Atlas Intel, WAA, análisis de redes sociales, datos históricos electorales
           </p>
-          <p className="text-xs text-teal-500 mt-2">
-            Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-teal-700">AGAPAI</a>
+          <p className="text-xs text-purple-500 mt-2">
+            Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>
           </p>
         </footer>
       </main>

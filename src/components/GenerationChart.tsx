@@ -27,7 +27,7 @@ const GenerationChart: React.FC<GenerationChartProps> = ({ candidates }) => {
 
   const getGenerationColor = (generation: string) => {
     switch (generation) {
-      case 'Joven (≤40)': return 'bg-teal-500';
+      case 'Joven (≤40)': return 'bg-purple-500';
       case 'Adulto (41-50)': return 'bg-blue-500';
       case 'Mayor (51-60)': return 'bg-green-500';
       case 'Senior (>60)': return 'bg-orange-500';

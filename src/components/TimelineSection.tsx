@@ -50,7 +50,7 @@ const TimelineSection: React.FC = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed': return 'bg-green-500';
-      case 'current': return 'bg-teal-500';
+      case 'current': return 'bg-purple-500';
       case 'upcoming': return 'bg-gray-400';
       default: return 'bg-gray-400';
     }
@@ -59,7 +59,7 @@ const TimelineSection: React.FC = () => {
   const getStatusTextColor = (status: string) => {
     switch (status) {
       case 'completed': return 'text-green-400';
-      case 'current': return 'text-teal-400';
+      case 'current': return 'text-purple-400';
       case 'upcoming': return 'text-gray-400';
       default: return 'text-gray-400';
     }
@@ -122,13 +122,13 @@ const TimelineSection: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
-            <div className="bg-teal-600 p-3 rounded-full w-fit mx-auto mb-3">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
               <Clock className="h-6 w-6 text-white" />
             </div>
             <div className="text-lg font-bold text-white mb-1">
               Período Actual
             </div>
-            <div className="text-teal-400 text-sm">
+            <div className="text-purple-400 text-sm">
               Enero 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
@@ -137,13 +137,13 @@ const TimelineSection: React.FC = () => {
           </div>
 
           <div className="text-center">
-            <div className="bg-teal-600 p-3 rounded-full w-fit mx-auto mb-3">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
               <AlertCircle className="h-6 w-6 text-white" />
             </div>
             <div className="text-lg font-bold text-white mb-1">
               Próximo Hito
             </div>
-            <div className="text-teal-400 text-sm">
+            <div className="text-purple-400 text-sm">
               Marzo 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
@@ -152,13 +152,13 @@ const TimelineSection: React.FC = () => {
           </div>
 
           <div className="text-center">
-            <div className="bg-teal-600 p-3 rounded-full w-fit mx-auto mb-3">
+            <div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
               <Calendar className="h-6 w-6 text-white" />
             </div>
             <div className="text-lg font-bold text-white mb-1">
               Elecciones
             </div>
-            <div className="text-teal-400 text-sm">
+            <div className="text-purple-400 text-sm">
               Mayo 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">

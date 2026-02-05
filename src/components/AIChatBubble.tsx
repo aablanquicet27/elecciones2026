@@ -270,7 +270,7 @@ const AIChatBubble: React.FC = () => {
         className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${
           isOpen
             ? 'bg-red-500 hover:bg-red-600'
-            : 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700'
+            : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700'
         }`}
         aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat de IA'}
       >
@@ -288,7 +288,7 @@ const AIChatBubble: React.FC = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-4 z-50 w-[90vw] max-w-[420px] h-[70vh] max-h-[580px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-teal-600 to-teal-600 p-4 text-white">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 text-white">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -306,8 +306,8 @@ const AIChatBubble: React.FC = () => {
             <div className="flex-1 flex items-center justify-center p-6 bg-gray-50">
               <div className="w-full max-w-sm">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-teal-600" />
+                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-purple-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Bienvenido al Chat Electoral</h3>
                   <p className="text-sm text-gray-600">
@@ -327,7 +327,7 @@ const AIChatBubble: React.FC = () => {
                       placeholder="tu@email.com"
                       className={`w-full px-4 py-3 rounded-xl border ${
                         emailError ? 'border-red-500' : 'border-gray-300'
-                      } focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all`}
+                      } focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all`}
                       required
                     />
                     {emailError && (
@@ -337,7 +337,7 @@ const AIChatBubble: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
                   >
                     Comenzar Chat
                   </button>
@@ -360,7 +360,7 @@ const AIChatBubble: React.FC = () => {
                     <div
                       className={`max-w-[85%] rounded-2xl px-4 py-3 ${
                         message.role === 'user'
-                          ? 'bg-gradient-to-r from-teal-600 to-teal-600 text-white rounded-br-sm'
+                          ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-br-sm'
                           : 'bg-white text-gray-800 shadow-md rounded-bl-sm border border-gray-100'
                       }`}
                     >
@@ -378,7 +378,7 @@ const AIChatBubble: React.FC = () => {
                               li: ({ children }) => <li className="text-sm text-gray-700">{children}</li>,
                               strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
                               em: ({ children }) => <em className="italic text-gray-600">{children}</em>,
-                              code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono text-teal-700">{children}</code>,
+                              code: ({ children }) => <code className="bg-gray-100 px-1 py-0.5 rounded text-xs font-mono text-purple-700">{children}</code>,
                             }}
                           >
                             {message.content || ''}
@@ -402,7 +402,7 @@ const AIChatBubble: React.FC = () => {
                   <div className="flex justify-start">
                     <div className="bg-white text-gray-800 shadow-md rounded-2xl rounded-bl-sm px-4 py-3 border border-gray-100">
                       <div className="flex items-center space-x-2">
-                        <Loader2 className="w-4 h-4 animate-spin text-teal-600" />
+                        <Loader2 className="w-4 h-4 animate-spin text-purple-600" />
                         <span className="text-sm text-gray-500">Generando respuesta...</span>
                       </div>
                     </div>
@@ -431,7 +431,7 @@ const AIChatBubble: React.FC = () => {
                       onChange={handleInputChange}
                       onKeyPress={handleKeyPress}
                       placeholder="Escribe tu pregunta..."
-                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none resize-none transition-all"
+                      className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none transition-all"
                       rows={1}
                       style={{
                         minHeight: '48px',
@@ -445,7 +445,7 @@ const AIChatBubble: React.FC = () => {
                     disabled={!input || !input.trim() || isLoading}
                     className={`p-3 rounded-xl transition-all duration-200 ${
                       input && input.trim() && !isLoading
-                        ? 'bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
+                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transform hover:scale-105'
                         : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                     }`}
                   >

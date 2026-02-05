@@ -34,7 +34,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, rank }) => {
       <div className="flex items-start space-x-4">
         {/* Ranking Badge */}
         <div className="flex-shrink-0">
-          <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+          <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
             {rank}
           </div>
         </div>
@@ -56,7 +56,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, rank }) => {
             </h3>
             <div className="flex items-center space-x-1">
               {rank <= 3 && <Award className="h-4 w-4 text-yellow-500" />}
-              <span className="text-2xl font-bold text-teal-600">
+              <span className="text-2xl font-bold text-purple-600">
                 {candidate.Intención_Voto_Porcentaje}%
               </span>
             </div>
@@ -110,7 +110,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, rank }) => {
             <div className="mt-3">
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-teal-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                  className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
                   style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 8, 100)}%` }}
                 ></div>
               </div>

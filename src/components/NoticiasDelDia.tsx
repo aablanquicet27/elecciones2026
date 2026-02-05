@@ -141,14 +141,14 @@ const NoticiasDelDia: React.FC = () => {
       'Cambio Radical': 'bg-orange-100 text-orange-800',
       'Alianza Verde': 'bg-emerald-100 text-emerald-800',
       'Polo Democrático': 'bg-yellow-100 text-yellow-800',
-      'Pacto Histórico': 'bg-teal-100 text-teal-800',
+      'Pacto Histórico': 'bg-purple-100 text-purple-800',
     };
     return colores[partido] || 'bg-gray-100 text-gray-800';
   };
 
   const obtenerColorCandidato = (index: number) => {
     const colores = [
-      'bg-teal-100 text-teal-800',
+      'bg-purple-100 text-purple-800',
       'bg-pink-100 text-pink-800',
       'bg-cyan-100 text-cyan-800',
       'bg-lime-100 text-lime-800',
@@ -167,7 +167,7 @@ const NoticiasDelDia: React.FC = () => {
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-br from-teal-600 via-teal-600 to-blue-700 p-6 sm:p-8 lg:p-10">
+        <div className="bg-gradient-to-br from-purple-600 via-purple-600 to-blue-700 p-6 sm:p-8 lg:p-10">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="flex items-center space-x-4">
               <div className="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
@@ -177,7 +177,7 @@ const NoticiasDelDia: React.FC = () => {
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                   Noticias Electorales 2026
                 </h1>
-                <p className="text-teal-100 text-base sm:text-lg mt-1">
+                <p className="text-purple-100 text-base sm:text-lg mt-1">
                   Base de datos completa de noticias electorales
                 </p>
               </div>
@@ -246,7 +246,7 @@ const NoticiasDelDia: React.FC = () => {
           
           {ultimaActualizacion && (
             <div className="mt-6 flex items-center justify-between">
-              <div className="flex items-center space-x-2 text-teal-100 text-sm">
+              <div className="flex items-center space-x-2 text-purple-100 text-sm">
                 <Clock className="h-4 w-4 flex-shrink-0" />
                 <span>
                   Última actualización: {ultimaActualizacion.toLocaleTimeString('es-CO', {
@@ -293,7 +293,7 @@ const NoticiasDelDia: React.FC = () => {
               <p className="text-gray-600 text-base sm:text-lg max-w-md mx-auto mb-8">{error}</p>
               <button
                 onClick={actualizarNoticias}
-                className="inline-flex items-center space-x-3 bg-gradient-to-r from-teal-600 to-teal-600 text-white px-8 py-4 rounded-xl hover:from-teal-700 hover:to-teal-700 transition-all duration-300 shadow-lg text-base font-semibold"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg text-base font-semibold"
               >
                 <RefreshCw className="h-5 w-5" />
                 <span>Intentar de Nuevo</span>
@@ -351,7 +351,7 @@ const NoticiasDelDia: React.FC = () => {
                         </div>
                         <button
                           onClick={() => toggleExpansion(index)}
-                          className="bg-teal-100 hover:bg-teal-200 text-teal-700 p-3 rounded-lg transition-colors flex-shrink-0"
+                          className="bg-purple-100 hover:bg-purple-200 text-purple-700 p-3 rounded-lg transition-colors flex-shrink-0"
                           title={noticiaExpandida === index ? "Contraer" : "Expandir"}
                         >
                           <Eye className="h-5 w-5" />
@@ -364,7 +364,7 @@ const NoticiasDelDia: React.FC = () => {
                         {noticia.candidates && noticia.candidates.length > 0 && (
                           <div className="min-w-0">
                             <div className="flex items-center space-x-2 mb-4">
-                              <Users className="h-5 w-5 flex-shrink-0 text-teal-600" />
+                              <Users className="h-5 w-5 flex-shrink-0 text-purple-600" />
                               <span className="font-semibold text-gray-700 text-base">
                                 Candidatos Mencionados:
                               </span>
@@ -386,7 +386,7 @@ const NoticiasDelDia: React.FC = () => {
                         {noticia.political_parties && noticia.political_parties.length > 0 && (
                           <div className="min-w-0">
                             <div className="flex items-center space-x-2 mb-4">
-                              <Building className="h-5 w-5 flex-shrink-0 text-teal-600" />
+                              <Building className="h-5 w-5 flex-shrink-0 text-purple-600" />
                               <span className="font-semibold text-gray-700 text-base">
                                 Partidos Políticos:
                               </span>
@@ -420,7 +420,7 @@ const NoticiasDelDia: React.FC = () => {
                       {noticia.content && noticia.content.length > 350 && (
                         <button
                           onClick={() => toggleExpansion(index)}
-                          className="mt-6 font-medium transition-colors inline-flex items-center space-x-2 text-base text-teal-600 hover:text-teal-700"
+                          className="mt-6 font-medium transition-colors inline-flex items-center space-x-2 text-base text-purple-600 hover:text-purple-700"
                         >
                           <span>{noticiaExpandida === index ? 'Ver menos' : 'Leer más'}</span>
                           <ExternalLink className="h-4 w-4" />
@@ -462,7 +462,7 @@ const NoticiasDelDia: React.FC = () => {
                   <button
                     onClick={cargarMasNoticias}
                     disabled={cargandoMas}
-                    className="inline-flex items-center space-x-3 bg-gradient-to-r from-teal-600 to-teal-600 text-white px-8 py-4 rounded-xl hover:from-teal-700 hover:to-teal-700 transition-all duration-300 shadow-lg text-base font-semibold disabled:opacity-50"
+                    className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg text-base font-semibold disabled:opacity-50"
                   >
                     {cargandoMas ? (
                       <>
@@ -506,7 +506,7 @@ const NoticiasDelDia: React.FC = () => {
                 )}
                 <button
                   onClick={actualizarNoticias}
-                  className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium shadow-lg text-base bg-gradient-to-r from-teal-600 to-teal-600 hover:from-teal-700 hover:to-teal-700"
+                  className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium shadow-lg text-base bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
                 >
                   <RefreshCw className="h-4 w-4" />
                   <span>Actualizar</span>

@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply bg-teal-50/30 text-gray-900;
+    @apply bg-purple-50/30 text-gray-900;
     font-feature-settings: "kern" 1, "liga" 1;
     letter-spacing: -0.01em;
   }
@@ -49,10 +49,10 @@
 
   /* Premium Buttons */
   .btn-primary {
-    @apply bg-teal-600 text-white px-8 py-4 rounded-2xl;
+    @apply bg-purple-600 text-white px-8 py-4 rounded-2xl;
     @apply font-semibold text-lg tracking-tight;
-    @apply hover:bg-teal-700 transition-all duration-300;
-    @apply shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/30;
+    @apply hover:bg-purple-700 transition-all duration-300;
+    @apply shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30;
   }
 
   .btn-secondary {
@@ -78,12 +78,12 @@
   }
 
   /* Purple pastel sections */
-  .bg-teal-pastel {
-    @apply bg-gradient-to-br from-teal-100/60 via-teal-50/40 to-white;
+  .bg-purple-pastel {
+    @apply bg-gradient-to-br from-purple-100/60 via-purple-50/40 to-white;
   }
 
-  .bg-teal-soft {
-    @apply bg-teal-50/50;
+  .bg-purple-soft {
+    @apply bg-purple-50/50;
   }
 
   /* Premium section spacing */
@@ -108,7 +108,7 @@
 
   /* Percentage display */
   .percentage-large {
-    @apply text-2xl md:text-3xl font-bold text-teal-600 tracking-tighter;
+    @apply text-2xl md:text-3xl font-bold text-purple-600 tracking-tighter;
   }
 }
 
@@ -141,6 +141,6 @@
 
   /* Focus states */
   .focus-premium:focus {
-    @apply outline-none ring-2 ring-teal-500 ring-offset-2;
+    @apply outline-none ring-2 ring-purple-500 ring-offset-2;
   }
 }

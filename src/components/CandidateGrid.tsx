@@ -35,13 +35,13 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
         return (
           <article 
             key={candidate.Candidato}
-            className="group bg-white rounded-2xl border border-teal-100 shadow-sm hover:shadow-xl hover:shadow-teal-500/10 hover:border-teal-200 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+            className="group bg-white rounded-2xl border border-purple-100 shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-200 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
           >
             {/* Header with photo */}
             <div className="relative p-8 pb-0">
               {/* Ranking Badge */}
               <div className="absolute top-6 left-6 z-10">
-                <span className="bg-teal-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg">
+                <span className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg shadow-lg">
                   {index + 1}
                 </span>
               </div>
@@ -60,7 +60,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
             <div className="p-8 pt-6">
               {/* Name and Voting Intention */}
               <div className="text-center mb-6">
-                <h3 className="candidate-name text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">
+                <h3 className="candidate-name text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                   {candidate.Candidato}
                 </h3>
                 <div className="percentage-large mb-3">
@@ -109,7 +109,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               <div className="mb-6">
                 <div className="w-full bg-gray-100 rounded-full h-2">
                   <div
-                    className="bg-teal-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${Math.min(candidate.Intención_Voto_Porcentaje * 3.5, 100)}%` }}
                     role="progressbar"
                     aria-valuenow={candidate.Intención_Voto_Porcentaje}
@@ -128,7 +128,7 @@ const CandidateGrid: React.FC<CandidateGridProps> = ({ candidates }) => {
               {/* Action Button */}
               <Link
                 to={`/candidato/${slug}`}
-                className="w-full bg-gray-900 text-white py-4 px-6 rounded-xl hover:bg-teal-600 transition-all duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg font-semibold text-lg"
+                className="w-full bg-gray-900 text-white py-4 px-6 rounded-xl hover:bg-purple-600 transition-all duration-300 flex items-center justify-center space-x-2 group-hover:shadow-lg font-semibold text-lg"
                 aria-label={`Ver perfil completo de ${candidate.Candidato}`}
               >
                 <span>Ver Perfil</span>
