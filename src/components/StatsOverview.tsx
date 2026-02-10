@@ -38,14 +38,14 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
     },
     {
       title: "Muestra",
-      value: "3,000",
+      value: "7,298",
       subtitle: "Personas encuestadas",
       icon: BarChart3,
-      description: "Margen de error ±1.8%"
+      description: "Margen de error ±1.0%"
     },
     {
       title: "Período",
-      value: "Enero",
+      value: "Ene-Feb",
       subtitle: "2026",
       icon: Calendar,
       description: "Datos Atlas Intel"
@@ -119,7 +119,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               Empate Técnico Histórico
             </h4>
             <p className="text-gray-600">
-              De la Espriella y Cepeda separados por apenas 1.5 puntos,
+              De la Espriella y Cepeda separados por apenas 0.7 puntos,
               la competencia más reñida en décadas.
             </p>
           </div>
@@ -133,7 +133,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             </h4>
             <p className="text-gray-600">
               La derecha recupera terreno significativo mientras el centro
-              gana protagonismo con Fajardo al 9.4%.
+              gana protagonismo con Fajardo al 7.6%.
             </p>
           </div>
 

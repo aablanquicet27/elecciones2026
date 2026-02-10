@@ -31,10 +31,10 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
 
   // Comparison data 2022 vs 2026
   const comparisonData = [
-    { trend: 'Izquierda', 2022: 40.3, 2026: 20.0, change: -20.3 },
-    { trend: 'Centro', 2022: 28.2, 2026: 25.6, change: -2.6 },
-    { trend: 'Derecha', 2022: 28.5, 2026: 32.3, change: 3.8 },
-    { trend: 'Otros/Indecisos', 2022: 3.0, 2026: 22.1, change: 19.1 }
+    { trend: 'Derecha', 2022: 28.5, 2026: 40.0, change: 11.5 },
+    { trend: 'Izquierda', 2022: 40.3, 2026: 34.2, change: -6.1 },
+    { trend: 'Centro', 2022: 28.2, 2026: 20.2, change: -8.0 },
+    { trend: 'Otros/Indecisos', 2022: 3.0, 2026: 5.6, change: 2.6 }
   ];
 
   const maxPercentage = Math.max(...trendData.map(t => t.percentage));
@@ -130,13 +130,13 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Izquierda</h4>
               </div>
-              <div className="text-3xl font-bold text-red-600 mb-2">20.0%</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">34.2%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Con Gustavo Bolívar en tercer lugar (10.5%), la izquierda experimenta 
-                una fragmentación significativa tras el gobierno Petro.
+                Cepeda lidera con 31.4%, seguido por candidatos menores.
+                La izquierda se consolida en torno a Cepeda.
               </p>
               <div className="text-xs text-red-600 font-semibold">
-                Caída de -20.3 puntos vs 2022
+                Caída de -6.1 puntos vs 2022
               </div>
             </div>
 
@@ -147,13 +147,13 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Centro</h4>
               </div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">25.6%</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">20.2%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Sergio Fajardo emerge como líder del centro, posicionándose 
-                como alternativa moderada con mejor favorabilidad.
+                Fajardo se mantiene como líder del centro con 7.6%, pero el bloque
+                centrista pierde terreno frente a derecha e izquierda.
               </p>
               <div className="text-xs text-blue-600 font-semibold">
-                Estabilidad relativa (-2.6 puntos)
+                Reducción de -8.0 puntos
               </div>
             </div>
 
@@ -164,13 +164,13 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Derecha</h4>
               </div>
-              <div className="text-3xl font-bold text-green-600 mb-2">32.3%</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">40.0%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Fragmentada entre múltiples candidatos, con Vicky Dávila 
-                como figura emergente y fuerte presencia digital.
+                De la Espriella consolida el bloque de derecha con 32.1%, seguido
+                por Valencia (3.8%) y Uribe Londoño (2.1%).
               </p>
               <div className="text-xs text-green-600 font-semibold">
-                Crecimiento de +3.8 puntos
+                Crecimiento de +11.5 puntos
               </div>
             </div>
           </div>
@@ -237,10 +237,10 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3">Principales Cambios</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• La izquierda experimentó la mayor caída (-20.3 puntos)</li>
-                  <li>• Los indecisos aumentaron dramáticamente (+19.1 puntos)</li>
-                  <li>• La derecha registró crecimiento moderado (+3.8 puntos)</li>
-                  <li>• El centro mantuvo relativa estabilidad (-2.6 puntos)</li>
+                  <li>• La izquierda caída moderada (-6.1 puntos)</li>
+                  <li>• Los indecisos subieron ligeramente (+2.6 puntos)</li>
+                  <li>• La derecha registró el mayor crecimiento (+11.5 puntos)</li>
+                  <li>• El centro cayó significativamente (-8.0 puntos)</li>
                 </ul>
               </div>
               <div>

@@ -77,18 +77,18 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Calendar className="h-5 w-5 flex-shrink-0" />
-                <span className="text-lg">Enero 2026</span>
+                <span className="text-lg">Ene-Feb 2026</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <BarChart3 className="h-5 w-5 flex-shrink-0" />
-                <span className="text-lg">3,000 encuestados</span>
+                <span className="text-lg">7,298 encuestados</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="h-5 w-5 flex-shrink-0" />
                 <span className="text-lg">Cobertura Nacional</span>
               </div>
               <div className="mt-4 text-gray-400 text-lg">
-                Margen de error: ±1.8%
+                Margen de error: ±1.0%
               </div>
             </div>
           </div>

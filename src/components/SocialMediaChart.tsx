@@ -85,7 +85,7 @@ const SocialMediaChart: React.FC = () => {
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• <strong>Vicky Dávila:</strong> Líder absoluto con 3.6M seguidores totales</li>
               <li>• <strong>Claudia López:</strong> Segunda con 3.5M, fuerte en Facebook</li>
-              <li>• <strong>Gustavo Bolívar:</strong> 1.95M seguidores, equilibrado en plataformas</li>
+              <li>• <strong>Iván Cepeda:</strong> 1.65M seguidores, fuerte en Twitter</li>
               <li>• <strong>Sergio Fajardo:</strong> 1.91M seguidores, crecimiento sostenido</li>
             </ul>
           </div>

@@ -9,12 +9,12 @@ interface CandidatePageProps {
 }
 
 const biographies: { [key: string]: string } = {
-  "Gustavo Bolívar": "Gustavo Bolívar Moreno, nacido el 22 de julio de 1966 en Girardot, Cundinamarca, es un reconocido escritor, guionista y político colombiano. Antes de incursionar en la política, se destacó por su trabajo en la televisión, siendo autor de exitosas series. Su carrera política lo ha llevado a ser Senador de la República y, más recientemente, director del Departamento de Prosperidad Social. Bolívar es una figura prominente de la izquierda colombiana y miembro del Pacto Histórico, conocido por sus posturas críticas y su activismo social.",
+  "Iván Cepeda": "Iván Cepeda Castro, nacido el 28 de marzo de 1960 en Bogotá, es un político, historiador y defensor de derechos humanos colombiano. Es Senador de la República por el Pacto Histórico y ha sido una de las voces más influyentes de la izquierda colombiana. Reconocido por su trabajo en temas de paz, memoria histórica y derechos de las víctimas del conflicto armado. Es hijo del senador Manuel Cepeda Vargas, asesinado en 1994. Su candidatura presidencial para 2026 lo posiciona como el líder del Frente por la Vida, con 31.4% de intención de voto.",
   "Vicky Dávila": "Victoria Eugenia Dávila Hoyos, conocida como Vicky Dávila, nació el 30 de mayo de 1973 en Buga, Valle del Cauca. Es una destacada periodista, presentadora de radio y televisión colombiana con una larga trayectoria en los medios de comunicación. Fue directora de la Revista Semana, cargo desde el cual generó gran impacto y controversia. Recientemente, ha incursionado en la política como candidata por firmas, representando una postura de derecha. Su carrera ha estado marcada por su estilo directo y sus opiniones firmes.",
   "Sergio Fajardo": "Sergio Fajardo Valderrama, nacido el 19 de junio de 1956 en Medellín, es un matemático, académico y político colombiano. Reconocido por su enfoque en la educación y la innovación, ha ocupado importantes cargos como Alcalde de Medellín y Gobernador de Antioquia, donde impulsó proyectos de transformación urbana y social. Es una figura central en la política colombiana, representando al centro y siendo parte de la coalición Centro Esperanza. Su trayectoria se caracteriza por su discurso moderado y su énfasis en la gestión pública transparente.",
-  "Germán Vargas Lleras": "Germán Vargas Lleras, nacido el 19 de febrero de 1962 en Bogotá, es un abogado y político colombiano con una extensa trayectoria. Ha ocupado importantes cargos como Vicepresidente de Colombia, Ministro del Interior, Ministro de Vivienda y Senador de la República. Es una figura influyente del partido Cambio Radical y ha sido un actor clave en la política nacional durante varias décadas. Su carrera se ha caracterizado por su liderazgo en proyectos de infraestructura y su postura de derecha.",
+  "Abelardo de la Espriella": "Abelardo de la Espriella Ossío, nacido en Barranquilla, Atlántico, es un abogado penalista y político colombiano. Reconocido por su activa presencia mediática y su carrera legal, De la Espriella ha representado casos de alta complejidad y se ha convertido en una figura pública influyente. Lidera el Movimiento Defensores de la Patria y representa la derecha colombiana. En las encuestas de 2026, lidera la intención de voto con 32.1%, posicionándose como el principal candidato presidencial.",
   "Claudia López": "Claudia Nayibe López Hernández, nacida el 9 de marzo de 1970 en Bogotá, es una política y activista colombiana. Fue la primera mujer en ser elegida Alcaldesa Mayor de Bogotá, cargo que ocupó entre 2020 y 2023. Anteriormente, se desempeñó como Senadora de la República. López es una figura destacada del centro político, conocida por su lucha contra la corrupción y su activismo por los derechos de las mujeres y la comunidad LGBTQ+. Su gestión en la alcaldía se centró en temas de movilidad, seguridad y medio ambiente.",
-  "María Fernanda Cabal": "María Fernanda Cabal Molina, nacida el 8 de agosto de 1966 en Cali, es una politóloga, empresaria y política colombiana. Es una de las senadoras más representativas del Centro Democrático, partido de derecha. Conocida por sus posturas firmes y conservadoras, Cabal ha sido una voz activa en temas como la seguridad, la economía y la defensa de la propiedad privada. Su carrera política se ha caracterizado por su fuerte oposición a los gobiernos de izquierda y su defensa de los principios de su partido.",
+  "Paloma Valencia": "Paloma Valencia Laserna, nacida el 11 de diciembre de 1977 en Popayán, Cauca, es una politóloga y política colombiana. Es Senadora de la República por el Centro Democrático y una de las figuras más representativas de la derecha colombiana. Reconocida por sus posturas en temas de seguridad, economía de mercado y defensa de la propiedad privada. Ha sido una voz activa en el Senado y compite en la Gran Consulta por Colombia con 19.1% de intención de voto en la consulta interna.",
 
   "Juan Manuel Galán": "Juan Manuel Galán Pachón, nacido el 29 de julio de 1972 en Bogotá, es un político colombiano, hijo del asesinado líder liberal Luis Carlos Galán Sarmiento. Ha sido Senador de la República por varios periodos, destacándose por su trabajo en temas de salud, educación y lucha contra las drogas. Es una figura importante del Nuevo Liberalismo, partido que busca rescatar los ideales de su padre. Su trayectoria política ha estado marcada por su compromiso con la renovación de la política y la construcción de una sociedad más justa.",
   "Daniel Quintero": "Daniel Quintero Calle, nacido el 26 de julio de 1980 en Medellín, es un ingeniero electrónico, empresario de software y político colombiano. Se desempeñó como Alcalde de Medellín, cargo desde el cual impulsó proyectos de innovación y desarrollo tecnológico. Es una figura de izquierda, conocido por su gestión en la capital antioqueña y su activismo en redes sociales. Su carrera política ha estado marcada por su cercanía con el Pacto Histórico y su enfoque en la transformación digital y social de la ciudad.",
@@ -84,7 +84,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
             
             <div className="flex items-center space-x-4">
               <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                <span className="text-sm font-medium">Actualizado: Enero 2026</span>
+                <span className="text-sm font-medium">Actualizado: Ene-Feb 2026</span>
               </div>
               <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                 <span className="text-sm font-medium">Elecciones 2026</span>
@@ -426,118 +426,118 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-600">Caribe</span>
                     <span className="font-medium text-gray-900">
-                      {candidate.Candidato === 'Gustavo Bolívar' ? '25.9%' : 
-                       candidate.Candidato === 'Sergio Fajardo' ? '20.1%' : 
-                       candidate.Candidato === 'Vicky Dávila' ? '8.4%' : 
-                       candidate.Candidato === 'María Fernanda Cabal' ? '6.2%' : 
-                       candidate.Candidato === 'Germán Vargas Lleras' ? '7.5%' : '5.2%'}
+                      {candidate.Candidato === 'Iván Cepeda' ? '35.2%' :
+                       candidate.Candidato === 'Abelardo de la Espriella' ? '28.5%' :
+                       candidate.Candidato === 'Sergio Fajardo' ? '6.8%' :
+                       candidate.Candidato === 'Paloma Valencia' ? '3.5%' :
+                       candidate.Candidato === 'Vicky Dávila' ? '1.8%' : '5.2%'}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
-                    <div 
-                      className="bg-purple-600 h-1.5 rounded-full" 
-                      style={{ 
+                    <div
+                      className="bg-purple-600 h-1.5 rounded-full"
+                      style={{
                         width: `${
-                          candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
-                          candidate.Candidato === 'Sergio Fajardo' ? 78 : 
-                          candidate.Candidato === 'Vicky Dávila' ? 32 : 
-                          candidate.Candidato === 'María Fernanda Cabal' ? 24 : 
-                          candidate.Candidato === 'Germán Vargas Lleras' ? 29 : 20
-                        }%` 
+                          candidate.Candidato === 'Iván Cepeda' ? 100 :
+                          candidate.Candidato === 'Abelardo de la Espriella' ? 81 :
+                          candidate.Candidato === 'Sergio Fajardo' ? 19 :
+                          candidate.Candidato === 'Paloma Valencia' ? 10 :
+                          candidate.Candidato === 'Vicky Dávila' ? 5 : 15
+                        }%`
                       }}
                     ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-600">Andina</span>
+                    <span className="text-gray-600">Bogotá / Centro-Oriente</span>
                     <span className="font-medium text-gray-900">
-                      {candidate.Candidato === 'Gustavo Bolívar' ? '10.2%' : 
-                       candidate.Candidato === 'Sergio Fajardo' ? '12.8%' : 
-                       candidate.Candidato === 'Vicky Dávila' ? '12.5%' : 
-                       candidate.Candidato === 'María Fernanda Cabal' ? '8.4%' : 
-                       candidate.Candidato === 'Germán Vargas Lleras' ? '6.2%' : '5.8%'}
+                      {candidate.Candidato === 'Iván Cepeda' ? '28.6%' :
+                       candidate.Candidato === 'Abelardo de la Espriella' ? '34.8%' :
+                       candidate.Candidato === 'Sergio Fajardo' ? '9.2%' :
+                       candidate.Candidato === 'Paloma Valencia' ? '4.5%' :
+                       candidate.Candidato === 'Vicky Dávila' ? '2.1%' : '5.8%'}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
-                    <div 
-                      className="bg-purple-600 h-1.5 rounded-full" 
-                      style={{ 
+                    <div
+                      className="bg-purple-600 h-1.5 rounded-full"
+                      style={{
                         width: `${
-                          candidate.Candidato === 'Gustavo Bolívar' ? 80 : 
-                          candidate.Candidato === 'Sergio Fajardo' ? 100 : 
-                          candidate.Candidato === 'Vicky Dávila' ? 98 : 
-                          candidate.Candidato === 'María Fernanda Cabal' ? 66 : 
-                          candidate.Candidato === 'Germán Vargas Lleras' ? 48 : 45
-                        }%` 
+                          candidate.Candidato === 'Iván Cepeda' ? 82 :
+                          candidate.Candidato === 'Abelardo de la Espriella' ? 100 :
+                          candidate.Candidato === 'Sergio Fajardo' ? 26 :
+                          candidate.Candidato === 'Paloma Valencia' ? 13 :
+                          candidate.Candidato === 'Vicky Dávila' ? 6 : 17
+                        }%`
                       }}
                     ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-600">Pacífica</span>
                     <span className="font-medium text-gray-900">
-                      {candidate.Candidato === 'Gustavo Bolívar' ? '15.8%' : 
-                       candidate.Candidato === 'Sergio Fajardo' ? '14.3%' : 
-                       candidate.Candidato === 'Vicky Dávila' ? '9.6%' : 
-                       candidate.Candidato === 'María Fernanda Cabal' ? '4.1%' : 
-                       candidate.Candidato === 'Germán Vargas Lleras' ? '4.5%' : '4.0%'}
+                      {candidate.Candidato === 'Iván Cepeda' ? '33.8%' :
+                       candidate.Candidato === 'Abelardo de la Espriella' ? '27.4%' :
+                       candidate.Candidato === 'Sergio Fajardo' ? '7.1%' :
+                       candidate.Candidato === 'Paloma Valencia' ? '3.2%' :
+                       candidate.Candidato === 'Vicky Dávila' ? '1.6%' : '4.0%'}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
-                    <div 
-                      className="bg-purple-600 h-1.5 rounded-full" 
-                      style={{ 
+                    <div
+                      className="bg-purple-600 h-1.5 rounded-full"
+                      style={{
                         width: `${
-                          candidate.Candidato === 'Gustavo Bolívar' ? 100 : 
-                          candidate.Candidato === 'Sergio Fajardo' ? 90 : 
-                          candidate.Candidato === 'Vicky Dávila' ? 61 : 
-                          candidate.Candidato === 'María Fernanda Cabal' ? 26 : 
-                          candidate.Candidato === 'Germán Vargas Lleras' ? 28 : 25
-                        }%` 
+                          candidate.Candidato === 'Iván Cepeda' ? 100 :
+                          candidate.Candidato === 'Abelardo de la Espriella' ? 81 :
+                          candidate.Candidato === 'Sergio Fajardo' ? 21 :
+                          candidate.Candidato === 'Paloma Valencia' ? 9 :
+                          candidate.Candidato === 'Vicky Dávila' ? 5 : 12
+                        }%`
                       }}
                     ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-600">Orinoquía</span>
+                    <span className="text-gray-600">Eje Cafetero / Llanos</span>
                     <span className="font-medium text-gray-900">
-                      {candidate.Candidato === 'Gustavo Bolívar' ? '5.4%' : 
-                       candidate.Candidato === 'Sergio Fajardo' ? '8.2%' : 
-                       candidate.Candidato === 'Vicky Dávila' ? '15.7%' : 
-                       candidate.Candidato === 'María Fernanda Cabal' ? '12.3%' : 
-                       candidate.Candidato === 'Germán Vargas Lleras' ? '8.9%' : '5.0%'}
+                      {candidate.Candidato === 'Iván Cepeda' ? '26.4%' :
+                       candidate.Candidato === 'Abelardo de la Espriella' ? '36.2%' :
+                       candidate.Candidato === 'Sergio Fajardo' ? '8.5%' :
+                       candidate.Candidato === 'Paloma Valencia' ? '4.8%' :
+                       candidate.Candidato === 'Vicky Dávila' ? '2.4%' : '5.0%'}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1.5">
-                    <div 
-                      className="bg-purple-600 h-1.5 rounded-full" 
-                      style={{ 
+                    <div
+                      className="bg-purple-600 h-1.5 rounded-full"
+                      style={{
                         width: `${
-                          candidate.Candidato === 'Gustavo Bolívar' ? 34 : 
-                          candidate.Candidato === 'Sergio Fajardo' ? 52 : 
-                          candidate.Candidato === 'Vicky Dávila' ? 100 : 
-                          candidate.Candidato === 'María Fernanda Cabal' ? 78 : 
-                          candidate.Candidato === 'Germán Vargas Lleras' ? 57 : 32
-                        }%` 
+                          candidate.Candidato === 'Iván Cepeda' ? 73 :
+                          candidate.Candidato === 'Abelardo de la Espriella' ? 100 :
+                          candidate.Candidato === 'Sergio Fajardo' ? 23 :
+                          candidate.Candidato === 'Paloma Valencia' ? 13 :
+                          candidate.Candidato === 'Vicky Dávila' ? 7 : 14
+                        }%`
                       }}
                     ></div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="text-sm text-gray-500">
-                  {candidate.Candidato === 'Gustavo Bolívar' ? 'Mayor fortaleza en región Caribe y Pacífica' : 
-                   candidate.Candidato === 'Sergio Fajardo' ? 'Distribución equilibrada en todas las regiones' : 
-                   candidate.Candidato === 'Vicky Dávila' ? 'Dominio en Orinoquía y competitiva en región Andina' : 
-                   candidate.Candidato === 'María Fernanda Cabal' ? 'Fuerte en Orinoquía, débil en Pacífica' : 
-                   candidate.Candidato === 'Germán Vargas Lleras' ? 'Presencia moderada en todas las regiones' : 
+                  {candidate.Candidato === 'Iván Cepeda' ? 'Mayor fortaleza en Caribe y Pacífica' :
+                   candidate.Candidato === 'Abelardo de la Espriella' ? 'Domina en Bogotá, Centro-Oriente, Eje Cafetero, Llanos y Amazonía' :
+                   candidate.Candidato === 'Sergio Fajardo' ? 'Distribución equilibrada en todas las regiones' :
+                   candidate.Candidato === 'Paloma Valencia' ? 'Mejor desempeño en Bogotá y Centro-Oriente' :
+                   candidate.Candidato === 'Vicky Dávila' ? 'Presencia moderada en todas las regiones' :
                    'Distribución regional variable'}
                 </div>
               </div>
@@ -554,111 +554,111 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">Probabilidades</h3>
                 <div className="space-y-4">
-                  {candidate.Candidato === 'Gustavo Bolívar' ? (
+                  {candidate.Candidato === 'Iván Cepeda' ? (
                     <>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Vicky Dávila</span>
+                        <span className="text-gray-700">vs. De la Espriella</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">43.5%</span>
+                          <span className="text-purple-600 font-semibold">34.6%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">46.8%</span>
+                          <span className="text-gray-600 font-semibold">36.8%</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Sergio Fajardo</span>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">41.2%</span>
-                          <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">48.5%</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. María F. Cabal</span>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">42.3%</span>
-                          <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">44.7%</span>
-                        </div>
-                      </div>
-                    </>
-                  ) : candidate.Candidato === 'Vicky Dávila' ? (
-                    <>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Gustavo Bolívar</span>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">46.8%</span>
-                          <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">43.5%</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Sergio Fajardo</span>
+                        <span className="text-gray-700">vs. Paloma Valencia</span>
                         <div className="flex items-center space-x-2">
                           <span className="text-purple-600 font-semibold">35.2%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">38.6%</span>
+                          <span className="text-gray-600 font-semibold">26.9%</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Germán Vargas</span>
+                        <span className="text-gray-700">vs. Sergio Fajardo</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">37.4%</span>
+                          <span className="text-purple-600 font-semibold">33.7%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">32.6%</span>
+                          <span className="text-gray-600 font-semibold">26.2%</span>
+                        </div>
+                      </div>
+                    </>
+                  ) : candidate.Candidato === 'Abelardo de la Espriella' ? (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Iván Cepeda</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">36.8%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">34.6%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Sergio Fajardo</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">31.8%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">21.7%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-700">vs. Juan C. Pinzón</span>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-purple-600 font-semibold">35.5%</span>
+                          <span className="text-gray-400">|</span>
+                          <span className="text-gray-600 font-semibold">19.2%</span>
                         </div>
                       </div>
                     </>
                   ) : candidate.Candidato === 'Sergio Fajardo' ? (
                     <>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Gustavo Bolívar</span>
+                        <span className="text-gray-700">vs. Iván Cepeda</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">48.5%</span>
+                          <span className="text-purple-600 font-semibold">26.2%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">41.2%</span>
+                          <span className="text-gray-600 font-semibold">33.7%</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Vicky Dávila</span>
+                        <span className="text-gray-700">vs. De la Espriella</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">38.6%</span>
+                          <span className="text-purple-600 font-semibold">21.7%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">35.2%</span>
+                          <span className="text-gray-600 font-semibold">31.8%</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Germán Vargas</span>
+                        <span className="text-gray-700">vs. Paloma Valencia</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">45.2%</span>
+                          <span className="text-purple-600 font-semibold">28.5%</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">28.8%</span>
+                          <span className="text-gray-600 font-semibold">24.1%</span>
                         </div>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Líder 1</span>
+                        <span className="text-gray-700">vs. Espriella</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">38.5%</span>
+                          <span className="text-purple-600 font-semibold">—</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">42.3%</span>
+                          <span className="text-gray-600 font-semibold">—</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Líder 2</span>
+                        <span className="text-gray-700">vs. Cepeda</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">36.2%</span>
+                          <span className="text-purple-600 font-semibold">—</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">44.5%</span>
+                          <span className="text-gray-600 font-semibold">—</span>
                         </div>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-gray-700">vs. Líder 3</span>
+                        <span className="text-gray-700">vs. Fajardo</span>
                         <div className="flex items-center space-x-2">
-                          <span className="text-purple-600 font-semibold">37.8%</span>
+                          <span className="text-purple-600 font-semibold">—</span>
                           <span className="text-gray-400">|</span>
-                          <span className="text-gray-600 font-semibold">41.2%</span>
+                          <span className="text-gray-600 font-semibold">—</span>
                         </div>
                       </div>
                     </>
@@ -699,7 +699,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
             Panorama Electoral Colombia 2026: Análisis Estadístico Integral
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            Datos actualizados a Enero 2026 • Atlas Intel • Margen de error: ±1.8%
+            Datos actualizados a Ene-Feb 2026 • Atlas Intel • Margen de error: ±1.0%
           </p>
           <p className="text-xs text-purple-500 mt-2">
             Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>

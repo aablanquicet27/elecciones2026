@@ -19,15 +19,22 @@ const TimelineSection: React.FC = () => {
     },
     {
       date: 'Enero 2026',
-      title: 'Encuesta Atlas Intel',
-      description: 'Espriella 28.0% vs Cepeda 26.5% - Empate técnico',
+      title: 'Encuesta Atlas Intel (Ene 5-8)',
+      description: 'Espriella 28.0% vs Cepeda 26.5% - Primera vez Espriella al frente',
+      status: 'completed',
+      icon: CheckCircle
+    },
+    {
+      date: 'Febrero 2026',
+      title: 'Encuesta Atlas Intel (Ene 27 - Feb 4)',
+      description: 'Espriella 32.1% vs Cepeda 31.4% - Empate técnico se mantiene',
       status: 'current',
       icon: Clock
     },
     {
       date: 'Marzo 2026',
       title: 'Consultas Internas',
-      description: 'Gran Consulta por Colombia y Pacto Amplio',
+      description: 'Gran Consulta por Colombia y Frente por la Vida',
       status: 'upcoming',
       icon: AlertCircle
     },
@@ -129,10 +136,10 @@ const TimelineSection: React.FC = () => {
               Período Actual
             </div>
             <div className="text-purple-400 text-sm">
-              Enero 2026
+              Ene-Feb 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
-              Encuesta Atlas Intel - 3,000 personas
+              Encuesta Atlas Intel - 7,298 personas
             </div>
           </div>
 

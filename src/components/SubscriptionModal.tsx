@@ -9,46 +9,44 @@ interface SubscriptionModalProps {
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los 10 principales candidatos según encuesta noviembre 2025
+// Lista de los 10 principales candidatos según encuesta Ene-Feb 2026
 const mainCandidates = [
-  'Iván Cepeda',
   'Abelardo de la Espriella',
+  'Iván Cepeda',
   'Sergio Fajardo',
-  'Germán Vargas Lleras',
-  'Claudia López',
-  'Alejandro Gaviria',
   'Paloma Valencia',
-  'Juan Manuel Galán',
+  'Claudia López',
+  'Miguel Uribe Londoño',
   'Vicky Dávila',
+  'Juan Daniel Oviedo',
+  'Juan Carlos Pinzón',
   'Voto en Blanco'
 ];
 
 // Lista completa de candidatos adicionales
 const additionalCandidates = [
+  'Daniel Quintero',
   'Camilo Romero',
-  'Susana Muhamad',
-  'María Fernanda Cabal',
-  'Gustavo Bolívar',
-  'David Luna',
-  'Paola Holguín',
+  'Juan Manuel Galán',
+  'Enrique Peñalosa',
   'Aníbal Gaviria',
+  'Santiago Botero',
+  'David Luna',
+  'Roy Barreras',
+  'Mauricio Cárdenas',
+  'Paola Holguín',
   'Andrés Guerra Hoyos',
   'Juan Guillermo Zuluaga',
-  'Carlos Caicedo',
-  'Mauricio Cárdenas',
   'Maurice Armitage',
-  'Roy Barreras',
   'Juan Carlos Cárdenas',
   'Juan Carlos Saldarriaga',
   'Jaime Pumarejo',
-  'Luis Gilberto Murillo',
   'Mauricio Lizcano',
   'Héctor Olimpo',
   'Alfredo Saade',
-  'Daniel Quintero',
   'María José Pizarro',
   'Jota Pe Hernández',
-  'Juan Daniel Oviedo'
+  'Juan Fernando Cristo'
 ];
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, onSubscribe }) => {

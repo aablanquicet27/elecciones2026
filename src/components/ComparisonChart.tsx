@@ -64,10 +64,10 @@ const ComparisonChart: React.FC = () => {
           <div>
             <h4 className="font-semibold text-gray-800 mb-3">Principales Cambios</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• <strong>Izquierda:</strong> Caída de -10.6 puntos (40.3% → 29.7%)</li>
-                              <li>• <strong>Otros/Indecisos:</strong> Reducción de -11.3 puntos (21.0% → 9.7%)</li>
-                <li>• <strong>Derecha:</strong> Crecimiento significativo de +7.7 puntos (28.5% → 36.2%)</li>
-                <li>• <strong>Centro:</strong> Reducción de -3.8 puntos (28.2% → 24.4%)</li>
+              <li>• <strong>Derecha:</strong> Crecimiento de +11.5 puntos (28.5% → 40.0%)</li>
+              <li>• <strong>Izquierda:</strong> Caída de -6.1 puntos (40.3% → 34.2%)</li>
+              <li>• <strong>Centro:</strong> Caída de -8.0 puntos (28.2% → 20.2%)</li>
+              <li>• <strong>Otros/Indecisos:</strong> Aumento de +2.6 puntos (3.0% → 5.6%)</li>
             </ul>
           </div>
           <div>
@@ -84,9 +84,7 @@ const ComparisonChart: React.FC = () => {
         <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg">
           <h4 className="font-semibold text-red-900 mb-2">Recomposición del Mapa Político</h4>
           <p className="text-sm text-red-800">
-            La transformación más significativa es el colapso del bloque de izquierda (-17.3 puntos) 
-            y el aumento exponencial de indecisos (+18.0 puntos), evidenciando una crisis de 
-            representación política y alta volatilidad electoral que caracterizará las elecciones 2026.
+            La derecha experimentó el mayor crecimiento (+11.5 puntos) consolidándose como primera fuerza, mientras el centro sufrió la caída más pronunciada (-8.0 puntos), evidenciando una polarización creciente del electorado colombiano hacia 2026.
           </p>
         </div>
       </div>

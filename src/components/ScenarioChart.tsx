@@ -89,10 +89,10 @@ const ScenarioChart: React.FC = () => {
           <div>
             <h4 className="font-semibold text-gray-800 mb-3">Análisis de Competitividad</h4>
             <ul className="space-y-2">
-              <li>• <strong>Sergio Fajardo</strong> emerge como el más competitivo en segunda vuelta</li>
-              <li>• Su bajo rechazo (32%) lo posiciona favorablemente</li>
-              <li>• <strong>Vicky Dávila</strong> muestra fortaleza en escenarios directos</li>
-              <li>• Alta indecisión en todos los escenarios (9.7% - 30%)</li>
+              <li>• <strong>Cepeda</strong> es competitivo en segunda vuelta contra todos excepto De la Espriella</li>
+              <li>• Cepeda SOLO pierde contra De la Espriella (34.6% vs 36.8%)</li>
+              <li>• <strong>De la Espriella</strong> vence a Cepeda por 2.2 puntos y a Fajardo por 10.1 puntos</li>
+              <li>• Alta indecisión en todos los escenarios (28.6% - 46.5%)</li>
             </ul>
           </div>
           <div>
@@ -109,9 +109,7 @@ const ScenarioChart: React.FC = () => {
         <div className="mt-6 p-4 bg-blue-50 rounded-lg">
           <h4 className="font-semibold text-blue-900 mb-2">Conclusión Clave</h4>
           <p className="text-sm text-blue-800">
-            Los candidatos de centro con menor polarización (especialmente Fajardo) presentan 
-            mejores perspectivas en segunda vuelta debido a su capacidad de atraer votantes 
-            de diferentes espectros políticos y menor rechazo electoral.
+            De la Espriella es el candidato más fuerte en segunda vuelta, siendo el único que vence a Cepeda. Sin embargo, el alto porcentaje de indecisos (28-46%) deja espacio para cambios significativos.
           </p>
         </div>
       </div>

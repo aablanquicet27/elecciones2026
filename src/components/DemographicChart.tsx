@@ -3,50 +3,57 @@ import { getDemographicData } from '../utils/csvParser';
 
 const DemographicChart: React.FC = () => {
   const data = getDemographicData();
-  const candidates = ['Bolívar', 'Fajardo', 'Dávila', 'Cabal', 'Vargas'];
-  const colors = ['#ef4444', '#3b82f6', '#22c55e', '#f59e0b', '#8b5cf6'];
+
+  const cepedaGroups = data.filter(d => d.lider.includes('Cepeda'));
+  const espriellaGroups = data.filter(d => d.lider.includes('Espriella'));
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
       <h3 className="text-xl font-bold text-gray-900 mb-6">
         Análisis Demográfico por Edad
       </h3>
-      
-      <div className="space-y-6">
+
+      <div className="space-y-4">
         {data.map((ageGroup) => (
           <div key={ageGroup.ageGroup} className="group">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between mb-2">
               <span className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
                 {ageGroup.ageGroup}
               </span>
-              <div className="flex items-center space-x-3 text-sm">
-                {candidates.map((candidate, index) => (
-                  <span key={candidate} className="font-semibold" style={{ color: colors[index] }}>
-                    {candidate}: {ageGroup[candidate as keyof typeof ageGroup]}%
-                  </span>
-                ))}
+              <div className="flex items-center space-x-2">
+                <span
+                  className="inline-block w-3 h-3 rounded-full"
+                  style={{ backgroundColor: ageGroup.color }}
+                ></span>
+                <span className="font-semibold text-sm" style={{ color: ageGroup.color }}>
+                  {ageGroup.lider.split(' ').pop()}
+                </span>
               </div>
             </div>
-            
-            <div className="relative">
-              <div className="flex space-x-1">
-                {candidates.map((candidate, index) => (
-                  <div key={candidate} className="flex-1">
-                    <div className="w-full bg-gray-200 rounded h-4 overflow-hidden">
-                      <div
-                        className="h-full transition-all duration-1000 ease-out"
-                        style={{
-                          backgroundColor: colors[index],
-                          width: `${(ageGroup[candidate as keyof typeof ageGroup] / 20) * 100}%`
-                        }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
+            <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-1000 ease-out"
+                style={{
+                  backgroundColor: ageGroup.color,
+                  width: '100%'
+                }}
+              ></div>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Legend */}
+      <div className="mt-6 flex items-center justify-center space-x-6">
+        <div className="flex items-center space-x-2">
+          <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: '#ef4444' }}></span>
+          <span className="text-sm text-gray-700 font-medium">Cepeda ({cepedaGroups.length} grupos)</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: '#22c55e' }}></span>
+          <span className="text-sm text-gray-700 font-medium">Espriella ({espriellaGroups.length} grupos)</span>
+        </div>
       </div>
 
       <div className="mt-8 pt-6 border-t border-gray-200">
@@ -54,30 +61,30 @@ const DemographicChart: React.FC = () => {
           <div>
             <h4 className="font-semibold text-gray-800 mb-3">Hallazgos Clave por Edad</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• <strong>Jóvenes (18-24):</strong> Bolívar domina con 18.5%</li>
-              <li>• <strong>Adultos Mayores (55+):</strong> Dávila lidera con 14.2%</li>
-              <li>• <strong>Fajardo:</strong> Mantiene estabilidad en todos los grupos</li>
-              <li>• <strong>Polarización generacional:</strong> Diferencias marcadas entre edades</li>
+              <li>• <strong>Jóvenes (18-44):</strong> Cepeda lidera en los tres grupos etarios más jóvenes</li>
+              <li>• <strong>Adultos Mayores (45+):</strong> Espriella lidera entre votantes de 45 años en adelante</li>
+              <li>• <strong>Polarización generacional:</strong> Clara división entre jóvenes y mayores</li>
+              <li>• <strong>Franja decisiva (35-44):</strong> Grupo bisagra donde Cepeda aún mantiene ventaja</li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold text-gray-800 mb-3">Implicaciones Electorales</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• <strong>Movilización juvenil:</strong> Clave para candidatos de izquierda</li>
-              <li>• <strong>Voto adulto mayor:</strong> Más conservador y estable</li>
-              <li>• <strong>Segmento medio:</strong> Mayor competitividad entre candidatos</li>
-              <li>• <strong>Estrategias diferenciadas:</strong> Mensajes por grupo etario</li>
+              <li>• <strong>Movilización juvenil:</strong> Clave para Cepeda, su base está en menores de 44</li>
+              <li>• <strong>Voto adulto mayor:</strong> Espriella consolida entre votantes de 45+</li>
+              <li>• <strong>Participación:</strong> Mayores de 45 tienden a votar más, ventaja para Espriella</li>
+              <li>• <strong>Estrategias diferenciadas:</strong> Mensajes segmentados por grupo etario</li>
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
           <h4 className="font-semibold text-purple-900 mb-2">Análisis Generacional</h4>
           <p className="text-sm text-purple-800">
-            La polarización generacional es evidente: los jóvenes favorecen candidatos de izquierda 
-            (Bolívar 18.5%), mientras los adultos mayores prefieren opciones de centro-derecha 
-            (Dávila 14.2%, Vargas 8.2%). Esta división generacional será determinante en la 
-            estrategia de movilización electoral.
+            La polarización generacional es evidente: Cepeda lidera entre los votantes jóvenes (18-44),
+            mientras Espriella domina entre los adultos mayores (45+). Esta división generacional será
+            determinante en la estrategia de movilización electoral, donde la participación de los
+            jóvenes podría inclinar la balanza a favor de Cepeda.
           </p>
         </div>
       </div>

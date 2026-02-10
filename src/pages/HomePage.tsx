@@ -211,11 +211,11 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Carrera Electoral Reñida
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                Empate técnico entre los dos líderes con apenas 1.5 puntos de diferencia, 
+                Empate técnico entre los dos líderes con apenas 0.7 puntos de diferencia,
                 marcando una competencia histórica sin precedentes.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                De la Espriella 28.0% vs Cepeda 26.5%
+                De la Espriella 32.1% vs Cepeda 31.4%
               </div>
             </article>
 
@@ -227,11 +227,11 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Derecha Recupera Terreno
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                De la Espriella lidera con +9.8 puntos desde diciembre 2025. 
-                La derecha consolida 34% del electorado.
+                De la Espriella sube +4.1 puntos vs encuesta anterior.
+                La derecha consolida 40% del electorado.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Cambio: +9.8 puntos
+                Cambio: +4.1 puntos
               </div>
             </article>
 
@@ -243,11 +243,11 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Segunda Vuelta Definida
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                De la Espriella vence a Cepeda 44.2% vs 34.9% en balotaje. 
-                20.9% de voto en blanco e indecisos.
+                De la Espriella vence a Cepeda 36.8% vs 34.6% en balotaje.
+                28.6% de voto en blanco e indecisos.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Ventaja segunda vuelta: +9.3 puntos
+                Ventaja segunda vuelta: +2.2 puntos
               </div>
             </article>
           </div>
@@ -262,9 +262,9 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Users className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Favorabilidad Líder</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Rechazo Electoral</h4>
                 <p className="text-gray-600">
-                  De la Espriella lidera favorabilidad con +6.4 de balance, Pinzón +4.6 y Valencia +3.7
+                  Cepeda lidera rechazo con 43.9%, Espriella 33.6%. Ambos rechazados por 22.5%
                 </p>
               </div>
               <div className="text-center">
@@ -273,7 +273,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Dinámicas Regionales</h4>
                 <p className="text-gray-600">
-                  Caribe favorece Espriella (32.8%), Andina competida, Pacífica pro-Cepeda (28.2%)
+                  Espriella domina 5 de 7 regiones. Cepeda lidera en Caribe y Pacífica
                 </p>
               </div>
               <div className="text-center">
@@ -282,16 +282,16 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Consultas Internas</h4>
                 <p className="text-gray-600">
-                  Pacto Amplio: Cepeda 92.3%. Gran Consulta: Valencia 19.1%, Pinzón 13.1%
+                  Frente por la Vida: Cepeda 92.3%. Gran Consulta: Valencia 19.1%, Pinzón 13.1%
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Award className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Centro Fortalecido</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Centro Debilitado</h4>
                 <p className="text-gray-600">
-                  Fajardo sube a 9.4%, Pinzón 5.1%. El centro suma 24.7% del electorado
+                  Fajardo baja a 7.6%, López 3.7%. El centro suma apenas 20.2% del electorado
                 </p>
               </div>
             </div>

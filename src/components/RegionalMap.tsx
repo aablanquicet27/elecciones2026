@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, TrendingUp, Users, BarChart3 } from 'lucide-react';
+import { MapPin, TrendingUp, BarChart3 } from 'lucide-react';
 
 const RegionalMap: React.FC = () => {
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
@@ -7,73 +7,85 @@ const RegionalMap: React.FC = () => {
   const regionalData = [
     {
       region: 'Caribe',
-      leader: 'Gustavo Bolívar',
-      percentage: 25.9,
-      description: 'Fuerte liderazgo de la izquierda en la costa atlántica',
-      candidates: [
-        { name: 'Gustavo Bolívar', percentage: 25.9, color: '#ef4444' },
-        { name: 'Sergio Fajardo', percentage: 20.1, color: '#3b82f6' },
-        { name: 'Vicky Dávila', percentage: 12.3, color: '#22c55e' },
-        { name: 'María F. Cabal', percentage: 8.1, color: '#f59e0b' }
-      ],
+      lider: 'Cepeda',
+      color: '#ef4444',
+      description: 'Cepeda mantiene liderazgo en la costa atlántica',
       insights: [
-        'Mayor concentración de voto de izquierda',
         'Tradición política progresista',
-        'Influencia de líderes locales'
-      ]
-    },
-    {
-      region: 'Andina',
-      leader: 'Sergio Fajardo',
-      percentage: 12.8,
-      description: 'Región más competitiva con distribución equilibrada',
-      candidates: [
-        { name: 'Sergio Fajardo', percentage: 12.8, color: '#3b82f6' },
-        { name: 'Vicky Dávila', percentage: 12.5, color: '#22c55e' },
-        { name: 'Gustavo Bolívar', percentage: 10.2, color: '#ef4444' },
-        { name: 'María F. Cabal', percentage: 9.3, color: '#f59e0b' }
-      ],
-      insights: [
-        'Mayor competitividad electoral',
-        'Voto más fragmentado',
-        'Influencia urbana significativa'
-      ]
-    },
-    {
-      region: 'Orinoquía',
-      leader: 'Vicky Dávila',
-      percentage: 15.7,
-      description: 'Preferencia por candidatos de derecha',
-      candidates: [
-        { name: 'Vicky Dávila', percentage: 15.7, color: '#22c55e' },
-        { name: 'María F. Cabal', percentage: 12.3, color: '#f59e0b' },
-        { name: 'Gustavo Bolívar', percentage: 8.5, color: '#ef4444' },
-        { name: 'Sergio Fajardo', percentage: 7.2, color: '#3b82f6' }
-      ],
-      insights: [
-        'Inclinación hacia la derecha',
-        'Influencia del sector agropecuario',
-        'Menor presencia de izquierda'
+        'Influencia de líderes locales de izquierda',
+        'Fuerte apoyo entre sectores populares'
       ]
     },
     {
       region: 'Pacífica',
-      leader: 'Gustavo Bolívar',
-      percentage: 15.8,
-      description: 'Competencia entre izquierda y centro',
-      candidates: [
-        { name: 'Gustavo Bolívar', percentage: 15.8, color: '#ef4444' },
-        { name: 'Sergio Fajardo', percentage: 14.3, color: '#3b82f6' },
-        { name: 'Vicky Dávila', percentage: 11.8, color: '#22c55e' },
-        { name: 'María F. Cabal', percentage: 9.5, color: '#f59e0b' }
-      ],
+      lider: 'Cepeda',
+      color: '#ef4444',
+      description: 'Cepeda lidera con apoyo de movimientos sociales',
       insights: [
-        'Competencia izquierda-centro',
-        'Influencia de temas sociales',
-        'Voto étnico significativo'
+        'Influencia de temas sociales y étnicos',
+        'Voto étnico significativo',
+        'Apoyo a propuestas de izquierda'
+      ]
+    },
+    {
+      region: 'Bogotá',
+      lider: 'Espriella',
+      color: '#22c55e',
+      description: 'Espriella domina la capital del país',
+      insights: [
+        'Influencia del electorado urbano',
+        'Mayor acceso a información política',
+        'Clase media inclinada hacia la derecha'
+      ]
+    },
+    {
+      region: 'Centro-Oriente',
+      lider: 'Espriella',
+      color: '#22c55e',
+      description: 'Espriella lidera en la región centro-oriental',
+      insights: [
+        'Influencia del sector empresarial',
+        'Tradición conservadora',
+        'Voto urbano-rural equilibrado'
+      ]
+    },
+    {
+      region: 'Eje Cafetero',
+      lider: 'Espriella',
+      color: '#22c55e',
+      description: 'Espriella consolida apoyo en el eje cafetero',
+      insights: [
+        'Región tradicionalmente conservadora',
+        'Influencia del sector agroindustrial',
+        'Preferencia por candidatos de derecha'
+      ]
+    },
+    {
+      region: 'Llanos',
+      lider: 'Espriella',
+      color: '#22c55e',
+      description: 'Espriella lidera en la región llanera',
+      insights: [
+        'Influencia del sector agropecuario',
+        'Inclinación hacia la derecha',
+        'Menor presencia de izquierda'
+      ]
+    },
+    {
+      region: 'Amazonía',
+      lider: 'Espriella',
+      color: '#22c55e',
+      description: 'Espriella obtiene ventaja en la Amazonía',
+      insights: [
+        'Dinámicas electorales particulares',
+        'Conectividad limitada influye en el voto',
+        'Preferencia por propuestas de orden'
       ]
     }
   ];
+
+  const cepedaCount = regionalData.filter(r => r.lider === 'Cepeda').length;
+  const espriellaCount = regionalData.filter(r => r.lider === 'Espriella').length;
 
   return (
     <div className="container mx-auto px-6">
@@ -82,22 +94,22 @@ const RegionalMap: React.FC = () => {
           Comportamiento Electoral Regional
         </h2>
         <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-          Análisis del voto por regiones y dinámicas territoriales específicas
+          Análisis del liderazgo por regiones: Espriella domina {espriellaCount} de {regionalData.length} regiones
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Regional Cards */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {regionalData.map((region) => (
             <div
               key={region.region}
-              className={`bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 cursor-pointer transition-all duration-300 transform hover:scale-105 ${
+              className={`bg-white/10 backdrop-blur-lg rounded-2xl p-5 border border-white/20 cursor-pointer transition-all duration-300 transform hover:scale-105 ${
                 selectedRegion === region.region ? 'ring-2 ring-purple-400 bg-white/20' : ''
               }`}
               onClick={() => setSelectedRegion(selectedRegion === region.region ? null : region.region)}
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   <div className="bg-white/20 p-2 rounded-full">
                     <MapPin className="h-5 w-5 text-white" />
@@ -106,41 +118,35 @@ const RegionalMap: React.FC = () => {
                     {region.region}
                   </h3>
                 </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-white">
-                    {region.percentage}%
-                  </div>
-                  <div className="text-sm text-purple-200">
-                    {region.leader}
-                  </div>
+                <div className="flex items-center space-x-2">
+                  <span
+                    className="inline-block w-3 h-3 rounded-full"
+                    style={{ backgroundColor: region.color }}
+                  ></span>
+                  <span className="text-lg font-semibold text-white">
+                    {region.lider}
+                  </span>
                 </div>
               </div>
 
-              <p className="text-purple-100 mb-4">
+              <p className="text-purple-100 mb-3 text-sm">
                 {region.description}
               </p>
 
-              {/* Candidates Bar */}
-              <div className="space-y-2">
-                {region.candidates.map((candidate) => (
-                  <div key={candidate.name} className="flex items-center space-x-3">
-                    <div className="w-24 text-xs text-white">
-                      {candidate.name.split(' ')[0]} {candidate.name.split(' ')[1]?.[0]}.
-                    </div>
-                    <div className="flex-1 bg-white/20 rounded-full h-2">
-                      <div
-                        className="h-2 rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${(candidate.percentage / 30) * 100}%`,
-                          backgroundColor: candidate.color
-                        }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-white font-semibold w-12 text-right">
-                      {candidate.percentage}%
-                    </div>
-                  </div>
-                ))}
+              {/* Leader Color Bar */}
+              <div className="flex items-center space-x-3">
+                <div className="flex-1 bg-white/20 rounded-full h-3">
+                  <div
+                    className="h-3 rounded-full transition-all duration-1000"
+                    style={{
+                      width: '100%',
+                      backgroundColor: region.color
+                    }}
+                  ></div>
+                </div>
+                <span className="text-xs font-semibold text-white whitespace-nowrap">
+                  Líder: {region.lider}
+                </span>
               </div>
             </div>
           ))}
@@ -153,11 +159,11 @@ const RegionalMap: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-6">
                 Análisis Detallado: {selectedRegion}
               </h3>
-              
+
               {(() => {
                 const region = regionalData.find(r => r.region === selectedRegion);
                 if (!region) return null;
-                
+
                 return (
                   <div className="space-y-6">
                     {/* Leader Info */}
@@ -168,11 +174,17 @@ const RegionalMap: React.FC = () => {
                         </div>
                         <span className="text-white font-semibold">Líder Regional</span>
                       </div>
-                      <div className="text-xl font-bold text-white mb-1">
-                        {region.leader}
+                      <div className="flex items-center space-x-2">
+                        <span
+                          className="inline-block w-4 h-4 rounded-full"
+                          style={{ backgroundColor: region.color }}
+                        ></span>
+                        <span className="text-xl font-bold text-white">
+                          {region.lider}
+                        </span>
                       </div>
-                      <div className="text-purple-200">
-                        {region.percentage}% de intención de voto
+                      <div className="text-purple-200 mt-1">
+                        {region.description}
                       </div>
                     </div>
 
@@ -197,13 +209,12 @@ const RegionalMap: React.FC = () => {
                         <div className="bg-purple-500 p-2 rounded-full">
                           <BarChart3 className="h-4 w-4 text-white" />
                         </div>
-                        <span className="text-white font-semibold">Nivel de Competencia</span>
+                        <span className="text-white font-semibold">Contexto Regional</span>
                       </div>
                       <div className="text-purple-200">
-                        {region.region === 'Andina' ? 'Muy Alta - Distribución equilibrada' :
-                         region.region === 'Caribe' ? 'Baja - Liderazgo claro' :
-                         region.region === 'Orinoquía' ? 'Media - Preferencia definida' :
-                         'Media-Alta - Competencia bipolar'}
+                        {region.lider === 'Cepeda'
+                          ? 'Región con inclinación hacia la izquierda - Cepeda consolida apoyo'
+                          : 'Región con inclinación hacia la derecha - Espriella consolida apoyo'}
                       </div>
                     </div>
                   </div>
@@ -216,21 +227,29 @@ const RegionalMap: React.FC = () => {
                 <MapPin className="h-12 w-12 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
-                Selecciona una Región
+                Espriella domina {espriellaCount} de {regionalData.length} regiones
               </h3>
               <p className="text-purple-100 mb-6">
-                Haz clic en cualquier región para ver el análisis detallado 
+                Haz clic en cualquier región para ver el análisis detallado
                 del comportamiento electoral y factores determinantes.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="bg-white/10 rounded-lg p-3">
-                  <div className="text-white font-semibold">Más Competitiva</div>
-                  <div className="text-purple-200">Región Andina</div>
+                  <div className="flex items-center justify-center space-x-2 mb-1">
+                    <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: '#22c55e' }}></span>
+                    <span className="text-white font-semibold">Espriella</span>
+                  </div>
+                  <div className="text-purple-200">{espriellaCount} regiones</div>
+                  <div className="text-purple-300 text-xs mt-1">Bogotá, Centro-Oriente, Eje Cafetero, Llanos, Amazonía</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-3">
-                  <div className="text-white font-semibold">Liderazgo Claro</div>
-                  <div className="text-purple-200">Región Caribe</div>
+                  <div className="flex items-center justify-center space-x-2 mb-1">
+                    <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: '#ef4444' }}></span>
+                    <span className="text-white font-semibold">Cepeda</span>
+                  </div>
+                  <div className="text-purple-200">{cepedaCount} regiones</div>
+                  <div className="text-purple-300 text-xs mt-1">Caribe, Pacífica</div>
                 </div>
               </div>
             </div>
