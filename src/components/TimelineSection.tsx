@@ -28,6 +28,13 @@ const TimelineSection: React.FC = () => {
       date: 'Febrero 2026',
       title: 'Encuesta Atlas Intel (Ene 27 - Feb 4)',
       description: 'Espriella 32.1% vs Cepeda 31.4% - Empate técnico se mantiene',
+      status: 'completed',
+      icon: CheckCircle
+    },
+    {
+      date: 'Finales Feb 2026',
+      title: 'Encuesta Invamer (Feb 11-22)',
+      description: 'Cepeda 37.1% vs Espriella 18.9% - Cepeda se despega con amplia ventaja',
       status: 'current',
       icon: Clock
     },
@@ -136,10 +143,10 @@ const TimelineSection: React.FC = () => {
               Período Actual
             </div>
             <div className="text-purple-400 text-sm">
-              Ene-Feb 2026
+              Feb 2026
             </div>
             <div className="text-gray-300 text-xs mt-1">
-              Encuesta Atlas Intel - 7,298 personas
+              Invamer - 3,800 personas
             </div>
           </div>
 

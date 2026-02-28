@@ -9,7 +9,7 @@ interface SubscriptionModalProps {
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los 10 principales candidatos según encuesta Ene-Feb 2026
+// Lista de los 10 principales candidatos según encuesta Invamer Feb 2026
 const mainCandidates = [
   'Abelardo de la Espriella',
   'Iván Cepeda',

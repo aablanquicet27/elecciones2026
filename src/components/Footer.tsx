@@ -77,11 +77,11 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Calendar className="h-5 w-5 flex-shrink-0" />
-                <span className="text-lg">Ene-Feb 2026</span>
+                <span className="text-lg">Feb 2026</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <BarChart3 className="h-5 w-5 flex-shrink-0" />
-                <span className="text-lg">7,298 encuestados</span>
+                <span className="text-lg">3,800 encuestados</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="h-5 w-5 flex-shrink-0" />
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                 <strong className="text-gray-400">Panorama Político Electoral Colombia 2026</strong> · Análisis Estadístico Integral
               </p>
               <p className="mt-2 text-sm">
-                Datos de Atlas Intel · Metodología rigurosa · Actualización continua
+                Datos de Invamer · Metodología rigurosa · Actualización continua
               </p>
             </div>
             

@@ -31,10 +31,10 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
 
   // Comparison data 2022 vs 2026
   const comparisonData = [
-    { trend: 'Derecha', 2022: 28.5, 2026: 40.0, change: 11.5 },
-    { trend: 'Izquierda', 2022: 40.3, 2026: 34.2, change: -6.1 },
-    { trend: 'Centro', 2022: 28.2, 2026: 20.2, change: -8.0 },
-    { trend: 'Otros/Indecisos', 2022: 3.0, 2026: 5.6, change: 2.6 }
+    { trend: 'Derecha', 2022: 28.5, 2026: 32.9, change: 4.4 },
+    { trend: 'Izquierda', 2022: 40.3, 2026: 41.7, change: 1.4 },
+    { trend: 'Centro', 2022: 28.2, 2026: 18.3, change: -9.9 },
+    { trend: 'Otros/Indecisos', 2022: 3.0, 2026: 7.1, change: 4.1 }
   ];
 
   const maxPercentage = Math.max(...trendData.map(t => t.percentage));
@@ -126,34 +126,34 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
             <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 border border-red-200">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="bg-red-600 p-2 rounded-full">
-                  <TrendingDown className="h-5 w-5 text-white" />
+                  <TrendingUp className="h-5 w-5 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Izquierda</h4>
               </div>
-              <div className="text-3xl font-bold text-red-600 mb-2">34.2%</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">41.7%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Cepeda lidera con 31.4%, seguido por candidatos menores.
+                Cepeda lidera de manera contundente con 37.1%, tomando una amplia ventaja.
                 La izquierda se consolida en torno a Cepeda.
               </p>
               <div className="text-xs text-red-600 font-semibold">
-                Caída de -6.1 puntos vs 2022
+                Crecimiento de +1.4 puntos vs 2022
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="bg-blue-600 p-2 rounded-full">
-                  <BarChart3 className="h-5 w-5 text-white" />
+                  <TrendingDown className="h-5 w-5 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Centro</h4>
               </div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">20.2%</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">18.3%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Fajardo se mantiene como líder del centro con 7.6%, pero el bloque
-                centrista pierde terreno frente a derecha e izquierda.
+                Claudia López lidera el centro con 11.7% seguida por Fajardo (6.6%), pero el bloque
+                centrista sigue perdiendo terreno frente a la izquierda.
               </p>
               <div className="text-xs text-blue-600 font-semibold">
-                Reducción de -8.0 puntos
+                Reducción de -9.9 puntos
               </div>
             </div>
 
@@ -164,13 +164,13 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Derecha</h4>
               </div>
-              <div className="text-3xl font-bold text-green-600 mb-2">40.0%</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">32.9%</div>
               <p className="text-sm text-gray-700 mb-3">
-                De la Espriella consolida el bloque de derecha con 32.1%, seguido
-                por Valencia (3.8%) y Uribe Londoño (2.1%).
+                De la Espriella lidera el bloque de derecha con 18.9%, seguido
+                por Valencia (10.0%) y Uribe Londoño (1.8%).
               </p>
               <div className="text-xs text-green-600 font-semibold">
-                Crecimiento de +11.5 puntos
+                Crecimiento de +4.4 puntos
               </div>
             </div>
           </div>
@@ -237,10 +237,10 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3">Principales Cambios</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• La izquierda caída moderada (-6.1 puntos)</li>
-                  <li>• Los indecisos subieron ligeramente (+2.6 puntos)</li>
-                  <li>• La derecha registró el mayor crecimiento (+11.5 puntos)</li>
-                  <li>• El centro cayó significativamente (-8.0 puntos)</li>
+                  <li>• La izquierda lidera consolidando ligera alza (+1.4 puntos)</li>
+                  <li>• Los indecisos subieron ligeramente (+4.1 puntos)</li>
+                  <li>• La derecha mantiene un crecimiento estable (+4.4 puntos)</li>
+                  <li>• El centro cayó significativamente (-9.9 puntos)</li>
                 </ul>
               </div>
               <div>

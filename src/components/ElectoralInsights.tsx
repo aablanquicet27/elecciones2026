@@ -163,10 +163,10 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <TrendingDown className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Fragmentación Histórica</h4>
+            <h4 className="text-lg font-bold mb-2">Liderazgo Consolidado</h4>
             <p className="text-purple-100 text-sm">
-              Ningún candidato supera el 15%, evidenciando la mayor fragmentación 
-              electoral en la historia reciente de Colombia.
+              Cepeda lidera con 37.1%, rompiendo la fragmentación de meses previos 
+              y tomando una ventaja significativa sobre el resto de candidatos.
             </p>
           </div>
 
@@ -176,8 +176,8 @@ const ElectoralInsights: React.FC = () => {
             </div>
             <h4 className="text-lg font-bold mb-2">Reconfiguración Política</h4>
             <p className="text-purple-100 text-sm">
-              Colapso de la izquierda (-17.3 puntos) y aumento exponencial 
-              de indecisos (+18.0 puntos) redefinen el mapa electoral.
+              La izquierda consolida su fuerza liderando la intención de voto, 
+              mientras la derecha se reagrupa alrededor de De la Espriella.
             </p>
           </div>
 
@@ -185,10 +185,10 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <AlertTriangle className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Alta Incertidumbre</h4>
+            <h4 className="text-lg font-bold mb-2">Decisiones Estratégicas</h4>
             <p className="text-purple-100 text-sm">
-              El 21% de indecisos convierte las campañas electorales en 
-              factor determinante del resultado final.
+              El voto en blanco y los indecisos serán factores determinantes 
+              para consolidar alianzas y definir el pase a segunda vuelta.
             </p>
           </div>
         </div>

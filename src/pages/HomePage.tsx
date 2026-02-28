@@ -214,14 +214,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <TrendingUp className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Carrera Electoral Reñida
+                Liderazgo Claro
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                Empate técnico entre los dos líderes con apenas 0.7 puntos de diferencia,
-                marcando una competencia histórica sin precedentes.
+                Cepeda se consolida en el primer lugar con una ventaja significativa,
+                dejando atrás el empate técnico de encuestas anteriores.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                De la Espriella 32.1% vs Cepeda 31.4%
+                Cepeda 37.1% vs Espriella 18.9%
               </div>
             </article>
 
@@ -230,14 +230,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Users className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Derecha Recupera Terreno
+                Centro y Derecha Reagrupándose
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                De la Espriella sube +4.1 puntos vs encuesta anterior.
-                La derecha consolida 40% del electorado.
+                De la Espriella se mantiene segundo con 18.9%, mientras Claudia López
+                (11.7%) y Paloma Valencia (10.0%) toman fuerza.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Cambio: +4.1 puntos
+                López sube al 3er lugar
               </div>
             </article>
 
@@ -246,14 +246,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Target className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Segunda Vuelta Definida
+                Proyección Segunda Vuelta
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                De la Espriella vence a Cepeda 36.8% vs 34.6% en balotaje.
-                28.6% de voto en blanco e indecisos.
+                En un eventual balotaje, Cepeda vencería a De la Espriella 59.4% vs 37.4%,
+                marcando una tendencia clara para la izquierda.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Ventaja segunda vuelta: +2.2 puntos
+                Ventaja segunda vuelta: +22.0 puntos
               </div>
             </article>
           </div>
@@ -295,9 +295,9 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Award className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Centro Debilitado</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Reconfiguración del Centro</h4>
                 <p className="text-gray-600">
-                  Fajardo baja a 7.6%, López 3.7%. El centro suma apenas 20.2% del electorado
+                  Claudia López sube al 11.7%, mientras Fajardo cae al 6.6%. El centro busca consolidar un liderazgo.
                 </p>
               </div>
             </div>
