@@ -19,46 +19,52 @@ import Footer from '../components/Footer';
 
 const getRiskColor = (level: PartyData['riskLevel']) => {
   switch (level) {
-    case 'limpio': return 'bg-green-100 text-green-800 border-green-200';
-    case 'cuestionable': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-    case 'alto_riesgo': return 'bg-red-100 text-red-800 border-red-200';
+    case 'low': return 'bg-green-100 text-green-800 border-green-200';
+    case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+    case 'high': return 'bg-red-100 text-red-800 border-red-200';
   }
 };
 
 const getRiskLabel = (level: PartyData['riskLevel']) => {
   switch (level) {
-    case 'limpio': return 'Limpio';
-    case 'cuestionable': return 'Cuestionable';
-    case 'alto_riesgo': return 'Alto Riesgo';
+    case 'low': return 'Bajo Riesgo';
+    case 'medium': return 'Medio Riesgo';
+    case 'high': return 'Alto Riesgo';
   }
 };
 
 const getRiskIcon = (level: PartyData['riskLevel']) => {
   switch (level) {
-    case 'limpio': return <CheckCircle2 className="w-5 h-5 text-green-600" />;
-    case 'cuestionable': return <AlertTriangle className="w-5 h-5 text-yellow-600" />;
-    case 'alto_riesgo': return <ShieldAlert className="w-5 h-5 text-red-600" />;
+    case 'low': return <CheckCircle2 className="w-5 h-5 text-green-600" />;
+    case 'medium': return <AlertTriangle className="w-5 h-5 text-yellow-600" />;
+    case 'high': return <ShieldAlert className="w-5 h-5 text-red-600" />;
   }
 };
 
 const PartyCard = ({ party }: { party: PartyData }) => {
   const [expanded, setExpanded] = useState(false);
-  const hasCuestionados = party.cuestionados.length > 0;
+  const hasCuestionados = party.questionedCandidates && party.questionedCandidates.length > 0;
 
   return (
-    <div className="card-premium overflow-hidden flex flex-col h-full">
-      <div className="p-6 md:p-8 flex-1">
+    <div className="card-premium overflow-hidden flex flex-col h-full relative">
+      <div className="p-6 md:p-8 flex-1 pt-12">
+        <div className="absolute top-0 right-0 bg-purple-600 text-white font-black text-2xl w-16 h-16 flex items-center justify-center rounded-bl-3xl shadow-md">
+          #{party.number}
+        </div>
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-bold text-gray-900 leading-tight">{party.name}</h3>
-          <span className={`px-4 py-1.5 rounded-full text-sm font-bold border flex items-center gap-2 ${getRiskColor(party.riskLevel)}`}>
+          <h3 className="text-2xl font-bold text-gray-900 leading-tight pr-10">{party.name}</h3>
+        </div>
+        
+        <div className="mb-4">
+          <span className={`px-4 py-1.5 rounded-full text-sm font-bold border inline-flex items-center gap-2 ${getRiskColor(party.riskLevel)}`}>
             {getRiskIcon(party.riskLevel)}
             {getRiskLabel(party.riskLevel)}
           </span>
         </div>
-        
-        {party.coalitionMembers && (
+
+        {party.coalition && party.coalition.length > 0 && (
           <p className="text-sm text-gray-500 mb-4 font-medium">
-            <span className="text-gray-700">Coalición:</span> {party.coalitionMembers}
+            <span className="text-gray-700">Coalición:</span> {party.coalition.join(' + ')}
           </p>
         )}
 
@@ -82,18 +88,21 @@ const PartyCard = ({ party }: { party: PartyData }) => {
           >
             <span className="font-semibold text-gray-900 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-red-500" />
-              Ver candidatos cuestionados ({party.cuestionados.length})
+              Ver candidatos cuestionados ({party.questionedCandidates.length})
             </span>
             {expanded ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
           </button>
           
           {expanded && (
             <div className="px-6 pb-6 pt-2 bg-red-50/30">
-              <ul className="space-y-3">
-                {party.cuestionados.map((c, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                    <span className="mt-0.5 text-red-500 font-bold">•</span>
-                    <span className="leading-relaxed">{c}</span>
+              <ul className="space-y-4">
+                {party.questionedCandidates.map((c, i) => (
+                  <li key={i} className="flex flex-col gap-1 text-sm text-gray-700">
+                    <span className="font-bold text-gray-900 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                      {c.name}
+                    </span>
+                    <span className="pl-3.5 text-gray-600 leading-relaxed">{c.allegation}</span>
                   </li>
                 ))}
               </ul>
@@ -106,6 +115,13 @@ const PartyCard = ({ party }: { party: PartyData }) => {
 };
 
 const SenadoPage = () => {
+  const [riskFilter, setRiskFilter] = useState<'all' | 'high' | 'medium' | 'low'>('all');
+
+  const filteredParties = senadoParties.filter(party => {
+    if (riskFilter === 'all') return true;
+    return party.riskLevel === riskFilter;
+  });
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Premium Navigation */}
@@ -150,27 +166,37 @@ const SenadoPage = () => {
 
       {/* Stats Bar */}
       <section className="bg-white border-b border-gray-100 relative z-20 -mt-10 mx-6 md:mx-12 rounded-3xl shadow-xl shadow-purple-900/5">
-        <div className="container mx-auto px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
-            <div className="text-center px-4">
+        <div className="container mx-auto px-4 md:px-8 py-8 md:py-10">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-y-8 gap-x-4">
+            <div className="text-center px-2">
               <div className="flex justify-center mb-3 text-purple-600"><Landmark className="h-8 w-8" /></div>
-              <div className="text-4xl font-black text-gray-900 mb-1">{senadoStats.curules}</div>
-              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Senadores</div>
+              <div className="text-3xl md:text-4xl font-black text-gray-900 mb-1">{senadoStats.curules}</div>
+              <div className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wide">Senadores</div>
             </div>
-            <div className="text-center px-4">
+            <div className="text-center px-2">
               <div className="flex justify-center mb-3 text-purple-600"><Users className="h-8 w-8" /></div>
-              <div className="text-4xl font-black text-gray-900 mb-1">{senadoStats.partidos}</div>
-              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Partidos</div>
+              <div className="text-3xl md:text-4xl font-black text-gray-900 mb-1">{senadoStats.partidos}</div>
+              <div className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wide">Partidos</div>
             </div>
-            <div className="text-center px-4">
+            <div className="text-center px-2">
               <div className="flex justify-center mb-3 text-purple-600"><FileText className="h-8 w-8" /></div>
-              <div className="text-4xl font-black text-gray-900 mb-1">{senadoStats.aspirantes.toLocaleString()}</div>
-              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Aspirantes</div>
+              <div className="text-3xl md:text-4xl font-black text-gray-900 mb-1">{senadoStats.aspirantes.toLocaleString()}</div>
+              <div className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wide">Aspirantes</div>
             </div>
-            <div className="text-center px-4">
+            <div className="text-center px-2">
               <div className="flex justify-center mb-3 text-red-500"><AlertTriangle className="h-8 w-8" /></div>
-              <div className="text-4xl font-black text-red-600 mb-1">{senadoStats.cuestionados}</div>
-              <div className="text-sm font-semibold text-red-500 uppercase tracking-wide">Cuestionados</div>
+              <div className="text-3xl md:text-4xl font-black text-red-600 mb-1">{senadoStats.cuestionados}</div>
+              <div className="text-xs md:text-sm font-semibold text-red-500 uppercase tracking-wide">Cuestionados Totales</div>
+            </div>
+            <div className="text-center px-2">
+              <div className="flex justify-center mb-3 text-red-500"><ShieldAlert className="h-8 w-8" /></div>
+              <div className="text-3xl md:text-4xl font-black text-red-600 mb-1">{senadoStats.cuestionadosSenado}</div>
+              <div className="text-xs md:text-sm font-semibold text-red-500 uppercase tracking-wide">Cuestionados Senado</div>
+            </div>
+            <div className="text-center px-2">
+              <div className="flex justify-center mb-3 text-orange-500"><Scale className="h-8 w-8" /></div>
+              <div className="text-3xl md:text-4xl font-black text-orange-600 mb-1">{senadoStats.posiblesInhabilidades}</div>
+              <div className="text-xs md:text-sm font-semibold text-orange-500 uppercase tracking-wide">Posibles Inhabilidades</div>
             </div>
           </div>
         </div>
@@ -227,18 +253,51 @@ const SenadoPage = () => {
       {/* Party Cards Section */}
       <section className="section-premium bg-white">
         <div className="container mx-auto px-6 lg:px-12">
-          <header className="text-center mb-20 max-w-3xl mx-auto">
+          <header className="text-center mb-12 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">El Tarjetón del Senado</h2>
             <p className="text-xl text-gray-600">
               Conoce las 16 listas que compiten por las 100 curules nacionales. Revisa quiénes las componen y su nivel de riesgo antes de votar.
             </p>
           </header>
 
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            <button 
+              onClick={() => setRiskFilter('all')}
+              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all ${riskFilter === 'all' ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'}`}
+            >
+              Todos
+            </button>
+            <button 
+              onClick={() => setRiskFilter('high')}
+              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${riskFilter === 'high' ? 'bg-red-100 text-red-800 border-red-200 border' : 'bg-white text-gray-600 hover:bg-red-50 border border-gray-200'}`}
+            >
+              Alto Riesgo
+            </button>
+            <button 
+              onClick={() => setRiskFilter('medium')}
+              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${riskFilter === 'medium' ? 'bg-yellow-100 text-yellow-800 border-yellow-200 border' : 'bg-white text-gray-600 hover:bg-yellow-50 border border-gray-200'}`}
+            >
+              Medio Riesgo
+            </button>
+            <button 
+              onClick={() => setRiskFilter('low')}
+              className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${riskFilter === 'low' ? 'bg-green-100 text-green-800 border-green-200 border' : 'bg-white text-gray-600 hover:bg-green-50 border border-gray-200'}`}
+            >
+              Bajo Riesgo
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {senadoParties.map((party) => (
+            {filteredParties.map((party) => (
               <PartyCard key={party.id} party={party} />
             ))}
           </div>
+
+          {filteredParties.length === 0 && (
+            <div className="text-center py-20 text-gray-500">
+              No hay partidos que coincidan con este filtro.
+            </div>
+          )}
         </div>
       </section>
 
