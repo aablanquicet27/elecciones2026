@@ -33,9 +33,9 @@ const SenadoHero = () => {
             Elecciones Legislativas • 8 de Marzo 2026
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
-            El 90% de Colombia no vota.<br />
+            8 de cada 10 candidatos al Senado<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-              El otro 10% elige por todos.
+              vienen de las mismas maquinarias.
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
@@ -43,9 +43,7 @@ const SenadoHero = () => {
           </p>
           <div className="max-w-3xl mx-auto bg-white/10 border border-white/20 backdrop-blur-sm rounded-3xl px-8 py-6 text-left">
             <p className="text-purple-100 text-lg leading-relaxed">
-              <span className="text-white font-bold">Candidatos investigados por corrupción están en las listas de TODOS los partidos.</span>{' '}
-              8 de cada 10 candidatos viables vienen de maquinarias políticas. El 90% del país no ha decidido su voto.{' '}
-              <span className="text-orange-300 font-bold">El sistema está diseñado para que votes sin pensar.</span>
+              Los mismos clanes políticos de siempre se perpetúan en el poder. 195 candidatos cuestionados. Investigados por corrupción en TODOS los partidos. Y la mayoría de colombianos votará sin conocer un solo nombre de su tarjetón.
             </p>
           </div>
         </div>
