@@ -91,6 +91,12 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 Análisis
               </button>
               <Link
+                to="/senado"
+                className="bg-white border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-xl hover:bg-purple-50 transition-all text-base font-semibold"
+              >
+                Elecciones al Senado →
+              </Link>
+              <Link
                 to="/analisis"
                 className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition-all text-base font-semibold shadow-lg shadow-purple-500/20"
               >

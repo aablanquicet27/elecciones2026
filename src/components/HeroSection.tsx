@@ -69,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-6">
               <Link 
                 to="/analisis"
                 className="btn-primary inline-flex items-center justify-center space-x-3"
@@ -79,6 +79,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               
+              <Link 
+                to="/senado"
+                className="btn-secondary bg-purple-100/50 border-purple-200 text-purple-900 inline-flex items-center justify-center space-x-3 hover:bg-purple-600"
+                aria-label="Ver elecciones al Senado"
+              >
+                <span>Elecciones al Senado</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+
               <a 
                 href="https://wsp.registraduria.gov.co/censo/consultar/"
                 target="_blank"
