@@ -1,21 +1,18 @@
 Candidato,Intención_Voto_Porcentaje,Tendencia_Política,Favorabilidad,Desfavorabilidad,Partido_Movimiento,Región_Origen,Cargo_Actual,Edad,Ranking,Generación,Tipo_Candidatura
-Abelardo de la Espriella,32.1,Derecha,38,44,Movimiento Defensores de la Patria,Atlántico,Abogado,55,1.0,Mayor (51-60),Por partido
-Iván Cepeda,31.4,Izquierda,42,38,Pacto Histórico,Bogotá,Senador,66,2.0,Senior (>60),Por partido
-Sergio Fajardo,7.6,Centro,42,32,Dignidad y Compromiso,Antioquia,Ex-Gobernador de Antioquia,67,3.0,Senior (>60),Por partido
-Paloma Valencia,3.8,Derecha,30,48,Centro Democrático,Cauca,Senadora,47,4.0,Adulto (41-50),Por partido
-Claudia López,3.7,Centro,31,45,Con Claudia Imparables,Bogotá,Ex-Alcaldesa de Bogotá,54,5.0,Mayor (51-60),Por firmas
-Miguel Uribe Londoño,2.1,Derecha,28,35,Centro Democrático,Bogotá,Ex-Concejal,40,6.0,Joven (≤40),Por partido
-Vicky Dávila,1.9,Derecha,38,44,Movimiento Valientes,Valle del Cauca,Periodista,58,7.0,Mayor (51-60),Por firmas
-Juan Daniel Oviedo,1.7,Centro,31,35,Candidato por firmas,Bogotá,Ex-Concejal,40,8.0,Joven (≤40),Por firmas
-Juan Carlos Pinzón,1.7,Centro,35,40,Partido Conservador,Bogotá,Ex-Ministro de Defensa,52,9.0,Mayor (51-60),Por partido
-Daniel Quintero,1.6,Izquierda,23,58,Reset Total Contra el Narco,Antioquia,Ex-Alcalde de Medellín,44,10.0,Adulto (41-50),Por firmas
-Juan Manuel Galán,1.2,Centro,40,28,Nuevo Liberalismo,Bogotá,Ex-Senador,61,11.0,Senior (>60),Por partido
-Enrique Peñalosa,1.2,Centro,29,46,Partido de la Unión por la Gente,Bogotá,Ex-Alcalde de Bogotá,69,12.0,Senior (>60),Por partido
-Aníbal Gaviria,1.1,Centro,33,39,Partido Liberal,Antioquia,Ex-Gobernador de Antioquia,59,13.0,Mayor (51-60),Por partido
-Santiago Botero,1.0,Centro,25,30,Independiente,Antioquia,Empresario,45,14.0,Adulto (41-50),Por firmas
-David Luna,0.9,Centro,32,42,Sí Hay Un Camino,Caldas,Ex-Senador,54,15.0,Mayor (51-60),Por firmas
-Camilo Romero,0.8,Izquierda,26,49,Pacto Histórico,Nariño,Ex-Gobernador de Nariño,48,16.0,Adulto (41-50),Por partido
-Roy Barreras,0.3,Izquierda,21,52,Pacto Histórico,Santander,Ex-Embajador,62,17.0,Senior (>60),Por partido
-Mauricio Cárdenas,0.1,Centro,31,47,Candidato Independiente,Bogotá,Ex-Ministro de Hacienda,64,18.0,Senior (>60),Por firmas
-Juan Fernando Cristo,0.1,Izquierda,17,44,Pacto Histórico,Santander,Ex-Ministro del Interior,60,19.0,Senior (>60),Por partido
-Daniel Palacios,0.1,Derecha,20,35,Centro Democrático,Bogotá,Ex-Ministro del Interior,42,20.0,Adulto (41-50),Por partido
+Iván Cepeda,37.1,Izquierda,48,34,Pacto Histórico,Bogotá,Senador,66,1.0,Senior (>60),Por partido
+Abelardo de la Espriella,18.9,Derecha,38,44,Movimiento Defensores de la Patria,Atlántico,Abogado,55,2.0,Mayor (51-60),Por partido
+Claudia López,11.7,Centro,36,42,Con Claudia Imparables,Bogotá,Ex-Alcaldesa de Bogotá,54,3.0,Mayor (51-60),Por firmas
+Paloma Valencia,10.0,Derecha,32,46,Centro Democrático,Cauca,Senadora,47,4.0,Adulto (41-50),Por partido
+Sergio Fajardo,6.6,Centro,42,32,Dignidad y Compromiso,Antioquia,Ex-Gobernador de Antioquia,67,5.0,Senior (>60),Por partido
+Clara López,2.8,Izquierda,28,38,Pacto Histórico,Bogotá,Ex-Alcaldesa encargada,73,6.0,Senior (>60),Por partido
+Santiago Botero,2.2,Centro,25,30,Independiente,Antioquia,Empresario,45,7.0,Adulto (41-50),Por firmas
+Roy Barreras,1.8,Izquierda,21,52,Pacto Histórico,Santander,Ex-Embajador,62,8.0,Senior (>60),Por partido
+Miguel Uribe Londoño,1.8,Derecha,28,35,Centro Democrático,Bogotá,Ex-Concejal,40,9.0,Joven (≤40),Por partido
+Luis Gilberto Murillo,0.9,Centro,22,30,Independiente,Chocó,Ex-Vicepresidente,54,10.0,Mayor (51-60),Por partido
+Carlos Caicedo,0.7,Izquierda,20,42,Pacto Histórico,Magdalena,Ex-Gobernador del Magdalena,60,11.0,Senior (>60),Por partido
+Luis Carlos Reyes,0.6,Centro,18,28,Independiente,Bogotá,Ex-Director DIAN,42,12.0,Adulto (41-50),Por firmas
+Daniel Palacios,0.5,Derecha,20,35,Centro Democrático,Bogotá,Ex-Ministro del Interior,42,13.0,Adulto (41-50),Por partido
+Maurice Armitage,0.4,Centro,24,32,Independiente,Valle del Cauca,Ex-Alcalde de Cali,78,14.0,Senior (>60),Por firmas
+Mauricio Lizcano,0.4,Centro,19,36,Partido de la U,Caldas,Ministro TIC,43,15.0,Adulto (41-50),Por partido
+Sondra Macollins,0.3,Derecha,12,18,Independiente,San Andrés,Activista,50,16.0,Mayor (51-60),Por firmas
+Juan Fernando Cristo,0.3,Izquierda,17,44,Pacto Histórico,Santander,Ex-Ministro del Interior,60,17.0,Senior (>60),Por partido

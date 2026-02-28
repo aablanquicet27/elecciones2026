@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
               <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-              <span className="text-base font-medium text-purple-700">Datos Actualizados · Ene-Feb 2026 · Atlas Intel</span>
+              <span className="text-base font-medium text-purple-700">Datos Actualizados · Encuesta Invamer · Feb 2026</span>
             </div>
             
             {/* Main Headline */}
@@ -48,19 +48,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
               
               <p className="text-large max-w-xl">
                 El análisis más completo del panorama electoral presidencial. 
-                Empate técnico histórico entre los líderes.
+                Liderazgo de Iván Cepeda seguido por Abelardo de la Espriella.
               </p>
             </div>
 
             {/* Key Stats - Minimal */}
             <div className="flex flex-wrap gap-8 md:gap-12 pt-4">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">32.1%</div>
-                <div className="text-sm text-gray-500 mt-1">De la Espriella</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">37.1%</div>
+                <div className="text-sm text-gray-500 mt-1">Cepeda</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">31.4%</div>
-                <div className="text-sm text-gray-500 mt-1">Cepeda</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">18.9%</div>
+                <div className="text-sm text-gray-500 mt-1">De la Espriella</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">{undecided.toFixed(0)}%</div>
@@ -154,7 +154,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
 
               {/* Methodology note */}
               <p className="text-center text-sm text-gray-400 mt-6">
-                Muestra: 7,298 personas · Margen de error: ±1.0%
+                Datos Invamer · Margen de error: ±1.5%
               </p>
             </div>
           </div>

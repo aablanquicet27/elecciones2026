@@ -104,13 +104,10 @@ export const getDemographicData = () => {
 
 export const getSocialMediaData = () => {
   return [
-    { candidate: 'Vicky Dávila', twitter: 1400000, instagram: 1300000, facebook: 920400, total: 3620400 },
     { candidate: 'Claudia López', twitter: 1200000, instagram: 1000000, facebook: 1300000, total: 3500000 },
     { candidate: 'Iván Cepeda', twitter: 850000, instagram: 420000, facebook: 380000, total: 1650000 },
     { candidate: 'Sergio Fajardo', twitter: 830000, instagram: 300000, facebook: 780000, total: 1910000 },
-    { candidate: 'Daniel Quintero', twitter: 800000, instagram: 352100, facebook: 350000, total: 1502100 },
     { candidate: 'Abelardo de la Espriella', twitter: 520000, instagram: 380000, facebook: 290000, total: 1190000 },
-    { candidate: 'Juan Daniel Oviedo', twitter: 340000, instagram: 239400, facebook: 150000, total: 729400 },
     { candidate: 'Paloma Valencia', twitter: 320000, instagram: 185000, facebook: 175000, total: 680000 },
     { candidate: 'Miguel Uribe Londoño', twitter: 180000, instagram: 120000, facebook: 95000, total: 395000 }
   ];
@@ -185,36 +182,36 @@ export const getFavorabilityData = () => {
 export const getElectoralInsights = () => {
   return {
     fragmentacion: {
-      title: "Carrera Electoral Reñida - Feb 2026",
-      description: "Abelardo de la Espriella lidera con 32.1%, seguido por Iván Cepeda con 31.4%",
-      impact: "Diferencia de apenas 0.7 puntos entre los dos líderes",
-      percentage: "32.1% vs 31.4%"
+      title: "Liderazgo de Cepeda - Feb 2026",
+      description: "Iván Cepeda lidera con 37.1%, seguido por Abelardo de la Espriella con 18.9%",
+      impact: "Diferencia de más de 18 puntos a favor del líder",
+      percentage: "37.1% vs 18.9%"
     },
     recomposicion: {
-      title: "Derecha Lidera el Mapa Político",
-      description: "Derecha consolida 40.0% del electorado con De la Espriella al frente",
-      impact: "Izquierda cae a 34.2%, Centro reducido a 20.2%",
-      change: "+11.5 puntos para la Derecha vs 2022"
+      title: "Centro-Izquierda y Derecha",
+      description: "Centro-Izquierda consolida apoyo, mientras la Derecha mantiene un bloque sólido",
+      impact: "Claudia López sube al 11.7%, Paloma Valencia al 10.0%",
+      change: "Reconfiguración de los bloques tradicionales"
     },
     volatilidad: {
       title: "Indecisos en Descenso",
-      description: "7.7% de indecisos (NS/NR), 5.3% voto en blanco",
+      description: "Menor porcentaje de indecisos ante polarización",
       impact: "Electorado más definido que en encuestas anteriores",
-      uncertainty: "7.7%"
+      uncertainty: "Bajo"
     },
     digital: {
       title: "Factor Digital Determinante",
       description: "Presencia en redes sociales como diferenciador clave",
-      leaders: ["Vicky Dávila", "Claudia López", "Iván Cepeda"],
+      leaders: ["Claudia López", "Iván Cepeda", "Sergio Fajardo"],
       impact: "Líderes digitales no coinciden con líderes en intención de voto"
     },
     regional: {
-      title: "Espriella Domina 5 de 7 Regiones",
-      description: "De la Espriella lidera en Bogotá, Centro-Oriente, Eje Cafetero, Llanos y Amazonía",
+      title: "Cepeda lidera nacionalmente",
+      description: "Iván Cepeda domina la mayoría de las regiones, incluyendo Bogotá y el Caribe",
       highlights: {
         caribe: "Cepeda lidera en Caribe y Pacífica",
-        andina: "Espriella domina Bogotá y Centro-Oriente",
-        orinoquia: "Espriella lidera en Llanos, Eje Cafetero y Amazonía"
+        andina: "Cepeda y Espriella compiten en la región Andina",
+        orinoquia: "Competencia cerrada en Llanos y Amazonía"
       }
     },
     generacional: {

@@ -84,7 +84,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
             
             <div className="flex items-center space-x-4">
               <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                <span className="text-sm font-medium">Actualizado: Ene-Feb 2026</span>
+                <span className="text-sm font-medium">Actualizado: Feb 2026</span>
               </div>
               <div className="bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                 <span className="text-sm font-medium">Elecciones 2026</span>
@@ -699,7 +699,7 @@ const CandidatePage: React.FC<CandidatePageProps> = ({ candidates }) => {
             Panorama Electoral Colombia 2026: Análisis Estadístico Integral
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            Datos actualizados a Ene-Feb 2026 • Atlas Intel • Margen de error: ±1.0%
+            Datos actualizados a Feb 2026 • Invamer • Margen de error: ±1.5%
           </p>
           <p className="text-xs text-purple-500 mt-2">
             Desarrollado por <a href="https://brochure.agapai.com.co" className="hover:text-purple-700">AGAPAI</a>

@@ -1,15 +1,15 @@
-export type RiskLevel = 'limpio' | 'cuestionable' | 'alto_riesgo';
+export type RiskLevel = 'low' | 'medium' | 'high';
 export type Tendency = 'izquierda' | 'centro' | 'derecha' | 'centro-izquierda' | 'centro-derecha';
 export type ListType = 'preferente' | 'no preferente';
 
 export interface PartyData {
   id: string;
+  tarjetonNumber: number;
   name: string;
   coalitionMembers?: string;
   listType: ListType;
   tendency: string;
   riskLevel: RiskLevel;
-  questionedCount?: number;
   description: string;
   cuestionados: string[];
 }
@@ -17,191 +17,204 @@ export interface PartyData {
 export const senadoParties: PartyData[] = [
   {
     id: 'partido-de-la-u',
+    tarjetonNumber: 1,
     name: 'Partido de la U',
     listType: 'preferente',
-    tendency: 'Centro-derecha pragmático',
-    riskLevel: 'alto_riesgo',
-    description: 'Partido creado para apoyar a Uribe, luego se alineó con Santos. Ha sido gobierno con todos.',
+    tendency: 'centro-derecha',
+    riskLevel: 'high',
+    description: 'Partido tradicional que ha sido gobierno con múltiples presidentes. Fuerte estructura regional y clientelista.',
     cuestionados: [
-      'José Alfredo Gnecco (clan familiar, presunta compra de votos)',
-      'Wilmer Carrillo (investigado por corrupción en Norte de Santander)',
-      'Antonio Correa (juicio en Corte Suprema por exigencia de coimas)',
-      'Julio Elías Chagüi (salpicado UNGRD)',
-      'Jhony Besaile y Julio Elías Vidal (hermanos de condenados por escándalo Fonade - los "Ñoños")'
+      'José Alfredo Gnecco (compra de votos, clan familiar)',
+      'Julio Elías Chagüi (escándalo UNGRD)',
+      'Wilmer Carrillo (corrupción como secretario de Norte de Santander)',
+      'Antonio Correa (exigencia de coimas)',
+      'Jhony Besaile (hermano del condenado Musa Besaile, de los "Ñoños")'
     ]
   },
   {
     id: 'fuerza-ciudadana',
+    tarjetonNumber: 2,
     name: 'Coalición Fuerza Ciudadana',
-    coalitionMembers: 'Comunes (ex-FARC), sectores M-19, Voz Pública',
+    coalitionMembers: 'Comunes + Fuerza Ciudadana',
     listType: 'preferente',
-    tendency: 'Izquierda',
-    riskLevel: 'cuestionable',
-    description: 'Partido surgido del Acuerdo de Paz 2016.',
+    tendency: 'izquierda',
+    riskLevel: 'medium',
+    description: 'Alianza entre el partido surgido del Acuerdo de Paz (ex-FARC) y el movimiento progresista del Magdalena.',
     cuestionados: [
-      'Alexánder Angulo (señalado como enlace en escándalo UNGRD)'
+      'Alexánder Angulo (señalado como enlace en escándalo UNGRD entre Sneyder Pinilla y Olmedo López)'
     ]
   },
   {
     id: 'centro-democratico',
+    tarjetonNumber: 3,
     name: 'Centro Democrático',
     listType: 'preferente',
-    tendency: 'Derecha, uribismo',
-    riskLevel: 'cuestionable',
-    description: 'Busca reafirmarse como principal oposición y recuperar terreno. Cabeza de lista: Andrés Forero.',
+    tendency: 'derecha',
+    riskLevel: 'medium',
+    description: 'Principal partido de oposición (uribismo), buscando recuperar su influencia legislativa.',
     cuestionados: [
       'José Vicente Carreño (señalamientos de vínculos paramilitares)'
     ]
   },
   {
     id: 'pacto-historico',
+    tarjetonNumber: 4,
     name: 'Pacto Histórico',
-    coalitionMembers: 'Colombia Humana + Pacto Histórico',
+    coalitionMembers: 'Pacto Histórico + Colombia Humana',
     listType: 'preferente',
-    tendency: 'Izquierda, petrismo',
-    riskLevel: 'cuestionable',
-    description: 'Sin el impulso presidencial de 2022, enfrenta una prueba electoral más compleja.',
+    tendency: 'izquierda',
+    riskLevel: 'medium',
+    description: 'Coalición del actual gobierno. Enfrenta el reto de mantener sus curules en medio del desgaste político.',
     cuestionados: [
-      'Conexión con escándalo UNGRD a través de varios congresistas del gobierno'
+      'Martha Peralta Epieyú (saltó a curul indígena; señalada como engranaje clave del escándalo UNGRD según la Fiscalía)'
     ]
   },
   {
     id: 'partido-conservador',
+    tarjetonNumber: 5,
     name: 'Partido Conservador',
     listType: 'preferente',
-    tendency: 'Centro-derecha tradicional',
-    riskLevel: 'alto_riesgo',
-    description: 'Busca mantener su base tradicional mientras enfrenta múltiples investigaciones.',
+    tendency: 'derecha',
+    riskLevel: 'high',
+    description: 'Fuerza política histórica. Mantiene sólidas bases en las regiones pese a severos cuestionamientos de corrupción.',
     cuestionados: [
-      'Wadith Manzur (salpicado UNGRD)',
-      'David Barguil (proceso por tráfico de influencias, cabeza de lista)',
-      'Daniel Restrepo (heredero político de Carlos Trujillo)',
+      'Wadith Manzur (salpicado en el escándalo UNGRD)',
+      'David Barguil (proceso por tráfico de influencias)',
       'Miguel Ángel Barreto (escándalo Ocad-Paz)',
-      'Juan Loreto Gómez (UNGRD)'
+      'Daniel Restrepo (heredero político del polémico clan de Carlos Trujillo)'
     ]
   },
   {
     id: 'verde-oxigeno',
+    tarjetonNumber: 6,
     name: 'Partido Verde Oxígeno',
     listType: 'preferente',
-    tendency: 'Centro',
-    riskLevel: 'limpio',
-    description: 'Busca recuperar visibilidad, reto de competir con coaliciones grandes.',
+    tendency: 'centro',
+    riskLevel: 'low',
+    description: 'Partido liderado por Íngrid Betancourt. Busca consolidarse como alternativa de centro independiente.',
     cuestionados: []
   },
   {
     id: 'gsc-patriotas',
+    tarjetonNumber: 7,
     name: 'GSC Patriotas',
     listType: 'no preferente',
-    tendency: 'Derecha populista',
-    riskLevel: 'limpio',
-    description: 'Lista cerrada (curules por orden de tarjetón).',
+    tendency: 'derecha',
+    riskLevel: 'low',
+    description: 'Grupo Significativo de Ciudadanos. Lista cerrada, las curules se asignan en el orden inscrito.',
     cuestionados: []
   },
   {
     id: 'con-toda-por-colombia',
-    name: 'GSC Con Toda por Colombia',
-    coalitionMembers: 'Lista de Oviedo',
+    tarjetonNumber: 8,
+    name: 'GSC Con Toda Por Colombia',
     listType: 'no preferente',
-    tendency: 'Centro independiente',
-    riskLevel: 'limpio',
-    description: 'Cabeza: Juan Daniel Oviedo (ex-director DANE). Lista cerrada.',
+    tendency: 'centro',
+    riskLevel: 'low',
+    description: 'Grupo Significativo de Ciudadanos con un enfoque más independiente y técnico.',
     cuestionados: []
   },
   {
     id: 'cambio-radical-alma',
+    tarjetonNumber: 9,
     name: 'Coalición Cambio Radical – ALMA',
     coalitionMembers: 'Cambio Radical + Colombia Justa Libres + ADA + Liga de Gobernantes Anticorrupción',
     listType: 'preferente',
-    tendency: 'Centro-derecha',
-    riskLevel: 'alto_riesgo',
-    description: 'Alianza estratégica de la derecha y sectores religiosos.',
+    tendency: 'centro-derecha',
+    riskLevel: 'medium',
+    description: 'Alianza entre Cambio Radical y otros sectores buscando consolidar mayorías legislativas de oposición.',
     cuestionados: [
-      'César Lorduy (denunciado por presunta violencia sexual, investigaciones como magistrado CNE)',
-      'Didier Lobo (investigación enriquecimiento ilícito)',
-      'Édgar de Jesús Díaz Contreras (enriquecimiento ilícito)'
+      'César Lorduy (caso de homicidio en 1979 y denuncias en su contra en el CNE)',
+      'Didier Lobo (investigación por enriquecimiento ilícito)',
+      'Édgar Díaz Contreras (investigación por enriquecimiento ilícito)'
     ]
   },
   {
     id: 'alianza-por-colombia',
+    tarjetonNumber: 10,
     name: 'Alianza por Colombia',
-    coalitionMembers: 'Alianza Verde + En Marcha + ASI + Colombia Renaciente + Partido Demócrata',
+    coalitionMembers: 'Alianza Verde + En Marcha + ASI + Colombia Renaciente + Demócrata',
     listType: 'preferente',
-    tendency: 'Centro-izquierda progresista',
-    riskLevel: 'cuestionable',
-    description: 'Coalición de centro e izquierda moderada.',
+    tendency: 'centro-izquierda',
+    riskLevel: 'medium',
+    description: 'Gran coalición de centro y centro-izquierda buscando consolidarse como bloque moderado en el Congreso.',
     cuestionados: [
-      'Berenice Bedoya (UNGRD)',
-      'Jairo Alberto Castellanos (UNGRD)',
-      'Néstor Daniel García Colorado (escándalo "Papá Pitufo")',
-      'Jorge "Davo" Pastrana (aliado de los Ñoños)'
+      'Berenice Bedoya (salpicada en escándalo UNGRD)',
+      'Jairo Alberto Castellanos (salpicado en escándalo UNGRD)',
+      'Néstor Daniel García (escándalo "Papá Pitufo")'
     ]
   },
   {
     id: 'creemos-colombia',
+    tarjetonNumber: 11,
     name: 'Creemos Colombia',
     listType: 'preferente',
-    tendency: 'Centro',
-    riskLevel: 'limpio',
-    description: 'Fuerza política de centro buscando consolidación nacional.',
+    tendency: 'centro-derecha',
+    riskLevel: 'low',
+    description: 'Movimiento político originado en Antioquia con miras a la expansión nacional.',
     cuestionados: []
   },
   {
     id: 'salvacion-nacional',
+    tarjetonNumber: 12,
     name: 'Movimiento Salvación Nacional',
     listType: 'preferente',
-    tendency: 'Derecha nacionalista',
-    riskLevel: 'limpio',
-    description: 'Derecha conservadora ideológica.',
+    tendency: 'derecha',
+    riskLevel: 'low',
+    description: 'Partido de derecha conservadora, liderado por Enrique Gómez.',
     cuestionados: []
   },
   {
     id: 'colombia-segura',
-    name: 'Colombia Segura y Próspera',
+    tarjetonNumber: 13,
+    name: 'Colombia Segura y Prospera',
     listType: 'no preferente',
-    tendency: 'Centro-derecha técnico',
-    riskLevel: 'limpio',
-    description: 'Movimiento de enfoque tecnocrático y seguridad.',
+    tendency: 'centro-derecha',
+    riskLevel: 'low',
+    description: 'Grupo Significativo de Ciudadanos enfocado en políticas de seguridad ciudadana.',
     cuestionados: []
   },
   {
     id: 'ahora-colombia',
+    tarjetonNumber: 14,
     name: 'Coalición ¡Ahora Colombia!',
     coalitionMembers: 'MIRA + Nuevo Liberalismo + Dignidad y Compromiso',
     listType: 'preferente',
-    tendency: 'Centro',
-    riskLevel: 'limpio',
-    description: 'Nota: Jota Pe Hernández (senador popular) descartó candidatura presidencial para ir al Senado aquí.',
+    tendency: 'centro',
+    riskLevel: 'low',
+    description: 'Alianza de centro que une fuerzas tradicionales e independientes para maximizar su representación.',
     cuestionados: []
   },
   {
     id: 'frente-amplio-unitario',
+    tarjetonNumber: 15,
     name: 'Frente Amplio Unitario',
-    coalitionMembers: 'Esperanza Democrática + MAIS + La Fuerza de La Paz + Partido del Trabajo',
     listType: 'preferente',
-    tendency: 'Izquierda',
-    riskLevel: 'alto_riesgo',
-    description: 'Coalición armada por Roy Barreras. Considerada de muy alto riesgo.',
+    tendency: 'izquierda',
+    riskLevel: 'high',
+    description: 'Lista armada bajo la influencia de Roy Barreras. Agrupa diversos sectores pero cuenta con altos cuestionamientos.',
     cuestionados: [
-      'Martha Peralta Epieyú (engranaje UNGRD según Fiscalía)',
+      'Roy Barreras (arquitecto de la lista, fuertes críticas por alianzas clientelares)',
       'Milena Flórez (esposa de Musa Besaile, condenado por corrupción)',
-      'Édgar \'Pote\' Gómez (redes clientelares)',
-      'Máximo Noriega (salpicado caso Nicolás Petro)',
-      'Gorky Muñoz (sanciones Procuraduría)'
+      'Édgar "Pote" Gómez (cuestionado por redes clientelistas)',
+      'Máximo Noriega (salpicado en el escándalo de Nicolás Petro)',
+      'Gorky Muñoz (con sanciones de la Procuraduría)',
+      'Jorge "Davo" Pastrana (reconocido aliado de los condenados "Ñoños")'
     ]
   },
   {
     id: 'partido-liberal',
+    tarjetonNumber: 16,
     name: 'Partido Liberal',
     listType: 'preferente',
-    tendency: 'Centro-izquierda tradicional',
-    riskLevel: 'alto_riesgo',
-    description: 'Partido tradicional con fuerte presencia regional pero múltiples escándalos recientes.',
+    tendency: 'centro',
+    riskLevel: 'medium',
+    description: 'Partido histórico con fuerte maquinaria regional pero desgastado por múltiples escándalos recientes.',
     cuestionados: [
-      'Andrés Calle (expresidente Cámara, vinculado UNGRD)',
-      'Richard Aguilar (juicio por corrupción como gobernador de Santander)',
-      'Camilo Torres (sobrino de megacontratista del gobierno)',
-      'Yesid Pulgar (hermano de Eduardo Pulgar, condenado por soborno a juez)'
+      'Richard Aguilar (juicio por corrupción durante su etapa como gobernador)',
+      'Andrés Calle (vinculado al escándalo de la UNGRD)',
+      'Yesid Pulgar (hermano de Eduardo Pulgar, condenado por sobornar a un juez)',
+      'Camilo Torres (sobrino de un cuestionado megacontratista)'
     ]
   }
 ];
@@ -212,5 +225,6 @@ export const senadoStats = {
   aspirantes: 3144,
   cuestionados: 195,
   abstencion2022: '53%',
-  cuestionadosSenado: 78
+  cuestionadosSenado: 78,
+  posiblesInhabilidades: 41
 };

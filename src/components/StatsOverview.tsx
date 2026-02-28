@@ -37,18 +37,18 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       description: "Factor determinante"
     },
     {
-      title: "Muestra",
-      value: "7,298",
-      subtitle: "Personas encuestadas",
+      title: "Encuestadora",
+      value: "Invamer",
+      subtitle: "Datos oficiales",
       icon: BarChart3,
-      description: "Margen de error ±1.0%"
+      description: "Margen de error ±1.5%"
     },
     {
       title: "Período",
-      value: "Ene-Feb",
+      value: "Feb",
       subtitle: "2026",
       icon: Calendar,
-      description: "Datos Atlas Intel"
+      description: "Datos Invamer"
     },
     {
       title: "Regiones",
@@ -116,11 +116,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <Target className="h-8 w-8 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Empate Técnico Histórico
+              Liderazgo Sólido
             </h4>
             <p className="text-gray-600">
-              De la Espriella y Cepeda separados por apenas 0.7 puntos,
-              la competencia más reñida en décadas.
+              Cepeda lidera con 37.1%, seguido por De la Espriella con 18.9%,
+              mostrando una ventaja significativa.
             </p>
           </div>
 
@@ -132,8 +132,8 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               Reconfiguración Política
             </h4>
             <p className="text-gray-600">
-              La derecha recupera terreno significativo mientras el centro
-              gana protagonismo con Fajardo al 7.6%.
+              La centro-izquierda y la derecha se reconfiguran con Claudia López 
+              y Paloma Valencia ganando tracción.
             </p>
           </div>
 
