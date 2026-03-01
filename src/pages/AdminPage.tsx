@@ -11,7 +11,9 @@ import {
   Newspaper,
   CheckCircle,
   XCircle,
-  Activity
+  Activity,
+  Menu,
+  X
 } from 'lucide-react';
 
 export default function AdminPage() {
@@ -20,6 +22,7 @@ export default function AdminPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState('resumen');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   
   // Data states
   const [votes, setVotes] = useState<any[]>([]);
@@ -303,7 +306,7 @@ export default function AdminPage() {
 
         return (
           <div className="bg-gray-800 rounded-xl border border-gray-700 flex flex-col h-full">
-            <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+            <div className="p-4 border-b border-gray-700 flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center">
               <div className="relative">
                 <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
@@ -311,7 +314,7 @@ export default function AdminPage() {
                   placeholder="Buscar por email o candidato..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-64"
+                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-full md:w-64"
                 />
               </div>
               <button
@@ -383,7 +386,7 @@ export default function AdminPage() {
 
         return (
           <div className="bg-gray-800 rounded-xl border border-gray-700">
-            <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+            <div className="p-4 border-b border-gray-700 flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center">
               <div className="relative">
                 <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
@@ -391,7 +394,7 @@ export default function AdminPage() {
                   placeholder="Buscar email..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-64"
+                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-full md:w-64"
                 />
               </div>
               <button
@@ -457,7 +460,7 @@ export default function AdminPage() {
 
         return (
           <div className="bg-gray-800 rounded-xl border border-gray-700">
-             <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+             <div className="p-4 border-b border-gray-700 flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center">
               <div className="relative">
                 <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
@@ -465,7 +468,7 @@ export default function AdminPage() {
                   placeholder="Buscar por ID o email..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-64"
+                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-full md:w-64"
                 />
               </div>
             </div>
@@ -517,7 +520,7 @@ export default function AdminPage() {
 
         return (
           <div className="bg-gray-800 rounded-xl border border-gray-700">
-             <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+             <div className="p-4 border-b border-gray-700 flex flex-col sm:flex-row gap-3 sm:justify-between sm:items-center">
               <div className="relative">
                 <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
@@ -525,7 +528,7 @@ export default function AdminPage() {
                   placeholder="Buscar noticias..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-64"
+                  className="pl-10 pr-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:border-purple-500 w-full md:w-64"
                 />
               </div>
             </div>
@@ -628,20 +631,35 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 flex text-gray-200">
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 z-30 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className="w-64 bg-gray-800 border-r border-gray-700 flex flex-col">
-        <div className="p-6">
-          <h1 className="text-xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">
-            Admin Panel
-          </h1>
-          <p className="text-xs text-gray-500 mt-1">Elecciones 2026</p>
+      <aside className={`fixed md:static inset-y-0 left-0 z-40 w-64 bg-gray-800 border-r border-gray-700 flex flex-col transform transition-transform duration-200 ease-in-out ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+      }`}>
+        <div className="p-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">
+              Admin Panel
+            </h1>
+            <p className="text-xs text-gray-500 mt-1">Elecciones 2026</p>
+          </div>
+          <button onClick={() => setSidebarOpen(false)} className="md:hidden text-gray-400 hover:text-white">
+            <X className="w-5 h-5" />
+          </button>
         </div>
         
         <nav className="flex-1 px-4 space-y-1">
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => { setActiveTab(item.id); setSearchTerm(''); }}
+              onClick={() => { setActiveTab(item.id); setSearchTerm(''); setSidebarOpen(false); }}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${
                 activeTab === item.id 
                   ? 'bg-purple-600/20 text-purple-400' 
@@ -666,17 +684,20 @@ export default function AdminPage() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col min-w-0">
-        <header className="h-16 border-b border-gray-700 bg-gray-800/50 flex items-center px-8 backdrop-blur-sm sticky top-0 z-10">
-          <h2 className="text-xl font-semibold text-white capitalize">
+      <main className="flex-1 flex flex-col min-w-0 w-full">
+        <header className="h-14 md:h-16 border-b border-gray-700 bg-gray-800/50 flex items-center px-4 md:px-8 backdrop-blur-sm sticky top-0 z-20">
+          <button onClick={() => setSidebarOpen(true)} className="md:hidden mr-3 text-gray-400 hover:text-white">
+            <Menu className="w-6 h-6" />
+          </button>
+          <h2 className="text-lg md:text-xl font-semibold text-white capitalize">
             {navItems.find(i => i.id === activeTab)?.label}
           </h2>
-          <div className="ml-auto flex items-center space-x-4 text-sm text-gray-400">
-            <span className="flex items-center"><Activity className="w-4 h-4 mr-1 text-emerald-400"/> Sistema Activo</span>
+          <div className="ml-auto flex items-center space-x-4 text-xs md:text-sm text-gray-400">
+            <span className="flex items-center"><Activity className="w-4 h-4 mr-1 text-emerald-400"/> <span className="hidden sm:inline">Sistema</span> Activo</span>
           </div>
         </header>
         
-        <div className="flex-1 p-8 overflow-y-auto">
+        <div className="flex-1 p-4 md:p-8 overflow-y-auto">
           {renderTabContent()}
         </div>
       </main>
