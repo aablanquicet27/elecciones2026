@@ -9,6 +9,9 @@ interface CorruptionEntry {
 }
 
 const corruptionData: CorruptionEntry[] = [
+  { candidato: 'Alexander Flórez', partido: 'Pacto Histórico', señalamiento: 'Denuncias de maltrato a expareja', severity: 'medium' },
+  { candidato: 'Isabel Zuleta', partido: 'Pacto Histórico', señalamiento: 'Permitió presencia de capos del narcotráfico en tarima oficial', severity: 'high' },
+  { candidato: 'Julio César González (Matador)', partido: 'Pacto Histórico', señalamiento: 'Denuncias de abuso', severity: 'medium' },
   { candidato: 'Wadith Manzur', partido: 'Conservador', señalamiento: 'Presión para favorecer contratos (UNGRD)', severity: 'high' },
   { candidato: 'Julio Elías Chagüi', partido: 'La U', señalamiento: 'Intermediario caso UNGRD', severity: 'high' },
   { candidato: 'Martha Peralta', partido: 'MAIS', señalamiento: 'Contratos maquinaria La Guajira (UNGRD)', severity: 'high' },
@@ -37,6 +40,7 @@ const partyColors: Record<string, string> = {
   'Liberal': 'bg-red-100 text-red-800',
   'Cambio Radical': 'bg-yellow-100 text-yellow-800',
   'Centro Democrático': 'bg-sky-100 text-sky-800',
+  'Pacto Histórico': 'bg-amber-100 text-amber-800',
   'Frente Amplio': 'bg-purple-100 text-purple-800',
   'Fuerza Ciudadana': 'bg-green-100 text-green-800',
   'Alianza por Colombia': 'bg-teal-100 text-teal-800',

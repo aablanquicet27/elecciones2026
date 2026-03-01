@@ -56,15 +56,11 @@ export const senadoParties: PartyData[] = [
     name: 'Centro Democrático',
     coalition: null,
     listType: 'Preferente',
-    tendency: 'Derecha',
+    tendency: 'Centro-Derecha',
     riskLevel: 'high',
     description: 'Principal partido de oposición con problemas sistémicos, historial de parapolítica y múltiples escándalos de sus exmiembros.',
     questionedCandidates: [
-      { name: 'José Vicente Carreño', allegation: 'Vínculos con grupos paramilitares' },
-      { name: 'Partido fundado por Álvaro Uribe', allegation: 'Procesado por soborno de testigos y fraude procesal' },
-      { name: 'Historial de parapolítica', allegation: 'Múltiples exsenadores del uribismo condenados' },
-      { name: 'Escándalo chuzadas DAS', allegation: 'Durante gobierno Uribe (espionaje ilegal a opositores)' },
-      { name: 'Mario Uribe', allegation: 'Primo del fundador condenado por parapolítica' }
+      { name: 'José Vicente Carreño', allegation: 'Vínculos con grupos paramilitares' }
     ]
   },
   {
@@ -81,7 +77,10 @@ export const senadoParties: PartyData[] = [
       { name: 'Martha Peralta Epieyú', allegation: 'Pieza clave caso UNGRD según Fiscalía, saltó a circunscripción indígena' },
       { name: 'Caso UNGRD', allegation: 'Involucró sobornos a congresistas del Pacto por reformas del gobierno (cupos indicativos)' },
       { name: 'David Racero', allegation: 'Escándalos de corrupción como presidente de la Cámara' },
-      { name: 'Gobierno Petro', allegation: 'Vinculado al desvío de dineros UNGRD para pagar cupos indicativos a congresistas' }
+      { name: 'Gobierno Petro', allegation: 'Vinculado al desvío de dineros UNGRD para pagar cupos indicativos a congresistas' },
+      { name: 'Alexander Florez', allegation: 'Denuncias de maltrato a expareja' },
+      { name: 'Isabel Zuleta', allegation: 'Permitió presencia de capos en tarima oficial' },
+      { name: 'Julio César González', allegation: 'Denuncias de abuso' }
     ]
   },
   {
@@ -169,7 +168,7 @@ export const senadoParties: PartyData[] = [
     name: 'Creemos',
     coalition: null,
     listType: 'Preferente',
-    tendency: 'Centro-Derecha',
+    tendency: 'Derecha',
     riskLevel: 'low',
     description: 'Movimiento político originado en Antioquia con miras a la expansión nacional.',
     questionedCandidates: []
@@ -213,7 +212,7 @@ export const senadoParties: PartyData[] = [
     name: 'Frente Amplio Unitario',
     coalition: null,
     listType: 'Preferente',
-    tendency: 'Izquierda',
+    tendency: 'Centro-Izquierda',
     riskLevel: 'high',
     description: 'Lista armada bajo la influencia de Roy Barreras. Agrupa diversos sectores pero cuenta con altos cuestionamientos.',
     questionedCandidates: [
