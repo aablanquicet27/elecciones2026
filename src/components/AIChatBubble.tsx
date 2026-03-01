@@ -63,6 +63,7 @@ const AIChatBubble: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [emailError, setEmailError] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const sessionIdRef = useRef<string>(crypto.randomUUID());
   const systemContext = generateSystemContext();
 
   // Verificar si hay email guardado en localStorage (usar la misma clave que SubscriptionModal)
@@ -98,6 +99,33 @@ const AIChatBubble: React.FC = () => {
     },
   });
 
+  // Guardar conversaciones en Supabase
+  useEffect(() => {
+    const saveConversation = async () => {
+      // Solo guardar si hay más mensajes que el de bienvenida
+      if (messages.length <= 1) return;
+
+      try {
+        const { error } = await supabase
+          .from('chat_conversations')
+          .upsert({
+            session_id: sessionIdRef.current,
+            messages: messages,
+            user_email: userEmail || null,
+            updated_at: new Date().toISOString()
+          }, { onConflict: 'session_id' });
+
+        if (error) {
+          console.error('Error guardando conversación:', error);
+        }
+      } catch (err) {
+        console.error('Error al intentar guardar conversación:', err);
+      }
+    };
+
+    saveConversation();
+  }, [messages, userEmail]);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -128,7 +156,7 @@ const AIChatBubble: React.FC = () => {
 
     try {
       // Verificar si el email ya existe en Supabase
-      const { data: existingSubscription, error: selectError } = await supabase
+      const { data: existingSubscription, error: _selectError } = await supabase
         .from('subscriptions')
         .select('email')
         .eq('email', userEmail)
