@@ -1,43 +1,82 @@
-import React from 'react';
 import { BookOpen, ExternalLink, Info } from 'lucide-react';
 
 const sources = [
   {
-    name: 'Fundación PARES (Paz y Reconciliación)',
-    title: '"Candidatas y candidatos cuestionados al Congreso de la República 2026"',
-    url: 'https://www.pares.com.co/candidatas-y-candidatos-cuestionados-al-congreso-de-la-republica-2026/',
-    note: 'Fuente de: 195 candidaturas cuestionadas, 78 al Senado, 111 a Cámara'
+    name: 'ORZA — Análisis de listas al Congreso 2026-2030',
+    title: 'Estudio de 204 candidaturas con opción real en el Senado. 77% vinculadas a maquinarias; en posiciones competitivas sube a 83%.',
+    url: 'https://orza.com.co/wp-content/uploads/2025/12/ORZA_-Informe-analisis-de-listas-al-Congreso-2026-VF_compressed.pdf',
+    note: 'Fuente de: "8 de cada 10 vienen de maquinarias"'
   },
   {
-    name: 'Infobae Colombia',
-    title: '"Candidatos al Congreso que llegan a las urnas con cuentas pendientes ante la justicia"',
+    name: 'Fundación PARES (Paz y Reconciliación)',
+    title: 'Candidatas y candidatos cuestionados al Congreso 2026. 195 candidaturas cuestionadas: 78 al Senado, 111 a Cámara.',
+    url: 'https://www.pares.com.co/candidatas-y-candidatos-cuestionados-al-congreso-de-la-republica-2026/',
+    note: 'Fuente de: 195 candidatos cuestionados, tabla de señalamientos'
+  },
+  {
+    name: 'Cifras y Conceptos — Encuesta de percepción electoral',
+    title: '87% no conoce candidatos al Senado (88% para Cámara). Solo el 10% ha definido su voto para Congreso.',
+    url: 'https://www.valoraanalitik.com/colombianos-aun-sin-rumbo-politico-8-de-cada-10-no-saben-por-quien-votar-en-2026/',
+    note: 'Encuesta mayo 2025 — datos de inicio de campaña'
+  },
+  {
+    name: 'El Espectador — Candidatos con investigaciones judiciales',
+    title: 'Investigación sobre candidatos al Congreso con cuentas pendientes: UNGRD, compra de votos, enriquecimiento.',
+    url: 'https://www.elespectador.com/politica/elecciones-colombia-2026/asi-han-respondido-los-candidatos-al-congreso-con-investigaciones-judiciales-ungrd-y-compra-de-votos-noticias-hoy/'
+  },
+  {
+    name: 'Infobae Colombia — Candidatos con cuentas pendientes ante la justicia',
+    title: 'Reportaje sobre candidatos investigados por la Corte Suprema que compiten en elecciones 2026.',
     url: 'https://www.infobae.com/colombia/2026/02/20/elecciones-2026-los-candidatos-al-congreso-que-llegan-a-las-urnas-con-cuentas-pendientes-ante-la-justicia/'
   },
   {
-    name: 'Cambio Colombia',
-    title: 'Investigación candidatos cuestionados con procesos judiciales',
+    name: 'El Tiempo — 26 candidatos con investigaciones en Corte Suprema',
+    title: 'Lista de candidatos al Senado y Cámara que enfrentan investigaciones y acusaciones judiciales activas.',
+    url: 'https://www.eltiempo.com/politica/elecciones-colombia-2026/la-lista-de-26-candidatos-al-senado-y-la-camara-que-enfrentan-investigaciones-y-acusaciones-en-la-corte-suprema-de-justicia-3518188'
+  },
+  {
+    name: 'Semana — UNGRD y demanda contra 9 congresistas',
+    title: 'Ordenan pruebas en demanda que pide "muerte política" de congresistas vinculados a corrupción en la UNGRD.',
+    url: 'https://www.semana.com/nacion/articulo/corrupcion-en-la-ungrd-ordenan-pruebas-en-el-estudio-de-la-demanda-que-pide-la-muerte-politica-de-nueve-congresistas/202609/'
+  },
+  {
+    name: 'Cambio Colombia — Investigación PARES sobre cuestionados',
+    title: 'Detalle de candidatos cuestionados con procesos judiciales activos al Congreso 2026.',
     url: 'https://cambiocolombia.com/elecciones-colombia-2026/articulo/2026/2/candidatos-cuestionados-elecciones-congreso-2026-investigacion-pares-procesos-judiciales/'
   },
   {
-    name: 'MOE (Misión de Observación Electoral)',
-    title: 'Informes de riesgo electoral 2026'
+    name: 'El Colombiano — Guía de candidatos al Senado',
+    title: 'Guía de candidatos con trayectoria verificable para votar informado el 8 de marzo.',
+    url: 'https://www.elcolombiano.com/especiales/elecciones-2026/guia-candidatos-elecciones-senado-2026-CC33571524'
   },
   {
-    name: 'El Colombiano',
-    title: 'Guía de candidatos al Senado 2026'
+    name: 'IFM Noticias — Análisis ORZA sobre listas',
+    title: 'Resumen periodístico del estudio ORZA: cómo se configura la disputa real por el Senado.',
+    url: 'https://ifmnoticias.com/analisis-mas-estructura-que-opinion-asi-se-configura-la-disputa-real-por-el-senado-en-2026/'
   },
   {
-    name: 'Invamer',
-    title: 'Encuestas de intención de voto Feb 2026'
+    name: 'Valora Analitik — Intención de voto Congreso',
+    title: 'Solo el 10% tiene claro su voto para el Congreso y el 18% para la presidencia.',
+    url: 'https://www.valoraanalitik.com/elecciones-2026-solo-el-10-tiene-claro-su-voto-para-el-congreso-y-el-18-para-la-presidencia/'
+  },
+  {
+    name: 'Invamer — Encuestas de intención de voto Feb 2026',
+    title: 'Última encuesta de intención de voto presidencial publicada.',
   },
   {
     name: 'Registraduría Nacional del Estado Civil',
-    title: 'Listas oficiales inscritas'
+    title: '3.231 candidatos inscritos para elecciones de Congreso 2026.',
+    url: 'https://www.registraduria.gov.co/3-231-candidatos-fueron-inscritos-para-las-elecciones-de-Congreso-de-2026.html'
   },
   {
-    name: 'Wikipedia',
-    title: 'Elecciones legislativas de Colombia de 2026',
-    note: 'Datos generales: 3144 aspirantes, 103 curules'
+    name: 'PARES — César Lorduy caso homicidio 1979',
+    title: 'Investigación sobre candidato de Cambio Radical vinculado a homicidio de Ana Mercedes Ribaldo.',
+    url: 'https://www.pares.com.co/ustedes-sabian-que-un-candidato-al-senado-de-cambio-radical-asesino-a-una-mujer-en-barranquilla/'
+  },
+  {
+    name: 'El Colombiano — Richard Aguilar y testigos exiliados',
+    title: 'Excongresistas acusados por corrupción quieren volver al poder.',
+    url: 'https://www.elcolombiano.com/colombia/richard-aguilar-ballesteros-corrupcion-testigos-exilio-DI33802302'
   }
 ];
 

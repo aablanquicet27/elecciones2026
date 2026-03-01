@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "name": "Alexander Flórez",
+    "topic": "maltrato a expareja",
+    "media": "Semana",
+    "source_url": null
+  },
+  {
+    "id": 2,
+    "name": "Isabel Zuleta",
+    "topic": "capos en tarima",
+    "media": "Infobae",
+    "source_url": null
+  },
+  {
+    "id": 3,
+    "name": "Julio César González Matador",
+    "topic": "denuncias abuso",
+    "media": "W Radio",
+    "source_url": null
+  },
+  {
+    "id": 4,
+    "name": "Wadith Manzur",
+    "topic": "UNGRD contratos",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 5,
+    "name": "Julio Elías Chagüi",
+    "topic": "intermediario UNGRD",
+    "media": "La Silla Vacía",
+    "source_url": null
+  },
+  {
+    "id": 6,
+    "name": "Martha Peralta",
+    "topic": "contratos UNGRD La Guajira",
+    "media": "Semana",
+    "source_url": null
+  },
+  {
+    "id": 7,
+    "name": "Jhony Besaile",
+    "topic": "hermano Ñoño Elías",
+    "media": "El Espectador",
+    "source_url": null
+  },
+  {
+    "id": 8,
+    "name": "David Barguil",
+    "topic": "tráfico influencias DPS",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 9,
+    "name": "Wilmer Carrillo",
+    "topic": "corrupción infraestructura",
+    "media": "Semana",
+    "source_url": null
+  },
+  {
+    "id": 10,
+    "name": "José Alfredo Gnecco",
+    "topic": "compra votos clan",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 11,
+    "name": "Antonio Correa",
+    "topic": "coimas juicio Corte Suprema",
+    "media": "El Espectador",
+    "source_url": null
+  },
+  {
+    "id": 12,
+    "name": "Richard Aguilar",
+    "topic": "corrupción gobernador Santander",
+    "media": "Semana",
+    "source_url": null
+  },
+  {
+    "id": 13,
+    "name": "Andrés Calle",
+    "topic": "caso UNGRD",
+    "media": "W Radio",
+    "source_url": null
+  },
+  {
+    "id": 14,
+    "name": "Yesid Pulgar",
+    "topic": "hermano Eduardo Pulgar",
+    "media": "La Silla Vacía",
+    "source_url": null
+  },
+  {
+    "id": 15,
+    "name": "César Lorduy",
+    "topic": "caso homicidio 1979",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 16,
+    "name": "Didier Lobo",
+    "topic": "enriquecimiento",
+    "media": "Infobae",
+    "source_url": null
+  },
+  {
+    "id": 17,
+    "name": "Berenice Bedoya",
+    "topic": "UNGRD",
+    "media": "La Silla Vacía",
+    "source_url": null
+  },
+  {
+    "id": 18,
+    "name": "Milena Flórez",
+    "topic": "esposa Musa Besaile",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 19,
+    "name": "Máximo Noriega",
+    "topic": "caso Nicolás Petro",
+    "media": "Semana",
+    "source_url": null
+  },
+  {
+    "id": 20,
+    "name": "José Vicente Carreño",
+    "topic": "vínculos paramilitares",
+    "media": "PARES",
+    "source_url": null
+  },
+  {
+    "id": 21,
+    "name": "Alexánder Angulo",
+    "topic": "UNGRD Pinilla-Olmedo",
+    "media": "W Radio",
+    "source_url": null
+  },
+  {
+    "id": 22,
+    "name": "Miguel Ángel Barreto",
+    "topic": "Ocad-Paz",
+    "media": "El Tiempo",
+    "source_url": null
+  },
+  {
+    "id": 23,
+    "name": "Édgar Pote Gómez",
+    "topic": "redes clientelares",
+    "media": "La Silla Vacía",
+    "source_url": null
+  }
+]

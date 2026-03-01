@@ -33,20 +33,20 @@ const SenadoHero = () => {
             Elecciones Legislativas • 8 de Marzo 2026
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter leading-none">
-            195 candidatos cuestionados<br />
+            8 de cada 10 candidatos al Senado<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-              compiten por una curul en el Congreso.
+              vienen de las mismas maquinarias.
             </span>
           </h1>
-          <p className="text-purple-300 text-sm md:text-base mb-8 font-medium tracking-wide">
-            Según investigación de la Fundación PARES, enero 2026
+          <p className="text-purple-300 text-sm md:text-base mb-6 font-medium tracking-wide">
+            Según análisis de <a href="https://orza.com.co/wp-content/uploads/2025/12/ORZA_-Informe-analisis-de-listas-al-Congreso-2026-VF_compressed.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">ORZA (dic. 2025)</a>: entre 77% y 83% de candidaturas competitivas están vinculadas a maquinarias políticas
           </p>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
             El 8 de marzo votas por el Congreso de los próximos 4 años. ¿Sabes quién está en las listas?
           </p>
           <div className="max-w-3xl mx-auto bg-white/10 border border-white/20 backdrop-blur-sm rounded-3xl px-8 py-6 text-left">
             <p className="text-purple-100 text-lg leading-relaxed">
-              Los mismos clanes políticos de siempre se perpetúan en el poder. 195 candidatos cuestionados. Investigados por corrupción en TODOS los partidos. Y la mayoría de colombianos votará sin conocer un solo nombre de su tarjetón.
+              195 candidatos cuestionados según la Fundación PARES. Investigados por corrupción en TODOS los partidos. El 87% de colombianos no conoce a ningún candidato al Senado y solo el 10% ha definido su voto, según encuesta de Cifras y Conceptos (mayo 2025). Y la mayoría votará sin conocer un solo nombre de su tarjetón.
             </p>
           </div>
         </div>
