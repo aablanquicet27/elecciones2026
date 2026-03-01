@@ -57,10 +57,14 @@ export const senadoParties: PartyData[] = [
     coalition: null,
     listType: 'Preferente',
     tendency: 'Derecha',
-    riskLevel: 'medium',
-    description: 'Principal partido de oposición, buscando recuperar su influencia legislativa.',
+    riskLevel: 'high',
+    description: 'Principal partido de oposición con problemas sistémicos, historial de parapolítica y múltiples escándalos de sus exmiembros.',
     questionedCandidates: [
-      { name: 'José Vicente Carreño', allegation: 'vínculos paramilitares' }
+      { name: 'José Vicente Carreño', allegation: 'Vínculos con grupos paramilitares' },
+      { name: 'Partido fundado por Álvaro Uribe', allegation: 'Procesado por soborno de testigos y fraude procesal' },
+      { name: 'Historial de parapolítica', allegation: 'Múltiples exsenadores del uribismo condenados' },
+      { name: 'Escándalo chuzadas DAS', allegation: 'Durante gobierno Uribe (espionaje ilegal a opositores)' },
+      { name: 'Mario Uribe', allegation: 'Primo del fundador condenado por parapolítica' }
     ]
   },
   {
@@ -70,10 +74,14 @@ export const senadoParties: PartyData[] = [
     coalition: ['Pacto Histórico', 'Colombia Humana'],
     listType: 'Preferente',
     tendency: 'Izquierda',
-    riskLevel: 'medium',
-    description: 'Coalición del actual gobierno. Enfrenta el reto de mantener sus curules en medio del desgaste político.',
+    riskLevel: 'high',
+    description: 'Coalición del actual gobierno. Enfrenta el desgaste político y escándalos de corrupción sistémica durante el gobierno Petro.',
     questionedCandidates: [
-      { name: 'Martha Peralta', allegation: 'UNGRD, saltó a circunscripción indígena' }
+      { name: 'Pedro Flórez', allegation: 'Llamado por Corte Suprema por financiación irregular de campaña' },
+      { name: 'Martha Peralta Epieyú', allegation: 'Pieza clave caso UNGRD según Fiscalía, saltó a circunscripción indígena' },
+      { name: 'Caso UNGRD', allegation: 'Involucró sobornos a congresistas del Pacto por reformas del gobierno (cupos indicativos)' },
+      { name: 'David Racero', allegation: 'Escándalos de corrupción como presidente de la Cámara' },
+      { name: 'Gobierno Petro', allegation: 'Vinculado al desvío de dineros UNGRD para pagar cupos indicativos a congresistas' }
     ]
   },
   {
