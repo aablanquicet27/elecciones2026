@@ -5,6 +5,7 @@ import { Candidate } from '../types/election';
 import HeroSection from '../components/HeroSection';
 import CandidateGrid from '../components/CandidateGrid';
 import StatsOverview from '../components/StatsOverview';
+import PollAverageTable from '../components/PollAverageTable';
 import TrendAnalysis from '../components/TrendAnalysis';
 import RegionalMap from '../components/RegionalMap';
 import TimelineSection from '../components/TimelineSection';
@@ -118,6 +119,11 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
       {/* Stats Overview */}
       <section className="section-premium bg-white" aria-label="Estadísticas electorales">
         <StatsOverview candidates={candidates} />
+      </section>
+
+      {/* Promedio de Encuestas */}
+      <section className="container mx-auto px-6 lg:px-12" aria-label="Promedio de encuestas">
+        <PollAverageTable />
       </section>
 
       {/* Electoral Insights */}
