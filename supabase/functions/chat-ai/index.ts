@@ -185,7 +185,7 @@ async function callOpenAI(messages: any[], openaiApiKey: string, stream: boolean
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'gpt-4-turbo',
+      model: 'gpt-5.2',
       messages,
       stream,
       temperature: 0.7,

@@ -54,7 +54,7 @@ El proyecto está pensado para periodistas, analistas políticos, académicos y 
 - Estadísticas generales del Senado
 
 ### 🤖 Chat IA
-- Asistente electoral con GPT-4 Turbo
+- Asistente electoral con GPT-5.2
 - Búsqueda en tiempo real vía Exa AI
 - Componentes visuales embebidos en el chat (tarjetas, comparaciones, rankings, stats)
 
@@ -84,7 +84,7 @@ El proyecto está pensado para periodistas, analistas políticos, académicos y 
 | Iconos | Lucide React |
 | Markdown | react-markdown + remark-gfm |
 | Backend / DB | Supabase (Edge Functions + Storage) |
-| IA | OpenAI GPT-4 Turbo + Exa AI (búsqueda web) |
+| IA | OpenAI GPT-5.2 + Exa AI (búsqueda web) |
 | Noticias | Supabase Edge Function `fetch-news` |
 | Analytics | Vercel Analytics |
 | Deploy | Vercel |
@@ -145,7 +145,7 @@ Usuario → AIChatBubble (React)
             ↓
        Supabase Edge Function: chat-ai
             ↓
-       OpenAI GPT-4 Turbo  +  Exa AI (búsqueda web en tiempo real)
+       OpenAI GPT-5.2  +  Exa AI (búsqueda web en tiempo real)
             ↓
        Respuesta con componentes visuales embebidos
 ```
@@ -316,7 +316,7 @@ supabase secrets set EXA_API_KEY=exakey-...
 
 | Variable | Descripción |
 |---|---|
-| `OPENAI_API_KEY` | API Key de OpenAI para GPT-4 Turbo |
+| `OPENAI_API_KEY` | API Key de OpenAI para GPT-5.2 |
 | `EXA_API_KEY` | API Key de Exa AI para búsqueda web en tiempo real |
 
 ---
