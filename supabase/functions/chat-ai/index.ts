@@ -189,7 +189,7 @@ async function callOpenAI(messages: any[], openaiApiKey: string, stream: boolean
       messages,
       stream,
       temperature: 0.7,
-      max_tokens: 2000,
+      max_completion_tokens: 2000,
       tools: allTools,
       tool_choice: 'auto',
     }),
