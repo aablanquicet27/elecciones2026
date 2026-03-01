@@ -32,12 +32,15 @@ const SenadoHero = () => {
           <span className="inline-block py-1.5 px-4 rounded-full bg-purple-800/50 border border-purple-500/30 text-purple-200 font-semibold text-sm mb-8 tracking-wider uppercase">
             Elecciones Legislativas • 8 de Marzo 2026
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-none">
-            8 de cada 10 candidatos al Senado<br />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter leading-none">
+            195 candidatos cuestionados<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-              vienen de las mismas maquinarias.
+              compiten por una curul en el Congreso.
             </span>
           </h1>
+          <p className="text-purple-300 text-sm md:text-base mb-8 font-medium tracking-wide">
+            Según investigación de la Fundación PARES, enero 2026
+          </p>
           <p className="text-xl md:text-2xl text-purple-100 max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
             El 8 de marzo votas por el Congreso de los próximos 4 años. ¿Sabes quién está en las listas?
           </p>

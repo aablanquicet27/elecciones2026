@@ -5,6 +5,7 @@ import SenadoCorruptionTable from '../components/senado/SenadoCorruptionTable';
 import SenadoPartyGrid from '../components/senado/SenadoPartyGrid';
 import SenadoVotingGuide from '../components/senado/SenadoVotingGuide';
 import SenadoCTA from '../components/senado/SenadoCTA';
+import SenadoFuentes from '../components/senado/SenadoFuentes';
 
 const SenadoPage = () => {
   return (
@@ -15,6 +16,7 @@ const SenadoPage = () => {
       <SenadoPartyGrid />
       <SenadoVotingGuide />
       <SenadoCTA />
+      <SenadoFuentes />
       <Footer />
     </div>
   );
