@@ -125,29 +125,7 @@ const uiTools = [
   },
 ];
 
-// Herramienta server-side: búsqueda en Exa AI (el modelo la invoca, el server la ejecuta)
-const searchNewsTool = {
-  type: 'function',
-  function: {
-    name: 'searchNews',
-    description: 'Buscar noticias recientes y en tiempo real sobre las elecciones Colombia 2026, candidatos, partidos, encuestas, o cualquier tema político colombiano actual. USA ESTA HERRAMIENTA siempre que el usuario pregunte sobre noticias recientes, últimas noticias, qué está pasando, novedades, o cualquier cosa que requiera información actualizada que no tengas en tus datos.',
-    parameters: {
-      type: 'object',
-      properties: {
-        query: {
-          type: 'string',
-          description: 'La consulta de búsqueda en español. Debe ser específica sobre el tema que el usuario pregunta. Ejemplo: "encuestas elecciones Colombia 2026 febrero"',
-        },
-      },
-      required: ['query'],
-    },
-  },
-};
-
-const allTools = [...uiTools, searchNewsTool];
-
-// Nombres de tools que se ejecutan server-side (no se pasan al frontend)
-const SERVER_TOOLS = new Set(['searchNews']);
+const allTools = [...uiTools];
 
 async function searchExa(query: string): Promise<string> {
   const exaApiKey = Deno.env.get('EXA_API_KEY');
@@ -198,49 +176,6 @@ async function searchExa(query: string): Promise<string> {
   }
 }
 
-// Consume un stream SSE completo y devuelve el mensaje del asistente parseado
-async function consumeOpenAIStream(response: Response): Promise<{ content: string; tool_calls: any[] }> {
-  const reader = response.body!.getReader();
-  const decoder = new TextDecoder();
-  let content = '';
-  let toolCalls: any[] = [];
-  let buffer = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n');
-    buffer = lines.pop() || '';
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed === 'data: [DONE]') continue;
-      if (!trimmed.startsWith('data: ')) continue;
-
-      try {
-        const parsed = JSON.parse(trimmed.slice(6));
-        const delta = parsed.choices?.[0]?.delta;
-        if (delta?.content) content += delta.content;
-        if (delta?.tool_calls) {
-          for (const tc of delta.tool_calls) {
-            const idx = tc.index;
-            if (!toolCalls[idx]) {
-              toolCalls[idx] = { id: '', type: 'function', function: { name: '', arguments: '' } };
-            }
-            if (tc.id) toolCalls[idx].id = tc.id;
-            if (tc.function?.name) toolCalls[idx].function.name += tc.function.name;
-            if (tc.function?.arguments) toolCalls[idx].function.arguments += tc.function.arguments;
-          }
-        }
-      } catch { /* skip */ }
-    }
-  }
-
-  return { content, tool_calls: toolCalls };
-}
-
 async function callOpenAI(messages: any[], openaiApiKey: string, stream: boolean = false) {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -267,6 +202,16 @@ async function callOpenAI(messages: any[], openaiApiKey: string, stream: boolean
   return response;
 }
 
+// Construir query de búsqueda Exa basado en el último mensaje del usuario
+function buildExaQuery(messages: Message[]): string {
+  // Tomar el último mensaje del usuario
+  const lastUserMsg = [...messages].reverse().find(m => m.role === 'user');
+  const userText = lastUserMsg?.content || '';
+
+  // Siempre incluir contexto electoral + lo que preguntó el usuario
+  return `elecciones presidenciales Colombia 2026 ${userText}`.substring(0, 300);
+}
+
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
@@ -284,13 +229,30 @@ Deno.serve(async (req: Request) => {
       throw new Error('OPENAI_API_KEY no está configurada');
     }
 
+    // SIEMPRE buscar en Exa AI primero para contexto en tiempo real
+    const exaQuery = buildExaQuery(messages);
+    console.log('Buscando en Exa:', exaQuery);
+    const newsContext = await searchExa(exaQuery);
+
     const enhancedSystemContext = `${systemContext || 'Eres un asistente electoral experto.'}
 
-**REGLAS CRÍTICAS PARA USO DE HERRAMIENTAS VISUALES:**
+**CONTEXTO DE NOTICIAS EN TIEMPO REAL (búsqueda actualizada al momento):**
+${newsContext}
+
+---
+
+**INSTRUCCIONES:**
+- SIEMPRE usa el contexto de noticias en tiempo real de arriba para dar respuestas actualizadas y contextualizadas
+- Menciona fuentes y fechas cuando cites noticias
+- Combina los datos electorales del sistema con las noticias en tiempo real para dar la mejor respuesta posible
+- Si las noticias son relevantes a la pregunta del usuario, inclúyelas en tu respuesta
+- Si las noticias no son directamente relevantes, usa tu conocimiento electoral pero igual puedes mencionar brevemente las últimas novedades
+
+**REGLAS PARA HERRAMIENTAS VISUALES:**
 
 1. **RESPONDE CON TEXTO NATURAL** para:
    - Preguntas de seguimiento sobre un candidato ya mostrado
-   - Preguntas puntuales de datos (fechas, números, hechos específicos)
+   - Preguntas puntuales de datos
    - Conversaciones generales sobre política
    - Cualquier pregunta que NO pida explícitamente VER o MOSTRAR algo
 
@@ -300,174 +262,17 @@ Deno.serve(async (req: Request) => {
    - Pide ver un RANKING o TOP de candidatos
    - Pide ver ESTADÍSTICAS en formato visual
 
-3. **NUNCA uses herramientas visuales** para:
-   - Preguntas de seguimiento ("cuéntame más", "qué más sabes", "cuándo nació")
-   - Datos puntuales que puedes responder con texto
-   - Cuando ya mostraste la tarjeta de ese candidato en la conversación
-
-4. **BÚSQUEDA DE NOTICIAS EN TIEMPO REAL:**
-   - Usa la herramienta searchNews cuando el usuario pregunte sobre noticias recientes, últimas novedades, qué está pasando, eventos actuales, o cualquier información que requiera datos actualizados
-   - Después de obtener los resultados de búsqueda, resume las noticias más relevantes en español de forma clara y organizada
-   - Siempre menciona la fuente y fecha de las noticias
-   - Puedes combinar searchNews con herramientas visuales si tiene sentido`;
+3. **NUNCA uses herramientas visuales** para preguntas de seguimiento o datos puntuales`;
 
     const allMessages: any[] = [
       { role: 'system', content: enhancedSystemContext },
       ...messages,
     ];
 
-    // Primera llamada a OpenAI (NON-streaming para poder interceptar tool calls)
-    const firstResponse = await callOpenAI(allMessages, openaiApiKey, true);
-    const firstResult = await consumeOpenAIStream(firstResponse);
+    // Llamar a OpenAI con streaming directo al cliente (ya tenemos el contexto de Exa inyectado)
+    const response = await callOpenAI(allMessages, openaiApiKey, true);
 
-    // Check if any tool calls are server-side (searchNews)
-    const serverToolCalls = firstResult.tool_calls.filter(
-      tc => SERVER_TOOLS.has(tc.function.name)
-    );
-    const clientToolCalls = firstResult.tool_calls.filter(
-      tc => !SERVER_TOOLS.has(tc.function.name)
-    );
-
-    // If there are server-side tool calls, execute them and do a follow-up call
-    if (serverToolCalls.length > 0) {
-      // Build the assistant message with all tool_calls
-      const assistantMessage: any = {
-        role: 'assistant',
-        content: firstResult.content || null,
-      };
-      if (firstResult.tool_calls.length > 0) {
-        assistantMessage.tool_calls = firstResult.tool_calls.map(tc => ({
-          id: tc.id,
-          type: 'function',
-          function: { name: tc.function.name, arguments: tc.function.arguments },
-        }));
-      }
-
-      const followUpMessages = [...allMessages, assistantMessage];
-
-      // Execute server-side tools and add results
-      for (const tc of serverToolCalls) {
-        let result = '';
-        if (tc.function.name === 'searchNews') {
-          let args: any = {};
-          try { args = JSON.parse(tc.function.arguments); } catch { /* */ }
-          result = await searchExa(args.query || 'elecciones Colombia 2026');
-        }
-        followUpMessages.push({
-          role: 'tool',
-          tool_call_id: tc.id,
-          content: result,
-        });
-      }
-
-      // For client-side tool calls that happened alongside, provide dummy results
-      for (const tc of clientToolCalls) {
-        followUpMessages.push({
-          role: 'tool',
-          tool_call_id: tc.id,
-          content: 'OK - rendered on client',
-        });
-      }
-
-      // Second call - this time streaming to the client
-      const secondResponse = await callOpenAI(followUpMessages, openaiApiKey, true);
-
-      // We need to also forward the client tool calls from the first response
-      // Create a custom stream that prepends client tool call info
-      if (clientToolCalls.length > 0) {
-        // Merge: send client tool calls as SSE events first, then the second response stream
-        const encoder = new TextEncoder();
-        const readable = new ReadableStream({
-          async start(controller) {
-            // Emit synthetic SSE events for client tool calls from first response
-            for (let i = 0; i < clientToolCalls.length; i++) {
-              const tc = clientToolCalls[i];
-              const syntheticDelta = {
-                choices: [{
-                  delta: {
-                    tool_calls: [{
-                      index: i,
-                      id: tc.id,
-                      type: 'function',
-                      function: { name: tc.function.name, arguments: tc.function.arguments },
-                    }],
-                  },
-                }],
-              };
-              controller.enqueue(encoder.encode(`data: ${JSON.stringify(syntheticDelta)}\n\n`));
-            }
-
-            // Pipe through the second response
-            const reader = secondResponse.body!.getReader();
-            while (true) {
-              const { done, value } = await reader.read();
-              if (done) break;
-              controller.enqueue(value);
-            }
-            controller.close();
-          },
-        });
-
-        return new Response(readable, {
-          headers: {
-            ...corsHeaders,
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache, no-transform',
-            'Connection': 'keep-alive',
-            'X-Accel-Buffering': 'no',
-          },
-        });
-      }
-
-      // No client tool calls from first response, just stream the second response
-      return new Response(secondResponse.body, {
-        headers: {
-          ...corsHeaders,
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache, no-transform',
-          'Connection': 'keep-alive',
-          'X-Accel-Buffering': 'no',
-        },
-      });
-    }
-
-    // No server-side tool calls - need to re-stream the first result to the client
-    // Since we already consumed the stream, create a synthetic SSE stream
-    const encoder = new TextEncoder();
-    const readable = new ReadableStream({
-      start(controller) {
-        // Emit content
-        if (firstResult.content) {
-          const contentDelta = {
-            choices: [{ delta: { content: firstResult.content } }],
-          };
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(contentDelta)}\n\n`));
-        }
-
-        // Emit tool calls
-        for (let i = 0; i < firstResult.tool_calls.length; i++) {
-          const tc = firstResult.tool_calls[i];
-          const tcDelta = {
-            choices: [{
-              delta: {
-                tool_calls: [{
-                  index: i,
-                  id: tc.id,
-                  type: 'function',
-                  function: { name: tc.function.name, arguments: tc.function.arguments },
-                }],
-              },
-            }],
-          };
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify(tcDelta)}\n\n`));
-        }
-
-        controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-        controller.close();
-      },
-    });
-
-    return new Response(readable, {
+    return new Response(response.body, {
       headers: {
         ...corsHeaders,
         'Content-Type': 'text/event-stream',
