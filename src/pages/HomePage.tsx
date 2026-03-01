@@ -9,7 +9,7 @@ import TrendAnalysis from '../components/TrendAnalysis';
 import RegionalMap from '../components/RegionalMap';
 import TimelineSection from '../components/TimelineSection';
 import ElectoralInsights from '../components/ElectoralInsights';
-import NoticiasDelDia from '../components/NoticiasDelDia';
+import NoticiasPreview from '../components/NoticiasPreview';
 import Footer from '../components/Footer';
 
 interface HomePageProps {
@@ -172,7 +172,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
         aria-label="Noticias del día"
       >
         <div className="container mx-auto px-6 lg:px-12">
-          <NoticiasDelDia />
+          <NoticiasPreview />
         </div>
       </section>
 
