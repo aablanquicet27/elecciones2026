@@ -5,7 +5,7 @@ const SenadoCTA = () => {
   const shareText = encodeURIComponent(
     '¿Sabes quién está en las listas al Senado? El 8 de marzo decides. Infórmate antes de votar:'
   );
-  const shareUrl = encodeURIComponent('https://colombia2026.com/senado');
+  const shareUrl = encodeURIComponent('https://eleccionescolombia.org/senado');
 
   const handleShareWhatsApp = () => {
     window.open(`https://wa.me/?text=${shareText}%20${shareUrl}`, '_blank');
