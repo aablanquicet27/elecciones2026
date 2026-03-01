@@ -130,10 +130,11 @@ const allTools = [...uiTools];
 async function searchExa(query: string): Promise<string> {
   const exaApiKey = Deno.env.get('EXA_API_KEY');
   if (!exaApiKey) {
-    return 'Error: EXA_API_KEY no configurada. No se pueden buscar noticias en tiempo real.';
+    return 'Sin contexto de búsqueda disponible.';
   }
 
   try {
+    // Búsqueda general (NO solo noticias) para obtener contexto amplio
     const response = await fetch('https://api.exa.ai/search', {
       method: 'POST',
       headers: {
@@ -142,37 +143,37 @@ async function searchExa(query: string): Promise<string> {
       },
       body: JSON.stringify({
         query,
-        numResults: 8,
-        category: 'news',
-        startPublishedDate: '2026-01-01',
-        contents: { text: { maxCharacters: 1500 } },
+        numResults: 10,
+        useAutoprompt: true,
+        contents: { text: { maxCharacters: 2000 } },
       }),
     });
 
     if (!response.ok) {
       const errText = await response.text();
       console.error('Exa API error:', errText);
-      return `Error buscando noticias: ${response.status}`;
+      return 'Sin contexto de búsqueda disponible.';
     }
 
     const data = await response.json();
     const results = data.results || [];
 
     if (results.length === 0) {
-      return 'No se encontraron noticias recientes para esta consulta.';
+      return 'Sin resultados de búsqueda para esta consulta.';
     }
 
-    const newsText = results.map((r: any, i: number) => {
-      const date = r.publishedDate ? r.publishedDate.split('T')[0] : 'Fecha desconocida';
-      const source = r.url ? new URL(r.url).hostname.replace('www.', '') : 'Fuente desconocida';
-      const text = r.text ? r.text.substring(0, 800) : 'Sin contenido';
-      return `**Noticia ${i + 1}** (${date} - ${source}):\nTítulo: ${r.title || 'Sin título'}\n${text}`;
+    const resultsText = results.map((r: any, i: number) => {
+      const date = r.publishedDate ? r.publishedDate.split('T')[0] : '';
+      const source = r.url ? new URL(r.url).hostname.replace('www.', '') : '';
+      const dateSource = [date, source].filter(Boolean).join(' - ');
+      const text = r.text ? r.text.substring(0, 1200) : '';
+      return `[Resultado ${i + 1}] ${dateSource ? `(${dateSource})` : ''}\nTítulo: ${r.title || 'Sin título'}\n${text}`;
     }).join('\n\n---\n\n');
 
-    return `Se encontraron ${results.length} noticias recientes:\n\n${newsText}`;
+    return resultsText;
   } catch (err) {
     console.error('Error en búsqueda Exa:', err);
-    return `Error al buscar noticias: ${err.message}`;
+    return 'Sin contexto de búsqueda disponible.';
   }
 }
 
@@ -202,14 +203,17 @@ async function callOpenAI(messages: any[], openaiApiKey: string, stream: boolean
   return response;
 }
 
-// Construir query de búsqueda Exa basado en el último mensaje del usuario
-function buildExaQuery(messages: Message[]): string {
-  // Tomar el último mensaje del usuario
+// Construir queries de búsqueda Exa basados en el último mensaje del usuario
+function buildExaQueries(messages: Message[]): string[] {
   const lastUserMsg = [...messages].reverse().find(m => m.role === 'user');
-  const userText = lastUserMsg?.content || '';
+  const userText = lastUserMsg?.content || 'elecciones Colombia 2026';
 
-  // Siempre incluir contexto electoral + lo que preguntó el usuario
-  return `elecciones presidenciales Colombia 2026 ${userText}`.substring(0, 300);
+  // Búsqueda 1: pregunta directa del usuario + Colombia 2026
+  // Búsqueda 2: pregunta tal cual del usuario
+  return [
+    `${userText} Colombia 2026`.substring(0, 300),
+    userText.substring(0, 300),
+  ];
 }
 
 Deno.serve(async (req: Request) => {
@@ -230,39 +234,38 @@ Deno.serve(async (req: Request) => {
     }
 
     // SIEMPRE buscar en Exa AI primero para contexto en tiempo real
-    const exaQuery = buildExaQuery(messages);
-    console.log('Buscando en Exa:', exaQuery);
-    const newsContext = await searchExa(exaQuery);
+    // Hacer múltiples búsquedas en paralelo para máximo contexto
+    const queries = buildExaQueries(messages);
+    console.log('Buscando en Exa:', queries);
+    const searchResults = await Promise.all(queries.map(q => searchExa(q)));
+    const newsContext = searchResults.join('\n\n=== BÚSQUEDA ADICIONAL ===\n\n');
 
     const enhancedSystemContext = `${systemContext || 'Eres un asistente electoral experto.'}
 
-**CONTEXTO DE NOTICIAS EN TIEMPO REAL (búsqueda actualizada al momento):**
+=== INFORMACIÓN DE BÚSQUEDA EN TIEMPO REAL ===
+A continuación tienes resultados de búsqueda en internet actualizados al momento. DEBES usar esta información para responder:
+
 ${newsContext}
 
----
+=== FIN DE BÚSQUEDA ===
 
-**INSTRUCCIONES:**
-- SIEMPRE usa el contexto de noticias en tiempo real de arriba para dar respuestas actualizadas y contextualizadas
-- Menciona fuentes y fechas cuando cites noticias
-- Combina los datos electorales del sistema con las noticias en tiempo real para dar la mejor respuesta posible
-- Si las noticias son relevantes a la pregunta del usuario, inclúyelas en tu respuesta
-- Si las noticias no son directamente relevantes, usa tu conocimiento electoral pero igual puedes mencionar brevemente las últimas novedades
+**REGLAS ABSOLUTAS E INQUEBRANTABLES:**
+
+1. **PROHIBIDO TERMINANTEMENTE decir "no tengo información", "no sé", "no cuento con datos", "no tengo acceso", "no tengo información específica" o CUALQUIER variación de estas frases.** Los resultados de búsqueda de arriba SON tu información. Analízalos, extrae lo relevante, y RESPONDE. Si no hay un dato exacto, haz análisis y da tu mejor respuesta basándote en lo que SÍ hay en los resultados.
+
+2. **SIEMPRE da una respuesta completa y contextualizada.** Usa los resultados de búsqueda de arriba como tu fuente principal de información. Extrae datos concretos: nombres, cifras, fechas, porcentajes, hechos. No seas vago ni genérico.
+
+3. **Menciona fuentes y fechas** cuando cites información de los resultados de búsqueda (ej: "según semana.com del 28 de febrero...").
+
+4. **Si la pregunta es sobre algo específico** (un candidato al senado, un partido, un escándalo, etc.) y los resultados de búsqueda contienen información relevante, ÚSALA para dar una respuesta detallada y concreta.
+
+5. **Combina todo:** los datos electorales del sistema + los resultados de búsqueda en tiempo real + tu conocimiento general para dar la MEJOR respuesta posible. Nunca dejes al usuario sin respuesta.
 
 **REGLAS PARA HERRAMIENTAS VISUALES:**
 
-1. **RESPONDE CON TEXTO NATURAL** para:
-   - Preguntas de seguimiento sobre un candidato ya mostrado
-   - Preguntas puntuales de datos
-   - Conversaciones generales sobre política
-   - Cualquier pregunta que NO pida explícitamente VER o MOSTRAR algo
-
-2. **USA HERRAMIENTAS VISUALES SOLO** cuando el usuario:
-   - Pide EXPLÍCITAMENTE ver/mostrar la tarjeta de un candidato por PRIMERA VEZ
-   - Pide COMPARAR candidatos específicamente
-   - Pide ver un RANKING o TOP de candidatos
-   - Pide ver ESTADÍSTICAS en formato visual
-
-3. **NUNCA uses herramientas visuales** para preguntas de seguimiento o datos puntuales`;
+- **RESPONDE CON TEXTO NATURAL** para: preguntas de seguimiento, datos puntuales, conversaciones generales, cualquier pregunta que NO pida explícitamente VER o MOSTRAR algo
+- **USA HERRAMIENTAS VISUALES SOLO** cuando el usuario pide EXPLÍCITAMENTE ver/mostrar tarjeta de candidato, COMPARAR candidatos, ver RANKING/TOP, o ver ESTADÍSTICAS en formato visual
+- **NUNCA uses herramientas visuales** para preguntas de seguimiento o datos puntuales`;
 
     const allMessages: any[] = [
       { role: 'system', content: enhancedSystemContext },
