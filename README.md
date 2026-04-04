@@ -297,7 +297,7 @@ Crea un archivo `.env` en la raíz del proyecto basándote en `.env.example`.
 VITE_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
 
 # Clave anon/pública de Supabase (segura para el frontend)
-VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+VITE_SUPABASE_ANON_KEY=
 
 # API Key de OpenAI (solo si haces llamadas directas desde el frontend)
 VITE_OPENAI_API_KEY=sk-...
