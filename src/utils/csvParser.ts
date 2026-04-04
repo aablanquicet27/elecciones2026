@@ -70,6 +70,8 @@ export const getTrendData = (candidates: Candidate[]) => {
     'Izquierda': '#ef4444',
     'Centro': '#3b82f6',
     'Derecha': '#22c55e',
+    'Centro-Derecha': '#8b5cf6',
+    'Extrema Derecha': '#f97316',
     'Otros': '#6b7280'
   };
 
@@ -84,11 +86,11 @@ export const getRegionalData = () => {
   return [
     { region: 'Caribe', lider: 'Iván Cepeda', color: '#ef4444' },
     { region: 'Pacífica', lider: 'Iván Cepeda', color: '#ef4444' },
-    { region: 'Bogotá', lider: 'Abelardo de la Espriella', color: '#22c55e' },
-    { region: 'Centro-Oriente', lider: 'Abelardo de la Espriella', color: '#22c55e' },
-    { region: 'Eje Cafetero', lider: 'Abelardo de la Espriella', color: '#22c55e' },
-    { region: 'Llanos', lider: 'Abelardo de la Espriella', color: '#22c55e' },
-    { region: 'Amazonía', lider: 'Abelardo de la Espriella', color: '#22c55e' }
+    { region: 'Bogotá', lider: 'Iván Cepeda', color: '#ef4444' },
+    { region: 'Centro-Oriente', lider: 'Paloma Valencia', color: '#8b5cf6' },
+    { region: 'Eje Cafetero', lider: 'Paloma Valencia', color: '#8b5cf6' },
+    { region: 'Llanos', lider: 'Abelardo de la Espriella', color: '#f97316' },
+    { region: 'Amazonía', lider: 'Iván Cepeda', color: '#ef4444' }
   ];
 };
 
@@ -96,9 +98,9 @@ export const getDemographicData = () => {
   return [
     { ageGroup: 'Jóvenes 18-24', lider: 'Iván Cepeda', color: '#ef4444' },
     { ageGroup: 'Adultos 25-34', lider: 'Iván Cepeda', color: '#ef4444' },
-    { ageGroup: 'Adultos 35-44', lider: 'Iván Cepeda', color: '#ef4444' },
-    { ageGroup: 'Adultos 45-59', lider: 'Abelardo de la Espriella', color: '#22c55e' },
-    { ageGroup: 'Adultos Mayores 60+', lider: 'Abelardo de la Espriella', color: '#22c55e' }
+    { ageGroup: 'Adultos 35-44', lider: 'Paloma Valencia', color: '#8b5cf6' },
+    { ageGroup: 'Adultos 45-59', lider: 'Paloma Valencia', color: '#8b5cf6' },
+    { ageGroup: 'Adultos Mayores 60+', lider: 'Abelardo de la Espriella', color: '#f97316' }
   ];
 };
 
@@ -108,118 +110,124 @@ export const getSocialMediaData = () => {
     { candidate: 'Iván Cepeda', twitter: 850000, instagram: 420000, facebook: 380000, total: 1650000 },
     { candidate: 'Sergio Fajardo', twitter: 830000, instagram: 300000, facebook: 780000, total: 1910000 },
     { candidate: 'Abelardo de la Espriella', twitter: 520000, instagram: 380000, facebook: 290000, total: 1190000 },
-    { candidate: 'Paloma Valencia', twitter: 320000, instagram: 185000, facebook: 175000, total: 680000 },
+    { candidate: 'Paloma Valencia', twitter: 480000, instagram: 350000, facebook: 310000, total: 1140000 },
     { candidate: 'Miguel Uribe Londoño', twitter: 180000, instagram: 120000, facebook: 95000, total: 395000 }
   ];
 };
 
 export const getComparisonData = () => {
   return [
-    { tendencia: 'Derecha', porcentaje2022: 28.5, porcentaje2026: 40.0 },
-    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 34.2 },
-    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 20.2 },
-    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 5.6 }
+    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 35.0 },
+    { tendencia: 'Centro-Derecha', porcentaje2022: 28.5, porcentaje2026: 25.9 },
+    { tendencia: 'Extrema Derecha', porcentaje2022: 0, porcentaje2026: 15.4 },
+    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 7.3 },
+    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 16.4 }
   ];
 };
 
 export const getScenarioData = () => {
   return [
     {
-      scenario: 'De la Espriella vs. Cepeda',
-      candidate1: 'Espriella',
-      percentage1: 36.8,
-      candidate2: 'Cepeda',
-      percentage2: 34.6,
-      undecided: 28.6,
-      probability: 55
-    },
-    {
-      scenario: 'Cepeda vs. Pinzón',
-      candidate1: 'Cepeda',
-      percentage1: 35.8,
-      candidate2: 'Pinzón',
-      percentage2: 18.8,
-      undecided: 45.4,
-      probability: 10
-    },
-    {
       scenario: 'Cepeda vs. Valencia',
       candidate1: 'Cepeda',
-      percentage1: 35.2,
+      percentage1: 43.3,
       candidate2: 'Valencia',
-      percentage2: 26.9,
-      undecided: 37.9,
-      probability: 12
+      percentage2: 42.9,
+      undecided: 13.8,
+      probability: 40
+    },
+    {
+      scenario: 'Cepeda vs. De la Espriella',
+      candidate1: 'Cepeda',
+      percentage1: 48.1,
+      candidate2: 'Espriella',
+      percentage2: 35.5,
+      undecided: 16.4,
+      probability: 30
+    },
+    {
+      scenario: 'Cepeda vs. López',
+      candidate1: 'Cepeda',
+      percentage1: 47.3,
+      candidate2: 'López',
+      percentage2: 26.6,
+      undecided: 26.1,
+      probability: 10
     },
     {
       scenario: 'Cepeda vs. Fajardo',
       candidate1: 'Cepeda',
-      percentage1: 33.7,
+      percentage1: 47.3,
       candidate2: 'Fajardo',
-      percentage2: 26.2,
-      undecided: 40.1,
-      probability: 15
+      percentage2: 31.6,
+      undecided: 21.1,
+      probability: 10
     },
     {
-      scenario: 'De la Espriella vs. Fajardo',
-      candidate1: 'Espriella',
-      percentage1: 31.8,
-      candidate2: 'Fajardo',
-      percentage2: 21.7,
-      undecided: 46.5,
-      probability: 8
+      scenario: 'Valencia vs. De la Espriella',
+      candidate1: 'Valencia',
+      percentage1: 41.2,
+      candidate2: 'Espriella',
+      percentage2: 38.7,
+      undecided: 20.1,
+      probability: 10
     }
   ];
 };
 
 export const getFavorabilityData = () => {
   return [
-    { candidate: 'Iván Cepeda', favorabilidad: 0, desfavorabilidad: 43.9, balance: -43.9 },
-    { candidate: 'Abelardo de la Espriella', favorabilidad: 0, desfavorabilidad: 33.6, balance: -33.6 }
+    { candidate: 'Iván Cepeda', favorabilidad: 42.0, desfavorabilidad: 43.9, balance: -1.9 },
+    { candidate: 'Paloma Valencia', favorabilidad: 38.5, desfavorabilidad: 28.3, balance: 10.2 },
+    { candidate: 'Abelardo de la Espriella', favorabilidad: 30.2, desfavorabilidad: 33.6, balance: -3.4 },
+    { candidate: 'Claudia López', favorabilidad: 28.1, desfavorabilidad: 45.2, balance: -17.1 },
+    { candidate: 'Sergio Fajardo', favorabilidad: 25.8, desfavorabilidad: 30.5, balance: -4.7 },
+    { candidate: 'Roy Barreras', favorabilidad: 12.3, desfavorabilidad: 42.1, balance: -29.8 },
+    { candidate: 'Santiago Botero', favorabilidad: 8.5, desfavorabilidad: 15.2, balance: -6.7 }
   ];
 };
 
 export const getElectoralInsights = () => {
   return {
     fragmentacion: {
-      title: "Liderazgo de Cepeda - Feb 2026",
-      description: "Iván Cepeda lidera con 37.1%, seguido por Abelardo de la Espriella con 18.9%",
-      impact: "Diferencia de más de 18 puntos a favor del líder",
-      percentage: "37.1% vs 18.9%"
+      title: "Carrera a Tres Bandas",
+      description: "Cepeda lidera con 34.5%, seguido por Valencia con 22.2% y De la Espriella con 15.4%. Las primarias del 8 de marzo transformaron la contienda en una competencia triangular.",
+      impact: "Valencia pasó de 4% a 22.2% en solo dos semanas tras ganar la Gran Consulta",
+      percentage: "34.5% · 22.2% · 15.4%"
     },
     recomposicion: {
-      title: "Centro-Izquierda y Derecha",
-      description: "Centro-Izquierda consolida apoyo, mientras la Derecha mantiene un bloque sólido",
-      impact: "Claudia López sube al 11.7%, Paloma Valencia al 10.0%",
-      change: "Reconfiguración de los bloques tradicionales"
+      title: "Valencia: La Gran Sorpresa",
+      description: "Paloma Valencia ganó la Gran Consulta con más de 3 millones de votos y escaló del 5° al 2° lugar. Su fórmula con Juan Daniel Oviedo busca captar el voto de centro.",
+      impact: "De 4% pre-primarias a 22.2% post-primarias — el mayor salto de la campaña",
+      change: "+18 puntos en 2 semanas"
     },
     volatilidad: {
-      title: "Indecisos en Descenso",
-      description: "Menor porcentaje de indecisos ante polarización",
-      impact: "Electorado más definido que en encuestas anteriores",
-      uncertainty: "Bajo"
+      title: "Empate Técnico en Segunda Vuelta",
+      description: "CNC revela que en balotaje Cepeda vs Valencia sería 43.3% vs 42.9% — un empate técnico dentro del margen de error. La segunda vuelta es completamente abierta.",
+      impact: "Solo 0.4 puntos separan a los dos en el escenario más probable",
+      uncertainty: "43.3% vs 42.9%"
     },
     digital: {
-      title: "Factor Digital Determinante",
-      description: "Presencia en redes sociales como diferenciador clave",
-      leaders: ["Claudia López", "Iván Cepeda", "Sergio Fajardo"],
-      impact: "Líderes digitales no coinciden con líderes en intención de voto"
+      title: "Congreso Fragmentado",
+      description: "Elecciones del 8 de marzo dejaron un Congreso sin mayorías: Pacto Histórico 25 Senado, Centro Democrático 17 Senado / 32 Cámara, Liberal 31 Cámara.",
+      leaders: ["PH: 25 Sen.", "CD: 32 Cám.", "Liberal: 31 Cám."],
+      impact: "El próximo presidente necesitará amplias coaliciones para gobernar"
     },
     regional: {
-      title: "Cepeda lidera nacionalmente",
-      description: "Iván Cepeda domina la mayoría de las regiones, incluyendo Bogotá y el Caribe",
+      title: "Cepeda Lidera Nacionalmente",
+      description: "Cepeda domina en Caribe, Pacífica y Bogotá. Valencia gana fuerza en Centro-Oriente y Eje Cafetero. De la Espriella compite en Llanos.",
       highlights: {
-        caribe: "Cepeda lidera en Caribe y Pacífica",
-        andina: "Cepeda y Espriella compiten en la región Andina",
-        orinoquia: "Competencia cerrada en Llanos y Amazonía"
+        caribe: "Cepeda domina Caribe, Pacífica y Bogotá",
+        andina: "Valencia sube en Centro-Oriente y Eje Cafetero",
+        orinoquia: "De la Espriella mantiene fuerza en Llanos"
       }
     },
     generacional: {
-      title: "Polarización Generacional y Económica",
-      description: "Cepeda lidera entre jóvenes (18-44) y bajos ingresos; Espriella entre mayores (45+) y altos ingresos",
+      title: "Fórmulas VP Definen Estrategia",
+      description: "Cepeda-Quilcué apunta al voto social e indígena. Valencia-Oviedo busca centro y tecnocracia. De la Espriella-Restrepo moderación económica.",
       trends: {
-        jovenes: "Cepeda lidera en votantes de 18 a 44 años",
-        mayores: "Espriella domina en electores mayores de 45 años"
+        jovenes: "Cepeda lidera 18-34 años con mensaje social",
+        mayores: "Valencia y Espriella compiten en 45+ años"
       }
     }
   };

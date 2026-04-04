@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
               <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-              <span className="text-base font-medium text-purple-700">Datos Actualizados · Encuesta Invamer · Feb 2026</span>
+              <span className="text-base font-medium text-purple-700">Post-Primarias · Encuesta CNC/Cambio · Mar 2026</span>
             </div>
             
             {/* Main Headline */}
@@ -47,24 +47,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
               </h1>
               
               <p className="text-large max-w-xl">
-                El análisis más completo del panorama electoral presidencial. 
-                Liderazgo de Iván Cepeda seguido por Abelardo de la Espriella.
+                Carrera a tres bandas tras las primarias del 8 de marzo. 
+                Cepeda lidera, Valencia irrumpe como sorpresa y De la Espriella busca mantenerse.
               </p>
             </div>
 
             {/* Key Stats - Minimal */}
             <div className="flex flex-wrap gap-8 md:gap-12 pt-4">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">37.1%</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">34.5%</div>
                 <div className="text-sm text-gray-500 mt-1">Cepeda</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">18.9%</div>
-                <div className="text-sm text-gray-500 mt-1">De la Espriella</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">22.2%</div>
+                <div className="text-sm text-gray-500 mt-1">Valencia ↑</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">{undecided.toFixed(0)}%</div>
-                <div className="text-sm text-gray-500 mt-1">Indecisos</div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">15.4%</div>
+                <div className="text-sm text-gray-500 mt-1">De la Espriella</div>
+              </div>
+            </div>
+
+            {/* Election countdown */}
+            <div className="bg-purple-50 rounded-2xl p-4 border border-purple-100 max-w-md">
+              <div className="flex items-center space-x-3">
+                <span className="text-2xl">🗳️</span>
+                <div>
+                  <div className="font-bold text-gray-900">Primera vuelta: 31 de mayo</div>
+                  <div className="text-sm text-gray-600">Segunda vuelta: 21 de junio (si aplica)</div>
+                </div>
               </div>
             </div>
 
@@ -82,9 +93,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
               <Link 
                 to="/senado"
                 className="btn-secondary bg-purple-100/50 border-purple-200 text-purple-900 inline-flex items-center justify-center space-x-3 hover:bg-purple-600"
-                aria-label="Ver elecciones al Senado"
+                aria-label="Ver resultados legislativos 8 de marzo"
               >
-                <span>Elecciones al Senado</span>
+                <span>Resultados Legislativas 8-Mar</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
 
@@ -106,7 +117,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
             <div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-purple-100 shadow-xl shadow-purple-500/10">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-1">Líderes Actuales</h2>
-                <p className="text-gray-500">Intención de voto · Primera vuelta</p>
+                <p className="text-gray-500">Intención de voto · Primera vuelta · CNC Mar 2026</p>
               </div>
 
               {/* Candidate Cards */}
@@ -138,6 +149,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
                           <span className={`inline-block mt-1 px-3 py-1 rounded-full text-sm font-medium ${
                             candidate.Tendencia_Política === 'Izquierda' ? 'bg-red-50 text-red-700' :
                             candidate.Tendencia_Política === 'Centro' ? 'bg-blue-50 text-blue-700' :
+                            candidate.Tendencia_Política === 'Centro-Derecha' ? 'bg-purple-50 text-purple-700' :
+                            candidate.Tendencia_Política === 'Extrema Derecha' ? 'bg-orange-50 text-orange-700' :
                             'bg-green-50 text-green-700'
                           }`}>
                             {candidate.Tendencia_Política}
@@ -154,7 +167,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates, undecided }) => {
 
               {/* Methodology note */}
               <p className="text-center text-sm text-gray-400 mt-6">
-                Datos Invamer · Margen de error: ±1.5%
+                Datos CNC/Cambio · 17-21 Mar 2026 · Margen de error: ±2.8%
               </p>
             </div>
           </div>

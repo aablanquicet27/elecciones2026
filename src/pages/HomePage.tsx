@@ -95,7 +95,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 to="/senado"
                 className="bg-white border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-xl hover:bg-purple-50 transition-all text-base font-semibold"
               >
-                Elecciones al Senado →
+                Legislativas 8-Mar →
               </Link>
               <Link
                 to="/analisis"
@@ -150,7 +150,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
             </h2>
             <p className="text-large max-w-3xl mx-auto">
               Conoce a los principales aspirantes a la presidencia de Colombia. 
-              Explora sus propuestas, trayectoria y posicionamiento en las encuestas.
+              Explora sus propuestas, fórmulas vicepresidenciales y posicionamiento post-primarias.
             </p>
           </header>
           
@@ -210,7 +210,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
               Conclusiones del Análisis Electoral
             </h2>
             <p className="text-large">
-              Los puntos clave que definen el panorama electoral 2026
+              Los puntos clave que definen el panorama post-primarias 2026
             </p>
           </header>
 
@@ -220,14 +220,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <TrendingUp className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Liderazgo Claro
+                Valencia: La Gran Sorpresa
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                Cepeda se consolida en el primer lugar con una ventaja significativa,
-                dejando atrás el empate técnico de encuestas anteriores.
+                Paloma Valencia pasó de 4% a 22.2% tras ganar la Gran Consulta con más de 3 millones
+                de votos, desplazando a De la Espriella al tercer lugar y transformando la carrera.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Cepeda 37.1% vs Espriella 18.9%
+                De 4% → 22.2% en 2 semanas
               </div>
             </article>
 
@@ -236,14 +236,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Users className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Centro y Derecha Reagrupándose
+                Empate Técnico en Segunda Vuelta
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                De la Espriella se mantiene segundo con 18.9%, mientras Claudia López
-                (11.7%) y Paloma Valencia (10.0%) toman fuerza.
+                Cepeda vs Valencia: 43.3% vs 42.9% según CNC — dentro del margen de error.
+                Cepeda vs De la Espriella: 48.1% vs 35.5%. Quién pase a segunda vuelta lo cambia todo.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                López sube al 3er lugar
+                Solo 0.4 puntos de diferencia
               </div>
             </article>
 
@@ -252,14 +252,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <Target className="h-8 w-8 text-purple-600" />
               </div>
               <h3 className="text-gray-900 mb-4">
-                Proyección Segunda Vuelta
+                Congreso Sin Mayorías
               </h3>
               <p className="text-gray-600 text-lg mb-6">
-                En un eventual balotaje, Cepeda vencería a De la Espriella 59.4% vs 37.4%,
-                marcando una tendencia clara para la izquierda.
+                Pacto Histórico 25 Senado, Centro Democrático 17 Senado / 32 Cámara, 
+                Liberal 31 Cámara. Ningún partido tiene mayoría — gobernar requerirá coaliciones.
               </p>
               <div className="text-purple-600 font-semibold text-lg">
-                Ventaja segunda vuelta: +22.0 puntos
+                Fragmentación histórica del Congreso
               </div>
             </article>
           </div>
@@ -274,9 +274,10 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Users className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Rechazo Electoral</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Fórmulas Vicepresidenciales</h4>
                 <p className="text-gray-600">
-                  Cepeda lidera rechazo con 43.9%, Espriella 33.6%. Ambos rechazados por 22.5%
+                  Cepeda-Quilcué (voto social/indígena), Valencia-Oviedo (centro/tecnocracia), 
+                  De la Espriella-Restrepo (moderación económica)
                 </p>
               </div>
               <div className="text-center">
@@ -285,25 +286,28 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
                 </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">Dinámicas Regionales</h4>
                 <p className="text-gray-600">
-                  Espriella domina 5 de 7 regiones. Cepeda lidera en Caribe y Pacífica
+                  Cepeda domina Caribe, Pacífica y Bogotá. Valencia gana fuerza en 
+                  Centro-Oriente y Eje Cafetero. De la Espriella compite en Llanos.
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Calendar className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Consultas Internas</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Resultados Consultas 8-Mar</h4>
                 <p className="text-gray-600">
-                  Frente por la Vida: Cepeda 92.3%. Gran Consulta: Valencia 19.1%, Pinzón 13.1%
+                  Gran Consulta: Valencia arrasa. Centro: López gana. Izquierda alternativa: 
+                  Barreras se impone. Tres nuevos candidatos oficiales.
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
                   <Award className="h-8 w-8 text-purple-600" />
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">Reconfiguración del Centro</h4>
+                <h4 className="font-bold text-xl text-gray-900 mb-3">Indecisos y Voto en Blanco</h4>
                 <p className="text-gray-600">
-                  Claudia López sube al 11.7%, mientras Fajardo cae al 6.6%. El centro busca consolidar un liderazgo.
+                  6.5% voto en blanco + 8% NS/NR + 1.9% ninguno. Más del 16% del electorado
+                  aún sin decidir — factor crucial a 57 días de la primera vuelta.
                 </p>
               </div>
             </div>

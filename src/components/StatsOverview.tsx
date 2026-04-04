@@ -20,39 +20,39 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${topCandidate.Intención_Voto_Porcentaje}%`,
       subtitle: topCandidate.Candidato,
       icon: Award,
-      description: "Lidera con ventaja clara"
+      description: "Encuesta CNC Mar 2026"
     },
     {
       title: "Total Candidatos",
-      value: candidates.length.toString(),
-      subtitle: "Aspirantes confirmados",
+      value: "14",
+      subtitle: "Aspirantes inscritos",
       icon: Users,
-      description: "Mayor fragmentación histórica"
+      description: "Post-primarias 8 marzo"
     },
     {
-      title: "Indecisos",
-      value: `${undecided.toFixed(0)}%`,
+      title: "Indecisos + Blanco",
+      value: "16.4%",
       subtitle: "Del electorado",
       icon: AlertTriangle,
       description: "Factor determinante"
     },
     {
-      title: "Encuestadora",
-      value: "Invamer",
-      subtitle: "Datos oficiales",
+      title: "Encuestadoras",
+      value: "CNC · GAD3",
+      subtitle: "Post-primarias",
       icon: BarChart3,
-      description: "Margen de error ±1.5%"
+      description: "Marzo 2026"
     },
     {
-      title: "Período",
-      value: "Feb",
+      title: "Primera Vuelta",
+      value: "31 May",
       subtitle: "2026",
       icon: Calendar,
-      description: "Datos Invamer"
+      description: "Segunda vuelta: 21 Jun"
     },
     {
       title: "Regiones",
-      value: "5",
+      value: "7",
       subtitle: "Analizadas",
       icon: MapPin,
       description: "Cobertura nacional"
@@ -66,7 +66,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
           Panorama Electoral en Cifras
         </h2>
         <p className="text-large max-w-3xl mx-auto">
-          Los datos más relevantes del proceso electoral presidencial Colombia 2026
+          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado post-primarias del 8 de marzo
         </p>
       </header>
 
@@ -106,7 +106,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             Contexto Electoral 2026
           </h3>
           <p className="text-lg text-gray-600">
-            Factores que definen el panorama político actual
+            Lo que cambió después del 8 de marzo y las primarias presidenciales
           </p>
         </header>
 
@@ -116,11 +116,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <Target className="h-8 w-8 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Liderazgo Sólido
+              Carrera a Tres Bandas
             </h4>
             <p className="text-gray-600">
-              Cepeda lidera con 37.1%, seguido por De la Espriella con 18.9%,
-              mostrando una ventaja significativa.
+              Cepeda lidera con 34.5%, Valencia irrumpe con 22.2% tras ganar la Gran Consulta,
+              y De la Espriella baja a 15.4%. La polarización izquierda-derecha se rompe con Valencia en el centro-derecha.
             </p>
           </div>
 
@@ -129,11 +129,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <TrendingUp className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Reconfiguración Política
+              Congreso Fragmentado
             </h4>
             <p className="text-gray-600">
-              La centro-izquierda y la derecha se reconfiguran con Claudia López 
-              y Paloma Valencia ganando tracción.
+              Pacto Histórico ganó 25 curules en Senado, Centro Democrático 32 en Cámara.
+              Ningún partido tiene mayoría — el próximo presidente necesitará amplias coaliciones.
             </p>
           </div>
 
@@ -142,11 +142,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <AlertTriangle className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Alta Volatilidad
+              Segunda Vuelta Abierta
             </h4>
             <p className="text-gray-600">
-              El alto porcentaje de indecisos convierte las campañas electorales 
-              en factor determinante del resultado.
+              Cepeda vs Valencia: empate técnico 43.3% vs 42.9%. Cepeda vs De la Espriella: 
+              48.1% vs 35.5%. La definición de quién pasa a segunda vuelta será crucial.
             </p>
           </div>
         </div>

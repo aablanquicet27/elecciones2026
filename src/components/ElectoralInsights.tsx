@@ -57,7 +57,7 @@ const ElectoralInsights: React.FC = () => {
           Hallazgos Principales del Análisis Electoral
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Los factores determinantes que configuran el panorama político colombiano hacia 2026
+          Los factores que transformaron el panorama político tras las primarias del 8 de marzo de 2026
         </p>
       </div>
 
@@ -92,7 +92,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.percentage}
                   </div>
-                  <div className="text-sm text-gray-600">Líder actual</div>
+                  <div className="text-sm text-gray-600">Intención de voto top 3</div>
                 </div>
               )}
               {insight.change && (
@@ -100,7 +100,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.change}
                   </div>
-                  <div className="text-sm text-gray-600">Cambio vs 2022</div>
+                  <div className="text-sm text-gray-600">Salto de Valencia post-consulta</div>
                 </div>
               )}
               {insight.uncertainty && (
@@ -108,7 +108,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.uncertainty}
                   </div>
-                  <div className="text-sm text-gray-600">Indecisos</div>
+                  <div className="text-sm text-gray-600">Cepeda vs Valencia (2da vuelta)</div>
                 </div>
               )}
               {insight.leaders && (
@@ -116,7 +116,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-lg font-bold ${insight.textColor} mb-1`}>
                     {insight.leaders.join(' • ')}
                   </div>
-                  <div className="text-sm text-gray-600">Líderes digitales</div>
+                  <div className="text-sm text-gray-600">Curules ganadas 8 de marzo</div>
                 </div>
               )}
               {insight.highlights && (
@@ -151,10 +151,10 @@ const ElectoralInsights: React.FC = () => {
       <div className="mt-16 bg-gradient-to-r from-gray-900 via-purple-900 to-indigo-900 rounded-3xl p-12 text-white">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold mb-4">
-            Síntesis del Panorama Electoral 2026
+            Síntesis del Panorama Electoral Post-Primarias
           </h3>
           <p className="text-xl text-purple-100 max-w-4xl mx-auto">
-            Una elección marcada por la fragmentación, la recomposición política y la alta incertidumbre
+            Las elecciones del 8 de marzo transformaron la carrera presidencial de una competencia bipolar a una contienda triangular
           </p>
         </div>
 
@@ -163,10 +163,10 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <TrendingDown className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Liderazgo Consolidado</h4>
+            <h4 className="text-lg font-bold mb-2">Valencia Cambia Todo</h4>
             <p className="text-purple-100 text-sm">
-              Cepeda lidera con 37.1%, rompiendo la fragmentación de meses previos 
-              y tomando una ventaja significativa sobre el resto de candidatos.
+              Paloma Valencia pasó de 4% a 22.2% tras ganar la Gran Consulta con 3M+ votos.
+              Su irrupción desplazó a De la Espriella al tercer lugar y abrió un nuevo frente.
             </p>
           </div>
 
@@ -174,10 +174,10 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Reconfiguración Política</h4>
+            <h4 className="text-lg font-bold mb-2">Empate Técnico en Balotaje</h4>
             <p className="text-purple-100 text-sm">
-              La izquierda consolida su fuerza liderando la intención de voto, 
-              mientras la derecha se reagrupa alrededor de De la Espriella.
+              En segunda vuelta Cepeda vs Valencia sería 43.3% vs 42.9% — 
+              la definición más cerrada de la campaña. Todo puede pasar.
             </p>
           </div>
 
@@ -185,10 +185,10 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <AlertTriangle className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Decisiones Estratégicas</h4>
+            <h4 className="text-lg font-bold mb-2">Gobernar Será el Reto</h4>
             <p className="text-purple-100 text-sm">
-              El voto en blanco y los indecisos serán factores determinantes 
-              para consolidar alianzas y definir el pase a segunda vuelta.
+              El Congreso quedó fragmentado: PH 25, CD 17 en Senado; CD 32, Liberal 31 en Cámara.
+              Ningún presidente tendrá mayoría propia — las coaliciones serán obligatorias.
             </p>
           </div>
         </div>
