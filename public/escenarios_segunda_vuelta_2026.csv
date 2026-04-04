@@ -1,6 +1,5 @@
-Escenario,Candidato1,Porcentaje1,Candidato2,Porcentaje2,Voto_Blanco,Probabilidad
-De la Espriella vs. Cepeda,De la Espriella,36.8,Cepeda,34.6,28.6,55
-Cepeda vs. Pinzón,Cepeda,35.8,Pinzón,18.8,45.4,10
-Cepeda vs. Valencia,Cepeda,35.2,Valencia,26.9,37.9,12
-Cepeda vs. Fajardo,Cepeda,33.7,Fajardo,26.2,40.1,15
-De la Espriella vs. Fajardo,De la Espriella,31.8,Fajardo,21.7,46.5,8
+Escenario,Candidato1,Porcentaje1,Candidato2,Porcentaje2,Voto_Blanco,Nota,Fuente
+Valencia vs. Cepeda,Paloma Valencia,42.9,Iván Cepeda,43.3,13.8,Empate técnico (margen ±3%),CNC Mar 2026
+De la Espriella vs. Cepeda,Abelardo de la Espriella,35.5,Iván Cepeda,48.1,16.4,,CNC Mar 2026
+López vs. Cepeda,Claudia López,26.6,Iván Cepeda,47.3,26.1,,CNC Mar 2026
+Fajardo vs. Cepeda,Sergio Fajardo,31.6,Iván Cepeda,47.3,21.1,,CNC Mar 2026

@@ -17,6 +17,8 @@ export interface PartyData {
   riskLevel: RiskLevel;
   description: string;
   questionedCandidates: QuestionedCandidate[];
+  senadoCurules2026?: number;
+  camaraCurules2026?: number;
 }
 
 export const senadoParties: PartyData[] = [
@@ -35,7 +37,9 @@ export const senadoParties: PartyData[] = [
       { name: 'Wilmer Carrillo', allegation: 'corruption' },
       { name: 'Antonio Correa', allegation: 'coimas' },
       { name: 'Jhony Besaile', allegation: 'hermano Ñoño condenado' }
-    ]
+    ],
+    senadoCurules2026: 8,
+    camaraCurules2026: 15
   },
   {
     id: 'fuerza-ciudadana',
@@ -48,7 +52,9 @@ export const senadoParties: PartyData[] = [
     description: 'Alianza entre el partido surgido del Acuerdo de Paz y el movimiento progresista del Magdalena.',
     questionedCandidates: [
       { name: 'Alexánder Angulo', allegation: 'enlace UNGRD Pinilla-Olmedo' }
-    ]
+    ],
+    senadoCurules2026: 3,
+    camaraCurules2026: 5
   },
   {
     id: 'centro-democratico',
@@ -58,10 +64,12 @@ export const senadoParties: PartyData[] = [
     listType: 'Preferente',
     tendency: 'Centro-Derecha',
     riskLevel: 'high',
-    description: 'Principal partido de oposición con problemas sistémicos, historial de parapolítica y múltiples escándalos de sus exmiembros.',
+    description: 'Principal partido de oposición fundado por Álvaro Uribe. Obtuvo la segunda mayor fuerza en Senado y la primera en Cámara en las elecciones del 8 de marzo 2026.',
     questionedCandidates: [
       { name: 'José Vicente Carreño', allegation: 'Vínculos con grupos paramilitares' }
-    ]
+    ],
+    senadoCurules2026: 17,
+    camaraCurules2026: 32
   },
   {
     id: 'pacto-historico',
@@ -71,7 +79,7 @@ export const senadoParties: PartyData[] = [
     listType: 'Preferente',
     tendency: 'Izquierda',
     riskLevel: 'high',
-    description: 'Coalición del actual gobierno. Enfrenta el desgaste político y escándalos de corrupción sistémica durante el gobierno Petro.',
+    description: 'Coalición del gobierno Petro. Mayor fuerza en Senado con 25 curules en las elecciones del 8 de marzo 2026, pero sin mayoría absoluta.',
     questionedCandidates: [
       { name: 'Pedro Flórez', allegation: 'Llamado por Corte Suprema por financiación irregular de campaña' },
       { name: 'Martha Peralta Epieyú', allegation: 'Pieza clave caso UNGRD según Fiscalía, saltó a circunscripción indígena' },
@@ -81,7 +89,9 @@ export const senadoParties: PartyData[] = [
       { name: 'Alexander Florez', allegation: 'Denuncias de maltrato a expareja' },
       { name: 'Isabel Zuleta', allegation: 'Permitió presencia de capos en tarima oficial' },
       { name: 'Julio César González', allegation: 'Denuncias de abuso' }
-    ]
+    ],
+    senadoCurules2026: 25,
+    camaraCurules2026: 29
   },
   {
     id: 'conservador',
@@ -97,7 +107,9 @@ export const senadoParties: PartyData[] = [
       { name: 'David Barguil', allegation: 'tráfico influencias' },
       { name: 'Miguel Ángel Barreto', allegation: 'Ocad-Paz' },
       { name: 'Daniel Restrepo', allegation: 'clan Trujillo' }
-    ]
+    ],
+    senadoCurules2026: 10,
+    camaraCurules2026: 18
   },
   {
     id: 'verde-oxigeno',
@@ -108,7 +120,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Centro',
     riskLevel: 'low',
     description: 'Partido liderado por Íngrid Betancourt. Busca consolidarse como alternativa de centro independiente.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 1,
+    camaraCurules2026: 2
   },
   {
     id: 'patriotas',
@@ -119,7 +133,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Derecha',
     riskLevel: 'low',
     description: 'Grupo Significativo de Ciudadanos. Lista cerrada, las curules se asignan en el orden inscrito.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 0,
+    camaraCurules2026: 1
   },
   {
     id: 'con-toda',
@@ -130,7 +146,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Centro',
     riskLevel: 'low',
     description: 'Grupo Significativo de Ciudadanos con un enfoque más independiente y técnico.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 0,
+    camaraCurules2026: 0
   },
   {
     id: 'cambio-radical',
@@ -145,7 +163,9 @@ export const senadoParties: PartyData[] = [
       { name: 'César Lorduy', allegation: 'caso homicidio 1979 + CNE' },
       { name: 'Didier Lobo', allegation: 'enriquecimiento' },
       { name: 'Edgar Díaz', allegation: 'enriquecimiento' }
-    ]
+    ],
+    senadoCurules2026: 7,
+    camaraCurules2026: 14
   },
   {
     id: 'alianza-por-colombia',
@@ -160,7 +180,9 @@ export const senadoParties: PartyData[] = [
       { name: 'Berenice Bedoya', allegation: 'UNGRD' },
       { name: 'Jairo Alberto Castellanos', allegation: 'UNGRD' },
       { name: 'Néstor Daniel García Colorado', allegation: 'Papá Pitufo' }
-    ]
+    ],
+    senadoCurules2026: 6,
+    camaraCurules2026: 12
   },
   {
     id: 'creemos',
@@ -171,7 +193,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Derecha',
     riskLevel: 'low',
     description: 'Movimiento político originado en Antioquia con miras a la expansión nacional.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 2,
+    camaraCurules2026: 5
   },
   {
     id: 'salvacion-nacional',
@@ -182,7 +206,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Derecha',
     riskLevel: 'low',
     description: 'Partido de derecha conservadora, liderado por Enrique Gómez.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 1,
+    camaraCurules2026: 2
   },
   {
     id: 'colombia-segura',
@@ -193,7 +219,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Centro-Derecha',
     riskLevel: 'low',
     description: 'Grupo Significativo de Ciudadanos enfocado en políticas de seguridad ciudadana.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 0,
+    camaraCurules2026: 0
   },
   {
     id: 'ahora-colombia',
@@ -204,7 +232,9 @@ export const senadoParties: PartyData[] = [
     tendency: 'Centro',
     riskLevel: 'low',
     description: 'Alianza de centro que une fuerzas tradicionales e independientes para maximizar su representación.',
-    questionedCandidates: []
+    questionedCandidates: [],
+    senadoCurules2026: 4,
+    camaraCurules2026: 8
   },
   {
     id: 'frente-amplio-unitario',
@@ -221,7 +251,9 @@ export const senadoParties: PartyData[] = [
       { name: 'Pote Gómez', allegation: 'clientelismo' },
       { name: 'Máximo Noriega', allegation: 'caso Nicolás Petro' },
       { name: 'Gorky Muñoz', allegation: 'sanciones Procuraduría' }
-    ]
+    ],
+    senadoCurules2026: 3,
+    camaraCurules2026: 5
   },
   {
     id: 'partido-liberal',
@@ -231,21 +263,42 @@ export const senadoParties: PartyData[] = [
     listType: 'Preferente',
     tendency: 'Centro',
     riskLevel: 'medium',
-    description: 'Partido histórico con fuerte maquinaria regional pero desgastado por múltiples escándalos recientes.',
+    description: 'Partido histórico con fuerte maquinaria regional. Segunda fuerza en Cámara con 31 curules en las elecciones del 8 de marzo 2026.',
     questionedCandidates: [
       { name: 'Richard Aguilar', allegation: 'corrupción gobernador' },
       { name: 'Andrés Calle', allegation: 'UNGRD' },
       { name: 'Yesid Pulgar', allegation: 'hermano Eduardo Pulgar condenado' }
-    ]
+    ],
+    senadoCurules2026: 10,
+    camaraCurules2026: 31
   }
 ];
 
+// Actualizado con resultados reales del 8 de marzo de 2026
 export const senadoStats = {
   curules: 103,
   partidos: 16,
   aspirantes: 3144,
   cuestionados: 195,
+  abstencion2026: '>50%',
   abstencion2022: '53%',
   cuestionadosSenado: 78,
-  posiblesInhabilidades: 41
+  posiblesInhabilidades: 41,
+  // Resultados legislativos 8 de marzo 2026
+  resultados2026: {
+    fecha: '8 de marzo de 2026',
+    totalSenadoCurules: 103,
+    totalCamaraCurules: 183,
+    senadoMayorFuerza: 'Pacto Histórico (25 curules)',
+    senadoSegundaFuerza: 'Centro Democrático (17 curules)',
+    camaraMayorFuerza: 'Centro Democrático (32 curules)',
+    camaraSegundaFuerza: 'Partido Liberal (31 curules)',
+    camaraTerceraFuerza: 'Pacto Histórico (29 curules)',
+    notas: 'Congreso altamente fragmentado. Ningún partido alcanzó mayoría absoluta. El próximo presidente deberá formar coaliciones amplias para gobernar.',
+    consultasPresidenciales: {
+      derecha: { ganadora: 'Paloma Valencia', consulta: 'Gran Consulta por Colombia', votosCoalicion: 5500000 },
+      centro: { ganadora: 'Claudia López', consulta: 'Consulta por Soluciones' },
+      izquierda: { ganador: 'Roy Barreras', consulta: 'Consulta de izquierda', nota: 'Cepeda no participó, va directo a primera vuelta' }
+    }
+  }
 };

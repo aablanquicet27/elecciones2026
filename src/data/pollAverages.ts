@@ -15,7 +15,8 @@ export interface CandidateAverage {
   tendencia: 'up' | 'down' | 'stable';
 }
 
-export const encuestasRecientes: PollData[] = [
+// === ENCUESTAS PRE-CONSULTAS (Febrero 2026) — Histórico ===
+export const encuestasHistorico: PollData[] = [
   {
     encuestadora: 'Invamer',
     fecha: '11-22 Feb 2026',
@@ -86,7 +87,45 @@ export const encuestasRecientes: PollData[] = [
   }
 ];
 
-// Function to calculate averages
+// === ENCUESTAS POST-CONSULTAS (Marzo 2026) — Datos actuales ===
+export const encuestasRecientes: PollData[] = [
+  {
+    encuestadora: 'GAD3/RCN',
+    fecha: '16-18 Mar 2026',
+    muestra: 1200,
+    margenError: '±3.0%',
+    url: 'https://www.riotimesonline.com/colombia-election-poll-cepeda-espriella-valencia-2026/',
+    resultados: {
+      'Iván Cepeda': 35.0,
+      'Paloma Valencia': 16.0,
+      'Abelardo de la Espriella': 21.0,
+      'Claudia López': 3.5,
+      'Sergio Fajardo': 3.5,
+      'Santiago Botero': 1.2,
+      'Miguel Uribe Londoño': 1.0,
+      'Roy Barreras': 0.5,
+    }
+  },
+  {
+    encuestadora: 'CNC/Cambio',
+    fecha: '17-21 Mar 2026',
+    muestra: 2157,
+    margenError: '±3.0%',
+    url: 'https://colombiaone.com/2026/03/22/poll-valencia-surges-past-delaespriella/',
+    resultados: {
+      'Iván Cepeda': 34.5,
+      'Paloma Valencia': 22.2,
+      'Abelardo de la Espriella': 15.4,
+      'Claudia López': 3.7,
+      'Sergio Fajardo': 3.6,
+      'Santiago Botero': 1.3,
+      'Miguel Uribe Londoño': 1.0,
+      'Roy Barreras': 0.5,
+    }
+  }
+];
+
+// Function to calculate averages from current polls
 export function calculateAverages(): CandidateAverage[] {
   const candidates = Object.keys(encuestasRecientes[0].resultados);
   
@@ -100,21 +139,41 @@ export function calculateAverages(): CandidateAverage[] {
     
     const partidos: Record<string, string> = {
       'Iván Cepeda': 'Pacto Histórico',
+      'Paloma Valencia': 'Centro Democrático (Gran Consulta por Colombia)',
       'Abelardo de la Espriella': 'Defensores de la Patria',
-      'Claudia López': 'Independiente',
-      'Paloma Valencia': 'Centro Democrático',
+      'Claudia López': 'Consulta por Soluciones',
       'Sergio Fajardo': 'Dignidad y Compromiso',
-      'Vicky Dávila': 'Independiente',
-      'Juan Daniel Oviedo': 'Independiente',
-      'Roy Barreras': 'La Fuerza',
+      'Santiago Botero': 'Independiente',
+      'Miguel Uribe Londoño': 'Centro Democrático',
+      'Roy Barreras': 'Frente Amplio Unitario',
     };
+
+    // Determine trend based on comparison with historical data
+    const historicoAvg = encuestasHistorico.reduce((sum, e) => sum + (e.resultados[candidato] || 0), 0) / encuestasHistorico.length;
+    let tendencia: 'up' | 'down' | 'stable' = 'stable';
+    if (promedio > historicoAvg + 2) tendencia = 'up';
+    else if (promedio < historicoAvg - 2) tendencia = 'down';
     
     return {
       candidato,
       partido: partidos[candidato] || '',
       promedio: Math.round(promedio * 10) / 10,
       encuestas,
-      tendencia: 'stable' as const
+      tendencia
     };
   }).sort((a, b) => b.promedio - a.promedio);
 }
+
+// === ESCENARIOS SEGUNDA VUELTA (CNC, Marzo 2026) ===
+export const escenariosSegundaVuelta = [
+  { candidato1: 'Iván Cepeda', porcentaje1: 43.3, candidato2: 'Paloma Valencia', porcentaje2: 42.9, nota: 'Empate técnico' },
+  { candidato1: 'Iván Cepeda', porcentaje1: 48.1, candidato2: 'Abelardo de la Espriella', porcentaje2: 35.5, nota: '' },
+  { candidato1: 'Iván Cepeda', porcentaje1: 47.3, candidato2: 'Claudia López', porcentaje2: 26.6, nota: '' },
+  { candidato1: 'Iván Cepeda', porcentaje1: 47.3, candidato2: 'Sergio Fajardo', porcentaje2: 31.6, nota: '' },
+];
+
+// === FÓRMULAS VICEPRESIDENCIALES ===
+export const formulasVicepresidenciales = {
+  'Iván Cepeda': 'Aida Quilcué',
+  'Paloma Valencia': 'Juan Daniel Oviedo',
+};
