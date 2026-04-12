@@ -1,7 +1,7 @@
 [
   {
     "Candidato": "Iván Cepeda",
-    "Intención_Voto_Porcentaje": 34.8,
+    "Intención_Voto_Porcentaje": 36.1,
     "Tendencia_Política": "Izquierda",
     "Favorabilidad": 42,
     "Desfavorabilidad": 38,
@@ -16,24 +16,8 @@
     "Tendencia_Post_Primarias": "stable"
   },
   {
-    "Candidato": "Paloma Valencia",
-    "Intención_Voto_Porcentaje": 19.1,
-    "Tendencia_Política": "Centro-Derecha",
-    "Favorabilidad": 38,
-    "Desfavorabilidad": 36,
-    "Partido_Movimiento": "Centro Democrático (Gran Consulta por Colombia)",
-    "Región_Origen": "Cauca",
-    "Cargo_Actual": "Senadora",
-    "Edad": 47,
-    "Ranking": 2,
-    "Generación": "Adulto (41-50)",
-    "Tipo_Candidatura": "Por partido",
-    "Formula_VP": "Juan Daniel Oviedo",
-    "Tendencia_Post_Primarias": "up"
-  },
-  {
     "Candidato": "Abelardo de la Espriella",
-    "Intención_Voto_Porcentaje": 18.2,
+    "Intención_Voto_Porcentaje": 21.4,
     "Tendencia_Política": "Derecha",
     "Favorabilidad": 35,
     "Desfavorabilidad": 48,
@@ -41,11 +25,27 @@
     "Región_Origen": "Córdoba",
     "Cargo_Actual": "Abogado",
     "Edad": 47,
-    "Ranking": 3,
+    "Ranking": 2,
     "Generación": "Adulto (41-50)",
     "Tipo_Candidatura": "Por partido",
     "Formula_VP": null,
-    "Tendencia_Post_Primarias": "down"
+    "Tendencia_Post_Primarias": "up"
+  },
+  {
+    "Candidato": "Paloma Valencia",
+    "Intención_Voto_Porcentaje": 20.5,
+    "Tendencia_Política": "Centro-Derecha",
+    "Favorabilidad": 38,
+    "Desfavorabilidad": 36,
+    "Partido_Movimiento": "Centro Democrático (Gran Consulta por Colombia)",
+    "Región_Origen": "Cauca",
+    "Cargo_Actual": "Senadora",
+    "Edad": 47,
+    "Ranking": 3,
+    "Generación": "Adulto (41-50)",
+    "Tipo_Candidatura": "Por partido",
+    "Formula_VP": "Juan Daniel Oviedo",
+    "Tendencia_Post_Primarias": "up"
   },
   {
     "Candidato": "Claudia López",
@@ -65,7 +65,7 @@
   },
   {
     "Candidato": "Sergio Fajardo",
-    "Intención_Voto_Porcentaje": 3.6,
+    "Intención_Voto_Porcentaje": 4.1,
     "Tendencia_Política": "Centro",
     "Favorabilidad": 42,
     "Desfavorabilidad": 32,
@@ -77,7 +77,7 @@
     "Generación": "Senior (>60)",
     "Tipo_Candidatura": "Por partido",
     "Formula_VP": null,
-    "Tendencia_Post_Primarias": "down"
+    "Tendencia_Post_Primarias": "stable"
   },
   {
     "Candidato": "Santiago Botero",

@@ -87,7 +87,7 @@ export const encuestasHistorico: PollData[] = [
   }
 ];
 
-// === ENCUESTAS POST-CONSULTAS (Marzo 2026) — Datos actuales ===
+// === ENCUESTAS POST-CONSULTAS (Marzo–Abril 2026) — Datos actuales ===
 export const encuestasRecientes: PollData[] = [
   {
     encuestadora: 'GAD3/RCN',
@@ -121,6 +121,23 @@ export const encuestasRecientes: PollData[] = [
       'Santiago Botero': 1.3,
       'Miguel Uribe Londoño': 1.0,
       'Roy Barreras': 0.5,
+    }
+  },
+  {
+    encuestadora: 'AtlasIntel/Semana',
+    fecha: '06-09 Apr 2026',
+    muestra: 3616,
+    margenError: '±2.0%',
+    url: 'https://colombiaone.com/2026/04/09/runoff-could-redefine-colombias-election-atlasintel-shows-de-la-espriella-and-valencia-leading-cepeda/',
+    resultados: {
+      'Iván Cepeda': 38.7,
+      'Abelardo de la Espriella': 27.8,
+      'Paloma Valencia': 23.4,
+      'Sergio Fajardo': 5.1,
+      'Claudia López': 0,
+      'Santiago Botero': 0,
+      'Miguel Uribe Londoño': 0,
+      'Roy Barreras': 0,
     }
   }
 ];
@@ -170,6 +187,11 @@ export const escenariosSegundaVuelta = [
   { candidato1: 'Iván Cepeda', porcentaje1: 48.1, candidato2: 'Abelardo de la Espriella', porcentaje2: 35.5, nota: '' },
   { candidato1: 'Iván Cepeda', porcentaje1: 47.3, candidato2: 'Claudia López', porcentaje2: 26.6, nota: '' },
   { candidato1: 'Iván Cepeda', porcentaje1: 47.3, candidato2: 'Sergio Fajardo', porcentaje2: 31.6, nota: '' },
+
+  // === ESCENARIOS SEGUNDA VUELTA (AtlasIntel/Semana, Abril 2026) ===
+  { candidato1: 'Abelardo de la Espriella', porcentaje1: 48.8, candidato2: 'Iván Cepeda', porcentaje2: 39.8, nota: 'Ventaja derecha (MOE ±2%)' },
+  { candidato1: 'Paloma Valencia', porcentaje1: 47.1, candidato2: 'Iván Cepeda', porcentaje2: 39.6, nota: 'Ventaja centro-derecha (MOE ±2%)' },
+  { candidato1: 'Iván Cepeda', porcentaje1: 38.3, candidato2: 'Sergio Fajardo', porcentaje2: 37.4, nota: 'Empate técnico (MOE ±2%)' },
 ];
 
 // === FÓRMULAS VICEPRESIDENCIALES ===
