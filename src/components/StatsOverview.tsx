@@ -20,7 +20,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${topCandidate.Intención_Voto_Porcentaje}%`,
       subtitle: topCandidate.Candidato,
       icon: Award,
-      description: "Encuesta CNC Mar 2026"
+      description: "Promedio encuestas recientes"
     },
     {
       title: "Total Candidatos",
@@ -30,18 +30,18 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       description: "Post-primarias 8 marzo"
     },
     {
-      title: "Indecisos + Blanco",
-      value: "16.4%",
+      title: "Indecisos",
+      value: `${Math.max(0, undecided).toFixed(1)}%`,
       subtitle: "Del electorado",
       icon: AlertTriangle,
-      description: "Factor determinante"
+      description: "Estimado por suma (%)"
     },
     {
       title: "Encuestadoras",
-      value: "CNC · GAD3",
-      subtitle: "Post-primarias",
+      value: "CNC · GAD3 · AtlasIntel",
+      subtitle: "Últimas disponibles",
       icon: BarChart3,
-      description: "Marzo 2026"
+      description: "Mar–Abr 2026"
     },
     {
       title: "Primera Vuelta",
@@ -66,7 +66,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
           Panorama Electoral en Cifras
         </h2>
         <p className="text-large max-w-3xl mx-auto">
-          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado post-primarias del 8 de marzo
+          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado con información de abril
         </p>
       </header>
 
@@ -106,7 +106,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
             Contexto Electoral 2026
           </h3>
           <p className="text-lg text-gray-600">
-            Lo que cambió después del 8 de marzo y las primarias presidenciales
+            Lo que revelan las mediciones más recientes sobre primera y segunda vuelta
           </p>
         </header>
 
@@ -116,11 +116,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <Target className="h-8 w-8 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Carrera a Tres Bandas
+              Liderazgo en Primera Vuelta
             </h4>
             <p className="text-gray-600">
-              Cepeda lidera con 34.5%, Valencia irrumpe con 22.2% tras ganar la Gran Consulta,
-              y De la Espriella baja a 15.4%. La polarización izquierda-derecha se rompe con Valencia en el centro-derecha.
+              En mediciones recientes, Cepeda se mantiene primero y la disputa por el segundo lugar entre
+              De la Espriella y Valencia se vuelve clave para definir el balotaje.
             </p>
           </div>
 
@@ -142,11 +142,11 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <AlertTriangle className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Segunda Vuelta Abierta
+              Segunda Vuelta Puede Voltear el Resultado
             </h4>
             <p className="text-gray-600">
-              Cepeda vs Valencia: empate técnico 43.3% vs 42.9%. Cepeda vs De la Espriella: 
-              48.1% vs 35.5%. La definición de quién pasa a segunda vuelta será crucial.
+              En escenarios de segunda vuelta (AtlasIntel/Semana), Cepeda queda por debajo frente a
+              De la Espriella y Valencia. La elección se definirá por alianzas y transferencia de voto.
             </p>
           </div>
         </div>

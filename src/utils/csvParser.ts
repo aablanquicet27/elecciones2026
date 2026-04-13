@@ -128,49 +128,49 @@ export const getComparisonData = () => {
 export const getScenarioData = () => {
   return [
     {
-      scenario: 'Cepeda vs. Valencia',
+      scenario: 'Cepeda vs. Valencia (CNC)',
       candidate1: 'Cepeda',
       percentage1: 43.3,
       candidate2: 'Valencia',
       percentage2: 42.9,
       undecided: 13.8,
-      probability: 40
+      probability: 30
     },
     {
-      scenario: 'Cepeda vs. De la Espriella',
+      scenario: 'Cepeda vs. De la Espriella (CNC)',
       candidate1: 'Cepeda',
       percentage1: 48.1,
       candidate2: 'Espriella',
       percentage2: 35.5,
       undecided: 16.4,
-      probability: 30
+      probability: 20
     },
     {
-      scenario: 'Cepeda vs. López',
-      candidate1: 'Cepeda',
-      percentage1: 47.3,
-      candidate2: 'López',
-      percentage2: 26.6,
-      undecided: 26.1,
-      probability: 10
+      scenario: 'De la Espriella vs. Cepeda (AtlasIntel)',
+      candidate1: 'Espriella',
+      percentage1: 48.8,
+      candidate2: 'Cepeda',
+      percentage2: 39.8,
+      undecided: 11.4,
+      probability: 25
     },
     {
-      scenario: 'Cepeda vs. Fajardo',
-      candidate1: 'Cepeda',
-      percentage1: 47.3,
-      candidate2: 'Fajardo',
-      percentage2: 31.6,
-      undecided: 21.1,
-      probability: 10
-    },
-    {
-      scenario: 'Valencia vs. De la Espriella',
+      scenario: 'Valencia vs. Cepeda (AtlasIntel)',
       candidate1: 'Valencia',
-      percentage1: 41.2,
-      candidate2: 'Espriella',
-      percentage2: 38.7,
-      undecided: 20.1,
-      probability: 10
+      percentage1: 47.1,
+      candidate2: 'Cepeda',
+      percentage2: 39.6,
+      undecided: 13.3,
+      probability: 20
+    },
+    {
+      scenario: 'Cepeda vs. Fajardo (AtlasIntel)',
+      candidate1: 'Cepeda',
+      percentage1: 38.3,
+      candidate2: 'Fajardo',
+      percentage2: 37.4,
+      undecided: 24.3,
+      probability: 5
     }
   ];
 };
@@ -190,22 +190,22 @@ export const getFavorabilityData = () => {
 export const getElectoralInsights = () => {
   return {
     fragmentacion: {
-      title: "Carrera a Tres Bandas",
-      description: "Cepeda lidera con 34.5%, seguido por Valencia con 22.2% y De la Espriella con 15.4%. Las primarias del 8 de marzo transformaron la contienda en una competencia triangular.",
-      impact: "Valencia pasó de 4% a 22.2% en solo dos semanas tras ganar la Gran Consulta",
-      percentage: "34.5% · 22.2% · 15.4%"
+      title: "Tridente en Primera Vuelta",
+      description: "Las mediciones recientes ubican a Cepeda primero, con De la Espriella y Valencia disputando el segundo lugar. El orden de ese 2° puesto define el escenario de balotaje.",
+      impact: "El foco estratégico pasó de ‘quién lidera’ a ‘quién llega a segunda vuelta’",
+      percentage: "Cepeda 36.1% · Espriella 21.4% · Valencia 20.5%"
     },
     recomposicion: {
-      title: "Valencia: La Gran Sorpresa",
-      description: "Paloma Valencia ganó la Gran Consulta con más de 3 millones de votos y escaló del 5° al 2° lugar. Su fórmula con Juan Daniel Oviedo busca captar el voto de centro.",
-      impact: "De 4% pre-primarias a 22.2% post-primarias — el mayor salto de la campaña",
-      change: "+18 puntos en 2 semanas"
+      title: "AtlasIntel cambia la lectura del balotaje",
+      description: "En escenarios de segunda vuelta (AtlasIntel/Semana), Cepeda pierde frente a De la Espriella (48.8% vs 39.8%) y frente a Valencia (47.1% vs 39.6%).",
+      impact: "La transferencia de voto anti-gobierno se concentra en el rival de Cepeda",
+      change: "Valencia y Espriella lideran en 2da vuelta"
     },
     volatilidad: {
-      title: "Empate Técnico en Segunda Vuelta",
-      description: "CNC revela que en balotaje Cepeda vs Valencia sería 43.3% vs 42.9% — un empate técnico dentro del margen de error. La segunda vuelta es completamente abierta.",
-      impact: "Solo 0.4 puntos separan a los dos en el escenario más probable",
-      uncertainty: "43.3% vs 42.9%"
+      title: "Empate técnico alternativo",
+      description: "AtlasIntel muestra un escenario cerrado Cepeda vs Fajardo (38.3% vs 37.4%). Aunque Fajardo está lejos en primera vuelta, podría estrechar el balotaje si llegara.",
+      impact: "El balotaje depende de alianzas y participación",
+      uncertainty: "38.3% vs 37.4%"
     },
     digital: {
       title: "Congreso Fragmentado",
@@ -214,8 +214,8 @@ export const getElectoralInsights = () => {
       impact: "El próximo presidente necesitará amplias coaliciones para gobernar"
     },
     regional: {
-      title: "Cepeda Lidera Nacionalmente",
-      description: "Cepeda domina en Caribe, Pacífica y Bogotá. Valencia gana fuerza en Centro-Oriente y Eje Cafetero. De la Espriella compite en Llanos.",
+      title: "Cepeda mantiene fortaleza territorial",
+      description: "Cepeda domina Caribe, Pacífica y Bogotá. Valencia gana fuerza en Centro-Oriente y Eje Cafetero. De la Espriella compite en Llanos.",
       highlights: {
         caribe: "Cepeda domina Caribe, Pacífica y Bogotá",
         andina: "Valencia sube en Centro-Oriente y Eje Cafetero",
