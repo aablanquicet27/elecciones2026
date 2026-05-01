@@ -3,31 +3,36 @@ import { X, Mail, CheckCircle, Loader, ChevronDown, ChevronUp, Vote } from 'luci
 import { supabase } from '../lib/supabase';
 import { getCandidateImage } from '../utils/candidateImages';
 
+const AVATAR_BASE = 'https://ui-avatars.com/api/';
+
 interface SubscriptionModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los principales candidatos (abril 2026)
+// Lista de los principales candidatos presidenciales (mayo 2026)
+// NOTA: Juan Daniel Oviedo ya no es presidencial (es VP de Paloma Valencia desde 12-mar-2026)
+// NOTA: Miguel Uribe Turbay fallecido en 2025 - su papá Miguel Uribe Londoño es el candidato
+// Solo se incluyen candidatos con foto disponible para evitar placeholders
 const mainCandidates = [
   'Iván Cepeda',
   'Abelardo de la Espriella',
   'Paloma Valencia',
   'Sergio Fajardo',
+  'María Fernanda Cabal',
   'Claudia López',
-  'Santiago Botero',
-  'Miguel Uribe Londoño',
   'Vicky Dávila',
-  'Juan Daniel Oviedo',
+  'Daniel Quintero',
+  'Juan Manuel Galán',
   'Voto en Blanco'
 ];
 
 // Lista completa de candidatos adicionales
 const additionalCandidates = [
-  'Daniel Quintero',
+  'Miguel Uribe Londoño',
+  'Santiago Botero',
   'Camilo Romero',
-  'Juan Manuel Galán',
   'Enrique Peñalosa',
   'Aníbal Gaviria',
   'David Luna',
@@ -46,16 +51,16 @@ const additionalCandidates = [
   'María José Pizarro',
   'Jota Pe Hernández',
   'Juan Fernando Cristo',
-  'Juan Carlos Pinzón'
+  'Carlos Amaya'
 ];
 
-// Fallback global por si una imagen falla en cargar (ej. caché viejo)
+// Fallback global por si una imagen falla en cargar (ej. 404 o caché viejo)
 const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, candidate: string) => {
   const target = e.currentTarget;
   if (target.dataset.fallback === 'true') return;
   target.dataset.fallback = 'true';
   const safeName = encodeURIComponent(candidate);
-  target.src = `https://ui-avatars.com/api/?name=${safeName}&size=200&background=7c3aed&color=ffffff&bold=true&format=png`;
+  target.src = `${AVATAR_BASE}?name=${safeName}&size=200&background=7c3aed&color=ffffff&bold=true&format=png`;
 };
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, onSubscribe }) => {

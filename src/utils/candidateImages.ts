@@ -1,3 +1,5 @@
+const AVATAR_BASE = 'https://ui-avatars.com/api/';
+
 export const getCandidateImage = (name: string, size: number = 400): string => {
   // Normalize the name: accent-insensitive and case-insensitive
   const key = name
@@ -8,7 +10,7 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
 
   // Caso especial: Voto en Blanco (no es candidato real)
   if (key === 'voto en blanco') {
-    return `https://ui-avatars.com/api/?name=Voto+Blanco&size=${size}&background=e5e7eb&color=374151&bold=true&format=png`;
+    return `${AVATAR_BASE}?name=Voto+Blanco&size=${size}&background=e5e7eb&color=374151&bold=true&format=png`;
   }
 
   // Map of normalised candidate names to their file names inside the public folder
@@ -20,7 +22,6 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
     'maria jose pizarro': 'Maria_Jose_Pizarro.jpg',
     'daniel quintero': 'Daniel_Quintero.jpg',
     'juan manuel galan': 'Juan_Manuel_Galan.jpg',
-    'miguel uribe turbay': 'Miguel_Uribe_Turbay.jpg',
     'maria fernanda cabal': 'Maria_Fernanda_Cabal.jpg',
     'claudia lopez': 'Claudia_Lopez.png',
     'german vargas lleras': 'German_Vargas_Lleras.jpg',
@@ -42,5 +43,5 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
 
   // Fallback: avatar con iniciales (color morado de marca)
   const safeName = encodeURIComponent(name);
-  return `https://ui-avatars.com/api/?name=${safeName}&size=${size}&background=7c3aed&color=ffffff&bold=true&format=png`;
+  return `${AVATAR_BASE}?name=${safeName}&size=${size}&background=7c3aed&color=ffffff&bold=true&format=png`;
 };
