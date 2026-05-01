@@ -105,7 +105,6 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 				<HeroSection candidates={topCandidates} undecided={undecided} />
 			</section>
 
-			{/* PREDICCIÓN 1ra y 2da Vuelta */}
 			<section
 				ref={(el) => { sectionsRef.current['prediccion'] = el; }}
 				id="prediccion"
@@ -213,10 +212,10 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								Cepeda consolida 1ª vuelta
 							</h3>
 							<p className="text-gray-600 text-lg mb-6">
-								De 35% en marzo a ~39% promedio en abril (Invamer 44.3%, Atlas/Guarumo 38%, GAD3 36%). Pero ningún candidato llega al 50%+1 que exige la Constitución, por lo que la segunda vuelta del 21 de junio está garantizada.
+								De 35% en marzo a 39.1% promedio en abril (Invamer 44.3%, Atlas/Guarumo 38%, GAD3 36%). Pero ningún candidato llega al 50%+1 que exige la Constitución, por lo que la segunda vuelta del 21 de junio está garantizada.
 							</p>
 							<div className="text-purple-600 font-semibold text-lg">
-								39% promedio · sin alcanzar umbral
+								39.1% promedio · sin alcanzar umbral
 							</div>
 						</article>
 
@@ -228,7 +227,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								Derecha pelea el cupo a 2ª vuelta
 							</h3>
 							<p className="text-gray-600 text-lg mb-6">
-								De la Espriella (24.9% promedio) sobrepasó a Valencia (19.0%) en abril. Atlas y Guarumo confirman el reordenamiento. La pelea por el segundo puesto define quién llega al balotaje.
+								De la Espriella (23.1% promedio) sobrepasó a Valencia (18.3%) en abril. Atlas y Guarumo confirman el reordenamiento. La pelea por el segundo puesto define quién llega al balotaje.
 							</p>
 							<div className="text-purple-600 font-semibold text-lg">
 								De la Espriella ↑ Valencia ↓
@@ -271,7 +270,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								</div>
 								<h4 className="font-bold text-xl text-gray-900 mb-3">Mapa regional</h4>
 								<p className="text-gray-600">
-									Cepeda domina Caribe, Pacífico y Bogotá. Valencia y De la Espriella dividen Centro-Oriente, Eje Cafetero y Llanos.
+									Cepeda domina Caribe, Pacífico, Bogotá y Amazonía. De la Espriella crece en Centro-Oriente y Llanos. Valencia mantiene Eje Cafetero.
 								</p>
 							</div>
 							<div className="text-center">
@@ -290,7 +289,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								<h4 className="font-bold text-xl text-gray-900 mb-3">Indecisos
 								</h4>
 								<p className="text-gray-600">
-									~14% del electorado todavía no decide entre voto en blanco, NS/NR y ninguno. Factor clave en una elección tan ajustada.
+									~9% del electorado todavía no decide entre voto en blanco, NS/NR y ninguno. Factor clave en una elección tan ajustada.
 								</p>
 							</div>
 						</div>

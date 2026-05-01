@@ -7,10 +7,10 @@ interface StatsOverviewProps {
 }
 
 const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
-  const topCandidate = candidates.reduce((prev, current) => 
+  const topCandidate = candidates.reduce((prev, current) =>
     prev.Intención_Voto_Porcentaje > current.Intención_Voto_Porcentaje ? prev : current
   );
-  
+
   const totalIntention = candidates.reduce((sum, c) => sum + c.Intención_Voto_Porcentaje, 0);
   const undecided = 100 - totalIntention;
 
@@ -20,33 +20,33 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       value: `${topCandidate.Intención_Voto_Porcentaje}%`,
       subtitle: topCandidate.Candidato,
       icon: Award,
-      description: "Promedio encuestas recientes"
+      description: "Promedio 4 encuestadoras Abr 2026"
     },
     {
-      title: "Total Candidatos",
-      value: "14",
-      subtitle: "Aspirantes inscritos",
+      title: "Candidatos Tarjetón",
+      value: "9",
+      subtitle: "Confirmados oficial",
       icon: Users,
-      description: "Post-primarias 8 marzo"
+      description: "Registraduría 15 abril"
     },
     {
       title: "Indecisos",
       value: `${Math.max(0, undecided).toFixed(1)}%`,
       subtitle: "Del electorado",
       icon: AlertTriangle,
-      description: "Estimado por suma (%)"
+      description: "Voto blanco / NS-NR"
     },
     {
       title: "Encuestadoras",
-      value: "CNC · GAD3 · AtlasIntel",
-      subtitle: "Últimas disponibles",
+      value: "Invamer · Atlas · Guarumo · GAD3",
+      subtitle: "Últimas 4 publicadas",
       icon: BarChart3,
-      description: "Mar–Abr 2026"
+      description: "Abril 2026"
     },
     {
       title: "Primera Vuelta",
       value: "31 May",
-      subtitle: "2026",
+      subtitle: "2026 · 30 días",
       icon: Calendar,
       description: "Segunda vuelta: 21 Jun"
     },
@@ -66,32 +66,28 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
           Panorama Electoral en Cifras
         </h2>
         <p className="text-large max-w-3xl mx-auto">
-          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado con información de abril
+          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado al 1 de mayo de 2026 con las 4 encuestadoras más recientes
         </p>
       </header>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
         {stats.map((stat) => (
-          <article 
+          <article
             key={stat.title}
             className="text-center group"
           >
-            {/* Icon */}
             <div className="inline-flex p-5 rounded-2xl bg-purple-50 mb-6 group-hover:bg-purple-100 transition-colors duration-300">
               <stat.icon className="h-8 w-8 text-purple-600" />
             </div>
 
-            {/* Value */}
             <div className="text-4xl lg:text-5xl font-bold text-gray-900 tracking-tighter mb-2">
               {stat.value}
             </div>
-            
-            {/* Subtitle */}
+
             <div className="text-base font-medium text-gray-600 mb-1">
               {stat.subtitle}
             </div>
-            
-            {/* Description */}
+
             <p className="text-sm text-gray-500">
               {stat.description}
             </p>
@@ -99,7 +95,6 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
         ))}
       </div>
 
-      {/* Key Insights */}
       <div className="mt-20 bg-white rounded-[2rem] p-10 lg:p-14 border border-purple-100 shadow-lg shadow-purple-500/5">
         <header className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-3">
@@ -119,8 +114,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               Liderazgo en Primera Vuelta
             </h4>
             <p className="text-gray-600">
-              En mediciones recientes, Cepeda se mantiene primero y la disputa por el segundo lugar entre
-              De la Espriella y Valencia se vuelve clave para definir el balotaje.
+              Cepeda lidera con 39.1% promedio en abril (Invamer 44.3%, Atlas 38%, Guarumo 38%, GAD3 36%). De la Espriella (23.1%) sobrepasa a Valencia (18.3%) y se afirma en el segundo lugar.
             </p>
           </div>
 
@@ -129,11 +123,10 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <TrendingUp className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Congreso Fragmentado
+              No Habrá Ganador en Primera
             </h4>
             <p className="text-gray-600">
-              Pacto Histórico ganó 25 curules en Senado, Centro Democrático 32 en Cámara.
-              Ningún partido tiene mayoría — el próximo presidente necesitará amplias coaliciones.
+              Ningún candidato alcanza el 50%+1 que exige la Constitución. La segunda vuelta del 21 de junio está garantizada y se decidirá entre Cepeda y el segundo más votado.
             </p>
           </div>
 
@@ -142,11 +135,10 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <AlertTriangle className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Segunda Vuelta Puede Voltear el Resultado
+              Balotaje Polarizado
             </h4>
             <p className="text-gray-600">
-              En escenarios de segunda vuelta (AtlasIntel/Semana), Cepeda queda por debajo frente a
-              De la Espriella y Valencia. La elección se definirá por alianzas y transferencia de voto.
+              AtlasIntel y Guarumo muestran a la derecha derrotando a Cepeda (Valencia 49-41, Espriella 48-42). Invamer y GAD3 lo sostienen arriba. Empate técnico real.
             </p>
           </div>
         </div>

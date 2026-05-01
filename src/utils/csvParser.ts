@@ -37,21 +37,21 @@ export const parseCandidatesData = (): ChatCandidate[] => {
 export const parseCandidateData = (csvText: string): Candidate[] => {
   const lines = csvText.trim().split('\n');
   const headers = lines[0].split(',');
-  
+
   return lines.slice(1).map(line => {
     const values = line.split(',');
     const candidate: any = {};
-    
+
     headers.forEach((header, index) => {
       const value = values[index];
-      if (header === 'Intención_Voto_Porcentaje' || header === 'Favorabilidad' || 
+      if (header === 'Intención_Voto_Porcentaje' || header === 'Favorabilidad' ||
           header === 'Desfavorabilidad' || header === 'Edad' || header === 'Ranking') {
         candidate[header] = parseFloat(value);
       } else {
         candidate[header] = value;
       }
     });
-    
+
     return candidate as Candidate;
   });
 };
@@ -71,6 +71,7 @@ export const getTrendData = (candidates: Candidate[]) => {
     'Centro': '#3b82f6',
     'Derecha': '#22c55e',
     'Centro-Derecha': '#8b5cf6',
+    'Centro-Izquierda': '#f59e0b',
     'Extrema Derecha': '#f97316',
     'Otros': '#6b7280'
   };
@@ -87,9 +88,9 @@ export const getRegionalData = () => {
     { region: 'Caribe', lider: 'Iván Cepeda', color: '#ef4444' },
     { region: 'Pacífica', lider: 'Iván Cepeda', color: '#ef4444' },
     { region: 'Bogotá', lider: 'Iván Cepeda', color: '#ef4444' },
-    { region: 'Centro-Oriente', lider: 'Paloma Valencia', color: '#8b5cf6' },
+    { region: 'Centro-Oriente', lider: 'Abelardo de la Espriella', color: '#22c55e' },
     { region: 'Eje Cafetero', lider: 'Paloma Valencia', color: '#8b5cf6' },
-    { region: 'Llanos', lider: 'Abelardo de la Espriella', color: '#f97316' },
+    { region: 'Llanos', lider: 'Abelardo de la Espriella', color: '#22c55e' },
     { region: 'Amazonía', lider: 'Iván Cepeda', color: '#ef4444' }
   ];
 };
@@ -98,9 +99,9 @@ export const getDemographicData = () => {
   return [
     { ageGroup: 'Jóvenes 18-24', lider: 'Iván Cepeda', color: '#ef4444' },
     { ageGroup: 'Adultos 25-34', lider: 'Iván Cepeda', color: '#ef4444' },
-    { ageGroup: 'Adultos 35-44', lider: 'Paloma Valencia', color: '#8b5cf6' },
-    { ageGroup: 'Adultos 45-59', lider: 'Paloma Valencia', color: '#8b5cf6' },
-    { ageGroup: 'Adultos Mayores 60+', lider: 'Abelardo de la Espriella', color: '#f97316' }
+    { ageGroup: 'Adultos 35-44', lider: 'Abelardo de la Espriella', color: '#22c55e' },
+    { ageGroup: 'Adultos 45-59', lider: 'Abelardo de la Espriella', color: '#22c55e' },
+    { ageGroup: 'Adultos Mayores 60+', lider: 'Paloma Valencia', color: '#8b5cf6' }
   ];
 };
 
@@ -117,59 +118,68 @@ export const getSocialMediaData = () => {
 
 export const getComparisonData = () => {
   return [
-    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 35.0 },
-    { tendencia: 'Centro-Derecha', porcentaje2022: 28.5, porcentaje2026: 25.9 },
-    { tendencia: 'Extrema Derecha', porcentaje2022: 0, porcentaje2026: 15.4 },
-    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 7.3 },
-    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 16.4 }
+    { tendencia: 'Izquierda', porcentaje2022: 40.3, porcentaje2026: 39.5 },
+    { tendencia: 'Derecha', porcentaje2022: 28.5, porcentaje2026: 24.7 },
+    { tendencia: 'Centro-Derecha', porcentaje2022: 0, porcentaje2026: 18.3 },
+    { tendencia: 'Centro', porcentaje2022: 28.2, porcentaje2026: 9.4 },
+    { tendencia: 'Otros/Indecisos', porcentaje2022: 3.0, porcentaje2026: 8.1 }
   ];
 };
 
 export const getScenarioData = () => {
   return [
     {
-      scenario: 'Cepeda vs. Valencia (CNC)',
+      scenario: 'Valencia vs. Cepeda (AtlasIntel Abr 30)',
+      candidate1: 'Valencia',
+      percentage1: 49,
+      candidate2: 'Cepeda',
+      percentage2: 41,
+      undecided: 10,
+      probability: 25
+    },
+    {
+      scenario: 'De la Espriella vs. Cepeda (AtlasIntel Abr 30)',
+      candidate1: 'Espriella',
+      percentage1: 48,
+      candidate2: 'Cepeda',
+      percentage2: 42,
+      undecided: 10,
+      probability: 25
+    },
+    {
+      scenario: 'Valencia vs. Cepeda (Guarumo Abr)',
+      candidate1: 'Valencia',
+      percentage1: 45,
+      candidate2: 'Cepeda',
+      percentage2: 42,
+      undecided: 13,
+      probability: 15
+    },
+    {
+      scenario: 'Cepeda vs. Valencia (GAD3 Abr)',
+      candidate1: 'Cepeda',
+      percentage1: 44,
+      candidate2: 'Valencia',
+      percentage2: 37,
+      undecided: 19,
+      probability: 15
+    },
+    {
+      scenario: 'Cepeda vs. Espriella (GAD3 Abr)',
+      candidate1: 'Cepeda',
+      percentage1: 46,
+      candidate2: 'Espriella',
+      percentage2: 35,
+      undecided: 19,
+      probability: 15
+    },
+    {
+      scenario: 'Cepeda vs. Valencia (CNC Mar)',
       candidate1: 'Cepeda',
       percentage1: 43.3,
       candidate2: 'Valencia',
       percentage2: 42.9,
       undecided: 13.8,
-      probability: 30
-    },
-    {
-      scenario: 'Cepeda vs. De la Espriella (CNC)',
-      candidate1: 'Cepeda',
-      percentage1: 48.1,
-      candidate2: 'Espriella',
-      percentage2: 35.5,
-      undecided: 16.4,
-      probability: 20
-    },
-    {
-      scenario: 'De la Espriella vs. Cepeda (AtlasIntel)',
-      candidate1: 'Espriella',
-      percentage1: 48.8,
-      candidate2: 'Cepeda',
-      percentage2: 39.8,
-      undecided: 11.4,
-      probability: 25
-    },
-    {
-      scenario: 'Valencia vs. Cepeda (AtlasIntel)',
-      candidate1: 'Valencia',
-      percentage1: 47.1,
-      candidate2: 'Cepeda',
-      percentage2: 39.6,
-      undecided: 13.3,
-      probability: 20
-    },
-    {
-      scenario: 'Cepeda vs. Fajardo (AtlasIntel)',
-      candidate1: 'Cepeda',
-      percentage1: 38.3,
-      candidate2: 'Fajardo',
-      percentage2: 37.4,
-      undecided: 24.3,
       probability: 5
     }
   ];
@@ -177,13 +187,13 @@ export const getScenarioData = () => {
 
 export const getFavorabilityData = () => {
   return [
-    { candidate: 'Iván Cepeda', favorabilidad: 42.0, desfavorabilidad: 43.9, balance: -1.9 },
-    { candidate: 'Paloma Valencia', favorabilidad: 38.5, desfavorabilidad: 28.3, balance: 10.2 },
-    { candidate: 'Abelardo de la Espriella', favorabilidad: 30.2, desfavorabilidad: 33.6, balance: -3.4 },
-    { candidate: 'Claudia López', favorabilidad: 28.1, desfavorabilidad: 45.2, balance: -17.1 },
-    { candidate: 'Sergio Fajardo', favorabilidad: 25.8, desfavorabilidad: 30.5, balance: -4.7 },
-    { candidate: 'Roy Barreras', favorabilidad: 12.3, desfavorabilidad: 42.1, balance: -29.8 },
-    { candidate: 'Santiago Botero', favorabilidad: 8.5, desfavorabilidad: 15.2, balance: -6.7 }
+    { candidate: 'Iván Cepeda', favorabilidad: 42.0, desfavorabilidad: 38.0, balance: 4.0 },
+    { candidate: 'Paloma Valencia', favorabilidad: 38.0, desfavorabilidad: 36.0, balance: 2.0 },
+    { candidate: 'Abelardo de la Espriella', favorabilidad: 35.0, desfavorabilidad: 48.0, balance: -13.0 },
+    { candidate: 'Sergio Fajardo', favorabilidad: 42.0, desfavorabilidad: 32.0, balance: 10.0 },
+    { candidate: 'Claudia López', favorabilidad: 31.0, desfavorabilidad: 45.0, balance: -14.0 },
+    { candidate: 'Roy Barreras', favorabilidad: 18.0, desfavorabilidad: 55.0, balance: -37.0 },
+    { candidate: 'Santiago Botero', favorabilidad: 25.0, desfavorabilidad: 30.0, balance: -5.0 }
   ];
 };
 
@@ -191,21 +201,21 @@ export const getElectoralInsights = () => {
   return {
     fragmentacion: {
       title: "Tridente en Primera Vuelta",
-      description: "Las mediciones recientes ubican a Cepeda primero, con De la Espriella y Valencia disputando el segundo lugar. El orden de ese 2° puesto define el escenario de balotaje.",
-      impact: "El foco estratégico pasó de ‘quién lidera’ a ‘quién llega a segunda vuelta’",
-      percentage: "Cepeda 36.1% · Espriella 21.4% · Valencia 20.5%"
+      description: "Las mediciones de abril ubican a Cepeda primero, con De la Espriella sobrepasando a Valencia por el segundo lugar. El orden de ese 2° puesto define el escenario de balotaje.",
+      impact: "El foco estratégico es quién llega a segunda vuelta",
+      percentage: "Cepeda 39.1% · Espriella 23.1% · Valencia 18.3%"
     },
     recomposicion: {
-      title: "AtlasIntel cambia la lectura del balotaje",
-      description: "En escenarios de segunda vuelta (AtlasIntel/Semana), Cepeda pierde frente a De la Espriella (48.8% vs 39.8%) y frente a Valencia (47.1% vs 39.6%).",
+      title: "AtlasIntel y Guarumo cambian la lectura del balotaje",
+      description: "En escenarios de segunda vuelta, AtlasIntel y Guarumo muestran a la derecha derrotando a Cepeda: Valencia 49 vs 41, Espriella 48 vs 42. Invamer y GAD3 sostienen a Cepeda en el balotaje.",
       impact: "La transferencia de voto anti-gobierno se concentra en el rival de Cepeda",
-      change: "Valencia y Espriella lideran en 2da vuelta"
+      change: "2 de 4 encuestadoras dan ganador a la derecha"
     },
     volatilidad: {
-      title: "Empate técnico alternativo",
-      description: "AtlasIntel muestra un escenario cerrado Cepeda vs Fajardo (38.3% vs 37.4%). Aunque Fajardo está lejos en primera vuelta, podría estrechar el balotaje si llegara.",
+      title: "Sin ganador en primera vuelta",
+      description: "Cepeda gana primera vuelta con ~39% pero no alcanza el 50%+1 que exige la Constitución. La segunda vuelta del 21 de junio está garantizada.",
       impact: "El balotaje depende de alianzas y participación",
-      uncertainty: "38.3% vs 37.4%"
+      uncertainty: "39.1% — lejos del 50%+1"
     },
     digital: {
       title: "Congreso Fragmentado",
@@ -215,11 +225,11 @@ export const getElectoralInsights = () => {
     },
     regional: {
       title: "Cepeda mantiene fortaleza territorial",
-      description: "Cepeda domina Caribe, Pacífica y Bogotá. Valencia gana fuerza en Centro-Oriente y Eje Cafetero. De la Espriella compite en Llanos.",
+      description: "Cepeda domina Caribe, Pacífica, Bogotá y Amazonía. De la Espriella crece en Centro-Oriente y Llanos. Valencia mantiene Eje Cafetero.",
       highlights: {
         caribe: "Cepeda domina Caribe, Pacífica y Bogotá",
-        andina: "Valencia sube en Centro-Oriente y Eje Cafetero",
-        orinoquia: "De la Espriella mantiene fuerza en Llanos"
+        andina: "Espriella sube en Centro-Oriente",
+        orinoquia: "Espriella mantiene fuerza en Llanos"
       }
     },
     generacional: {

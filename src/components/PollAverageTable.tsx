@@ -5,7 +5,6 @@ import { ExternalLink } from 'lucide-react';
 const PollAverageTable: React.FC = () => {
   const averages = calculateAverages();
 
-  // Helper to determine background color based on position
   const getPositionColor = (index: number) => {
     switch (index) {
       case 0: return 'bg-purple-100 text-purple-800 font-bold';
@@ -23,11 +22,10 @@ const PollAverageTable: React.FC = () => {
           Promedio de Encuestas — Primera Vuelta Presidencial 2026
         </h2>
         <p className="text-gray-600">
-          Basado en las 4 encuestadoras más recientes (febrero 2026)
+          Basado en las 4 encuestadoras más recientes (abril 2026): Invamer/Caracol, AtlasIntel/Semana, Guarumo/EcoAnalítica y GAD3/RCN
         </p>
       </div>
 
-      {/* Desktop view: Table */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -36,9 +34,9 @@ const PollAverageTable: React.FC = () => {
               <th className="p-4 font-bold text-gray-700 bg-gray-100">Promedio</th>
               {encuestasRecientes.map((encuesta, idx) => (
                 <th key={idx} className="p-4 font-medium hover:text-indigo-600 transition-colors">
-                  <a 
-                    href={encuesta.url} 
-                    target="_blank" 
+                  <a
+                    href={encuesta.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1"
                     title="Ver fuente"
@@ -71,7 +69,6 @@ const PollAverageTable: React.FC = () => {
         </table>
       </div>
 
-      {/* Mobile view: Cards */}
       <div className="md:hidden divide-y divide-gray-100">
         {averages.map((candidate, idx) => (
           <div key={candidate.candidato} className="p-4 bg-white">
@@ -84,7 +81,7 @@ const PollAverageTable: React.FC = () => {
                 {candidate.promedio.toFixed(1)}%
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-2 text-sm">
               {candidate.encuestas.map((encuesta, eIdx) => (
                 <div key={eIdx} className="bg-gray-50 p-2 rounded flex justify-between">
@@ -104,15 +101,15 @@ const PollAverageTable: React.FC = () => {
       <div className="p-6 bg-gray-50 border-t border-gray-200">
         <p className="text-sm font-medium text-gray-700 mb-4 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-          Nota: Última actualización: febrero 2026. Los promedios se calculan con las 4 encuestas más recientes publicadas.
+          Nota: Última actualización: 1 de mayo de 2026. Los promedios se calculan con las 4 encuestas más recientes publicadas (abril 2026).
         </p>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {encuestasRecientes.map((encuesta, idx) => (
             <div key={idx} className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm text-xs">
-              <a 
-                href={encuesta.url} 
-                target="_blank" 
+              <a
+                href={encuesta.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-indigo-700 hover:text-indigo-900 flex items-center justify-between mb-1"
               >

@@ -1,7 +1,7 @@
 [
   {
     "Candidato": "Iván Cepeda",
-    "Intención_Voto_Porcentaje": 36.1,
+    "Intención_Voto_Porcentaje": 39.1,
     "Tendencia_Política": "Izquierda",
     "Favorabilidad": 42,
     "Desfavorabilidad": 38,
@@ -13,11 +13,11 @@
     "Generación": "Senior (>60)",
     "Tipo_Candidatura": "Por partido",
     "Formula_VP": "Aida Quilcué",
-    "Tendencia_Post_Primarias": "stable"
+    "Tendencia_Post_Primarias": "up"
   },
   {
     "Candidato": "Abelardo de la Espriella",
-    "Intención_Voto_Porcentaje": 21.4,
+    "Intención_Voto_Porcentaje": 23.1,
     "Tendencia_Política": "Derecha",
     "Favorabilidad": 35,
     "Desfavorabilidad": 48,
@@ -28,12 +28,12 @@
     "Ranking": 2,
     "Generación": "Adulto (41-50)",
     "Tipo_Candidatura": "Por partido",
-    "Formula_VP": null,
+    "Formula_VP": "José Manuel Restrepo",
     "Tendencia_Post_Primarias": "up"
   },
   {
     "Candidato": "Paloma Valencia",
-    "Intención_Voto_Porcentaje": 20.5,
+    "Intención_Voto_Porcentaje": 18.3,
     "Tendencia_Política": "Centro-Derecha",
     "Favorabilidad": 38,
     "Desfavorabilidad": 36,
@@ -45,27 +45,11 @@
     "Generación": "Adulto (41-50)",
     "Tipo_Candidatura": "Por partido",
     "Formula_VP": "Juan Daniel Oviedo",
-    "Tendencia_Post_Primarias": "up"
-  },
-  {
-    "Candidato": "Claudia López",
-    "Intención_Voto_Porcentaje": 3.6,
-    "Tendencia_Política": "Centro",
-    "Favorabilidad": 31,
-    "Desfavorabilidad": 45,
-    "Partido_Movimiento": "Consulta por Soluciones",
-    "Región_Origen": "Bogotá",
-    "Cargo_Actual": "Ex-Alcaldesa de Bogotá",
-    "Edad": 56,
-    "Ranking": 4,
-    "Generación": "Mayor (51-60)",
-    "Tipo_Candidatura": "Por consulta",
-    "Formula_VP": null,
     "Tendencia_Post_Primarias": "down"
   },
   {
     "Candidato": "Sergio Fajardo",
-    "Intención_Voto_Porcentaje": 4.1,
+    "Intención_Voto_Porcentaje": 4.3,
     "Tendencia_Política": "Centro",
     "Favorabilidad": 42,
     "Desfavorabilidad": 32,
@@ -73,15 +57,31 @@
     "Región_Origen": "Antioquia",
     "Cargo_Actual": "Ex-Gobernador de Antioquia",
     "Edad": 69,
-    "Ranking": 5,
+    "Ranking": 4,
     "Generación": "Senior (>60)",
     "Tipo_Candidatura": "Por partido",
     "Formula_VP": null,
     "Tendencia_Post_Primarias": "stable"
   },
   {
+    "Candidato": "Claudia López",
+    "Intención_Voto_Porcentaje": 2.5,
+    "Tendencia_Política": "Centro",
+    "Favorabilidad": 31,
+    "Desfavorabilidad": 45,
+    "Partido_Movimiento": "Consulta por Soluciones",
+    "Región_Origen": "Bogotá",
+    "Cargo_Actual": "Ex-Alcaldesa de Bogotá",
+    "Edad": 56,
+    "Ranking": 5,
+    "Generación": "Mayor (51-60)",
+    "Tipo_Candidatura": "Por consulta",
+    "Formula_VP": null,
+    "Tendencia_Post_Primarias": "down"
+  },
+  {
     "Candidato": "Santiago Botero",
-    "Intención_Voto_Porcentaje": 1.3,
+    "Intención_Voto_Porcentaje": 1.1,
     "Tendencia_Política": "Centro",
     "Favorabilidad": 25,
     "Desfavorabilidad": 30,

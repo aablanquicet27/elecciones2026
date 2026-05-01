@@ -24,21 +24,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 
 	return (
 		<section className="relative min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden" aria-label="Panorama electoral Colombia 2026">
-			{/* Decorative elements */}
 			<div className="absolute top-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 			<div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
 			<div className="relative container mx-auto px-6 lg:px-12 pt-32 pb-20">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[85vh]">
-					{/* Left Content */}
 					<div className="space-y-10">
-						{/* Badge */}
 						<div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
 							<span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
 							<span className="text-base font-medium text-purple-700">Promedio Invamer + Atlas + Guarumo + GAD3 · 1 May 2026</span>
 						</div>
 
-						{/* Main Headline */}
 						<div className="space-y-4">
 							<h1 className="headline-hero text-gray-900">
 								Elecciones
@@ -52,7 +48,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 							</p>
 						</div>
 
-						{/* Predicción directa — 1ra y 2da vuelta */}
 						<div className="space-y-3">
 							<div className="bg-white rounded-2xl p-5 border-2 border-purple-200 shadow-lg shadow-purple-500/10">
 								<div className="flex items-start space-x-4">
@@ -81,23 +76,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 							</div>
 						</div>
 
-						{/* Key Stats */}
 						<div className="flex flex-wrap gap-8 md:gap-12 pt-2">
 							<div>
 								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">39.1%</div>
 								<div className="text-sm text-gray-500 mt-1">Cepeda · 1°</div>
 							</div>
 							<div>
-								<div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">24.9%</div>
+								<div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">23.1%</div>
 								<div className="text-sm text-gray-500 mt-1">De la Espriella · 2° ↑</div>
 							</div>
 							<div>
-								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">19.0%</div>
+								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">18.3%</div>
 								<div className="text-sm text-gray-500 mt-1">Valencia · 3°</div>
 							</div>
 						</div>
 
-						{/* CTA Buttons */}
 						<div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
 							<Link
 								to="/analisis"
@@ -130,7 +123,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 						</div>
 					</div>
 
-					{/* Right Content - Top Candidates */}
 					<div className="relative">
 						<div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-purple-100 shadow-xl shadow-purple-500/10">
 							<div className="text-center mb-6">
