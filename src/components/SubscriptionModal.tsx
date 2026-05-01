@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Mail, CheckCircle, Loader, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Mail, CheckCircle, Loader, ChevronDown, ChevronUp, Vote } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { getCandidateImage } from '../utils/candidateImages';
 
@@ -9,17 +9,17 @@ interface SubscriptionModalProps {
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los 10 principales candidatos según encuesta Invamer Feb 2026
+// Lista de los principales candidatos (abril 2026)
 const mainCandidates = [
-  'Abelardo de la Espriella',
   'Iván Cepeda',
-  'Sergio Fajardo',
+  'Abelardo de la Espriella',
   'Paloma Valencia',
+  'Sergio Fajardo',
   'Claudia López',
+  'Santiago Botero',
   'Miguel Uribe Londoño',
   'Vicky Dávila',
   'Juan Daniel Oviedo',
-  'Juan Carlos Pinzón',
   'Voto en Blanco'
 ];
 
@@ -30,7 +30,6 @@ const additionalCandidates = [
   'Juan Manuel Galán',
   'Enrique Peñalosa',
   'Aníbal Gaviria',
-  'Santiago Botero',
   'David Luna',
   'Roy Barreras',
   'Mauricio Cárdenas',
@@ -46,11 +45,13 @@ const additionalCandidates = [
   'Alfredo Saade',
   'María José Pizarro',
   'Jota Pe Hernández',
-  'Juan Fernando Cristo'
+  'Juan Fernando Cristo',
+  'Juan Carlos Pinzón'
 ];
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, onSubscribe }) => {
-  const [step, setStep] = useState<'email' | 'vote'>('email');
+  // Flujo invertido: primero votar, luego correo opcional
+  const [step, setStep] = useState<'vote' | 'email'>('vote');
   const [email, setEmail] = useState('');
   const [selectedCandidate, setSelectedCandidate] = useState<string>('');
   const [showOthers, setShowOthers] = useState(false);
@@ -58,6 +59,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
   const [error, setError] = useState('');
   const [isValid, setIsValid] = useState(false);
   const [shuffledCandidates, setShuffledCandidates] = useState<string[]>([]);
+  const [voteId, setVoteId] = useState<string | null>(null);
 
   useEffect(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -80,6 +82,44 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
     setShuffledCandidates(shuffleArray(mainCandidates));
   }, []);
 
+  // PASO 1: Registrar voto anónimo (sin correo) y avanzar al paso de correo
+  const handleVoteSubmit = async () => {
+    if (!selectedCandidate || isLoading) return;
+
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const { data, error: voteError } = await supabase
+        .from('votes')
+        .insert([{
+          email: null,
+          candidate: selectedCandidate
+        }])
+        .select('id')
+        .single();
+
+      if (voteError) throw voteError;
+
+      if (data && data.id) {
+        setVoteId(String(data.id));
+      }
+
+      // Guardar voto en localStorage
+      localStorage.setItem('electoral_ai_voted', 'true');
+      localStorage.setItem('electoral_ai_vote', selectedCandidate);
+
+      // Avanzar al paso de correo (opcional)
+      setStep('email');
+    } catch (err) {
+      console.error('Error al registrar voto:', err);
+      setError('Hubo un error al registrar tu voto. Inténtalo de nuevo.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // PASO 2: Agregar correo (suscripción) y vincularlo al voto previo
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid || isLoading) return;
@@ -89,14 +129,13 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
 
     try {
       // Verificar si el email ya existe
-      const { data: existingSubscription, error: selectError } = await supabase
+      const { data: existingSubscription } = await supabase
         .from('subscriptions')
         .select('email')
         .eq('email', email)
         .maybeSingle();
 
       if (!existingSubscription) {
-        // Crear nueva suscripción
         const { error: insertError } = await supabase
           .from('subscriptions')
           .insert([{ email, active: true }]);
@@ -104,47 +143,31 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
         if (insertError) throw insertError;
       }
 
-      // Pasar al paso de votación
-      setStep('vote');
+      // Vincular el voto previo con el correo (best-effort)
+      if (voteId) {
+        await supabase
+          .from('votes')
+          .update({ email })
+          .eq('id', voteId);
+      }
+
+      localStorage.setItem('electoral_ai_subscribed', 'true');
+      localStorage.setItem('electoral_ai_email', email);
+
+      onSubscribe(email);
+      onClose();
     } catch (err) {
       console.error('Error al procesar email:', err);
-      setError('Hubo un error al procesar tu email. Inténtalo de nuevo.');
+      setError('Hubo un error al procesar tu correo. Inténtalo de nuevo.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleVoteSubmit = async () => {
-    if (!selectedCandidate || isLoading) return;
-
-    setIsLoading(true);
-    setError('');
-
-    try {
-      // Registrar el voto
-      const { error: voteError } = await supabase
-        .from('votes')
-        .insert([{ 
-          email, 
-          candidate: selectedCandidate
-        }]);
-
-      if (voteError) throw voteError;
-
-      // Guardar en localStorage
-      localStorage.setItem('electoral_ai_subscribed', 'true');
-      localStorage.setItem('electoral_ai_email', email);
-      localStorage.setItem('electoral_ai_voted', 'true');
-      localStorage.setItem('electoral_ai_vote', selectedCandidate);
-      
-      onSubscribe(email);
-      onClose();
-    } catch (err) {
-      console.error('Error al registrar voto:', err);
-      setError('Hubo un error al registrar tu voto. Inténtalo de nuevo.');
-    } finally {
-      setIsLoading(false);
-    }
+  // Cerrar saltando el correo: el voto ya quedó registrado
+  const handleSkipEmail = () => {
+    onSubscribe('');
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -153,7 +176,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-      
+
       {/* Modal */}
       <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[95vh] overflow-hidden">
         {/* Header */}
@@ -161,94 +184,29 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
           <button
             onClick={onClose}
             className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
+            aria-label="Cerrar"
           >
             <X className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
-          
+
           <div className="flex items-center space-x-2 sm:space-x-3 mb-2">
             <img src="/logoagapai.png" alt="Logo" className="h-6 w-6 sm:h-8 sm:w-8 bg-white/20 rounded-full p-1" />
             <h2 className="text-xl sm:text-2xl font-bold">
-              {step === 'email' ? '¡Únete a ElectoralAI!' : 'Encuesta Electoral 2026'}
+              {step === 'vote' ? 'Encuesta Electoral 2026' : '¡Listo, tu voto fue registrado!'}
             </h2>
           </div>
           <p className="text-purple-100 text-sm sm:text-base">
-            {step === 'email' 
-              ? 'Análisis electoral inteligente para Colombia 2026'
-              : 'Si las elecciones fueran el día de hoy, ¿por quién votarías?'
+            {step === 'vote'
+              ? 'Si las elecciones fueran el día de hoy, ¿por quién votarías?'
+              : 'Déjanos tu correo (opcional) y recibe el análisis electoral con IA.'
             }
           </p>
         </div>
 
         {/* Content */}
         <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-h-[70vh] overflow-y-auto">
-          {step === 'email' ? (
-            // Email Step
-            <div>
-              <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Para acceder a nuestros análisis electorales y participar en encuestas, 
-                necesitamos tu correo electrónico:
-              </p>
-
-              <form onSubmit={handleEmailSubmit} className="space-y-4">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="tu@email.com"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                    required
-                  />
-                  {isValid && (
-                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
-                    </div>
-                  )}
-                </div>
-
-                {error && (
-                  <div className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">
-                    {error}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={!isValid || isLoading}
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
-                      <span>Procesando...</span>
-                    </>
-                  ) : (
-                    <span>Continuar a la Encuesta</span>
-                  )}
-                </button>
-              </form>
-
-              {/* Benefits */}
-              <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-3">
-                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
-                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
-                  <span>Recibirás reportes mensuales con análisis de IA</span>
-                </div>
-                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
-                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
-                  <span>Acceso a encuestas exclusivas</span>
-                </div>
-                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
-                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
-                  <span>Sin spam, solo contenido relevante</span>
-                </div>
-              </div>
-            </div>
-          ) : (
-            // Vote Step
+          {step === 'vote' ? (
+            // PASO 1: Votar
             <div>
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
@@ -259,8 +217,8 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                 </p>
               </div>
 
-              {/* Grid de candidatos principales - Muy responsive */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 sm:gap-3 mb-4 sm:mb-6">
+              {/* Grid de candidatos principales */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 mb-4 sm:mb-6">
                 {shuffledCandidates.map((candidate) => (
                   <button
                     key={candidate}
@@ -310,7 +268,6 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                   )}
                 </button>
 
-                {/* Lista desplegable de otros candidatos */}
                 {showOthers && (
                   <div className="mt-3 max-h-32 sm:max-h-40 overflow-y-auto border border-gray-200 rounded-lg">
                     {additionalCandidates.map((candidate) => (
@@ -346,33 +303,116 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                 </div>
               )}
 
-              {/* Botones de acción */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button
-                  onClick={() => setStep('email')}
-                  className="flex-1 border border-gray-300 text-gray-700 py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base"
-                >
-                  Volver
-                </button>
-                <button
-                  onClick={handleVoteSubmit}
-                  disabled={!selectedCandidate || isLoading}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
-                      <span>Enviando...</span>
-                    </>
-                  ) : (
-                    <span>Enviar Voto</span>
+              {/* Botón principal: votar */}
+              <button
+                onClick={handleVoteSubmit}
+                disabled={!selectedCandidate || isLoading}
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
+                    <span>Registrando voto...</span>
+                  </>
+                ) : (
+                  <>
+                    <Vote className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span>Enviar mi Voto</span>
+                  </>
+                )}
+              </button>
+
+              <p className="text-xs text-gray-500 mt-3 text-center">
+                Tu voto es anónimo. Después podrás suscribirte si quieres recibir análisis.
+              </p>
+            </div>
+          ) : (
+            // PASO 2: Correo opcional
+            <div>
+              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-50 rounded-lg border border-green-200 flex items-start space-x-3">
+                <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm sm:text-base text-green-800 font-semibold">
+                    Tu voto por <strong>{selectedCandidate}</strong> fue registrado.
+                  </p>
+                  <p className="text-xs sm:text-sm text-green-700 mt-1">
+                    Gracias por participar. ¿Quieres recibir el análisis electoral con IA?
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                Déjanos tu correo (opcional) para enviarte reportes mensuales con análisis y encuestas exclusivas.
+              </p>
+
+              <form onSubmit={handleEmailSubmit} className="space-y-4">
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+                  </div>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="tu@email.com"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                  />
+                  {isValid && (
+                    <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
+                    </div>
                   )}
-                </button>
+                </div>
+
+                {error && (
+                  <div className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">
+                    {error}
+                  </div>
+                )}
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    type="button"
+                    onClick={handleSkipEmail}
+                    className="flex-1 border border-gray-300 text-gray-700 py-3 px-6 rounded-xl font-medium hover:bg-gray-50 transition-colors text-sm sm:text-base"
+                  >
+                    No, gracias
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={!isValid || isLoading}
+                    className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 text-sm sm:text-base"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
+                        <span>Suscribiendo...</span>
+                      </>
+                    ) : (
+                      <span>Suscribirme</span>
+                    )}
+                  </button>
+                </div>
+              </form>
+
+              {/* Beneficios */}
+              <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-3">
+                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                  <span>Recibirás reportes mensuales con análisis de IA</span>
+                </div>
+                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                  <span>Acceso a encuestas exclusivas</span>
+                </div>
+                <div className="flex items-center space-x-3 text-xs sm:text-sm text-gray-600">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 flex-shrink-0" />
+                  <span>Sin spam, solo contenido relevante</span>
+                </div>
               </div>
             </div>
           )}
 
-          {/* Privacy */}
           <p className="text-xs text-gray-500 mt-4 sm:mt-6 text-center">
             * Al registrarte aceptas nuestra política de privacidad
           </p>
