@@ -1,10 +1,15 @@
 export const getCandidateImage = (name: string, size: number = 400): string => {
-  // Normalize the name to create a lookup key that is accent-insensitive and case-insensitive
+  // Normalize the name: accent-insensitive and case-insensitive
   const key = name
     .toLowerCase()
-    // Remove accents / diacritics
     .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+
+  // Caso especial: Voto en Blanco (no es candidato real)
+  if (key === 'voto en blanco') {
+    return `https://ui-avatars.com/api/?name=Voto+Blanco&size=${size}&background=e5e7eb&color=374151&bold=true&format=png`;
+  }
 
   // Map of normalised candidate names to their file names inside the public folder
   const images: Record<string, string> = {
@@ -35,6 +40,7 @@ export const getCandidateImage = (name: string, size: number = 400): string => {
     return `/Colombian Political Figures Favorability Ratings (1)/${fileName}`;
   }
 
-  // Fallback: avatar with initials so that new / unknown candidates are still rendered nicely
-  return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=${size}&background=7c3aed&color=ffffff&bold=true`;
-}; 
+  // Fallback: avatar con iniciales (color morado de marca)
+  const safeName = encodeURIComponent(name);
+  return `https://ui-avatars.com/api/?name=${safeName}&size=${size}&background=7c3aed&color=ffffff&bold=true&format=png`;
+};

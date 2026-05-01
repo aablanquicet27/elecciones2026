@@ -49,6 +49,15 @@ const additionalCandidates = [
   'Juan Carlos Pinzón'
 ];
 
+// Fallback global por si una imagen falla en cargar (ej. caché viejo)
+const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, candidate: string) => {
+  const target = e.currentTarget;
+  if (target.dataset.fallback === 'true') return;
+  target.dataset.fallback = 'true';
+  const safeName = encodeURIComponent(candidate);
+  target.src = `https://ui-avatars.com/api/?name=${safeName}&size=200&background=7c3aed&color=ffffff&bold=true&format=png`;
+};
+
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, onSubscribe }) => {
   // Flujo invertido: primero votar, luego correo opcional
   const [step, setStep] = useState<'vote' | 'email'>('vote');
@@ -231,9 +240,11 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                   >
                     <div className="aspect-square rounded-lg sm:rounded-xl overflow-hidden bg-gray-100">
                       <img
-                        src={getCandidateImage(candidate, 120)}
+                        src={getCandidateImage(candidate, 200)}
                         alt={candidate}
+                        loading="lazy"
                         className="w-full h-full object-cover"
+                        onError={(e) => handleImageError(e, candidate)}
                       />
                     </div>
                     <div className={`absolute inset-0 rounded-lg sm:rounded-xl transition-all duration-200 ${
