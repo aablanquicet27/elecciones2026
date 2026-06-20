@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 23,
-    "generado": "2026-06-20T17:00:50.966Z",
-    "proxima_actualizacion": "2026-06-20T17:30:50.966Z",
+    "ciclo": 24,
+    "generado": "2026-06-20T17:28:28.694Z",
+    "proxima_actualizacion": "2026-06-20T17:58:28.694Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 90,
     "confianza": "Alta",
-    "titular": "Víspera sin sobresaltos: De la Espriella afianza el 90%, Cepeda cae al 10.",
-    "resumen": "El pronóstico avanza un punto, de 89-11 a 90-10, al consolidarse Polymarket en 90 para De la Espriella sin ninguna señal que lo contradiga. El sustento estructural sigue intacto —Guarumo/Ecoanalítica 52,6% vs 45% y CB Global 50,1%—, ya descontado. La novedad es puramente ambiental y operativa: Petro pide calma, Santos se declara neutral, EE.UU. mantiene su alerta y la Policía refuerza dispositivos; nada con valor predictivo.",
-    "que_cambio": "Ajuste mínimo de un punto (89→90) para alinear con la consolidación de Polymarket en 90, suavizado por encuestas estables; el resto del andamiaje no se mueve."
+    "titular": "El 90-10 aguanta: nada nuevo mueve el tablero en plena víspera.",
+    "resumen": "El pronóstico se mantiene en 90 para De la Espriella y 10 para Cepeda, sin señales que justifiquen ajuste. Polymarket sigue anclado en 90 para el favorito y las encuestas (Guarumo/Ecoanalítica 52,6% vs 45% y CB Global 50,1%) permanecen estables y ya descontadas. El flujo de titulares es repetición de lo ya reportado —Petro pidiendo calma, Santos neutral, dispositivo de Barranquilla— sin valor predictivo adicional.",
+    "que_cambio": "No cambió nada sustantivo respecto al ciclo 23: Polymarket sigue en 90 y las encuestas no se mueven, así que se mantiene el 90-10 por continuidad."
   },
   "candidatos": [
     {
@@ -26,26 +26,26 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 90,
-      "momentum": "up",
-      "momentum_label": "Firme al alza",
+      "momentum": "steady",
+      "momentum_label": "Liderazgo firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente en encuestas finales (52,6% Guarumo/Ecoanalítica, 50,1% CB Global)",
-        "Mercado de predicción firme en 90%",
-        "Triunfo previo en primera vuelta con la nueva derecha"
+        "Ventaja consistente en todas las encuestas finales",
+        "Polymarket estable en 90",
+        "Triunfo en primera vuelta"
       ],
       "debilidades": [
-        "Margen encuestal más estrecho que el de probabilidad implícita",
-        "Dependencia de un electorado de derecha que debe movilizarse"
+        "Techo de polarización que limita crecimiento",
+        "Dependencia de que la abstención no favorezca al rival"
       ],
       "riesgos": [
-        "Sorpresa de participación o abstención diferencial",
-        "Incidentes de orden público que alteren la jornada"
+        "Sorpresa en participación",
+        "Voto exterior con comportamiento mixto"
       ],
       "catalizadores": [
-        "Buena movilización en bastiones de la costa y el centro",
-        "Voto exterior favorable en plazas donde ya ganó"
+        "Jornada sin incidentes que confirme la tendencia",
+        "Alta participación en sus bastiones"
       ]
     },
     {
@@ -54,53 +54,43 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 10,
-      "momentum": "down",
-      "momentum_label": "Cede terreno",
+      "momentum": "steady",
+      "momentum_label": "Sin reacción",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Piso sólido de la izquierda del Pacto Histórico (45%)",
-        "Respaldo movilizador del presidente Petro"
+        "Maquinaria del Pacto Histórico",
+        "Respaldo del Gobierno"
       ],
       "debilidades": [
-        "Brecha persistente en todas las encuestas finales",
-        "Probabilidad implícita en mínimos (10-12%)"
+        "Rezago de 7-8 puntos en encuestas",
+        "Probabilidad implícita de un dígito"
       ],
       "riesgos": [
-        "Techo electoral difícil de superar en una sola jornada",
-        "Llamado a la calma que puede leerse como contención del fervor"
+        "Desmovilización de su electorado",
+        "Margen demasiado amplio para remontar en un día"
       ],
       "catalizadores": [
-        "Sorpresa en participación de su base",
-        "Resultado favorable en el voto exterior"
+        "Repunte sorpresivo de participación de izquierda",
+        "Voto exterior favorable en plazas clave"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita consolidada en 90% para De la Espriella, 12% Cepeda",
+      "detalle": "Probabilidad implícita estable en 90% para De la Espriella.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Guarumo/Ecoanalítica (final)",
-      "detalle": "52,6% De la Espriella vs 45% Cepeda",
+      "fuente": "Guarumo/Ecoanalítica",
+      "detalle": "Encuesta final 52,6% vs 45%, ya descontada.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "CB Global",
-      "detalle": "De la Espriella mantiene liderazgo con 50,1% a tres días",
+      "detalle": "50,1% para De la Espriella, sin cambios.",
       "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Petro (declaraciones)",
-      "detalle": "Llama a sus bases a mantener la calma y no agredir el domingo",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Voto exterior",
-      "detalle": "Reparto mixto en primera vuelta; foco final de la jornada",
-      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -433,6 +423,11 @@
     },
     {
       "ts": "2026-06-20T17:00:50.966Z",
+      "delaespriella": 90,
+      "cepeda": 10
+    },
+    {
+      "ts": "2026-06-20T17:28:28.694Z",
       "delaespriella": 90,
       "cepeda": 10
     }
