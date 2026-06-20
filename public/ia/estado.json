@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 32,
-    "generado": "2026-06-20T21:29:53.036Z",
-    "proxima_actualizacion": "2026-06-20T21:59:53.036Z",
+    "ciclo": 33,
+    "generado": "2026-06-20T22:01:24.167Z",
+    "proxima_actualizacion": "2026-06-20T22:31:24.167Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 88,
     "confianza": "Alta",
-    "titular": "88-12 a un día del cierre: el tablero sigue clavado.",
-    "resumen": "El cuadro no se mueve porque la cobertura de las últimas horas reitera lo ya conocido y no aporta hechos duros nuevos. Polymarket marca 88-14, una décima a favor de Cepeda que cae de lleno en el ruido y no alcanza para mover puntos. De la Espriella conserva un favoritismo amplio y Cepeda mantiene un margen que en votos absolutos sigue siendo, en teoría, remontable.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 31: Polymarket pasa de 88-13 a 88-14, dentro del margen de ruido, y todos los titulares frescos ya están incorporados a la línea de tiempo."
+    "titular": "88-12 en vísperas: el tablero no se mueve y la cobertura repite lo conocido.",
+    "resumen": "El cuadro sigue clavado a horas del cierre. Polymarket marca 88-14, un punto que migra hacia Cepeda dentro del margen de ruido y que no alcanza para mover el reparto. La franja previa se llena de notas de contexto y perfiles, no de hechos duros nuevos. De la Espriella conserva un favoritismo amplio y Cepeda mantiene un margen que en votos absolutos sigue siendo, en teoría, remontable.",
+    "que_cambio": "Nada sustantivo respecto al ciclo 32: Polymarket pasa de 88-14 con el punto del lado de Cepeda, dentro del ruido, y todos los titulares frescos ya están incorporados a la línea de tiempo."
   },
   "candidatos": [
     {
@@ -27,24 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 88,
       "momentum": "steady",
-      "momentum_label": "Favorito firme",
+      "momentum_label": "Favoritismo firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja amplia y estable en mercados y encuestas (52%)",
-        "Narrativa de 'mano dura' consolidada en la recta final"
+        "Ventaja amplia y estable en encuestas (52%)",
+        "Favoritismo consolidado en mercados de predicción",
+        "Narrativa de mano dura con tracción en el electorado de centro-derecha"
       ],
       "debilidades": [
-        "Techo de favoritismo que ya no crece",
-        "Margen real menor al que sugiere la probabilidad de ganar"
+        "Techo de votación expuesto a alta participación opositora",
+        "Dependencia de que el voto indeciso no se incline en bloque"
       ],
       "riesgos": [
-        "Sobreconfianza que desincentive a su votante",
-        "Sorpresa de participación a favor del rival"
+        "Incidentes de orden público que alteren la jornada",
+        "Sorpresa de movilización en bastiones de Cepeda"
       ],
       "catalizadores": [
-        "Jornada tranquila que premie el statu quo",
-        "Alta abstención en bastiones del Pacto Histórico"
+        "Jornada tranquila que congele el statu quo",
+        "Abstención en zonas favorables a la izquierda"
       ]
     },
     {
@@ -54,41 +55,42 @@
       "color": "#e11d48",
       "probabilidad": 12,
       "momentum": "steady",
-      "momentum_label": "Aguanta margen",
+      "momentum_label": "Margen estable",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Brecha en encuestas de solo siete puntos (45%)",
-        "Base movilizable con respaldo presidencial"
+        "Margen en votos absolutos aún teóricamente remontable (<700.000)",
+        "Maquinaria del Pacto Histórico y respaldo presidencial activo",
+        "Base territorial identificable, incluido el voto exterior"
       ],
       "debilidades": [
-        "Desventaja persistente en mercados de apuestas",
-        "Sin catalizador nuevo que altere la inercia"
+        "Desventaja persistente en encuestas (45%)",
+        "Probabilidad de mercado anclada en torno al 12-14%"
       ],
       "riesgos": [
-        "Que el llamado a la calma se lea como contención de su movilización",
-        "Abstención en zonas clave"
+        "Que el llamado a la calma de Petro no se traduzca en movilización",
+        "Techo en regiones donde la mano dura cala"
       ],
       "catalizadores": [
-        "Volcado del voto exterior afín",
-        "Repunte de participación urbana de última hora"
+        "Repunte de participación en sus bastiones",
+        "Voto oculto o indeciso que se decante a su favor"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "88-14 (implícita); Cepeda suma una décima dentro del ruido habitual",
+      "detalle": "Probabilidad implícita 88-14; el punto que se mueve cae del lado de Cepeda pero dentro del margen de ruido.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Encuestas (promedio)",
+      "detalle": "De la Espriella 52% frente a 45% de Cepeda, sin variación nueva en la última franja.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas",
-      "detalle": "52-45 mantiene la brecha de siete puntos sin movimiento",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Cobertura de víspera",
-      "detalle": "Titulares de las últimas horas repiten logística, seguridad y framing ya reportados",
+      "fuente": "Cobertura de prensa",
+      "detalle": "La franja previa se compone de notas de contexto, perfiles y logística electoral, sin hechos duros nuevos.",
       "favorece": "incierto"
     }
   ],
@@ -364,6 +366,11 @@
     },
     {
       "ts": "2026-06-20T21:29:53.036Z",
+      "delaespriella": 88,
+      "cepeda": 12
+    },
+    {
+      "ts": "2026-06-20T22:01:24.167Z",
       "delaespriella": 88,
       "cepeda": 12
     }
