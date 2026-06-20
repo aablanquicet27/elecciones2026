@@ -141,20 +141,6 @@
       "fuente": "Pulso IA"
     },
     {
-      "ts": "2026-06-20T17:00:49.966Z",
-      "tipo": "hito",
-      "titulo": "CB Global confirma liderazgo de De la Espriella con 50,1%",
-      "detalle": "Nueva lectura reafirma la ventaja a tres días de las elecciones.",
-      "fuente": "Infobae"
-    },
-    {
-      "ts": "2026-06-20T17:00:48.966Z",
-      "tipo": "alerta",
-      "titulo": "Barranquilla monitoreará la votación con helicóptero y drones",
-      "detalle": "La Policía refuerza el dispositivo de seguridad electoral.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
       "ts": "2026-06-20T16:29:54.172Z",
       "tipo": "pulso",
       "titulo": "De la Espriella 88% ▲ 89%",
@@ -162,39 +148,20 @@
       "fuente": "Pulso IA"
     },
     {
-      "ts": "2026-06-20T16:29:53.172Z",
-      "tipo": "hito",
-      "titulo": "Barranquilla refuerza vigilancia electoral con helicóptero y drones",
-      "detalle": "La Policía anuncia monitoreo aéreo del proceso en la jornada.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T15:58:59.007Z",
-      "tipo": "evento",
-      "titulo": "Polymarket revierte a 89% para De la Espriella",
-      "detalle": "Deshace el punto que había dado a Cepeda; el repunte fue ruido, no tendencia.",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20T15:58:58.007Z",
-      "tipo": "hito",
-      "titulo": "Santos se declara neutral y pide respetar las instituciones",
-      "detalle": "El expresidente asegura no apoyar ninguna candidatura de cara al voto.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T15:58:57.007Z",
+      "ts": "2026-06-20T16:00:01.000Z",
       "tipo": "alerta",
-      "titulo": "EE.UU. mantiene su alerta para el 21 de junio",
-      "detalle": "Vigencia del aviso sin escalamiento; clima de seguridad estable.",
-      "fuente": "ELTIEMPO.COM"
+      "titulo": "Petro pide calma a sus bases",
+      "detalle": "El presidente exige que ningún simpatizante agreda a nadie el domingo.",
+      "fuente": "EL PAÍS",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPcGxCcnotZEFMNmZobnp0dVlSMW55bGp0Nk9IUkdqc05GN3pfTGNXal8yYTctY2JUU01CeGdUSGp3Vm9CSFlZZXNmZTdCTUpCOTc4eFBscm1TakJqazZsRFhUdmZWb2FBdFphQy1lRHNDQkE0b3dCWVVqdVlrdVRyNmF6ak9CWkZCV3BuM05rZHh1aS12MlBLOVFWRkFiQkhlOXVZcE1ZYWRUS2JMSTlyUlVobDVZZUJQTlJkSHZDa2ZUZGlxSC1SbUNkSDdYajlqdHNyRmxQUU1MZ9IB7gFBVV95cUxPWnJ4a1VNM1EybTFHOTRJZW1LRkZYeHhuV3FHaHIyeHZIWkJOMlA5a0dVTkgyUkl6dkNPS2Q1Q21oYWU3cXgzV1N5ZkUzM0JDcnN5WFlQWjNTcGtjdkFhbVZJcUlmM1pRVEpLTTB0R0Q2TDVTRXplT2tuUDZ6TmRBVDRqbDIxZzRpOG1aMmNiRGxvNDBtZDI2RkU1Z2xZdDVFaHkwcUoySkJjaHcyVS1pTUJRbmZZOXBJU1NCVkRDT2taMTFsYjdUNHQ3Ylh6Zkg0TlBXRlNTWWlGNXdNUjdMOFkwNjZuQTlpOS1pak9R?oc=5"
     },
     {
-      "ts": "2026-06-20T15:58:56.007Z",
+      "ts": "2026-06-20T16:00:01.000Z",
       "tipo": "evento",
-      "titulo": "Registraduría descarta riesgos en las mesas",
-      "detalle": "Garantiza que no hay afectaciones para la jornada del domingo.",
-      "fuente": "ELTIEMPO.COM"
+      "titulo": "Petro pide calma a sus bases para el domingo",
+      "detalle": "El presidente llama a no agredir a nadie durante la votación.",
+      "fuente": "EL PAÍS",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPcGxCcnotZEFMNmZobnp0dVlSMW55bGp0Nk9IUkdqc05GN3pfTGNXal8yYTctY2JUU01CeGdUSGp3Vm9CSFlZZXNmZTdCTUpCOTc4eFBscm1TakJqazZsRFhUdmZWb2FBdFphQy1lRHNDQkE0b3dCWVVqdVlrdVRyNmF6ak9CWkZCV3BuM05rZHh1aS12MlBLOVFWRkFiQkhlOXVZcE1ZYWRUS2JMSTlyUlVobDVZZUJQTlJkSHZDa2ZUZGlxSC1SbUNkSDdYajlqdHNyRmxQUU1MZ9IB7gFBVV95cUxPWnJ4a1VNM1EybTFHOTRJZW1LRkZYeHhuV3FHaHIyeHZIWkJOMlA5a0dVTkgyUkl6dkNPS2Q1Q21oYWU3cXgzV1N5ZkUzM0JDcnN5WFlQWjNTcGtjdkFhbVZJcUlmM1pRVEpLTTB0R0Q2TDVTRXplT2tuUDZ6TmRBVDRqbDIxZzRpOG1aMmNiRGxvNDBtZDI2RkU1Z2xZdDVFaHkwcUoySkJjaHcyVS1pTUJRbmZZOXBJU1NCVkRDT2taMTFsYjdUNHQ3Ylh6Zkg0TlBXRlNTWWlGNXdNUjdMOFkwNjZuQTlpOS1pak9R?oc=5"
     },
     {
       "ts": "2026-06-20T15:28:02.945Z",
@@ -204,67 +171,20 @@
       "fuente": "Pulso IA"
     },
     {
-      "ts": "2026-06-20T15:28:01.945Z",
+      "ts": "2026-06-20T15:24:29.000Z",
       "tipo": "alerta",
-      "titulo": "EE.UU. mantiene su alerta de cara a la segunda vuelta",
-      "detalle": "Washington sostiene la advertencia emitida días antes del voto.",
-      "fuente": "ELTIEMPO.COM"
+      "titulo": "Barranquilla monitoreará la votación con helicóptero y drones",
+      "detalle": "La Policía refuerza el dispositivo de seguridad electoral.",
+      "fuente": "ELTIEMPO.COM",
+      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
     },
     {
-      "ts": "2026-06-20T15:28:00.945Z",
-      "tipo": "evento",
-      "titulo": "Polymarket sube un punto a Cepeda (13%)",
-      "detalle": "El mercado mantiene 89% al favorito y solo mueve ruido marginal hacia el opositor.",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20T14:56:38.114Z",
+      "ts": "2026-06-20T15:24:29.000Z",
       "tipo": "hito",
-      "titulo": "Registraduría descarta riesgos en las mesas para el domingo",
-      "detalle": "El organismo asegura que no hay afectaciones previstas para la jornada del 21 de junio.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T14:56:37.114Z",
-      "tipo": "alerta",
-      "titulo": "EE.UU. mantiene alerta de cara a la segunda vuelta",
-      "detalle": "Washington emite advertencia ante la jornada del 21 de junio.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T14:24:48.738Z",
-      "tipo": "hito",
-      "titulo": "Colombia vota la segunda vuelta",
-      "detalle": "Arranca la jornada definitiva con dispositivo electoral y ley seca activos.",
-      "fuente": "EL TIEMPO"
-    },
-    {
-      "ts": "2026-06-20T14:24:47.738Z",
-      "tipo": "alerta",
-      "titulo": "Petro pide calma a sus bases",
-      "detalle": "El presidente exige que ningún simpatizante agreda a nadie el domingo.",
-      "fuente": "EL PAÍS"
-    },
-    {
-      "ts": "2026-06-20T14:24:46.738Z",
-      "tipo": "evento",
-      "titulo": "Voto exterior, foco final de la jornada",
-      "detalle": "Los consulados concentran la atención por su peso en una brecha estrecha.",
-      "fuente": "Infobae"
-    },
-    {
-      "ts": "2026-06-20T14:14:42.213Z",
-      "tipo": "evento",
-      "titulo": "Polymarket corrige a 89% para De la Espriella",
-      "detalle": "El mercado cede un punto desde el pico de 90 y vuelve al nivel del ciclo anterior.",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20T14:14:41.213Z",
-      "tipo": "hito",
-      "titulo": "Colombia entra a la víspera con ley seca y dispositivo electoral activo",
-      "detalle": "El país llega al día previo a la segunda vuelta entre mano dura y paz.",
-      "fuente": "DW.com"
+      "titulo": "Barranquilla refuerza vigilancia electoral con helicóptero y drones",
+      "detalle": "La Policía anuncia monitoreo aéreo del proceso en la jornada.",
+      "fuente": "ELTIEMPO.COM",
+      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
     },
     {
       "ts": "2026-06-20T13:43:09.623Z",
@@ -272,41 +192,6 @@
       "titulo": "De la Espriella 88% ▲ 89%",
       "detalle": "Subí de 88 a 89 porque la encuesta final ampliÓ la brecha (52,6-45) y Polymarket reaccionó al alza a 90/12: dos señales convergentes en la víspera, no una sola lectura plana.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T13:43:08.624Z",
-      "tipo": "hito",
-      "titulo": "Encuesta final Guarumo/Ecoanalítica: 52,6% vs 45%",
-      "detalle": "El último sondeo amplía la ventaja de De la Espriella frente a Cepeda.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T13:43:07.624Z",
-      "tipo": "evento",
-      "titulo": "Polymarket sube a 90% para De la Espriella",
-      "detalle": "El mercado mueve la probabilidad implícita de 89 a 90 en la víspera.",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20T13:43:06.624Z",
-      "tipo": "alerta",
-      "titulo": "EE.UU. mantiene alerta de cara al 21 de junio",
-      "detalle": "Advertencia de seguridad vigente para la jornada electoral.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T13:12:16.964Z",
-      "tipo": "hito",
-      "titulo": "Colombia entra al día definitivo de la segunda vuelta",
-      "detalle": "Jornada electoral con ley seca activa y dispositivo de seguridad desplegado.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T13:12:15.964Z",
-      "tipo": "evento",
-      "titulo": "Petro pide calma a sus bases para el domingo",
-      "detalle": "El presidente llama a no agredir a nadie durante la votación.",
-      "fuente": "EL PAÍS"
     }
   ],
   "historico": [
