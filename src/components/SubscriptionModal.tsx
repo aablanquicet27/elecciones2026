@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Mail, CheckCircle, Loader, ChevronDown, ChevronUp, Vote } from 'lucide-react';
+import { X, Mail, CheckCircle, Loader, Vote } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { getCandidateImage } from '../utils/candidateImages';
 
@@ -11,47 +11,10 @@ interface SubscriptionModalProps {
   onSubscribe: (email: string) => void;
 }
 
-// Lista de los principales candidatos presidenciales (mayo 2026)
-// NOTA: Juan Daniel Oviedo ya no es presidencial (es VP de Paloma Valencia desde 12-mar-2026)
-// NOTA: Miguel Uribe Turbay fallecido en 2025 - su papá Miguel Uribe Londoño es el candidato
-// Solo se incluyen candidatos con foto disponible para evitar placeholders
+// Segunda vuelta (balotaje 21 jun 2026): solo los dos finalistas
 const mainCandidates = [
-  'Iván Cepeda',
   'Abelardo de la Espriella',
-  'Paloma Valencia',
-  'Sergio Fajardo',
-  'María Fernanda Cabal',
-  'Claudia López',
-  'Vicky Dávila',
-  'Daniel Quintero',
-  'Juan Manuel Galán',
-  'Voto en Blanco'
-];
-
-// Lista completa de candidatos adicionales
-const additionalCandidates = [
-  'Miguel Uribe Londoño',
-  'Santiago Botero',
-  'Camilo Romero',
-  'Enrique Peñalosa',
-  'Aníbal Gaviria',
-  'David Luna',
-  'Roy Barreras',
-  'Mauricio Cárdenas',
-  'Paola Holguín',
-  'Andrés Guerra Hoyos',
-  'Juan Guillermo Zuluaga',
-  'Maurice Armitage',
-  'Juan Carlos Cárdenas',
-  'Juan Carlos Saldarriaga',
-  'Jaime Pumarejo',
-  'Mauricio Lizcano',
-  'Héctor Olimpo',
-  'Alfredo Saade',
-  'María José Pizarro',
-  'Jota Pe Hernández',
-  'Juan Fernando Cristo',
-  'Carlos Amaya'
+  'Iván Cepeda'
 ];
 
 // Fallback global por si una imagen falla en cargar (ej. 404 o caché viejo)
@@ -68,7 +31,6 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
   const [step, setStep] = useState<'vote' | 'email'>('vote');
   const [email, setEmail] = useState('');
   const [selectedCandidate, setSelectedCandidate] = useState<string>('');
-  const [showOthers, setShowOthers] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isValid, setIsValid] = useState(false);
@@ -211,7 +173,7 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
           </div>
           <p className="text-purple-100 text-sm sm:text-base">
             {step === 'vote'
-              ? 'Si las elecciones fueran el día de hoy, ¿por quién votarías?'
+              ? 'En la segunda vuelta del 21 de junio, ¿por quién votarías?'
               : 'Déjanos tu correo (opcional) y recibe el análisis electoral con IA.'
             }
           </p>
@@ -224,15 +186,15 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
             <div>
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-                  Principales Candidatos
+                  Balotaje · 21 de junio de 2026
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600">
-                  Selecciona tu candidato preferido:
+                  Elige tu candidato para la segunda vuelta:
                 </p>
               </div>
 
               {/* Grid de candidatos principales */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-4 sm:mb-6">
                 {shuffledCandidates.map((candidate) => (
                   <button
                     key={candidate}
@@ -264,44 +226,10 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ isOpen, onClose, 
                       )}
                     </div>
                     <p className="text-xs sm:text-sm font-medium text-gray-900 mt-1 sm:mt-2 text-center leading-tight">
-                      {candidate.split(' ').slice(0, 2).join(' ')}
+                      {candidate}
                     </p>
                   </button>
                 ))}
-              </div>
-
-              {/* Botón para mostrar otros candidatos */}
-              <div className="mb-4 sm:mb-6">
-                <button
-                  onClick={() => setShowOthers(!showOthers)}
-                  className="w-full flex items-center justify-center space-x-2 py-2 sm:py-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm sm:text-base"
-                >
-                  <span>Otros candidatos</span>
-                  {showOthers ? (
-                    <ChevronUp className="h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4" />
-                  )}
-                </button>
-
-                {showOthers && (
-                  <div className="mt-3 max-h-32 sm:max-h-40 overflow-y-auto border border-gray-200 rounded-lg">
-                    {additionalCandidates.map((candidate) => (
-                      <button
-                        key={candidate}
-                        onClick={() => {
-                          setSelectedCandidate(candidate);
-                          setShowOthers(false);
-                        }}
-                        className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 text-sm sm:text-base ${
-                          selectedCandidate === candidate ? 'bg-purple-50 text-purple-700 font-medium' : 'text-gray-700'
-                        }`}
-                      >
-                        {candidate}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Candidato seleccionado */}
