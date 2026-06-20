@@ -23,16 +23,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 	const getImage = (name: string) => getCandidateImage(name, 400);
 
 	return (
-		<section className="relative min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden" aria-label="Panorama electoral Colombia 2026">
+		<section className="relative min-h-screen bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden" aria-label="Segunda vuelta presidencial Colombia 2026">
 			<div className="absolute top-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 			<div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-300/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
 			<div className="relative container mx-auto px-6 lg:px-12 pt-32 pb-20">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center min-h-[85vh]">
 					<div className="space-y-10">
-						<div className="inline-flex items-center space-x-3 bg-purple-50 px-5 py-2.5 rounded-full border border-purple-100">
-							<span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-							<span className="text-base font-medium text-purple-700">Promedio Invamer + Atlas + Guarumo + GAD3 · 1 May 2026</span>
+						<div className="inline-flex items-center space-x-3 bg-orange-50 px-5 py-2.5 rounded-full border border-orange-100">
+							<span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+							<span className="text-base font-medium text-orange-700">Segunda vuelta · domingo 21 de junio de 2026</span>
 						</div>
 
 						<div className="space-y-4">
@@ -43,8 +43,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 							</h1>
 
 							<p className="text-large max-w-xl">
-								Cepeda gana primera vuelta con ~39%, pero no llega al 50%+1.
-								<strong> Habrá segunda vuelta el 21 de junio</strong>, y ahí el escenario está abierto.
+								De la Espriella ganó la primera vuelta con 43,75%.
+								<strong> El 21 de junio define la Presidencia frente a Iván Cepeda</strong>, y los sondeos lo dan adelante.
 							</p>
 						</div>
 
@@ -56,8 +56,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 									</div>
 									<div>
 										<div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">1ª Vuelta · 31 de mayo</div>
-										<div className="text-lg font-bold text-gray-900">Gana Iván Cepeda con ~39%</div>
-										<div className="text-sm text-gray-600">No alcanza el 50%+1 → segunda vuelta garantizada.</div>
+										<div className="text-lg font-bold text-gray-900">Ganó De la Espriella con 43,75%</div>
+										<div className="text-sm text-gray-600">Cepeda quedó segundo con 40,9%. Ambos pasan al balotaje.</div>
 									</div>
 								</div>
 							</div>
@@ -69,8 +69,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 									</div>
 									<div>
 										<div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">2ª Vuelta · 21 de junio</div>
-										<div className="text-lg font-bold text-gray-900">Escenario abierto</div>
-										<div className="text-sm text-gray-600">Atlas y Guarumo dan ganadora a la derecha (Valencia 49-41 o De la Espriella 48-42). Invamer y GAD3 mantienen a Cepeda. Decide quién pase de segundo.</div>
+										<div className="text-lg font-bold text-gray-900">De la Espriella, favorito</div>
+										<div className="text-sm text-gray-600">Encuestas de junio: ~51% vs ~45%. Polymarket: 89% vs 11%. CNC la mide más ajustada (+3,9).</div>
 									</div>
 								</div>
 							</div>
@@ -78,16 +78,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 
 						<div className="flex flex-wrap gap-8 md:gap-12 pt-2">
 							<div>
-								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">39.1%</div>
-								<div className="text-sm text-gray-500 mt-1">Cepeda · 1°</div>
+								<div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">43.75%</div>
+								<div className="text-sm text-gray-500 mt-1">De la Espriella · 1°</div>
 							</div>
 							<div>
-								<div className="text-3xl md:text-4xl font-bold text-purple-600 tracking-tight">23.1%</div>
-								<div className="text-sm text-gray-500 mt-1">De la Espriella · 2° ↑</div>
+								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">40.9%</div>
+								<div className="text-sm text-gray-500 mt-1">Cepeda · 2°</div>
 							</div>
 							<div>
-								<div className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">18.3%</div>
-								<div className="text-sm text-gray-500 mt-1">Valencia · 3°</div>
+								<div className="text-3xl md:text-4xl font-bold text-orange-600 tracking-tight">+6.4</div>
+								<div className="text-sm text-gray-500 mt-1">Ventaja en sondeos (2ª v.)</div>
 							</div>
 						</div>
 
@@ -126,8 +126,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 					<div className="relative">
 						<div className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-purple-100 shadow-xl shadow-purple-500/10">
 							<div className="text-center mb-6">
-								<h2 className="text-2xl font-bold text-gray-900 mb-1">Líderes Actuales</h2>
-								<p className="text-gray-500">Intención de voto · Promedio Abr 2026 · 30 días para 1ª vuelta</p>
+								<h2 className="text-2xl font-bold text-gray-900 mb-1">Resultado 1ª vuelta</h2>
+								<p className="text-gray-500">Votación por candidato · 31 de mayo de 2026</p>
 							</div>
 
 							<div className="space-y-4">
@@ -179,7 +179,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ candidates }) => {
 							</div>
 
 							<p className="text-center text-sm text-gray-400 mt-6">
-								Invamer · AtlasIntel/Semana · Guarumo · GAD3/RCN — Abril 2026
+								Registraduría Nacional — escrutinio del 31 de mayo de 2026
 							</p>
 						</div>
 					</div>

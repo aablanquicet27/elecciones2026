@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, Users, Award, BarChart3, AlertTriangle, Target, Calendar, MapPin } from 'lucide-react';
+import { TrendingUp, Users, Award, BarChart3, Target, Calendar } from 'lucide-react';
 import { Candidate } from '../types/election';
 
 interface StatsOverviewProps {
@@ -7,55 +7,50 @@ interface StatsOverviewProps {
 }
 
 const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
-  const topCandidate = candidates.reduce((prev, current) =>
-    prev.Intención_Voto_Porcentaje > current.Intención_Voto_Porcentaje ? prev : current
-  );
-
-  const totalIntention = candidates.reduce((sum, c) => sum + c.Intención_Voto_Porcentaje, 0);
-  const undecided = 100 - totalIntention;
+  void candidates;
 
   const stats = [
     {
-      title: "Líder Actual",
-      value: `${topCandidate.Intención_Voto_Porcentaje}%`,
-      subtitle: topCandidate.Candidato,
+      title: "Ganó 1ª vuelta",
+      value: "43,75%",
+      subtitle: "De la Espriella",
       icon: Award,
-      description: "Promedio 4 encuestadoras Abr 2026"
+      description: "Registraduría · 31 de mayo"
     },
     {
-      title: "Candidatos Tarjetón",
-      value: "9",
-      subtitle: "Confirmados oficial",
+      title: "Segunda vuelta",
+      value: "21 Jun",
+      subtitle: "2026 · balotaje",
+      icon: Calendar,
+      description: "De la Espriella vs Cepeda"
+    },
+    {
+      title: "Ventaja en sondeos",
+      value: "+6.4",
+      subtitle: "De la Espriella",
+      icon: TrendingUp,
+      description: "Promedio encuestas junio"
+    },
+    {
+      title: "Polymarket",
+      value: "89%",
+      subtitle: "De la Espriella",
+      icon: Target,
+      description: "Mercados de predicción"
+    },
+    {
+      title: "Participación 1ª v.",
+      value: "57,9%",
+      subtitle: "23,9M votos",
       icon: Users,
-      description: "Registraduría 15 abril"
-    },
-    {
-      title: "Indecisos",
-      value: `${Math.max(0, undecided).toFixed(1)}%`,
-      subtitle: "Del electorado",
-      icon: AlertTriangle,
-      description: "Voto blanco / NS-NR"
+      description: "Censo 41,4M"
     },
     {
       title: "Encuestadoras",
-      value: "Invamer · Atlas · Guarumo · GAD3",
-      subtitle: "Últimas 4 publicadas",
+      value: "CNC · Guarumo · Atlas",
+      subtitle: "Balotaje junio",
       icon: BarChart3,
-      description: "Abril 2026"
-    },
-    {
-      title: "Primera Vuelta",
-      value: "31 May",
-      subtitle: "2026 · 30 días",
-      icon: Calendar,
-      description: "Segunda vuelta: 21 Jun"
-    },
-    {
-      title: "Regiones",
-      value: "7",
-      subtitle: "Analizadas",
-      icon: MapPin,
-      description: "Cobertura nacional"
+      description: "De la Espriella adelante"
     }
   ];
 
@@ -63,10 +58,10 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
     <div className="container mx-auto px-6 lg:px-12">
       <header className="text-center mb-20">
         <h2 className="text-gray-900 mb-6">
-          Panorama Electoral en Cifras
+          La Segunda Vuelta en Cifras
         </h2>
         <p className="text-large max-w-3xl mx-auto">
-          Los datos más relevantes del proceso electoral presidencial Colombia 2026 — actualizado al 1 de mayo de 2026 con las 4 encuestadoras más recientes
+          Los datos clave del balotaje presidencial del 21 de junio de 2026 entre Abelardo de la Espriella e Iván Cepeda
         </p>
       </header>
 
@@ -80,7 +75,7 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <stat.icon className="h-8 w-8 text-purple-600" />
             </div>
 
-            <div className="text-4xl lg:text-5xl font-bold text-gray-900 tracking-tighter mb-2">
+            <div className="text-3xl lg:text-4xl font-bold text-gray-900 tracking-tighter mb-2">
               {stat.value}
             </div>
 
@@ -98,10 +93,10 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
       <div className="mt-20 bg-white rounded-[2rem] p-10 lg:p-14 border border-purple-100 shadow-lg shadow-purple-500/5">
         <header className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-3">
-            Contexto Electoral 2026
+            Contexto del Balotaje 2026
           </h3>
           <p className="text-lg text-gray-600">
-            Lo que revelan las mediciones más recientes sobre primera y segunda vuelta
+            Lo que dejaron la primera vuelta y las encuestas de junio
           </p>
         </header>
 
@@ -111,10 +106,10 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <Target className="h-8 w-8 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Liderazgo en Primera Vuelta
+              Resultado de la primera vuelta
             </h4>
             <p className="text-gray-600">
-              Cepeda lidera con 39.1% promedio en abril (Invamer 44.3%, Atlas 38%, Guarumo 38%, GAD3 36%). De la Espriella (23.1%) sobrepasa a Valencia (18.3%) y se afirma en el segundo lugar.
+              De la Espriella obtuvo 43,75% y superó a Cepeda (40,9%) por unos 673.000 votos. Valencia quedó tercera con 6,9% y Fajardo cuarto con 4,3%.
             </p>
           </div>
 
@@ -123,22 +118,22 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ candidates }) => {
               <TrendingUp className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              No Habrá Ganador en Primera
+              De la Espriella, favorito
             </h4>
             <p className="text-gray-600">
-              Ningún candidato alcanza el 50%+1 que exige la Constitución. La segunda vuelta del 21 de junio está garantizada y se decidirá entre Cepeda y el segundo más votado.
+              Las encuestas de junio lo dan arriba: AtlasIntel 52,2-44,5; Guarumo 52,6-45; CNC 48,6-44,7. Polymarket le asigna ~89% de probabilidad.
             </p>
           </div>
 
           <div className="text-center p-6 rounded-2xl bg-purple-50/50">
             <div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
-              <AlertTriangle className="h-7 w-7 text-purple-600" />
+              <Users className="h-7 w-7 text-purple-600" />
             </div>
             <h4 className="font-bold text-xl text-gray-900 mb-3">
-              Balotaje Polarizado
+              La carta de Cepeda
             </h4>
             <p className="text-gray-600">
-              AtlasIntel y Guarumo muestran a la derecha derrotando a Cepeda (Valencia 49-41, Espriella 48-42). Invamer y GAD3 lo sostienen arriba. Empate técnico real.
+              Cepeda busca una remontada con la transferencia del voto de Fajardo y López y movilizando a la izquierda. CNC mide la brecha más corta (+3,9).
             </p>
           </div>
         </div>

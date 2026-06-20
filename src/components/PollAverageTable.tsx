@@ -8,21 +8,19 @@ const PollAverageTable: React.FC = () => {
   const getPositionColor = (index: number) => {
     switch (index) {
       case 0: return 'bg-purple-100 text-purple-800 font-bold';
-      case 1: return 'bg-indigo-100 text-indigo-800 font-bold';
-      case 2: return 'bg-blue-100 text-blue-800 font-semibold';
-      case 3: return 'bg-sky-100 text-sky-800 font-semibold';
+      case 1: return 'bg-orange-100 text-orange-800 font-bold';
       default: return 'bg-gray-50 text-gray-700 font-medium';
     }
   };
 
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden my-8">
-      <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-purple-50">
+      <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-orange-50 to-purple-50">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Promedio de Encuestas — Primera Vuelta Presidencial 2026
+          Promedio de Encuestas — Segunda Vuelta Presidencial 2026
         </h2>
         <p className="text-gray-600">
-          Basado en las 4 encuestadoras más recientes (abril 2026): Invamer/Caracol, AtlasIntel/Semana, Guarumo/EcoAnalítica y GAD3/RCN
+          Head-to-head De la Espriella vs Cepeda según las encuestas de junio de 2026: CNC, Guarumo/EcoAnalítica y AtlasIntel/Semana
         </p>
       </div>
 
@@ -100,11 +98,11 @@ const PollAverageTable: React.FC = () => {
 
       <div className="p-6 bg-gray-50 border-t border-gray-200">
         <p className="text-sm font-medium text-gray-700 mb-4 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-          Nota: Última actualización: 1 de mayo de 2026. Los promedios se calculan con las 4 encuestas más recientes publicadas (abril 2026).
+          <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+          Nota: Última actualización: 19 de junio de 2026. Promedio de las 3 encuestas de balotaje publicadas en junio (CNC, Guarumo, AtlasIntel). Invamer de mayo daba ventaja a Cepeda, pero quedó desactualizada tras la primera vuelta.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {encuestasRecientes.map((encuesta, idx) => (
             <div key={idx} className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm text-xs">
               <a
