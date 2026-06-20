@@ -191,23 +191,23 @@ const AIChatBubble: React.FC = () => {
 
   return (
     <>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${isOpen ? 'bg-red-500 hover:bg-red-600' : grad}`}
-        aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat de IA'}
-      >
-        {isOpen ? <X className="w-6 h-6 text-white" /> : (
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 ${grad}`}
+          aria-label="Abrir chat de IA"
+        >
           <div className="relative">
             <MessageCircle className="w-6 h-6 text-white" />
             <Sparkles className="w-3 h-3 text-yellow-300 absolute -top-1 -right-1 animate-pulse" />
           </div>
-        )}
-      </button>
+        </button>
+      )}
 
       {isOpen && (
-        <div className={`fixed bottom-24 right-4 z-50 w-[90vw] max-w-[420px] h-[70vh] max-h-[580px] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300 ${dark ? 'bg-[#0A0C12] border border-white/10' : 'bg-white'}`}>
+        <div className={`fixed z-50 flex flex-col overflow-hidden shadow-2xl inset-0 w-full h-full rounded-none sm:inset-auto sm:bottom-24 sm:right-4 sm:w-[90vw] sm:max-w-[420px] sm:h-[70vh] sm:max-h-[580px] sm:rounded-2xl animate-in slide-in-from-bottom-5 duration-300 ${dark ? 'bg-[#0A0C12] sm:border border-white/10' : 'bg-white'}`}>
           {/* Header */}
-          <div className={`p-4 text-white ${dark ? 'bg-[#10131c] border-b border-white/10' : 'bg-gradient-to-r from-purple-600 to-indigo-600'}`}>
+          <div className={`p-4 text-white flex items-center justify-between ${dark ? 'bg-[#10131c] border-b border-white/10' : 'bg-gradient-to-r from-purple-600 to-indigo-600'}`}>
             <div className="flex items-center space-x-3">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center ${dark ? 'bg-white/10' : 'bg-white/20'}`}>
                 <Sparkles className="w-5 h-5" />
@@ -217,6 +217,9 @@ const AIChatBubble: React.FC = () => {
                 {dark && <p className="text-[11px] text-slate-400">En vivo · segunda vuelta 2026</p>}
               </div>
             </div>
+            <button onClick={() => setIsOpen(false)} className="p-2 -mr-1 rounded-full hover:bg-white/15 transition-colors" aria-label="Cerrar chat">
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           {!emailSubmitted ? (
