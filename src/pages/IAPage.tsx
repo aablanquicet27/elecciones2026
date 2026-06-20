@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, TrendingDown, Minus, CheckCircle2, AlertTriangle,
-  Zap, ArrowLeft, RefreshCw, ChevronDown, ExternalLink,
+  Zap, ArrowLeft, RefreshCw, ChevronDown, ChevronRight, ExternalLink, X,
 } from 'lucide-react';
 
 // ---------- Tipos ----------
@@ -60,6 +60,7 @@ export default function IAPage() {
   const [e, setE] = useState<Estado | null>(null);
   const [err, setErr] = useState(false);
   const [cargada, setCargada] = useState(Date.now());
+  const [nota, setNota] = useState<EventoTL | null>(null);
   const [, tick] = useState(0);
 
   // fuentes tipográficas solo en esta página
@@ -261,7 +262,7 @@ export default function IAPage() {
         <div className="rounded-2xl border border-white/8 p-5 mb-12" style={{ backgroundColor: '#10131c' }}>
           <ol className="relative">
             {[...e.timeline].sort((a, b) => new Date(b.ts).getTime() - new Date(a.ts).getTime()).map((ev, k, arr) => (
-              <EventoItem key={ev.ts + k} ev={ev} ultimo={k === arr.length - 1} />
+              <EventoItem key={ev.ts + k} ev={ev} ultimo={k === arr.length - 1} onAbrir={() => setNota(ev)} />
             ))}
           </ol>
         </div>
@@ -284,47 +285,112 @@ export default function IAPage() {
         </footer>
         <div className="h-6" />
       </main>
+
+      <NotaModal ev={nota} onClose={() => setNota(null)} />
     </div>
   );
 }
 
-// ---------- evento de la línea de tiempo: desplegable (cuerpo completo + fuente) ----------
-function EventoItem({ ev, ultimo }: { ev: EventoTL; ultimo: boolean }) {
-  const [open, setOpen] = useState(false);
+// ---------- evento de la línea de tiempo: clic -> abre la nota completa DENTRO de la página ----------
+function EventoItem({ ev, ultimo, onAbrir }: { ev: EventoTL; ultimo: boolean; onAbrir: () => void }) {
   const et = etiquetaTS(ev.ts);
   const mono = "'Space Mono',monospace";
   const col = evTipo[ev.tipo] ?? '#5EEAD4';
-  const ampliable = !!(ev.cuerpo || ev.url);
+  const ampliable = !!ev.cuerpo;
   return (
     <li className="relative pl-7 pb-5 last:pb-0">
       {!ultimo && <span className="absolute left-[5px] top-3 bottom-0 w-px bg-white/8" />}
       <span className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full ring-4 ring-[#10131c]" style={{ backgroundColor: col }} />
       <div
         className={`flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-0.5 ${ampliable ? 'cursor-pointer group select-none' : ''}`}
-        onClick={() => ampliable && setOpen((o) => !o)}
+        onClick={() => ampliable && onAbrir()}
+        role={ampliable ? 'button' : undefined}
+        tabIndex={ampliable ? 0 : undefined}
+        onKeyDown={(k) => { if (ampliable && (k.key === 'Enter' || k.key === ' ')) { k.preventDefault(); onAbrir(); } }}
       >
         <span className="text-[10px] tracking-widest" style={{ fontFamily: mono, color: et.futuro ? '#A78BFA' : '#64748B' }}>{et.label}</span>
-        <span className="text-sm font-semibold text-slate-100 group-hover:text-white transition-colors">{ev.titulo}</span>
-        {ampliable && <ChevronDown className={`w-3.5 h-3.5 text-slate-600 group-hover:text-slate-300 transition-transform ${open ? '' : '-rotate-90'}`} />}
+        <span className={`text-sm font-semibold text-slate-100 transition-colors ${ampliable ? 'group-hover:text-white' : ''}`}>{ev.titulo}</span>
+        {ampliable && (
+          <span className="inline-flex items-center gap-0.5 text-[10px] text-slate-500 group-hover:text-[#4C8DFF] transition-colors" style={{ fontFamily: mono }}>
+            VER NOTA <ChevronRight className="w-3 h-3" />
+          </span>
+        )}
       </div>
       <p className="text-sm text-slate-400 leading-snug">
         {ev.detalle}{ev.fuente ? <span className="text-slate-600" style={{ fontFamily: mono }}> · {ev.fuente}</span> : null}
       </p>
-      {open && ampliable && (
-        <div className="mt-2.5 fade-up">
-          {ev.cuerpo && (
-            <p className="text-sm text-slate-300 leading-relaxed border-l-2 pl-3" style={{ borderColor: col }}>{ev.cuerpo}</p>
-          )}
-          {ev.url && (
-            <a href={ev.url} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-2.5 text-xs text-[#4C8DFF] hover:text-white underline underline-offset-2 transition-colors"
-              style={{ fontFamily: mono }}>
-              Leer fuente <ExternalLink className="w-3 h-3" />
-            </a>
-          )}
-        </div>
-      )}
     </li>
+  );
+}
+
+// ---------- lector de nota: overlay dentro de la propia página (no saca al medio externo) ----------
+function NotaModal({ ev, onClose }: { ev: EventoTL | null; onClose: () => void }) {
+  useEffect(() => {
+    if (!ev) return;
+    const onKey = (k: KeyboardEvent) => { if (k.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
+  }, [ev, onClose]);
+  if (!ev) return null;
+  const mono = "'Space Mono',monospace";
+  const disp = "'Space Grotesk',sans-serif";
+  const col = evTipo[ev.tipo] ?? '#5EEAD4';
+  const et = etiquetaTS(ev.ts);
+  const parrafos = (ev.cuerpo || ev.detalle || '').split(/\n+/).map((s) => s.trim()).filter(Boolean);
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4"
+      style={{ backgroundColor: 'rgba(5,6,10,.72)', backdropFilter: 'blur(6px)' }}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative w-full sm:max-w-2xl max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl border border-white/10 fade-up"
+        style={{ backgroundColor: '#0E111A' }}
+        onClick={(c) => c.stopPropagation()}
+      >
+        <div className="h-1 w-full sticky top-0" style={{ backgroundColor: col }} />
+        <button
+          onClick={onClose}
+          aria-label="Cerrar"
+          className="absolute top-3.5 right-3 w-8 h-8 grid place-items-center rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+        >
+          <X className="w-4 h-4" />
+        </button>
+        <div className="p-5 sm:p-7">
+          <div className="flex items-center gap-2 mb-3 text-[10px] tracking-widest" style={{ fontFamily: mono }}>
+            <span className="px-2 py-0.5 rounded-full" style={{ backgroundColor: `${col}1f`, color: col }}>{ev.tipo.toUpperCase()}</span>
+            <span className="text-slate-500">{et.label}</span>
+          </div>
+          <h3 className="font-bold leading-tight mb-4 pr-8" style={{ fontFamily: disp, fontSize: 'clamp(1.3rem,3.5vw,1.9rem)' }}>{ev.titulo}</h3>
+          <div className="space-y-3.5">
+            {parrafos.map((p, i) => (
+              <p key={i} className="text-[15px] text-slate-300 leading-relaxed">{p}</p>
+            ))}
+          </div>
+          <div className="mt-6 pt-4 border-t border-white/8 flex items-center justify-between gap-3">
+            <span className="text-[11px] text-slate-500" style={{ fontFamily: mono }}>
+              {ev.fuente ? <>FUENTE DE REFERENCIA · <span className="text-slate-400">{ev.fuente}</span></> : 'PULSO IA'}
+            </span>
+            {ev.url && (
+              <a
+                href={ev.url} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-slate-300 underline underline-offset-2 transition-colors shrink-0"
+                style={{ fontFamily: mono }}
+              >
+                ver original <ExternalLink className="w-3 h-3" />
+              </a>
+            )}
+          </div>
+          <p className="mt-3 text-[10px] text-slate-600 leading-relaxed">
+            Nota redactada por la IA de Pulso Electoral a partir de fuentes públicas. Síntesis informativa; no reproduce el artículo original.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
