@@ -13,7 +13,7 @@ interface Candidato {
   fortalezas: string[]; debilidades: string[]; riesgos: string[]; catalizadores: string[];
 }
 interface Indicador { fuente: string; detalle: string; favorece: string; }
-interface EventoTL { ts: string; fecha_label: string; tipo: string; titulo: string; detalle: string; fuente?: string; }
+interface EventoTL { ts: string; fecha_label?: string; tipo: string; titulo: string; detalle: string; fuente?: string; }
 interface Fuente { nombre: string; url: string; }
 interface Estado {
   meta: { ciclo: number; generado: string; cadencia_min: number; evento: string; fecha_eleccion: string; fase: string; };
@@ -30,13 +30,26 @@ const faseTxt: Record<string, string> = {
   vispera: 'Víspera', jornada: 'Jornada', conteo: 'Conteo en vivo', cierre: 'Cierre',
 };
 const evTipo: Record<string, string> = {
-  clave: '#A78BFA', hito: '#4C8DFF', evento: '#5EEAD4', alerta: '#FBBF24', contexto: '#64748B',
+  pulso: '#38BDF8', clave: '#A78BFA', hito: '#4C8DFF', evento: '#5EEAD4', alerta: '#FBBF24', contexto: '#64748B',
 };
 
 function relativo(iso: string): string {
   const m = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
   if (m < 1) return 'ahora'; if (m < 60) return `hace ${m}m`;
   const h = Math.floor(m / 60); return h < 24 ? `hace ${h}h` : `hace ${Math.floor(h / 24)}d`;
+}
+
+const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+function etiquetaTS(iso: string): { label: string; futuro: boolean } {
+  const d = new Date(iso);
+  const co = new Date(d.getTime() - 5 * 3600 * 1000);      // hora Colombia
+  const now = new Date(Date.now() - 5 * 3600 * 1000);
+  const dd = co.getUTCDate(), mm = MESES[co.getUTCMonth()];
+  const hh = String(co.getUTCHours()).padStart(2, '0'), mi = String(co.getUTCMinutes()).padStart(2, '0');
+  if (d.getTime() > Date.now() + 60000) return { label: `PRÓXIMO · ${dd} ${mm}`, futuro: true };
+  const hoy = co.getUTCFullYear() === now.getUTCFullYear() && co.getUTCMonth() === now.getUTCMonth() && dd === now.getUTCDate();
+  if (hoy) return { label: `HOY · ${hh}:${mi}`, futuro: false };
+  return { label: `${dd} ${mm} · ${hh}:${mi}`, futuro: false };
 }
 
 const Mom = ({ m }: { m: Candidato['momentum'] }) =>
@@ -247,19 +260,22 @@ export default function IAPage() {
         <Titulo n="03" t="Línea de tiempo" />
         <div className="rounded-2xl border border-white/8 p-5 mb-12" style={{ backgroundColor: '#10131c' }}>
           <ol className="relative">
-            {e.timeline.map((ev, k) => (
-              <li key={k} className="relative pl-7 pb-5 last:pb-0">
-                {k < e.timeline.length - 1 && <span className="absolute left-[5px] top-3 bottom-0 w-px bg-white/8" />}
-                <span className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full ring-4 ring-[#10131c]" style={{ backgroundColor: evTipo[ev.tipo] ?? '#5EEAD4' }} />
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-[10px] tracking-widest text-slate-500" style={{ fontFamily: mono }}>{ev.fecha_label.toUpperCase()}</span>
-                  <span className="text-sm font-semibold text-slate-100">{ev.titulo}</span>
-                </div>
-                <p className="text-sm text-slate-400 leading-snug">
-                  {ev.detalle}{ev.fuente ? <span className="text-slate-600" style={{ fontFamily: mono }}> · {ev.fuente}</span> : null}
-                </p>
-              </li>
-            ))}
+            {[...e.timeline].sort((a, b) => new Date(b.ts).getTime() - new Date(a.ts).getTime()).map((ev, k, arr) => {
+              const et = etiquetaTS(ev.ts);
+              return (
+                <li key={k} className="relative pl-7 pb-5 last:pb-0">
+                  {k < arr.length - 1 && <span className="absolute left-[5px] top-3 bottom-0 w-px bg-white/8" />}
+                  <span className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full ring-4 ring-[#10131c]" style={{ backgroundColor: evTipo[ev.tipo] ?? '#5EEAD4' }} />
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-0.5">
+                    <span className="text-[10px] tracking-widest" style={{ fontFamily: mono, color: et.futuro ? '#A78BFA' : '#64748B' }}>{et.label}</span>
+                    <span className="text-sm font-semibold text-slate-100">{ev.titulo}</span>
+                  </div>
+                  <p className="text-sm text-slate-400 leading-snug">
+                    {ev.detalle}{ev.fuente ? <span className="text-slate-600" style={{ fontFamily: mono }}> · {ev.fuente}</span> : null}
+                  </p>
+                </li>
+              );
+            })}
           </ol>
         </div>
 

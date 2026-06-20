@@ -110,115 +110,59 @@
   ],
   "timeline": [
     {
-      "ts": "2026-06-20",
-      "fecha_label": "18 jun",
-      "tipo": "clave",
-      "titulo": "Polymarket roza el 90%",
-      "detalle": "El mercado de predicción eleva a ~90% la probabilidad de victoria de De la Espriella, reforzando su favoritismo en la víspera.",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "18 jun",
-      "tipo": "hito",
-      "titulo": "Tribunal niega tutela contra sus piezas de campaña",
-      "detalle": "La justicia rechaza la solicitud de suspender la publicidad de De la Espriella, despejándole el cierre de campaña.",
-      "fuente": "redmas.com.co"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "18 jun",
-      "tipo": "contexto",
-      "titulo": "La pelea sigue por menos de 700.000 votos",
-      "detalle": "Expertos y proyecciones insisten en que el bloque de votantes indecisos puede revertir o ampliar la ventaja en la jornada.",
-      "fuente": "CNN en Español / El Colombiano"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "19 jun",
-      "tipo": "alerta",
-      "titulo": "Persiste la alerta de EE.UU.",
-      "detalle": "Estados Unidos mantiene la advertencia de cara a la segunda vuelta del 21 de junio, añadiendo tensión institucional.",
-      "fuente": "EL TIEMPO"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "18 jun",
-      "tipo": "clave",
-      "titulo": "CB Global: De la Espriella en 50,1%",
-      "detalle": "Nueva encuesta de cierre lo coloca por encima del umbral del 50% a tres días de la votación.",
-      "fuente": "Infobae"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "18 jun",
-      "tipo": "hito",
-      "titulo": "Polymarket se dispara a ~90%",
-      "detalle": "El mercado de predicción amplía la ventaja implícita de De la Espriella frente a Cepeda (~12%).",
-      "fuente": "Polymarket"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "19 jun",
-      "tipo": "contexto",
-      "titulo": "La pelea por menos de 700.000 votos",
-      "detalle": "CNN y El Colombiano señalan que el bloque de indecisos puede revertir o ampliar la diferencia.",
-      "fuente": "CNN en Español"
-    },
-    {
-      "ts": "2026-06-20",
-      "fecha_label": "19 jun",
-      "tipo": "alerta",
-      "titulo": "EE.UU. emite alerta sobre la segunda vuelta",
-      "detalle": "Washington lanza una advertencia de cara a los comicios del 21 de junio.",
-      "fuente": "EL TIEMPO"
-    },
-    {
-      "ts": "2026-06-21",
-      "fecha_label": "21 jun",
+      "ts": "2026-06-21T13:00:00Z",
       "tipo": "clave",
       "titulo": "Día de la elección",
-      "detalle": "~41,4M de habilitados eligen al sucesor de Petro (posesión el 7 de agosto).",
-      "fuente": ""
+      "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
+      "fuente": "Registraduría"
     },
     {
-      "ts": "2026-06-20",
-      "fecha_label": "20 jun",
-      "tipo": "contexto",
-      "titulo": "Víspera y ley seca",
-      "detalle": "Cierre de campaña y silencio electoral previo a la jornada.",
-      "fuente": ""
+      "ts": "2026-06-20T06:00:00Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 85% ▲ 87%",
+      "detalle": "Polymarket y las encuestas de cierre consolidan el favoritismo de De la Espriella en la víspera.",
+      "fuente": "Pulso IA"
     },
     {
-      "ts": "2026-06-19",
-      "fecha_label": "19 jun",
+      "ts": "2026-06-20T05:54:00Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 82% ▲ 85%",
+      "detalle": "Primer ajuste al alza: ventaja en primera vuelta, sondeos de cierre y dominio digital.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-20T01:30:00Z",
       "tipo": "evento",
-      "titulo": "De la Espriella amplía ventaja en el cierre",
-      "detalle": "AtlasIntel/Semana lo ubica 52,2% vs 44,5%. Cepeda apuesta a un repunte tardío.",
-      "fuente": "MercoPress"
+      "titulo": "Cepeda supera a De la Espriella en gasto de campaña",
+      "detalle": "A dos días de la segunda vuelta, las cuentas de campaña muestran a Cepeda gastando más que su rival.",
+      "fuente": "Portafolio"
     },
     {
-      "ts": "2026-06-19",
-      "fecha_label": "19 jun",
+      "ts": "2026-06-19T22:00:00Z",
       "tipo": "evento",
-      "titulo": "Domina la batalla digital",
+      "titulo": "De la Espriella gana la batalla digital",
       "detalle": "Influencers, IA y videos virales le dan ventaja en redes frente a Cepeda.",
       "fuente": "El País"
     },
     {
-      "ts": "2026-06-19",
-      "fecha_label": "19 jun",
+      "ts": "2026-06-19T18:00:00Z",
       "tipo": "alerta",
       "titulo": "Ataque a vehículo con testigos electorales",
       "detalle": "Disparos contra un vehículo de la campaña de De la Espriella en Cundinamarca.",
       "fuente": "Radio América"
     },
     {
-      "ts": "2026-05-31",
-      "fecha_label": "31 may",
+      "ts": "2026-06-19T14:00:00Z",
+      "tipo": "evento",
+      "titulo": "Encuesta de cierre: 52,2% vs 44,5%",
+      "detalle": "AtlasIntel para Semana ratifica la ventaja de ~8 puntos de De la Espriella.",
+      "fuente": "Semana"
+    },
+    {
+      "ts": "2026-05-31T23:00:00Z",
       "tipo": "hito",
       "titulo": "Primera vuelta",
-      "detalle": "De la Espriella 43,7% y Cepeda 40,9% pasan a segunda vuelta; Valencia ~7%.",
+      "detalle": "De la Espriella 43,7% y Cepeda 40,9% pasan a segunda vuelta; Paloma Valencia ~7%.",
       "fuente": "Registraduría"
     }
   ],
