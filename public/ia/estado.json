@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 34,
-    "generado": "2026-06-20T22:32:40.361Z",
-    "proxima_actualizacion": "2026-06-20T23:02:40.361Z",
+    "ciclo": 35,
+    "generado": "2026-06-20T23:03:12.602Z",
+    "proxima_actualizacion": "2026-06-20T23:33:12.602Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 87,
     "confianza": "Alta",
-    "titular": "87-13 a horas del cierre: el reparto cede un punto y aparecen veedores e inquietudes por presión al elector.",
-    "resumen": "El tablero apenas se mueve: Polymarket marca 87-14 y el reparto cede un punto hacia Cepeda, dentro del margen de ruido. La novedad no está en los números sino en la jornada: llega observación internacional invitada por el CNE y la campaña de Cepeda enciende una alerta por posible constreñimiento al elector. De la Espriella mantiene un favoritismo amplio; Cepeda conserva un margen que en votos absolutos sigue siendo, en teoría, remontable.",
-    "que_cambio": "Polymarket pasa de 88-14 a 87-14 y trasladamos un punto a Cepeda por continuidad; la franja suma dos hechos nuevos de jornada (veeduría externa y queja por constreñimiento) que no alteran el favoritismo."
+    "titular": "87-13 en la antesala del cierre: el tablero se congela y la jornada manda sobre los números.",
+    "resumen": "Polymarket sostiene 87-14 y nosotros mantenemos 87-13 por continuidad: ningún dato fresco justifica mover la aguja. La franja de hoy repite lo ya conocido —llamado de Petro a la calma, llegada del veedor invitado por el CNE y la queja de la campaña de Cepeda por constreñimiento—, sin hechos genuinamente nuevos. De la Espriella conserva un favoritismo amplio; el margen de Cepeda, aunque estable, sigue siendo teóricamente remontable en votos absolutos.",
+    "que_cambio": "Nada relevante: Polymarket apenas oscila dentro del ruido y los titulares de las últimas horas reiteran hechos ya incorporados a la línea de tiempo, así que mantenemos probabilidades y momentum."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 87,
       "momentum": "steady",
-      "momentum_label": "Favorito firme",
+      "momentum_label": "Favoritismo firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja amplia y estable en mercados de apuestas",
-        "Mejor desempeño relativo en encuestas de cierre",
-        "Narrativa de 'mano dura' consolidada"
+        "Ventaja amplia y persistente en el mercado predictivo",
+        "Liderazgo en intención de voto (52%)",
+        "Narrativa de 'mano dura' consolidada en la recta final"
       ],
       "debilidades": [
-        "El reparto cede puntos finos hacia el rival",
-        "Depende de que la abstención no le quite techo"
+        "Techo de rechazo que limita crecimiento adicional",
+        "Dependencia de una participación alta y ordenada"
       ],
       "riesgos": [
-        "Una jornada con denuncias de presión al voto puede erosionar legitimidad de su eventual triunfo",
-        "Sorpresa de participación urbana"
+        "Incidentes de jornada que deslegitimen una victoria amplia",
+        "Abstención diferencial en sus bastiones"
       ],
       "catalizadores": [
-        "Cierre tranquilo y alta participación de su base",
-        "Ausencia de incidentes que movilicen al adversario"
+        "Cierre sin sobresaltos que confirme el favoritismo",
+        "Voto exterior favorable replicando la primera vuelta"
       ]
     },
     {
@@ -54,44 +54,44 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 13,
-      "momentum": "up",
-      "momentum_label": "Roza al alza",
+      "momentum": "steady",
+      "momentum_label": "Margen estable",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Margen absoluto aún remontable (<700.000 votos)",
-        "Maquinaria del Pacto Histórico para movilizar",
-        "Disciplina del petrismo que pide calma"
+        "Margen en votos absolutos aún remontable (<700.000)",
+        "Maquinaria del Pacto Histórico movilizada",
+        "Respaldo activo del presidente Petro"
       ],
       "debilidades": [
-        "Probabilidad implícita en mínimos de un dígito-bajo",
-        "Necesita un vuelco que los datos no insinúan"
+        "Brecha amplia en el mercado y en encuestas",
+        "Menos tiempo para revertir la tendencia"
       ],
       "riesgos": [
-        "Que las denuncias de constreñimiento no se traduzcan en respuesta institucional efectiva",
-        "Desánimo de su electorado por las cifras adversas"
+        "Posible constreñimiento al elector denunciado por su campaña",
+        "Desánimo de bases ante la desventaja proyectada"
       ],
       "catalizadores": [
-        "Movilización exterior y urbana por encima de lo esperado",
-        "Que la veeduría internacional visibilice irregularidades que le favorezcan"
+        "Sorpresa de participación en zonas urbanas afines",
+        "Efecto movilizador del llamado presidencial"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "87-14 implícito; un punto migra hacia Cepeda dentro del ruido, sin romper el favoritismo.",
+      "detalle": "Probabilidad implícita 87-14, prácticamente sin cambio frente al ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "CNE / observación internacional",
-      "detalle": "Llega a Bogotá el senador estadounidense Bernie Moreno como invitado del CNE para acompañar la jornada.",
-      "favorece": "incierto"
+      "fuente": "Encuestas (promedio previo)",
+      "detalle": "52% contra 45% sostiene la ventaja en intención de voto.",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Cepeda (Infobae)",
-      "detalle": "El equipo de Cepeda expresó preocupación por posible constreñimiento al elector.",
-      "favorece": "cepeda"
+      "fuente": "Jornada",
+      "detalle": "Titulares de últimas horas reiteran hechos ya reportados; sin señal nueva que mueva el tablero.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -400,6 +400,11 @@
     },
     {
       "ts": "2026-06-20T22:32:40.361Z",
+      "delaespriella": 87,
+      "cepeda": 13
+    },
+    {
+      "ts": "2026-06-20T23:03:12.602Z",
       "delaespriella": 87,
       "cepeda": 13
     }
