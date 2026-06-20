@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "version": 1,
+    "ciclo": 0,
+    "generado": "2026-06-20T05:42:00Z",
+    "proxima_actualizacion": "2026-06-20T06:12:00Z",
+    "cadencia_min": 30,
+    "evento": "Segunda vuelta presidencial — Colombia 2026",
+    "fecha_eleccion": "2026-06-21",
+    "fase": "vispera",
+    "modelo": "Claude Opus (Kiro) + búsqueda web en vivo"
+  },
+  "veredicto": {
+    "favorito": "Abelardo de la Espriella",
+    "favorito_id": "delaespriella",
+    "probabilidad": 82,
+    "confianza": "Alta",
+    "titular": "De la Espriella llega como favorito claro; Cepeda necesita un repunte de última hora.",
+    "resumen": "De la Espriella ganó la primera vuelta (43,7% vs 40,9%) y mantiene la ventaja en todas las encuestas de cierre (entre +4 y +8 puntos), domina la conversación digital y es amplio favorito en Polymarket. Cepeda conserva una base sólida y el aparato del Pacto Histórico, pero necesita capitalizar el voto anti-extremos y un alza de la participación para revertir la tendencia en menos de 24 horas.",
+    "que_cambio": "Arranque del Pulso. A partir de aquí, cada ciclo ajusta la probabilidad solo con fuentes nuevas y deja registro de qué cambió y por qué."
+  },
+  "candidatos": [
+    {
+      "id": "delaespriella",
+      "nombre": "Abelardo de la Espriella",
+      "partido": "Defensores de la Patria · Derecha",
+      "color": "#2563eb",
+      "probabilidad": 82,
+      "momentum": "up",
+      "momentum_label": "Firme",
+      "encuesta_pct": 52,
+      "primera_vuelta_pct": 43.7,
+      "fortalezas": [
+        "Ganó la primera vuelta y lidera todas las encuestas de cierre (+4 a +8)",
+        "Domina la batalla digital: influencers, video viral y uso de IA",
+        "Mensaje de mano dura en seguridad que conecta con el hartazgo ciudadano",
+        "Capitaliza el voto anti-Petro y el deseo de cambio"
+      ],
+      "debilidades": [
+        "Perfil polarizante; sus propuestas extremas pueden activar el voto en contra",
+        "Cuestionamientos éticos por su pasado defendiendo figuras controvertidas",
+        "Menos maquinaria partidista tradicional que el Pacto"
+      ],
+      "riesgos": [
+        "Un repunte de participación anti-extremos podría recortar la ventaja",
+        "Exceso de confianza ('triunfalismo contenido') que desmovilice a su base"
+      ],
+      "catalizadores": [
+        "La abstención del electorado de izquierda lo favorece",
+        "Narrativa de seguridad reforzada por hechos de violencia recientes"
+      ]
+    },
+    {
+      "id": "cepeda",
+      "nombre": "Iván Cepeda",
+      "partido": "Pacto Histórico · Izquierda",
+      "color": "#e11d48",
+      "probabilidad": 18,
+      "momentum": "steady",
+      "momentum_label": "Necesita repuntar",
+      "encuesta_pct": 44,
+      "primera_vuelta_pct": 40.9,
+      "fortalezas": [
+        "Base electoral sólida (9,6M en primera vuelta) y maquinaria del Pacto Histórico",
+        "Espacio para crecer si capta el voto de centro y anti-extrema derecha",
+        "Defensa de las reformas sociales y los diálogos de paz moviliza a su núcleo"
+      ],
+      "debilidades": [
+        "Va detrás en todas las encuestas de cierre",
+        "Perdió la batalla digital y le costó consolidar su mensaje en redes",
+        "Asociado al desgaste del gobierno Petro"
+      ],
+      "riesgos": [
+        "El tiempo se agota: necesita revertir ~6-8 puntos en menos de un día",
+        "Si la participación es baja, su techo se reduce"
+      ],
+      "catalizadores": [
+        "Una participación alta y un voto útil anti-De la Espriella",
+        "Trasvase de votantes de Paloma Valencia (centro)",
+        "Temor a las propuestas más extremas del rival"
+      ]
+    }
+  ],
+  "indicadores": [
+    { "fuente": "Polymarket", "detalle": "De la Espriella amplio favorito (mercado ~US$37M de volumen)", "favorece": "delaespriella" },
+    { "fuente": "Encuestas de cierre", "detalle": "AtlasIntel/Semana: 52,2% vs 44,5% (+7,7)", "favorece": "delaespriella" },
+    { "fuente": "Primera vuelta (31 may)", "detalle": "43,7% vs 40,9% — ventaja de ~632 mil votos", "favorece": "delaespriella" },
+    { "fuente": "Conversación digital", "detalle": "De la Espriella domina las redes (análisis El País)", "favorece": "delaespriella" },
+    { "fuente": "Participación / abstención", "detalle": "Factor decisivo aún abierto; un alza favorecería a Cepeda", "favorece": "incierto" }
+  ],
+  "timeline": [
+    { "ts": "2026-06-21", "fecha_label": "21 jun", "tipo": "clave", "titulo": "Día de la elección", "detalle": "~41,4M de habilitados eligen al sucesor de Petro (posesión el 7 de agosto).", "fuente": "" },
+    { "ts": "2026-06-20", "fecha_label": "20 jun", "tipo": "contexto", "titulo": "Víspera y ley seca", "detalle": "Cierre de campaña y silencio electoral previo a la jornada.", "fuente": "" },
+    { "ts": "2026-06-19", "fecha_label": "19 jun", "tipo": "evento", "titulo": "De la Espriella amplía ventaja en el cierre", "detalle": "AtlasIntel/Semana lo ubica 52,2% vs 44,5%. Cepeda apuesta a un repunte tardío.", "fuente": "MercoPress" },
+    { "ts": "2026-06-19", "fecha_label": "19 jun", "tipo": "evento", "titulo": "Domina la batalla digital", "detalle": "Influencers, IA y videos virales le dan ventaja en redes frente a Cepeda.", "fuente": "El País" },
+    { "ts": "2026-06-19", "fecha_label": "19 jun", "tipo": "alerta", "titulo": "Ataque a vehículo con testigos electorales", "detalle": "Disparos contra un vehículo de la campaña de De la Espriella en Cundinamarca.", "fuente": "Radio América" },
+    { "ts": "2026-05-31", "fecha_label": "31 may", "tipo": "hito", "titulo": "Primera vuelta", "detalle": "De la Espriella 43,7% y Cepeda 40,9% pasan a segunda vuelta; Valencia ~7%.", "fuente": "Registraduría" }
+  ],
+  "historico": [
+    { "ts": "2026-06-20T05:42:00Z", "delaespriella": 82, "cepeda": 18 }
+  ],
+  "fuentes": [
+    { "nombre": "Polymarket", "url": "https://polymarket.com/event/colombia-presidential-election" },
+    { "nombre": "AtlasIntel / Semana", "url": "https://www.semana.com" },
+    { "nombre": "MercoPress", "url": "https://en.mercopress.com" },
+    { "nombre": "El País", "url": "https://elpais.com" },
+    { "nombre": "La Silla Vacía", "url": "https://www.lasillavacia.com" },
+    { "nombre": "Registraduría Nacional", "url": "https://www.registraduria.gov.co" }
+  ]
+}

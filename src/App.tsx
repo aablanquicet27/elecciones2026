@@ -7,6 +7,7 @@ import AnalysisPage from './pages/AnalysisPage';
 import SenadoPage from './pages/SenadoPage';
 import NoticiasPage from './pages/NoticiasPage';
 import AdminPage from './pages/AdminPage';
+import IAPage from './pages/IAPage';
 import SubscriptionModal from './components/SubscriptionModal';
 import AIChatBubble from './components/AIChatBubble';
 import { useSubscription } from './hooks/useSubscription';
@@ -56,6 +57,7 @@ function App() {
           <Route path="/noticias" element={<NoticiasPage />} />
           <Route path="/senado" element={<SenadoPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/ia" element={<IAPage />} />
         </Routes>
 
         <SubscriptionModal
