@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 26,
-    "generado": "2026-06-20T18:14:50.507Z",
-    "proxima_actualizacion": "2026-06-20T18:44:50.507Z",
+    "ciclo": 27,
+    "generado": "2026-06-20T18:50:02.966Z",
+    "proxima_actualizacion": "2026-06-20T19:20:02.966Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 88,
     "confianza": "Alta",
-    "titular": "La víspera se congela: 88-12 a la espera del voto decisivo.",
-    "resumen": "El pronóstico se mantiene en 88-12 sin movimiento real este ciclo. Polymarket apenas oscila (89 para De la Espriella, 12 para Cepeda) y no aporta una señal que justifique mover puntos. La conversación de las últimas horas gira en torno al comportamiento del voto indeciso y a la polarización extrema entre los dos polos, pero ningún dato nuevo altera el equilibrio: De la Espriella sigue como favorito claro y Cepeda conserva un margen revertible en términos absolutos.",
-    "que_cambio": "Nada sustancial cambió respecto al ciclo 25. Polymarket se mantuvo casi idéntico y los titulares frescos son cobertura de jornada o análisis, no datos duros, por lo que se conserva el 88-12."
+    "titular": "88-12 a las puertas de las urnas: el favoritismo no cede en la antesala.",
+    "resumen": "El pronóstico se mantiene en 88-12 sin movimiento que justifique tocar puntos. Polymarket oscila apenas (89 para De la Espriella, 13 para Cepeda), dentro del rango de ruido de los últimos ciclos. La cobertura fresca es logística de jornada e interés internacional, no datos duros: ni encuestas nuevas ni hechos que alteren el equilibrio. De la Espriella llega como favorito claro y Cepeda conserva un margen que, en términos absolutos, sigue siendo revertible.",
+    "que_cambio": "Nada sustancial respecto al ciclo 26: Polymarket se movió un punto en el implícito de Cepeda (12→13), dentro del ruido, y los titulares nuevos son operativos de la jornada, no señales que muevan la probabilidad."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Liderazgo consistente en encuestas (52-50% en Guarumo/Ecoanalítica y CB Global)",
-        "Probabilidad implícita estable cerca del 89% en mercados",
-        "Ventaja amplia en términos porcentuales"
+        "Ventaja sostenida en encuestas (52% vs 45%)",
+        "Favoritismo estable en mercados de apuestas durante varios ciclos",
+        "Polarización que consolida el voto de derecha"
       ],
       "debilidades": [
-        "Margen real comprimido a menos de 700.000 votos",
-        "Techo de polarización que limita crecimiento adicional"
+        "Margen absoluto inferior a 700.000 votos, vulnerable a sorpresas",
+        "Dependencia de una participación que le sea favorable"
       ],
       "riesgos": [
-        "Alta abstención en sus bastiones",
-        "Movilización del voto indeciso hacia Cepeda en la recta final"
+        "Movilización de última hora del bloque opositor",
+        "Errores de abstención en sus bastiones por exceso de confianza"
       ],
       "catalizadores": [
-        "Buen rendimiento en regiones de costa Caribe",
-        "Voto exterior favorable en sus plazas tradicionales"
+        "Alta participación en regiones donde domina",
+        "Voto exterior que en primera vuelta tuvo geografía mixta"
       ]
     },
     {
@@ -55,43 +55,42 @@
       "color": "#e11d48",
       "probabilidad": 12,
       "momentum": "steady",
-      "momentum_label": "Repunte sostenido",
+      "momentum_label": "Margen revertible",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Recuperación sostenida en mercados (12%)",
-        "Diferencia absoluta estrecha que deja la elección abierta",
-        "Maquinaria de movilización del Pacto Histórico"
+        "Maquinaria del Pacto Histórico y respaldo presidencial activo",
+        "Margen revertible: menos de 700.000 votos lo separan"
       ],
       "debilidades": [
-        "Sigue por debajo en todas las encuestas publicadas",
-        "Necesita una conversión casi perfecta del indeciso"
+        "Desventaja consistente en encuestas e implícitos de mercado",
+        "Techo electoral difícil de superar en segunda vuelta"
       ],
       "riesgos": [
-        "Techo electoral propio de la izquierda en segunda vuelta",
-        "Llamados a la calma que pueden enfriar la movilización"
+        "Que el llamado a la calma desmovilice en lugar de movilizar",
+        "Concentración geográfica de su voto"
       ],
       "catalizadores": [
-        "Voto decisivo aún en disputa según análisis recientes",
-        "Concentración de apoyo en grandes centros urbanos y exterior"
+        "Sorpresa en participación urbana de izquierda",
+        "Voto exterior y de centro que se incline a último momento"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita estable: 89% De la Espriella, 12% Cepeda, sin variación relevante respecto al ciclo previo.",
+      "detalle": "Implícito 89% De la Espriella / 13% Cepeda, sin salto frente al ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "El Colombiano",
-      "detalle": "Análisis sobre cómo se moverá el voto decisivo apunta a que el indeciso aún no está definido a horas de la jornada.",
+      "fuente": "Promedio de encuestas (referencia)",
+      "detalle": "52%-45% mantiene la brecha estable a la víspera.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Cobertura de jornada",
+      "detalle": "El flujo informativo es operativo (horarios, ley seca, seguridad), sin datos que muevan la aguja.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Encuestas (Guarumo/Ecoanalítica, CB Global)",
-      "detalle": "Promedio se mantiene en torno a 52-50% para De la Espriella frente a 45% de Cepeda.",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -101,6 +100,22 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-20T18:50:01.968Z",
+      "tipo": "hito",
+      "titulo": "La jornada arranca con reglas: ley seca, horarios y tarjetón definidos",
+      "detalle": "Las autoridades fijan el marco operativo del domingo: horarios de votación, ley seca y guía para ubicar puesto y tarjeta electoral.",
+      "fuente": "EL PAÍS",
+      "cuerpo": "A pocas horas del cierre de campaña, la cobertura se desplazó de la disputa política a la logística del voto: horarios de apertura y cierre de mesas, vigencia de la ley seca y orientación para que el elector localice su puesto y reconozca el tarjetón de la segunda vuelta entre Iván Cepeda y Abelardo de la Espriella. Es el procedimiento habitual de toda jornada, pero adquiere peso en un balotaje donde cada punto de participación cuenta.\n\nPara esta segunda vuelta, el detalle operativo no es neutro. Con un margen que cabe en menos de 700.000 votos, la facilidad o fricción para votar —claridad de horarios, orden en los puestos, abstención por desinformación— puede mover volúmenes pequeños pero decisivos. Ninguno de los dos comandos puede dar por descontada la participación de su base, y la precisión logística de la jornada se vuelve, en sí misma, una variable del resultado."
+    },
+    {
+      "ts": "2026-06-20T18:50:00.968Z",
+      "tipo": "evento",
+      "titulo": "La prensa internacional encuadra la votación como una Colombia dividida",
+      "detalle": "CNN, NYT y Telemundo presentan el balotaje como la elección de un país polarizado entre dos proyectos opuestos.",
+      "fuente": "CNN en Español",
+      "cuerpo": "Los grandes medios internacionales pusieron el foco en el balotaje colombiano con un encuadre común: una elección que divide al país entre el proyecto de izquierda de Cepeda, respaldado por el Pacto Histórico, y la apuesta de derecha de De la Espriella. Las piezas combinan perfiles de los candidatos con análisis de lo que está en juego para el rumbo del país, sin aportar cifras nuevas sobre la contienda.\n\nPara la segunda vuelta, esta atención externa confirma la lectura de fondo más que alterarla: la del enfrentamiento entre dos polos sin centro visible. El marco de 'país dividido' refuerza la idea de una contienda emocional y de alta movilización, terreno donde el favorito busca convertir su ventaja en encuestas en votos efectivos y el rezagado intenta exprimir un margen que sigue siendo, en lo absoluto, alcanzable."
     },
     {
       "ts": "2026-06-20T18:14:49.509Z",
@@ -311,6 +326,11 @@
     },
     {
       "ts": "2026-06-20T18:14:50.507Z",
+      "delaespriella": 88,
+      "cepeda": 12
+    },
+    {
+      "ts": "2026-06-20T18:50:02.966Z",
       "delaespriella": 88,
       "cepeda": 12
     }
