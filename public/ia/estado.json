@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 33,
-    "generado": "2026-06-20T22:01:24.167Z",
-    "proxima_actualizacion": "2026-06-20T22:31:24.167Z",
+    "ciclo": 34,
+    "generado": "2026-06-20T22:32:40.361Z",
+    "proxima_actualizacion": "2026-06-20T23:02:40.361Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 88,
+    "probabilidad": 87,
     "confianza": "Alta",
-    "titular": "88-12 en vísperas: el tablero no se mueve y la cobertura repite lo conocido.",
-    "resumen": "El cuadro sigue clavado a horas del cierre. Polymarket marca 88-14, un punto que migra hacia Cepeda dentro del margen de ruido y que no alcanza para mover el reparto. La franja previa se llena de notas de contexto y perfiles, no de hechos duros nuevos. De la Espriella conserva un favoritismo amplio y Cepeda mantiene un margen que en votos absolutos sigue siendo, en teoría, remontable.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 32: Polymarket pasa de 88-14 con el punto del lado de Cepeda, dentro del ruido, y todos los titulares frescos ya están incorporados a la línea de tiempo."
+    "titular": "87-13 a horas del cierre: el reparto cede un punto y aparecen veedores e inquietudes por presión al elector.",
+    "resumen": "El tablero apenas se mueve: Polymarket marca 87-14 y el reparto cede un punto hacia Cepeda, dentro del margen de ruido. La novedad no está en los números sino en la jornada: llega observación internacional invitada por el CNE y la campaña de Cepeda enciende una alerta por posible constreñimiento al elector. De la Espriella mantiene un favoritismo amplio; Cepeda conserva un margen que en votos absolutos sigue siendo, en teoría, remontable.",
+    "que_cambio": "Polymarket pasa de 88-14 a 87-14 y trasladamos un punto a Cepeda por continuidad; la franja suma dos hechos nuevos de jornada (veeduría externa y queja por constreñimiento) que no alteran el favoritismo."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 88,
+      "probabilidad": 87,
       "momentum": "steady",
-      "momentum_label": "Favoritismo firme",
+      "momentum_label": "Favorito firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja amplia y estable en encuestas (52%)",
-        "Favoritismo consolidado en mercados de predicción",
-        "Narrativa de mano dura con tracción en el electorado de centro-derecha"
+        "Ventaja amplia y estable en mercados de apuestas",
+        "Mejor desempeño relativo en encuestas de cierre",
+        "Narrativa de 'mano dura' consolidada"
       ],
       "debilidades": [
-        "Techo de votación expuesto a alta participación opositora",
-        "Dependencia de que el voto indeciso no se incline en bloque"
+        "El reparto cede puntos finos hacia el rival",
+        "Depende de que la abstención no le quite techo"
       ],
       "riesgos": [
-        "Incidentes de orden público que alteren la jornada",
-        "Sorpresa de movilización en bastiones de Cepeda"
+        "Una jornada con denuncias de presión al voto puede erosionar legitimidad de su eventual triunfo",
+        "Sorpresa de participación urbana"
       ],
       "catalizadores": [
-        "Jornada tranquila que congele el statu quo",
-        "Abstención en zonas favorables a la izquierda"
+        "Cierre tranquilo y alta participación de su base",
+        "Ausencia de incidentes que movilicen al adversario"
       ]
     },
     {
@@ -53,45 +53,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 12,
-      "momentum": "steady",
-      "momentum_label": "Margen estable",
+      "probabilidad": 13,
+      "momentum": "up",
+      "momentum_label": "Roza al alza",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Margen en votos absolutos aún teóricamente remontable (<700.000)",
-        "Maquinaria del Pacto Histórico y respaldo presidencial activo",
-        "Base territorial identificable, incluido el voto exterior"
+        "Margen absoluto aún remontable (<700.000 votos)",
+        "Maquinaria del Pacto Histórico para movilizar",
+        "Disciplina del petrismo que pide calma"
       ],
       "debilidades": [
-        "Desventaja persistente en encuestas (45%)",
-        "Probabilidad de mercado anclada en torno al 12-14%"
+        "Probabilidad implícita en mínimos de un dígito-bajo",
+        "Necesita un vuelco que los datos no insinúan"
       ],
       "riesgos": [
-        "Que el llamado a la calma de Petro no se traduzca en movilización",
-        "Techo en regiones donde la mano dura cala"
+        "Que las denuncias de constreñimiento no se traduzcan en respuesta institucional efectiva",
+        "Desánimo de su electorado por las cifras adversas"
       ],
       "catalizadores": [
-        "Repunte de participación en sus bastiones",
-        "Voto oculto o indeciso que se decante a su favor"
+        "Movilización exterior y urbana por encima de lo esperado",
+        "Que la veeduría internacional visibilice irregularidades que le favorezcan"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita 88-14; el punto que se mueve cae del lado de Cepeda pero dentro del margen de ruido.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Encuestas (promedio)",
-      "detalle": "De la Espriella 52% frente a 45% de Cepeda, sin variación nueva en la última franja.",
+      "detalle": "87-14 implícito; un punto migra hacia Cepeda dentro del ruido, sin romper el favoritismo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura de prensa",
-      "detalle": "La franja previa se compone de notas de contexto, perfiles y logística electoral, sin hechos duros nuevos.",
+      "fuente": "CNE / observación internacional",
+      "detalle": "Llega a Bogotá el senador estadounidense Bernie Moreno como invitado del CNE para acompañar la jornada.",
       "favorece": "incierto"
+    },
+    {
+      "fuente": "Campaña Cepeda (Infobae)",
+      "detalle": "El equipo de Cepeda expresó preocupación por posible constreñimiento al elector.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -101,6 +101,30 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-20T22:32:40.361Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 88% ▼ 87%",
+      "detalle": "La probabilidad cede un punto hacia Cepeda siguiendo a Polymarket (87-14) y la continuidad; el grueso del cambio es de agenda de jornada, no de fondo electoral.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-20T22:32:39.362Z",
+      "tipo": "evento",
+      "titulo": "Veeduría internacional: el senador Bernie Moreno llega a Bogotá invitado por el CNE",
+      "detalle": "El senador estadounidense aterriza en la capital para acompañar la segunda vuelta a invitación del Consejo Nacional Electoral.",
+      "fuente": "ELTIEMPO.COM",
+      "cuerpo": "El Consejo Nacional Electoral gestionó la presencia de observadores y figuras internacionales para la jornada del 21 de junio, y entre los invitados llegó a Bogotá el senador estadounidense Bernie Moreno. Su arribo se inscribe en el dispositivo de acompañamiento externo habitual en comicios de alta tensión, en una segunda vuelta que la prensa internacional ya venía encuadrando como una Colombia dividida entre dos proyectos opuestos.\n\nPara el balstandce de la segunda vuelta, la veeduría externa no altera el favoritismo de De la Espriella, pero sí eleva el costo político de cualquier irregularidad: una jornada vigilada de cerca presiona a ambas campañas a cuidar la forma. El gesto importa más por legitimidad que por aritmética y, de surgir denuncias, le da a cada bando un testigo al que apelar."
+    },
+    {
+      "ts": "2026-06-20T22:07:53.000Z",
+      "tipo": "alerta",
+      "titulo": "La campaña de Cepeda alerta por posible constreñimiento al elector",
+      "detalle": "El equipo del candidato de la izquierda expresó preocupación por presiones sobre votantes en la jornada.",
+      "fuente": "Infobae",
+      "cuerpo": "A pocas horas del cierre, la campaña de Iván Cepeda hizo pública su preocupación por un posible constreñimiento al elector, es decir, presiones o coacción sobre votantes el día de la votación. La denuncia se suma a un clima ya cargado, en el que el presidente Petro había pedido calma a sus bases y en el que las autoridades reforzaron seguridad con recompensas y monitoreo aéreo en algunas ciudades.\n\nEl efecto sobre el reparto es marginal mientras no haya hechos verificados, pero la alerta cumple una función doble: moviliza a la base del Pacto Histórico bajo la idea de un voto amenazado y deja sentado un argumento de impugnación ante un resultado adverso. En una contienda donde el margen absoluto sigue siendo estrecho, el relato sobre la limpieza de la jornada pesa tanto como los votos.",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxON3dsTFpEaDVRVURwVWtYelFtTEhHcVpXeS0tT3E5WG54OWZVbGFENmprTmlNSXhOeDRwTkNGQWVJM3lCZy1GWjFBNGJhOGhKb0R4VnV5MXotVUVLenlOVm5BdFhoOHlzZ0ZnaUVQVk5mOGg1RlZRZ0FoWWUyS0FMY0lEUG9KVWJ5VC1wVlJyS3RLa09hdG1LNjNzdXBZbno4eDhDa0xYOWRnT1VZVGdiS2Z3MWt0akZJZGg4aUQ0dUZHSk9RMWVMR3lCdWFWYWRpcVduUGlfR3p6TXI5X3pnRG1CdlJxOURMUzVEZ2lOMXlEQzhQY1HSAZACQVVfeXFMT1VJT0pIcEpiMW1EQ2tsS0l6a01yOXlRMmVWbzhjUFFGenA4dmhVdjFQRWNOSi1RaWl6Wk56bkFjTHNTWW5VQnROTHJ5dVdQNURPZE5VVGFURmx1dXZFQkx6N05vczVMT1liY05yN3V5c0xjRUItUkV6Z2ZpSXJEOGJWMGlEaWJxT3JJOVA4TDJpTFAtcFBkaW02TUNFTnNlc29uYWlpQVUwakQtUG5FWDduRlRpbFJqSTVKMS1CZHd6bmNWeldwbTlWQmtmWmFtUGRPTk9ZRV9vbkNySVc5RG1ndlZKazlLY0xKdGxCdC1PeVBBc2tfRW1UZ29xWmJ3Mjl1UWFnZUE3UzR2VGNzbU4?oc=5"
     },
     {
       "ts": "2026-06-20T19:50:00.000Z",
@@ -373,6 +397,11 @@
       "ts": "2026-06-20T22:01:24.167Z",
       "delaespriella": 88,
       "cepeda": 12
+    },
+    {
+      "ts": "2026-06-20T22:32:40.361Z",
+      "delaespriella": 87,
+      "cepeda": 13
     }
   ],
   "fuentes": [
