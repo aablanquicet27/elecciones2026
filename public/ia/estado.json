@@ -8,7 +8,7 @@
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
     "fase": "vispera",
-    "modelo": "Claude Opus (Kiro) + búsqueda web en vivo"
+    "modelo": "IA de análisis electoral en tiempo real"
   },
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
