@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, TrendingDown, Minus, CheckCircle2, AlertTriangle,
-  Zap, ArrowLeft, RefreshCw, ChevronDown,
+  Zap, ArrowLeft, RefreshCw, ChevronDown, ExternalLink,
 } from 'lucide-react';
 
 // ---------- Tipos ----------
@@ -13,7 +13,7 @@ interface Candidato {
   fortalezas: string[]; debilidades: string[]; riesgos: string[]; catalizadores: string[];
 }
 interface Indicador { fuente: string; detalle: string; favorece: string; }
-interface EventoTL { ts: string; fecha_label?: string; tipo: string; titulo: string; detalle: string; fuente?: string; }
+interface EventoTL { ts: string; fecha_label?: string; tipo: string; titulo: string; detalle: string; cuerpo?: string; url?: string; fuente?: string; }
 interface Fuente { nombre: string; url: string; }
 interface Estado {
   meta: { ciclo: number; generado: string; cadencia_min: number; evento: string; fecha_eleccion: string; fase: string; };
@@ -260,22 +260,9 @@ export default function IAPage() {
         <Titulo n="03" t="Línea de tiempo" />
         <div className="rounded-2xl border border-white/8 p-5 mb-12" style={{ backgroundColor: '#10131c' }}>
           <ol className="relative">
-            {[...e.timeline].sort((a, b) => new Date(b.ts).getTime() - new Date(a.ts).getTime()).map((ev, k, arr) => {
-              const et = etiquetaTS(ev.ts);
-              return (
-                <li key={k} className="relative pl-7 pb-5 last:pb-0">
-                  {k < arr.length - 1 && <span className="absolute left-[5px] top-3 bottom-0 w-px bg-white/8" />}
-                  <span className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full ring-4 ring-[#10131c]" style={{ backgroundColor: evTipo[ev.tipo] ?? '#5EEAD4' }} />
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-0.5">
-                    <span className="text-[10px] tracking-widest" style={{ fontFamily: mono, color: et.futuro ? '#A78BFA' : '#64748B' }}>{et.label}</span>
-                    <span className="text-sm font-semibold text-slate-100">{ev.titulo}</span>
-                  </div>
-                  <p className="text-sm text-slate-400 leading-snug">
-                    {ev.detalle}{ev.fuente ? <span className="text-slate-600" style={{ fontFamily: mono }}> · {ev.fuente}</span> : null}
-                  </p>
-                </li>
-              );
-            })}
+            {[...e.timeline].sort((a, b) => new Date(b.ts).getTime() - new Date(a.ts).getTime()).map((ev, k, arr) => (
+              <EventoItem key={ev.ts + k} ev={ev} ultimo={k === arr.length - 1} />
+            ))}
           </ol>
         </div>
 
@@ -301,8 +288,47 @@ export default function IAPage() {
   );
 }
 
-function Titulo({ n, t }: { n: string; t: string }) {
+// ---------- evento de la línea de tiempo: desplegable (cuerpo completo + fuente) ----------
+function EventoItem({ ev, ultimo }: { ev: EventoTL; ultimo: boolean }) {
+  const [open, setOpen] = useState(false);
+  const et = etiquetaTS(ev.ts);
+  const mono = "'Space Mono',monospace";
+  const col = evTipo[ev.tipo] ?? '#5EEAD4';
+  const ampliable = !!(ev.cuerpo || ev.url);
   return (
+    <li className="relative pl-7 pb-5 last:pb-0">
+      {!ultimo && <span className="absolute left-[5px] top-3 bottom-0 w-px bg-white/8" />}
+      <span className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full ring-4 ring-[#10131c]" style={{ backgroundColor: col }} />
+      <div
+        className={`flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-0.5 ${ampliable ? 'cursor-pointer group select-none' : ''}`}
+        onClick={() => ampliable && setOpen((o) => !o)}
+      >
+        <span className="text-[10px] tracking-widest" style={{ fontFamily: mono, color: et.futuro ? '#A78BFA' : '#64748B' }}>{et.label}</span>
+        <span className="text-sm font-semibold text-slate-100 group-hover:text-white transition-colors">{ev.titulo}</span>
+        {ampliable && <ChevronDown className={`w-3.5 h-3.5 text-slate-600 group-hover:text-slate-300 transition-transform ${open ? '' : '-rotate-90'}`} />}
+      </div>
+      <p className="text-sm text-slate-400 leading-snug">
+        {ev.detalle}{ev.fuente ? <span className="text-slate-600" style={{ fontFamily: mono }}> · {ev.fuente}</span> : null}
+      </p>
+      {open && ampliable && (
+        <div className="mt-2.5 fade-up">
+          {ev.cuerpo && (
+            <p className="text-sm text-slate-300 leading-relaxed border-l-2 pl-3" style={{ borderColor: col }}>{ev.cuerpo}</p>
+          )}
+          {ev.url && (
+            <a href={ev.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-2.5 text-xs text-[#4C8DFF] hover:text-white underline underline-offset-2 transition-colors"
+              style={{ fontFamily: mono }}>
+              Leer fuente <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
+      )}
+    </li>
+  );
+}
+
+function Titulo({ n, t }: { n: string; t: string }) {  return (
     <div className="flex items-baseline gap-3 mb-4">
       <span className="text-xs text-slate-600" style={{ fontFamily: "'Space Mono',monospace" }}>{n}</span>
       <h2 className="text-lg font-bold tracking-tight" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{t}</h2>
