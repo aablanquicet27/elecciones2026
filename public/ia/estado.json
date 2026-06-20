@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 1,
-    "generado": "2026-06-20T05:54:51.795Z",
-    "proxima_actualizacion": "2026-06-20T06:24:51.795Z",
+    "ciclo": 2,
+    "generado": "2026-06-20T06:27:08.856Z",
+    "proxima_actualizacion": "2026-06-20T06:57:08.856Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 85,
+    "probabilidad": 87,
     "confianza": "Alta",
-    "titular": "De la Espriella afianza el favoritismo en la víspera; Cepeda apuesta todo a la diferencia de 700.000 votos.",
-    "resumen": "A tres días del cierre, CB Global ubica a De la Espriella en 50,1% y el mercado de Polymarket se mueve hacia ~90% de probabilidad de victoria, reforzando la tendencia. Sin embargo, CNN y analistas subrayan que la brecha real no supera los 700.000 votos, un margen que un repunte de participación o el voto indeciso aún podrían mover. La alerta emitida por Estados Unidos y el escrutinio sobre la financiación añaden ruido institucional en la recta final.",
-    "que_cambio": "Subo la probabilidad de De la Espriella de 82% a 85%: nueva encuesta de cierre (CB Global 50,1%) y salto de Polymarket a ~90% confirman la ventaja, pero suavizo el número porque la diferencia en votos sigue siendo revertible y persiste incertidumbre por la alerta de EE.UU. y la financiación."
+    "titular": "De la Espriella llega a la víspera como favorito firme; Cepeda confía en que los 700.000 votos aún se mueven.",
+    "resumen": "En la antesala del 21 de junio, Polymarket sube a ~90% de probabilidad para De la Espriella y CB Global lo mantiene en 50,1%, consolidando su favoritismo. La campaña entra en ley seca con un tribunal negando la tutela que buscaba suspender sus piezas, despejándole el cierre. Aun así, CNN y El Colombiano insisten en que la brecha por debajo de 700.000 votos es reversible si la participación o el voto indeciso se inclinan, y la alerta de EE.UU. mantiene tensión institucional sobre la jornada.",
+    "que_cambio": "Subo a De la Espriella de 85% a 87%: el mercado consolidó su salto a ~90% y un fallo judicial le despejó la recta final, pero contengo el alza porque la diferencia en votos sigue siendo revertible y la alerta de EE.UU. añade incertidumbre a la jornada."
   },
   "candidatos": [
     {
@@ -25,31 +25,29 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 85,
+      "probabilidad": 87,
       "momentum": "up",
       "momentum_label": "Ventaja consolidada",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera todas las encuestas de cierre (CB Global 50,1%)",
-        "Amplio favorito en Polymarket (~90%)",
-        "Ganó la primera vuelta y conserva impulso",
-        "Domina la conversación y la batalla digital"
+        "Lidera CB Global con 50,1% a tres días del cierre",
+        "Mercado Polymarket lo ubica en ~90% de probabilidad",
+        "Dominio sostenido de la conversación digital",
+        "Tribunal negó la tutela que pedía suspender sus piezas de campaña"
       ],
       "debilidades": [
-        "Ventaja en votos por debajo de 700.000, no es irreversible",
-        "Alto rechazo entre el electorado anti-extremos",
-        "Su financiación de campaña bajo escrutinio público"
+        "Ventaja real inferior a 700.000 votos, técnicamente reversible",
+        "Escrutinio abierto sobre el origen de su financiación"
       ],
       "riesgos": [
-        "Tribunal y tutelas sobre piezas de campaña pueden reactivar controversia",
-        "Alerta de EE.UU. sobre la segunda vuelta enturbia el cierre",
-        "Un alza inesperada de la participación favorecería al rival"
+        "Repunte inesperado de participación que active el antivoto",
+        "Ruido institucional por la alerta emitida por EE.UU.",
+        "Movilización tardía del voto indeciso hacia Cepeda"
       ],
       "catalizadores": [
-        "Encuesta CB Global lo coloca por encima del 50%",
-        "Mercados de predicción reforzando expectativa de triunfo",
-        "Inercia de la primera vuelta y ley seca que congela el escenario"
+        "Cierre de campaña sin contratiempos legales tras el fallo a su favor",
+        "Inercia del favoritismo reflejada en encuestas y mercados"
       ]
     },
     {
@@ -57,66 +55,92 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 15,
+      "probabilidad": 13,
       "momentum": "down",
       "momentum_label": "Margen estrecho",
       "encuesta_pct": 44,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Base sólida y aparato del Pacto Histórico",
-        "Diferencia de menos de 700.000 votos es remontable",
-        "Puede capitalizar el voto anti-extremos y el indeciso"
+        "La brecha de menos de 700.000 votos deja margen de remontada",
+        "Base movilizable en bastiones de alta participación",
+        "Narrativa de 'paz vs. mano dura' que polariza a su favor"
       ],
       "debilidades": [
-        "Detrás en todas las encuestas de cierre (~44%)",
-        "Probabilidad implícita en Polymarket cae a ~12%",
-        "Menos de 24-72 horas para revertir la tendencia"
+        "Va por debajo en todas las encuestas de cierre (44% CB Global)",
+        "Mercado le asigna solo ~12% de probabilidad",
+        "Menor tracción en la batalla digital"
       ],
       "riesgos": [
-        "Desinformación en circulación (verificación France 24 sobre supuesta 'venganza')",
-        "Dos modelos ambientales y de seguridad polarizan sin ampliar su techo",
-        "Techo electoral aparente cerca del 44-45%"
+        "Consolidación del favoritismo rival reduce su techo",
+        "Ley seca y víspera limitan su última ventana de movilización"
       ],
       "catalizadores": [
-        "Movilización de última hora del voto joven y abstencionista",
-        "Voto útil anti-mano dura",
-        "Bloque de electores indecisos que CNN señala como decisivo"
+        "Volcada de indecisos en la jornada final",
+        "Sorpresa de participación en regiones afines",
+        "Lectura de la alerta de EE.UU. como factor de rechazo al rival"
       ]
     }
   ],
   "indicadores": [
     {
-      "fuente": "CB Global (vía Infobae)",
-      "detalle": "De la Espriella en 50,1% a tres días de la elección, manteniendo el liderazgo.",
-      "favorece": "delaespriella"
-    },
-    {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita salta a ~90% para De la Espriella y ~12% para Cepeda.",
+      "detalle": "Probabilidad implícita sube a ~90% para De la Espriella vs ~12% Cepeda",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "CNN en Español",
-      "detalle": "La diferencia entre ambos no llega a 700.000 votos; los indecisos pueden revertirla o ampliarla.",
+      "fuente": "CB Global",
+      "detalle": "De la Espriella 50,1% frente a Cepeda en torno a 44% a tres días del cierre",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "CNN en Español / El Colombiano",
+      "detalle": "La diferencia no llega a 700.000 votos: electores capaces de revertirla o ampliarla",
       "favorece": "incierto"
     },
     {
-      "fuente": "El Colombiano",
-      "detalle": "Expertos identifican bolsones de votos clave que definirán la segunda vuelta.",
-      "favorece": "incierto"
+      "fuente": "redmas.com.co",
+      "detalle": "Tribunal niega tutela que pedía suspender piezas de campaña de De la Espriella",
+      "favorece": "delaespriella"
     },
     {
       "fuente": "EL TIEMPO",
-      "detalle": "Estados Unidos emite una alerta de cara a la segunda vuelta del 21 de junio.",
+      "detalle": "Persiste la alerta emitida por Estados Unidos de cara a la segunda vuelta",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Transparencia por Colombia",
-      "detalle": "La financiación de la segunda vuelta queda bajo escrutinio público.",
-      "favorece": "cepeda"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-20",
+      "fecha_label": "18 jun",
+      "tipo": "clave",
+      "titulo": "Polymarket roza el 90%",
+      "detalle": "El mercado de predicción eleva a ~90% la probabilidad de victoria de De la Espriella, reforzando su favoritismo en la víspera.",
+      "fuente": "Polymarket"
+    },
+    {
+      "ts": "2026-06-20",
+      "fecha_label": "18 jun",
+      "tipo": "hito",
+      "titulo": "Tribunal niega tutela contra sus piezas de campaña",
+      "detalle": "La justicia rechaza la solicitud de suspender la publicidad de De la Espriella, despejándole el cierre de campaña.",
+      "fuente": "redmas.com.co"
+    },
+    {
+      "ts": "2026-06-20",
+      "fecha_label": "18 jun",
+      "tipo": "contexto",
+      "titulo": "La pelea sigue por menos de 700.000 votos",
+      "detalle": "Expertos y proyecciones insisten en que el bloque de votantes indecisos puede revertir o ampliar la ventaja en la jornada.",
+      "fuente": "CNN en Español / El Colombiano"
+    },
+    {
+      "ts": "2026-06-20",
+      "fecha_label": "19 jun",
+      "tipo": "alerta",
+      "titulo": "Persiste la alerta de EE.UU.",
+      "detalle": "Estados Unidos mantiene la advertencia de cara a la segunda vuelta del 21 de junio, añadiendo tensión institucional.",
+      "fuente": "EL TIEMPO"
+    },
     {
       "ts": "2026-06-20",
       "fecha_label": "18 jun",
@@ -208,6 +232,11 @@
       "ts": "2026-06-20T05:54:51.795Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-20T06:27:08.856Z",
+      "delaespriella": 87,
+      "cepeda": 13
     }
   ],
   "fuentes": [
