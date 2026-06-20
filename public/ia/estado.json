@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 35,
-    "generado": "2026-06-20T23:03:12.602Z",
-    "proxima_actualizacion": "2026-06-20T23:33:12.602Z",
+    "ciclo": 36,
+    "generado": "2026-06-20T23:34:00.769Z",
+    "proxima_actualizacion": "2026-06-21T00:04:00.769Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 87,
     "confianza": "Alta",
-    "titular": "87-13 en la antesala del cierre: el tablero se congela y la jornada manda sobre los números.",
-    "resumen": "Polymarket sostiene 87-14 y nosotros mantenemos 87-13 por continuidad: ningún dato fresco justifica mover la aguja. La franja de hoy repite lo ya conocido —llamado de Petro a la calma, llegada del veedor invitado por el CNE y la queja de la campaña de Cepeda por constreñimiento—, sin hechos genuinamente nuevos. De la Espriella conserva un favoritismo amplio; el margen de Cepeda, aunque estable, sigue siendo teóricamente remontable en votos absolutos.",
-    "que_cambio": "Nada relevante: Polymarket apenas oscila dentro del ruido y los titulares de las últimas horas reiteran hechos ya incorporados a la línea de tiempo, así que mantenemos probabilidades y momentum."
+    "titular": "87-13 sostenido: la víspera no mueve la aguja y todo queda en manos de las urnas.",
+    "resumen": "Polymarket repite 87-14 y nosotros mantenemos 87-13 por continuidad: no hay un solo dato fresco que justifique recalibrar. Los titulares de las últimas horas reciclan lo ya incorporado a la línea de tiempo —el llamado de Petro a la calma, la llegada de Bernie Moreno como veedor invitado por el CNE y la queja de la campaña de Cepeda por constreñimiento—. De la Espriella conserva un favoritismo amplio; el margen de Cepeda sigue siendo estable y, en votos absolutos, teóricamente remontable.",
+    "que_cambio": "Nada sustantivo: Polymarket oscila dentro del ruido (87-14) y los titulares recientes son reiteraciones de hechos ya reportados, así que sostenemos probabilidades y momentum."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja amplia y persistente en el mercado predictivo",
-        "Liderazgo en intención de voto (52%)",
-        "Narrativa de 'mano dura' consolidada en la recta final"
+        "Ventaja amplia y estable en mercados predictivos (87-14)",
+        "Liderazgo consistente en intención de voto (~52%)",
+        "Narrativa de 'mano dura' con tracción en sectores de seguridad"
       ],
       "debilidades": [
-        "Techo de rechazo que limita crecimiento adicional",
-        "Dependencia de una participación alta y ordenada"
+        "Margen efectivo más estrecho que la probabilidad sugiere (menos de 700.000 votos)",
+        "Alta polarización que moviliza al voto contrario"
       ],
       "riesgos": [
-        "Incidentes de jornada que deslegitimen una victoria amplia",
-        "Abstención diferencial en sus bastiones"
+        "Sobreconfianza y eventual desmovilización de su base el domingo",
+        "Sorpresas en el escrutinio de zonas competidas"
       ],
       "catalizadores": [
-        "Cierre sin sobresaltos que confirme el favoritismo",
-        "Voto exterior favorable replicando la primera vuelta"
+        "Jornada sin incidentes que valide el statu quo",
+        "Buen desempeño en voto exterior, donde tuvo plazas propias"
       ]
     },
     {
@@ -55,42 +55,42 @@
       "color": "#e11d48",
       "probabilidad": 13,
       "momentum": "steady",
-      "momentum_label": "Margen estable",
+      "momentum_label": "Estable, rezagado",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Margen en votos absolutos aún remontable (<700.000)",
-        "Maquinaria del Pacto Histórico movilizada",
-        "Respaldo activo del presidente Petro"
+        "Base movilizada del Pacto Histórico con respaldo presidencial",
+        "Brecha en votos absolutos aún cerrable",
+        "Maquinaria territorial activa"
       ],
       "debilidades": [
-        "Brecha amplia en el mercado y en encuestas",
-        "Menos tiempo para revertir la tendencia"
+        "Rezago persistente en encuestas y mercados",
+        "Techo electoral difícil de superar sin trasvase del centro"
       ],
       "riesgos": [
-        "Posible constreñimiento al elector denunciado por su campaña",
-        "Desánimo de bases ante la desventaja proyectada"
+        "Constreñimiento al elector denunciado por su propia campaña",
+        "Abstención en bastiones clave"
       ],
       "catalizadores": [
-        "Sorpresa de participación en zonas urbanas afines",
-        "Efecto movilizador del llamado presidencial"
+        "Alta participación urbana de izquierda",
+        "Efecto del llamado de Petro a votar en calma y en masa"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita 87-14, prácticamente sin cambio frente al ciclo previo.",
+      "detalle": "Probabilidad implícita 87-14, dentro del rango de ruido de los últimos ciclos.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (promedio previo)",
-      "detalle": "52% contra 45% sostiene la ventaja en intención de voto.",
+      "fuente": "Encuestas/contexto",
+      "detalle": "Intención de voto se mantiene ~52% vs ~45%, sin viraje en la víspera.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Jornada",
-      "detalle": "Titulares de últimas horas reiteran hechos ya reportados; sin señal nueva que mueva el tablero.",
+      "fuente": "Cobertura internacional",
+      "detalle": "El encuadre 'Colombia dividida / paz vs mano dura' confirma polarización pero no altera el favoritismo.",
       "favorece": "incierto"
     }
   ],
@@ -405,6 +405,11 @@
     },
     {
       "ts": "2026-06-20T23:03:12.602Z",
+      "delaespriella": 87,
+      "cepeda": 13
+    },
+    {
+      "ts": "2026-06-20T23:34:00.769Z",
       "delaespriella": 87,
       "cepeda": 13
     }
