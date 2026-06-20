@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 24,
-    "generado": "2026-06-20T17:28:28.694Z",
-    "proxima_actualizacion": "2026-06-20T17:58:28.694Z",
+    "ciclo": 25,
+    "generado": "2026-06-20T18:03:49.813Z",
+    "proxima_actualizacion": "2026-06-20T18:33:49.813Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 90,
+    "probabilidad": 88,
     "confianza": "Alta",
-    "titular": "El 90-10 aguanta: nada nuevo mueve el tablero en plena víspera.",
-    "resumen": "El pronóstico se mantiene en 90 para De la Espriella y 10 para Cepeda, sin señales que justifiquen ajuste. Polymarket sigue anclado en 90 para el favorito y las encuestas (Guarumo/Ecoanalítica 52,6% vs 45% y CB Global 50,1%) permanecen estables y ya descontadas. El flujo de titulares es repetición de lo ya reportado —Petro pidiendo calma, Santos neutral, dispositivo de Barranquilla— sin valor predictivo adicional.",
-    "que_cambio": "No cambió nada sustantivo respecto al ciclo 23: Polymarket sigue en 90 y las encuestas no se mueven, así que se mantiene el 90-10 por continuidad."
+    "titular": "El margen estrecho asoma: Cepeda recupera dos puntos en la víspera.",
+    "resumen": "El pronóstico se ajusta a 88-12 tras el repunte de Cepeda en Polymarket (de 10 a 12) y el dato de que la diferencia entre ambos no superaría los 700.000 votos. Las encuestas siguen estables (Guarumo/Ecoanalítica 52,6% vs 45%, CB Global 50,1%) y mantienen a De la Espriella como favorito claro. El ajuste es gradual y refleja la incertidumbre propia de un margen que, aunque amplio en porcentaje, es revertible en términos absolutos.",
+    "que_cambio": "Polymarket subió a Cepeda a 12 y entró un dato nuevo sobre lo ajustado del margen en votos absolutos, lo que justifica mover dos puntos del 90-10 al 88-12 sin romper la continuidad."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 90,
-      "momentum": "steady",
-      "momentum_label": "Liderazgo firme",
+      "probabilidad": 88,
+      "momentum": "down",
+      "momentum_label": "Cede un punto",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente en todas las encuestas finales",
-        "Polymarket estable en 90",
-        "Triunfo en primera vuelta"
+        "Liderazgo consistente en todas las encuestas (50,1%-52,6%)",
+        "Favorito sólido en Polymarket (88-90%)",
+        "Ventaja descontada y estable durante semanas"
       ],
       "debilidades": [
-        "Techo de polarización que limita crecimiento",
-        "Dependencia de que la abstención no favorezca al rival"
+        "La diferencia en votos absolutos es menor de lo que sugiere el porcentaje",
+        "Dependencia de que la intención de voto se traduzca en participación"
       ],
       "riesgos": [
-        "Sorpresa en participación",
-        "Voto exterior con comportamiento mixto"
+        "Una movilización sorpresiva del voto de izquierda en franjas clave",
+        "Concentración del voto indeciso en el rival"
       ],
       "catalizadores": [
-        "Jornada sin incidentes que confirme la tendencia",
-        "Alta participación en sus bastiones"
+        "Alta participación en sus bastiones de la Costa",
+        "Efecto del dispositivo de seguridad sobre la percepción de orden"
       ]
     },
     {
@@ -53,44 +53,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 10,
-      "momentum": "steady",
-      "momentum_label": "Sin reacción",
+      "probabilidad": 12,
+      "momentum": "up",
+      "momentum_label": "Leve repunte",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico",
-        "Respaldo del Gobierno"
+        "Base movilizable del Pacto Histórico",
+        "Margen revertible si activa el abstencionista de izquierda",
+        "Respaldo presidencial implícito en el llamado a la calma"
       ],
       "debilidades": [
-        "Rezago de 7-8 puntos en encuestas",
-        "Probabilidad implícita de un dígito"
+        "Desventaja sostenida en todas las mediciones",
+        "Probabilidad implícita aún en torno al 12%"
       ],
       "riesgos": [
-        "Desmovilización de su electorado",
-        "Margen demasiado amplio para remontar en un día"
+        "Techo electoral en regiones donde no penetra",
+        "Que el voto exterior no compense la brecha interna"
       ],
       "catalizadores": [
-        "Repunte sorpresivo de participación de izquierda",
-        "Voto exterior favorable en plazas clave"
+        "Sorpresa en participación urbana",
+        "Buen desempeño en el voto exterior favorable a su perfil"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita estable en 90% para De la Espriella.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Guarumo/Ecoanalítica",
-      "detalle": "Encuesta final 52,6% vs 45%, ya descontada.",
+      "detalle": "De la Espriella 88-90%, Cepeda repunta a 12%",
       "favorece": "delaespriella"
     },
     {
       "fuente": "CB Global",
-      "detalle": "50,1% para De la Espriella, sin cambios.",
+      "detalle": "De la Espriella mantiene 50,1% a tres días",
       "favorece": "delaespriella"
+    },
+    {
+      "fuente": "CNN en Español",
+      "detalle": "La diferencia no llega a 700.000 votos: margen revertible",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -100,6 +101,29 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-20T18:03:49.813Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 90% ▼ 88%",
+      "detalle": "Se ajusta 90-10 a 88-12 por el repunte de Cepeda en Polymarket y el dato nuevo de que el margen en votos absolutos es estrecho y reversible.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-20T18:03:48.814Z",
+      "tipo": "evento",
+      "titulo": "El margen real cabe en menos de 700.000 votos",
+      "detalle": "Un análisis cifra en menos de 700.000 votos la diferencia entre De la Espriella y Cepeda.",
+      "fuente": "",
+      "cuerpo": "Un análisis difundido a tres días del cierre estima que la distancia entre Abelardo de la Espriella e Iván Cepeda no supera los 700.000 sufragios, una cifra modesta frente al universo de electores habilitados para la segunda vuelta. El dato contrasta con la lectura porcentual cómoda que vienen mostrando las encuestas —donde el favorito ronda el 50%— y recuerda que en términos absolutos la franja decisiva es comparativamente pequeña y depende de la participación efectiva de cada bando.\n\nPara esta segunda vuelta, el matiz importa: una ventaja amplia en puntos puede convivir con un resultado disputado si la abstención golpea de forma asimétrica a uno de los dos campos. El bloque de Cepeda tiene ahí su único camino realista —activar voto que hoy no aparece movilizado—, mientras que De la Espriella necesita simplemente que su intención declarada se traduzca en urnas. Es lo que justifica el leve repunte del aspirante de izquierda en los mercados de predicción sin alterar el favoritismo de fondo."
+    },
+    {
+      "ts": "2026-06-20T18:03:47.815Z",
+      "tipo": "evento",
+      "titulo": "El voto exterior tuvo geografía propia en primera vuelta",
+      "detalle": "Un experto detalla en qué ciudades del exterior ganaron Cepeda y De la Espriella en primera vuelta.",
+      "fuente": "",
+      "cuerpo": "Un análisis del comportamiento del voto de colombianos en el exterior durante la primera vuelta muestra un mapa fragmentado: cada candidato se impuso en distintos enclaves migratorios, sin un dominio uniforme de ninguno. La radiografía aporta una referencia concreta para anticipar hacia dónde puede inclinarse esa porción del electorado en la jornada del domingo, una variable que suele resolverse al margen del pulso interno y con dinámicas propias según el país de residencia.\n\nEl peso del voto exterior es limitado frente al censo nacional, pero en un escenario donde la diferencia absoluta es estrecha cualquier bolsa adicional adquiere relevancia táctica. Para Cepeda representa una posible vía de compensación si logra concentrar apoyos en las plazas que le fueron favorables; para De la Espriella, un frente a contener para no ceder terreno fuera de sus bastiones internos."
     },
     {
       "ts": "2026-06-20T17:00:50.966Z",
@@ -282,27 +306,6 @@
       "titulo": "Voto exterior entra al foco final de la jornada",
       "detalle": "Expertos lo señalan como factor que puede mover una brecha menor a 700.000 votos.",
       "fuente": "Bloomberg Línea"
-    },
-    {
-      "ts": "2026-06-20T12:41:22.536Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 89% ▼ 88%",
-      "detalle": "La probabilidad se movió un punto (89→88) porque el alza de Cepeda en Polymarket persistió en dos lecturas seguidas y dejó de ser ruido técnico de cierre; concedo un punto al segundo sin alterar la es",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T12:41:21.537Z",
-      "tipo": "hito",
-      "titulo": "Día definitivo: Colombia vota la segunda vuelta",
-      "detalle": "Las urnas abren con De la Espriella como favorito en torno al 50% frente al 44% de Cepeda.",
-      "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T12:41:20.537Z",
-      "tipo": "evento",
-      "titulo": "Fajardo rompe el silencio en la víspera del voto",
-      "detalle": "Su pronunciamiento entra al cierre de campaña y puede mover al indeciso de centro.",
-      "fuente": "redmas.com.co"
     }
   ],
   "historico": [
@@ -430,6 +433,11 @@
       "ts": "2026-06-20T17:28:28.694Z",
       "delaespriella": 90,
       "cepeda": 10
+    },
+    {
+      "ts": "2026-06-20T18:03:49.813Z",
+      "delaespriella": 88,
+      "cepeda": 12
     }
   ],
   "fuentes": [
