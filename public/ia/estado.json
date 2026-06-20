@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 29,
-    "generado": "2026-06-20T19:56:49.033Z",
-    "proxima_actualizacion": "2026-06-20T20:26:49.033Z",
+    "ciclo": 30,
+    "generado": "2026-06-20T20:28:06.273Z",
+    "proxima_actualizacion": "2026-06-20T20:58:06.273Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 88,
     "confianza": "Alta",
-    "titular": "88-12 sin novedad: la víspera repite el guion del ciclo anterior.",
-    "resumen": "El tablero sigue clavado en 88-12 porque no hay dato duro nuevo que obligue a mover puntos. Polymarket repite 89-13, dentro del ruido habitual de los últimos ciclos. Toda la cobertura fresca corresponde a hechos ya incorporados a la línea de tiempo: logística de jornada, ley seca, lectura internacional, voto exterior y el llamado de Petro a la calma. De la Espriella conserva un favoritismo amplio y Cepeda mantiene un margen que en votos absolutos sigue siendo, en teoría, remontable.",
-    "que_cambio": "Nada sustancial respecto al ciclo 28: Polymarket se mantiene en 89-13 y todos los titulares recientes ya están reportados, sin señales que alteren el equilibrio."
+    "titular": "88-12 otra vez: la víspera no trae dato que mueva el tablero.",
+    "resumen": "El equilibrio sigue en 88-12 porque no hay información dura nueva que justifique mover puntos. Polymarket repite 89-13, dentro del ruido habitual. Toda la cobertura fresca corresponde a hechos ya incorporados a la línea de tiempo —logística de jornada, lectura internacional, voto exterior y el llamado de Petro a la calma— salvo el anuncio de recompensas del Ministerio de Defensa, que refuerza el foco en seguridad sin alterar la correlación de fuerzas. De la Espriella mantiene un favoritismo amplio y Cepeda conserva un margen que en votos absolutos sigue siendo, en teoría, remontable.",
+    "que_cambio": "Casi nada respecto al ciclo 29: Polymarket sigue en 89-13 y la única novedad real es el anuncio de recompensas por prevenir atentados, un dato de seguridad que no modifica probabilidades."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 88,
       "momentum": "steady",
-      "momentum_label": "Favorito firme",
+      "momentum_label": "Favoritismo firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Favoritismo amplio y sostenido en mercados y encuestas",
+        "Favoritismo amplio y estable en mercados y encuestas",
         "Ventaja de ~7 puntos en intención de voto",
-        "Narrativa de mano dura movilizada"
+        "Narrativa de mano dura en clima de preocupación por seguridad"
       ],
       "debilidades": [
-        "Margen absoluto no es inexpugnable",
-        "Alta polarización puede activar voto adverso"
+        "Margen absoluto menor a 700.000 votos, teóricamente remontable",
+        "Alta polarización que moviliza al rival"
       ],
       "riesgos": [
-        "Sorpresa de participación en bastiones de izquierda",
-        "Incidentes de jornada que alteren la lectura"
+        "Sorpresa de participación o abstención diferencial",
+        "Episodios de orden público que cambien el clima de jornada"
       ],
       "catalizadores": [
-        "Cierre ordenado de la jornada",
-        "Confirmación temprana de tendencia en boca de urna"
+        "Énfasis oficial en seguridad y recompensas alinea con su mensaje",
+        "Estabilidad del favoritismo en la recta final"
       ]
     },
     {
@@ -59,38 +59,39 @@
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Brecha en votos absolutos teóricamente remontable (<700.000)",
-        "Maquinaria del Pacto Histórico y respaldo del Gobierno"
+        "Piso sólido del 45% en intención de voto",
+        "Brecha cerrable en votos absolutos",
+        "Base movilizada del Pacto Histórico"
       ],
       "debilidades": [
-        "Desventaja consistente en encuestas y mercados",
-        "Techo electoral difícil de superar en segunda vuelta"
+        "Probabilidad de ganar estancada en torno al 12%",
+        "Desventaja sostenida en todos los indicadores de mercado"
       ],
       "riesgos": [
-        "Desmovilización si se asume derrota anticipada",
-        "Abstención en zonas clave"
+        "Que el llamado de Petro a la calma desincentive movilización agresiva sin sumar votos nuevos",
+        "Techo electoral difícil de superar en segunda vuelta"
       ],
       "catalizadores": [
-        "Repunte de participación en exterior y grandes ciudades",
-        "Trasvase de votos de derrotados de primera vuelta"
+        "Alta participación de su electorado",
+        "Buen desempeño del voto exterior en plazas afines"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita 89-13 a favor de De la Espriella, estable frente al ciclo previo.",
+      "detalle": "Probabilidad implícita 89-13, dentro del rango de los últimos ciclos sin desviación relevante.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (contexto)",
-      "detalle": "Intención de voto ~52-45 sostiene la ventaja del favorito.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Cobertura de jornada",
-      "detalle": "Sin hechos nuevos: toda la franja reciente repite logística y lecturas ya incorporadas.",
+      "fuente": "Ministerio de Defensa",
+      "detalle": "Recompensas de hasta $1.000 millones por prevenir atentados contra los candidatos: foco en seguridad de la jornada.",
       "favorece": "incierto"
+    },
+    {
+      "fuente": "Encuestas previas",
+      "detalle": "Intención de voto se mantiene en torno a 52-45, sin cambios respecto al ciclo anterior.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -100,6 +101,15 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-20T19:50:00.000Z",
+      "tipo": "alerta",
+      "titulo": "Defensa ofrece recompensas de hasta $1.000 millones por prevenir atentados",
+      "detalle": "El Ministerio de Defensa anunció recompensas para frustrar atentados contra los dos candidatos en la víspera de la segunda vuelta.",
+      "fuente": "ELTIEMPO.COM",
+      "cuerpo": "El Ministerio de Defensa anunció recompensas de hasta 1.000 millones de pesos por información que permita prevenir atentados contra Iván Cepeda y Abelardo de la Espriella en la antesala de la segunda vuelta. La medida se inscribe en un despliegue de seguridad que ya incluía monitoreo aéreo en ciudades como Barranquilla y refuerza la lectura de una jornada vigilada de cerca por las autoridades.\n\nPara la contienda, el anuncio no mueve la correlación de fuerzas: ningún candidato gana o pierde votos por una medida de protección. Su efecto es indirecto —busca blindar la normalidad del proceso— y se suma al llamado de Petro a la calma. Mientras no haya un incidente real, la disputa sigue definida por la intención de voto, donde De la Espriella conserva su ventaja.",
+      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
     },
     {
       "ts": "2026-06-20T18:50:01.968Z",
@@ -341,6 +351,11 @@
     },
     {
       "ts": "2026-06-20T19:56:49.033Z",
+      "delaespriella": 88,
+      "cepeda": 12
+    },
+    {
+      "ts": "2026-06-20T20:28:06.273Z",
       "delaespriella": 88,
       "cepeda": 12
     }
