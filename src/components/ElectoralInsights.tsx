@@ -6,73 +6,35 @@ const ElectoralInsights: React.FC = () => {
   const insights = getElectoralInsights();
 
   const insightCards = [
-    {
-      ...insights.fragmentacion,
-      icon: TrendingDown,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    },
-    {
-      ...insights.recomposicion,
-      icon: Users,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    },
-    {
-      ...insights.volatilidad,
-      icon: AlertTriangle,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    },
-    {
-      ...insights.digital,
-      icon: Smartphone,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    },
-    {
-      ...insights.regional,
-      icon: MapPin,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    },
-    {
-      ...insights.generacional,
-      icon: Clock,
-      color: 'from-purple-500 to-indigo-600',
-      bgColor: 'from-purple-50 to-purple-100',
-      textColor: 'text-purple-900'
-    }
+    { ...insights.fragmentacion, icon: TrendingDown, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' },
+    { ...insights.recomposicion, icon: Users, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' },
+    { ...insights.volatilidad, icon: AlertTriangle, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' },
+    { ...insights.digital, icon: Smartphone, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' },
+    { ...insights.regional, icon: MapPin, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' },
+    { ...insights.generacional, icon: Clock, color: 'from-purple-500 to-indigo-600', bgColor: 'from-purple-50 to-purple-100', textColor: 'text-purple-900' }
   ];
 
   return (
     <div className="container mx-auto px-6">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-          Hallazgos Principales del Análisis Electoral
+          Hallazgos Principales del Balotaje
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Los factores que transformaron el panorama político tras las primarias del 8 de marzo de 2026
+          Lo que dejaron la primera vuelta del 31 de mayo y las encuestas de junio de cara a la segunda vuelta
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {insightCards.map((insight, index) => (
-          <div 
+        {insightCards.map((insight) => (
+          <div
             key={insight.title}
             className={`group relative bg-gradient-to-br ${insight.bgColor} rounded-2xl p-8 border border-gray-200 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}
           >
-            {/* Icon */}
             <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${insight.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
               <insight.icon className="h-8 w-8 text-white" />
             </div>
 
-            {/* Content */}
             <div className="mb-6">
               <h3 className={`text-xl font-bold ${insight.textColor} mb-3`}>
                 {insight.title}
@@ -85,14 +47,13 @@ const ElectoralInsights: React.FC = () => {
               </p>
             </div>
 
-            {/* Metric */}
             <div className="pt-4 border-t border-gray-300">
               {insight.percentage && (
                 <div className="text-center">
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.percentage}
                   </div>
-                  <div className="text-sm text-gray-600">Intención de voto top 3</div>
+                  <div className="text-sm text-gray-600">Resultado primera vuelta</div>
                 </div>
               )}
               {insight.change && (
@@ -100,7 +61,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.change}
                   </div>
-                  <div className="text-sm text-gray-600">Salto de Valencia post-consulta</div>
+                  <div className="text-sm text-gray-600">Ventaja en encuestas de junio</div>
                 </div>
               )}
               {insight.uncertainty && (
@@ -108,7 +69,7 @@ const ElectoralInsights: React.FC = () => {
                   <div className={`text-3xl font-bold ${insight.textColor}`}>
                     {insight.uncertainty}
                   </div>
-                  <div className="text-sm text-gray-600">Cepeda vs Valencia (2da vuelta)</div>
+                  <div className="text-sm text-gray-600">Polymarket — prob. de ganar</div>
                 </div>
               )}
               {insight.leaders && (
@@ -147,14 +108,13 @@ const ElectoralInsights: React.FC = () => {
         ))}
       </div>
 
-      {/* Summary Section */}
       <div className="mt-16 bg-gradient-to-r from-gray-900 via-purple-900 to-indigo-900 rounded-3xl p-12 text-white">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold mb-4">
-            Síntesis del Panorama Electoral Post-Primarias
+            Síntesis del Balotaje del 21 de Junio
           </h3>
           <p className="text-xl text-purple-100 max-w-4xl mx-auto">
-            Las elecciones del 8 de marzo transformaron la carrera presidencial de una competencia bipolar a una contienda triangular
+            La primera vuelta dio un giro a la derecha y dejó a De la Espriella como favorito frente a Cepeda
           </p>
         </div>
 
@@ -163,10 +123,9 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <TrendingDown className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Valencia Cambia Todo</h4>
+            <h4 className="text-lg font-bold mb-2">De la Espriella sorprende</h4>
             <p className="text-purple-100 text-sm">
-              Paloma Valencia pasó de 4% a 22.2% tras ganar la Gran Consulta con 3M+ votos.
-              Su irrupción desplazó a De la Espriella al tercer lugar y abrió un nuevo frente.
+              El abogado outsider de derecha ganó la primera vuelta con 43,75%, por encima de los sondeos previos, y dejó fuera a Valencia y Fajardo.
             </p>
           </div>
 
@@ -174,10 +133,9 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Empate Técnico en Balotaje</h4>
+            <h4 className="text-lg font-bold mb-2">El voto de centro-derecha decide</h4>
             <p className="text-purple-100 text-sm">
-              En segunda vuelta Cepeda vs Valencia sería 43.3% vs 42.9% — 
-              la definición más cerrada de la campaña. Todo puede pasar.
+              El votante de Valencia (6,9%) y parte del de Fajardo migra mayoritariamente hacia De la Espriella. Esa transferencia explica su ventaja en el balotaje.
             </p>
           </div>
 
@@ -185,10 +143,9 @@ const ElectoralInsights: React.FC = () => {
             <div className="bg-white/10 p-4 rounded-full w-fit mx-auto mb-4">
               <AlertTriangle className="h-8 w-8 text-white" />
             </div>
-            <h4 className="text-lg font-bold mb-2">Gobernar Será el Reto</h4>
+            <h4 className="text-lg font-bold mb-2">Cepeda apuesta a remontar</h4>
             <p className="text-purple-100 text-sm">
-              El Congreso quedó fragmentado: PH 25, CD 17 en Senado; CD 32, Liberal 31 en Cámara.
-              Ningún presidente tendrá mayoría propia — las coaliciones serán obligatorias.
+              CNC mide la brecha más corta (+3,9). Cepeda necesita movilizar a la izquierda y reducir la abstención para dar la sorpresa el 21 de junio.
             </p>
           </div>
         </div>

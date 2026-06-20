@@ -4,65 +4,44 @@ import { Calendar, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 const TimelineSection: React.FC = () => {
 	const timelineEvents = [
 		{
-			date: 'Feb 2026',
-			title: 'Encuestas pre-consultas',
-			description: 'Invamer, AtlasIntel, Guarumo y GAD3 marcan el termómetro previo. Cepeda 31-37%, De la Espriella 18-32%.',
-			status: 'completed',
-			icon: CheckCircle
-		},
-		{
 			date: '8 marzo 2026',
-			title: 'Consultas interpartidistas',
-			description: 'Valencia arrasa la Gran Consulta con 3M+ votos. López gana centro. Barreras gana izquierda alternativa.',
+			title: 'Consultas y legislativas',
+			description: 'Valencia gana la Gran Consulta de la derecha; Cepeda arrasa en el Pacto Histórico. Se elige el nuevo Congreso.',
 			status: 'completed',
 			icon: CheckCircle
 		},
 		{
 			date: '15-18 marzo 2026',
 			title: 'Fórmulas vicepresidenciales',
-			description: 'Cepeda-Quilcué, Valencia-Oviedo, De la Espriella-Restrepo. Tickets definidos.',
-			status: 'completed',
-			icon: CheckCircle
-		},
-		{
-			date: '15 abril 2026',
-			title: 'Tarjetón oficial cerrado',
-			description: 'Registraduría confirma 9 candidatos en tarjetón final para primera vuelta.',
-			status: 'completed',
-			icon: CheckCircle
-		},
-		{
-			date: '24 abril 2026',
-			title: 'Debate Caracol-RCN',
-			description: 'Tenso cruce entre Cepeda, Valencia y De la Espriella sobre seguridad y economía.',
+			description: 'Cepeda-Quilcué, Valencia-Oviedo y De la Espriella-Restrepo. Tickets definidos.',
 			status: 'completed',
 			icon: CheckCircle
 		},
 		{
 			date: 'Abril-Mayo 2026',
-			title: 'Encuestas de cierre',
-			description: 'Invamer 44.3%, AtlasIntel 38%, Guarumo 38%, GAD3 36%. Cepeda lidera, derecha pelea segundo lugar.',
-			status: 'current',
-			icon: Clock
-		},
-		{
-			date: '25 mayo 2026',
-			title: 'Inicia veda electoral',
-			description: 'Última semana antes de primera vuelta. No se publican más encuestas (Ley 996/2005).',
-			status: 'upcoming',
-			icon: AlertCircle
+			title: 'Campaña de primera vuelta',
+			description: 'Debates y encuestas. De la Espriella remonta en la recta final y disputa el primer lugar con Cepeda.',
+			status: 'completed',
+			icon: CheckCircle
 		},
 		{
 			date: '31 mayo 2026',
 			title: 'Primera vuelta',
-			description: 'Elección presidencial. Cepeda gana sin alcanzar el 50%+1 — pasa al balotaje.',
-			status: 'upcoming',
-			icon: Calendar
+			description: 'De la Espriella 43,75% y Cepeda 40,9% pasan al balotaje. Nadie alcanza el 50%+1. Participación del 57,9%.',
+			status: 'completed',
+			icon: CheckCircle
+		},
+		{
+			date: 'Junio 2026',
+			title: 'Encuestas de balotaje',
+			description: 'AtlasIntel (52,2-44,5), Guarumo (52,6-45) y CNC (48,6-44,7) dan ventaja a De la Espriella. Polymarket: 89%.',
+			status: 'current',
+			icon: Clock
 		},
 		{
 			date: '21 junio 2026',
 			title: 'Segunda vuelta',
-			description: 'Balotaje presidencial. Cepeda contra el segundo más votado (probablemente De la Espriella o Valencia).',
+			description: 'Balotaje presidencial entre Abelardo de la Espriella e Iván Cepeda. Se define el presidente 2026-2030.',
 			status: 'upcoming',
 			icon: Calendar
 		},
@@ -78,7 +57,7 @@ const TimelineSection: React.FC = () => {
 	const getStatusColor = (status: string) => {
 		switch (status) {
 			case 'completed': return 'bg-green-500';
-			case 'current': return 'bg-purple-500';
+			case 'current': return 'bg-orange-500';
 			case 'upcoming': return 'bg-gray-400';
 			default: return 'bg-gray-400';
 		}
@@ -87,7 +66,7 @@ const TimelineSection: React.FC = () => {
 	const getStatusTextColor = (status: string) => {
 		switch (status) {
 			case 'completed': return 'text-green-400';
-			case 'current': return 'text-purple-400';
+			case 'current': return 'text-orange-400';
 			case 'upcoming': return 'text-gray-400';
 			default: return 'text-gray-400';
 		}
@@ -100,7 +79,7 @@ const TimelineSection: React.FC = () => {
 					Cronograma Electoral 2026
 				</h2>
 				<p className="text-xl text-gray-300 max-w-3xl mx-auto">
-					Fechas clave del proceso electoral presidencial colombiano
+					Fechas clave camino a la segunda vuelta del 21 de junio
 				</p>
 			</div>
 
@@ -150,32 +129,17 @@ const TimelineSection: React.FC = () => {
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					<div className="text-center">
-						<div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-							<Clock className="h-6 w-6 text-white" />
-						</div>
-						<div className="text-lg font-bold text-white mb-1">
-							Hoy
-						</div>
-						<div className="text-purple-400 text-sm">
-							1 Mayo 2026
-						</div>
-						<div className="text-gray-300 text-xs mt-1">
-							30 días para primera vuelta
-						</div>
-					</div>
-
-					<div className="text-center">
-						<div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
-							<Calendar className="h-6 w-6 text-white" />
+						<div className="bg-green-600 p-3 rounded-full w-fit mx-auto mb-3">
+							<CheckCircle className="h-6 w-6 text-white" />
 						</div>
 						<div className="text-lg font-bold text-white mb-1">
 							Primera vuelta
 						</div>
-						<div className="text-purple-400 text-sm">
+						<div className="text-green-400 text-sm">
 							31 Mayo 2026
 						</div>
 						<div className="text-gray-300 text-xs mt-1">
-							No habrá ganador directo
+							De la Espriella 1°, Cepeda 2°
 						</div>
 					</div>
 
@@ -184,13 +148,28 @@ const TimelineSection: React.FC = () => {
 							<Calendar className="h-6 w-6 text-white" />
 						</div>
 						<div className="text-lg font-bold text-white mb-1">
-							Balotaje
+							Segunda vuelta
 						</div>
 						<div className="text-orange-400 text-sm">
 							21 Junio 2026
 						</div>
 						<div className="text-gray-300 text-xs mt-1">
 							Decisión final
+						</div>
+					</div>
+
+					<div className="text-center">
+						<div className="bg-purple-600 p-3 rounded-full w-fit mx-auto mb-3">
+							<AlertCircle className="h-6 w-6 text-white" />
+						</div>
+						<div className="text-lg font-bold text-white mb-1">
+							Posesión
+						</div>
+						<div className="text-purple-400 text-sm">
+							7 Agosto 2026
+						</div>
+						<div className="text-gray-300 text-xs mt-1">
+							Inicio del período 2026-2030
 						</div>
 					</div>
 				</div>

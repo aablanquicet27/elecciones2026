@@ -5,6 +5,7 @@ import { Candidate } from '../types/election';
 import HeroSection from '../components/HeroSection';
 import CandidateGrid from '../components/CandidateGrid';
 import StatsOverview from '../components/StatsOverview';
+import ResultadoPrimeraVuelta from '../components/ResultadoPrimeraVuelta';
 import PollAverageTable from '../components/PollAverageTable';
 import PrediccionVueltas from '../components/PrediccionVueltas';
 import TrendAnalysis from '../components/TrendAnalysis';
@@ -46,7 +47,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 							<img src="/logoagapai.png" alt="Logo Elecciones Colombia 2026" className="h-12 w-12" />
 							<div className="flex flex-col">
 								<span className="text-2xl font-bold text-gray-900 tracking-tight leading-tight">Colombia 2026</span>
-								<span className="text-sm text-gray-500 leading-tight">Elecciones Presidenciales</span>
+								<span className="text-sm text-gray-500 leading-tight">Segunda vuelta presidencial</span>
 							</div>
 						</Link>
 
@@ -85,7 +86,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								to="/senado"
 								className="bg-white border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-xl hover:bg-purple-50 transition-all text-base font-semibold"
 							>
-								Legislativas 8-Mar →
+								Senado →
 							</Link>
 							<Link
 								to="/analisis"
@@ -109,9 +110,13 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 				ref={(el) => { sectionsRef.current['prediccion'] = el; }}
 				id="prediccion"
 				className="section-premium bg-white"
-				aria-label="Predicción primera y segunda vuelta"
+				aria-label="Predicción de la segunda vuelta"
 			>
 				<PrediccionVueltas />
+			</section>
+
+			<section className="section-premium bg-purple-pastel" aria-label="Resultado de la primera vuelta">
+				<ResultadoPrimeraVuelta />
 			</section>
 
 			<section className="section-premium bg-white" aria-label="Estadísticas electorales">
@@ -140,11 +145,10 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 				<div className="container mx-auto px-6 lg:px-12">
 					<header className="text-center mb-20">
 						<h2 className="text-gray-900 mb-6">
-							Candidatos Presidenciales
+							Candidatos y Resultado
 						</h2>
 						<p className="text-large max-w-3xl mx-auto">
-							Conoce a los principales aspirantes a la presidencia de Colombia.
-							Explora sus propuestas, fórmulas vicepresidenciales y posicionamiento a 30 días de la primera vuelta.
+							Estos fueron los resultados de la primera vuelta del 31 de mayo. La segunda vuelta del 21 de junio enfrenta a los dos más votados: Abelardo de la Espriella e Iván Cepeda.
 						</p>
 					</header>
 
@@ -192,14 +196,14 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 				<TimelineSection />
 			</section>
 
-			<section className="section-premium bg-purple-pastel" aria-label="Conclusiones del análisis">
+			<section className="section-premium bg-purple-pastel" aria-label="Claves de la segunda vuelta">
 				<div className="container mx-auto px-6 lg:px-12">
 					<header className="text-center mb-20">
 						<h2 className="text-gray-900 mb-6">
-							Conclusiones a 30 días de la primera vuelta
+							Claves del balotaje del 21 de junio
 						</h2>
 						<p className="text-large">
-							Los hechos que definen el cierre de la campaña presidencial 2026
+							Lo que define la segunda vuelta presidencial entre De la Espriella y Cepeda
 						</p>
 					</header>
 
@@ -209,13 +213,13 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								<TrendingUp className="h-8 w-8 text-purple-600" />
 							</div>
 							<h3 className="text-gray-900 mb-4">
-								Cepeda consolida 1ª vuelta
+								De la Espriella ganó la primera vuelta
 							</h3>
 							<p className="text-gray-600 text-lg mb-6">
-								De 35% en marzo a 39.1% promedio en abril (Invamer 44.3%, Atlas/Guarumo 38%, GAD3 36%). Pero ningún candidato llega al 50%+1 que exige la Constitución, por lo que la segunda vuelta del 21 de junio está garantizada.
+								Obtuvo 43,75% frente al 40,9% de Cepeda (~673.000 votos de diferencia). Por primera vez una derecha 'outsider' encabeza una presidencial. Valencia (6,9%) y Fajardo (4,3%) quedaron fuera.
 							</p>
 							<div className="text-purple-600 font-semibold text-lg">
-								39.1% promedio · sin alcanzar umbral
+								Espriella 43,75% · Cepeda 40,9%
 							</div>
 						</article>
 
@@ -224,13 +228,13 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								<Users className="h-8 w-8 text-purple-600" />
 							</div>
 							<h3 className="text-gray-900 mb-4">
-								Derecha pelea el cupo a 2ª vuelta
+								El voto de centro-derecha define
 							</h3>
 							<p className="text-gray-600 text-lg mb-6">
-								De la Espriella (23.1% promedio) sobrepasó a Valencia (18.3%) en abril. Atlas y Guarumo confirman el reordenamiento. La pelea por el segundo puesto define quién llega al balotaje.
+								El votante de Valencia y buena parte del de Fajardo migra mayoritariamente a De la Espriella. Esa transferencia anti-gobierno es la clave del balotaje.
 							</p>
 							<div className="text-purple-600 font-semibold text-lg">
-								De la Espriella ↑ Valencia ↓
+								De la Espriella favorito
 							</div>
 						</article>
 
@@ -239,20 +243,20 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								<Target className="h-8 w-8 text-purple-600" />
 							</div>
 							<h3 className="text-gray-900 mb-4">
-								2ª Vuelta: derecha unida puede ganar
+								Favorito en sondeos y mercados
 							</h3>
 							<p className="text-gray-600 text-lg mb-6">
-								Atlas Abr 30: Valencia 49 vs Cepeda 41. De la Espriella 48 vs Cepeda 42. Guarumo confirma. GAD3 e Invamer dan ventaja a Cepeda. Empate técnico real.
+								AtlasIntel 52,2-44,5; Guarumo 52,6-45; CNC 48,6-44,7. Polymarket le da ~89%. Cepeda apuesta a la abstención de la izquierda y a movilizar su base.
 							</p>
 							<div className="text-purple-600 font-semibold text-lg">
-								2 de 4 encuestadoras: gana derecha
+								Promedio +6.4 · Polymarket 89%
 							</div>
 						</article>
 					</div>
 
 					<div className="mt-20 bg-gray-50 rounded-[2rem] p-12 border border-gray-100">
 						<h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-							Factores clave a 30 días
+							Factores clave de la segunda vuelta
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 							<div className="text-center">
@@ -261,35 +265,34 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 								</div>
 								<h4 className="font-bold text-xl text-gray-900 mb-3">Fórmulas Vice</h4>
 								<p className="text-gray-600">
-									Cepeda-Quilcué (voto social/indígena), Valencia-Oviedo (centro/tecnocracia), De la Espriella-Restrepo (moderación económica).
+									De la Espriella-Restrepo (moderación económica) frente a Cepeda-Quilcué (voto social e indígena).
 								</p>
 							</div>
 							<div className="text-center">
 								<div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
 									<MapPin className="h-8 w-8 text-purple-600" />
 								</div>
-								<h4 className="font-bold text-xl text-gray-900 mb-3">Mapa regional</h4>
+								<h4 className="font-bold text-xl text-gray-900 mb-3">Mapa del balotaje</h4>
 								<p className="text-gray-600">
-									Cepeda domina Caribe, Pacífico, Bogotá y Amazonía. De la Espriella crece en Centro-Oriente y Llanos. Valencia mantiene Eje Cafetero.
+									Cepeda fuerte en Caribe, Pacífico, Bogotá y Amazonía. De la Espriella en Antioquia, Eje Cafetero, Centro-Oriente y Llanos.
 								</p>
 							</div>
 							<div className="text-center">
 								<div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
 									<Calendar className="h-8 w-8 text-purple-600" />
 								</div>
-								<h4 className="font-bold text-xl text-gray-900 mb-3">Veda 25 mayo</h4>
+								<h4 className="font-bold text-xl text-gray-900 mb-3">21 de junio</h4>
 								<p className="text-gray-600">
-									Última semana sin encuestas publicables. Las del 23-24 mayo serán las últimas. La sorpresa es posible.
+									Día de la segunda vuelta. El nuevo presidente se posesiona el 7 de agosto de 2026.
 								</p>
 							</div>
 							<div className="text-center">
 								<div className="bg-purple-100 p-4 rounded-2xl w-fit mx-auto mb-4">
 									<Award className="h-8 w-8 text-purple-600" />
 								</div>
-								<h4 className="font-bold text-xl text-gray-900 mb-3">Indecisos
-								</h4>
+								<h4 className="font-bold text-xl text-gray-900 mb-3">Transferencia y abstención</h4>
 								<p className="text-gray-600">
-									~9% del electorado todavía no decide entre voto en blanco, NS/NR y ninguno. Factor clave en una elección tan ajustada.
+									El balotaje se decide por hacia dónde va el voto de Valencia y Fajardo y por la participación de cada orilla.
 								</p>
 							</div>
 						</div>
@@ -303,7 +306,7 @@ const HomePage: React.FC<HomePageProps> = ({ candidates }) => {
 						Mantente Informado
 					</h2>
 					<p className="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto">
-						Accede al análisis más completo y actualizado de las elecciones presidenciales Colombia 2026
+						Accede al análisis más completo de la segunda vuelta presidencial de Colombia 2026
 					</p>
 
 					<div className="flex flex-col sm:flex-row gap-6 justify-center">
