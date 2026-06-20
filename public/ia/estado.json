@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 21,
-    "generado": "2026-06-20T15:59:00.006Z",
-    "proxima_actualizacion": "2026-06-20T16:29:00.006Z",
+    "ciclo": 22,
+    "generado": "2026-06-20T16:29:54.172Z",
+    "proxima_actualizacion": "2026-06-20T16:59:54.172Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 88,
+    "probabilidad": 89,
     "confianza": "Alta",
-    "titular": "Víspera sin sorpresas: De la Espriella cierra en 88% y Cepeda no rompe su techo de 12.",
-    "resumen": "En la última actualización antes del conteo, el pronóstico se mantiene clavado en 88-12. Polymarket revierte a 89-12 tras el repunte momentáneo de Cepeda, confirmando que aquel punto extra era ruido y no tendencia. El andamiaje estructural no se mueve: Guarumo/Ecoanalítica 52,6% vs 45% y CB Global con De la Espriella en 50,1% siguen siendo el sustento, ya descontados hace ciclos. Lo único nuevo es ambiental —Registraduría descarta riesgos, EE.UU. mantiene su alerta, Petro y Santos piden calma e institucionalidad—, sin valor predictivo.",
-    "que_cambio": "Nada estructural. Polymarket deshizo el punto que le había dado a Cepeda (volvió a 89-12) y eso ratifica el 88-12 que ya sosteníamos; la corrección de ruido del ciclo previo queda validada."
+    "titular": "Jornada abierta con el cuadro intacto: De la Espriella 89%, Cepeda atascado en 11.",
+    "resumen": "El pronóstico se mueve apenas un punto, de 88-12 a 89-11, recogiendo que Polymarket vuelve a marcar 90 para De la Espriella sin que aparezca señal contraria. El sustento estructural es el mismo de ciclos previos —Guarumo/Ecoanalítica 52,6% vs 45% y CB Global 50,1%—, ya descontado y sin novedad. Lo nuevo es operativo y ambiental: Petro pide calma, Santos se declara neutral, EE.UU. mantiene alerta y la Policía refuerza dispositivos; nada con valor predictivo.",
+    "que_cambio": "Ajuste mínimo de un punto (88→89) para incorporar el regreso de Polymarket a 90, suavizado por las encuestas estables; el resto del andamiaje no se mueve."
   },
   "candidatos": [
     {
@@ -25,27 +25,28 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 88,
+      "probabilidad": 89,
       "momentum": "steady",
-      "momentum_label": "Liderazgo firme",
+      "momentum_label": "Firme en cabeza",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente en todas las encuestas finales (Guarumo/Ecoanalítica 52,6%, CB Global 50,1%)",
-        "Polymarket lo sostiene en ~89% sin erosión",
-        "Triunfo en primera vuelta con su nueva derecha consolidada"
+        "Ventaja sostenida en todas las encuestas (Guarumo 52,6%, CB Global 50,1%)",
+        "Mercado predictivo consolidado en torno al 90%",
+        "Lectura favorable del voto exterior en primera vuelta"
       ],
       "debilidades": [
-        "Brecha real menor a 700.000 votos, sensible al indeciso",
-        "Dependencia de que la participación de su base se materialice"
+        "Margen de encuesta más estrecho (~7 pts) que su probabilidad implícita",
+        "Polarización que moviliza al voto opositor"
       ],
       "riesgos": [
-        "Voto exterior mixto donde Cepeda mostró fuerza en ciertos puntos",
-        "Sorpresa de movilización de última hora de la izquierda"
+        "Brecha menor a 700.000 votos sensible a sobre/subestimación de sondeos",
+        "Incidentes o impugnaciones en jornada",
+        "Sorpresa en abstención diferencial"
       ],
       "catalizadores": [
-        "Llamados a la calma e institucionalidad que favorecen al statu quo del favorito",
-        "Dispositivo electoral sin incidentes reportados"
+        "Cierre ordenado de mesas y conteo rápido",
+        "Confirmación temprana de tendencia en boca de urna"
       ]
     },
     {
@@ -53,58 +54,54 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 12,
+      "probabilidad": 11,
       "momentum": "steady",
-      "momentum_label": "Techo estable",
+      "momentum_label": "Sin romper techo",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Pega cerca en Guarumo/Ecoanalítica (45%) dentro del margen de movilización",
-        "Respaldo orgánico del petrismo y llamados de Petro a participar en paz"
+        "Maquinaria del Pacto Histórico y llamado disciplinado de Petro a sus bases",
+        "Brecha en votos menor a la que sugiere la probabilidad"
       ],
       "debilidades": [
-        "Techo estable que no supera el 45-46% en ninguna encuesta seria",
-        "Polymarket nunca lo deja pasar de ~12-13%"
+        "Techo persistente en encuestas (45%) sin tendencia de cierre",
+        "Probabilidad implícita estancada en torno al 11%"
       ],
       "riesgos": [
-        "Que la alerta de EE.UU. y los pedidos de calma desincentiven la movilización combativa",
-        "Quedar por debajo de su piso de primera vuelta en el exterior"
+        "Quedar por debajo de su piso por baja conversión del indeciso",
+        "Voto exterior adverso ya observado"
       ],
       "catalizadores": [
-        "Volcado masivo del indeciso de centro (Fajardo, abstención previa)",
-        "Sobredesempeño en bastiones urbanos y voto joven"
+        "Sorpresa de movilización en bastiones",
+        "Sesgo sistemático de las encuestas a su favor",
+        "Alta participación urbana joven"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Revierte a 89% De la Espriella / 12% Cepeda, deshaciendo el repunte del ciclo anterior",
+      "detalle": "Probabilidad implícita 90% De la Espriella vs ~11-12% Cepeda; reafirma el favoritismo.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Guarumo/Ecoanalítica (final)",
-      "detalle": "52,6% vs 45%, brecha estable ya incorporada al pronóstico",
+      "detalle": "52,6% vs 45%; ventaja firme pero margen de ~7 pts.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "CB Global",
-      "detalle": "De la Espriella 50,1% a tres días, sin cruce de tendencia",
+      "detalle": "De la Espriella 50,1% a tres días; sin cambios respecto a lo descontado.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "Descarta afectaciones o riesgos en mesas para el domingo 21",
-      "favorece": "incierto"
+      "fuente": "Voto exterior (análisis primera vuelta)",
+      "detalle": "Distribución territorial leída como favorable a De la Espriella en plazas clave.",
+      "favorece": "delaespriella"
     },
     {
       "fuente": "Petro / Santos",
-      "detalle": "Llamados a la calma y a respetar las instituciones; clima de baja tensión",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Voto exterior",
-      "detalle": "Reparto desigual en primera vuelta; foco final sin señal direccional clara",
+      "detalle": "Llamados a la calma y neutralidad institucional; ruido ambiental sin valor predictivo.",
       "favorece": "incierto"
     }
   ],
@@ -115,6 +112,20 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-20T16:29:54.172Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 88% ▲ 89%",
+      "detalle": "Subió un punto (88→89) al volver Polymarket a 90 sin contrapeso en encuestas; es ajuste de calibración, no un cambio estructural.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-20T16:29:53.172Z",
+      "tipo": "hito",
+      "titulo": "Barranquilla refuerza vigilancia electoral con helicóptero y drones",
+      "detalle": "La Policía anuncia monitoreo aéreo del proceso en la jornada.",
+      "fuente": "ELTIEMPO.COM"
     },
     {
       "ts": "2026-06-20T15:58:59.007Z",
@@ -304,20 +315,6 @@
       "titulo": "Cierres viales y dispositivo electoral en el centro de Bogotá",
       "detalle": "Restricciones en Corferias y puntos clave por la jornada de votación.",
       "fuente": "ELTIEMPO.COM"
-    },
-    {
-      "ts": "2026-06-20T12:10:36.444Z",
-      "tipo": "evento",
-      "titulo": "El voto en el exterior entra al foco final",
-      "detalle": "Analistas lo señalan como factor que podría estrechar la brecha a favor de Cepeda.",
-      "fuente": "Bloomberg Línea"
-    },
-    {
-      "ts": "2026-06-20T11:39:13.646Z",
-      "tipo": "alerta",
-      "titulo": "El indeciso, árbitro de una brecha menor a 700.000 votos",
-      "detalle": "Expertos señalan que ese bloque y el voto exterior pueden revertir o ampliar la ventaja.",
-      "fuente": "CNN en Español"
     }
   ],
   "historico": [
@@ -430,6 +427,11 @@
       "ts": "2026-06-20T15:59:00.006Z",
       "delaespriella": 88,
       "cepeda": 12
+    },
+    {
+      "ts": "2026-06-20T16:29:54.172Z",
+      "delaespriella": 89,
+      "cepeda": 11
     }
   ],
   "fuentes": [
