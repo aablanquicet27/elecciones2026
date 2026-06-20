@@ -1,15 +1,14 @@
 Candidato,Intención_Voto_Porcentaje,Tendencia_Política,Favorabilidad,Desfavorabilidad,Partido_Movimiento,Región_Origen,Cargo_Actual,Edad,Ranking,Generación,Tipo_Candidatura,Formula_VP
-Iván Cepeda,39.1,Izquierda,42,38,Pacto Histórico,Bogotá,Senador,63,1,Senior (>60),Por partido,Aida Quilcué
-Abelardo de la Espriella,23.1,Derecha,35,48,Movimiento Defensores de la Patria,Córdoba,Abogado,47,2,Adulto (41-50),Por partido,José Manuel Restrepo
-Paloma Valencia,18.3,Centro-Derecha,38,36,Centro Democrático (Gran Consulta),Cauca,Senadora,47,3,Adulto (41-50),Por partido,Juan Daniel Oviedo
-Sergio Fajardo,4.3,Centro,42,32,Dignidad y Compromiso,Antioquia,Ex-Gobernador de Antioquia,69,4,Senior (>60),Por partido,
-Claudia López,2.5,Centro,31,45,Consulta por Soluciones,Bogotá,Ex-Alcaldesa de Bogotá,56,5,Mayor (51-60),Por consulta,
-Santiago Botero,1.1,Centro,25,30,Independiente,Antioquia,Empresario,45,6,Adulto (41-50),Por firmas,
-Miguel Uribe Londoño,1.0,Derecha,28,35,Centro Democrático,Bogotá,Ex-Concejal,40,7,Joven (≤40),Por partido,
-Roy Barreras,0.5,Centro-Izquierda,18,55,Frente Amplio Unitario,Valle del Cauca,Ex-Embajador,62,8,Senior (>60),Por partido,
-Sondra Macollins,0.4,Derecha,12,18,Independiente,San Andrés,Activista,50,9,Mayor (51-60),Por firmas,
-Clara López,0.3,Izquierda,20,42,Pacto Histórico,Bogotá,Ex-Alcaldesa encargada,73,10,Senior (>60),Por partido,
-Gustavo Matamoros,0.2,Derecha,10,15,Independiente,Santander,Empresario,55,11,Mayor (51-60),Por firmas,
-Luis Gilberto Murillo,0.2,Centro,18,30,Independiente,Chocó,Ex-Vicepresidente,54,12,Mayor (51-60),Por partido,
-Mauricio Lizcano,0.2,Centro,15,36,Partido de la U,Caldas,Ministro TIC,43,13,Adulto (41-50),Por partido,
-Carlos Caicedo,0.1,Izquierda,15,42,Fuerza Ciudadana,Magdalena,Ex-Gobernador del Magdalena,60,14,Senior (>60),Por partido,
+Abelardo de la Espriella,43.75,Derecha,47,45,Movimiento Defensores de la Patria,Córdoba,Abogado,47,1,Adulto (41-50),Por firmas,José Manuel Restrepo
+Iván Cepeda,40.9,Izquierda,44,46,Pacto Histórico,Bogotá,Senador,63,2,Senior (>60),Por partido,Aida Quilcué
+Paloma Valencia,6.92,Centro-Derecha,38,40,Centro Democrático (Gran Consulta),Cauca,Senadora,47,3,Adulto (41-50),Por partido,Juan Daniel Oviedo
+Sergio Fajardo,4.26,Centro,42,34,Dignidad y Compromiso,Antioquia,Ex-Gobernador de Antioquia,69,4,Senior (>60),Por partido,Edna Bonilla
+Claudia López,0.95,Centro,31,47,Imparables con Claudia,Bogotá,Ex-Alcaldesa de Bogotá,56,5,Mayor (51-60),Por firmas,Leonardo Huerta
+Santiago Botero,0.87,Centro,25,30,Independiente,Antioquia,Empresario,45,6,Adulto (41-50),Por firmas,Carlos Cuevas
+Mauricio Lizcano,0.23,Centro,15,36,Independiente,Caldas,Ex-Ministro TIC,43,7,Adulto (41-50),Por firmas,Pedro de la Torre
+Miguel Uribe Londoño,0.12,Derecha,28,35,Centro Democrático,Bogotá,Ex-Concejal,40,8,Joven (≤40),Por partido,Luisa Fernanda Villegas
+Sondra Macollins,0.08,Derecha,12,18,Independiente,San Andrés,Activista,50,9,Mayor (51-60),Por firmas,Leonardo Karam
+Roy Barreras,0.06,Centro-Izquierda,18,55,La Fuerza,Valle del Cauca,Ex-Embajador,62,10,Senior (>60),Por firmas,Martha Zamora
+Luis Gilberto Murillo,0.06,Centro,18,30,Independiente,Chocó,Ex-Canciller,54,11,Mayor (51-60),Por firmas,Luz María Zapata
+Carlos Caicedo,0.05,Izquierda,15,42,Fuerza Ciudadana,Magdalena,Ex-Gobernador del Magdalena,60,12,Senior (>60),Por firmas,Nelson Alarcón
+Gustavo Matamoros,0.02,Derecha,10,15,Partido Ecologista,Santander,Empresario,55,13,Mayor (51-60),Por firmas,Mila Paz

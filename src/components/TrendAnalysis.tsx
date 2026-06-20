@@ -9,7 +9,6 @@ interface TrendAnalysisProps {
 const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
   const [activeView, setActiveView] = useState<'current' | 'comparison'>('current');
 
-  // Calculate current trends
   const trends = candidates.reduce((acc, candidate) => {
     const trend = candidate.Tendencia_Política;
     if (!acc[trend]) {
@@ -24,17 +23,17 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
     trend,
     count: data.count,
     percentage: Math.round(data.percentage * 10) / 10,
-    color: trend === 'Izquierda' ? '#ef4444' : 
-           trend === 'Centro' ? '#3b82f6' : 
-           trend === 'Derecha' ? '#22c55e' : '#6b7280'
+    color: trend === 'Izquierda' ? '#ef4444' :
+           trend === 'Centro' ? '#3b82f6' :
+           trend === 'Derecha' ? '#22c55e' :
+           trend === 'Centro-Derecha' ? '#8b5cf6' : '#6b7280'
   })).sort((a, b) => b.percentage - a.percentage);
 
-  // Comparison data 2022 vs 2026
   const comparisonData = [
-    { trend: 'Derecha', 2022: 28.5, 2026: 32.9, change: 4.4 },
-    { trend: 'Izquierda', 2022: 40.3, 2026: 41.7, change: 1.4 },
-    { trend: 'Centro', 2022: 28.2, 2026: 18.3, change: -9.9 },
-    { trend: 'Otros/Indecisos', 2022: 3.0, 2026: 7.1, change: 4.1 }
+    { trend: 'Derecha', 2022: 28.5, 2026: 44.0, change: 15.5 },
+    { trend: 'Izquierda', 2022: 40.3, 2026: 41.0, change: 0.7 },
+    { trend: 'Centro-Derecha', 2022: 0, 2026: 6.9, change: 6.9 },
+    { trend: 'Centro', 2022: 28.2, 2026: 6.4, change: -21.8 }
   ];
 
   const maxPercentage = Math.max(...trendData.map(t => t.percentage));
@@ -46,11 +45,10 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
           Análisis de Tendencias Políticas
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Evolución del espectro político colombiano y distribución actual de preferencias electorales
+          Distribución del voto en la primera vuelta del 31 de mayo y evolución del espectro político colombiano
         </p>
       </div>
 
-      {/* Toggle Buttons */}
       <div className="flex justify-center mb-12">
         <div className="bg-gray-100 p-1 rounded-xl">
           <button
@@ -63,7 +61,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
           >
             <div className="flex items-center space-x-2">
               <PieChart className="h-4 w-4" />
-              <span>Panorama Actual 2026</span>
+              <span>Resultado 1ª vuelta</span>
             </div>
           </button>
           <button
@@ -82,15 +80,13 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
         </div>
       </div>
 
-      {/* Current View */}
       {activeView === 'current' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Chart */}
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Distribución por Tendencia Política
+              Voto por Tendencia Política (1ª vuelta)
             </h3>
-            
+
             <div className="space-y-6">
               {trendData.map((item) => (
                 <div key={item.trend} className="group">
@@ -121,8 +117,23 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
             </div>
           </div>
 
-          {/* Analysis */}
           <div className="space-y-6">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-green-600 p-2 rounded-full">
+                  <TrendingUp className="h-5 w-5 text-white" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900">Derecha</h4>
+              </div>
+              <div className="text-3xl font-bold text-green-600 mb-2">44.0%</div>
+              <p className="text-sm text-gray-700 mb-3">
+                De la Espriella ganó la primera vuelta con 43,75%. La derecha 'outsider' encabeza por primera vez una presidencial.
+              </p>
+              <div className="text-xs text-green-600 font-semibold">
+                Pasa a segunda vuelta como favorito
+              </div>
+            </div>
+
             <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 border border-red-200">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="bg-red-600 p-2 rounded-full">
@@ -130,13 +141,12 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Izquierda</h4>
               </div>
-              <div className="text-3xl font-bold text-red-600 mb-2">41.7%</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">41.0%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Cepeda lidera de manera contundente con 37.1%, tomando una amplia ventaja.
-                La izquierda se consolida en torno a Cepeda.
+                Cepeda quedó segundo con 40,9% y representa la continuidad del proyecto de Petro. Disputará el balotaje.
               </p>
               <div className="text-xs text-red-600 font-semibold">
-                Crecimiento de +1.4 puntos vs 2022
+                Busca remontar en segunda vuelta
               </div>
             </div>
 
@@ -147,43 +157,24 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                 </div>
                 <h4 className="text-lg font-bold text-gray-900">Centro</h4>
               </div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">18.3%</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">6.4%</div>
               <p className="text-sm text-gray-700 mb-3">
-                Claudia López lidera el centro con 11.7% seguida por Fajardo (6.6%), pero el bloque
-                centrista sigue perdiendo terreno frente a la izquierda.
+                Fajardo (4,3%) y López (0,95%) no despegaron. El centro colapsó y su voto es clave para el balotaje.
               </p>
               <div className="text-xs text-blue-600 font-semibold">
-                Reducción de -9.9 puntos
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="bg-green-600 p-2 rounded-full">
-                  <TrendingUp className="h-5 w-5 text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-900">Derecha</h4>
-              </div>
-              <div className="text-3xl font-bold text-green-600 mb-2">32.9%</div>
-              <p className="text-sm text-gray-700 mb-3">
-                De la Espriella lidera el bloque de derecha con 18.9%, seguido
-                por Valencia (10.0%) y Uribe Londoño (1.8%).
-              </p>
-              <div className="text-xs text-green-600 font-semibold">
-                Crecimiento de +4.4 puntos
+                Voto en disputa para la 2ª vuelta
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Comparison View */}
       {activeView === 'comparison' && (
         <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Evolución del Espectro Político: 2022 vs 2026
+            Evolución del Espectro Político: 2022 vs 2026 (1ª vuelta)
           </h3>
-          
+
           <div className="space-y-8">
             {comparisonData.map((item) => (
               <div key={item.trend} className="group">
@@ -205,7 +196,7 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="flex space-x-4">
                     <div className="flex-1">
@@ -237,19 +228,19 @@ const TrendAnalysis: React.FC<TrendAnalysisProps> = ({ candidates }) => {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3">Principales Cambios</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• La izquierda lidera consolidando ligera alza (+1.4 puntos)</li>
-                  <li>• Los indecisos subieron ligeramente (+4.1 puntos)</li>
-                  <li>• La derecha mantiene un crecimiento estable (+4.4 puntos)</li>
-                  <li>• El centro cayó significativamente (-9.9 puntos)</li>
+                  <li>• La derecha se dispara (+15.5 puntos) con De la Espriella</li>
+                  <li>• El centro se desploma (-21.8 puntos)</li>
+                  <li>• La izquierda se mantiene firme alrededor del 41%</li>
+                  <li>• Surge una centro-derecha con Valencia (6.9%)</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 mb-3">Factores Explicativos</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Desgaste del gobierno Petro</li>
-                  <li>• Fragmentación de coaliciones</li>
-                  <li>• Emergencia de nuevos liderazgos</li>
-                  <li>• Alta volatilidad electoral</li>
+                  <li>• Auge del discurso de seguridad de De la Espriella</li>
+                  <li>• Colapso de las candidaturas de centro</li>
+                  <li>• Alta polarización izquierda-derecha</li>
                 </ul>
               </div>
             </div>
