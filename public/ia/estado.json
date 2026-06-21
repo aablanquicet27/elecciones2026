@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 40,
-    "generado": "2026-06-21T01:38:38.041Z",
-    "proxima_actualizacion": "2026-06-21T02:08:38.041Z",
+    "ciclo": 41,
+    "generado": "2026-06-21T02:09:28.633Z",
+    "proxima_actualizacion": "2026-06-21T02:39:28.633Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 85,
     "confianza": "Alta",
-    "titular": "85-15: el mercado se estabiliza en 85 y soltamos otro punto a Cepeda, sin alterar el cuadro.",
-    "resumen": "Polymarket se asienta en 85 para De la Espriella mientras Cepeda sube a 16 en la probabilidad implícita, lo que justifica ceder un punto adicional. La novedad real del ciclo es el despliegue de observadores electorales y el llamado de figuras públicas a votar en plena apertura de la jornada. El resto de titulares recicla la amenaza al Congreso, la llegada de Bernie Moreno y el repunte de Cepeda en Trends, todo ya reportado.",
-    "que_cambio": "Bajamos a De la Espriella de 86 a 85 y subimos a Cepeda de 14 a 15 para acompañar la estabilización de Polymarket y el alza implícita de Cepeda a 16, manteniendo el cambio gradual."
+    "titular": "85-15 sin movimiento: el cuadro queda congelado en la antesala del cierre.",
+    "resumen": "Polymarket repite 85 para De la Espriella y 16 implícito para Cepeda, sin margen para mover la línea. La única novedad real es el mensaje de Cepeda a la ciudadanía en la mañana de la jornada; el resto de titulares recicla la amenaza al Congreso, la llegada de Bernie Moreno y el repunte en Google Trends, todos ya en la línea de tiempo. Mantenemos 85-15 por continuidad.",
+    "que_cambio": "Nada en las probabilidades: Polymarket quedó idéntico al ciclo previo y no hay dato que justifique mover la línea, así que conservamos 85-15 y momentum estable."
   },
   "candidatos": [
     {
@@ -26,26 +26,26 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 85,
-      "momentum": "down",
-      "momentum_label": "Cede un punto",
+      "momentum": "steady",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Favorito amplio y sostenido en mercados (85)",
-        "Ventaja en intención de voto (52%)",
-        "Narrativa de orden y mandato ciudadano"
+        "Ventaja sostenida de ~7 puntos en encuesta",
+        "Mercado de apuestas anclado en 85",
+        "Narrativa de orden y mano dura moviliza a su base"
       ],
       "debilidades": [
-        "Tono confrontativo con el Congreso puede erosionar centro",
-        "Dependencia de un margen estrecho en votos absolutos"
+        "Tono confrontacional con el Congreso puede leerse como amenaza institucional",
+        "Techo de crecimiento estrecho en centro indeciso"
       ],
       "riesgos": [
-        "Abstención de su electorado por exceso de confianza",
-        "Cualquier incidente que active la maquinaria opositora"
+        "Alta abstención en sus bastiones por exceso de confianza",
+        "Reacción adversa a su retórica contra el Legislativo"
       ],
       "catalizadores": [
-        "Alta participación urbana",
-        "Lectura institucional favorable de la veeduría internacional"
+        "Jornada tranquila que valide su discurso de control",
+        "Participación alta en regiones de derecha"
       ]
     },
     {
@@ -54,43 +54,43 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 15,
-      "momentum": "up",
-      "momentum_label": "Asoma leve",
+      "momentum": "steady",
+      "momentum_label": "Sostiene piso",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Repunte sostenido en búsquedas y atención digital",
-        "Base movilizada del Pacto Histórico",
-        "Margen real cabe en menos de 700.000 votos"
+        "Repunte en interés digital a horas del cierre",
+        "Maquinaria del Pacto Histórico y respaldo del oficialismo",
+        "Mensaje directo de cierre a la ciudadanía"
       ],
       "debilidades": [
-        "Rezago persistente en mercados (15) y encuestas (45%)",
-        "Techo electoral difícil de romper en segunda vuelta"
+        "Brecha persistente en encuestas y en el mercado",
+        "Probabilidad implícita estancada en 16"
       ],
       "riesgos": [
-        "Que el repunte digital no se traduzca en urnas",
-        "Denuncias de constreñimiento sin efecto movilizador"
+        "Denuncias de constreñimiento al elector que enturbien la jornada",
+        "Desmovilización si se asume la derrota como dada"
       ],
       "catalizadores": [
-        "Sorpresa en participación de bases",
-        "Voto exterior con geografía propia"
+        "Sorpresa de participación en grandes ciudades",
+        "Voto joven movilizado por el cierre digital"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "De la Espriella se estabiliza en 85 y Cepeda sube a 16 en probabilidad implícita.",
+      "detalle": "De la Espriella 85% / Cepeda 16% implícito, sin variación frente al ciclo previo.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Google Trends (La Silla Vacía, hace 3h)",
+      "detalle": "Cepeda mantiene el repunte de interés digital frente a De la Espriella.",
       "favorece": "cepeda"
     },
     {
-      "fuente": "Google Trends",
-      "detalle": "Cepeda mantiene el repunte en búsquedas a horas del cierre.",
-      "favorece": "cepeda"
-    },
-    {
-      "fuente": "Encuestas",
-      "detalle": "Intención de voto sigue marcando 52-45 a favor de De la Espriella.",
+      "fuente": "Encuestas de cierre",
+      "detalle": "Ventaja estable de ~7 puntos para De la Espriella (52-45).",
       "favorece": "delaespriella"
     }
   ],
@@ -101,6 +101,14 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T02:09:27.634Z",
+      "tipo": "evento",
+      "titulo": "Cepeda lanza su mensaje de cierre a los ciudadanos antes de abrir las urnas",
+      "detalle": "El candidato del Pacto Histórico dirigió un mensaje a la ciudadanía en la antesala de los comicios.",
+      "fuente": "Infobae",
+      "cuerpo": "Iván Cepeda difundió un mensaje directo a los votantes en la mañana de la jornada, en lo que constituye su llamado de cierre antes de la apertura de las urnas. La intervención cierra una campaña en la que el aspirante de la izquierda ha buscado capitalizar el repunte de interés digital registrado en las últimas horas y la maquinaria del oficialismo, mientras carga con una brecha persistente en encuestas y en el mercado de apuestas.\n\nPara la segunda vuelta, el gesto apunta a contrarrestar el principal riesgo de su campaña: la desmovilización ante un resultado que muchos dan por descontado. Su capacidad de convertir el interés en línea en participación efectiva, sobre todo en las grandes ciudades, es la variable que podría estrechar un margen que hoy el mercado fija en 70 puntos de distancia."
     },
     {
       "ts": "2026-06-21T01:38:38.041Z",
@@ -484,6 +492,11 @@
     },
     {
       "ts": "2026-06-21T01:38:38.041Z",
+      "delaespriella": 85,
+      "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T02:09:28.633Z",
       "delaespriella": 85,
       "cepeda": 15
     }
