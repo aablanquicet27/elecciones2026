@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 41,
-    "generado": "2026-06-21T02:09:28.633Z",
-    "proxima_actualizacion": "2026-06-21T02:39:28.633Z",
+    "ciclo": 42,
+    "generado": "2026-06-21T02:45:03.429Z",
+    "proxima_actualizacion": "2026-06-21T03:15:03.429Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 85,
+    "probabilidad": 84,
     "confianza": "Alta",
-    "titular": "85-15 sin movimiento: el cuadro queda congelado en la antesala del cierre.",
-    "resumen": "Polymarket repite 85 para De la Espriella y 16 implícito para Cepeda, sin margen para mover la línea. La única novedad real es el mensaje de Cepeda a la ciudadanía en la mañana de la jornada; el resto de titulares recicla la amenaza al Congreso, la llegada de Bernie Moreno y el repunte en Google Trends, todos ya en la línea de tiempo. Mantenemos 85-15 por continuidad.",
-    "que_cambio": "Nada en las probabilidades: Polymarket quedó idéntico al ciclo previo y no hay dato que justifique mover la línea, así que conservamos 85-15 y momentum estable."
+    "titular": "84-16: De la Espriella cede un punto en la apertura, sin que cambie el cuadro de fondo.",
+    "resumen": "Polymarket baja a 84 para De la Espriella y sube a 16 implícito para Cepeda, un ajuste de un punto que recogemos por continuidad. No hay hechos nuevos: la amenaza al Congreso, la llegada de Bernie Moreno, el pronunciamiento de los candidatos y el repunte de Cepeda en Google Trends ya están en la línea de tiempo. Mantenemos al ultraderechista como favorito cómodo con confianza alta.",
+    "que_cambio": "Ajustamos 85-15 a 84-16 siguiendo a Polymarket, que cedió un punto; ningún titular aporta hecho nuevo, así que el movimiento es puramente de mercado."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 85,
-      "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "probabilidad": 84,
+      "momentum": "down",
+      "momentum_label": "Leve cesión",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de ~7 puntos en encuesta",
-        "Mercado de apuestas anclado en 85",
-        "Narrativa de orden y mano dura moviliza a su base"
+        "Favorito sostenido en mercados con 84% de probabilidad implícita",
+        "Ventaja de siete puntos en intención de voto (52 vs 45)",
+        "Veeduría internacional invitada por el CNE refuerza su narrativa de garantías"
       ],
       "debilidades": [
-        "Tono confrontacional con el Congreso puede leerse como amenaza institucional",
-        "Techo de crecimiento estrecho en centro indeciso"
+        "Cesión leve en Polymarket en la apertura de la jornada",
+        "Discurso confrontacional con el Congreso puede tensar el cierre"
       ],
       "riesgos": [
-        "Alta abstención en sus bastiones por exceso de confianza",
-        "Reacción adversa a su retórica contra el Legislativo"
+        "Margen real estrecho, por debajo de 700.000 votos, sensible a la participación",
+        "Repunte de interés de Cepeda en buscadores a horas del cierre"
       ],
       "catalizadores": [
-        "Jornada tranquila que valide su discurso de control",
-        "Participación alta en regiones de derecha"
+        "Alta abstención en bastiones de izquierda",
+        "Despliegue de observadores y veeduría que blinde el resultado"
       ]
     },
     {
@@ -53,45 +53,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 15,
-      "momentum": "steady",
-      "momentum_label": "Sostiene piso",
+      "probabilidad": 16,
+      "momentum": "up",
+      "momentum_label": "Repunte marginal",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Repunte en interés digital a horas del cierre",
-        "Maquinaria del Pacto Histórico y respaldo del oficialismo",
-        "Mensaje directo de cierre a la ciudadanía"
+        "Recupera un punto en la probabilidad implícita (16%)",
+        "Repunte en Google Trends que sugiere movilización tardía",
+        "Margen real estrecho que deja la puerta abierta a una sorpresa"
       ],
       "debilidades": [
-        "Brecha persistente en encuestas y en el mercado",
-        "Probabilidad implícita estancada en 16"
+        "Sigue siete puntos abajo en intención de voto",
+        "Techo de mercado en torno al 16% pese al movimiento"
       ],
       "riesgos": [
-        "Denuncias de constreñimiento al elector que enturbien la jornada",
-        "Desmovilización si se asume la derrota como dada"
+        "Constreñimiento al elector y problemas logísticos en zonas clave",
+        "Falta de tiempo para revertir la brecha en una sola jornada"
       ],
       "catalizadores": [
-        "Sorpresa de participación en grandes ciudades",
-        "Voto joven movilizado por el cierre digital"
+        "Alta participación en grandes ciudades y voto joven",
+        "Conversión del interés digital en votos efectivos"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "De la Espriella 85% / Cepeda 16% implícito, sin variación frente al ciclo previo.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Google Trends (La Silla Vacía, hace 3h)",
-      "detalle": "Cepeda mantiene el repunte de interés digital frente a De la Espriella.",
+      "detalle": "De la Espriella baja a 84% y Cepeda sube a 16% de probabilidad implícita.",
       "favorece": "cepeda"
     },
     {
-      "fuente": "Encuestas de cierre",
-      "detalle": "Ventaja estable de ~7 puntos para De la Espriella (52-45).",
+      "fuente": "Promedio de encuestas",
+      "detalle": "De la Espriella mantiene 52% frente a 45% de Cepeda, brecha estable.",
       "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Contexto de jornada",
+      "detalle": "Sin hechos nuevos: los titulares reciclan eventos ya incorporados a la línea de tiempo.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -101,6 +101,13 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T02:45:03.429Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 85% ▼ 84%",
+      "detalle": "La probabilidad bajó un punto siguiendo a Polymarket (de 85 a 84); no hay señal nueva en titulares, solo ajuste de mercado en la apertura.",
+      "fuente": "Pulso IA"
     },
     {
       "ts": "2026-06-21T02:09:27.634Z",
@@ -499,6 +506,11 @@
       "ts": "2026-06-21T02:09:28.633Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T02:45:03.429Z",
+      "delaespriella": 84,
+      "cepeda": 16
     }
   ],
   "fuentes": [
