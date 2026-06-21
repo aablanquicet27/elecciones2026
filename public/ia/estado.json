@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 67,
-    "generado": "2026-06-21T12:20:13.099Z",
-    "proxima_actualizacion": "2026-06-21T12:40:13.099Z",
+    "ciclo": 68,
+    "generado": "2026-06-21T12:40:44.386Z",
+    "proxima_actualizacion": "2026-06-21T13:00:44.386Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,8 +15,8 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "51-45 inmóvil: la jornada del 21J avanza sin un solo dato nuevo que toque el tablero.",
-    "resumen": "El ciclo no trae ninguna encuesta fresca ni hecho genuinamente inédito. Los titulares de las últimas horas son cobertura en vivo del balotaje, guías de horario y resultados, y encuadres de prensa internacional —los dos polos opuestos, la Colombia dividida, el futuro sin Petro, el plan militar de la derecha— ya consignados en ciclos previos. El llamado de Cepeda a 'votar por la vida' frente al 'pasado de violencia' es la misma apelación de cierre ya reportada al abrir las urnas. La intención de voto se mantiene en 51-45 y la participación sigue siendo la única variable abierta hasta el conteo.",
+    "titular": "51-45 sin moverse: la jornada del 21J avanza y ningún titular nuevo toca el tablero.",
+    "resumen": "El ciclo no aporta encuestas frescas ni hechos genuinamente inéditos. Los titulares de las últimas horas son cobertura en vivo del balotaje, guías de horarios y resultados, y encuadres internacionales —los dos polos opuestos, la Colombia dividida, el plan militar de la derecha— ya consignados en ciclos previos. La intención de voto se mantiene en 51-45 y la participación sigue siendo la única variable abierta hasta el conteo. El salto de Polymarket a 89-13 es ruido de mercado y no entra en el cálculo.",
     "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes son cobertura minuto a minuto o encuadres ya reportados. Se mantiene 51-45 con momentum estable para ambos."
   },
   "candidatos": [
@@ -27,26 +27,27 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Estable, sin datos",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Ventaja sostenida de seis puntos en intención de voto",
-        "Narrativa de cambio frente al ciclo Petro",
-        "Disciplina de mensaje contra el triunfalismo en la recta final"
+        "Mayor consolidación del voto de oposición a Petro",
+        "Narrativa de orden y mano dura que moviliza a su base"
       ],
       "debilidades": [
-        "Techo electoral por su perfil polarizante",
-        "Dependencia de movilizar al votante indeciso sin sobreconfianza",
-        "Cuestionamientos a su retórica sobre intervención de la Fuerza Pública"
+        "Techo electoral por alto rechazo",
+        "Discurso de intervención militar que tensiona al centro",
+        "Dependencia de una participación que active a indecisos"
       ],
       "riesgos": [
-        "Una participación baja que diluya su ventaja",
-        "Que su discurso de 'no se la van a robar' deslegitime el resultado si gana ajustado"
+        "Triunfalismo que desincentive a sus propios votantes",
+        "Abstención en bastiones costeños propios",
+        "Polémicas de cierre que erosionen al votante moderado"
       ],
       "catalizadores": [
-        "Alta concurrencia en sus bastiones regionales",
-        "Lectura de orden público sin incidentes que favorezca su mensaje institucional"
+        "Alta participación urbana de clase media",
+        "Trasvase final de indecisos antipetristas"
       ]
     },
     {
@@ -56,26 +57,27 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Estable, sin datos",
+      "momentum_label": "Resiste atrás",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico y respaldo de Petro en territorio",
-        "Mensaje de 'vida' frente a 'violencia' con fuerte carga movilizadora",
-        "Margen real estrecho: menos de 700.000 votos"
+        "Maquinaria del Pacto Histórico para el día D",
+        "Apelación emocional al 'voto por la vida'",
+        "Repunte de interés digital en la recta final"
       ],
       "debilidades": [
-        "Va abajo en intención de voto a falta de un golpe de timón",
-        "Desgaste asociado al gobierno saliente",
-        "Dependencia de un repunte de participación que aún no se materializa en datos"
+        "Seis puntos abajo en la intención de voto",
+        "Lastre de la impopularidad del Gobierno Petro",
+        "Dificultad para crecer más allá de su núcleo duro"
       ],
       "riesgos": [
-        "Que el voto de opinión no compense la ventaja del rival",
-        "Abstención en zonas clave para su electorado"
+        "Baja participación en sus regiones fuertes",
+        "Constreñimiento al elector denunciado por su campaña",
+        "Que el reaparecer de Petro polarice en su contra"
       ],
       "catalizadores": [
-        "Voto exterior con geografía propia favorable",
-        "Repunte de interés digital observado a horas del cierre"
+        "Avalancha de voto joven y popular",
+        "Sorpresa de participación en periferias"
       ]
     }
   ],
@@ -86,18 +88,13 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (sin actualización)",
-      "detalle": "Intención de voto estable en 51-45 a favor de De la Espriella.",
+      "fuente": "Estado previo (encuestas)",
+      "detalle": "La intención de voto sigue clavada en 51-45 sin datos nuevos que la muevan.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (El Espectador, Infobae)",
-      "detalle": "Jornada de votación en curso sin incidentes mayores reportados.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Participación",
-      "detalle": "Variable decisiva aún abierta hasta el conteo; un margen de menos de 700.000 votos la vuelve crítica.",
+      "fuente": "Google News (cobertura en vivo)",
+      "detalle": "Los titulares de las últimas horas son seguimiento minuto a minuto, horarios y encuadres ya reportados.",
       "favorece": "incierto"
     }
   ],
@@ -678,6 +675,11 @@
     },
     {
       "ts": "2026-06-21T12:20:13.099Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T12:40:44.386Z",
       "delaespriella": 76,
       "cepeda": 24
     }
