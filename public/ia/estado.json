@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 90,
-    "generado": "2026-06-21T20:36:20.732Z",
-    "proxima_actualizacion": "2026-06-21T20:46:20.732Z",
+    "ciclo": 91,
+    "generado": "2026-06-21T20:51:44.118Z",
+    "proxima_actualizacion": "2026-06-21T21:01:44.118Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 85,
     "confianza": "Media",
-    "titular": "Cerradas las urnas en la práctica, la intención sigue en 51-45 y no hay dato nuevo que la mueva.",
-    "resumen": "El ciclo no aporta encuestas ni boletines: la intención permanece en 51-45 a la espera del primer corte oficial. Los titulares de las últimas horas repiten hechos ya incorporados a la línea de tiempo —ambos candidatos ya votaron, Cepeda anunció que reconocerá el resultado pero verificará preconteo y escrutinio, y De la Espriella pidió no confiarse—. El mercado de apuestas ronda 81-20, pero esa señal no entra en el cálculo del panel.",
-    "que_cambio": "No cambió nada sustantivo: no hay sondeos nuevos y los titulares frescos reiteran eventos ya reportados (votación de ambos candidatos, anuncio de verificación de Cepeda, llamado a no confiarse de De la Espriella). La intención se mantiene en 51-45."
+    "titular": "Sin datos nuevos: la intención sigue clavada en 51-45 mientras arranca el conteo.",
+    "resumen": "El ciclo no trae encuestas ni boletines oficiales: la intención de voto permanece en 51-45 a la espera del primer corte de la Registraduría. Todos los titulares frescos reiteran hechos ya incorporados a la línea de tiempo —la votación de ambos candidatos, el compromiso de Cepeda de reconocer el resultado pero verificar preconteo y escrutinio, los 90 decretos de De la Espriella y el aviso de la autoridad electoral sobre un primer dato en menos de una hora—. El mercado de apuestas se mueve a 82-19, pero esa señal no entra en el cálculo del panel.",
+    "que_cambio": "No cambió nada sustantivo: no hay sondeos nuevos y los titulares de las últimas horas repiten eventos ya reportados. La intención se mantiene en 51-45."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 85,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Firme al conteo",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Ventaja sostenida de seis puntos en la intención de voto",
-        "Narrativa de cierre del ciclo Petro que moviliza a su base",
-        "Confianza pública en la victoria sin caer en triunfalismo explícito"
+        "Narrativa de orden y mano dura con respaldo en su base",
+        "Agenda de gobierno ya empaquetada (90 decretos) que proyecta preparación"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza, que él mismo advirtió",
-        "Discurso de seguridad que polariza y puede activar el voto contrario"
+        "Discurso triunfalista que él mismo intenta moderar",
+        "Polarización que le pone techo entre indecisos de centro"
       ],
       "riesgos": [
-        "Una participación más alta de lo esperado en bastiones de izquierda",
-        "Sorpresas en el escrutinio que su retórica de 'no se la van a robar' anticipa como conflictivas"
+        "Abstención por exceso de confianza en su electorado",
+        "Que un preconteo más estrecho de lo esperado active disputas"
       ],
       "catalizadores": [
-        "Un primer boletín que confirme la tendencia y consolide la percepción de triunfo",
-        "Conteo rápido y sin incidentes que cierre el margen de disputa"
+        "Primer boletín oficial que confirme su ventaja",
+        "Jornada sin incidentes que valide su lectura de la elección"
       ]
     },
     {
@@ -55,48 +55,43 @@
       "color": "#e11d48",
       "probabilidad": 15,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Espera remontada",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Despliegue de testigos para verificar preconteo y escrutinio",
-        "Tono institucional al comprometerse a reconocer el resultado",
-        "Capacidad de movilización de la maquinaria del Pacto Histórico"
+        "Maquinaria del Pacto Histórico y respaldo del Gobierno",
+        "Mensaje de reconciliación y serenidad en la jornada",
+        "Postura institucional de reconocer el resultado con veeduría"
       ],
       "debilidades": [
-        "Desventaja de seis puntos que exige una remontada amplia en una sola jornada",
-        "Techo electoral que las encuestas no le han ampliado en esta fase"
+        "Rezago de seis puntos que ninguna encuesta reciente reduce",
+        "Dependencia de una remontada de última hora sin dato que la sustente"
       ],
       "riesgos": [
-        "Que el conteo confirme temprano la ventaja rival y desinfle expectativas",
-        "Quedar atrapado en una narrativa de fraude difícil de sostener si el margen es claro"
+        "Que el preconteo confirme temprano una distancia difícil de revertir",
+        "Desgaste por la asociación con el Gobierno saliente"
       ],
       "catalizadores": [
-        "Una participación récord en grandes ciudades",
-        "Hallazgos de su veeduría que cuestionen el conteo y reabran la disputa"
+        "Alta participación urbana que históricamente lo favorece",
+        "Repunte en interés digital que no se ha traducido en encuestas"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 81% De la Espriella / 20% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 82% De la Espriella / 19% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Intención de voto (encuestas previas)",
-      "detalle": "Sin sondeos nuevos en el ciclo; se mantiene 51-45 a favor de De la Espriella.",
+      "fuente": "Encuestas (sin actualización)",
+      "detalle": "La intención sigue en 51-45; ningún sondeo nuevo en el ciclo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Autoridad electoral",
-      "detalle": "Se espera un primer resultado en menos de una hora tras el cierre, lo que acorta la ventana de incertidumbre.",
+      "fuente": "Registraduría",
+      "detalle": "Autoridad electoral anticipa primer resultado en menos de una hora; jornada sin incidentes mayores.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Campaña de Cepeda",
-      "detalle": "Reconocerá el resultado pero ejercerá observación estrecha del preconteo y escrutinio.",
-      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -794,6 +789,11 @@
       "ts": "2026-06-21T20:36:20.732Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T20:51:44.118Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
@@ -834,8 +834,8 @@
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 81,
-      "cepeda": 20
+      "delaespriella": 82,
+      "cepeda": 19
     }
   }
 }
