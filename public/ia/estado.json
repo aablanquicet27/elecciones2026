@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 80,
-    "generado": "2026-06-21T17:24:04.356Z",
-    "proxima_actualizacion": "2026-06-21T17:44:04.356Z",
+    "ciclo": 81,
+    "generado": "2026-06-21T17:44:39.299Z",
+    "proxima_actualizacion": "2026-06-21T18:04:39.299Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Cepeda vota y se compromete a reconocer resultados; el 51-45 sigue intacto.",
-    "resumen": "La novedad real de la franja es el voto de Iván Cepeda en Bogotá y su anuncio de que reconocerá los resultados, un gesto que contrasta con la retórica de fraude anticipado de su rival. No hay sondeos nuevos ni primeros boletines de la Registraduría, de modo que la intención de voto permanece en 51-45. La jornada sigue marcada por la afluencia y la espera del escrutinio.",
-    "que_cambio": "Se incorpora un hecho genuinamente nuevo: Cepeda ejerció su voto y se comprometió a aceptar el resultado. La intención de voto no se mueve por ausencia de encuestas frescas."
+    "titular": "Sin sondeos ni boletines nuevos, la franja se estanca en el 51-45.",
+    "resumen": "El ciclo no aporta hechos genuinamente nuevos: el voto de ambos candidatos, el mensaje de De la Espriella tras sufragar, la advertencia al Congreso y la reaparición de Petro ya estaban en la línea de tiempo. Sin encuestas frescas ni primeros datos de la Registraduría, la intención de voto se mantiene intacta en 51-45. La jornada permanece en compás de espera del escrutinio.",
+    "que_cambio": "Nada sustantivo: los titulares de las últimas horas reiteran hechos ya reportados. La intención de voto no se mueve por ausencia de datos nuevos."
   },
   "candidatos": [
     {
@@ -27,25 +27,24 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de 6 puntos en intención de voto",
-        "Narrativa de orden y mano dura con consenso en su base",
-        "Alta movilización de su electorado"
+        "Ventaja sostenida de seis puntos en el promedio de encuestas",
+        "Mensaje de cierre disciplinado y movilización de su base"
       ],
       "debilidades": [
-        "Riesgo de exceso de confianza que él mismo ha admitido",
-        "Retórica de fraude anticipado que tensiona el clima institucional"
+        "Retórica de fraude anticipado que tensiona la institucionalidad",
+        "Techo de rechazo alto que dificulta crecer entre indecisos"
       ],
       "riesgos": [
-        "Que la abstención de indecisos no se traduzca en su favor",
-        "Eventual cuestionamiento internacional por sus llamados a la Fuerza Pública"
+        "Que el exceso de confianza desmovilice a su electorado",
+        "Una afluencia inesperadamente alta que favorezca a su rival"
       ],
       "catalizadores": [
         "Primeros boletines de la Registraduría que confirmen su ventaja",
-        "Alta participación en regiones afines"
+        "Baja participación en bastiones de la izquierda"
       ]
     },
     {
@@ -55,43 +54,42 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Talante institucional",
+      "momentum_label": "Espera remontada",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Postura institucional al comprometerse a reconocer resultados",
-        "Repunte de interés digital en las horas finales",
-        "Margen real estrecho que deja margen a la sorpresa"
+        "Gesto de reconocer resultados que proyecta talante institucional",
+        "Narrativa de 'defender la vida' que cohesiona a su base"
       ],
       "debilidades": [
-        "Sigue 6 puntos abajo en los sondeos",
-        "Menor expectativa de movilización frente a su rival"
+        "Arranca por debajo en todas las mediciones disponibles",
+        "Dependencia del respaldo de Petro, que arrastra restricción judicial"
       ],
       "riesgos": [
-        "Que la diferencia se amplíe al avanzar el escrutinio",
-        "Desgaste por asociación con el Gobierno saliente"
+        "Que la remontada no alcance el margen de ~700.000 votos",
+        "Desmovilización en regiones clave"
       ],
       "catalizadores": [
-        "Sorpresa en voto urbano y exterior",
-        "Volcado tardío de indecisos hacia su candidatura"
+        "Repunte en interés digital y alta afluencia urbana",
+        "Voto indeciso que se incline a última hora"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 84% De la Espriella / 18% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 83% De la Espriella / 18% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Estado de las encuestas (sin sondeos nuevos)",
-      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella.",
+      "fuente": "Promedio de encuestas (sin actualización en esta franja)",
+      "detalle": "La intención de voto sigue en 51-45 a favor de De la Espriella ante la falta de sondeos nuevos.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Declaración de Cepeda",
-      "detalle": "Anuncia que reconocerá los resultados, gesto de talante institucional.",
-      "favorece": "cepeda"
+      "fuente": "Registraduría",
+      "detalle": "Aún no hay primeros boletines del escrutinio; la jornada permanece en espera.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -739,6 +737,11 @@
       "ts": "2026-06-21T17:24:04.356Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T17:44:39.299Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -779,7 +782,7 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 84,
+      "delaespriella": 83,
       "cepeda": 18
     }
   }
