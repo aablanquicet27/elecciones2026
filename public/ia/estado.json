@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 73,
-    "generado": "2026-06-21T14:39:06.725Z",
-    "proxima_actualizacion": "2026-06-21T14:59:06.725Z",
+    "ciclo": 74,
+    "generado": "2026-06-21T15:04:44.430Z",
+    "proxima_actualizacion": "2026-06-21T15:24:44.430Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Conteo a la vista: 51-45 mientras la Registraduría afina cómo se verán los resultados.",
-    "resumen": "El ciclo no trae sondeos nuevos ni hechos inéditos de campaña: la mayoría de titulares son cobertura minuto a minuto, explicadores de propuestas y reiteraciones de encuadres ya consignados (la amenaza al Congreso y la alerta por exceso de confianza son continuidad, no novedad). Lo único genuinamente fresco es logístico: la Registraduría habilitó una plataforma para consultar el escrutinio en línea y ya circulan los horarios de divulgación. La intención de voto se mantiene en 51-45 y la participación sigue siendo la variable abierta hasta el primer boletín.",
-    "que_cambio": "Nada en la intención de voto: sin encuestas nuevas y con titulares que repiten mensajes ya reportados. Se mantiene 51-45; el 87-14 de Polymarket es ruido de mercado y no entra en el cálculo. La novedad es operativa: la app de consulta de resultados y los horarios de divulgación."
+    "titular": "Alta afluencia en las urnas con el tablero intacto en 51-45.",
+    "resumen": "La novedad del ciclo es de jornada, no de sondeo: se reporta gran afluencia y puntos de congestión en los centros de votación, lo que activa la variable que estaba abierta —la participación— sin alterar todavía la correlación de fuerzas. En el plano del mensaje, De la Espriella endureció su discurso de seguridad al declarar objetivo militar a 'Calarcá' y a 'Mordisco'. La intención de voto se mantiene 51-45 a falta de boletines oficiales.",
+    "que_cambio": "La intención de voto no se mueve: no hay encuestas nuevas y se sostiene 51-45. Lo nuevo es operativo y de campaña: alta participación con congestión en mesas y el giro de seguridad de De la Espriella contra cabecillas armados."
   },
   "candidatos": [
     {
@@ -31,22 +31,21 @@
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja de seis puntos sostenida en la última tanda de sondeos",
-        "Narrativa de cambio y mano dura que moviliza a su base",
-        "Margen que resiste sin sobresaltos al iniciar el conteo"
+        "Ventaja consistente de seis puntos en intención de voto",
+        "Mensaje de seguridad y orden que moviliza a su base",
+        "Mayor expectativa de votos comunicada por la propia campaña"
       ],
       "debilidades": [
-        "Techo dependiente de la participación de indecisos",
-        "Retórica sobre Fuerza Pública y Congreso que tensiona a moderados",
-        "Riesgo de desmovilización por exceso de confianza, que él mismo advirtió"
+        "Margen estrecho que cabe en menos de 700.000 votos",
+        "Riesgo de exceso de confianza que él mismo ha tenido que conjurar"
       ],
       "riesgos": [
-        "Una participación alta en bastiones de Cepeda que estreche el margen",
-        "Que el margen de menos de 700.000 votos se cierre en el escrutinio"
+        "Una participación inusualmente alta podría favorecer la movilización opositora",
+        "El endurecimiento del discurso militar puede tensionar a votantes moderados"
       ],
       "catalizadores": [
-        "Boletines tempranos que confirmen su ventaja",
-        "Baja participación en regiones favorables a la izquierda"
+        "Afluencia temprana que consolida su ventaja si se traduce en sus bastiones",
+        "Boletines iniciales que confirmen la tendencia de las encuestas"
       ]
     },
     {
@@ -60,44 +59,43 @@
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Repunte de interés en buscadores en la antesala del cierre",
-        "Maquinaria del Pacto Histórico y respaldo activo de Petro",
-        "Propuestas de empleo y vida que articulan su mensaje final"
+        "Mensaje de cierre centrado en 'la vida' frente a la violencia",
+        "Capacidad de repunte en interés digital en las horas finales"
       ],
       "debilidades": [
-        "Seis puntos abajo en la intención de voto sin sondeo que muestre cierre",
+        "Seis puntos abajo en la intención de voto sin sondeo que muestre cierre de brecha",
         "Dependencia de una participación excepcional para revertir el resultado"
       ],
       "riesgos": [
-        "Que el voto de opinión no se traduzca en votos efectivos",
-        "Constreñimiento al elector que su campaña ya denunció"
+        "Que la alta afluencia no se concentre en sus territorios fuertes",
+        "Quedar a merced del margen estrecho sin colchón propio"
       ],
       "catalizadores": [
-        "Participación récord en zonas urbanas y costa Caribe",
-        "Alta movilización del voto joven que mostró interés en buscadores"
+        "Una participación récord que active el voto de opinión y abstencionista",
+        "Volcado de zonas urbanas y voto exterior favorables"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 87% De la Espriella / 14% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 86% De la Espriella / 14% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (sin sondeo nuevo este ciclo)",
-      "detalle": "Intención de voto estable en 51-45 a favor de De la Espriella.",
+      "fuente": "Reportes de jornada (Semana)",
+      "detalle": "Gran afluencia y puntos de congestión en centros de votación activan la variable participación.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Declaraciones de campaña (El País)",
+      "detalle": "De la Espriella declara objetivo militar a 'Calarcá' y 'Mordisco', endureciendo su eje de seguridad.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "Plataforma en línea habilitada para consultar el escrutinio y horarios de divulgación ya publicados.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Cobertura en vivo (El Espectador, La República, Caracol)",
-      "detalle": "Jornada sin incidentes mayores reportados; foco en la participación.",
-      "favorece": "incierto"
+      "fuente": "Encuestas previas",
+      "detalle": "Sin sondeos nuevos; se sostiene la ventaja 51-45 en intención de voto.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -110,11 +108,29 @@
       "cuerpo": "La Registraduría dispuso una herramienta digital para que la ciudadanía consulte el conteo de la segunda vuelta a medida que avance el escrutinio, según la cobertura de la jornada. En paralelo, los medios precisaron las franjas en las que se esperan los primeros boletines tras el cierre de mesas, una información operativa que ordena las expectativas en una contienda donde el margen real cabe en menos de 700.000 votos.\n\nEn un balotaje tan ajustado en percepción, la transparencia y la velocidad de la divulgación pesan tanto como los números. Un flujo de resultados claro y verificable reduce el espacio para reclamos sobre la limpieza del proceso —un terreno sensible después de que De la Espriella apelara reiteradamente a la Fuerza Pública y advirtiera que 'no se la van a robar', y de que la campaña de Cepeda alertara por constreñimiento—. La plataforma se vuelve, así, un árbitro silencioso de la noche electoral."
     },
     {
+      "ts": "2026-06-21T13:38:01.000Z",
+      "tipo": "hito",
+      "titulo": "Gran afluencia y congestión en los centros de votación",
+      "detalle": "La jornada arranca con alta participación y puntos de congestión reportados en varias ciudades.",
+      "fuente": "semana.com",
+      "cuerpo": "Los primeros reportes de la jornada describen una afluencia considerable de votantes y filas en puntos de votación de varias ciudades, con zonas señaladas como las de mayor congestión. La participación venía siendo la gran incógnita del balotaje, en una contienda cuyo margen real cabe en menos de 700.000 votos, y este flujo temprano la convierte por fin en un dato observable de la jornada.\n\nPara la segunda vuelta, una participación elevada es un arma de doble filo: puede consolidar la ventaja de De la Espriella si se concentra en sus bastiones, o abrir una ventana a Cepeda si moviliza voto de opinión y abstencionista en las grandes ciudades. Hasta que lleguen los primeros boletines no se sabrá en qué territorios se está votando con más fuerza, de modo que la cifra de hoy es señal, no veredicto.",
+      "url": "https://www.semana.com/politica/articulo/elecciones-colombia-2026-hoy-en-vivo-siga-en-directo-los-resultados-de-votacion-y-ultimas-noticias-de-la-jornada/202607/"
+    },
+    {
       "ts": "2026-06-21T13:00:00Z",
       "tipo": "clave",
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T12:59:25.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella declara objetivo militar a 'Calarcá' y a 'Mordisco'",
+      "detalle": "El candidato endurece su discurso de seguridad y señala a cabecillas armados como objetivo militar el mismo día de la elección.",
+      "fuente": "pulzo.com",
+      "cuerpo": "En plena jornada electoral, De la Espriella elevó el tono de su eje de seguridad al declarar objetivo militar a los cabecillas conocidos como 'Calarcá' y 'Mordisco', en línea con el discurso de mano dura y apelación a la Fuerza Pública que ha marcado su tramo final de campaña. El mensaje refuerza el contraste central de esta segunda vuelta entre su promesa de orden y el llamado de Cepeda a 'votar por la vida' frente al 'pasado de violencia'.\n\nLa apuesta consolida a su base más dura y mantiene el marco de seguridad como tema dominante del día, pero también tensiona el espacio de los votantes moderados e indecisos que el propio candidato ha pedido movilizar. En una contienda decidida por un margen estrecho, cada gesto que active o aleje a ese electorado de centro puede pesar más que el discurso dirigido a los convencidos.",
+      "url": "https://www.pulzo.com/elecciones-colombia-2026/abelardo-espriella-declaro-objetivo-militar-calarca-mordisco-PP5222619"
     },
     {
       "ts": "2026-06-21T06:07:48.530Z",
@@ -320,22 +336,6 @@
       "fuente": "ELTIEMPO.COM",
       "cuerpo": "El Ministerio de Defensa anunció recompensas de hasta 1.000 millones de pesos por información que permita prevenir atentados contra Iván Cepeda y Abelardo de la Espriella en la antesala de la segunda vuelta. La medida se inscribe en un despliegue de seguridad que ya incluía monitoreo aéreo en ciudades como Barranquilla y refuerza la lectura de una jornada vigilada de cerca por las autoridades.\n\nPara la contienda, el anuncio no mueve la correlación de fuerzas: ningún candidato gana o pierde votos por una medida de protección. Su efecto es indirecto —busca blindar la normalidad del proceso— y se suma al llamado de Petro a la calma. Mientras no haya un incidente real, la disputa sigue definida por la intención de voto, donde De la Espriella conserva su ventaja.",
       "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
-    },
-    {
-      "ts": "2026-06-20T18:50:01.968Z",
-      "tipo": "hito",
-      "titulo": "La jornada arranca con reglas: ley seca, horarios y tarjetón definidos",
-      "detalle": "Las autoridades fijan el marco operativo del domingo: horarios de votación, ley seca y guía para ubicar puesto y tarjeta electoral.",
-      "fuente": "EL PAÍS",
-      "cuerpo": "A pocas horas del cierre de campaña, la cobertura se desplazó de la disputa política a la logística del voto: horarios de apertura y cierre de mesas, vigencia de la ley seca y orientación para que el elector localice su puesto y reconozca el tarjetón de la segunda vuelta entre Iván Cepeda y Abelardo de la Espriella. Es el procedimiento habitual de toda jornada, pero adquiere peso en un balotaje donde cada punto de participación cuenta.\n\nPara esta segunda vuelta, el detalle operativo no es neutro. Con un margen que cabe en menos de 700.000 votos, la facilidad o fricción para votar —claridad de horarios, orden en los puestos, abstención por desinformación— puede mover volúmenes pequeños pero decisivos. Ninguno de los dos comandos puede dar por descontada la participación de su base, y la precisión logística de la jornada se vuelve, en sí misma, una variable del resultado."
-    },
-    {
-      "ts": "2026-06-20T18:50:00.968Z",
-      "tipo": "evento",
-      "titulo": "La prensa internacional encuadra la votación como una Colombia dividida",
-      "detalle": "CNN, NYT y Telemundo presentan el balotaje como la elección de un país polarizado entre dos proyectos opuestos.",
-      "fuente": "CNN en Español",
-      "cuerpo": "Los grandes medios internacionales pusieron el foco en el balotaje colombiano con un encuadre común: una elección que divide al país entre el proyecto de izquierda de Cepeda, respaldado por el Pacto Histórico, y la apuesta de derecha de De la Espriella. Las piezas combinan perfiles de los candidatos con análisis de lo que está en juego para el rumbo del país, sin aportar cifras nuevas sobre la contienda.\n\nPara la segunda vuelta, esta atención externa confirma la lectura de fondo más que alterarla: la del enfrentamiento entre dos polos sin centro visible. El marco de 'país dividido' refuerza la idea de una contienda emocional y de alta movilización, terreno donde el favorito busca convertir su ventaja en encuestas en votos efectivos y el rezagado intenta exprimir un margen que sigue siendo, en lo absoluto, alcanzable."
     }
   ],
   "historico": [
@@ -708,6 +708,11 @@
       "ts": "2026-06-21T14:39:06.725Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T15:04:44.430Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -748,7 +753,7 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 87,
+      "delaespriella": 86,
       "cepeda": 14
     }
   }
