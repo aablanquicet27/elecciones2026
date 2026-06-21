@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 85,
-    "generado": "2026-06-21T19:08:02.750Z",
-    "proxima_actualizacion": "2026-06-21T19:28:02.750Z",
+    "ciclo": 86,
+    "generado": "2026-06-21T19:29:10.536Z",
+    "proxima_actualizacion": "2026-06-21T19:49:10.536Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,8 +15,8 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Sin primer boletín, la intención de voto sigue clavada en 51-45.",
-    "resumen": "El ciclo no trae hechos nuevos. Los titulares de la última hora repiten lo ya consignado: el voto de Cepeda en Bogotá y su elogio a una campaña 'ejemplar', el sufragio de De la Espriella en Barranquilla con su frase 'Si gana el Tigre, gana Colombia' y la advertencia sobre el 'exceso de confianza'. No hay sondeos frescos ni primer escrutinio de la Registraduría, así que la intención de voto se mantiene intacta. El mercado de apuestas se estira a 81-19, pero eso no toca las encuestas.",
+    "titular": "Sin escrutinio ni sondeos frescos, la intención de voto sigue en 51-45.",
+    "resumen": "El ciclo no aporta hechos nuevos. Los titulares de la última hora reiteran lo ya consignado: el voto de Cepeda en Bogotá y su elogio a una campaña 'ejemplar', el sufragio de De la Espriella en Barranquilla con su 'Si gana el Tigre, gana Colombia' y la advertencia sobre el 'exceso de confianza'. No hay primer boletín de la Registraduría ni encuestas de salida, así que la intención de voto se mantiene intacta. El mercado de apuestas se mueve a 80-22, pero eso no toca el cálculo del panel.",
     "que_cambio": "Nada sustantivo: no hay encuestas nuevas ni datos de la Registraduría. La intención de voto sigue en 51-45 por ausencia de información nueva; los titulares recientes ya figuran en la línea de tiempo."
   },
   "candidatos": [
@@ -31,21 +31,21 @@
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de 6 puntos en intención de voto",
-        "Narrativa de favorito consolidada en cobertura nacional e internacional",
-        "Alta movilización de su base"
+        "Ventaja sostenida en intención de voto (51%)",
+        "Narrativa de orden y seguridad con alta tracción",
+        "Buena movilización de su base en la Costa"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza, que él mismo ha advertido",
-        "Discurso de mano dura puede activar el voto adverso"
+        "Riesgo de exceso de confianza que él mismo señaló",
+        "Retórica de intervención militar que puede repeler a moderados"
       ],
       "riesgos": [
-        "Una participación menor a la esperada en sus bastiones",
-        "Que el cierre de indecisos se incline hacia Cepeda"
+        "Abstención de su electorado por triunfalismo",
+        "Mayor participación de indecisos que tienda a Cepeda"
       ],
       "catalizadores": [
-        "Primer boletín de la Registraduría que confirme su ventaja",
-        "Reportes de alta afluencia en Caribe y zonas urbanas afines"
+        "Primer boletín de la Registraduría favorable",
+        "Jornada sin incidentes que valide su discurso de orden"
       ]
     },
     {
@@ -55,43 +55,48 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Espera remontada",
+      "momentum_label": "Aguanta abajo",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Llamado a participación pacífica y campaña que califica de 'ejemplar'",
-        "Maquinaria del Pacto Histórico y respaldo de Petro",
-        "Repunte reciente en interés digital"
+        "Base fiel y disciplina de movilización del Pacto Histórico",
+        "Tono conciliador y compromiso de reconocer resultados",
+        "Repunte de interés digital a horas del cierre"
       ],
       "debilidades": [
-        "Va abajo en intención de voto por margen de 6 puntos",
-        "Necesita una remontada que las encuestas no anticipan"
+        "Va 6 puntos abajo en intención de voto",
+        "Lastre de la gestión saliente sobre su candidatura"
       ],
       "riesgos": [
-        "Que la brecha se confirme en el primer escrutinio",
-        "Restricción judicial al protagonismo de Petro en campaña"
+        "Que la diferencia se consolide en el escrutinio",
+        "Baja conversión de indecisos"
       ],
       "catalizadores": [
-        "Sorpresa en participación urbana e indecisos",
-        "Boletines parciales que muestren mesas favorables más ajustadas de lo previsto"
+        "Alta participación en zonas urbanas",
+        "Trasvase de indecisos en la recta final"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 81% De la Espriella / 21% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 80% De la Espriella / 22% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura electoral en vivo (El Espectador, Infobae)",
-      "detalle": "La jornada transcurre sin que se publique aún el primer escrutinio oficial de la Registraduría.",
+      "fuente": "Estado previo (encuestas)",
+      "detalle": "Intención de voto estable en 51-45 a favor de De la Espriella, sin sondeos nuevos.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Registraduría",
+      "detalle": "Aún sin primer boletín de escrutinio; no hay datos duros que muevan el tablero.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Encuestas previas vigentes",
-      "detalle": "Sin sondeos nuevos, la última fotografía mantiene a De la Espriella arriba 51-45.",
-      "favorece": "delaespriella"
+      "fuente": "Google Trends",
+      "detalle": "Cepeda mostró repunte de interés a horas del cierre, sin traducción confirmada en votos.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -764,6 +769,11 @@
       "ts": "2026-06-21T19:08:02.750Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T19:29:10.536Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -804,8 +814,8 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 81,
-      "cepeda": 21
+      "delaespriella": 80,
+      "cepeda": 22
     }
   }
 }
