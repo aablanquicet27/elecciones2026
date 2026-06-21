@@ -1,13 +1,13 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 47,
-    "generado": "2026-06-21T04:49:54.836Z",
-    "proxima_actualizacion": "2026-06-21T05:19:54.836Z",
-    "cadencia_min": 30,
+    "ciclo": 48,
+    "generado": "2026-06-21T05:15:45.433Z",
+    "proxima_actualizacion": "2026-06-21T05:35:45.433Z",
+    "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
-    "fase": "vispera",
+    "fase": "jornada",
     "modelo": "IA de análisis electoral en tiempo real"
   },
   "veredicto": {
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Las urnas ya hablan y los titulares solo repiten el cierre: el tablero no se mueve.",
-    "resumen": "No entra ningún hecho de fondo genuinamente nuevo: los despachos de las últimas horas reiteran los mensajes de cierre de ambas campañas, las cifras de votos esperados y los perfiles ya conocidos. Mantenemos la intención de voto en 52-45, con un bloque de indecisos que sigue siendo la única variable seria de la jornada. La referencia de mercado cede un par de puntos para De la Espriella, pero eso no toca los fundamentos.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 46. La referencia de Polymarket baja de ~89 a 84 para De la Espriella, ruido de mercado que no altera la intención de voto ni suma eventos nuevos a la línea de tiempo."
+    "titular": "De la Espriella sube el tono y mete al Ejército en la ecuación del día de votación.",
+    "resumen": "La novedad real del ciclo no es una cifra de encuesta sino un mensaje: De la Espriella plantea que el Ejército debería intervenir si el Gobierno desconoce el orden. Es la primera declaración genuinamente nueva sobre el cierre ya conocido, y endurece su discurso justo cuando pedía no caer en triunfalismo. Mantenemos la intención de voto prácticamente igual, con un leve estrechamiento a 51-45 por el riesgo de que la frase movilice al electorado contrario. El bloque de indecisos sigue siendo la única variable seria de la jornada.",
+    "que_cambio": "Entra un hecho nuevo: la declaración de De la Espriella sobre intervención militar. La intención de voto baja un punto para él (52→51) por el riesgo de polarización que activa esa frase; Cepeda se mantiene en 45."
   },
   "candidatos": [
     {
@@ -26,26 +26,25 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 76,
-      "momentum": "down",
-      "momentum_label": "Favorito firme",
-      "encuesta_pct": 52,
+      "momentum": "steady",
+      "momentum_label": "Tono más duro",
+      "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de ~7 puntos en intención de voto",
-        "Disciplina de mensaje en la recta final con llamado anti-triunfalismo",
-        "Favorito claro en la referencia de mercado"
+        "Lidera la intención de voto",
+        "Disciplina de campaña en el cierre",
+        "Discurso de orden que conecta con su base"
       ],
       "debilidades": [
-        "Techo dependiente de indecisos que aún no consolida",
-        "Discurso de confrontación que puede activar el voto en contra"
+        "Margen estrecho frente a indecisos",
+        "Mensajes que pueden leerse como autoritarios"
       ],
       "riesgos": [
-        "Abstención de su propio electorado por exceso de confianza",
-        "Margen real estrecho: menos de 700.000 votos lo separarían del empate"
+        "Que la frase sobre el Ejército movilice el voto anti-De la Espriella",
+        "Exceso de confianza pese a sus propios llamados"
       ],
       "catalizadores": [
-        "Voto masivo de indecisos en la franja de la tarde",
-        "Alta participación urbana de centro-derecha"
+        "Alta participación de su electorado de orden y seguridad"
       ]
     },
     {
@@ -54,26 +53,24 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 24,
-      "momentum": "up",
-      "momentum_label": "Resiste abajo",
+      "momentum": "steady",
+      "momentum_label": "Apela a la vida",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de cierre sereno y movilizador",
-        "Maquinaria del Pacto Histórico y respaldo de Petro",
-        "Repunte de interés digital en horas previas"
+        "Mensaje de cierre centrado en la vida y la movilización",
+        "Respaldo del aparato del Pacto Histórico"
       ],
       "debilidades": [
         "Sigue debajo en intención de voto",
-        "Necesita un vuelco en indecisos para alcanzar"
+        "Necesita capturar casi todo el indeciso para empatar"
       ],
       "riesgos": [
-        "Brecha de 7 puntos difícil de cerrar en una sola jornada",
-        "Polarización que beneficia al rival en sectores moderados"
+        "No traducir indignación en votos efectivos"
       ],
       "catalizadores": [
-        "Alta participación en bastiones de izquierda y voto exterior",
-        "Trasvase tardío de indecisos hacia la continuidad"
+        "Que la retórica dura del rival empuje a indecisos hacia su lado",
+        "Repunte de movilización en las últimas horas"
       ]
     }
   ],
@@ -84,14 +81,19 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (estado previo)",
-      "detalle": "Intención de voto estable en 52-45 con indecisos sin definir.",
-      "favorece": "delaespriella"
+      "fuente": "EL PAÍS América",
+      "detalle": "De la Espriella afirma que el Ejército debe intervenir si el Gobierno desconoce el orden.",
+      "favorece": "incierto"
     },
     {
-      "fuente": "Mensajes de cierre",
-      "detalle": "Ambas campañas repiten consignas ya conocidas; sin hecho nuevo que mueva el fondo.",
-      "favorece": "incierto"
+      "fuente": "Infobae",
+      "detalle": "Cepeda llama a sus votantes a 'defender la vida' al abrir las urnas.",
+      "favorece": "cepeda"
+    },
+    {
+      "fuente": "Encuestas / estado previo",
+      "detalle": "Intención de voto se mantiene 51-45 con indecisos como variable decisiva.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -160,6 +162,15 @@
       "detalle": "El favorito llama a 'no bajar la guardia' y advierte a su base que nada está ganado en la recta final.",
       "fuente": "",
       "cuerpo": "Pese a encabezar todos los pronósticos, Abelardo de la Espriella dedicó su mensaje de cierre a contener el exceso de confianza: pidió voto masivo, lanzó un llamado expreso a los indecisos y repitió la consigna de 'nada de triunfalismos'. El gesto reconoce el principal riesgo de un favorito cómodo en segunda vuelta: que su propia ventaja desmovilice a los electores que la dan por descontada.\n\nEl mensaje confirma que su campaña lee la elección como más reñida de lo que sugiere el 85% de Polymarket, consciente de que el margen real cabe en menos de 700.000 votos. Para esta segunda vuelta, la prioridad de su comando no es persuadir, sino garantizar que su voto duro acuda a las urnas; de lograrlo, blinda una ventaja que las cifras ya le reconocen."
+    },
+    {
+      "ts": "2026-06-21T03:14:30.000Z",
+      "tipo": "alerta",
+      "titulo": "De la Espriella plantea que el Ejército intervenga si el Gobierno 'desconoce el orden'",
+      "detalle": "El candidato de derecha sube el tono en la antesala de la votación y mete a las Fuerzas Militares en su discurso de cierre.",
+      "fuente": "elpais.com",
+      "cuerpo": "A pocas horas del cierre de la segunda vuelta, Abelardo de la Espriella declaró que, si el Gobierno desconoce el orden institucional, el Ejército debería intervenir para restaurarlo. La afirmación llega después de varios días en los que su propia campaña insistía en 'no bajar la guardia' y evitar el triunfalismo, y marca un giro hacia un lenguaje más confrontacional sobre el papel de la fuerza pública en una eventual disputa por los resultados.\n\nPara la segunda vuelta, el mensaje es de doble filo: refuerza el eje de orden y seguridad que cohesiona a su base, pero también ofrece munición al Pacto Histórico para encuadrarlo como una amenaza institucional y movilizar el voto contrario en una jornada que se define por menos de 700.000 papeletas. En un margen tan estrecho, una frase así puede pesar más por lo que activa en el electorado adversario que por lo que suma en el propio.",
+      "url": "https://elpais.com/america-colombia/elecciones-presidenciales/2026-06-21/abelardo-de-la-espriella-si-el-gobierno-desconoce-el-orden-el-ejercito-debe-intervenir-para-restaurarlo.html"
     },
     {
       "ts": "2026-06-21T02:45:03.429Z",
@@ -319,14 +330,6 @@
       "detalle": "Un análisis cifra en menos de 700.000 votos la diferencia entre De la Espriella y Cepeda.",
       "fuente": "",
       "cuerpo": "Un análisis difundido a tres días del cierre estima que la distancia entre Abelardo de la Espriella e Iván Cepeda no supera los 700.000 sufragios, una cifra modesta frente al universo de electores habilitados para la segunda vuelta. El dato contrasta con la lectura porcentual cómoda que vienen mostrando las encuestas —donde el favorito ronda el 50%— y recuerda que en términos absolutos la franja decisiva es comparativamente pequeña y depende de la participación efectiva de cada bando.\n\nPara esta segunda vuelta, el matiz importa: una ventaja amplia en puntos puede convivir con un resultado disputado si la abstención golpea de forma asimétrica a uno de los dos campos. El bloque de Cepeda tiene ahí su único camino realista —activar voto que hoy no aparece movilizado—, mientras que De la Espriella necesita simplemente que su intención declarada se traduzca en urnas. Es lo que justifica el leve repunte del aspirante de izquierda en los mercados de predicción sin alterar el favoritismo de fondo."
-    },
-    {
-      "ts": "2026-06-20T18:03:47.815Z",
-      "tipo": "evento",
-      "titulo": "El voto exterior tuvo geografía propia en primera vuelta",
-      "detalle": "Un experto detalla en qué ciudades del exterior ganaron Cepeda y De la Espriella en primera vuelta.",
-      "fuente": "",
-      "cuerpo": "Un análisis del comportamiento del voto de colombianos en el exterior durante la primera vuelta muestra un mapa fragmentado: cada candidato se impuso en distintos enclaves migratorios, sin un dominio uniforme de ninguno. La radiografía aporta una referencia concreta para anticipar hacia dónde puede inclinarse esa porción del electorado en la jornada del domingo, una variable que suele resolverse al margen del pulso interno y con dinámicas propias según el país de residencia.\n\nEl peso del voto exterior es limitado frente al censo nacional, pero en un escenario donde la diferencia absoluta es estrecha cualquier bolsa adicional adquiere relevancia táctica. Para Cepeda representa una posible vía de compensación si logra concentrar apoyos en las plazas que le fueron favorables; para De la Espriella, un frente a contener para no ceder terreno fuera de sus bastiones internos."
     }
   ],
   "historico": [
@@ -569,6 +572,11 @@
       "ts": "2026-06-21T04:49:54.836Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T05:15:45.433Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -600,7 +608,7 @@
   "metodologia": {
     "resumen": "La probabilidad de ganar NO sale de mercados de apuestas: se calcula a partir de la intención de voto (encuestas), convirtiendo el margen a dos vías en probabilidad con un modelo normal que asume un error de muestreo típico. Polymarket se muestra solo como referencia.",
     "intencion_voto": {
-      "delaespriella": 52,
+      "delaespriella": 51,
       "cepeda": 45
     },
     "prob_ganar": {
