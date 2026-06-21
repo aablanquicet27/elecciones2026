@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 97,
-    "generado": "2026-06-21T22:14:52.861Z",
-    "proxima_actualizacion": "2026-06-21T22:24:52.861Z",
+    "ciclo": 98,
+    "generado": "2026-06-21T22:30:23.336Z",
+    "proxima_actualizacion": "2026-06-21T22:40:23.336Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 63,
     "confianza": "Alta",
-    "titular": "Con 97% escrutado, De la Espriella es el virtual presidente electo: 50,33% contra 48,04% de Cepeda.",
-    "resumen": "El preconteo deja de ser proyección y se vuelve dato duro: con el grueso de las mesas contadas, De la Espriella se impone por algo más de dos puntos. El noveno boletín lo ubica en 50,33% frente al 48,04% de Cepeda, un margen estrecho pero ya difícil de revertir con el 3% de mesas pendientes. Ajustamos la intención a 50-48 para pegarla al resultado real que está arrojando la Registraduría. Cepeda anuncia que reconocerá pero ejercerá observación rigurosa del escrutinio.",
-    "que_cambio": "Pasamos de sondeos a pie de urna a preconteo oficial con 97% escrutado: el 50,33-48,04 confirma la ventaja de De la Espriella y permite cerrar la intención de 50-47 a 50-48 con confianza Alta."
+    "titular": "Sin incidentes y con la ventaja en firme: De la Espriella sostiene el 50,33% y la observación internacional avala la jornada.",
+    "resumen": "El dato no se mueve: De la Espriella conserva el 50,33% frente al 48,04% de Cepeda con el grueso del escrutinio resuelto. La novedad de las últimas horas no está en las cifras sino en la legitimidad del proceso: tanto la OEA como la misión de la Unión Europea entregan un primer balance sin incidentes ni denuncias formales, lo que blinda el resultado frente a una eventual impugnación. Mantenemos la intención en 50-48, pegada al boletín oficial, sin razones para alterarla.",
+    "que_cambio": "No cambia la intención de voto: el 50-48 sigue intacto frente al ciclo anterior. Lo nuevo es el aval de los observadores internacionales (OEA y MOE-UE), que reduce el margen para disputas sobre la validez del conteo."
   },
   "candidatos": [
     {
@@ -26,26 +26,26 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 63,
-      "momentum": "down",
-      "momentum_label": "Triunfo a la vista",
+      "momentum": "steady",
+      "momentum_label": "Triunfo consolidado",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida con 97% de mesas escrutadas",
-        "Resultado por encima del umbral del 50%",
-        "Margen ya difícil de revertir con las mesas restantes"
+        "Ventaja de más de dos puntos con 97% escrutado",
+        "Resultado avalado por observación internacional",
+        "Condición de virtual presidente electo ya instalada en la narrativa"
       ],
       "debilidades": [
-        "Triunfo por margen estrecho, sin mandato amplio",
-        "Polariza a casi la mitad del electorado"
+        "Margen estrecho que obliga a gobernar buscando legitimidad ampliada",
+        "Mitad del país votó en contra"
       ],
       "riesgos": [
-        "Reclamaciones en el escrutinio final por parte de la campaña rival",
-        "Tensión por denuncias de irregularidades en algunas regiones"
+        "Observación rigurosa anunciada por la campaña rival sobre el 3% pendiente",
+        "Tensión por su retórica sobre la Fuerza Pública en la antesala"
       ],
       "catalizadores": [
-        "Boletín final de la Registraduría que oficialice el resultado",
-        "Reconocimiento explícito del contrincante"
+        "Cierre del boletín final que ratifique el resultado",
+        "Declaración formal de victoria y transición ordenada"
       ]
     },
     {
@@ -54,26 +54,24 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 37,
-      "momentum": "up",
-      "momentum_label": "Margen se cierra",
+      "momentum": "steady",
+      "momentum_label": "Derrota reconocida",
       "encuesta_pct": 48,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Cierre muy competitivo, a poco más de dos puntos",
-        "Anuncio de observación ordenada del escrutinio",
-        "Base electoral movilizada y compacta"
+        "Caudal cercano al 48% que lo deja como principal fuerza de oposición",
+        "Compromiso público de reconocer el resultado"
       ],
       "debilidades": [
-        "Queda por debajo en el preconteo con el grueso de mesas contadas",
-        "Margen pendiente insuficiente para dar vuelta al resultado"
+        "Diferencia que ya es difícil de revertir con las mesas pendientes",
+        "Pierde la disputa por la Presidencia"
       ],
       "riesgos": [
-        "Que el 3% restante no alcance para revertir la diferencia",
-        "Desgaste si la observación deriva en disputa sin sustento"
+        "Quedar atrapado entre reconocer y observar sin margen para revertir cifras"
       ],
       "catalizadores": [
-        "Concentración de votos pendientes en zonas afines",
-        "Hallazgos verificables en la fase de escrutinio"
+        "Hallazgos en la observación del escrutinio del 3% restante",
+        "Consolidación de un bloque opositor de cara al nuevo gobierno"
       ]
     }
   ],
@@ -84,18 +82,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (noveno boletín, 97% escrutado)",
-      "detalle": "De la Espriella 50,33% vs Cepeda 48,04%",
+      "fuente": "Registraduría (noveno boletín)",
+      "detalle": "50,33% De la Espriella vs 48,04% Cepeda con 97% escrutado.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Declaración de campaña Cepeda",
-      "detalle": "Reconocerá el resultado pero ejercerá observación del escrutinio",
+      "fuente": "OEA",
+      "detalle": "Califica la jornada sin incidentes ni denuncias formales.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Reportes de orden público",
-      "detalle": "Denuncias por compra de votos en La Guajira y capturas en Cesar y Guainía",
+      "fuente": "MOE-UE",
+      "detalle": "Primer balance describe la elección como 'fiesta democrática'.",
       "favorece": "incierto"
     }
   ],
@@ -139,6 +137,15 @@
       "fuente": "Sondeos a pie de urna (medios, hace <1h)",
       "cuerpo": "Al cierre de la jornada aparecieron las primeras encuestas a pie de urna, el primer indicio propio de esta segunda vuelta después de horas de titulares que solo reciclaban la votación de los candidatos y sus mensajes. La medición ubica a Abelardo de la Espriella por delante de Iván Cepeda, pero con una diferencia mínima que contrasta con la holgura que mostraban los sondeos previos a la jornada y que mantiene la contienda dentro del margen de error.\n\nPara la segunda vuelta el dato es doblemente relevante: confirma que De la Espriella llega al conteo como favorito, pero también valida la apuesta de remontada de la izquierda, que necesitaba precisamente un cuadro estrecho para sostener la expectativa hasta los boletines oficiales. Mientras la Registraduría no entregue su primer corte consolidado, este sondeo es la única referencia de resultado y obliga a leer la noche como una carrera abierta, no resuelta.",
       "url": "https://www.elperiodico.com/es/internacional/20260621/ultraderechista-espriella-aventaja-cepeda-sondeos-131663730"
+    },
+    {
+      "ts": "2026-06-21T20:30:33.000Z",
+      "tipo": "hito",
+      "titulo": "OEA y MOE-UE avalan la jornada sin incidentes",
+      "detalle": "Las misiones de la OEA y de la Unión Europea entregan un primer balance positivo de la segunda vuelta, sin denuncias formales.",
+      "fuente": "OEA / MOE-UE",
+      "cuerpo": "Las dos principales misiones de observación electoral desplegadas en el país coincidieron en sus primeros balances de la jornada. La OEA destacó una votación sin incidentes ni denuncias formales, mientras la misión de la Unión Europea (MOE-UE) describió la elección como una 'fiesta democrática'. Ambos pronunciamientos llegan mientras la Registraduría sostiene el preconteo que ubica a De la Espriella en 50,33% frente al 48,04% de Cepeda, en una franja en que la atención se traslada del cómputo a la validez del proceso.\n\nPara esta segunda vuelta, el aval internacional tiene un efecto concreto: estrecha el espacio para cuestionar la limpieza del resultado en un escenario de margen apretado. La campaña de Cepeda anunció que ejercerá observación rigurosa sobre el escrutinio pendiente, pero el respaldo de OEA y UE eleva el costo político de cualquier impugnación de fondo y empuja hacia una transición ordenada con el ganador ya perfilado.",
+      "url": "https://www.abc.es/elecciones/generales/oea-destaca-jornada-electoral-incidentes-denuncias-formales-20260621223029-nt.html"
     },
     {
       "ts": "2026-06-21T20:21:00.927Z",
@@ -332,15 +339,6 @@
       "fuente": "Semana",
       "cuerpo": "En las horas previas y durante el inicio de la jornada, De la Espriella sumó a su habitual discurso de orden público un mensaje centrado en la legitimidad del conteo: planteó que 'esta elección no se la van a robar' y reclamó la actuación de la Fuerza Pública en caso de que el sector petrista no acepte los resultados. El planteamiento extiende su retórica previa sobre el papel del Ejército, pero ahora la enfoca específicamente en el reconocimiento del veredicto de las urnas y no solo en el orden institucional.\n\nPara la segunda vuelta, el giro tiene doble filo. Refuerza la cohesión de su base, que lee el mensaje como firmeza frente a un posible desconocimiento del resultado, pero instala de forma preventiva un marco de sospecha sobre el conteo que puede tensionar la jornada y desgastar la imagen de neutralidad institucional justo cuando el margen real cabe en un puñado de votos. No mueve la intención de voto, pero sí eleva la temperatura política del cierre.",
       "url": "https://www.semana.com/politica/articulo/abelardo-de-la-espriella-hace-llamado-a-la-fuerza-publica-en-caso-de-que-el-petrismo-no-acepte-resultados-esta-eleccion-no-se-la-van-a-robar/202619/"
-    },
-    {
-      "ts": "2026-06-21T01:49:45.000Z",
-      "tipo": "evento",
-      "titulo": "Cepeda pide 'defender la vida' al abrir las urnas",
-      "detalle": "El candidato del Pacto Histórico contrapone un mensaje de movilización centrado en la vida frente a la retórica de seguridad del rival.",
-      "fuente": "Infobae",
-      "cuerpo": "A horas de la apertura de mesas, Cepeda lanzó un llamado a sus votantes a 'defender la vida' y a acudir a las urnas, un mensaje que evita la confrontación institucional y apunta a activar a su electorado. La señal contrasta con el tono del rival y busca capitalizar la sensibilidad de su base frente al clima de amenazas y polarización que ha marcado la antesala de la jornada.\n\nPara la segunda vuelta, el movimiento confirma que la izquierda juega la carta de la participación masiva como única vía para cerrar una brecha que las encuestas sitúan en torno a 51-45. Si el discurso de seguridad del adversario fija la agenda del día, Cepeda apuesta por una narrativa emocional alternativa que movilice a los indecisos hacia la continuidad sin entrar en el terreno del enfrentamiento abierto.",
-      "url": "https://www.infobae.com/colombia/2026/06/21/ivan-cepeda-envio-mensaje-a-horas-de-la-apertura-de-las-urnas-para-invitar-a-sus-votantes-a-que-defendamos-la-vida/"
     }
   ],
   "historico": [
@@ -831,6 +829,11 @@
     },
     {
       "ts": "2026-06-21T22:14:52.861Z",
+      "delaespriella": 63,
+      "cepeda": 37
+    },
+    {
+      "ts": "2026-06-21T22:30:23.336Z",
       "delaespriella": 63,
       "cepeda": 37
     }
