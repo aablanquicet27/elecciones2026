@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 49,
-    "generado": "2026-06-21T05:42:07.101Z",
-    "proxima_actualizacion": "2026-06-21T06:02:07.101Z",
+    "ciclo": 50,
+    "generado": "2026-06-21T06:07:49.528Z",
+    "proxima_actualizacion": "2026-06-21T06:27:49.528Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "De la Espriella convierte el 'no se la van a robar' en su mensaje de cierre al petrismo.",
-    "resumen": "La jornada abre con De la Espriella escalando el marco del fraude: dice que la elección 'no se la van a robar' y llama a la Fuerza Pública a actuar si el petrismo no acepta el resultado. Es una vuelta de tuerca a su línea de seguridad, ahora dirigida explícitamente al adversario. Cepeda responde con un mensaje de 'defender la vida' que busca activar su voto sin entrar al terreno de la confrontación institucional. La intención de voto se mantiene estable en 51-45: la novedad es de tono, no de cifras, y el bloque de indecisos sigue siendo la incógnita que decide.",
-    "que_cambio": "No cambia la intención de voto (51-45). Entra un hecho nuevo: De la Espriella formaliza el marco del 'fraude' y apela a la Fuerza Pública frente al petrismo, y Cepeda contrapone su llamado a 'defender la vida'."
+    "titular": "Abren las mesas: la jornada arranca en calma y la ventaja de De la Espriella sigue intacta.",
+    "resumen": "La segunda vuelta entra en su fase decisiva con la apertura de mesas y un primer reporte de orden público sin incidentes mayores. No hay datos nuevos de encuestas que muevan la intención de voto, que se mantiene en 51-45 a favor de De la Espriella. El tono de campaña ya cedió el paso a la logística electoral: ahora el factor determinante es la participación, sobre todo del bloque de indecisos que cabe en un margen estrecho. La estabilidad de las cifras refuerza el favoritismo, pero no lo blinda.",
+    "que_cambio": "No cambia la intención de voto (51-45). Lo nuevo es operativo: se abrieron las mesas y el primer parte de orden público transcurre sin incidentes relevantes."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Endurece discurso",
+      "momentum_label": "Ventaja estable",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en intención de voto",
-        "Discurso de seguridad y orden con eco en su base",
-        "Iniciativa en la conversación del día"
+        "Ventaja sostenida y estable en intención de voto",
+        "Mensaje de cierre con alta penetración mediática",
+        "Narrativa de seguridad que moviliza su electorado"
       ],
       "debilidades": [
-        "Riesgo de sobreexposición con mensajes confrontacionales",
-        "Techo electoral si activa al voto contrario"
+        "Riesgo de exceso de confianza que desincentive a sus votantes",
+        "Techo electoral si los indecisos no se inclinan a su favor"
       ],
       "riesgos": [
-        "Que el marco de 'fraude' y la apelación a la fuerza pública movilicen a indecisos en su contra",
-        "Lectura de exceso de confianza pese a sus propias advertencias"
+        "Abstención en su propio bloque por sensación de triunfo anticipado",
+        "Que la baja participación estreche el margen real de menos de 700.000 votos"
       ],
       "catalizadores": [
-        "Alta participación en regiones afines",
-        "Trasvase de indecisos que priorizan seguridad"
+        "Jornada en calma que valide su discurso de orden",
+        "Alta participación urbana en regiones donde es fuerte"
       ]
     },
     {
@@ -55,53 +55,48 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Moviliza base",
+      "momentum_label": "Moviliza su base",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de cierre centrado en 'vida' y participación",
-        "Capacidad de movilización del Pacto Histórico",
-        "Margen estrecho que mantiene viva la disputa"
+        "Capacidad de movilización de base activa",
+        "Respaldo explícito del oficialismo en el tramo final",
+        "Mensaje de 'defender la vida' que cohesiona a su electorado"
       ],
       "debilidades": [
-        "Va por detrás en intención de voto",
-        "Necesita una participación excepcional para cerrar la brecha"
+        "Desventaja de ~6 puntos que debe cerrar el día de la elección",
+        "Dependencia de una participación excepcionalmente alta"
       ],
       "riesgos": [
-        "Que la narrativa de seguridad del rival fije la agenda del día",
-        "Desmovilización si se asume el resultado como cerrado"
+        "Que el margen no se cierre pese a la movilización",
+        "Denuncias de constreñimiento que generen ruido sin mover votos"
       ],
       "catalizadores": [
-        "Reacción de su electorado ante el discurso confrontacional del rival",
-        "Volcado de indecisos hacia la continuidad"
+        "Volcado masivo de indecisos en las últimas horas",
+        "Participación récord en sus bastiones"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 84% De la Espriella / 18% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 84% De la Espriella / 17% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "El País / France 24",
-      "detalle": "La prensa encuadra la jornada como un dilema entre giro a la derecha y continuidad de izquierda.",
+      "fuente": "Reporte de jornada (Infobae)",
+      "detalle": "Apertura de mesas con primer parte de orden público sin incidentes mayores.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Semana",
-      "detalle": "De la Espriella centra su cierre en el marco del 'fraude' y la Fuerza Pública dirigido al petrismo.",
+      "fuente": "Análisis de balotaje (Perfil)",
+      "detalle": "Los indecisos siguen siendo el factor que define una elección muy dividida.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Encuestas previas",
+      "detalle": "Intención de voto estable en 51-45, sin nuevos sondeos que la muevan.",
       "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Infobae",
-      "detalle": "Cepeda llama a 'defender la vida' para activar a su electorado en la apertura de mesas.",
-      "favorece": "cepeda"
-    },
-    {
-      "fuente": "Perfil / El País",
-      "detalle": "Los indecisos siguen siendo la variable que define un balotaje muy dividido.",
-      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -111,6 +106,14 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T06:07:48.530Z",
+      "tipo": "hito",
+      "titulo": "Abren las mesas y el primer parte de orden público transcurre sin incidentes mayores",
+      "detalle": "La votación de la segunda vuelta arranca con la apertura de mesas y un reporte inicial de tranquilidad.",
+      "fuente": "",
+      "cuerpo": "La jornada del balotaje entró en su fase operativa con la apertura de mesas en todo el país y un primer reporte de orden público que no registra incidentes de gravedad. El arranque sigue al despliegue de observadores, a las reglas ya fijadas para la jornada —ley seca, horarios y tarjetón— y al refuerzo de seguridad anunciado en los días previos. Ambas campañas habían cerrado su mensaje el sábado: De la Espriella sobre seguridad y resultados, y Cepeda con su llamado a 'defender la vida'.\n\nCon las urnas abiertas, el eje deja de ser el discurso y pasa a la participación. La ventaja de 51-45 favorece a De la Espriella, pero el margen real es estrecho y depende de cuántos indecisos acudan y hacia dónde se inclinen. Una jornada tranquila tiende a consolidar al favorito; cualquier pico de abstención en su bloque o una movilización excepcional del electorado de Cepeda son las dos variables capaces de estrechar la diferencia en el conteo final."
     },
     {
       "ts": "2026-06-21T04:49:54.836Z",
@@ -332,13 +335,6 @@
       "detalle": "Análisis a pocas horas del cierre apunta a que el indeciso aún no está definido y puede inclinar el resultado.",
       "fuente": "",
       "cuerpo": "A menos de un día de la votación, el foco de los analistas se desplazó del pulso entre los dos candidatos al comportamiento del electorado que aún no decide. La lectura de la recta final sugiere que un bloque de votantes sin preferencia firme será determinante en una contienda cuya diferencia, aunque amplia en porcentaje, se reduce a menos de 700.000 sufragios en términos absolutos.\n\nPara la segunda vuelta esto significa que el resultado depende menos de los convencidos de cada bando y más de la capacidad de cada campaña para arrastrar al indeciso y a quien dudaba si abstenerse. De la Espriella parte con ventaja en las encuestas, pero la estrechez del margen real mantiene la puerta abierta a una sorpresa si Cepeda logra una conversión alta en las últimas horas."
-    },
-    {
-      "ts": "2026-06-20T18:03:49.813Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 90% ▼ 88%",
-      "detalle": "Se ajusta 90-10 a 88-12 por el repunte de Cepeda en Polymarket y el dato nuevo de que el margen en votos absolutos es estrecho y reversible.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -591,6 +587,11 @@
       "ts": "2026-06-21T05:42:07.101Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T06:07:49.528Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -632,7 +633,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 84,
-      "cepeda": 18
+      "cepeda": 17
     }
   }
 }
