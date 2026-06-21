@@ -1,10 +1,10 @@
 {
   "meta": {
-    "estado": "esperando",
-    "boletin": "0",
-    "generado": "2026-06-21T18:47:00.000Z",
-    "fuente_actualizacion": "",
-    "proxima_actualizacion": "",
+    "estado": "en_vivo",
+    "boletin": "15",
+    "generado": "2026-06-21T22:24:48.427Z",
+    "fuente_actualizacion": "21/06/2026 17:19h",
+    "proxima_actualizacion": "2026-06-21T22:27:48.427Z",
     "cadencia_min": 3,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "cierre_urnas": "2026-06-21T16:00:00-05:00",
@@ -12,15 +12,40 @@
     "fuente_url": "https://resultados.registraduria.gov.co/v2/resultados/0/00"
   },
   "escrutinio": {
-    "pct_mesas": 0,
-    "mesas_informadas": 0,
-    "mesas_total": 0,
-    "total_votos": 0
+    "pct_mesas": 99.24,
+    "mesas_informadas": 121096,
+    "mesas_total": 122020,
+    "total_votos": 25604907
   },
   "candidatos": [
-    { "id": "delaespriella", "nombre": "Abelardo de la Espriella", "partido": "Defensores de la Patria", "color": "#4C8DFF", "votos": 0, "pct": 0 },
-    { "id": "cepeda", "nombre": "Iván Cepeda", "partido": "Pacto Histórico", "color": "#FF4D6D", "votos": 0, "pct": 0 }
+    {
+      "id": "delaespriella",
+      "nombre": "Abelardo de la Espriella",
+      "partido": "Defensores de la Patria",
+      "color": "#4C8DFF",
+      "votos": 12878969,
+      "pct": 49.68
+    },
+    {
+      "id": "cepeda",
+      "nombre": "Iván Cepeda",
+      "partido": "Pacto Histórico",
+      "color": "#FF4D6D",
+      "votos": 12617038,
+      "pct": 48.67
+    }
   ],
-  "otros": { "blancos": 0, "nulos": 0, "no_marcados": 0 },
-  "historico": []
+  "otros": {
+    "blancos": 0,
+    "nulos": 0,
+    "no_marcados": 0
+  },
+  "historico": [
+    {
+      "ts": "2026-06-21T22:24:48.427Z",
+      "delaespriella": 12878969,
+      "cepeda": 12617038,
+      "pct_mesas": 99.24
+    }
+  ]
 }
