@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 92,
-    "generado": "2026-06-21T21:02:09.789Z",
-    "proxima_actualizacion": "2026-06-21T21:12:09.789Z",
+    "ciclo": 93,
+    "generado": "2026-06-21T21:12:47.479Z",
+    "proxima_actualizacion": "2026-06-21T21:22:47.479Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 85,
     "confianza": "Media",
-    "titular": "Nada nuevo bajo el sol: la intención sigue en 51-45 mientras corre el conteo.",
-    "resumen": "El ciclo no aporta encuestas ni boletines oficiales, así que la intención de voto se mantiene en 51-45 con un bloque de indecisos aún sin resolver. Todos los titulares de las últimas horas reiteran hechos ya incorporados a la línea de tiempo: la votación de ambos candidatos, el compromiso de Cepeda de reconocer el resultado pero verificar preconteo y escrutinio, los 90 decretos de De la Espriella y su advertencia sobre el exceso de confianza. El mercado de apuestas se mueve a 82-20, pero esa señal no entra en el cálculo del panel.",
-    "que_cambio": "No cambió nada sustantivo: no hay sondeos nuevos y los titulares frescos repiten eventos ya reportados. La intención se mantiene en 51-45 a la espera del primer corte de la Registraduría."
+    "titular": "El conteo manda y los titulares solo reciclan lo ya visto: la intención sigue 51-45.",
+    "resumen": "Otro ciclo sin sondeos nuevos ni boletines oficiales de la Registraduría. Todos los titulares frescos repiten hechos ya incorporados: la votación de ambos candidatos, el compromiso de Cepeda de reconocer el resultado pero verificar preconteo y escrutinio, y la advertencia de De la Espriella sobre el exceso de confianza. La intención de voto se mantiene en 51-45 con un bloque de indecisos sin resolver. Polymarket se mueve a 80-22, pero esa señal de mercado no entra en el cálculo del panel.",
+    "que_cambio": "No cambió nada sustantivo: no hay encuestas nuevas y los titulares de las últimas horas reiteran eventos ya reportados. La intención sigue en 51-45 a la espera del primer corte oficial."
   },
   "candidatos": [
     {
@@ -27,24 +27,24 @@
       "color": "#2563eb",
       "probabilidad": 85,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en intención de voto (51%)",
-        "Mensaje de cierre disciplinado que conjura el triunfalismo",
-        "Agenda de gobierno concreta con 90 decretos listos"
+        "Ventaja sostenida en la intención de voto (51%)",
+        "Narrativa de orden y seguridad consolidada",
+        "Agenda de gobierno ya definida con decretos listos"
       ],
       "debilidades": [
-        "Retórica de seguridad que polariza a sectores moderados",
-        "Techo electoral si no captura indecisos"
+        "Su propio discurso reconoce riesgo de exceso de confianza",
+        "Tono confrontacional con instituciones puede activar voto de rechazo"
       ],
       "riesgos": [
-        "Que el exceso de confianza desmovilice a su base",
-        "Cuestionamientos sobre su perfil de 'outsider'"
+        "Abstención de su base por sensación de triunfo asegurado",
+        "Que el cierre del bloque indeciso favorezca a Cepeda"
       ],
       "catalizadores": [
-        "Primer corte de preconteo que confirme su ventaja",
+        "Primer corte de la Registraduría que confirme su ventaja",
         "Alta participación en regiones afines"
       ]
     },
@@ -55,42 +55,47 @@
       "color": "#e11d48",
       "probabilidad": 15,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Base movilizada y discurso de remontada",
-        "Respaldo del aparato del Pacto Histórico",
-        "Estrategia de veeduría sobre el escrutinio"
+        "Mensaje de remontada y campaña 'ejemplar'",
+        "Maquinaria del Pacto Histórico movilizada en grandes ciudades",
+        "Posicionamiento institucional al comprometerse a reconocer el resultado"
       ],
       "debilidades": [
-        "Rezago de seis puntos en intención de voto (45%)",
-        "Necesita un vuelco fuerte de indecisos en pocas horas"
+        "Sigue por debajo en la intención de voto (45%)",
+        "Depende de capturar la mayor parte de los indecisos"
       ],
       "riesgos": [
-        "Que la brecha se confirme en los primeros boletines",
-        "Desgaste por la cercanía con el Gobierno saliente"
+        "Que el preconteo confirme una brecha difícil de cerrar",
+        "Desgaste si la verificación se lee como anticipo de desconocer resultados"
       ],
       "catalizadores": [
-        "Repunte en interés digital a horas del cierre",
-        "Alta abstención en zonas afines al rival"
+        "Repunte de participación en Bogotá y zonas urbanas",
+        "Trasvase de indecisos hacia su candidatura"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 82% De la Espriella / 20% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 80% De la Espriella / 22% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Estado previo (sondeos)",
-      "detalle": "La intención de voto se mantiene clavada en 51-45 sin encuestas nuevas que la muevan.",
+      "fuente": "Encuestas (estado vigente)",
+      "detalle": "La intención se mantiene 51-45 sin sondeos nuevos que la modifiquen.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Calendario electoral",
-      "detalle": "El panel espera el primer corte oficial de la Registraduría para recalibrar.",
+      "fuente": "Registraduría",
+      "detalle": "Aún sin boletines oficiales de preconteo en este ciclo.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Cobertura de prensa",
+      "detalle": "Los titulares de las últimas horas repiten hechos ya reportados; no aportan novedad.",
       "favorece": "incierto"
     }
   ],
@@ -799,6 +804,11 @@
       "ts": "2026-06-21T21:02:09.789Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T21:12:47.479Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
@@ -839,8 +849,8 @@
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 82,
-      "cepeda": 20
+      "delaespriella": 80,
+      "cepeda": 22
     }
   }
 }
