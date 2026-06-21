@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 102,
-    "generado": "2026-06-21T23:31:58.271Z",
-    "proxima_actualizacion": "2026-06-21T23:41:58.271Z",
+    "ciclo": 103,
+    "generado": "2026-06-21T23:47:33.419Z",
+    "proxima_actualizacion": "2026-06-21T23:57:33.419Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "El preconteo cuaja: 49,77% vs 48,59% con más del 98% escrutado.",
-    "resumen": "El cuadro se consolida sin sobresaltos. El preconteo oficial ya pone cifras finas a la ventaja de De la Espriella —49,77% frente al 48,59% de Cepeda con más del 98% de mesas— una diferencia de poco más de un punto que confirma la tendencia que veníamos manejando. Ajustamos la intención a 50-49 para reflejar el estrechamiento real del margen, sin alterar el favorito. La jornada sigue avalada y Cepeda mantiene su postura de reconocer con observación.",
-    "que_cambio": "El margen se afina: pasamos de un 50-48 estimado a un 50-49 que recoge el preconteo oficial (49,77 vs 48,59). La distancia cae a poco más de un punto, pero el orden no se mueve."
+    "titular": "Cuadro cerrado: 49,77% vs 48,59% sin sobresaltos en el tramo final.",
+    "resumen": "No hay movimiento real respecto al ciclo anterior. El preconteo oficial sostiene el 49,77% de De la Espriella frente al 48,59% de Cepeda con más del 98% de mesas, una diferencia de poco más de un punto que ya veníamos manejando. Mantenemos la intención en 50-49 y el favorito sin cambios. La jornada sigue avalada y Cepeda conserva su postura de reconocer con observación.",
+    "que_cambio": "Nada sustantivo: los titulares de las últimas horas solo reiteran el preconteo ya reportado (49,77 vs 48,59). El margen y el orden se mantienen idénticos."
   },
   "candidatos": [
     {
@@ -26,29 +26,26 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 57,
-      "momentum": "down",
+      "momentum": "steady",
       "momentum_label": "Ventaja firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en el preconteo con más del 98% escrutado",
-        "Resultado avalado por la observación nacional e internacional",
-        "Narrativa de presidente electo ya instalada"
+        "Ventaja consolidada con más del 98% escrutado",
+        "Resultado avalado por OEA y MOE-UE",
+        "Narrativa de cierre de ciclo instalada en medios"
       ],
       "debilidades": [
-        "Margen estrechísimo, apenas 1,18 puntos",
-        "Mandato sin holgura para imponer agenda",
-        "País dividido casi por mitades"
+        "Margen de apenas poco más de un punto",
+        "Mandato sin holgura para gobernar"
       ],
       "riesgos": [
-        "Que el escrutinio final recorte aún más la diferencia",
-        "Impugnaciones puntuales en mesas reñidas",
-        "Tensión por su retórica sobre Fuerza Pública y Congreso"
+        "Cualquier reproceso de mesas en el tramo final",
+        "Reclamos de la campaña rival sobre el escrutinio"
       ],
       "catalizadores": [
-        "Cierre del escrutinio que ratifique el preconteo",
-        "Reconocimiento formal del rival",
-        "Declaración de la autoridad electoral"
+        "Confirmación del escrutinio definitivo",
+        "Reconocimiento explícito del adversario"
       ]
     },
     {
@@ -57,27 +54,26 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 43,
-      "momentum": "up",
-      "momentum_label": "Cierra mínimo",
+      "momentum": "steady",
+      "momentum_label": "Cae por poco",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Resistencia notable: queda a poco más de un punto",
-        "Base movilizada y legitimidad para observar el conteo",
-        "Postura institucional de reconocer el resultado"
+        "Cierre por debajo de un punto y medio",
+        "Postura institucional de reconocer con observación",
+        "Base electoral movilizada hasta el final"
       ],
       "debilidades": [
-        "Queda por debajo en el preconteo casi consolidado",
-        "Margen difícil de revertir con tan pocas mesas pendientes",
-        "Sin catalizador que altere la tendencia"
+        "Queda corto en el preconteo con casi todo escrutado",
+        "Sin margen para revertir la tendencia"
       ],
       "riesgos": [
-        "Que el remanente de mesas no alcance para descontar",
-        "Desmovilización tras conocerse el resultado"
+        "Que la observación no halle inconsistencias materiales",
+        "Desmovilización tras el resultado"
       ],
       "catalizadores": [
-        "Sorpresa en las mesas faltantes",
-        "Hallazgos en la observación del escrutinio"
+        "Hallazgos en la verificación del escrutinio",
+        "Diferencias finas en mesas pendientes"
       ]
     }
   ],
@@ -88,18 +84,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "De la Espriella 49,77% frente a Cepeda 48,59%, diferencia de 1,18 puntos.",
+      "fuente": "Preconteo Registraduría",
+      "detalle": "49,77% vs 48,59% con más del 98% de mesas, ventaja de poco más de un punto.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Conteo rápido / sondeos",
-      "detalle": "Coinciden en una ventaja mínima del candidato de derecha.",
+      "fuente": "Misiones de observación (OEA, MOE-UE)",
+      "detalle": "Jornada avalada sin incidentes que alteren el resultado.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Observación electoral",
-      "detalle": "Jornada sin incidentes mayores; Cepeda reconoce con observación.",
+      "fuente": "Campaña Cepeda",
+      "detalle": "Reconoce el resultado pero anuncia observación clara del escrutinio.",
       "favorece": "incierto"
     }
   ],
@@ -859,6 +855,11 @@
     },
     {
       "ts": "2026-06-21T23:31:58.271Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-21T23:47:33.419Z",
       "delaespriella": 57,
       "cepeda": 43
     }
