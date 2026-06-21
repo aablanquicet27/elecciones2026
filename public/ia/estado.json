@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 62,
-    "generado": "2026-06-21T10:31:33.652Z",
-    "proxima_actualizacion": "2026-06-21T10:51:33.652Z",
+    "ciclo": 63,
+    "generado": "2026-06-21T10:56:56.637Z",
+    "proxima_actualizacion": "2026-06-21T11:16:56.637Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,8 +15,8 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Sin mediciones nuevas, el tablero sigue 51-45 mientras corre la votación del 21J.",
-    "resumen": "El ciclo no aporta ninguna encuesta fresca ni hecho genuinamente inédito. Los titulares de las últimas horas son coberturas en vivo de la jornada y encuadres de prensa —Colombia entre la derecha radical y la izquierda post-Petro, los modelos opuestos de los dos candidatos, la polarización del balotaje— ya consignados en ciclos previos. La intención de voto permanece en 51-45 a favor de De la Espriella. La participación y el bloque indeciso siguen siendo las únicas variables abiertas hasta el cierre de urnas.",
+    "titular": "El tablero sigue clavado en 51-45 mientras transcurre la votación del 21J sin datos nuevos.",
+    "resumen": "El ciclo no aporta ninguna encuesta fresca ni hecho genuinamente inédito. Los titulares de las últimas horas son cobertura en vivo de la jornada y encuadres de prensa —la Colombia dividida, los dos modelos de país, el balotaje post-Petro— ya consignados en ciclos previos. El llamado de De la Espriella contra el 'exceso de confianza' replica su anterior mensaje contra el triunfalismo, ya reportado. La intención de voto permanece en 51-45. Participación y bloque indeciso siguen siendo las únicas variables abiertas hasta el cierre de urnas.",
     "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes son cobertura minuto a minuto o encuadres ya reportados. Se mantiene 51-45 y momentum estable para ambos."
   },
   "candidatos": [
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja estable",
+      "momentum_label": "Firme sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de seis puntos en la última medición",
-        "Narrativa de orden y mano dura que moviliza a su base",
-        "Posición de favorito consolidada en la cobertura previa"
+        "Ventaja sostenida de 6 puntos en intención de voto",
+        "Mensaje de movilización claro y disciplina de campaña en la recta final",
+        "Favorito consolidado en el encuadre mediático del balotaje"
       ],
       "debilidades": [
-        "Margen real estrecho, por debajo de 700.000 votos",
-        "Retórica de intervención militar que puede repeler al centro"
+        "Margen real estrecho: cabe en menos de 700.000 votos",
+        "Riesgo de desmovilización por exceso de confianza, que él mismo reconoce"
       ],
       "riesgos": [
-        "Triunfalismo que desmovilice a sus votantes",
-        "Baja participación en sus bastiones"
+        "Una participación baja en sus bastiones podría comprimir la ventaja",
+        "El bloque indeciso aún puede inclinar la balanza en un margen tan ajustado"
       ],
       "catalizadores": [
-        "Alta votación de la derecha urbana",
-        "Trasvase de indecisos hacia el discurso de seguridad"
+        "Trasvase efectivo de indecisos en la jornada",
+        "Alta participación en regiones afines"
       ]
     },
     {
@@ -55,24 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Espera resultados",
+      "momentum_label": "Estable a la espera",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico y respaldo activo de Petro",
-        "Repunte de interés digital en la antesala del cierre"
+        "Mantiene 45% pese a estar abajo, base de izquierda movilizada",
+        "Reaparición de Petro en la recta final puede activar voto duro"
       ],
       "debilidades": [
-        "Sigue abajo en la intención de voto",
-        "Dependencia del voto petrista en una elección sin Petro en el tarjetón"
+        "Seis puntos por detrás sin una encuesta que muestre repunte",
+        "Sin catalizador nuevo que altere la tendencia en la jornada"
       ],
       "riesgos": [
-        "Constreñimiento al elector denunciado por su campaña",
-        "Techo electoral de la izquierda"
+        "Quedarse corto en participación frente a la ventaja del rival",
+        "El tiempo se agota sin un hecho que mueva el tablero"
       ],
       "catalizadores": [
-        "Participación masiva en regiones afines",
-        "Volcado del indeciso hacia la continuidad social"
+        "Sorpresa de participación a su favor",
+        "Captura mayoritaria del voto indeciso en el cierre"
       ]
     }
   ],
@@ -83,13 +83,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (sin actualización)",
-      "detalle": "Intención de voto se mantiene 51-45 a favor de De la Espriella.",
+      "fuente": "Cobertura en vivo (Google News)",
+      "detalle": "El grueso de titulares de las últimas horas son partes de jornada y encuadres ya consignados, sin medición nueva.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Promedio de encuestas (estado previo)",
+      "detalle": "Sin sondeos frescos, la intención de voto se mantiene en 51-45 a favor de De la Espriella.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (Infobae, EL PAÍS, Semana)",
-      "detalle": "Reportes de apertura y desarrollo de la jornada sin datos electorales nuevos.",
+      "fuente": "Margen estimado",
+      "detalle": "La diferencia cabe en menos de 700.000 votos: participación e indecisos siguen siendo decisivos.",
       "favorece": "incierto"
     }
   ],
@@ -645,6 +650,11 @@
     },
     {
       "ts": "2026-06-21T10:31:33.652Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T10:56:56.637Z",
       "delaespriella": 76,
       "cepeda": 24
     }
