@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 77,
-    "generado": "2026-06-21T16:16:36.414Z",
-    "proxima_actualizacion": "2026-06-21T16:36:36.414Z",
+    "ciclo": 78,
+    "generado": "2026-06-21T16:37:41.231Z",
+    "proxima_actualizacion": "2026-06-21T16:57:41.231Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "El tablero no se mueve: 51-45 a la espera del primer boletín oficial.",
-    "resumen": "El ciclo no trae sondeos nuevos ni hechos genuinamente inéditos. La cobertura de las últimas horas reitera lo ya registrado: apertura de urnas con llamado a la calma, la reaparición de Petro en la jornada, el mensaje de Cepeda de 'votar por la vida' y la advertencia de De la Espriella sobre el 'exceso de confianza'. La intención de voto se sostiene en 51-45 porque nada en los titulares justifica moverla. La participación y el conteo siguen siendo las variables decisivas, todavía sin resultados oficiales.",
-    "que_cambio": "Nada sustantivo: no hay encuestas frescas y los titulares recientes repiten eventos ya reportados. Se mantiene 51-45 sin agregar eventos a la línea de tiempo."
+    "titular": "De la Espriella vota confiado; el 51-45 aguanta sin boletín oficial.",
+    "resumen": "El único hecho genuinamente nuevo de la franja es el sufragio del propio De la Espriella, que volvió a exhibir confianza en la victoria. No hay sondeos frescos ni resultados oficiales, de modo que la intención de voto se mantiene en 51-45. La jornada sigue dominada por la participación y la espera del primer escrutinio, sin señales que justifiquen mover el tablero.",
+    "que_cambio": "Se agrega un evento nuevo: De la Espriella ya votó y reiteró su confianza. La intención de voto no se mueve por ausencia de encuestas nuevas."
   },
   "candidatos": [
     {
@@ -27,27 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja estable",
+      "momentum_label": "Sin cambios",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en intención de voto (51%)",
-        "Narrativa de orden y seguridad consolidada",
-        "Respaldo activo del electorado de derecha movilizado"
+        "Ventaja sostenida de 6 puntos en intención de voto",
+        "Narrativa de orden y firmeza que moviliza a su base",
+        "Imagen de confianza reforzada al votar temprano"
       ],
       "debilidades": [
         "Riesgo de desmovilización por exceso de confianza",
-        "Retórica de intervención de la Fuerza Pública genera rechazo en el centro",
-        "Techo electoral estrecho frente a un margen apretado"
+        "Discurso de mano dura que polariza a indecisos"
       ],
       "riesgos": [
-        "Que el voto indeciso se incline a última hora hacia Cepeda",
-        "Alta participación en bastiones del Pacto Histórico",
-        "Disputas por el escrutinio en un margen inferior a 700.000 votos"
+        "Una participación inesperadamente alta en bastiones de Cepeda",
+        "Que el triunfalismo reduzca la afluencia de sus votantes"
       ],
       "catalizadores": [
-        "Boletines tempranos que confirmen su ventaja",
-        "Baja afluencia en regiones favorables a Cepeda"
+        "Primeros boletines que confirmen su ventaja",
+        "Alta participación en regiones conservadoras"
       ]
     },
     {
@@ -57,52 +55,59 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Sin repunte",
+      "momentum_label": "Sin cambios",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Capacidad de movilización del Pacto Histórico",
-        "Mensaje de 'defensa de la vida' frente a la polarización",
-        "Repunte de interés digital en horas previas al cierre"
+        "Maquinaria del Pacto Histórico y respaldo de figuras como Petro y Barreras",
+        "Mensaje de 'defender la vida' que cohesiona a la izquierda"
       ],
       "debilidades": [
-        "Rezago de ~6 puntos en intención de voto",
-        "Apoyo de Petro que polariza y puede restar en el centro",
-        "Menor tracción entre indecisos según la cobertura reciente"
+        "Va abajo en la intención de voto por margen consistente",
+        "Dependencia del voto petrista en una coyuntura polarizada"
       ],
       "riesgos": [
-        "Que la ventaja del rival se consolide en el conteo inicial",
-        "Abstención en zonas urbanas clave"
+        "Que el margen de 6 puntos sea inalcanzable sin un vuelco en participación",
+        "Desgaste por la asociación con el Gobierno saliente"
       ],
       "catalizadores": [
-        "Volcado masivo del voto indeciso a su favor",
-        "Participación récord en regiones de su base"
+        "Repunte de participación juvenil y urbana",
+        "Alta movilización en el voto exterior y regiones de su base"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 85% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 85% De la Espriella / 17% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (sin datos nuevos)",
-      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella, sin sondeos frescos que la alteren.",
+      "fuente": "Cobertura en vivo (hace <1h)",
+      "detalle": "De la Espriella sufraga y se declara confiado en ganar la segunda vuelta.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (El Espectador, Caracol, La Nación)",
-      "detalle": "La jornada transcurre con alta afluencia y llamados a la calma, sin incidentes que muevan el tablero.",
-      "favorece": "incierto"
+      "fuente": "Estado de las encuestas",
+      "detalle": "Sin sondeos nuevos en la franja; la última fotografía sostiene 51-45.",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "Análisis del voto indeciso (El Diario)",
-      "detalle": "Los indecisos siguen siendo el árbitro de una segunda vuelta de extremos, aún sin definición.",
+      "fuente": "Jornada electoral",
+      "detalle": "Aún no hay boletines oficiales; participación y escrutinio siguen como variables decisivas.",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T15:53:31.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella vota y se muestra confiado en la victoria",
+      "detalle": "El candidato de la derecha sufragó en la jornada y reiteró su confianza en ganar la segunda vuelta.",
+      "fuente": "portafolio.co",
+      "cuerpo": "Abelardo de la Espriella acudió a votar en la mañana del 21 de junio y, ante la prensa, se mostró seguro de imponerse en el balotaje frente a Iván Cepeda. La imagen del candidato sufragando temprano y proyectando confianza se suma a su mensaje reciente de pedir voto masivo y evitar el 'exceso de confianza', en una jornada que aún no arroja resultados oficiales.\n\nEl gesto busca consolidar el ánimo de su base y trasladar sensación de inevitabilidad en la recta final, donde su ventaja en la intención de voto ronda los seis puntos. El riesgo implícito es que ese mismo optimismo desmovilice a parte de su electorado, justo cuando la participación es la variable que puede estrechar o ampliar el margen de 51-45 antes del primer escrutinio.",
+      "url": "https://www.portafolio.co/economia/gobierno/abelardo-de-la-espriella-voto-en-barranquilla-y-se-mostro-confiado-en-la-victoria-durante-la-jornada-electoral-496621"
+    },
     {
       "ts": "2026-06-21T14:39:05.729Z",
       "tipo": "hito",
@@ -331,15 +336,6 @@
       "fuente": "Infobae",
       "cuerpo": "A pocas horas del cierre, la campaña de Iván Cepeda hizo pública su preocupación por un posible constreñimiento al elector, es decir, presiones o coacción sobre votantes el día de la votación. La denuncia se suma a un clima ya cargado, en el que el presidente Petro había pedido calma a sus bases y en el que las autoridades reforzaron seguridad con recompensas y monitoreo aéreo en algunas ciudades.\n\nEl efecto sobre el reparto es marginal mientras no haya hechos verificados, pero la alerta cumple una función doble: moviliza a la base del Pacto Histórico bajo la idea de un voto amenazado y deja sentado un argumento de impugnación ante un resultado adverso. En una contienda donde el margen absoluto sigue siendo estrecho, el relato sobre la limpieza de la jornada pesa tanto como los votos.",
       "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxON3dsTFpEaDVRVURwVWtYelFtTEhHcVpXeS0tT3E5WG54OWZVbGFENmprTmlNSXhOeDRwTkNGQWVJM3lCZy1GWjFBNGJhOGhKb0R4VnV5MXotVUVLenlOVm5BdFhoOHlzZ0ZnaUVQVk5mOGg1RlZRZ0FoWWUyS0FMY0lEUG9KVWJ5VC1wVlJyS3RLa09hdG1LNjNzdXBZbno4eDhDa0xYOWRnT1VZVGdiS2Z3MWt0akZJZGg4aUQ0dUZHSk9RMWVMR3lCdWFWYWRpcVduUGlfR3p6TXI5X3pnRG1CdlJxOURMUzVEZ2lOMXlEQzhQY1HSAZACQVVfeXFMT1VJT0pIcEpiMW1EQ2tsS0l6a01yOXlRMmVWbzhjUFFGenA4dmhVdjFQRWNOSi1RaWl6Wk56bkFjTHNTWW5VQnROTHJ5dVdQNURPZE5VVGFURmx1dXZFQkx6N05vczVMT1liY05yN3V5c0xjRUItUkV6Z2ZpSXJEOGJWMGlEaWJxT3JJOVA4TDJpTFAtcFBkaW02TUNFTnNlc29uYWlpQVUwakQtUG5FWDduRlRpbFJqSTVKMS1CZHd6bmNWeldwbTlWQmtmWmFtUGRPTk9ZRV9vbkNySVc5RG1ndlZKazlLY0xKdGxCdC1PeVBBc2tfRW1UZ29xWmJ3Mjl1UWFnZUE3UzR2VGNzbU4?oc=5"
-    },
-    {
-      "ts": "2026-06-20T19:50:00.000Z",
-      "tipo": "alerta",
-      "titulo": "Defensa ofrece recompensas de hasta $1.000 millones por prevenir atentados",
-      "detalle": "El Ministerio de Defensa anunció recompensas para frustrar atentados contra los dos candidatos en la víspera de la segunda vuelta.",
-      "fuente": "ELTIEMPO.COM",
-      "cuerpo": "El Ministerio de Defensa anunció recompensas de hasta 1.000 millones de pesos por información que permita prevenir atentados contra Iván Cepeda y Abelardo de la Espriella en la antesala de la segunda vuelta. La medida se inscribe en un despliegue de seguridad que ya incluía monitoreo aéreo en ciudades como Barranquilla y refuerza la lectura de una jornada vigilada de cerca por las autoridades.\n\nPara la contienda, el anuncio no mueve la correlación de fuerzas: ningún candidato gana o pierde votos por una medida de protección. Su efecto es indirecto —busca blindar la normalidad del proceso— y se suma al llamado de Petro a la calma. Mientras no haya un incidente real, la disputa sigue definida por la intención de voto, donde De la Espriella conserva su ventaja.",
-      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
     }
   ],
   "historico": [
@@ -732,6 +728,11 @@
       "ts": "2026-06-21T16:16:36.414Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T16:37:41.231Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -773,7 +774,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 85,
-      "cepeda": 16
+      "cepeda": 17
     }
   }
 }
