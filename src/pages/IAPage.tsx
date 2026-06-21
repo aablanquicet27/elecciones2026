@@ -4,6 +4,7 @@ import {
   TrendingUp, TrendingDown, Minus, CheckCircle2, AlertTriangle,
   Zap, ArrowLeft, RefreshCw, ChevronDown, ChevronRight, ExternalLink, X,
 } from 'lucide-react';
+import BoletinPanel from '../components/BoletinPanel';
 
 // ---------- Tipos ----------
 interface Candidato {
@@ -250,6 +251,9 @@ export default function IAPage() {
             </div>
           )}
         </section>
+
+        {/* ===== Boletín oficial en vivo (votos reales · Registraduría) ===== */}
+        <BoletinPanel />
 
         {/* ===== Señales ===== */}
         <Titulo n="01" t="Señales en lectura" />

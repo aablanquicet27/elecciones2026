@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "estado": "esperando",
+    "boletin": "0",
+    "generado": "2026-06-21T18:47:00.000Z",
+    "fuente_actualizacion": "",
+    "proxima_actualizacion": "",
+    "cadencia_min": 3,
+    "evento": "Segunda vuelta presidencial — Colombia 2026",
+    "cierre_urnas": "2026-06-21T16:00:00-05:00",
+    "fuente": "Registraduría Nacional del Estado Civil · Preconteo",
+    "fuente_url": "https://resultados.registraduria.gov.co/v2/resultados/0/00"
+  },
+  "escrutinio": {
+    "pct_mesas": 0,
+    "mesas_informadas": 0,
+    "mesas_total": 0,
+    "total_votos": 0
+  },
+  "candidatos": [
+    { "id": "delaespriella", "nombre": "Abelardo de la Espriella", "partido": "Defensores de la Patria", "color": "#4C8DFF", "votos": 0, "pct": 0 },
+    { "id": "cepeda", "nombre": "Iván Cepeda", "partido": "Pacto Histórico", "color": "#FF4D6D", "votos": 0, "pct": 0 }
+  ],
+  "otros": { "blancos": 0, "nulos": 0, "no_marcados": 0 },
+  "historico": []
+}
