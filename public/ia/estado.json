@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 39,
-    "generado": "2026-06-21T01:07:36.884Z",
-    "proxima_actualizacion": "2026-06-21T01:37:36.884Z",
+    "ciclo": 40,
+    "generado": "2026-06-21T01:38:38.041Z",
+    "proxima_actualizacion": "2026-06-21T02:08:38.041Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 86,
+    "probabilidad": 85,
     "confianza": "Alta",
-    "titular": "86-14: Polymarket afloja a 85 y Cepeda asoma en Google Trends, ajustamos un punto.",
-    "resumen": "El mercado retrocede de 88 hacia 85 y un repunte de Cepeda en búsquedas obliga a soltar un punto sin alterar el cuadro de fondo: De la Espriella sigue como favorito amplio. La novedad real del ciclo es la advertencia del candidato derechista al Congreso, que tensa el clima de víspera. El resto de titulares recicla hechos ya reportados.",
-    "que_cambio": "Bajamos a De la Espriella de 87 a 86 para acompañar la caída de Polymarket a 85 y el repunte de Cepeda en Google Trends, sin romper la continuidad."
+    "titular": "85-15: el mercado se estabiliza en 85 y soltamos otro punto a Cepeda, sin alterar el cuadro.",
+    "resumen": "Polymarket se asienta en 85 para De la Espriella mientras Cepeda sube a 16 en la probabilidad implícita, lo que justifica ceder un punto adicional. La novedad real del ciclo es el despliegue de observadores electorales y el llamado de figuras públicas a votar en plena apertura de la jornada. El resto de titulares recicla la amenaza al Congreso, la llegada de Bernie Moreno y el repunte de Cepeda en Trends, todo ya reportado.",
+    "que_cambio": "Bajamos a De la Espriella de 86 a 85 y subimos a Cepeda de 14 a 15 para acompañar la estabilización de Polymarket y el alza implícita de Cepeda a 16, manteniendo el cambio gradual."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 86,
+      "probabilidad": 85,
       "momentum": "down",
       "momentum_label": "Cede un punto",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Favoritismo amplio sostenido en mercados y encuestas",
-        "Ventaja de ~7 puntos en intención de voto",
-        "Narrativa de mano dura moviliza a su base"
+        "Favorito amplio y sostenido en mercados (85)",
+        "Ventaja en intención de voto (52%)",
+        "Narrativa de orden y mandato ciudadano"
       ],
       "debilidades": [
-        "Margen absoluto estrecho, bajo 700.000 votos",
-        "Tono confrontacional puede irritar a indecisos"
+        "Tono confrontativo con el Congreso puede erosionar centro",
+        "Dependencia de un margen estrecho en votos absolutos"
       ],
       "riesgos": [
         "Abstención de su electorado por exceso de confianza",
-        "Repunte de interés en el rival sobre el cierre"
+        "Cualquier incidente que active la maquinaria opositora"
       ],
       "catalizadores": [
-        "Mayor disciplina de voto en regiones afines",
-        "Lectura del mercado que lo mantiene cerca del 85"
+        "Alta participación urbana",
+        "Lectura institucional favorable de la veeduría internacional"
       ]
     },
     {
@@ -53,45 +53,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 14,
+      "probabilidad": 15,
       "momentum": "up",
-      "momentum_label": "Repunta leve",
+      "momentum_label": "Asoma leve",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Piso firme de 45% en intención de voto",
-        "Repunte de búsquedas a horas del cierre",
-        "Maquinaria territorial del Pacto Histórico"
+        "Repunte sostenido en búsquedas y atención digital",
+        "Base movilizada del Pacto Histórico",
+        "Margen real cabe en menos de 700.000 votos"
       ],
       "debilidades": [
-        "Sigue abajo en mercados y encuestas",
-        "Necesita un vuelco de indecisos difícil en esta fase"
+        "Rezago persistente en mercados (15) y encuestas (45%)",
+        "Techo electoral difícil de romper en segunda vuelta"
       ],
       "riesgos": [
-        "Que el interés digital no se traduzca en votos",
-        "Denuncias de constreñimiento que desmovilicen"
+        "Que el repunte digital no se traduzca en urnas",
+        "Denuncias de constreñimiento sin efecto movilizador"
       ],
       "catalizadores": [
-        "Llamado de Petro a la calma y movilización",
-        "Alta participación urbana favorable a la izquierda"
+        "Sorpresa en participación de bases",
+        "Voto exterior con geografía propia"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "La probabilidad implícita de De la Espriella baja a 85% y la de Cepeda sube a 17%.",
+      "detalle": "De la Espriella se estabiliza en 85 y Cepeda sube a 16 en probabilidad implícita.",
       "favorece": "cepeda"
     },
     {
-      "fuente": "La Silla Vacía (Google Trends)",
-      "detalle": "Cepeda repunta en búsquedas frente a De la Espriella a horas de la segunda vuelta.",
+      "fuente": "Google Trends",
+      "detalle": "Cepeda mantiene el repunte en búsquedas a horas del cierre.",
       "favorece": "cepeda"
     },
     {
-      "fuente": "El País",
-      "detalle": "De la Espriella endurece el discurso con una advertencia directa al Congreso.",
-      "favorece": "incierto"
+      "fuente": "Encuestas",
+      "detalle": "Intención de voto sigue marcando 52-45 a favor de De la Espriella.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -101,6 +101,22 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T01:38:38.041Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 86% ▼ 85%",
+      "detalle": "Cedimos un punto a De la Espriella (86→85) porque Polymarket se asentó en 85 y la probabilidad implícita de Cepeda subió a 16, un movimiento gradual y coherente con la víspera.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T01:34:54.000Z",
+      "tipo": "evento",
+      "titulo": "Observadores electorales se despliegan y figuras públicas llaman a votar al abrir la jornada",
+      "detalle": "Las misiones de veeduría se alistan en los puestos mientras personalidades públicas insisten en la participación al inicio del día.",
+      "fuente": "Infobae",
+      "cuerpo": "Con la apertura de la segunda vuelta, los equipos de observación electoral comenzaron a instalarse en los puntos de votación para vigilar el desarrollo de la jornada, en un dispositivo que se suma a la veeduría internacional ya anunciada en días previos. En paralelo, distintas figuras públicas difundieron mensajes invitando a los ciudadanos a acudir a las urnas, una señal del clima de movilización que define esta franja inicial entre Cepeda y De la Espriella.\n\nEl despliegue importa porque en una contienda cuyo margen real cabría en menos de 700.000 votos, la percepción de transparencia y la participación temprana pueden ser decisivas. Para Cepeda, todo llamado a votar alimenta la esperanza de que el repunte digital se convierta en asistencia efectiva; para De la Espriella, una jornada vigilada y con alta concurrencia consolida la legitimidad del resultado que el mercado le sigue atribuyendo con holgura.",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxON3dsTFpEaDVRVURwVWtYelFtTEhHcVpXeS0tT3E5WG54OWZVbGFENmprTmlNSXhOeDRwTkNGQWVJM3lCZy1GWjFBNGJhOGhKb0R4VnV5MXotVUVLenlOVm5BdFhoOHlzZ0ZnaUVQVk5mOGg1RlZRZ0FoWWUyS0FMY0lEUG9KVWJ5VC1wVlJyS3RLa09hdG1LNjNzdXBZbno4eDhDa0xYOWRnT1VZVGdiS2Z3MWt0akZJZGg4aUQ0dUZHSk9RMWVMR3lCdWFWYWRpcVduUGlfR3p6TXI5X3pnRG1CdlJxOURMUzVEZ2lOMXlEQzhQY1HSAZACQVVfeXFMT1VJT0pIcEpiMW1EQ2tsS0l6a01yOXlRMmVWbzhjUFFGenA4dmhVdjFQRWNOSi1RaWl6Wk56bkFjTHNTWW5VQnROTHJ5dVdQNURPZE5VVGFURmx1dXZFQkx6N05vczVMT1liY05yN3V5c0xjRUItUkV6Z2ZpSXJEOGJWMGlEaWJxT3JJOVA4TDJpTFAtcFBkaW02TUNFTnNlc29uYWlpQVUwakQtUG5FWDduRlRpbFJqSTVKMS1CZHd6bmNWeldwbTlWQmtmWmFtUGRPTk9ZRV9vbkNySVc5RG1ndlZKazlLY0xKdGxCdC1PeVBBc2tfRW1UZ29xWmJ3Mjl1UWFnZUE3UzR2VGNzbU4?oc=5"
     },
     {
       "ts": "2026-06-21T01:07:36.884Z",
@@ -465,6 +481,11 @@
       "ts": "2026-06-21T01:07:36.884Z",
       "delaespriella": 86,
       "cepeda": 14
+    },
+    {
+      "ts": "2026-06-21T01:38:38.041Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
