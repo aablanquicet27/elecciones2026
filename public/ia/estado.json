@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 63,
-    "generado": "2026-06-21T10:56:56.637Z",
-    "proxima_actualizacion": "2026-06-21T11:16:56.637Z",
+    "ciclo": 64,
+    "generado": "2026-06-21T11:17:52.578Z",
+    "proxima_actualizacion": "2026-06-21T11:37:52.578Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,8 +15,8 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "El tablero sigue clavado en 51-45 mientras transcurre la votación del 21J sin datos nuevos.",
-    "resumen": "El ciclo no aporta ninguna encuesta fresca ni hecho genuinamente inédito. Los titulares de las últimas horas son cobertura en vivo de la jornada y encuadres de prensa —la Colombia dividida, los dos modelos de país, el balotaje post-Petro— ya consignados en ciclos previos. El llamado de De la Espriella contra el 'exceso de confianza' replica su anterior mensaje contra el triunfalismo, ya reportado. La intención de voto permanece en 51-45. Participación y bloque indeciso siguen siendo las únicas variables abiertas hasta el cierre de urnas.",
+    "titular": "Sin datos nuevos, el tablero sigue en 51-45 mientras avanza la votación del 21J.",
+    "resumen": "El ciclo no aporta ninguna encuesta fresca ni hecho genuinamente inédito. Los titulares de las últimas horas son cobertura en vivo de la jornada y encuadres de prensa —la Colombia dividida, los dos modelos de país, el balotaje sin Petro— ya consignados en ciclos anteriores. La nueva advertencia de De la Espriella sobre el 'exceso de confianza' es una reiteración de su mensaje contra el triunfalismo, ya reportado. La intención de voto permanece en 51-45. Participación y bloque indeciso siguen siendo las únicas variables abiertas hasta el cierre de urnas.",
     "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes son cobertura minuto a minuto o encuadres ya reportados. Se mantiene 51-45 y momentum estable para ambos."
   },
   "candidatos": [
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Firme sin novedad",
+      "momentum_label": "Estable, sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de 6 puntos en intención de voto",
-        "Mensaje de movilización claro y disciplina de campaña en la recta final",
-        "Favorito consolidado en el encuadre mediático del balotaje"
+        "Ventaja sostenida de seis puntos en la última intención de voto",
+        "Mensaje de cierre disciplinado y movilizador",
+        "Mejor posición en el mercado de referencia"
       ],
       "debilidades": [
-        "Margen real estrecho: cabe en menos de 700.000 votos",
-        "Riesgo de desmovilización por exceso de confianza, que él mismo reconoce"
+        "Margen estrecho que cabe en menos de 700.000 votos",
+        "Riesgo de desmovilización por exceso de confianza, que él mismo busca conjurar"
       ],
       "riesgos": [
-        "Una participación baja en sus bastiones podría comprimir la ventaja",
-        "El bloque indeciso aún puede inclinar la balanza en un margen tan ajustado"
+        "Una participación alta del bloque indeciso podría estrechar la diferencia",
+        "Cualquier incidente de orden público que altere la jornada"
       ],
       "catalizadores": [
-        "Trasvase efectivo de indecisos en la jornada",
-        "Alta participación en regiones afines"
+        "Voto masivo de indecisos de centro-derecha",
+        "Alta participación en sus bastiones regionales"
       ]
     },
     {
@@ -55,46 +55,42 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Estable a la espera",
+      "momentum_label": "Estable, urnas abiertas",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mantiene 45% pese a estar abajo, base de izquierda movilizada",
-        "Reaparición de Petro en la recta final puede activar voto duro"
+        "Base movilizada del Pacto Histórico",
+        "Repunte de interés digital en las horas previas",
+        "Margen reducido que deja el resultado abierto"
       ],
       "debilidades": [
-        "Seis puntos por detrás sin una encuesta que muestre repunte",
-        "Sin catalizador nuevo que altere la tendencia en la jornada"
+        "Sigue por debajo en la intención de voto",
+        "Dependencia del respaldo de Petro, sujeto a restricción judicial"
       ],
       "riesgos": [
-        "Quedarse corto en participación frente a la ventaja del rival",
-        "El tiempo se agota sin un hecho que mueva el tablero"
+        "Que la ventaja del rival se confirme en las urnas",
+        "Baja participación en zonas clave para la izquierda"
       ],
       "catalizadores": [
-        "Sorpresa de participación a su favor",
-        "Captura mayoritaria del voto indeciso en el cierre"
+        "Volcado del voto indeciso hacia la continuidad",
+        "Movilización fuerte en grandes ciudades y voto joven"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 87% De la Espriella / 14% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 87% De la Espriella / 13% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (Google News)",
-      "detalle": "El grueso de titulares de las últimas horas son partes de jornada y encuadres ya consignados, sin medición nueva.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Promedio de encuestas (estado previo)",
-      "detalle": "Sin sondeos frescos, la intención de voto se mantiene en 51-45 a favor de De la Espriella.",
+      "fuente": "Promedio de encuestas (sin dato nuevo)",
+      "detalle": "La intención de voto se mantiene en 51-45 a favor de De la Espriella, sin encuesta fresca este ciclo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Margen estimado",
-      "detalle": "La diferencia cabe en menos de 700.000 votos: participación e indecisos siguen siendo decisivos.",
+      "fuente": "Cobertura en vivo (Infobae, prensa internacional)",
+      "detalle": "Los reportes de las últimas horas son seguimiento de la jornada y encuadres de país dividido, sin hechos nuevos.",
       "favorece": "incierto"
     }
   ],
@@ -657,6 +653,11 @@
       "ts": "2026-06-21T10:56:56.637Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T11:17:52.578Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -698,7 +699,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 87,
-      "cepeda": 14
+      "cepeda": 13
     }
   }
 }
