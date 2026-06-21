@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 99,
-    "generado": "2026-06-21T22:45:47.540Z",
-    "proxima_actualizacion": "2026-06-21T22:55:47.540Z",
+    "ciclo": 100,
+    "generado": "2026-06-21T23:01:05.628Z",
+    "proxima_actualizacion": "2026-06-21T23:11:05.628Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 63,
     "confianza": "Alta",
-    "titular": "El conteo no se mueve: De la Espriella sostiene el 50,33% y el resultado queda servido.",
-    "resumen": "Sin datos nuevos que justifiquen un ajuste, mantenemos la intención en 50-48 a favor de De la Espriella, pegada al boletín oficial con el grueso del escrutinio resuelto. Los titulares de las últimas horas confirman lo ya sabido —ventaja estrecha pero estable y una jornada avalada por los observadores— sin aportar un giro real. Cepeda sigue en posición de reconocer con observación, no de revertir.",
-    "que_cambio": "No cambia la intención de voto: el 50-48 sigue intacto. Los nuevos titulares solo repiten hechos ya incorporados (escrutinio al 97%, sondeos a pie de urna, aval de OEA y MOE-UE), por lo que no hay señal que altere el cuadro."
+    "titular": "El boletín no se mueve: 50,33% a 48,04% y la diferencia aguanta.",
+    "resumen": "Mantenemos la intención en 50-48 a favor de De la Espriella, anclada al noveno boletín oficial que reitera la ventaja estrecha pero estable. Los titulares de las últimas horas confirman lo ya conocido —escrutinio avanzado, sondeos a pie de urna ajustados y la postura de Cepeda de reconocer con observación— sin aportar un giro real. No hay dato nuevo que justifique mover el cuadro.",
+    "que_cambio": "Nada sustancial: la intención sigue en 50-48 y la diferencia de poco más de dos puntos del boletín oficial se mantiene. Los titulares frescos repiten hechos ya incorporados, así que no hay señal que altere el escenario."
   },
   "candidatos": [
     {
@@ -27,25 +27,24 @@
       "color": "#2563eb",
       "probabilidad": 63,
       "momentum": "steady",
-      "momentum_label": "Ventaja en firme",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida con el escrutinio casi cerrado",
-        "Resultado avalado por observación internacional",
-        "Margen estable sin retrocesos en el conteo"
+        "Lidera el escrutinio oficial con 50,33% y diferencia sostenida",
+        "Resultado avalado por observadores sin incidentes mayores"
       ],
       "debilidades": [
-        "Diferencia estrecha (poco más de dos puntos)",
-        "Polarización que limita su capacidad de unir al país"
+        "Margen estrecho de poco más de dos puntos que deja espacio a la observación rival",
+        "Gobernabilidad cuesta arriba con un país dividido casi en mitades"
       ],
       "riesgos": [
-        "Que el cierre del 3% restante recorte aún más el margen",
+        "Que la verificación del escrutinio que pidió Cepeda extienda la incertidumbre",
         "Tensión institucional por su retórica sobre la Fuerza Pública"
       ],
       "catalizadores": [
-        "Declaración formal de la autoridad electoral",
-        "Reconocimiento explícito de Cepeda"
+        "Cierre del conteo con la diferencia intacta",
+        "Reconocimiento explícito del resultado por la campaña rival"
       ]
     },
     {
@@ -55,23 +54,24 @@
       "color": "#e11d48",
       "probabilidad": 37,
       "momentum": "steady",
-      "momentum_label": "Resignado a observar",
+      "momentum_label": "Sin reversión",
       "encuesta_pct": 48,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mantiene una votación competitiva (48%)",
-        "Disposición declarada a reconocer, lo que le da estatura institucional"
+        "Se mantiene competitivo con 48,04% en el boletín",
+        "Capital político intacto para una oposición fuerte"
       ],
       "debilidades": [
-        "Va por debajo con el escrutinio casi resuelto",
-        "Margen difícil de remontar con tan pocas mesas pendientes"
+        "Va detrás en todos los boletines y sondeos a pie de urna",
+        "Margen que debe revertir sin evidencia de un vuelco"
       ],
       "riesgos": [
-        "Que la observación del escrutinio no encuentre irregularidades que muevan el resultado"
+        "Que la observación del escrutinio no encuentre material para revertir",
+        "Quedar atrapado en una disputa sin recorrido real"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación del conteo",
-        "Mesas pendientes en bastiones propios"
+        "Hallazgos de la verificación del preconteo y el escrutinio",
+        "Reconfiguración del voto en mesas aún por escrutar"
       ]
     }
   ],
@@ -82,18 +82,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Boletín oficial (97% escrutado)",
-      "detalle": "De la Espriella 50,33% frente a Cepeda 48,04%, con el grueso del conteo resuelto.",
+      "fuente": "Boletín oficial (noveno)",
+      "detalle": "De la Espriella 50,33% frente a Cepeda 48,04%, diferencia estable.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "OEA / MOE-UE",
-      "detalle": "Jornada sin incidentes ni denuncias formales, lo que blinda la validez del resultado.",
+      "fuente": "Sondeos a pie de urna",
+      "detalle": "Ventaja mínima para De la Espriella, consistente con el conteo.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Campaña de Cepeda",
-      "detalle": "Anuncia reconocimiento con observación escrupulosa del escrutinio, sin impugnar.",
+      "detalle": "Reconoce el resultado pero anuncia observación clara del escrutinio.",
       "favorece": "incierto"
     }
   ],
@@ -839,6 +839,11 @@
     },
     {
       "ts": "2026-06-21T22:45:47.540Z",
+      "delaespriella": 63,
+      "cepeda": 37
+    },
+    {
+      "ts": "2026-06-21T23:01:05.628Z",
       "delaespriella": 63,
       "cepeda": 37
     }
