@@ -20,6 +20,13 @@ interface Estado {
   veredicto: { favorito: string; favorito_id: string; probabilidad: number; confianza: string; titular: string; resumen: string; que_cambio: string; };
   candidatos: Candidato[]; indicadores: Indicador[]; timeline: EventoTL[];
   historico: { ts: string; [k: string]: number | string }[]; fuentes: Fuente[];
+  metodologia?: {
+    resumen: string;
+    intencion_voto: Record<string, number>;
+    prob_ganar: Record<string, number>;
+    error_muestreo_pts: number;
+    polymarket_ref: { delaespriella: number; cepeda: number } | null;
+  };
 }
 
 // ---------- Paleta firmada ----------
@@ -165,6 +172,7 @@ export default function IAPage() {
           </div>
 
           {/* nombres + % */}
+          <div className="text-center mb-1.5 text-[10px] tracking-[0.3em] text-slate-500" style={{ fontFamily: mono }}>PROBABILIDAD DE GANAR</div>
           <div className="flex items-end justify-between gap-3 mb-3">
             <div className="min-w-0">
               <div className="text-sm sm:text-base text-slate-400 truncate" style={{ fontFamily: mono }}>{apellido(izq.nombre)}</div>
@@ -191,6 +199,17 @@ export default function IAPage() {
           <div className="flex justify-between mt-2 text-[11px] text-slate-500" style={{ fontFamily: mono }}>
             <span>{izq.partido}</span><span>{der.partido}</span>
           </div>
+
+          {/* diferenciador: intención de voto vs probabilidad de ganar (+ Polymarket solo referencia) */}
+          {e.metodologia && (
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[11px] text-slate-400" style={{ fontFamily: mono }}>
+              <span>INTENCIÓN DE VOTO <b className="text-slate-100">{izq.encuesta_pct}–{der.encuesta_pct}</b></span>
+              {e.metodologia.polymarket_ref && (
+                <span className="text-slate-600">POLYMARKET (REF.) {e.metodologia.polymarket_ref.delaespriella}–{e.metodologia.polymarket_ref.cepeda}</span>
+              )}
+              <span className="text-slate-600">ERROR ±{e.metodologia.error_muestreo_pts} PTS</span>
+            </div>
+          )}
 
           {/* veredicto */}
           <h1 className="mt-8 font-semibold tracking-tight leading-[1.1]" style={{ fontFamily: disp, fontSize: 'clamp(1.5rem,4vw,2.4rem)' }}>
@@ -238,6 +257,7 @@ export default function IAPage() {
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-bold tabular-nums" style={{ fontFamily: disp, color: COL[c.id] }}>{c.probabilidad}%</div>
+                    <div className="text-[9px] tracking-[0.15em] text-slate-500 -mt-0.5" style={{ fontFamily: mono }}>PROB. GANAR</div>
                     <span className="inline-flex items-center gap-1 mt-1 text-[10px] px-2 py-0.5 rounded-full"
                       style={{ fontFamily: mono, backgroundColor: `${COL[c.id]}1f`, color: COL[c.id] }}>
                       <Mom m={c.momentum} />{c.momentum_label}
@@ -245,7 +265,7 @@ export default function IAPage() {
                   </div>
                 </div>
                 <div className="flex gap-5 mb-4 text-xs text-slate-400" style={{ fontFamily: mono }}>
-                  <span>ENCUESTA <b className="text-slate-100">{c.encuesta_pct}%</b></span>
+                  <span>INTENCIÓN VOTO <b className="text-slate-100">{c.encuesta_pct}%</b></span>
                   <span>1ª VUELTA <b className="text-slate-100">{c.primera_vuelta_pct}%</b></span>
                 </div>
                 <Bloque t="Fortalezas" items={c.fortalezas} c="#34D399" icon={<CheckCircle2 className="w-3.5 h-3.5" />} />
@@ -278,6 +298,11 @@ export default function IAPage() {
           <p style={{ fontFamily: mono }} className="text-xs">
             ANÁLISIS DE IA EN TIEMPO REAL · CICLO #{e.meta.ciclo} · SE ACTUALIZA CADA {e.meta.cadencia_min} MIN
           </p>
+          {e.metodologia && (
+            <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
+              <span className="text-slate-400" style={{ fontFamily: mono }}>CÓMO SE CALCULA · </span>{e.metodologia.resumen}
+            </p>
+          )}
           <p className="text-xs text-slate-600 max-w-2xl leading-relaxed">
             Estimación probabilística con fines informativos: no es una predicción oficial ni una boca de urna.
             Los resultados oficiales los entrega la Registraduría Nacional del Estado Civil.
