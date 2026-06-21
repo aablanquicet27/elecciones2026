@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 100,
-    "generado": "2026-06-21T23:01:05.628Z",
-    "proxima_actualizacion": "2026-06-21T23:11:05.628Z",
+    "ciclo": 101,
+    "generado": "2026-06-21T23:16:15.728Z",
+    "proxima_actualizacion": "2026-06-21T23:26:15.728Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 63,
     "confianza": "Alta",
-    "titular": "El boletín no se mueve: 50,33% a 48,04% y la diferencia aguanta.",
-    "resumen": "Mantenemos la intención en 50-48 a favor de De la Espriella, anclada al noveno boletín oficial que reitera la ventaja estrecha pero estable. Los titulares de las últimas horas confirman lo ya conocido —escrutinio avanzado, sondeos a pie de urna ajustados y la postura de Cepeda de reconocer con observación— sin aportar un giro real. No hay dato nuevo que justifique mover el cuadro.",
-    "que_cambio": "Nada sustancial: la intención sigue en 50-48 y la diferencia de poco más de dos puntos del boletín oficial se mantiene. Los titulares frescos repiten hechos ya incorporados, así que no hay señal que altere el escenario."
+    "titular": "Sin novedad real: 50-48 aguanta y el conteo solo ratifica lo ya sabido.",
+    "resumen": "Mantenemos la intención en 50% para De la Espriella y 48% para Cepeda. Los titulares de la última hora repiten el cuadro ya incorporado: ventaja mínima del candidato de derecha en el preconteo y en los sondeos a pie de urna, jornada sin incidentes avalada por los observadores y Cepeda en postura de reconocer con observación. El parte de '80% de mesas escrutadas' es incluso anterior al 97% que ya teníamos, así que no aporta avance. No hay dato que mueva el tablero.",
+    "que_cambio": "Nada sustancial: la intención sigue en 50-48 y la diferencia de poco más de dos puntos se mantiene. Los titulares frescos reiteran hechos ya reportados, sin señal nueva."
   },
   "candidatos": [
     {
@@ -31,20 +31,21 @@
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera el escrutinio oficial con 50,33% y diferencia sostenida",
-        "Resultado avalado por observadores sin incidentes mayores"
+        "Ventaja sostenida en preconteo oficial",
+        "Coincidencia de sondeos a pie de urna a su favor",
+        "Narrativa de virtual presidente electo instalada"
       ],
       "debilidades": [
-        "Margen estrecho de poco más de dos puntos que deja espacio a la observación rival",
-        "Gobernabilidad cuesta arriba con un país dividido casi en mitades"
+        "Margen estrechísimo, por debajo de tres puntos",
+        "Triunfo sin holgura que limita su mandato"
       ],
       "riesgos": [
-        "Que la verificación del escrutinio que pidió Cepeda extienda la incertidumbre",
-        "Tensión institucional por su retórica sobre la Fuerza Pública"
+        "Reclamos en el tramo final del escrutinio",
+        "Que la observación de la campaña rival encuentre inconsistencias"
       ],
       "catalizadores": [
-        "Cierre del conteo con la diferencia intacta",
-        "Reconocimiento explícito del resultado por la campaña rival"
+        "Cierre del escrutinio confirmando la tendencia",
+        "Aval definitivo de las misiones de observación"
       ]
     },
     {
@@ -54,24 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 37,
       "momentum": "steady",
-      "momentum_label": "Sin reversión",
+      "momentum_label": "Resiste cerca",
       "encuesta_pct": 48,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Se mantiene competitivo con 48,04% en el boletín",
-        "Capital político intacto para una oposición fuerte"
+        "Cierre a menos de dos puntos del rival",
+        "Postura institucional de reconocer con observación",
+        "Base movilizada y atenta al escrutinio"
       ],
       "debilidades": [
-        "Va detrás en todos los boletines y sondeos a pie de urna",
-        "Margen que debe revertir sin evidencia de un vuelco"
+        "Va detrás en preconteo y a pie de urna",
+        "Sin tiempo ni datos para revertir la diferencia"
       ],
       "riesgos": [
-        "Que la observación del escrutinio no encuentre material para revertir",
-        "Quedar atrapado en una disputa sin recorrido real"
+        "Que el escrutinio final consolide la brecha",
+        "Quedar atrapado entre reconocer y cuestionar"
       ],
       "catalizadores": [
-        "Hallazgos de la verificación del preconteo y el escrutinio",
-        "Reconfiguración del voto en mesas aún por escrutar"
+        "Hallazgos verificables en la observación del conteo",
+        "Reversión de mesas en zonas pendientes"
       ]
     }
   ],
@@ -82,18 +84,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Boletín oficial (noveno)",
-      "detalle": "De la Espriella 50,33% frente a Cepeda 48,04%, diferencia estable.",
+      "fuente": "Preconteo oficial (hace 2h)",
+      "detalle": "De la Espriella aventaja por diferencia ínfima en el conteo oficial.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Sondeos a pie de urna",
-      "detalle": "Ventaja mínima para De la Espriella, consistente con el conteo.",
+      "fuente": "Sondeos a pie de urna (hace 2h)",
+      "detalle": "Las muestras dan al candidato de derecha arriba por margen mínimo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña de Cepeda",
-      "detalle": "Reconoce el resultado pero anuncia observación clara del escrutinio.",
+      "fuente": "OEA (hace 2h)",
+      "detalle": "Destaca jornada sin incidentes ni denuncias formales.",
       "favorece": "incierto"
     }
   ],
@@ -844,6 +846,11 @@
     },
     {
       "ts": "2026-06-21T23:01:05.628Z",
+      "delaespriella": 63,
+      "cepeda": 37
+    },
+    {
+      "ts": "2026-06-21T23:16:15.728Z",
       "delaespriella": 63,
       "cepeda": 37
     }
