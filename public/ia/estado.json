@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 96,
-    "generado": "2026-06-21T21:59:07.045Z",
-    "proxima_actualizacion": "2026-06-21T22:09:07.045Z",
+    "ciclo": 97,
+    "generado": "2026-06-21T22:14:52.861Z",
+    "proxima_actualizacion": "2026-06-21T22:24:52.861Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 70,
-    "confianza": "Media",
-    "titular": "El primer dato propio de la jornada: los sondeos a pie de urna ponen a De la Espriella arriba, pero por un margen mínimo.",
-    "resumen": "Aparece la primera señal genuinamente nueva del ciclo: las encuestas a boca de urna muestran a De la Espriella aventajando a Cepeda por muy poco, un cuadro más ajustado que el 51-45 que traíamos. Ajustamos la intención a 50-47 para reflejar ese estrechamiento, todavía dentro del margen de error y sin boletín oficial de la Registraduría que lo confirme. El resto de titulares recicla hechos ya incorporados. Polymarket dispara a 99-1, pero esa señal de mercado no entra en el cálculo del panel.",
-    "que_cambio": "Por primera vez hay un dato propio de la jornada —los sondeos a pie de urna— que apunta a una carrera más cerrada, lo que justifica estrechar la intención de 51-45 a 50-47. Sigue sin haber corte oficial de la Registraduría."
+    "probabilidad": 63,
+    "confianza": "Alta",
+    "titular": "Con 97% escrutado, De la Espriella es el virtual presidente electo: 50,33% contra 48,04% de Cepeda.",
+    "resumen": "El preconteo deja de ser proyección y se vuelve dato duro: con el grueso de las mesas contadas, De la Espriella se impone por algo más de dos puntos. El noveno boletín lo ubica en 50,33% frente al 48,04% de Cepeda, un margen estrecho pero ya difícil de revertir con el 3% de mesas pendientes. Ajustamos la intención a 50-48 para pegarla al resultado real que está arrojando la Registraduría. Cepeda anuncia que reconocerá pero ejercerá observación rigurosa del escrutinio.",
+    "que_cambio": "Pasamos de sondeos a pie de urna a preconteo oficial con 97% escrutado: el 50,33-48,04 confirma la ventaja de De la Espriella y permite cerrar la intención de 50-47 a 50-48 con confianza Alta."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 70,
+      "probabilidad": 63,
       "momentum": "down",
-      "momentum_label": "ventaja se estrecha",
+      "momentum_label": "Triunfo a la vista",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Mantiene la delantera en los sondeos a pie de urna",
-        "Ventaja sostenida a lo largo de toda la campaña",
-        "Narrativa de orden y mano dura moviliza a su base"
+        "Ventaja sostenida con 97% de mesas escrutadas",
+        "Resultado por encima del umbral del 50%",
+        "Margen ya difícil de revertir con las mesas restantes"
       ],
       "debilidades": [
-        "El margen a boca de urna se reduce respecto a las encuestas previas",
-        "Su discurso sobre intervención militar polariza al electorado moderado"
+        "Triunfo por margen estrecho, sin mandato amplio",
+        "Polariza a casi la mitad del electorado"
       ],
       "riesgos": [
-        "Una ventaja estrecha lo expone a un vuelco si el voto urbano tardío favorece a Cepeda",
-        "El triunfalismo puede desmovilizar a indecisos propios"
+        "Reclamaciones en el escrutinio final por parte de la campaña rival",
+        "Tensión por denuncias de irregularidades en algunas regiones"
       ],
       "catalizadores": [
-        "Confirmación del primer boletín oficial de la Registraduría",
-        "Cierre de mesas en regiones donde es más fuerte"
+        "Boletín final de la Registraduría que oficialice el resultado",
+        "Reconocimiento explícito del contrincante"
       ]
     },
     {
@@ -53,27 +53,27 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 30,
+      "probabilidad": 37,
       "momentum": "up",
-      "momentum_label": "recorta a pie de urna",
-      "encuesta_pct": 47,
+      "momentum_label": "Margen se cierra",
+      "encuesta_pct": 48,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Recorta distancia en el dato a pie de urna",
-        "Maquinaria del Pacto Histórico y apoyo de Petro en territorio",
-        "Mensaje de defensa de la democracia y reconocimiento anticipado del resultado"
+        "Cierre muy competitivo, a poco más de dos puntos",
+        "Anuncio de observación ordenada del escrutinio",
+        "Base electoral movilizada y compacta"
       ],
       "debilidades": [
-        "Sigue por debajo en la medición de boca de urna",
-        "Depende de una remontada en el conteo final para revertir el cuadro"
+        "Queda por debajo en el preconteo con el grueso de mesas contadas",
+        "Margen pendiente insuficiente para dar vuelta al resultado"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la ventaja del rival y cierre la ventana de remontada",
-        "Indecisos que no terminen de inclinarse a su favor"
+        "Que el 3% restante no alcance para revertir la diferencia",
+        "Desgaste si la observación deriva en disputa sin sustento"
       ],
       "catalizadores": [
-        "Conteo de zonas urbanas y de votación tardía donde su voto es más fuerte",
-        "Observación escrupulosa del escrutinio que defienda cada voto"
+        "Concentración de votos pendientes en zonas afines",
+        "Hallazgos verificables en la fase de escrutinio"
       ]
     }
   ],
@@ -84,17 +84,46 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Sondeos a pie de urna",
-      "detalle": "De la Espriella aventaja a Cepeda por un margen muy estrecho, según las encuestas a boca de urna divulgadas al cierre.",
+      "fuente": "Registraduría (noveno boletín, 97% escrutado)",
+      "detalle": "De la Espriella 50,33% vs Cepeda 48,04%",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "El preconteo arrancó pero aún no arroja un boletín con resultados consolidados.",
+      "fuente": "Declaración de campaña Cepeda",
+      "detalle": "Reconocerá el resultado pero ejercerá observación del escrutinio",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Reportes de orden público",
+      "detalle": "Denuncias por compra de votos en La Guajira y capturas en Cesar y Guainía",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T22:14:52.861Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 70% ▼ 63%",
+      "detalle": "El dato propio del ciclo es el preconteo oficial con 97% escrutado (50,33-48,04), que convierte la ventaja en resultado casi consolidado y eleva la confianza a Alta.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T22:14:50.865Z",
+      "tipo": "evento",
+      "titulo": "Cepeda anuncia reconocimiento con observación rigurosa del escrutinio",
+      "detalle": "Aceptará el resultado, pero ejercerá una vigilancia clara del conteo.",
+      "fuente": "",
+      "cuerpo": "Con el preconteo en contra, la campaña de Iván Cepeda fijó su posición: reconocerá el resultado, pero ejercerá lo que llamó 'una muy clara observación' del proceso. El mensaje busca un equilibrio entre admitir la derecha numérica que muestra la Registraduría y mantener vigilancia sobre la etapa de escrutinio, donde se consolidan las actas mesa por mesa.\n\nLa señal es relevante porque desactiva, al menos por ahora, el escenario de impugnación abierta que algunos temían. Garantiza una transición institucional más ordenada y reduce el riesgo de una disputa poselectoral prolongada, aunque deja la puerta abierta a reclamaciones puntuales si la observación detecta inconsistencias verificables."
+    },
+    {
+      "ts": "2026-06-21T22:07:45.000Z",
+      "tipo": "hito",
+      "titulo": "De la Espriella, virtual presidente electo con el 97% escrutado",
+      "detalle": "El noveno boletín lo da ganador con 50,33% frente al 48,04% de Cepeda.",
+      "fuente": "primicias.ec",
+      "cuerpo": "El preconteo de la Registraduría dejó de ser tendencia para volverse resultado: con el 97% de las mesas contadas, Abelardo de la Espriella aparece como virtual presidente electo con 50,33% de los votos, contra 48,04% de Iván Cepeda. La cifra ratifica lo que los sondeos a pie de urna habían insinuado horas antes —una carrera muy ajustada— pero ahora con respaldo del conteo oficial y un margen superior a los dos puntos que el 3% de mesas pendientes difícilmente alcanza a revertir.\n\nPara la segunda vuelta, esto traslada el eje de la jornada del 'quién gana' al 'cómo se cierra'. De la Espriella llega a la Casa de Nariño con un triunfo legítimo pero estrecho, sin mandato holgado, en un país partido casi por mitades. El desenlace dependerá ahora del boletín final de la Registraduría y de que el reconocimiento del resultado se dé sin sobresaltos en la fase de escrutinio.",
+      "url": "https://www.primicias.ec/internacional/abelardo-espriella-presidente-colombia-elecciones-perfil-resultados-125874/"
+    },
     {
       "ts": "2026-06-21T21:59:07.045Z",
       "tipo": "pulso",
@@ -125,6 +154,15 @@
       "titulo": "De la Espriella 76% ▲ 85%",
       "detalle": "La probabilidad no se mueve por datos electorales: sin boletín ni sondeos de salida, la intención sigue en 51-45 y las novedades del ciclo son operativas, no de tendencia.",
       "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T18:25:27.000Z",
+      "tipo": "alerta",
+      "titulo": "Denuncias de compra de votos y capturas en tres departamentos",
+      "detalle": "Reportes de compra de votos en La Guajira y capturas en Cesar y Guainía.",
+      "fuente": "eltiempo.com",
+      "cuerpo": "Entre las incidencias de la jornada figuran denuncias por compra de votos en La Guajira y dos capturas relacionadas con presuntas irregularidades electorales en Cesar y Guainía. Son hechos localizados, sin que las autoridades hayan reportado que afecten el cómputo general, pero alimentan el clima de tensión propio de una elección tan polarizada.\n\nDe cara al cierre, estas denuncias adquieren peso en la medida en que la campaña perdedora anunció observación del escrutinio: cualquier irregularidad documentada puede convertirse en argumento de reclamación. Por el margen estrecho, episodios regionales que en otra elección pasarían desapercibidos quedan bajo la lupa hasta el boletín final.",
+      "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/denuncias-por-compra-de-votos-en-la-guajira-y-dos-capturas-en-cesar-y-guainia-marcan-incidencias-de-la-segunda-vuelta-3565882"
     },
     {
       "ts": "2026-06-21T18:10:41.000Z",
@@ -303,37 +341,6 @@
       "fuente": "Infobae",
       "cuerpo": "A horas de la apertura de mesas, Cepeda lanzó un llamado a sus votantes a 'defender la vida' y a acudir a las urnas, un mensaje que evita la confrontación institucional y apunta a activar a su electorado. La señal contrasta con el tono del rival y busca capitalizar la sensibilidad de su base frente al clima de amenazas y polarización que ha marcado la antesala de la jornada.\n\nPara la segunda vuelta, el movimiento confirma que la izquierda juega la carta de la participación masiva como única vía para cerrar una brecha que las encuestas sitúan en torno a 51-45. Si el discurso de seguridad del adversario fija la agenda del día, Cepeda apuesta por una narrativa emocional alternativa que movilice a los indecisos hacia la continuidad sin entrar en el terreno del enfrentamiento abierto.",
       "url": "https://www.infobae.com/colombia/2026/06/21/ivan-cepeda-envio-mensaje-a-horas-de-la-apertura-de-las-urnas-para-invitar-a-sus-votantes-a-que-defendamos-la-vida/"
-    },
-    {
-      "ts": "2026-06-21T01:38:38.041Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 86% ▼ 85%",
-      "detalle": "Cedimos un punto a De la Espriella (86→85) porque Polymarket se asentó en 85 y la probabilidad implícita de Cepeda subió a 16, un movimiento gradual y coherente con la víspera.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T01:34:54.000Z",
-      "tipo": "evento",
-      "titulo": "Observadores electorales se despliegan y figuras públicas llaman a votar al abrir la jornada",
-      "detalle": "Las misiones de veeduría se alistan en los puestos mientras personalidades públicas insisten en la participación al inicio del día.",
-      "fuente": "Infobae",
-      "cuerpo": "Con la apertura de la segunda vuelta, los equipos de observación electoral comenzaron a instalarse en los puntos de votación para vigilar el desarrollo de la jornada, en un dispositivo que se suma a la veeduría internacional ya anunciada en días previos. En paralelo, distintas figuras públicas difundieron mensajes invitando a los ciudadanos a acudir a las urnas, una señal del clima de movilización que define esta franja inicial entre Cepeda y De la Espriella.\n\nEl despliegue importa porque en una contienda cuyo margen real cabría en menos de 700.000 votos, la percepción de transparencia y la participación temprana pueden ser decisivas. Para Cepeda, todo llamado a votar alimenta la esperanza de que el repunte digital se convierta en asistencia efectiva; para De la Espriella, una jornada vigilada y con alta concurrencia consolida la legitimidad del resultado que el mercado le sigue atribuyendo con holgura.",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxON3dsTFpEaDVRVURwVWtYelFtTEhHcVpXeS0tT3E5WG54OWZVbGFENmprTmlNSXhOeDRwTkNGQWVJM3lCZy1GWjFBNGJhOGhKb0R4VnV5MXotVUVLenlOVm5BdFhoOHlzZ0ZnaUVQVk5mOGg1RlZRZ0FoWWUyS0FMY0lEUG9KVWJ5VC1wVlJyS3RLa09hdG1LNjNzdXBZbno4eDhDa0xYOWRnT1VZVGdiS2Z3MWt0akZJZGg4aUQ0dUZHSk9RMWVMR3lCdWFWYWRpcVduUGlfR3p6TXI5X3pnRG1CdlJxOURMUzVEZ2lOMXlEQzhQY1HSAZACQVVfeXFMT1VJT0pIcEpiMW1EQ2tsS0l6a01yOXlRMmVWbzhjUFFGenA4dmhVdjFQRWNOSi1RaWl6Wk56bkFjTHNTWW5VQnROTHJ5dVdQNURPZE5VVGFURmx1dXZFQkx6N05vczVMT1liY05yN3V5c0xjRUItUkV6Z2ZpSXJEOGJWMGlEaWJxT3JJOVA4TDJpTFAtcFBkaW02TUNFTnNlc29uYWlpQVUwakQtUG5FWDduRlRpbFJqSTVKMS1CZHd6bmNWeldwbTlWQmtmWmFtUGRPTk9ZRV9vbkNySVc5RG1ndlZKazlLY0xKdGxCdC1PeVBBc2tfRW1UZ29xWmJ3Mjl1UWFnZUE3UzR2VGNzbU4?oc=5"
-    },
-    {
-      "ts": "2026-06-21T01:07:36.884Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 87% ▼ 86%",
-      "detalle": "El punto cedido por De la Espriella responde al retroceso de Polymarket hacia 85 y al repunte de Cepeda en Google Trends, no a un giro de fondo en las encuestas.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T01:07:35.886Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella advierte al Congreso en la antesala de la votación",
-      "detalle": "El candidato de derecha amenaza con confrontar al Legislativo si 'traiciona el mandato ciudadano'.",
-      "fuente": "EL PAÍS",
-      "cuerpo": "A menos de una hora del arranque pleno de la jornada, De la Espriella subió el tono y lanzó una advertencia directa al Congreso: si los legisladores 'traicionan el mandato ciudadano', se encontrarán con el Gobierno. El mensaje llega cuando el candidato lidera mercados y encuestas y proyecta de antemano una relación de fuerza con el Legislativo, en un país donde ningún presidente gobierna sin coaliciones parlamentarias.\n\nPara la segunda vuelta, el gesto consolida la imagen de mano dura que moviliza a su base, pero también ofrece munición a la campaña de Cepeda para advertir sobre un eventual choque institucional. En una elección cuyo margen absoluto cabe en menos de 700.000 votos, endurecer el discurso de cierre es una apuesta que puede tanto cohesionar al electorado propio como espantar a indecisos sensibles al equilibrio de poderes."
     }
   ],
   "historico": [
@@ -821,6 +828,11 @@
       "ts": "2026-06-21T21:59:07.045Z",
       "delaespriella": 70,
       "cepeda": 30
+    },
+    {
+      "ts": "2026-06-21T22:14:52.861Z",
+      "delaespriella": 63,
+      "cepeda": 37
     }
   ],
   "fuentes": [
@@ -853,11 +865,11 @@
     "resumen": "La probabilidad de ganar NO sale de mercados de apuestas: se calcula a partir de la intención de voto (encuestas), convirtiendo el margen a dos vías en probabilidad con un modelo normal que asume un error de muestreo típico. Polymarket se muestra solo como referencia.",
     "intencion_voto": {
       "delaespriella": 50,
-      "cepeda": 47
+      "cepeda": 48
     },
     "prob_ganar": {
-      "delaespriella": 70,
-      "cepeda": 30
+      "delaespriella": 63,
+      "cepeda": 37
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
