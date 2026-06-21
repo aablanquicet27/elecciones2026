@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 78,
-    "generado": "2026-06-21T16:37:41.231Z",
-    "proxima_actualizacion": "2026-06-21T16:57:41.231Z",
+    "ciclo": 79,
+    "generado": "2026-06-21T17:03:15.593Z",
+    "proxima_actualizacion": "2026-06-21T17:23:15.593Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "De la Espriella vota confiado; el 51-45 aguanta sin boletín oficial.",
-    "resumen": "El único hecho genuinamente nuevo de la franja es el sufragio del propio De la Espriella, que volvió a exhibir confianza en la victoria. No hay sondeos frescos ni resultados oficiales, de modo que la intención de voto se mantiene en 51-45. La jornada sigue dominada por la participación y la espera del primer escrutinio, sin señales que justifiquen mover el tablero.",
-    "que_cambio": "Se agrega un evento nuevo: De la Espriella ya votó y reiteró su confianza. La intención de voto no se mueve por ausencia de encuestas nuevas."
+    "titular": "Jornada en compás de espera: el 51-45 se mantiene sin escrutinio oficial.",
+    "resumen": "No hay hechos genuinamente nuevos en esta franja. Los titulares de las últimas horas reiteran lo ya consignado en la línea de tiempo: el voto de De la Espriella, la apertura de urnas y sus advertencias al Congreso. Sin sondeos frescos ni primeros boletines de la Registraduría, la intención de voto permanece en 51-45. La jornada sigue dominada por la participación y la espera del escrutinio.",
+    "que_cambio": "Nada sustancial. La intención de voto no se mueve por ausencia de encuestas nuevas y los titulares disponibles ya estaban reportados; no se agregan eventos."
   },
   "candidatos": [
     {
@@ -27,25 +27,24 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de 6 puntos en intención de voto",
-        "Narrativa de orden y firmeza que moviliza a su base",
-        "Imagen de confianza reforzada al votar temprano"
+        "Ventaja sostenida de ~6 puntos en la última intención de voto",
+        "Narrativa de confianza y movilización del electorado de derecha"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza",
-        "Discurso de mano dura que polariza a indecisos"
+        "Margen real estrecho, por debajo de 700.000 votos",
+        "Su retórica de exceso de confianza admite riesgo de desmovilización propia"
       ],
       "riesgos": [
-        "Una participación inesperadamente alta en bastiones de Cepeda",
-        "Que el triunfalismo reduzca la afluencia de sus votantes"
+        "Una participación inesperadamente alta en bastiones de Cepeda podría comprimir el margen",
+        "Tensión institucional por sus advertencias a la Fuerza Pública y al Congreso"
       ],
       "catalizadores": [
-        "Primeros boletines que confirmen su ventaja",
-        "Alta participación en regiones conservadoras"
+        "Primeros boletines de escrutinio que confirmen su ventaja",
+        "Alta afluencia en zonas favorables"
       ]
     },
     {
@@ -55,46 +54,41 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico y respaldo de figuras como Petro y Barreras",
-        "Mensaje de 'defender la vida' que cohesiona a la izquierda"
+        "Base movilizada del Pacto Histórico",
+        "Repunte de interés en buscadores en la antesala del cierre"
       ],
       "debilidades": [
-        "Va abajo en la intención de voto por margen consistente",
-        "Dependencia del voto petrista en una coyuntura polarizada"
+        "Rezago de ~6 puntos en la intención de voto",
+        "Dependencia de un cierre de campaña que aún no se refleja en los sondeos"
       ],
       "riesgos": [
-        "Que el margen de 6 puntos sea inalcanzable sin un vuelco en participación",
-        "Desgaste por la asociación con el Gobierno saliente"
+        "Que el margen no se cierre lo suficiente con la votación urbana",
+        "Alertas de constreñimiento al elector que su campaña ha denunciado"
       ],
       "catalizadores": [
-        "Repunte de participación juvenil y urbana",
-        "Alta movilización en el voto exterior y regiones de su base"
+        "Voto exterior y participación decisiva de indecisos",
+        "Sorpresa en regiones de fuerte presencia social"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 85% De la Espriella / 17% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 84% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (hace <1h)",
-      "detalle": "De la Espriella sufraga y se declara confiado en ganar la segunda vuelta.",
-      "favorece": "delaespriella"
+      "fuente": "Cobertura en vivo (EL ESPECTADOR, RCN, Canal 1)",
+      "detalle": "La jornada transcurre sin incidentes mayores y con urnas abiertas; sin novedad sobre el tablero electoral.",
+      "favorece": "incierto"
     },
     {
-      "fuente": "Estado de las encuestas",
-      "detalle": "Sin sondeos nuevos en la franja; la última fotografía sostiene 51-45.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Jornada electoral",
-      "detalle": "Aún no hay boletines oficiales; participación y escrutinio siguen como variables decisivas.",
+      "fuente": "Estado de sondeos",
+      "detalle": "No hay encuestas nuevas ni boletín oficial; la intención de voto se sostiene en 51-45.",
       "favorece": "incierto"
     }
   ],
@@ -733,6 +727,11 @@
       "ts": "2026-06-21T16:37:41.231Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T17:03:15.593Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -773,8 +772,8 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 85,
-      "cepeda": 17
+      "delaespriella": 84,
+      "cepeda": 16
     }
   }
 }
