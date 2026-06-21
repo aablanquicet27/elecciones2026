@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 72,
-    "generado": "2026-06-21T14:13:17.126Z",
-    "proxima_actualizacion": "2026-06-21T14:33:17.126Z",
+    "ciclo": 73,
+    "generado": "2026-06-21T14:39:06.725Z",
+    "proxima_actualizacion": "2026-06-21T14:59:06.725Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Urnas abiertas, números quietos: 51-45 mientras corre la jornada.",
-    "resumen": "El ciclo no aporta encuestas frescas ni hechos inéditos. Lo que circula en la última hora es cobertura minuto a minuto del balotaje, explicadores de propuestas y reiteraciones de encuadres ya consignados —la amenaza de De la Espriella al Congreso y la alerta por exceso de confianza son continuidad, no novedad—. La intención de voto se mantiene en 51-45 y la participación sigue siendo la única variable abierta hasta que empiece el conteo.",
-    "que_cambio": "Nada sustantivo: sin sondeos nuevos y con titulares que repiten mensajes ya reportados o son cobertura en vivo. Se mantiene 51-45; el 89-13 de Polymarket es ruido de mercado y no entra en el cálculo."
+    "titular": "Conteo a la vista: 51-45 mientras la Registraduría afina cómo se verán los resultados.",
+    "resumen": "El ciclo no trae sondeos nuevos ni hechos inéditos de campaña: la mayoría de titulares son cobertura minuto a minuto, explicadores de propuestas y reiteraciones de encuadres ya consignados (la amenaza al Congreso y la alerta por exceso de confianza son continuidad, no novedad). Lo único genuinamente fresco es logístico: la Registraduría habilitó una plataforma para consultar el escrutinio en línea y ya circulan los horarios de divulgación. La intención de voto se mantiene en 51-45 y la participación sigue siendo la variable abierta hasta el primer boletín.",
+    "que_cambio": "Nada en la intención de voto: sin encuestas nuevas y con titulares que repiten mensajes ya reportados. Se mantiene 51-45; el 87-14 de Polymarket es ruido de mercado y no entra en el cálculo. La novedad es operativa: la app de consulta de resultados y los horarios de divulgación."
   },
   "candidatos": [
     {
@@ -31,21 +31,22 @@
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de seis puntos en la última fotografía de encuestas",
-        "Mensaje de cierre disciplinado contra el triunfalismo",
-        "Narrativa de orden y seguridad que moviliza a su base"
+        "Ventaja de seis puntos sostenida en la última tanda de sondeos",
+        "Narrativa de cambio y mano dura que moviliza a su base",
+        "Margen que resiste sin sobresaltos al iniciar el conteo"
       ],
       "debilidades": [
-        "Margen estrecho en términos absolutos: cabe en menos de 700.000 votos",
-        "Retórica de confrontación institucional puede alejar a indecisos moderados"
+        "Techo dependiente de la participación de indecisos",
+        "Retórica sobre Fuerza Pública y Congreso que tensiona a moderados",
+        "Riesgo de desmovilización por exceso de confianza, que él mismo advirtió"
       ],
       "riesgos": [
-        "Abstención de su propio electorado por exceso de confianza",
-        "Que la participación alta favorezca al rival en grandes ciudades"
+        "Una participación alta en bastiones de Cepeda que estreche el margen",
+        "Que el margen de menos de 700.000 votos se cierre en el escrutinio"
       ],
       "catalizadores": [
-        "Jornada electoral sin incidentes que consolide la percepción de favorito",
-        "Buen desempeño en regiones donde lideró en primera vuelta"
+        "Boletines tempranos que confirmen su ventaja",
+        "Baja participación en regiones favorables a la izquierda"
       ]
     },
     {
@@ -55,51 +56,59 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Cierre estable",
+      "momentum_label": "Resiste abajo",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de cierre centrado en 'defender la vida' con capacidad de movilización",
-        "Repunte de interés digital en las horas previas",
-        "Maquinaria del Pacto Histórico activa, con Petro reaparecido en campaña"
+        "Repunte de interés en buscadores en la antesala del cierre",
+        "Maquinaria del Pacto Histórico y respaldo activo de Petro",
+        "Propuestas de empleo y vida que articulan su mensaje final"
       ],
       "debilidades": [
-        "Sigue debajo en la intención de voto declarada",
-        "Necesita un salto de participación que aún no se confirma"
+        "Seis puntos abajo en la intención de voto sin sondeo que muestre cierre",
+        "Dependencia de una participación excepcional para revertir el resultado"
       ],
       "riesgos": [
-        "Que el respaldo presidencial active rechazo en el centro",
-        "Techo electoral si no captura indecisos en las próximas horas"
+        "Que el voto de opinión no se traduzca en votos efectivos",
+        "Constreñimiento al elector que su campaña ya denunció"
       ],
       "catalizadores": [
-        "Participación elevada en bastiones urbanos",
-        "Trasvase de indecisos en el tramo final de la jornada"
+        "Participación récord en zonas urbanas y costa Caribe",
+        "Alta movilización del voto joven que mostró interés en buscadores"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 89% De la Espriella / 13% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 87% De la Espriella / 14% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (sin novedad de ciclo)",
-      "detalle": "La última fotografía disponible mantiene a De la Espriella 51 - Cepeda 45, con indecisos como variable abierta.",
+      "fuente": "Promedio de encuestas (sin sondeo nuevo este ciclo)",
+      "detalle": "Intención de voto estable en 51-45 a favor de De la Espriella.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (EL ESPECTADOR, La República, France 24)",
-      "detalle": "La votación transcurre con normalidad reportada; ningún hecho mueve la intención de voto.",
+      "fuente": "Registraduría",
+      "detalle": "Plataforma en línea habilitada para consultar el escrutinio y horarios de divulgación ya publicados.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Participación",
-      "detalle": "Más de 41 millones de habilitados; el nivel de afluencia sigue siendo el factor decisivo no resuelto.",
+      "fuente": "Cobertura en vivo (El Espectador, La República, Caracol)",
+      "detalle": "Jornada sin incidentes mayores reportados; foco en la participación.",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T14:39:05.729Z",
+      "tipo": "hito",
+      "titulo": "La Registraduría habilita la consulta en línea del escrutinio",
+      "detalle": "Una plataforma oficial permitirá seguir los resultados en tiempo real y ya circulan los horarios de divulgación.",
+      "fuente": "Infobae",
+      "cuerpo": "La Registraduría dispuso una herramienta digital para que la ciudadanía consulte el conteo de la segunda vuelta a medida que avance el escrutinio, según la cobertura de la jornada. En paralelo, los medios precisaron las franjas en las que se esperan los primeros boletines tras el cierre de mesas, una información operativa que ordena las expectativas en una contienda donde el margen real cabe en menos de 700.000 votos.\n\nEn un balotaje tan ajustado en percepción, la transparencia y la velocidad de la divulgación pesan tanto como los números. Un flujo de resultados claro y verificable reduce el espacio para reclamos sobre la limpieza del proceso —un terreno sensible después de que De la Espriella apelara reiteradamente a la Fuerza Pública y advirtiera que 'no se la van a robar', y de que la campaña de Cepeda alertara por constreñimiento—. La plataforma se vuelve, así, un árbitro silencioso de la noche electoral."
+    },
     {
       "ts": "2026-06-21T13:00:00Z",
       "tipo": "clave",
@@ -327,15 +336,6 @@
       "detalle": "CNN, NYT y Telemundo presentan el balotaje como la elección de un país polarizado entre dos proyectos opuestos.",
       "fuente": "CNN en Español",
       "cuerpo": "Los grandes medios internacionales pusieron el foco en el balotaje colombiano con un encuadre común: una elección que divide al país entre el proyecto de izquierda de Cepeda, respaldado por el Pacto Histórico, y la apuesta de derecha de De la Espriella. Las piezas combinan perfiles de los candidatos con análisis de lo que está en juego para el rumbo del país, sin aportar cifras nuevas sobre la contienda.\n\nPara la segunda vuelta, esta atención externa confirma la lectura de fondo más que alterarla: la del enfrentamiento entre dos polos sin centro visible. El marco de 'país dividido' refuerza la idea de una contienda emocional y de alta movilización, terreno donde el favorito busca convertir su ventaja en encuestas en votos efectivos y el rezagado intenta exprimir un margen que sigue siendo, en lo absoluto, alcanzable."
-    },
-    {
-      "ts": "2026-06-20T18:38:02.000Z",
-      "tipo": "alerta",
-      "titulo": "Petro reaparece en campaña por Cepeda pese a la restricción judicial",
-      "detalle": "El presidente volvió a respaldar públicamente a Cepeda a pesar de la orden de no participar en política.",
-      "fuente": "infobae.com",
-      "cuerpo": "A horas de la apertura de urnas, Gustavo Petro volvió a intervenir a favor de Iván Cepeda con la advertencia de que 'Colombia puede volver al silencio y a la soledad', desafiando una restricción judicial que le prohíbe participar en actividad política. La reaparición va más allá de su anterior llamado a la calma y constituye un respaldo de campaña explícito en plena jornada de reflexión.\n\nEl movimiento es de doble filo: energiza al voto duro del Pacto Histórico, pero también ofrece a la derecha un argumento de extralimitación institucional que puede movilizar al electorado contrario a Petro. En una contienda que De la Espriella ha planteado como freno a la continuidad del actual gobierno, el protagonismo presidencial corre el riesgo de reforzar precisamente el relato del rival.",
-      "url": "https://www.infobae.com/colombia/2026/06/20/petro-volvio-a-hacer-campana-a-ivan-cepeda-pese-a-restriccion-judicial-de-no-participar-en-politica-colombia-puede-volver-al-silencio-y-a-la-soledad/"
     }
   ],
   "historico": [
@@ -703,6 +703,11 @@
       "ts": "2026-06-21T14:13:17.126Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T14:39:06.725Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -743,8 +748,8 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 89,
-      "cepeda": 13
+      "delaespriella": 87,
+      "cepeda": 14
     }
   }
 }
