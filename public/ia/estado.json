@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 75,
-    "generado": "2026-06-21T15:30:32.480Z",
-    "proxima_actualizacion": "2026-06-21T15:50:32.480Z",
+    "ciclo": 76,
+    "generado": "2026-06-21T15:55:47.833Z",
+    "proxima_actualizacion": "2026-06-21T16:15:47.833Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Sin sondeos nuevos: el tablero sigue 51-45 a la espera del primer boletín.",
-    "resumen": "El ciclo no aporta datos demoscópicos frescos ni hechos genuinamente nuevos: la cobertura de las últimas horas repite la jornada ya registrada —apertura de urnas, alta afluencia, llamados a la calma y los mensajes de cierre de ambos candidatos—. La intención de voto se mantiene en 51-45 porque nada en los titulares justifica moverla. La variable decisiva sigue siendo la participación y el conteo, todavía sin resultados oficiales.",
-    "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes reiteran eventos ya reportados. Se sostiene 51-45 sin agregar eventos a la línea de tiempo."
+    "titular": "Jornada sin datos nuevos: el tablero sigue 51-45 mientras se espera el primer boletín.",
+    "resumen": "El ciclo no aporta encuestas frescas ni hechos genuinamente nuevos. La cobertura de las últimas horas reitera lo ya registrado: apertura de urnas, alta afluencia, llamados a la calma, la advertencia de De la Espriella al Congreso y el mensaje de Cepeda de 'votar por la vida'. La intención de voto se mantiene en 51-45 porque nada en los titulares justifica moverla. La variable decisiva sigue siendo la participación y el conteo, todavía sin resultados oficiales.",
+    "que_cambio": "Nada sustantivo: no hay sondeos nuevos y los titulares recientes repiten eventos ya reportados. Se sostiene 51-45 sin agregar eventos a la línea de tiempo."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja de seis puntos consolidada en la última tanda de sondeos",
-        "Mensaje de seguridad y orden con alta penetración",
-        "Capacidad de movilizar al electorado de derecha y a indecisos por miedo al cambio"
+        "Ventaja consistente en la intención de voto agregada",
+        "Narrativa de orden y seguridad movilizadora",
+        "Base de derecha cohesionada y motivada"
       ],
       "debilidades": [
-        "Discurso de confrontación institucional que puede alienar al votante moderado",
-        "Su perfil de 'outsider' está en disputa entre los analistas"
+        "Techo electoral por alto rechazo",
+        "Retórica de confrontación institucional que tensiona a moderados"
       ],
       "riesgos": [
-        "El exceso de confianza que él mismo señaló podría deprimir su participación",
-        "Una afluencia muy alta tiende a favorecer al retador"
+        "Exceso de confianza que desmovilice a su electorado",
+        "Que las advertencias sobre la Fuerza Pública le resten apoyo de indecisos"
       ],
       "catalizadores": [
-        "Boletines tempranos que confirmen su ventaja",
-        "Baja participación en bastiones de Cepeda"
+        "Alta participación en bastiones de derecha",
+        "Un primer boletín que confirme su ventaja temprana"
       ]
     },
     {
@@ -55,25 +55,26 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Resiste abajo",
+      "momentum_label": "Sin repunte",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Núcleo duro del Pacto Histórico movilizado",
-        "Mensaje de 'defender la vida' frente a la violencia",
-        "Repunte de interés digital en las horas previas al cierre"
+        "Maquinaria del Pacto Histórico y respaldo del Gobierno",
+        "Mensaje de 'defensa de la vida' frente a la violencia",
+        "Capacidad de movilización urbana"
       ],
       "debilidades": [
-        "Parte de la elección seis puntos abajo en intención de voto",
-        "Techo electoral asociado al desgaste del gobierno saliente"
+        "Arranca por debajo en el promedio de encuestas",
+        "Desgaste asociado al Gobierno saliente"
       ],
       "riesgos": [
-        "Que la alta afluencia no se traduzca en sus territorios",
-        "Denuncias de constreñimiento al elector que enturbien la jornada"
+        "Que la abstención afecte más a su base",
+        "Denuncias de constreñimiento que enturbien su jornada"
       ],
       "catalizadores": [
-        "Participación récord en regiones afines",
-        "Trasvase de indecisos en la recta final"
+        "Repunte de interés ciudadano en buscadores",
+        "Alta afluencia en grandes ciudades",
+        "Voto joven e indeciso que se incline tarde"
       ]
     }
   ],
@@ -84,19 +85,14 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (última tanda)",
-      "detalle": "La intención de voto se mantiene 51-45 sin sondeos nuevos que la modifiquen.",
+      "fuente": "Promedio de encuestas (segunda vuelta)",
+      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella, dentro del margen estrecho de la jornada.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Jornada electoral",
-      "detalle": "Alta afluencia ya reportada; su efecto sobre el margen sigue sin medirse hasta el primer boletín.",
+      "fuente": "Cobertura en vivo (Google News)",
+      "detalle": "Los titulares de las últimas horas repiten la apertura de urnas y los mensajes de cierre, sin hechos nuevos.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Interés digital",
-      "detalle": "El repunte de Cepeda en búsquedas no se ha traducido aún en señal demoscópica.",
-      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -717,6 +713,11 @@
     },
     {
       "ts": "2026-06-21T15:30:32.480Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T15:55:47.833Z",
       "delaespriella": 76,
       "cepeda": 24
     }
