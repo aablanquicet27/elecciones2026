@@ -200,14 +200,36 @@ export default function IAPage() {
             <span>{izq.partido}</span><span>{der.partido}</span>
           </div>
 
-          {/* diferenciador: intención de voto vs probabilidad de ganar (+ Polymarket solo referencia) */}
+          {/* INTENCIÓN DE VOTO (encuestas) — gráfico propio, justo debajo de la probabilidad de ganar */}
           {e.metodologia && (
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[11px] text-slate-400" style={{ fontFamily: mono }}>
-              <span>INTENCIÓN DE VOTO <b className="text-slate-100">{izq.encuesta_pct}–{der.encuesta_pct}</b></span>
-              {e.metodologia.polymarket_ref && (
-                <span className="text-slate-600">POLYMARKET (REF.) {e.metodologia.polymarket_ref.delaespriella}–{e.metodologia.polymarket_ref.cepeda}</span>
-              )}
-              <span className="text-slate-600">ERROR ±{e.metodologia.error_muestreo_pts} PTS</span>
+            <div className="mt-6 rounded-2xl border border-white/8 p-4 sm:p-5" style={{ backgroundColor: '#10131c' }}>
+              <div className="flex items-center gap-2 mb-3 text-[10px] tracking-[0.25em] text-slate-400" style={{ fontFamily: mono }}>
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#34D399' }} />
+                INTENCIÓN DE VOTO · ENCUESTAS
+              </div>
+              <div className="flex items-end justify-between gap-3 mb-2.5">
+                <div className="leading-none font-bold tabular-nums" style={{ fontFamily: disp, color: COL.delaespriella, fontSize: 'clamp(1.6rem,5vw,2.4rem)' }}>
+                  {izq.encuesta_pct}<span className="text-[0.45em] align-top">%</span>
+                </div>
+                <div className="leading-none font-bold tabular-nums text-right" style={{ fontFamily: disp, color: COL.cepeda, fontSize: 'clamp(1.6rem,5vw,2.4rem)' }}>
+                  {der.encuesta_pct}<span className="text-[0.45em] align-top">%</span>
+                </div>
+              </div>
+              <div className="flex h-3.5 rounded-full overflow-hidden ring-1 ring-white/10" style={{ backgroundColor: '#11141d' }}>
+                <div className="duel-seg h-full" style={{ width: `${izq.encuesta_pct}%`, background: COL.delaespriella }} />
+                <div className="duel-seg h-full" style={{ width: `${der.encuesta_pct}%`, background: COL.cepeda }} />
+              </div>
+              <div className="flex items-center justify-between mt-2 text-[10px] text-slate-500" style={{ fontFamily: mono }}>
+                <span>{apellido(izq.nombre)}</span>
+                {(() => { const ind = 100 - izq.encuesta_pct - der.encuesta_pct; return ind > 0 ? <span className="text-slate-600">{ind}% INDECISOS / OTROS</span> : <span />; })()}
+                <span>{apellido(der.nombre)}</span>
+              </div>
+              <div className="mt-3 pt-3 border-t border-white/8 flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] text-slate-500" style={{ fontFamily: mono }}>
+                {e.metodologia.polymarket_ref && (
+                  <span>POLYMARKET (REF.) <b className="text-slate-400">{e.metodologia.polymarket_ref.delaespriella}–{e.metodologia.polymarket_ref.cepeda}</b></span>
+                )}
+                <span>ERROR DE MUESTREO ±{e.metodologia.error_muestreo_pts} PTS</span>
+              </div>
             </div>
           )}
 
