@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 88,
-    "generado": "2026-06-21T20:05:38.994Z",
-    "proxima_actualizacion": "2026-06-21T20:15:38.994Z",
+    "ciclo": 89,
+    "generado": "2026-06-21T20:21:01.922Z",
+    "proxima_actualizacion": "2026-06-21T20:31:01.922Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 85,
     "confianza": "Media",
-    "titular": "La autoridad electoral promete resultados en menos de una hora y la intención sigue en 51-45.",
-    "resumen": "El ciclo trae dos novedades operativas, no de sondeo: la Registraduría anticipa un primer dato en menos de una hora y De la Espriella exhibe un paquete de 90 decretos listos para su eventual primer día. Sin boletín oficial ni encuestas de salida, la intención de voto permanece clavada en 51-45. El mercado de apuestas sigue en torno a 82-19, pero esa señal no entra en el cálculo del panel.",
-    "que_cambio": "No hay datos electorales nuevos: la intención sigue en 51-45. Solo se incorporan dos hechos del día —el anuncio de resultados inminentes y los 90 decretos de De la Espriella— que no figuraban en la línea de tiempo."
+    "titular": "Sin boletín ni encuestas de salida, la intención sigue clavada en 51-45 mientras arranca el conteo.",
+    "resumen": "El ciclo no trae datos de sondeo: la intención de voto permanece en 51-45 a la espera del primer dato oficial. La única novedad genuina es operativa: la campaña de Cepeda anuncia que ejercerá su derecho a verificar el preconteo y el escrutinio, un movimiento que anticipa una vigilancia estrecha de la fase de conteo. El mercado de apuestas ronda 81-19, pero esa señal no entra en el cálculo del panel.",
+    "que_cambio": "No hay encuestas nuevas: la intención sigue en 51-45. Solo se incorpora un hecho del día —el anuncio de la campaña de Cepeda de verificar preconteo y escrutinio— que no figuraba en la línea de tiempo."
   },
   "candidatos": [
     {
@@ -26,25 +26,25 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 85,
-      "momentum": "up",
-      "momentum_label": "Ventaja firme",
+      "momentum": "steady",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Ventaja sostenida de seis puntos en intención de voto",
-        "Mensaje de gobierno listo (paquete de decretos) que proyecta poder"
+        "Narrativa de cierre de ciclo y relevo de poder"
       ],
       "debilidades": [
-        "Discurso de confrontación que puede movilizar el voto adverso",
-        "Exceso de confianza señalado por su propia campaña"
+        "Riesgo de desmovilización por exceso de confianza ya advertido por él mismo",
+        "Sin colchón holgado si la participación opositora repunta"
       ],
       "riesgos": [
-        "Que la remontada del voto urbano de Cepeda estreche el margen en el escrutinio",
-        "Sobreexposición que erosione a los indecisos en la recta final"
+        "Una vigilancia agresiva del escrutinio por la otra campaña puede tensar el cierre",
+        "Diferencia que se estrecha si los indecisos se inclinan tarde"
       ],
       "catalizadores": [
-        "Primer boletín de la Registraduría que confirme su ventaja",
-        "Alta abstención en bastiones de la izquierda"
+        "Un primer boletín oficial que confirme la tendencia",
+        "Resultados rápidos que consoliden la percepción de triunfo"
       ]
     },
     {
@@ -53,51 +53,54 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 15,
-      "momentum": "down",
-      "momentum_label": "Espera escrutinio",
+      "momentum": "steady",
+      "momentum_label": "Apuesta a verificar",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Tono institucional y llamado a la calma que ordena a su base",
-        "Estrategia de verificación del escrutinio bien montada"
+        "Tono institucional al votar y compromiso de reconocer el resultado",
+        "Estructura de testigos lista para auditar el conteo"
       ],
       "debilidades": [
         "Sigue seis puntos abajo en intención de voto",
-        "Dependencia de una remontada no respaldada por sondeos"
+        "Necesita una remontada que las encuestas no registran"
       ],
       "riesgos": [
-        "Que el primer dato oficial consolide la lectura de derrota",
-        "Que el respaldo explícito de Petro active el voto de rechazo"
+        "Que la verificación se lea como anticipo de impugnación sin sustento",
+        "Brecha que no se cierra si no hay sorpresa en el conteo"
       ],
       "catalizadores": [
-        "Repunte de participación en grandes ciudades",
-        "Estrechamiento del margen en el preconteo que reactive la narrativa de remontada"
+        "Alta participación en sus bastiones urbanos",
+        "Un preconteo más ajustado de lo previsto"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 82% De la Espriella / 19% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 81% De la Espriella / 19% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "La autoridad electoral anticipa entregar un primer resultado en menos de una hora.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Campaña De la Espriella",
-      "detalle": "El candidato dice tener 90 decretos listos para firmar desde el primer día.",
+      "fuente": "Encuestas (sin variación)",
+      "detalle": "La intención de voto se mantiene en 51-45 sin nuevos sondeos en esta franja.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Campaña Cepeda",
-      "detalle": "Cepeda y Petro piden aguardar al escrutinio definitivo antes de conclusiones.",
+      "detalle": "Anuncia que ejercerá su derecho a verificar preconteo y escrutinio.",
       "favorece": "cepeda"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T20:21:00.927Z",
+      "tipo": "evento",
+      "titulo": "La campaña de Cepeda anuncia que verificará el preconteo y el escrutinio",
+      "detalle": "El equipo del candidato del Pacto Histórico dice que ejercerá su derecho a auditar el conteo de votos.",
+      "fuente": "",
+      "cuerpo": "Tras votar en Bogotá, el entorno de Iván Cepeda comunicó que activará su derecho a verificar el preconteo y el escrutinio de la segunda vuelta, en una señal de que desplegará testigos para seguir de cerca cada fase del conteo. El anuncio llega el mismo día en que la autoridad electoral prometió un primer dato en menos de una hora y se suma al tono institucional con que el candidato se comprometió a reconocer el resultado.\n\nEl movimiento es defensivo más que de campaña: con la intención de voto seis puntos abajo, la prioridad de la izquierda pasa a ser blindar la transparencia del conteo antes que mover el sondeo. Para esta segunda vuelta implica que la fase de escrutinio será observada de cerca por ambas partes, lo que reduce el margen para disputas posteriores siempre que el preconteo fluya sin incidentes."
+    },
     {
       "ts": "2026-06-21T20:05:38.994Z",
       "tipo": "pulso",
@@ -327,15 +330,6 @@
       "titulo": "De la Espriella 87% ▼ 86%",
       "detalle": "Ajuste de un punto (87→86) para acompañar el leve aflojamiento de Polymarket; no hay señal nueva más allá de ese roce del mercado.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T23:29:21.000Z",
-      "tipo": "alerta",
-      "titulo": "Cepeda repunta en Google Trends a horas del cierre",
-      "detalle": "Las búsquedas sobre Cepeda superan a las de De la Espriella en la antesala de la votación.",
-      "fuente": "La Silla Vacía",
-      "cuerpo": "Un seguimiento de La Silla Vacía sobre Google Trends muestra que Cepeda repunta en interés de búsqueda frente a De la Espriella justo a horas de la segunda vuelta. El dato no es una encuesta ni mide intención de voto, pero sí captura un pico de atención digital alrededor del candidato del Pacto Histórico en la recta final.\n\nLa señal coincide con un leve retroceso de De la Espriella en Polymarket, que pasó del entorno de 88 a 85. Ninguno de los dos indicadores altera el favoritismo de fondo, pero juntos justifican soltar un punto en nuestra estimación: si el interés se traduce en participación urbana, el piso de 45% de Cepeda podría defenderse mejor de lo que sugieren los mercados.",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOd2RvWF8tbW9vUDlNTEE5X19zMVFhSzZGRGJQRndZUzd5TUVkaFFDeWhlWll0N3hjdVJ1OUt1OTJOeEgybWVsY0FyZTlyQVNmUUJHTVphSEdmZ0k2LU0yVXBLMzlqSzU1eFdUNGdKLVlvamd2UGZCNEVuSnJmMklCdzdLNWZYUGV0YUZZS3c0MXZJY0VwMkl0cjJGZ21fTUI2RFdnUHVNWm5Ib0lD?oc=5"
     }
   ],
   "historico": [
@@ -783,6 +777,11 @@
       "ts": "2026-06-21T20:05:38.994Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T20:21:01.922Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
@@ -823,7 +822,7 @@
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 82,
+      "delaespriella": 81,
       "cepeda": 19
     }
   }
