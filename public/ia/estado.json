@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 45,
-    "generado": "2026-06-21T03:52:39.748Z",
-    "proxima_actualizacion": "2026-06-21T04:22:39.748Z",
+    "ciclo": 46,
+    "generado": "2026-06-21T04:14:12.692Z",
+    "proxima_actualizacion": "2026-06-21T04:44:12.692Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 83,
+    "probabilidad": 77,
     "confianza": "Media",
-    "titular": "83-17: De la Espriella estabiliza su ventaja mientras corre la jornada y aún cuida el exceso de confianza.",
-    "resumen": "Polymarket recompone la probabilidad implícita de De la Espriella hacia el 83% tras el bache del cierre, y nosotros la fijamos en 83 para acompañar el rebote sin sobrerreaccionar. El ultraderechista mantiene el favoritismo y empieza a poner números a su expectativa de votación, mientras Cepeda insiste en movilizar a su base. No hay un hecho de fondo que altere el tablero: el voto real sigue siendo la única incógnita seria.",
-    "que_cambio": "Subimos de 82-18 a 83-17 siguiendo la leve recuperación de Polymarket (de 81 a 83 implícito). Es un reacomodo de mercado dentro del margen habitual, no un cambio de fundamentos."
+    "titular": "Sin hechos nuevos: el tablero queda igual y todo se juega en las urnas que ya están abiertas.",
+    "resumen": "No hay un hecho de fondo genuinamente nuevo respecto a lo ya reportado: los titulares de las últimas horas repiten los mensajes de cierre de ambos candidatos y las cifras de mercado conocidas. Mantenemos la intención de voto en 52-45 con un bloque de indecisos que sigue siendo la única incógnita seria. Polymarket apenas se mueve y no justifica reacomodos en los fundamentos.",
+    "que_cambio": "Nada sustantivo. La referencia de mercado se mantiene casi plana (De la Espriella 83, Cepeda 18) y no entran eventos nuevos a la línea de tiempo."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 83,
-      "momentum": "up",
-      "momentum_label": "Recupera terreno",
+      "probabilidad": 77,
+      "momentum": "down",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Favoritismo sostenido en el mercado de apuestas (83% implícito)",
-        "Ventaja en intención de voto (52% en la última lectura)",
-        "Disciplina de mensaje en la recta final"
+        "Favoritismo sostenido en encuestas e intención de voto",
+        "Disciplina de mensaje contra el triunfalismo",
+        "Ventaja consolidada en mercados de referencia"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza",
-        "Margen real estrecho frente al voto efectivo"
+        "Margen real estrecho frente al tamaño del electorado",
+        "Dependencia de que su ventaja se traduzca en asistencia"
       ],
       "riesgos": [
-        "Una participación alta de la base de Cepeda que erosione su ventaja",
-        "Sorpresas en el conteo de las regiones más reñidas"
+        "Exceso de confianza que desmovilice a su base",
+        "Sorpresa en el voto indeciso de última hora"
       ],
       "catalizadores": [
-        "Voto urbano de centro-derecha consolidado",
-        "Narrativa de seguridad que moviliza a su electorado"
+        "Alta participación en sus bastiones",
+        "Cierre ordenado sin incidentes"
       ]
     },
     {
@@ -53,44 +53,43 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 17,
-      "momentum": "down",
-      "momentum_label": "Cede al margen",
+      "probabilidad": 23,
+      "momentum": "up",
+      "momentum_label": "Moviliza base",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria de movilización del Pacto Histórico",
-        "Respaldo activo de Petro pese a la restricción",
-        "Mensaje de 'defender la vida' que cohesiona su base"
+        "Base movilizada y mensaje emocional de cierre",
+        "Respaldo activo del oficialismo"
       ],
       "debilidades": [
-        "Desventaja persistente en encuestas e implícitos",
-        "Techo electoral difícil de romper en segunda vuelta"
+        "Desventaja en intención de voto",
+        "Techo electoral aún por romper"
       ],
       "riesgos": [
-        "Abstención en bastiones propios",
-        "Que la polarización beneficie al voto de rechazo a la izquierda"
+        "Baja conversión de simpatía en votos efectivos",
+        "Abstención en zonas clave"
       ],
       "catalizadores": [
-        "Voto exterior y regional con geografía favorable",
-        "Repunte de última hora en interés y movilización"
+        "Repunte de participación de la izquierda",
+        "Trasvase del voto indeciso"
       ]
     }
   ],
   "indicadores": [
     {
-      "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita de De la Espriella se recupera al 83% tras tocar 81% en el cierre.",
+      "fuente": "Polymarket (referencia)",
+      "detalle": "Mercado de apuestas: 83% De la Espriella / 18% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (promedio previo)",
-      "detalle": "De la Espriella 52% vs Cepeda 45%, brecha estable pero dentro del margen.",
+      "fuente": "Encuestas / intención de voto",
+      "detalle": "Se mantiene la brecha 52-45 con indecisos sin definir.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Contexto de jornada",
-      "detalle": "Ambas campañas vuelcan el esfuerzo a movilizar; el resultado depende de la participación real.",
+      "fuente": "Jornada electoral",
+      "detalle": "Urnas abiertas: el voto efectivo es la única variable que falta por conocer.",
       "favorece": "incierto"
     }
   ],
@@ -101,6 +100,13 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T04:14:12.692Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 83% ▼ 77%",
+      "detalle": "No se movió nada relevante: no hay hechos nuevos respecto a lo ya reportado y la referencia de mercado quedó casi plana, así que mantenemos la intención de voto y el balance del ciclo anterior.",
+      "fuente": "Pulso IA"
     },
     {
       "ts": "2026-06-21T03:52:39.748Z",
@@ -319,13 +325,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 89% ▲ 90%",
       "detalle": "Subió un punto (89→90) por la consolidación de Polymarket en 90 sin señal contraria; las encuestas y el contexto operativo no aportan novedad predictiva.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T16:29:54.172Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 88% ▲ 89%",
-      "detalle": "Subió un punto (88→89) al volver Polymarket a 90 sin contrapeso en encuestas; es ajuste de calibración, no un cambio estructural.",
       "fuente": "Pulso IA"
     }
   ],
@@ -559,6 +558,11 @@
       "ts": "2026-06-21T03:52:39.748Z",
       "delaespriella": 83,
       "cepeda": 17
+    },
+    {
+      "ts": "2026-06-21T04:14:12.692Z",
+      "delaespriella": 77,
+      "cepeda": 23
     }
   ],
   "fuentes": [
@@ -586,5 +590,21 @@
       "nombre": "Registraduría Nacional",
       "url": "https://www.registraduria.gov.co"
     }
-  ]
+  ],
+  "metodologia": {
+    "resumen": "La probabilidad de ganar NO sale de mercados de apuestas: se calcula a partir de la intención de voto (encuestas), convirtiendo el margen a dos vías en probabilidad con un modelo normal que asume un error de muestreo típico. Polymarket se muestra solo como referencia.",
+    "intencion_voto": {
+      "delaespriella": 52,
+      "cepeda": 45
+    },
+    "prob_ganar": {
+      "delaespriella": 77,
+      "cepeda": 23
+    },
+    "error_muestreo_pts": 5,
+    "polymarket_ref": {
+      "delaespriella": 83,
+      "cepeda": 18
+    }
+  }
 }
