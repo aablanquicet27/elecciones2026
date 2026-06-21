@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 101,
-    "generado": "2026-06-21T23:16:15.728Z",
-    "proxima_actualizacion": "2026-06-21T23:26:15.728Z",
+    "ciclo": 102,
+    "generado": "2026-06-21T23:31:58.271Z",
+    "proxima_actualizacion": "2026-06-21T23:41:58.271Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 63,
+    "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Sin novedad real: 50-48 aguanta y el conteo solo ratifica lo ya sabido.",
-    "resumen": "Mantenemos la intención en 50% para De la Espriella y 48% para Cepeda. Los titulares de la última hora repiten el cuadro ya incorporado: ventaja mínima del candidato de derecha en el preconteo y en los sondeos a pie de urna, jornada sin incidentes avalada por los observadores y Cepeda en postura de reconocer con observación. El parte de '80% de mesas escrutadas' es incluso anterior al 97% que ya teníamos, así que no aporta avance. No hay dato que mueva el tablero.",
-    "que_cambio": "Nada sustancial: la intención sigue en 50-48 y la diferencia de poco más de dos puntos se mantiene. Los titulares frescos reiteran hechos ya reportados, sin señal nueva."
+    "titular": "El preconteo cuaja: 49,77% vs 48,59% con más del 98% escrutado.",
+    "resumen": "El cuadro se consolida sin sobresaltos. El preconteo oficial ya pone cifras finas a la ventaja de De la Espriella —49,77% frente al 48,59% de Cepeda con más del 98% de mesas— una diferencia de poco más de un punto que confirma la tendencia que veníamos manejando. Ajustamos la intención a 50-49 para reflejar el estrechamiento real del margen, sin alterar el favorito. La jornada sigue avalada y Cepeda mantiene su postura de reconocer con observación.",
+    "que_cambio": "El margen se afina: pasamos de un 50-48 estimado a un 50-49 que recoge el preconteo oficial (49,77 vs 48,59). La distancia cae a poco más de un punto, pero el orden no se mueve."
   },
   "candidatos": [
     {
@@ -25,27 +25,30 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 63,
-      "momentum": "steady",
+      "probabilidad": 57,
+      "momentum": "down",
       "momentum_label": "Ventaja firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en preconteo oficial",
-        "Coincidencia de sondeos a pie de urna a su favor",
-        "Narrativa de virtual presidente electo instalada"
+        "Ventaja sostenida en el preconteo con más del 98% escrutado",
+        "Resultado avalado por la observación nacional e internacional",
+        "Narrativa de presidente electo ya instalada"
       ],
       "debilidades": [
-        "Margen estrechísimo, por debajo de tres puntos",
-        "Triunfo sin holgura que limita su mandato"
+        "Margen estrechísimo, apenas 1,18 puntos",
+        "Mandato sin holgura para imponer agenda",
+        "País dividido casi por mitades"
       ],
       "riesgos": [
-        "Reclamos en el tramo final del escrutinio",
-        "Que la observación de la campaña rival encuentre inconsistencias"
+        "Que el escrutinio final recorte aún más la diferencia",
+        "Impugnaciones puntuales en mesas reñidas",
+        "Tensión por su retórica sobre Fuerza Pública y Congreso"
       ],
       "catalizadores": [
-        "Cierre del escrutinio confirmando la tendencia",
-        "Aval definitivo de las misiones de observación"
+        "Cierre del escrutinio que ratifique el preconteo",
+        "Reconocimiento formal del rival",
+        "Declaración de la autoridad electoral"
       ]
     },
     {
@@ -53,27 +56,28 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 37,
-      "momentum": "steady",
-      "momentum_label": "Resiste cerca",
-      "encuesta_pct": 48,
+      "probabilidad": 43,
+      "momentum": "up",
+      "momentum_label": "Cierra mínimo",
+      "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Cierre a menos de dos puntos del rival",
-        "Postura institucional de reconocer con observación",
-        "Base movilizada y atenta al escrutinio"
+        "Resistencia notable: queda a poco más de un punto",
+        "Base movilizada y legitimidad para observar el conteo",
+        "Postura institucional de reconocer el resultado"
       ],
       "debilidades": [
-        "Va detrás en preconteo y a pie de urna",
-        "Sin tiempo ni datos para revertir la diferencia"
+        "Queda por debajo en el preconteo casi consolidado",
+        "Margen difícil de revertir con tan pocas mesas pendientes",
+        "Sin catalizador que altere la tendencia"
       ],
       "riesgos": [
-        "Que el escrutinio final consolide la brecha",
-        "Quedar atrapado entre reconocer y cuestionar"
+        "Que el remanente de mesas no alcance para descontar",
+        "Desmovilización tras conocerse el resultado"
       ],
       "catalizadores": [
-        "Hallazgos verificables en la observación del conteo",
-        "Reversión de mesas en zonas pendientes"
+        "Sorpresa en las mesas faltantes",
+        "Hallazgos en la observación del escrutinio"
       ]
     }
   ],
@@ -84,22 +88,29 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo oficial (hace 2h)",
-      "detalle": "De la Espriella aventaja por diferencia ínfima en el conteo oficial.",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "De la Espriella 49,77% frente a Cepeda 48,59%, diferencia de 1,18 puntos.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Sondeos a pie de urna (hace 2h)",
-      "detalle": "Las muestras dan al candidato de derecha arriba por margen mínimo.",
+      "fuente": "Conteo rápido / sondeos",
+      "detalle": "Coinciden en una ventaja mínima del candidato de derecha.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "OEA (hace 2h)",
-      "detalle": "Destaca jornada sin incidentes ni denuncias formales.",
+      "fuente": "Observación electoral",
+      "detalle": "Jornada sin incidentes mayores; Cepeda reconoce con observación.",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T23:31:58.271Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 63% ▼ 57%",
+      "detalle": "El preconteo oficial aporta cifras concretas (49,77 vs 48,59) que estrechan el margen a poco más de un punto; ajustamos la intención a 50-49 sin cambiar el favorito.",
+      "fuente": "Pulso IA"
+    },
     {
       "ts": "2026-06-21T22:14:52.861Z",
       "tipo": "pulso",
@@ -139,6 +150,15 @@
       "fuente": "Sondeos a pie de urna (medios, hace <1h)",
       "cuerpo": "Al cierre de la jornada aparecieron las primeras encuestas a pie de urna, el primer indicio propio de esta segunda vuelta después de horas de titulares que solo reciclaban la votación de los candidatos y sus mensajes. La medición ubica a Abelardo de la Espriella por delante de Iván Cepeda, pero con una diferencia mínima que contrasta con la holgura que mostraban los sondeos previos a la jornada y que mantiene la contienda dentro del margen de error.\n\nPara la segunda vuelta el dato es doblemente relevante: confirma que De la Espriella llega al conteo como favorito, pero también valida la apuesta de remontada de la izquierda, que necesitaba precisamente un cuadro estrecho para sostener la expectativa hasta los boletines oficiales. Mientras la Registraduría no entregue su primer corte consolidado, este sondeo es la única referencia de resultado y obliga a leer la noche como una carrera abierta, no resuelta.",
       "url": "https://www.elperiodico.com/es/internacional/20260621/ultraderechista-espriella-aventaja-cepeda-sondeos-131663730"
+    },
+    {
+      "ts": "2026-06-21T21:34:47.000Z",
+      "tipo": "hito",
+      "titulo": "El preconteo se consolida: 49,77% vs 48,59% con más del 98%",
+      "detalle": "La autoridad electoral fija cifras finas a la ventaja de De la Espriella con casi todas las mesas escrutadas.",
+      "fuente": "europapress.es",
+      "cuerpo": "El preconteo oficial alcanzó más del 98% de mesas y arrojó números concretos: Abelardo de la Espriella suma 49,77% e Iván Cepeda 48,59%, una diferencia de apenas 1,18 puntos. La cifra precisa y casi definitiva avanza sobre el reporte previo del 97% que ya circulaba y deja la elección entre las más reñidas de la historia reciente del país, con el candidato de derecha al frente y el de izquierda muy cerca.\n\nPara esta segunda vuelta, el dato cierra el margen de maniobra: con tan pocas mesas pendientes, la remontada de Cepeda se vuelve aritméticamente muy difícil, pero la estrechez del resultado condiciona desde ya la gobernabilidad del eventual ganador. Un mandato ganado por poco más de un punto obliga a De la Espriella a negociar en un país partido casi por mitades, y le da a Cepeda argumento para una observación rigurosa del escrutinio final.",
+      "url": "https://www.europapress.es/internacional/noticia-espriella-506-impone-cepeda-478-presidenciales-colombia-resultados-parciales-20260621233447.html"
     },
     {
       "ts": "2026-06-21T20:30:33.000Z",
@@ -324,23 +344,6 @@
       "titulo": "De la Espriella 85% ▼ 84%",
       "detalle": "La probabilidad bajó un punto siguiendo a Polymarket (de 85 a 84); no hay señal nueva en titulares, solo ajuste de mercado en la apertura.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T02:09:27.634Z",
-      "tipo": "evento",
-      "titulo": "Cepeda lanza su mensaje de cierre a los ciudadanos antes de abrir las urnas",
-      "detalle": "El candidato del Pacto Histórico dirigió un mensaje a la ciudadanía en la antesala de los comicios.",
-      "fuente": "Infobae",
-      "cuerpo": "Iván Cepeda difundió un mensaje directo a los votantes en la mañana de la jornada, en lo que constituye su llamado de cierre antes de la apertura de las urnas. La intervención cierra una campaña en la que el aspirante de la izquierda ha buscado capitalizar el repunte de interés digital registrado en las últimas horas y la maquinaria del oficialismo, mientras carga con una brecha persistente en encuestas y en el mercado de apuestas.\n\nPara la segunda vuelta, el gesto apunta a contrarrestar el principal riesgo de su campaña: la desmovilización ante un resultado que muchos dan por descontado. Su capacidad de convertir el interés en línea en participación efectiva, sobre todo en las grandes ciudades, es la variable que podría estrechar un margen que hoy el mercado fija en 70 puntos de distancia."
-    },
-    {
-      "ts": "2026-06-21T01:58:37.000Z",
-      "tipo": "alerta",
-      "titulo": "De la Espriella anticipa que 'no se la van a robar' y apela a la Fuerza Pública",
-      "detalle": "El candidato de derecha advierte que recurriría a la Fuerza Pública si el petrismo no reconoce el resultado de las urnas.",
-      "fuente": "Semana",
-      "cuerpo": "En las horas previas y durante el inicio de la jornada, De la Espriella sumó a su habitual discurso de orden público un mensaje centrado en la legitimidad del conteo: planteó que 'esta elección no se la van a robar' y reclamó la actuación de la Fuerza Pública en caso de que el sector petrista no acepte los resultados. El planteamiento extiende su retórica previa sobre el papel del Ejército, pero ahora la enfoca específicamente en el reconocimiento del veredicto de las urnas y no solo en el orden institucional.\n\nPara la segunda vuelta, el giro tiene doble filo. Refuerza la cohesión de su base, que lee el mensaje como firmeza frente a un posible desconocimiento del resultado, pero instala de forma preventiva un marco de sospecha sobre el conteo que puede tensionar la jornada y desgastar la imagen de neutralidad institucional justo cuando el margen real cabe en un puñado de votos. No mueve la intención de voto, pero sí eleva la temperatura política del cierre.",
-      "url": "https://www.semana.com/politica/articulo/abelardo-de-la-espriella-hace-llamado-a-la-fuerza-publica-en-caso-de-que-el-petrismo-no-acepte-resultados-esta-eleccion-no-se-la-van-a-robar/202619/"
     }
   ],
   "historico": [
@@ -853,6 +856,11 @@
       "ts": "2026-06-21T23:16:15.728Z",
       "delaespriella": 63,
       "cepeda": 37
+    },
+    {
+      "ts": "2026-06-21T23:31:58.271Z",
+      "delaespriella": 57,
+      "cepeda": 43
     }
   ],
   "fuentes": [
@@ -885,11 +893,11 @@
     "resumen": "La probabilidad de ganar NO sale de mercados de apuestas: se calcula a partir de la intención de voto (encuestas), convirtiendo el margen a dos vías en probabilidad con un modelo normal que asume un error de muestreo típico. Polymarket se muestra solo como referencia.",
     "intencion_voto": {
       "delaespriella": 50,
-      "cepeda": 48
+      "cepeda": 49
     },
     "prob_ganar": {
-      "delaespriella": 63,
-      "cepeda": 37
+      "delaespriella": 57,
+      "cepeda": 43
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
