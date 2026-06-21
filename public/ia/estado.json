@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 71,
-    "generado": "2026-06-21T13:52:30.749Z",
-    "proxima_actualizacion": "2026-06-21T14:12:30.749Z",
+    "ciclo": 72,
+    "generado": "2026-06-21T14:13:17.126Z",
+    "proxima_actualizacion": "2026-06-21T14:33:17.126Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "51-45 intacto: la jornada transcurre y ningún titular mueve la aguja.",
-    "resumen": "El ciclo no trae encuestas nuevas ni hechos inéditos. Todo lo que circula en la última hora es cobertura en vivo del balotaje, explicadores de propuestas y reiteraciones de encuadres ya consignados: la advertencia de De la Espriella al Congreso, el llamado de Cepeda a 'votar por la vida' y la alerta por exceso de confianza son continuidad, no novedad. La intención de voto se mantiene en 51-45 y la participación sigue siendo la única variable abierta hasta el conteo.",
-    "que_cambio": "Nada sustantivo: sin encuestas frescas y con titulares que repiten mensajes ya reportados. Se mantiene 51-45 con momentum estable; el 89-12 de Polymarket es ruido de mercado y no entra en el cálculo."
+    "titular": "Urnas abiertas, números quietos: 51-45 mientras corre la jornada.",
+    "resumen": "El ciclo no aporta encuestas frescas ni hechos inéditos. Lo que circula en la última hora es cobertura minuto a minuto del balotaje, explicadores de propuestas y reiteraciones de encuadres ya consignados —la amenaza de De la Espriella al Congreso y la alerta por exceso de confianza son continuidad, no novedad—. La intención de voto se mantiene en 51-45 y la participación sigue siendo la única variable abierta hasta que empiece el conteo.",
+    "que_cambio": "Nada sustantivo: sin sondeos nuevos y con titulares que repiten mensajes ya reportados o son cobertura en vivo. Se mantiene 51-45; el 89-13 de Polymarket es ruido de mercado y no entra en el cálculo."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente de seis puntos en intención de voto",
-        "Mensaje de cambio que moviliza a su base",
-        "Narrativa anti-triunfalismo que empuja a indecisos a las urnas"
+        "Ventaja sostenida de seis puntos en la última fotografía de encuestas",
+        "Mensaje de cierre disciplinado contra el triunfalismo",
+        "Narrativa de orden y seguridad que moviliza a su base"
       ],
       "debilidades": [
-        "Margen de seis puntos no es a prueba de sorpresas de participación",
-        "Retórica sobre intervención de la Fuerza Pública puede alienar al centro"
+        "Margen estrecho en términos absolutos: cabe en menos de 700.000 votos",
+        "Retórica de confrontación institucional puede alejar a indecisos moderados"
       ],
       "riesgos": [
-        "Una abstención alta en sus bastiones por exceso de confianza",
-        "Que el voto oculto de centro se incline a último momento por el continuismo moderado"
+        "Abstención de su propio electorado por exceso de confianza",
+        "Que la participación alta favorezca al rival en grandes ciudades"
       ],
       "catalizadores": [
-        "Jornada sin incidentes que valide su discurso de orden",
-        "Cierre de urnas con participación alta en regiones afines"
+        "Jornada electoral sin incidentes que consolide la percepción de favorito",
+        "Buen desempeño en regiones donde lideró en primera vuelta"
       ]
     },
     {
@@ -55,43 +55,48 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Resiste atrás",
+      "momentum_label": "Cierre estable",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico y respaldo activo de Petro en territorio",
-        "Mensaje de 'defender la vida' con tracción emocional",
-        "Repunte de interés digital en las últimas horas"
+        "Mensaje de cierre centrado en 'defender la vida' con capacidad de movilización",
+        "Repunte de interés digital en las horas previas",
+        "Maquinaria del Pacto Histórico activa, con Petro reaparecido en campaña"
       ],
       "debilidades": [
-        "Sigue seis puntos abajo en intención de voto",
-        "Carga el desgaste del continuismo del Gobierno actual"
+        "Sigue debajo en la intención de voto declarada",
+        "Necesita un salto de participación que aún no se confirma"
       ],
       "riesgos": [
-        "No alcanzar a cerrar la brecha solo con movilización",
-        "Que la restricción judicial a Petro reste eficacia a su tramo final"
+        "Que el respaldo presidencial active rechazo en el centro",
+        "Techo electoral si no captura indecisos en las próximas horas"
       ],
       "catalizadores": [
-        "Una participación inesperadamente alta en zonas urbanas y costa",
-        "Trasvase de indecisos que rechacen el tono de confrontación del rival"
+        "Participación elevada en bastiones urbanos",
+        "Trasvase de indecisos en el tramo final de la jornada"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 89% De la Espriella / 12% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 89% De la Espriella / 13% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (France 24, EL PAÍS, Euronews)",
-      "detalle": "Más de 41 millones de habilitados votan en una jornada que hasta ahora narra normalidad, sin datos que alteren el pronóstico.",
+      "fuente": "Encuestas (sin novedad de ciclo)",
+      "detalle": "La última fotografía disponible mantiene a De la Espriella 51 - Cepeda 45, con indecisos como variable abierta.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Cobertura en vivo (EL ESPECTADOR, La República, France 24)",
+      "detalle": "La votación transcurre con normalidad reportada; ningún hecho mueve la intención de voto.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Estado de la contienda",
-      "detalle": "Intención de voto estable en 51-45; la participación es la única variable abierta hasta el conteo.",
-      "favorece": "delaespriella"
+      "fuente": "Participación",
+      "detalle": "Más de 41 millones de habilitados; el nivel de afluencia sigue siendo el factor decisivo no resuelto.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -693,6 +698,11 @@
       "ts": "2026-06-21T13:52:30.749Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T14:13:17.126Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -734,7 +744,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 89,
-      "cepeda": 12
+      "cepeda": 13
     }
   }
 }
