@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 83,
-    "generado": "2026-06-21T18:26:19.039Z",
-    "proxima_actualizacion": "2026-06-21T18:46:19.039Z",
+    "ciclo": 84,
+    "generado": "2026-06-21T18:47:31.810Z",
+    "proxima_actualizacion": "2026-06-21T19:07:31.811Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Sin boletines ni encuestas frescas, la intención de voto sigue clavada en 51-45.",
-    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Los titulares de la última hora reiteran lo ya consignado: el voto de Cepeda en Bogotá confiado en remontar, el mensaje de De la Espriella tras sufragar y su advertencia sobre el 'exceso de confianza', esta última de hace ocho horas. Sin sondeos nuevos ni primer escrutinio de la Registraduría, la intención de voto queda intacta. La franja sigue en compás de espera del cierre de urnas.",
-    "que_cambio": "Nada sustantivo: no hay encuestas frescas ni datos de la Registraduría. La intención de voto no se mueve por ausencia de información nueva; los titulares recientes ya están en la línea de tiempo."
+    "titular": "La franja sigue en espera del primer escrutinio: la intención de voto no se mueve de 51-45.",
+    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Los titulares de la última hora reiteran lo ya consignado: el voto de Cepeda en Bogotá confiado en remontar, el sufragio de De la Espriella en Barranquilla con su frase 'Si gana el Tigre, gana Colombia' y su advertencia sobre el 'exceso de confianza', esta última de hace ocho horas. Sin sondeos frescos ni primer boletín de la Registraduría, la intención de voto queda intacta. El mercado de apuestas se estira a 79-21, pero eso no toca las encuestas.",
+    "que_cambio": "Nada sustantivo: no hay encuestas nuevas ni datos de la Registraduría. La intención de voto se mantiene en 51-45 por ausencia de información nueva; los titulares recientes ya están en la línea de tiempo."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja estable",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente en intención de voto (51%)",
-        "Mensaje de campaña disciplinado en la recta final",
-        "Lidera de forma estable la referencia de mercado"
+        "Ventaja sostenida en la intención de voto agregada",
+        "Mayor consolidación del electorado de derecha",
+        "Narrativa de orden y seguridad que moviliza a su base"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza, que él mismo señaló",
-        "Alta polarización que moviliza al voto opositor"
+        "Riesgo de desmovilización por exceso de confianza, que él mismo ha alertado",
+        "Techo de rechazo que limita su crecimiento entre indecisos"
       ],
       "riesgos": [
-        "Sorpresa en el escrutinio si la participación opositora supera lo esperado",
-        "Estrechamiento del margen al cierre"
+        "Una participación alta en zonas urbanas podría favorecer a Cepeda",
+        "Su retórica sobre la Fuerza Pública puede tensionar la jornada"
       ],
       "catalizadores": [
-        "Primeros boletines de la Registraduría que confirmen la tendencia",
-        "Buena afluencia en sus bastiones"
+        "Cierre de urnas con primeros boletines que confirmen su ventaja",
+        "Buena afluencia en bastiones de la Costa y el centro del país"
       ]
     },
     {
@@ -55,43 +55,43 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "A la espera",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Discurso de remontada y reconocimiento de resultados",
-        "Capacidad de movilización del Pacto Histórico",
-        "Repunte de interés digital en horas previas al cierre"
+        "Discurso de cierre cohesionado en torno a 'defender la vida'",
+        "Maquinaria del Pacto Histórico y respaldo de Petro en territorio",
+        "Repunte de interés en Google Trends a horas del cierre"
       ],
       "debilidades": [
-        "Desventaja de seis puntos en intención de voto",
-        "Necesita una participación atípicamente alta para revertir"
+        "Sigue por debajo en la intención de voto agregada",
+        "Necesita una remontada superior a la que muestran los sondeos"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la brecha sin margen de remontada",
-        "Techo electoral en regiones clave"
+        "Una participación baja en sus bastiones comprometería la remontada",
+        "El respaldo de Petro puede activar también al voto de rechazo"
       ],
       "catalizadores": [
-        "Alta participación en zonas urbanas favorables",
-        "Trasvase de indecisos en el tramo final"
+        "Sorpresa en participación urbana y juvenil",
+        "Trasvase de indecisos en el tramo final de la jornada"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 81% De la Espriella / 21% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 79% De la Espriella / 21% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas previas",
-      "detalle": "La intención de voto se mantiene en 51-45 a favor de De la Espriella; no hay sondeos nuevos en este ciclo.",
+      "fuente": "Encuestas (estado previo)",
+      "detalle": "La intención de voto agregada se mantiene en 51-45 sin sondeos nuevos en el ciclo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "Aún no hay primer boletín de escrutinio; la franja sigue sin datos duros.",
-      "favorece": "incierto"
+      "fuente": "Google Trends",
+      "detalle": "Cepeda mostró repunte de búsquedas a horas del cierre, señal de interés sin traducción confirmada en votos.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -754,6 +754,11 @@
       "ts": "2026-06-21T18:26:19.039Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T18:47:31.810Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -794,7 +799,7 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 81,
+      "delaespriella": 79,
       "cepeda": 21
     }
   }
