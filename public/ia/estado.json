@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 52,
-    "generado": "2026-06-21T06:59:24.912Z",
-    "proxima_actualizacion": "2026-06-21T07:19:24.912Z",
+    "ciclo": 53,
+    "generado": "2026-06-21T07:20:32.339Z",
+    "proxima_actualizacion": "2026-06-21T07:40:32.339Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Jornada sin encuestas nuevas: la intención de voto sigue clavada en 51-45.",
-    "resumen": "El día de la votación avanza sin mediciones frescas que muevan la aguja, de modo que la intención de voto permanece en 51-45 a favor de De la Espriella. Los titulares de las últimas horas reiteran lo ya conocido: el mensaje del candidato de derecha al petrismo, el llamado de Cepeda a 'defender la vida' y el encuadre internacional de una Colombia dividida. No hay un hecho genuinamente nuevo que altere el cuadro; la única variable real sigue siendo la participación y el comportamiento del bloque indeciso, que cabe en un margen estrecho.",
-    "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes repiten eventos ya reportados. Se mantiene 51-45 y el momentum estable para ambos."
+    "titular": "La aguja sigue clavada en 51-45: la jornada avanza sin datos nuevos.",
+    "resumen": "El cierre de la franja no aporta ninguna medición fresca ni un hecho genuinamente nuevo. Los titulares de la última hora son encuadres de prensa —izquierda post-Petro frente a derecha radical— y repeticiones de eventos ya consignados: el llamado a la Fuerza Pública, el mensaje al petrismo y la apelación a la intervención del Ejército. Sin encuestas que muevan el cuadro, la intención de voto permanece en 51-45 a favor de De la Espriella, con la participación y el bloque indeciso como únicas variables abiertas.",
+    "que_cambio": "Nada sustantivo. No hay encuestas nuevas y los titulares recientes repiten hechos ya reportados o son encuadres genéricos; se mantiene 51-45 y momentum estable para ambos."
   },
   "candidatos": [
     {
@@ -27,28 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de seis puntos en intención de voto",
-        "Narrativa de orden y seguridad que moviliza a su base",
-        "Mayor presencia mediática en la antesala del cierre"
+        "Ventaja sostenida de seis puntos en la última medición disponible",
+        "Mensaje de cierre disciplinado pidiendo voto masivo y evitando el triunfalismo",
+        "Capacidad de movilizar el antipetrismo como factor aglutinante"
       ],
       "debilidades": [
-        "Riesgo de exceso de confianza que él mismo reconoce",
-        "Discurso sobre el conteo que puede leerse como deslegitimación anticipada",
-        "Dependencia de una participación alta en sus bastiones"
+        "Retórica sobre intervención del Ejército que tensiona al centro institucionalista",
+        "Techo electoral expuesto si la participación se dispara en bastiones de izquierda"
       ],
       "riesgos": [
-        "Una abstención mayor a la esperada en zonas afines",
-        "Que el tono sobre 'robo' active el voto opositor por reacción",
-        "Sorpresa en el voto indeciso de última hora"
+        "Exceso de confianza desmovilizando a su propia base",
+        "Margen real por debajo de 700.000 votos, sensible a la abstención diferencial"
       ],
       "catalizadores": [
-        "Participación elevada en regiones de centro-derecha",
-        "Reporte de orden público sin incidentes que favorezca su mensaje",
-        "Cierre de campaña con cobertura amplia"
+        "Alta participación en regiones conservadoras y urbanas de clase media",
+        "Trasvase final de indecisos motivados por seguridad y rechazo a la continuidad"
       ]
     },
     {
@@ -58,28 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Resiste abajo",
+      "momentum_label": "Sin novedad",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Base militante movilizada y disciplinada",
-        "Repunte de interés digital en las horas previas",
-        "Margen real estrecho que deja la elección abierta"
+        "Mensaje movilizador de 'defender la vida' con tracción en su base",
+        "Repunte de interés digital en las horas previas al cierre",
+        "Estructura territorial del Pacto Histórico para sacar el voto"
       ],
       "debilidades": [
-        "Sigue seis puntos abajo en intención de voto",
-        "Menor tracción en el bloque indeciso",
-        "Restricciones al respaldo presidencial directo"
+        "Desventaja de seis puntos sin medición que muestre cierre de la brecha",
+        "Reaparición de Petro en campaña que polariza pero no garantiza votos nuevos"
       ],
       "riesgos": [
-        "Que la diferencia se consolide si no crece la participación de su bloque",
-        "Denuncias de constreñimiento que no se traduzcan en votos",
-        "Techo electoral en regiones clave"
+        "Abstención en zonas clave que neutralice su ventaja territorial",
+        "Que el antipetrismo se imponga como voto útil en el tramo final"
       ],
       "catalizadores": [
-        "Movilización masiva en grandes ciudades",
-        "Trasvase de indecisos en las últimas horas",
-        "Alta participación urbana joven"
+        "Participación récord del electorado joven y popular",
+        "Volcado de indecisos preocupados por el discurso de mano dura del rival"
       ]
     }
   ],
@@ -90,18 +84,13 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (sin datos nuevos hoy)",
-      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella; no hubo mediciones nuevas en el ciclo.",
+      "fuente": "Encuestas (sin actualización)",
+      "detalle": "La última intención de voto disponible mantiene 51-45 a favor de De la Espriella; no hay mediciones nuevas en la jornada.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Google News Colombia",
-      "detalle": "Los titulares de las últimas horas reiteran el mensaje al petrismo y el llamado de Cepeda a votar, sin hechos nuevos.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Participación electoral (en curso)",
-      "detalle": "El comportamiento del bloque indeciso y la abstención son la única variable viva de la jornada.",
+      "fuente": "Prensa internacional",
+      "detalle": "Los encuadres de France 24, EL PAÍS y La Nación repiten el marco de 'Colombia dividida' sin aportar datos que muevan la aguja.",
       "favorece": "incierto"
     }
   ],
@@ -607,6 +596,11 @@
     },
     {
       "ts": "2026-06-21T06:59:24.912Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T07:20:32.339Z",
       "delaespriella": 76,
       "cepeda": 24
     }
