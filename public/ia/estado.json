@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 74,
-    "generado": "2026-06-21T15:04:44.430Z",
-    "proxima_actualizacion": "2026-06-21T15:24:44.430Z",
+    "ciclo": 75,
+    "generado": "2026-06-21T15:30:32.480Z",
+    "proxima_actualizacion": "2026-06-21T15:50:32.480Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Alta afluencia en las urnas con el tablero intacto en 51-45.",
-    "resumen": "La novedad del ciclo es de jornada, no de sondeo: se reporta gran afluencia y puntos de congestión en los centros de votación, lo que activa la variable que estaba abierta —la participación— sin alterar todavía la correlación de fuerzas. En el plano del mensaje, De la Espriella endureció su discurso de seguridad al declarar objetivo militar a 'Calarcá' y a 'Mordisco'. La intención de voto se mantiene 51-45 a falta de boletines oficiales.",
-    "que_cambio": "La intención de voto no se mueve: no hay encuestas nuevas y se sostiene 51-45. Lo nuevo es operativo y de campaña: alta participación con congestión en mesas y el giro de seguridad de De la Espriella contra cabecillas armados."
+    "titular": "Sin sondeos nuevos: el tablero sigue 51-45 a la espera del primer boletín.",
+    "resumen": "El ciclo no aporta datos demoscópicos frescos ni hechos genuinamente nuevos: la cobertura de las últimas horas repite la jornada ya registrada —apertura de urnas, alta afluencia, llamados a la calma y los mensajes de cierre de ambos candidatos—. La intención de voto se mantiene en 51-45 porque nada en los titulares justifica moverla. La variable decisiva sigue siendo la participación y el conteo, todavía sin resultados oficiales.",
+    "que_cambio": "Nada sustantivo: no hay encuestas nuevas y los titulares recientes reiteran eventos ya reportados. Se sostiene 51-45 sin agregar eventos a la línea de tiempo."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "momentum_label": "Ventaja sostenida",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente de seis puntos en intención de voto",
-        "Mensaje de seguridad y orden que moviliza a su base",
-        "Mayor expectativa de votos comunicada por la propia campaña"
+        "Ventaja de seis puntos consolidada en la última tanda de sondeos",
+        "Mensaje de seguridad y orden con alta penetración",
+        "Capacidad de movilizar al electorado de derecha y a indecisos por miedo al cambio"
       ],
       "debilidades": [
-        "Margen estrecho que cabe en menos de 700.000 votos",
-        "Riesgo de exceso de confianza que él mismo ha tenido que conjurar"
+        "Discurso de confrontación institucional que puede alienar al votante moderado",
+        "Su perfil de 'outsider' está en disputa entre los analistas"
       ],
       "riesgos": [
-        "Una participación inusualmente alta podría favorecer la movilización opositora",
-        "El endurecimiento del discurso militar puede tensionar a votantes moderados"
+        "El exceso de confianza que él mismo señaló podría deprimir su participación",
+        "Una afluencia muy alta tiende a favorecer al retador"
       ],
       "catalizadores": [
-        "Afluencia temprana que consolida su ventaja si se traduce en sus bastiones",
-        "Boletines iniciales que confirmen la tendencia de las encuestas"
+        "Boletines tempranos que confirmen su ventaja",
+        "Baja participación en bastiones de Cepeda"
       ]
     },
     {
@@ -59,43 +59,44 @@
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de cierre centrado en 'la vida' frente a la violencia",
-        "Capacidad de repunte en interés digital en las horas finales"
+        "Núcleo duro del Pacto Histórico movilizado",
+        "Mensaje de 'defender la vida' frente a la violencia",
+        "Repunte de interés digital en las horas previas al cierre"
       ],
       "debilidades": [
-        "Seis puntos abajo en la intención de voto sin sondeo que muestre cierre de brecha",
-        "Dependencia de una participación excepcional para revertir el resultado"
+        "Parte de la elección seis puntos abajo en intención de voto",
+        "Techo electoral asociado al desgaste del gobierno saliente"
       ],
       "riesgos": [
-        "Que la alta afluencia no se concentre en sus territorios fuertes",
-        "Quedar a merced del margen estrecho sin colchón propio"
+        "Que la alta afluencia no se traduzca en sus territorios",
+        "Denuncias de constreñimiento al elector que enturbien la jornada"
       ],
       "catalizadores": [
-        "Una participación récord que active el voto de opinión y abstencionista",
-        "Volcado de zonas urbanas y voto exterior favorables"
+        "Participación récord en regiones afines",
+        "Trasvase de indecisos en la recta final"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 86% De la Espriella / 14% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 86% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Reportes de jornada (Semana)",
-      "detalle": "Gran afluencia y puntos de congestión en centros de votación activan la variable participación.",
+      "fuente": "Encuestas (última tanda)",
+      "detalle": "La intención de voto se mantiene 51-45 sin sondeos nuevos que la modifiquen.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Jornada electoral",
+      "detalle": "Alta afluencia ya reportada; su efecto sobre el margen sigue sin medirse hasta el primer boletín.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Declaraciones de campaña (El País)",
-      "detalle": "De la Espriella declara objetivo militar a 'Calarcá' y 'Mordisco', endureciendo su eje de seguridad.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Encuestas previas",
-      "detalle": "Sin sondeos nuevos; se sostiene la ventaja 51-45 en intención de voto.",
-      "favorece": "delaespriella"
+      "fuente": "Interés digital",
+      "detalle": "El repunte de Cepeda en búsquedas no se ha traducido aún en señal demoscópica.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -713,6 +714,11 @@
       "ts": "2026-06-21T15:04:44.430Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T15:30:32.480Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -754,7 +760,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 86,
-      "cepeda": 14
+      "cepeda": 16
     }
   }
 }
