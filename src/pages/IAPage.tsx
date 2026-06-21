@@ -28,6 +28,13 @@ interface Estado {
     error_muestreo_pts: number;
     polymarket_ref: { delaespriella: number; cepeda: number } | null;
   };
+  cierre?: {
+    cerrado: boolean; generado: string; ganador: string; ganador_id: string;
+    margen_pts: number; resultado?: { delaespriella: number; cepeda: number };
+    pct_mesas?: number; total_votos?: number;
+    titular: string; resumen: string; lecciones: string[];
+    hitos: { titulo: string; detalle: string }[]; fuente?: string;
+  };
 }
 
 // ---------- Paleta firmada ----------
@@ -152,8 +159,8 @@ export default function IAPage() {
             <ArrowLeft className="w-4 h-4" /> Inicio
           </Link>
           <div className="flex items-center gap-2" style={{ fontFamily: mono }}>
-            <span className="live-dot w-2 h-2 rounded-full bg-[#FF4D6D]" />
-            <span className="text-[11px] font-bold tracking-[0.25em] text-slate-200">PULSO · EN VIVO</span>
+            <span className={`w-2 h-2 rounded-full ${e.cierre?.cerrado ? '' : 'live-dot'}`} style={{ backgroundColor: e.cierre?.cerrado ? '#34D399' : '#FF4D6D' }} />
+            <span className="text-[11px] font-bold tracking-[0.25em] text-slate-200">{e.cierre?.cerrado ? 'RESULTADO FINAL' : 'PULSO · EN VIVO'}</span>
           </div>
           <button onClick={cargar} className="flex items-center gap-1.5 text-slate-500 hover:text-white text-xs transition-colors" style={{ fontFamily: mono }}>
             <RefreshCw className="w-3.5 h-3.5" /> {relativo(new Date(cargada).toISOString())}
@@ -254,6 +261,9 @@ export default function IAPage() {
 
         {/* ===== Boletín oficial en vivo (votos reales · Registraduría) ===== */}
         <BoletinPanel />
+
+        {/* ===== Cierre · análisis final (lecciones + hitos), solo cuando la jornada terminó ===== */}
+        {e.cierre?.cerrado && <CierreSection c={e.cierre} cands={e.candidatos} />}
 
         {/* ===== Señales ===== */}
         <Titulo n="01" t="Señales en lectura" />
@@ -445,7 +455,87 @@ function NotaModal({ ev, onClose }: { ev: EventoTL | null; onClose: () => void }
   );
 }
 
-function Titulo({ n, t }: { n: string; t: string }) {  return (
+function CierreSection({ c, cands }: { c: NonNullable<Estado['cierre']>; cands: Candidato[] }) {
+  const mono = "'Space Mono',monospace";
+  const disp = "'Space Grotesk',sans-serif";
+  const col = COL[c.ganador_id] ?? '#34D399';
+  return (
+    <section className="mt-2 mb-12 fade-up">
+      <div className="flex items-center gap-2.5 mb-4">
+        <CheckCircle2 className="w-4 h-4" style={{ color: col }} />
+        <h2 className="text-lg font-bold tracking-tight" style={{ fontFamily: disp }}>Cierre · análisis final</h2>
+        <span className="flex-1 h-px bg-white/8" />
+        <span className="text-[10px] tracking-[0.22em] text-slate-500" style={{ fontFamily: mono }}>JORNADA CERRADA</span>
+      </div>
+
+      <div className="rounded-2xl border border-white/8 overflow-hidden" style={{ backgroundColor: '#10131c' }}>
+        <div className="h-1 w-full" style={{ background: col }} />
+        <div className="p-5 sm:p-6">
+          <div className="flex items-center gap-2 mb-2 text-[10px] tracking-[0.25em]" style={{ fontFamily: mono, color: col }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: col }} /> GANADOR
+          </div>
+          <div className="flex flex-wrap items-end gap-x-4 gap-y-1">
+            <h3 className="font-bold leading-none" style={{ fontFamily: disp, color: col, fontSize: 'clamp(1.8rem,6vw,2.8rem)' }}>{apellido(c.ganador)}</h3>
+            <span className="text-slate-400 text-sm" style={{ fontFamily: mono }}>+{c.margen_pts} pts · {c.pct_mesas}% mesas</span>
+          </div>
+          <p className="mt-1 text-sm text-slate-500" style={{ fontFamily: mono }}>{c.ganador}</p>
+
+          {c.resultado && (
+            <div className="mt-4">
+              <div className="flex justify-between text-[11px] text-slate-400 mb-1" style={{ fontFamily: mono }}>
+                <span>De la Espriella {c.resultado.delaespriella}%</span><span>{c.resultado.cepeda}% Cepeda</span>
+              </div>
+              <div className="flex h-3.5 rounded-full overflow-hidden ring-1 ring-white/10" style={{ backgroundColor: '#11141d' }}>
+                <div className="h-full" style={{ width: `${c.resultado.delaespriella}%`, background: COL.delaespriella }} />
+                <div className="h-full" style={{ width: `${c.resultado.cepeda}%`, background: COL.cepeda }} />
+              </div>
+            </div>
+          )}
+
+          <h4 className="mt-5 font-semibold tracking-tight leading-snug" style={{ fontFamily: disp, fontSize: 'clamp(1.2rem,3vw,1.6rem)' }}>{c.titular}</h4>
+          <p className="mt-2 text-slate-300 leading-relaxed">{c.resumen}</p>
+        </div>
+
+        {c.lecciones?.length ? (
+          <div className="px-5 sm:px-6 pb-5">
+            <div className="flex items-center gap-1.5 mb-3 text-[10px] font-bold tracking-[0.18em] text-slate-400" style={{ fontFamily: mono }}>
+              <Zap className="w-3.5 h-3.5 text-[#A78BFA]" /> LECCIONES DE LA JORNADA
+            </div>
+            <ol className="space-y-2.5">
+              {c.lecciones.map((l, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="shrink-0 mt-0.5 w-5 h-5 grid place-items-center rounded-full text-[10px] font-bold tabular-nums" style={{ fontFamily: mono, backgroundColor: '#A78BFA1f', color: '#A78BFA' }}>{i + 1}</span>
+                  <span className="text-sm text-slate-300 leading-snug">{l}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
+
+        {c.hitos?.length ? (
+          <div className="px-5 sm:px-6 pb-6">
+            <div className="text-[10px] font-bold tracking-[0.18em] text-slate-400 mb-3" style={{ fontFamily: mono }}>HITOS DE LA NOCHE</div>
+            <div className="grid sm:grid-cols-2 gap-2.5">
+              {c.hitos.map((h, i) => (
+                <div key={i} className="rounded-xl border border-white/8 p-3.5" style={{ backgroundColor: '#0E111A' }}>
+                  <div className="text-sm font-semibold text-slate-100">{h.titulo}</div>
+                  {h.detalle ? <p className="mt-1 text-[13px] text-slate-400 leading-snug">{h.detalle}</p> : null}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        <div className="px-5 sm:px-6 py-3 border-t border-white/8 text-[10px] text-slate-500" style={{ fontFamily: mono }}>
+          {c.fuente || 'Resultado: Registraduría · Análisis: Pulso IA'}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Titulo({ n, t }: { n: string; t: string }) {
+  return (
     <div className="flex items-baseline gap-3 mb-4">
       <span className="text-xs text-slate-600" style={{ fontFamily: "'Space Mono',monospace" }}>{n}</span>
       <h2 className="text-lg font-bold tracking-tight" style={{ fontFamily: "'Space Grotesk',sans-serif" }}>{t}</h2>
