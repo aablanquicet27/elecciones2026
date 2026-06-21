@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 43,
-    "generado": "2026-06-21T03:16:21.290Z",
-    "proxima_actualizacion": "2026-06-21T03:46:21.290Z",
+    "ciclo": 44,
+    "generado": "2026-06-21T03:19:13.438Z",
+    "proxima_actualizacion": "2026-06-21T03:49:13.438Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 85,
-    "confianza": "Alta",
-    "titular": "85-15: De la Espriella recupera el punto cedido mientras los candidatos cierran movilizando.",
-    "resumen": "Polymarket vuelve a 85 para De la Espriella, deshaciendo el ajuste de un punto del ciclo anterior. El cierre trae mensajes nuevos: Cepeda apela a la defensa del empleo público y de la vida, De la Espriella llama a sus indecisos a no confiarse, y Petro reaparece en campaña pese a la restricción judicial. El cuadro de fondo no se mueve: el ultraderechista sigue como favorito cómodo con confianza alta.",
-    "que_cambio": "Subimos 84-16 a 85-15 siguiendo a Polymarket, que recuperó el punto que había cedido. El movimiento es de mercado; lo nuevo está en el tono de cierre de campaña, no en el pronóstico."
+    "probabilidad": 82,
+    "confianza": "Media",
+    "titular": "82-18: De la Espriella sigue al frente, pero el mercado le recorta ventaja en plena jornada.",
+    "resumen": "Polymarket baja la probabilidad implícita de De la Espriella al 81%, su lectura más floja del cierre, y nosotros la suavizamos a 82 para no romper la continuidad. El movimiento no responde a un hecho concreto sino a apuestas que se reacomodan al abrir las urnas, con Cepeda llamando a 'defender la vida' y De la Espriella conteniendo el triunfalismo. El ultraderechista conserva la condición de favorito, pero la confianza pasa a Media porque el margen del mercado se estrecha justo cuando empieza a contar el voto real.",
+    "que_cambio": "Bajamos de 85-15 a 82-18 siguiendo la caída de Polymarket (de cerca de 88-90 a 81 implícito). Es un ajuste de mercado en la antesala del conteo, no un vuelco de fundamentos."
   },
   "candidatos": [
     {
@@ -25,27 +25,28 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 85,
-      "momentum": "up",
-      "momentum_label": "Recupera terreno",
+      "probabilidad": 82,
+      "momentum": "down",
+      "momentum_label": "Cede terreno",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en mercados y encuestas (52%)",
-        "Disciplina de mensaje en la recta final",
-        "Favorito estable a lo largo de toda la jornada previa"
+        "Ventaja sostenida en encuestas (52 vs 45)",
+        "Favorito claro del mercado pese al recorte",
+        "Disciplina de mensaje en el cierre"
       ],
       "debilidades": [
-        "Riesgo de triunfalismo desmovilizador en su base",
-        "Polariza al electorado de centro"
+        "Probabilidad de mercado en su punto más bajo del cierre",
+        "Perfil de 'outsider' cuestionado por analistas",
+        "Riesgo de desmovilización por exceso de confianza"
       ],
       "riesgos": [
-        "Abstención de votantes que dan por hecho el triunfo",
-        "Sorpresa de participación en bastiones de izquierda"
+        "Sobreconfianza de su base el día de la votación",
+        "Sorpresa en participación urbana favorable a Cepeda"
       ],
       "catalizadores": [
-        "Llamado explícito a no bajar la guardia",
-        "Encuadre internacional de elección decisiva que moviliza a su electorado"
+        "Voto duro de la centroderecha y antipetrismo",
+        "Llamado explícito a indecisos a no confiarse"
       ]
     },
     {
@@ -53,45 +54,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 15,
-      "momentum": "down",
-      "momentum_label": "Cede un punto",
+      "probabilidad": 18,
+      "momentum": "up",
+      "momentum_label": "Acorta distancia",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria de movilización del Pacto Histórico activa",
-        "Mensaje emocional de defensa de la vida y el empleo",
-        "Respaldo presidencial pese a las restricciones"
+        "Maquinaria del Pacto Histórico activada",
+        "Mensaje de cierre centrado en empleo y vida",
+        "Respaldo movilizador de Petro"
       ],
       "debilidades": [
-        "Desventaja persistente en mercados (15%) y encuestas (45%)",
-        "Techo electoral difícil de superar en segunda vuelta"
+        "Sigue por detrás en encuestas y mercado",
+        "Necesita repunte fuerte en participación"
       ],
       "riesgos": [
-        "Que el respaldo de Petro active al electorado contrario",
-        "Quedar corto en el margen de menos de 700.000 votos"
+        "Restricción judicial a Petro tensiona el cierre",
+        "Techo electoral si no crece el voto joven"
       ],
       "catalizadores": [
-        "Contraste sobre empleo público frente a su rival",
-        "Alta participación de última hora en zonas urbanas"
+        "Recorte de Polymarket que reanima a su base",
+        "Alta abstención de la derecha por triunfalismo"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "Probabilidad implícita vuelve a 85% para De la Espriella tras ceder un punto el ciclo previo.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Cierre de campaña",
-      "detalle": "De la Espriella pide voto masivo y advierte 'nada de triunfalismos' a los indecisos.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Cierre de campaña",
-      "detalle": "Cepeda contrasta sobre empleo público y apela a 'defender la vida' para movilizar su base.",
+      "detalle": "Probabilidad implícita de De la Espriella cae a 81% (Cepeda 17%), su lectura más baja del cierre.",
       "favorece": "cepeda"
+    },
+    {
+      "fuente": "Encuestas previas",
+      "detalle": "Intención de voto se mantiene 52-45 a favor de De la Espriella.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Cobertura internacional",
+      "detalle": "France 24 y otros enmarcan la votación como giro a la ultraderecha o continuidad de la izquierda.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -101,6 +102,13 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T03:19:13.438Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 85% ▼ 82%",
+      "detalle": "La probabilidad bajó porque Polymarket recortó a De la Espriella hasta 81% implícito al abrir las urnas; lo suavizamos a 82 ponderando que las encuestas no se movieron.",
+      "fuente": "Pulso IA"
     },
     {
       "ts": "2026-06-21T03:16:21.290Z",
@@ -193,6 +201,15 @@
       "fuente": "La Silla Vacía",
       "cuerpo": "Un seguimiento de La Silla Vacía sobre Google Trends muestra que Cepeda repunta en interés de búsqueda frente a De la Espriella justo a horas de la segunda vuelta. El dato no es una encuesta ni mide intención de voto, pero sí captura un pico de atención digital alrededor del candidato del Pacto Histórico en la recta final.\n\nLa señal coincide con un leve retroceso de De la Espriella en Polymarket, que pasó del entorno de 88 a 85. Ninguno de los dos indicadores altera el favoritismo de fondo, pero juntos justifican soltar un punto en nuestra estimación: si el interés se traduce en participación urbana, el piso de 45% de Cepeda podría defenderse mejor de lo que sugieren los mercados.",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOd2RvWF8tbW9vUDlNTEE5X19zMVFhSzZGRGJQRndZUzd5TUVkaFFDeWhlWll0N3hjdVJ1OUt1OTJOeEgybWVsY0FyZTlyQVNmUUJHTVphSEdmZ0k2LU0yVXBLMzlqSzU1eFdUNGdKLVlvamd2UGZCNEVuSnJmMklCdzdLNWZYUGV0YUZZS3c0MXZJY0VwMkl0cjJGZ21fTUI2RFdnUHVNWm5Ib0lD?oc=5"
+    },
+    {
+      "ts": "2026-06-20T23:24:53.000Z",
+      "tipo": "evento",
+      "titulo": "Analistas debaten si De la Espriella es un verdadero 'outsider'",
+      "detalle": "Expertos cuestionan la etiqueta de 'outsider' con la que el 'Tigre' construyó su candidatura.",
+      "fuente": "Infobae",
+      "cuerpo": "A pocas horas del cierre, varios analistas pusieron la lupa sobre el perfil de Abelardo de la Espriella y discutieron hasta qué punto encaja la imagen de político ajeno al establecimiento que ha cultivado su campaña. El abogado y empresario llegó a la segunda vuelta capitalizando el malestar con la política tradicional, pero los expertos recuerdan sus largos vínculos con sectores de poder, lo que matiza el relato de candidato antisistema que lo impulsó frente a la izquierda.\n\nEl debate importa porque la marca de 'outsider' es parte central de su atractivo entre indecisos y abstencionistas que rechazan tanto al petrismo como a la clase dirigente. Si esa narrativa se erosiona en la recta final, puede enfriar la movilización justo cuando su propia campaña insiste en no confiarse; si resiste, refuerza el voto de castigo que lo mantiene como favorito.",
+      "url": "https://www.infobae.com/colombia/2026/06/20/el-tigre-es-un-verdadero-outsider-de-la-politica-expertos-analizan-el-perfil-de-abelardo-de-la-espriella-de-cara-a-la-segunda-vuelta/"
     },
     {
       "ts": "2026-06-20T22:32:40.361Z",
@@ -310,21 +327,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 89% ▼ 88%",
       "detalle": "La probabilidad baja un punto (89→88) solo para absorber el segundo punto que Polymarket le da a Cepeda; no hay encuesta nueva ni señal de fondo que altere la lectura.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T15:24:29.000Z",
-      "tipo": "alerta",
-      "titulo": "Barranquilla monitoreará la votación con helicóptero y drones",
-      "detalle": "La Policía refuerza el dispositivo de seguridad electoral.",
-      "fuente": "ELTIEMPO.COM",
-      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxOYUlOSUQ5OEpQai1DX042RTZ6emFMdE1BV3dKbndid3cySVVjWC1aNnpwLVBnenA1S2praVZrR2JJRkpvelk1dFJBQUVvM0lhd0dmN1JOYmtQWno0NkRsV1czTlFicmNvdHM1RXpobExwNHVYNG1XeTNDdEpkYmRvMFN3eW5SVTBXcFduMGxQQTNrTjMzZTg1Nl9IMDZ3a2FobXhjLWwzeTlJdm9DaGZQc1BuR1dsa3F0VlpWOFBnUXpYNHVNRWRkYkQtNlBuX0NVbHBsRDZ1RVBXMG9jcTBzUXlCZXp5ZXdvdEhFVHVyb0p6bzE1Q0hqUHBuT2VGdUE3VURnemdnNVFwZ1FGZElXMzdDMzFGODBWUkRVTTVTM0xpdDIxaWNrOTZvNVRFN1JNUVHSAbcCQVVfeXFMTnJ6Z0xDSWo3RC05UUFmMGhlRmZnUW41M09ST0d0dUQ0Z0xLbWR2UkoxZkVvdFpiQXAxcjlFOS1KdUZxeUZORloxT2NPV2FPSjJNbUsyQXBzbldlbTVTTVRzbWY0UGRRNTZKRG9Od2VOa29hTEpvNFkyNlE1VWxkb2JyVXV3RXhHUjF2cGpNOWt2a2ZpWlpaZXQzM3oxLTZrTzBOeHVFSzZXTVh1MTh1bm5mdW9hNHlaMXB5a0dpaURDMlI2ajdrZ1B2Q010WnQxaHRlSWU2ZG9NTFR6ZDZlalpJalQ3Qzhrb3NLdExsMmk0LVplREE5TDVNOUdITVRQUjUzc09sTno2V1pmQUpqRUVKTE9QN01QMHA3b21ZNmVPZndXOGlMU3FReGEwZFFqbm1ZVmJkS1k?oc=5"
-    },
-    {
-      "ts": "2026-06-20T13:43:09.623Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 88% ▲ 89%",
-      "detalle": "Subí de 88 a 89 porque la encuesta final ampliÓ la brecha (52,6-45) y Polymarket reaccionó al alza a 90/12: dos señales convergentes en la víspera, no una sola lectura plana.",
       "fuente": "Pulso IA"
     }
   ],
@@ -548,6 +550,11 @@
       "ts": "2026-06-21T03:16:21.290Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T03:19:13.438Z",
+      "delaespriella": 82,
+      "cepeda": 18
     }
   ],
   "fuentes": [
