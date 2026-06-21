@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 79,
-    "generado": "2026-06-21T17:03:15.593Z",
-    "proxima_actualizacion": "2026-06-21T17:23:15.593Z",
+    "ciclo": 80,
+    "generado": "2026-06-21T17:24:04.356Z",
+    "proxima_actualizacion": "2026-06-21T17:44:04.356Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Jornada en compás de espera: el 51-45 se mantiene sin escrutinio oficial.",
-    "resumen": "No hay hechos genuinamente nuevos en esta franja. Los titulares de las últimas horas reiteran lo ya consignado en la línea de tiempo: el voto de De la Espriella, la apertura de urnas y sus advertencias al Congreso. Sin sondeos frescos ni primeros boletines de la Registraduría, la intención de voto permanece en 51-45. La jornada sigue dominada por la participación y la espera del escrutinio.",
-    "que_cambio": "Nada sustancial. La intención de voto no se mueve por ausencia de encuestas nuevas y los titulares disponibles ya estaban reportados; no se agregan eventos."
+    "titular": "Cepeda vota y se compromete a reconocer resultados; el 51-45 sigue intacto.",
+    "resumen": "La novedad real de la franja es el voto de Iván Cepeda en Bogotá y su anuncio de que reconocerá los resultados, un gesto que contrasta con la retórica de fraude anticipado de su rival. No hay sondeos nuevos ni primeros boletines de la Registraduría, de modo que la intención de voto permanece en 51-45. La jornada sigue marcada por la afluencia y la espera del escrutinio.",
+    "que_cambio": "Se incorpora un hecho genuinamente nuevo: Cepeda ejerció su voto y se comprometió a aceptar el resultado. La intención de voto no se mueve por ausencia de encuestas frescas."
   },
   "candidatos": [
     {
@@ -27,24 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Sin novedad",
+      "momentum_label": "Sin cambios",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de ~6 puntos en la última intención de voto",
-        "Narrativa de confianza y movilización del electorado de derecha"
+        "Ventaja sostenida de 6 puntos en intención de voto",
+        "Narrativa de orden y mano dura con consenso en su base",
+        "Alta movilización de su electorado"
       ],
       "debilidades": [
-        "Margen real estrecho, por debajo de 700.000 votos",
-        "Su retórica de exceso de confianza admite riesgo de desmovilización propia"
+        "Riesgo de exceso de confianza que él mismo ha admitido",
+        "Retórica de fraude anticipado que tensiona el clima institucional"
       ],
       "riesgos": [
-        "Una participación inesperadamente alta en bastiones de Cepeda podría comprimir el margen",
-        "Tensión institucional por sus advertencias a la Fuerza Pública y al Congreso"
+        "Que la abstención de indecisos no se traduzca en su favor",
+        "Eventual cuestionamiento internacional por sus llamados a la Fuerza Pública"
       ],
       "catalizadores": [
-        "Primeros boletines de escrutinio que confirmen su ventaja",
-        "Alta afluencia en zonas favorables"
+        "Primeros boletines de la Registraduría que confirmen su ventaja",
+        "Alta participación en regiones afines"
       ]
     },
     {
@@ -54,45 +55,55 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Sin novedad",
+      "momentum_label": "Talante institucional",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Base movilizada del Pacto Histórico",
-        "Repunte de interés en buscadores en la antesala del cierre"
+        "Postura institucional al comprometerse a reconocer resultados",
+        "Repunte de interés digital en las horas finales",
+        "Margen real estrecho que deja margen a la sorpresa"
       ],
       "debilidades": [
-        "Rezago de ~6 puntos en la intención de voto",
-        "Dependencia de un cierre de campaña que aún no se refleja en los sondeos"
+        "Sigue 6 puntos abajo en los sondeos",
+        "Menor expectativa de movilización frente a su rival"
       ],
       "riesgos": [
-        "Que el margen no se cierre lo suficiente con la votación urbana",
-        "Alertas de constreñimiento al elector que su campaña ha denunciado"
+        "Que la diferencia se amplíe al avanzar el escrutinio",
+        "Desgaste por asociación con el Gobierno saliente"
       ],
       "catalizadores": [
-        "Voto exterior y participación decisiva de indecisos",
-        "Sorpresa en regiones de fuerte presencia social"
+        "Sorpresa en voto urbano y exterior",
+        "Volcado tardío de indecisos hacia su candidatura"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 84% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 84% De la Espriella / 18% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (EL ESPECTADOR, RCN, Canal 1)",
-      "detalle": "La jornada transcurre sin incidentes mayores y con urnas abiertas; sin novedad sobre el tablero electoral.",
-      "favorece": "incierto"
+      "fuente": "Estado de las encuestas (sin sondeos nuevos)",
+      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella.",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "Estado de sondeos",
-      "detalle": "No hay encuestas nuevas ni boletín oficial; la intención de voto se sostiene en 51-45.",
-      "favorece": "incierto"
+      "fuente": "Declaración de Cepeda",
+      "detalle": "Anuncia que reconocerá los resultados, gesto de talante institucional.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T16:49:36.000Z",
+      "tipo": "evento",
+      "titulo": "Cepeda vota en Bogotá y se compromete a reconocer los resultados",
+      "detalle": "El candidato del Pacto Histórico ejerció su voto en la capital y anunció que aceptará el veredicto de las urnas.",
+      "fuente": "lapatilla.com",
+      "cuerpo": "Iván Cepeda acudió este domingo a votar en Bogotá y, tras depositar su tarjetón, declaró que reconocerá los resultados de la segunda vuelta cualquiera que sea el desenlace. El gesto llega después de una campaña en la que su rival ha insistido en que 'no se la van a robar' y ha apelado de forma reiterada a la Fuerza Pública ante un eventual desconocimiento del resultado.\n\nEl mensaje de Cepeda busca instalar un contraste de talante institucional en la recta final de una jornada tensa, posicionándose como garante de la transición democrática frente a la retórica de fraude anticipado. Aunque no altera la intención de voto, que permanece 51-45, refuerza su perfil de moderación de cara al escrutinio y a la etapa posterior, en la que el reconocimiento de resultados será determinante para la estabilidad.",
+      "url": "https://lapatilla.com/2026/06/21/ivan-cepeda-voto-en-bogota-y-afirmo-que-reconocera-los-resultados-video/"
+    },
     {
       "ts": "2026-06-21T15:53:31.000Z",
       "tipo": "evento",
@@ -321,15 +332,6 @@
       "detalle": "El senador estadounidense aterriza en la capital para acompañar la segunda vuelta a invitación del Consejo Nacional Electoral.",
       "fuente": "ELTIEMPO.COM",
       "cuerpo": "El Consejo Nacional Electoral gestionó la presencia de observadores y figuras internacionales para la jornada del 21 de junio, y entre los invitados llegó a Bogotá el senador estadounidense Bernie Moreno. Su arribo se inscribe en el dispositivo de acompañamiento externo habitual en comicios de alta tensión, en una segunda vuelta que la prensa internacional ya venía encuadrando como una Colombia dividida entre dos proyectos opuestos.\n\nPara el balstandce de la segunda vuelta, la veeduría externa no altera el favoritismo de De la Espriella, pero sí eleva el costo político de cualquier irregularidad: una jornada vigilada de cerca presiona a ambas campañas a cuidar la forma. El gesto importa más por legitimidad que por aritmética y, de surgir denuncias, le da a cada bando un testigo al que apelar."
-    },
-    {
-      "ts": "2026-06-20T22:07:53.000Z",
-      "tipo": "alerta",
-      "titulo": "La campaña de Cepeda alerta por posible constreñimiento al elector",
-      "detalle": "El equipo del candidato de la izquierda expresó preocupación por presiones sobre votantes en la jornada.",
-      "fuente": "Infobae",
-      "cuerpo": "A pocas horas del cierre, la campaña de Iván Cepeda hizo pública su preocupación por un posible constreñimiento al elector, es decir, presiones o coacción sobre votantes el día de la votación. La denuncia se suma a un clima ya cargado, en el que el presidente Petro había pedido calma a sus bases y en el que las autoridades reforzaron seguridad con recompensas y monitoreo aéreo en algunas ciudades.\n\nEl efecto sobre el reparto es marginal mientras no haya hechos verificados, pero la alerta cumple una función doble: moviliza a la base del Pacto Histórico bajo la idea de un voto amenazado y deja sentado un argumento de impugnación ante un resultado adverso. En una contienda donde el margen absoluto sigue siendo estrecho, el relato sobre la limpieza de la jornada pesa tanto como los votos.",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxON3dsTFpEaDVRVURwVWtYelFtTEhHcVpXeS0tT3E5WG54OWZVbGFENmprTmlNSXhOeDRwTkNGQWVJM3lCZy1GWjFBNGJhOGhKb0R4VnV5MXotVUVLenlOVm5BdFhoOHlzZ0ZnaUVQVk5mOGg1RlZRZ0FoWWUyS0FMY0lEUG9KVWJ5VC1wVlJyS3RLa09hdG1LNjNzdXBZbno4eDhDa0xYOWRnT1VZVGdiS2Z3MWt0akZJZGg4aUQ0dUZHSk9RMWVMR3lCdWFWYWRpcVduUGlfR3p6TXI5X3pnRG1CdlJxOURMUzVEZ2lOMXlEQzhQY1HSAZACQVVfeXFMT1VJT0pIcEpiMW1EQ2tsS0l6a01yOXlRMmVWbzhjUFFGenA4dmhVdjFQRWNOSi1RaWl6Wk56bkFjTHNTWW5VQnROTHJ5dVdQNURPZE5VVGFURmx1dXZFQkx6N05vczVMT1liY05yN3V5c0xjRUItUkV6Z2ZpSXJEOGJWMGlEaWJxT3JJOVA4TDJpTFAtcFBkaW02TUNFTnNlc29uYWlpQVUwakQtUG5FWDduRlRpbFJqSTVKMS1CZHd6bmNWeldwbTlWQmtmWmFtUGRPTk9ZRV9vbkNySVc5RG1ndlZKazlLY0xKdGxCdC1PeVBBc2tfRW1UZ29xWmJ3Mjl1UWFnZUE3UzR2VGNzbU4?oc=5"
     }
   ],
   "historico": [
@@ -732,6 +734,11 @@
       "ts": "2026-06-21T17:03:15.593Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T17:24:04.356Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -773,7 +780,7 @@
     "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 84,
-      "cepeda": 16
+      "cepeda": 18
     }
   }
 }
