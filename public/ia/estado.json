@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 98,
-    "generado": "2026-06-21T22:30:23.336Z",
-    "proxima_actualizacion": "2026-06-21T22:40:23.336Z",
+    "ciclo": 99,
+    "generado": "2026-06-21T22:45:47.540Z",
+    "proxima_actualizacion": "2026-06-21T22:55:47.540Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 63,
     "confianza": "Alta",
-    "titular": "Sin incidentes y con la ventaja en firme: De la Espriella sostiene el 50,33% y la observación internacional avala la jornada.",
-    "resumen": "El dato no se mueve: De la Espriella conserva el 50,33% frente al 48,04% de Cepeda con el grueso del escrutinio resuelto. La novedad de las últimas horas no está en las cifras sino en la legitimidad del proceso: tanto la OEA como la misión de la Unión Europea entregan un primer balance sin incidentes ni denuncias formales, lo que blinda el resultado frente a una eventual impugnación. Mantenemos la intención en 50-48, pegada al boletín oficial, sin razones para alterarla.",
-    "que_cambio": "No cambia la intención de voto: el 50-48 sigue intacto frente al ciclo anterior. Lo nuevo es el aval de los observadores internacionales (OEA y MOE-UE), que reduce el margen para disputas sobre la validez del conteo."
+    "titular": "El conteo no se mueve: De la Espriella sostiene el 50,33% y el resultado queda servido.",
+    "resumen": "Sin datos nuevos que justifiquen un ajuste, mantenemos la intención en 50-48 a favor de De la Espriella, pegada al boletín oficial con el grueso del escrutinio resuelto. Los titulares de las últimas horas confirman lo ya sabido —ventaja estrecha pero estable y una jornada avalada por los observadores— sin aportar un giro real. Cepeda sigue en posición de reconocer con observación, no de revertir.",
+    "que_cambio": "No cambia la intención de voto: el 50-48 sigue intacto. Los nuevos titulares solo repiten hechos ya incorporados (escrutinio al 97%, sondeos a pie de urna, aval de OEA y MOE-UE), por lo que no hay señal que altere el cuadro."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 63,
       "momentum": "steady",
-      "momentum_label": "Triunfo consolidado",
+      "momentum_label": "Ventaja en firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja de más de dos puntos con 97% escrutado",
+        "Ventaja sostenida con el escrutinio casi cerrado",
         "Resultado avalado por observación internacional",
-        "Condición de virtual presidente electo ya instalada en la narrativa"
+        "Margen estable sin retrocesos en el conteo"
       ],
       "debilidades": [
-        "Margen estrecho que obliga a gobernar buscando legitimidad ampliada",
-        "Mitad del país votó en contra"
+        "Diferencia estrecha (poco más de dos puntos)",
+        "Polarización que limita su capacidad de unir al país"
       ],
       "riesgos": [
-        "Observación rigurosa anunciada por la campaña rival sobre el 3% pendiente",
-        "Tensión por su retórica sobre la Fuerza Pública en la antesala"
+        "Que el cierre del 3% restante recorte aún más el margen",
+        "Tensión institucional por su retórica sobre la Fuerza Pública"
       ],
       "catalizadores": [
-        "Cierre del boletín final que ratifique el resultado",
-        "Declaración formal de victoria y transición ordenada"
+        "Declaración formal de la autoridad electoral",
+        "Reconocimiento explícito de Cepeda"
       ]
     },
     {
@@ -55,23 +55,23 @@
       "color": "#e11d48",
       "probabilidad": 37,
       "momentum": "steady",
-      "momentum_label": "Derrota reconocida",
+      "momentum_label": "Resignado a observar",
       "encuesta_pct": 48,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Caudal cercano al 48% que lo deja como principal fuerza de oposición",
-        "Compromiso público de reconocer el resultado"
+        "Mantiene una votación competitiva (48%)",
+        "Disposición declarada a reconocer, lo que le da estatura institucional"
       ],
       "debilidades": [
-        "Diferencia que ya es difícil de revertir con las mesas pendientes",
-        "Pierde la disputa por la Presidencia"
+        "Va por debajo con el escrutinio casi resuelto",
+        "Margen difícil de remontar con tan pocas mesas pendientes"
       ],
       "riesgos": [
-        "Quedar atrapado entre reconocer y observar sin margen para revertir cifras"
+        "Que la observación del escrutinio no encuentre irregularidades que muevan el resultado"
       ],
       "catalizadores": [
-        "Hallazgos en la observación del escrutinio del 3% restante",
-        "Consolidación de un bloque opositor de cara al nuevo gobierno"
+        "Hallazgos en la verificación del conteo",
+        "Mesas pendientes en bastiones propios"
       ]
     }
   ],
@@ -82,18 +82,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (noveno boletín)",
-      "detalle": "50,33% De la Espriella vs 48,04% Cepeda con 97% escrutado.",
+      "fuente": "Boletín oficial (97% escrutado)",
+      "detalle": "De la Espriella 50,33% frente a Cepeda 48,04%, con el grueso del conteo resuelto.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "OEA",
-      "detalle": "Califica la jornada sin incidentes ni denuncias formales.",
-      "favorece": "incierto"
+      "fuente": "OEA / MOE-UE",
+      "detalle": "Jornada sin incidentes ni denuncias formales, lo que blinda la validez del resultado.",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "MOE-UE",
-      "detalle": "Primer balance describe la elección como 'fiesta democrática'.",
+      "fuente": "Campaña de Cepeda",
+      "detalle": "Anuncia reconocimiento con observación escrupulosa del escrutinio, sin impugnar.",
       "favorece": "incierto"
     }
   ],
@@ -834,6 +834,11 @@
     },
     {
       "ts": "2026-06-21T22:30:23.336Z",
+      "delaespriella": 63,
+      "cepeda": 37
+    },
+    {
+      "ts": "2026-06-21T22:45:47.540Z",
       "delaespriella": 63,
       "cepeda": 37
     }
