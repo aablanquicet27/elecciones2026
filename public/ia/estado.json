@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 76,
-    "generado": "2026-06-21T15:55:47.833Z",
-    "proxima_actualizacion": "2026-06-21T16:15:47.833Z",
+    "ciclo": 77,
+    "generado": "2026-06-21T16:16:36.414Z",
+    "proxima_actualizacion": "2026-06-21T16:36:36.414Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Jornada sin datos nuevos: el tablero sigue 51-45 mientras se espera el primer boletín.",
-    "resumen": "El ciclo no aporta encuestas frescas ni hechos genuinamente nuevos. La cobertura de las últimas horas reitera lo ya registrado: apertura de urnas, alta afluencia, llamados a la calma, la advertencia de De la Espriella al Congreso y el mensaje de Cepeda de 'votar por la vida'. La intención de voto se mantiene en 51-45 porque nada en los titulares justifica moverla. La variable decisiva sigue siendo la participación y el conteo, todavía sin resultados oficiales.",
-    "que_cambio": "Nada sustantivo: no hay sondeos nuevos y los titulares recientes repiten eventos ya reportados. Se sostiene 51-45 sin agregar eventos a la línea de tiempo."
+    "titular": "El tablero no se mueve: 51-45 a la espera del primer boletín oficial.",
+    "resumen": "El ciclo no trae sondeos nuevos ni hechos genuinamente inéditos. La cobertura de las últimas horas reitera lo ya registrado: apertura de urnas con llamado a la calma, la reaparición de Petro en la jornada, el mensaje de Cepeda de 'votar por la vida' y la advertencia de De la Espriella sobre el 'exceso de confianza'. La intención de voto se sostiene en 51-45 porque nada en los titulares justifica moverla. La participación y el conteo siguen siendo las variables decisivas, todavía sin resultados oficiales.",
+    "que_cambio": "Nada sustantivo: no hay encuestas frescas y los titulares recientes repiten eventos ya reportados. Se mantiene 51-45 sin agregar eventos a la línea de tiempo."
   },
   "candidatos": [
     {
@@ -27,25 +27,27 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja sostenida",
+      "momentum_label": "Ventaja estable",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consistente en la intención de voto agregada",
-        "Narrativa de orden y seguridad movilizadora",
-        "Base de derecha cohesionada y motivada"
+        "Ventaja sostenida en intención de voto (51%)",
+        "Narrativa de orden y seguridad consolidada",
+        "Respaldo activo del electorado de derecha movilizado"
       ],
       "debilidades": [
-        "Techo electoral por alto rechazo",
-        "Retórica de confrontación institucional que tensiona a moderados"
+        "Riesgo de desmovilización por exceso de confianza",
+        "Retórica de intervención de la Fuerza Pública genera rechazo en el centro",
+        "Techo electoral estrecho frente a un margen apretado"
       ],
       "riesgos": [
-        "Exceso de confianza que desmovilice a su electorado",
-        "Que las advertencias sobre la Fuerza Pública le resten apoyo de indecisos"
+        "Que el voto indeciso se incline a última hora hacia Cepeda",
+        "Alta participación en bastiones del Pacto Histórico",
+        "Disputas por el escrutinio en un margen inferior a 700.000 votos"
       ],
       "catalizadores": [
-        "Alta participación en bastiones de derecha",
-        "Un primer boletín que confirme su ventaja temprana"
+        "Boletines tempranos que confirmen su ventaja",
+        "Baja afluencia en regiones favorables a Cepeda"
       ]
     },
     {
@@ -59,39 +61,44 @@
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico y respaldo del Gobierno",
-        "Mensaje de 'defensa de la vida' frente a la violencia",
-        "Capacidad de movilización urbana"
+        "Capacidad de movilización del Pacto Histórico",
+        "Mensaje de 'defensa de la vida' frente a la polarización",
+        "Repunte de interés digital en horas previas al cierre"
       ],
       "debilidades": [
-        "Arranca por debajo en el promedio de encuestas",
-        "Desgaste asociado al Gobierno saliente"
+        "Rezago de ~6 puntos en intención de voto",
+        "Apoyo de Petro que polariza y puede restar en el centro",
+        "Menor tracción entre indecisos según la cobertura reciente"
       ],
       "riesgos": [
-        "Que la abstención afecte más a su base",
-        "Denuncias de constreñimiento que enturbien su jornada"
+        "Que la ventaja del rival se consolide en el conteo inicial",
+        "Abstención en zonas urbanas clave"
       ],
       "catalizadores": [
-        "Repunte de interés ciudadano en buscadores",
-        "Alta afluencia en grandes ciudades",
-        "Voto joven e indeciso que se incline tarde"
+        "Volcado masivo del voto indeciso a su favor",
+        "Participación récord en regiones de su base"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 86% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 85% De la Espriella / 16% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Promedio de encuestas (segunda vuelta)",
-      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella, dentro del margen estrecho de la jornada.",
+      "fuente": "Promedio de encuestas (sin datos nuevos)",
+      "detalle": "La intención de voto se mantiene 51-45 a favor de De la Espriella, sin sondeos frescos que la alteren.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (Google News)",
-      "detalle": "Los titulares de las últimas horas repiten la apertura de urnas y los mensajes de cierre, sin hechos nuevos.",
+      "fuente": "Cobertura en vivo (El Espectador, Caracol, La Nación)",
+      "detalle": "La jornada transcurre con alta afluencia y llamados a la calma, sin incidentes que muevan el tablero.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Análisis del voto indeciso (El Diario)",
+      "detalle": "Los indecisos siguen siendo el árbitro de una segunda vuelta de extremos, aún sin definición.",
       "favorece": "incierto"
     }
   ],
@@ -720,6 +727,11 @@
       "ts": "2026-06-21T15:55:47.833Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T16:16:36.414Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -760,7 +772,7 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 86,
+      "delaespriella": 85,
       "cepeda": 16
     }
   }
