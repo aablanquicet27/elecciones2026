@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 57,
-    "generado": "2026-06-21T08:48:13.503Z",
-    "proxima_actualizacion": "2026-06-21T09:08:13.503Z",
+    "ciclo": 58,
+    "generado": "2026-06-21T09:08:47.272Z",
+    "proxima_actualizacion": "2026-06-21T09:28:47.272Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "Otro ciclo sin datos frescos: el tablero sigue 51-45 a favor de De la Espriella.",
-    "resumen": "El ciclo no trae ninguna medición nueva ni un hecho genuinamente inédito. Los titulares de las últimas horas son encuadres de prensa internacional sobre una Colombia polarizada que decide entre giro a la derecha y continuidad de izquierda, más reiteraciones de eventos ya consignados: el mensaje al petrismo, el llamado a la Fuerza Pública, la advertencia sobre intervención del Ejército, el mensaje de Cepeda de 'defender la vida' y la cifra de votos esperada. Sin encuestas nuevas, la intención de voto permanece en 51-45. La participación y el bloque indeciso siguen siendo las únicas variables abiertas en jornada.",
-    "que_cambio": "Nada sustantivo. No hay encuestas nuevas y los titulares recientes (todos de 2h o más) repiten hechos ya reportados o son encuadres genéricos de prensa internacional; se mantiene 51-45 y momentum estable para ambos."
+    "titular": "Jornada en marcha sin datos nuevos: el tablero sigue 51-45 a favor de De la Espriella.",
+    "resumen": "El ciclo no aporta ninguna medición ni hecho genuinamente inédito. Los titulares de las últimas horas son encuadres de prensa internacional sobre una Colombia que decide entre giro a la derecha y continuidad de izquierda, más reiteraciones de eventos ya consignados: el mensaje al petrismo, el llamado a la Fuerza Pública, la advertencia sobre intervención del Ejército, el mensaje de Cepeda de 'defender la vida' y la cifra de votos esperada. Sin encuestas nuevas, la intención de voto permanece en 51-45. La participación y el bloque indeciso siguen siendo las únicas variables abiertas durante la votación.",
+    "que_cambio": "Nada sustantivo. No hay encuestas nuevas y los titulares recientes repiten hechos ya reportados o son encuadres genéricos de prensa internacional; se mantiene 51-45 y momentum estable para ambos."
   },
   "candidatos": [
     {
@@ -27,26 +27,26 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja estable",
+      "momentum_label": "Ventaja sin novedad",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida de seis puntos en intención de voto",
-        "Narrativa de orden y seguridad que moviliza a su base",
-        "Encuadre internacional lo posiciona como cara del giro a la derecha"
+        "Ventaja sostenida en la intención de voto (51%)",
+        "Bloque de derecha movilizado y mensaje de cierre consistente",
+        "Narrativa de orden y control que fija agenda"
       ],
       "debilidades": [
-        "Riesgo de exceso de confianza que él mismo ha advertido",
-        "Discurso confrontacional con instituciones puede inquietar a moderados",
-        "Bloque indeciso aún sin definir"
+        "Riesgo de exceso de confianza pese a sus propios llamados a no relajarse",
+        "Margen real estrecho, por debajo de 700.000 votos",
+        "Dependencia de una alta participación de su base"
       ],
       "riesgos": [
-        "Una participación alta de la base petrista que estreche el margen",
-        "Que su retórica sobre intervención militar movilice el voto en contra"
+        "Subestimar el voto indeciso de última hora",
+        "Que su retórica sobre la Fuerza Pública desincentive votantes moderados"
       ],
       "catalizadores": [
-        "Voto masivo de indecisos que pide expresamente",
-        "Jornada sin incidentes que consolide la lectura de favoritismo"
+        "Participación alta en regiones afines",
+        "Trasvase del voto indeciso hacia la opción de cambio a la derecha"
       ]
     },
     {
@@ -56,25 +56,26 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Resiste atrás",
+      "momentum_label": "Estable en jornada",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mantiene 45% pese a estar abajo",
-        "Respaldo movilizado del Pacto Histórico",
-        "Reaparición de Petro que activa a su electorado"
+        "Base petrista activa y reaparición de Petro en campaña",
+        "Repunte de interés digital en las horas previas",
+        "Mensaje de 'defender la vida' como aglutinador"
       ],
       "debilidades": [
-        "Sigue seis puntos por debajo sin un quiebre reciente",
-        "Depende de una participación excepcional para alcanzar el margen"
+        "Desventaja de 6 puntos en intención de voto",
+        "Techo electoral más visible que su rival",
+        "Necesita un giro fuerte del indeciso para cerrar la brecha"
       ],
       "riesgos": [
-        "Que el techo electoral del petrismo limite su crecimiento",
-        "Abstención en sus bastiones en jornada"
+        "Que la abstención golpee más a su electorado",
+        "Quedar atrapado en la narrativa de 'continuidad' del Gobierno saliente"
       ],
       "catalizadores": [
-        "Repunte de interés en buscadores en la recta final",
-        "Movilización efectiva del voto de la vida y la continuidad"
+        "Movilización masiva en grandes ciudades",
+        "Volcado decisivo del voto indeciso y joven"
       ]
     }
   ],
@@ -85,13 +86,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Encuestas (sin actualización este ciclo)",
-      "detalle": "La última medición disponible mantiene a De la Espriella 51% sobre Cepeda 45%, sin datos nuevos en jornada.",
+      "fuente": "Intención de voto (encuestas previas)",
+      "detalle": "Se mantiene la brecha 51-45 sin mediciones nuevas que la alteren.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Prensa internacional",
-      "detalle": "El País, France 24, La Nación y otros encuadran la votación como la más polarizada en décadas, sin aportar cifras nuevas.",
+      "detalle": "EL PAÍS, France 24 y otros encuadran la jornada como una decisión entre derecha y continuidad de izquierda, sin datos cuantitativos nuevos.",
+      "favorece": "incierto"
+    },
+    {
+      "fuente": "Participación y voto indeciso",
+      "detalle": "El margen cabe en menos de 700.000 votos; la abstención y el indeciso son las variables abiertas.",
       "favorece": "incierto"
     }
   ],
@@ -622,6 +628,11 @@
     },
     {
       "ts": "2026-06-21T08:48:13.503Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T09:08:47.272Z",
       "delaespriella": 76,
       "cepeda": 24
     }
