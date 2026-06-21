@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 48,
-    "generado": "2026-06-21T05:15:45.433Z",
-    "proxima_actualizacion": "2026-06-21T05:35:45.433Z",
+    "ciclo": 49,
+    "generado": "2026-06-21T05:42:07.101Z",
+    "proxima_actualizacion": "2026-06-21T06:02:07.101Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "De la Espriella sube el tono y mete al Ejército en la ecuación del día de votación.",
-    "resumen": "La novedad real del ciclo no es una cifra de encuesta sino un mensaje: De la Espriella plantea que el Ejército debería intervenir si el Gobierno desconoce el orden. Es la primera declaración genuinamente nueva sobre el cierre ya conocido, y endurece su discurso justo cuando pedía no caer en triunfalismo. Mantenemos la intención de voto prácticamente igual, con un leve estrechamiento a 51-45 por el riesgo de que la frase movilice al electorado contrario. El bloque de indecisos sigue siendo la única variable seria de la jornada.",
-    "que_cambio": "Entra un hecho nuevo: la declaración de De la Espriella sobre intervención militar. La intención de voto baja un punto para él (52→51) por el riesgo de polarización que activa esa frase; Cepeda se mantiene en 45."
+    "titular": "De la Espriella convierte el 'no se la van a robar' en su mensaje de cierre al petrismo.",
+    "resumen": "La jornada abre con De la Espriella escalando el marco del fraude: dice que la elección 'no se la van a robar' y llama a la Fuerza Pública a actuar si el petrismo no acepta el resultado. Es una vuelta de tuerca a su línea de seguridad, ahora dirigida explícitamente al adversario. Cepeda responde con un mensaje de 'defender la vida' que busca activar su voto sin entrar al terreno de la confrontación institucional. La intención de voto se mantiene estable en 51-45: la novedad es de tono, no de cifras, y el bloque de indecisos sigue siendo la incógnita que decide.",
+    "que_cambio": "No cambia la intención de voto (51-45). Entra un hecho nuevo: De la Espriella formaliza el marco del 'fraude' y apela a la Fuerza Pública frente al petrismo, y Cepeda contrapone su llamado a 'defender la vida'."
   },
   "candidatos": [
     {
@@ -27,24 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Tono más duro",
+      "momentum_label": "Endurece discurso",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera la intención de voto",
-        "Disciplina de campaña en el cierre",
-        "Discurso de orden que conecta con su base"
+        "Ventaja sostenida en intención de voto",
+        "Discurso de seguridad y orden con eco en su base",
+        "Iniciativa en la conversación del día"
       ],
       "debilidades": [
-        "Margen estrecho frente a indecisos",
-        "Mensajes que pueden leerse como autoritarios"
+        "Riesgo de sobreexposición con mensajes confrontacionales",
+        "Techo electoral si activa al voto contrario"
       ],
       "riesgos": [
-        "Que la frase sobre el Ejército movilice el voto anti-De la Espriella",
-        "Exceso de confianza pese a sus propios llamados"
+        "Que el marco de 'fraude' y la apelación a la fuerza pública movilicen a indecisos en su contra",
+        "Lectura de exceso de confianza pese a sus propias advertencias"
       ],
       "catalizadores": [
-        "Alta participación de su electorado de orden y seguridad"
+        "Alta participación en regiones afines",
+        "Trasvase de indecisos que priorizan seguridad"
       ]
     },
     {
@@ -54,23 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Apela a la vida",
+      "momentum_label": "Moviliza base",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de cierre centrado en la vida y la movilización",
-        "Respaldo del aparato del Pacto Histórico"
+        "Mensaje de cierre centrado en 'vida' y participación",
+        "Capacidad de movilización del Pacto Histórico",
+        "Margen estrecho que mantiene viva la disputa"
       ],
       "debilidades": [
-        "Sigue debajo en intención de voto",
-        "Necesita capturar casi todo el indeciso para empatar"
+        "Va por detrás en intención de voto",
+        "Necesita una participación excepcional para cerrar la brecha"
       ],
       "riesgos": [
-        "No traducir indignación en votos efectivos"
+        "Que la narrativa de seguridad del rival fije la agenda del día",
+        "Desmovilización si se asume el resultado como cerrado"
       ],
       "catalizadores": [
-        "Que la retórica dura del rival empuje a indecisos hacia su lado",
-        "Repunte de movilización en las últimas horas"
+        "Reacción de su electorado ante el discurso confrontacional del rival",
+        "Volcado de indecisos hacia la continuidad"
       ]
     }
   ],
@@ -81,19 +84,24 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "EL PAÍS América",
-      "detalle": "De la Espriella afirma que el Ejército debe intervenir si el Gobierno desconoce el orden.",
+      "fuente": "El País / France 24",
+      "detalle": "La prensa encuadra la jornada como un dilema entre giro a la derecha y continuidad de izquierda.",
       "favorece": "incierto"
     },
     {
+      "fuente": "Semana",
+      "detalle": "De la Espriella centra su cierre en el marco del 'fraude' y la Fuerza Pública dirigido al petrismo.",
+      "favorece": "delaespriella"
+    },
+    {
       "fuente": "Infobae",
-      "detalle": "Cepeda llama a sus votantes a 'defender la vida' al abrir las urnas.",
+      "detalle": "Cepeda llama a 'defender la vida' para activar a su electorado en la apertura de mesas.",
       "favorece": "cepeda"
     },
     {
-      "fuente": "Encuestas / estado previo",
-      "detalle": "Intención de voto se mantiene 51-45 con indecisos como variable decisiva.",
-      "favorece": "delaespriella"
+      "fuente": "Perfil / El País",
+      "detalle": "Los indecisos siguen siendo la variable que define un balotaje muy dividido.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
@@ -186,6 +194,15 @@
       "detalle": "El candidato del Pacto Histórico dirigió un mensaje a la ciudadanía en la antesala de los comicios.",
       "fuente": "Infobae",
       "cuerpo": "Iván Cepeda difundió un mensaje directo a los votantes en la mañana de la jornada, en lo que constituye su llamado de cierre antes de la apertura de las urnas. La intervención cierra una campaña en la que el aspirante de la izquierda ha buscado capitalizar el repunte de interés digital registrado en las últimas horas y la maquinaria del oficialismo, mientras carga con una brecha persistente en encuestas y en el mercado de apuestas.\n\nPara la segunda vuelta, el gesto apunta a contrarrestar el principal riesgo de su campaña: la desmovilización ante un resultado que muchos dan por descontado. Su capacidad de convertir el interés en línea en participación efectiva, sobre todo en las grandes ciudades, es la variable que podría estrechar un margen que hoy el mercado fija en 70 puntos de distancia."
+    },
+    {
+      "ts": "2026-06-21T01:49:45.000Z",
+      "tipo": "evento",
+      "titulo": "Cepeda pide 'defender la vida' al abrir las urnas",
+      "detalle": "El candidato del Pacto Histórico contrapone un mensaje de movilización centrado en la vida frente a la retórica de seguridad del rival.",
+      "fuente": "Infobae",
+      "cuerpo": "A horas de la apertura de mesas, Cepeda lanzó un llamado a sus votantes a 'defender la vida' y a acudir a las urnas, un mensaje que evita la confrontación institucional y apunta a activar a su electorado. La señal contrasta con el tono del rival y busca capitalizar la sensibilidad de su base frente al clima de amenazas y polarización que ha marcado la antesala de la jornada.\n\nPara la segunda vuelta, el movimiento confirma que la izquierda juega la carta de la participación masiva como única vía para cerrar una brecha que las encuestas sitúan en torno a 51-45. Si el discurso de seguridad del adversario fija la agenda del día, Cepeda apuesta por una narrativa emocional alternativa que movilice a los indecisos hacia la continuidad sin entrar en el terreno del enfrentamiento abierto.",
+      "url": "https://www.infobae.com/colombia/2026/06/21/ivan-cepeda-envio-mensaje-a-horas-de-la-apertura-de-las-urnas-para-invitar-a-sus-votantes-a-que-defendamos-la-vida/"
     },
     {
       "ts": "2026-06-21T01:38:38.041Z",
@@ -322,14 +339,6 @@
       "titulo": "De la Espriella 90% ▼ 88%",
       "detalle": "Se ajusta 90-10 a 88-12 por el repunte de Cepeda en Polymarket y el dato nuevo de que el margen en votos absolutos es estrecho y reversible.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T18:03:48.814Z",
-      "tipo": "evento",
-      "titulo": "El margen real cabe en menos de 700.000 votos",
-      "detalle": "Un análisis cifra en menos de 700.000 votos la diferencia entre De la Espriella y Cepeda.",
-      "fuente": "",
-      "cuerpo": "Un análisis difundido a tres días del cierre estima que la distancia entre Abelardo de la Espriella e Iván Cepeda no supera los 700.000 sufragios, una cifra modesta frente al universo de electores habilitados para la segunda vuelta. El dato contrasta con la lectura porcentual cómoda que vienen mostrando las encuestas —donde el favorito ronda el 50%— y recuerda que en términos absolutos la franja decisiva es comparativamente pequeña y depende de la participación efectiva de cada bando.\n\nPara esta segunda vuelta, el matiz importa: una ventaja amplia en puntos puede convivir con un resultado disputado si la abstención golpea de forma asimétrica a uno de los dos campos. El bloque de Cepeda tiene ahí su único camino realista —activar voto que hoy no aparece movilizado—, mientras que De la Espriella necesita simplemente que su intención declarada se traduzca en urnas. Es lo que justifica el leve repunte del aspirante de izquierda en los mercados de predicción sin alterar el favoritismo de fondo."
     }
   ],
   "historico": [
@@ -575,6 +584,11 @@
     },
     {
       "ts": "2026-06-21T05:15:45.433Z",
+      "delaespriella": 76,
+      "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T05:42:07.101Z",
       "delaespriella": 76,
       "cepeda": 24
     }
