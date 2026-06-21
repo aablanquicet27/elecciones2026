@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 82,
-    "generado": "2026-06-21T18:05:26.027Z",
-    "proxima_actualizacion": "2026-06-21T18:25:26.027Z",
+    "ciclo": 83,
+    "generado": "2026-06-21T18:26:19.039Z",
+    "proxima_actualizacion": "2026-06-21T18:46:19.039Z",
     "cadencia_min": 20,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 76,
     "confianza": "Media",
-    "titular": "La jornada sigue sin datos duros: la intención de voto se mantiene en 51-45.",
-    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Los titulares de la última hora reiteran lo ya consignado: el voto de ambos candidatos, el mensaje de De la Espriella tras sufragar, su advertencia al Congreso y el llamado de Cepeda a 'votar por la vida'. Sin encuestas frescas ni primeros boletines de la Registraduría, la intención de voto queda intacta. La franja permanece en compás de espera del escrutinio.",
-    "que_cambio": "Nada sustantivo: no hay sondeos nuevos ni datos de la Registraduría. La intención de voto no se mueve por ausencia de información fresca."
+    "titular": "Sin boletines ni encuestas frescas, la intención de voto sigue clavada en 51-45.",
+    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Los titulares de la última hora reiteran lo ya consignado: el voto de Cepeda en Bogotá confiado en remontar, el mensaje de De la Espriella tras sufragar y su advertencia sobre el 'exceso de confianza', esta última de hace ocho horas. Sin sondeos nuevos ni primer escrutinio de la Registraduría, la intención de voto queda intacta. La franja sigue en compás de espera del cierre de urnas.",
+    "que_cambio": "Nada sustantivo: no hay encuestas frescas ni datos de la Registraduría. La intención de voto no se mueve por ausencia de información nueva; los titulares recientes ya están en la línea de tiempo."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 76,
       "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "momentum_label": "Ventaja estable",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en la última tanda de encuestas",
-        "Mensaje de confianza tras votar en Barranquilla",
-        "Narrativa de orden y seguridad que moviliza a su base"
+        "Ventaja consistente en intención de voto (51%)",
+        "Mensaje de campaña disciplinado en la recta final",
+        "Lidera de forma estable la referencia de mercado"
       ],
       "debilidades": [
-        "Tono confrontacional que puede activar el voto adverso",
-        "Dependencia de un electorado que debe materializar la ventaja en las urnas"
+        "Riesgo de desmovilización por exceso de confianza, que él mismo señaló",
+        "Alta polarización que moviliza al voto opositor"
       ],
       "riesgos": [
-        "Triunfalismo que desincentive a sus propios votantes",
-        "Cuestionamientos por sus alusiones a la Fuerza Pública y al Congreso"
+        "Sorpresa en el escrutinio si la participación opositora supera lo esperado",
+        "Estrechamiento del margen al cierre"
       ],
       "catalizadores": [
-        "Alta participación en sus bastiones",
-        "Primeros boletines que confirmen la tendencia de las encuestas"
+        "Primeros boletines de la Registraduría que confirmen la tendencia",
+        "Buena afluencia en sus bastiones"
       ]
     },
     {
@@ -55,43 +55,43 @@
       "color": "#e11d48",
       "probabilidad": 24,
       "momentum": "steady",
-      "momentum_label": "Espera remontada",
+      "momentum_label": "A la espera",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Compromiso explícito de reconocer los resultados",
-        "Mensaje de cierre centrado en la defensa de la vida",
-        "Capacidad de movilización del Pacto Histórico"
+        "Discurso de remontada y reconocimiento de resultados",
+        "Capacidad de movilización del Pacto Histórico",
+        "Repunte de interés digital en horas previas al cierre"
       ],
       "debilidades": [
-        "Rezago consistente en la intención de voto",
-        "Necesita una remontada amplia que las encuestas no anticipan"
+        "Desventaja de seis puntos en intención de voto",
+        "Necesita una participación atípicamente alta para revertir"
       ],
       "riesgos": [
-        "Que la afluencia no se traduzca en su favor",
-        "Desgaste por la asociación con el Gobierno saliente"
+        "Que el escrutinio confirme la brecha sin margen de remontada",
+        "Techo electoral en regiones clave"
       ],
       "catalizadores": [
-        "Repunte de interés digital en las últimas horas",
-        "Voto indeciso que se incline a su favor en el cierre"
+        "Alta participación en zonas urbanas favorables",
+        "Trasvase de indecisos en el tramo final"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 79% De la Espriella / 22% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 81% De la Espriella / 21% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (El Espectador, Canal 1)",
-      "detalle": "La jornada transcurre sin incidentes mayores y con urnas abiertas; aún sin boletines oficiales.",
+      "fuente": "Encuestas previas",
+      "detalle": "La intención de voto se mantiene en 51-45 a favor de De la Espriella; no hay sondeos nuevos en este ciclo.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Registraduría",
+      "detalle": "Aún no hay primer boletín de escrutinio; la franja sigue sin datos duros.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Última tanda de encuestas (estado previo)",
-      "detalle": "Ventaja de De la Espriella en 51-45, sin sondeos nuevos que la modifiquen.",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -749,6 +749,11 @@
       "ts": "2026-06-21T18:05:26.027Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T18:26:19.039Z",
+      "delaespriella": 76,
+      "cepeda": 24
     }
   ],
   "fuentes": [
@@ -789,8 +794,8 @@
     },
     "error_muestreo_pts": 5,
     "polymarket_ref": {
-      "delaespriella": 79,
-      "cepeda": 22
+      "delaespriella": 81,
+      "cepeda": 21
     }
   }
 }
