@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 42,
-    "generado": "2026-06-21T02:45:03.429Z",
-    "proxima_actualizacion": "2026-06-21T03:15:03.429Z",
+    "ciclo": 43,
+    "generado": "2026-06-21T03:16:21.290Z",
+    "proxima_actualizacion": "2026-06-21T03:46:21.290Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 84,
+    "probabilidad": 85,
     "confianza": "Alta",
-    "titular": "84-16: De la Espriella cede un punto en la apertura, sin que cambie el cuadro de fondo.",
-    "resumen": "Polymarket baja a 84 para De la Espriella y sube a 16 implícito para Cepeda, un ajuste de un punto que recogemos por continuidad. No hay hechos nuevos: la amenaza al Congreso, la llegada de Bernie Moreno, el pronunciamiento de los candidatos y el repunte de Cepeda en Google Trends ya están en la línea de tiempo. Mantenemos al ultraderechista como favorito cómodo con confianza alta.",
-    "que_cambio": "Ajustamos 85-15 a 84-16 siguiendo a Polymarket, que cedió un punto; ningún titular aporta hecho nuevo, así que el movimiento es puramente de mercado."
+    "titular": "85-15: De la Espriella recupera el punto cedido mientras los candidatos cierran movilizando.",
+    "resumen": "Polymarket vuelve a 85 para De la Espriella, deshaciendo el ajuste de un punto del ciclo anterior. El cierre trae mensajes nuevos: Cepeda apela a la defensa del empleo público y de la vida, De la Espriella llama a sus indecisos a no confiarse, y Petro reaparece en campaña pese a la restricción judicial. El cuadro de fondo no se mueve: el ultraderechista sigue como favorito cómodo con confianza alta.",
+    "que_cambio": "Subimos 84-16 a 85-15 siguiendo a Polymarket, que recuperó el punto que había cedido. El movimiento es de mercado; lo nuevo está en el tono de cierre de campaña, no en el pronóstico."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 84,
-      "momentum": "down",
-      "momentum_label": "Leve cesión",
+      "probabilidad": 85,
+      "momentum": "up",
+      "momentum_label": "Recupera terreno",
       "encuesta_pct": 52,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Favorito sostenido en mercados con 84% de probabilidad implícita",
-        "Ventaja de siete puntos en intención de voto (52 vs 45)",
-        "Veeduría internacional invitada por el CNE refuerza su narrativa de garantías"
+        "Ventaja sostenida en mercados y encuestas (52%)",
+        "Disciplina de mensaje en la recta final",
+        "Favorito estable a lo largo de toda la jornada previa"
       ],
       "debilidades": [
-        "Cesión leve en Polymarket en la apertura de la jornada",
-        "Discurso confrontacional con el Congreso puede tensar el cierre"
+        "Riesgo de triunfalismo desmovilizador en su base",
+        "Polariza al electorado de centro"
       ],
       "riesgos": [
-        "Margen real estrecho, por debajo de 700.000 votos, sensible a la participación",
-        "Repunte de interés de Cepeda en buscadores a horas del cierre"
+        "Abstención de votantes que dan por hecho el triunfo",
+        "Sorpresa de participación en bastiones de izquierda"
       ],
       "catalizadores": [
-        "Alta abstención en bastiones de izquierda",
-        "Despliegue de observadores y veeduría que blinde el resultado"
+        "Llamado explícito a no bajar la guardia",
+        "Encuadre internacional de elección decisiva que moviliza a su electorado"
       ]
     },
     {
@@ -53,45 +53,45 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 16,
-      "momentum": "up",
-      "momentum_label": "Repunte marginal",
+      "probabilidad": 15,
+      "momentum": "down",
+      "momentum_label": "Cede un punto",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Recupera un punto en la probabilidad implícita (16%)",
-        "Repunte en Google Trends que sugiere movilización tardía",
-        "Margen real estrecho que deja la puerta abierta a una sorpresa"
+        "Maquinaria de movilización del Pacto Histórico activa",
+        "Mensaje emocional de defensa de la vida y el empleo",
+        "Respaldo presidencial pese a las restricciones"
       ],
       "debilidades": [
-        "Sigue siete puntos abajo en intención de voto",
-        "Techo de mercado en torno al 16% pese al movimiento"
+        "Desventaja persistente en mercados (15%) y encuestas (45%)",
+        "Techo electoral difícil de superar en segunda vuelta"
       ],
       "riesgos": [
-        "Constreñimiento al elector y problemas logísticos en zonas clave",
-        "Falta de tiempo para revertir la brecha en una sola jornada"
+        "Que el respaldo de Petro active al electorado contrario",
+        "Quedar corto en el margen de menos de 700.000 votos"
       ],
       "catalizadores": [
-        "Alta participación en grandes ciudades y voto joven",
-        "Conversión del interés digital en votos efectivos"
+        "Contraste sobre empleo público frente a su rival",
+        "Alta participación de última hora en zonas urbanas"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket",
-      "detalle": "De la Espriella baja a 84% y Cepeda sube a 16% de probabilidad implícita.",
-      "favorece": "cepeda"
-    },
-    {
-      "fuente": "Promedio de encuestas",
-      "detalle": "De la Espriella mantiene 52% frente a 45% de Cepeda, brecha estable.",
+      "detalle": "Probabilidad implícita vuelve a 85% para De la Espriella tras ceder un punto el ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Contexto de jornada",
-      "detalle": "Sin hechos nuevos: los titulares reciclan eventos ya incorporados a la línea de tiempo.",
-      "favorece": "incierto"
+      "fuente": "Cierre de campaña",
+      "detalle": "De la Espriella pide voto masivo y advierte 'nada de triunfalismos' a los indecisos.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Cierre de campaña",
+      "detalle": "Cepeda contrasta sobre empleo público y apela a 'defender la vida' para movilizar su base.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
@@ -101,6 +101,29 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
+    },
+    {
+      "ts": "2026-06-21T03:16:21.290Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 84% ▲ 85%",
+      "detalle": "La probabilidad subió un punto (84→85) siguiendo a Polymarket, que recuperó el terreno cedido; no hay un hecho de fondo que altere el pronóstico, solo el ajuste de mercado y el ruido propio del cierre de campaña.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T03:16:20.293Z",
+      "tipo": "evento",
+      "titulo": "Cepeda contrasta sobre empleo público y pone cifra al debate",
+      "detalle": "El candidato del Pacto Histórico asegura que no eliminará puestos en el sector público y acusa a su rival de querer despedir a más de 700.000 trabajadores.",
+      "fuente": "",
+      "cuerpo": "En la antesala de la votación, Iván Cepeda llevó la disputa al terreno del empleo estatal: aseguró que su gobierno no recortaría plazas en el sector público y lanzó una pulla directa a Abelardo de la Espriella, a quien atribuyó la intención de despedir a más de 700.000 trabajadores. El mensaje se suma a su apelación de cierre a 'defender la vida' y busca anclar la decisión del votante en consecuencias materiales concretas, no en la polarización ideológica.\n\nLa jugada apunta al electorado de empleados públicos y a los indecisos sensibles a la estabilidad laboral, un segmento que en una contienda de margen estrecho puede pesar. Para Cepeda, que llega rezagado en mercados y encuestas, mover el eje del debate hacia el empleo es un intento de erosionar la ventaja del rival en las horas finales, aunque por sí solo difícilmente alcanza para revertir el pronóstico de fondo."
+    },
+    {
+      "ts": "2026-06-21T03:16:19.294Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella conjura el triunfalismo y pide voto masivo a los indecisos",
+      "detalle": "El favorito llama a 'no bajar la guardia' y advierte a su base que nada está ganado en la recta final.",
+      "fuente": "",
+      "cuerpo": "Pese a encabezar todos los pronósticos, Abelardo de la Espriella dedicó su mensaje de cierre a contener el exceso de confianza: pidió voto masivo, lanzó un llamado expreso a los indecisos y repitió la consigna de 'nada de triunfalismos'. El gesto reconoce el principal riesgo de un favorito cómodo en segunda vuelta: que su propia ventaja desmovilice a los electores que la dan por descontada.\n\nEl mensaje confirma que su campaña lee la elección como más reñida de lo que sugiere el 85% de Polymarket, consciente de que el margen real cabe en menos de 700.000 votos. Para esta segunda vuelta, la prioridad de su comando no es persuadir, sino garantizar que su voto duro acuda a las urnas; de lograrlo, blinda una ventaja que las cifras ya le reconocen."
     },
     {
       "ts": "2026-06-21T02:45:03.429Z",
@@ -219,6 +242,15 @@
       "detalle": "CNN, NYT y Telemundo presentan el balotaje como la elección de un país polarizado entre dos proyectos opuestos.",
       "fuente": "CNN en Español",
       "cuerpo": "Los grandes medios internacionales pusieron el foco en el balotaje colombiano con un encuadre común: una elección que divide al país entre el proyecto de izquierda de Cepeda, respaldado por el Pacto Histórico, y la apuesta de derecha de De la Espriella. Las piezas combinan perfiles de los candidatos con análisis de lo que está en juego para el rumbo del país, sin aportar cifras nuevas sobre la contienda.\n\nPara la segunda vuelta, esta atención externa confirma la lectura de fondo más que alterarla: la del enfrentamiento entre dos polos sin centro visible. El marco de 'país dividido' refuerza la idea de una contienda emocional y de alta movilización, terreno donde el favorito busca convertir su ventaja en encuestas en votos efectivos y el rezagado intenta exprimir un margen que sigue siendo, en lo absoluto, alcanzable."
+    },
+    {
+      "ts": "2026-06-20T18:38:02.000Z",
+      "tipo": "alerta",
+      "titulo": "Petro reaparece en campaña por Cepeda pese a la restricción judicial",
+      "detalle": "El presidente volvió a respaldar públicamente a Cepeda a pesar de la orden de no participar en política.",
+      "fuente": "infobae.com",
+      "cuerpo": "A horas de la apertura de urnas, Gustavo Petro volvió a intervenir a favor de Iván Cepeda con la advertencia de que 'Colombia puede volver al silencio y a la soledad', desafiando una restricción judicial que le prohíbe participar en actividad política. La reaparición va más allá de su anterior llamado a la calma y constituye un respaldo de campaña explícito en plena jornada de reflexión.\n\nEl movimiento es de doble filo: energiza al voto duro del Pacto Histórico, pero también ofrece a la derecha un argumento de extralimitación institucional que puede movilizar al electorado contrario a Petro. En una contienda que De la Espriella ha planteado como freno a la continuidad del actual gobierno, el protagonismo presidencial corre el riesgo de reforzar precisamente el relato del rival.",
+      "url": "https://www.infobae.com/colombia/2026/06/20/petro-volvio-a-hacer-campana-a-ivan-cepeda-pese-a-restriccion-judicial-de-no-participar-en-politica-colombia-puede-volver-al-silencio-y-a-la-soledad/"
     },
     {
       "ts": "2026-06-20T18:14:49.509Z",
@@ -511,6 +543,11 @@
       "ts": "2026-06-21T02:45:03.429Z",
       "delaespriella": 84,
       "cepeda": 16
+    },
+    {
+      "ts": "2026-06-21T03:16:21.290Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
