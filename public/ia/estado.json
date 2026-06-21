@@ -1,23 +1,23 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 87,
-    "generado": "2026-06-21T19:50:01.579Z",
-    "proxima_actualizacion": "2026-06-21T20:10:01.579Z",
-    "cadencia_min": 20,
+    "ciclo": 88,
+    "generado": "2026-06-21T20:05:38.994Z",
+    "proxima_actualizacion": "2026-06-21T20:15:38.994Z",
+    "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
-    "fase": "jornada",
+    "fase": "conteo",
     "modelo": "IA de análisis electoral en tiempo real"
   },
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 76,
+    "probabilidad": 85,
     "confianza": "Media",
-    "titular": "Sin boletín ni sondeos de salida, la intención de voto sigue clavada en 51-45.",
-    "resumen": "El ciclo no aporta hechos nuevos. Los titulares de las últimas horas reiteran lo ya consignado: el voto y los mensajes de ambos candidatos en sus ciudades, la habilitación de la consulta de escrutinio y la jornada en marcha. No hay primer boletín de la Registraduría ni encuestas de salida, de modo que la intención de voto se mantiene intacta. El mercado de apuestas se desplaza levemente a 79-23, pero esa señal no entra en el cálculo del panel.",
-    "que_cambio": "Nada sustantivo: no hay encuestas nuevas ni datos oficiales de la Registraduría. La intención de voto sigue en 51-45 por ausencia de información nueva; los titulares recientes ya figuran en la línea de tiempo."
+    "titular": "La autoridad electoral promete resultados en menos de una hora y la intención sigue en 51-45.",
+    "resumen": "El ciclo trae dos novedades operativas, no de sondeo: la Registraduría anticipa un primer dato en menos de una hora y De la Espriella exhibe un paquete de 90 decretos listos para su eventual primer día. Sin boletín oficial ni encuestas de salida, la intención de voto permanece clavada en 51-45. El mercado de apuestas sigue en torno a 82-19, pero esa señal no entra en el cálculo del panel.",
+    "que_cambio": "No hay datos electorales nuevos: la intención sigue en 51-45. Solo se incorporan dos hechos del día —el anuncio de resultados inminentes y los 90 decretos de De la Espriella— que no figuraban en la línea de tiempo."
   },
   "candidatos": [
     {
@@ -25,26 +25,26 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 76,
-      "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "probabilidad": 85,
+      "momentum": "up",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 51,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja de 6 puntos en la última intención de voto disponible",
-        "Discurso de cierre cohesionado y alta movilización propia"
+        "Ventaja sostenida de seis puntos en intención de voto",
+        "Mensaje de gobierno listo (paquete de decretos) que proyecta poder"
       ],
       "debilidades": [
-        "Riesgo de desmovilización por exceso de confianza, que él mismo admitió",
-        "Retórica sobre la Fuerza Pública que tensiona a sectores moderados"
+        "Discurso de confrontación que puede movilizar el voto adverso",
+        "Exceso de confianza señalado por su propia campaña"
       ],
       "riesgos": [
-        "Una participación inesperadamente alta podría favorecer al rival",
-        "Cuestionamientos sobre su perfil de 'outsider'"
+        "Que la remontada del voto urbano de Cepeda estreche el margen en el escrutinio",
+        "Sobreexposición que erosione a los indecisos en la recta final"
       ],
       "catalizadores": [
-        "Buen flujo de votantes en sus bastiones de la Costa",
-        "Llamado explícito a los indecisos en la recta final"
+        "Primer boletín de la Registraduría que confirme su ventaja",
+        "Alta abstención en bastiones de la izquierda"
       ]
     },
     {
@@ -52,47 +52,77 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 24,
-      "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "probabilidad": 15,
+      "momentum": "down",
+      "momentum_label": "Espera escrutinio",
       "encuesta_pct": 45,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mensaje de unidad y reconocimiento anticipado de resultados",
-        "Repunte de interés en buscadores a horas del cierre"
+        "Tono institucional y llamado a la calma que ordena a su base",
+        "Estrategia de verificación del escrutinio bien montada"
       ],
       "debilidades": [
-        "Arranca abajo en la intención de voto",
-        "El respaldo de Petro puede activar el antipetrismo"
+        "Sigue seis puntos abajo en intención de voto",
+        "Dependencia de una remontada no respaldada por sondeos"
       ],
       "riesgos": [
-        "Brecha de 6 puntos difícil de cerrar sin trasvase de indecisos",
-        "Denuncias de constreñimiento que aún no se traducen en datos"
+        "Que el primer dato oficial consolide la lectura de derrota",
+        "Que el respaldo explícito de Petro active el voto de rechazo"
       ],
       "catalizadores": [
-        "Movilización del voto de izquierda en las grandes ciudades",
-        "Captación de indecisos en la jornada"
+        "Repunte de participación en grandes ciudades",
+        "Estrechamiento del margen en el preconteo que reactive la narrativa de remontada"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 79% De la Espriella / 23% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 82% De la Espriella / 19% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura en vivo (EL ESPECTADOR, hace 1h)",
-      "detalle": "La jornada transcurre con normalidad y sin novedad que altere la intención de voto.",
+      "fuente": "Registraduría",
+      "detalle": "La autoridad electoral anticipa entregar un primer resultado en menos de una hora.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Registraduría",
-      "detalle": "Aún no se publica primer boletín ni encuestas de salida.",
-      "favorece": "incierto"
+      "fuente": "Campaña De la Espriella",
+      "detalle": "El candidato dice tener 90 decretos listos para firmar desde el primer día.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Campaña Cepeda",
+      "detalle": "Cepeda y Petro piden aguardar al escrutinio definitivo antes de conclusiones.",
+      "favorece": "cepeda"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T20:05:38.994Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 76% ▲ 85%",
+      "detalle": "La probabilidad no se mueve por datos electorales: sin boletín ni sondeos de salida, la intención sigue en 51-45 y las novedades del ciclo son operativas, no de tendencia.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T18:10:41.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella dice tener 90 decretos listos para su primer día",
+      "detalle": "El candidato de derecha asegura tener preparado un paquete de 90 decretos para firmar al asumir.",
+      "fuente": "canaltropical.co",
+      "cuerpo": "Abelardo de la Espriella afirmó que tiene listos 90 decretos para firmar desde el primer día de un eventual gobierno. El anuncio, hecho en plena jornada, refuerza su apuesta por proyectar una transición de poder ágil y un giro inmediato respecto al ciclo de Petro, en línea con el tono de confrontación institucional que ha marcado su campaña.\n\nDe cara al desenlace, el gesto busca consolidar la imagen de favorito que reflejan las encuestas y movilizar a los indecisos con la promesa de resultados rápidos. No altera la intención de voto, pero subraya la posición ofensiva de su campaña frente a un Cepeda que pide prudencia y espera el escrutinio definitivo.",
+      "url": "https://canaltropical.co/2026/06/21/abelardo-de-la-espriella-asegura-que-tiene-listos-90-decretos-para-firmar-desde-el-primer-dia-de-gobierno/"
+    },
+    {
+      "ts": "2026-06-21T17:04:00.000Z",
+      "tipo": "hito",
+      "titulo": "La autoridad electoral anticipa un primer resultado en menos de una hora",
+      "detalle": "La Registraduría espera entregar un dato inicial de la segunda vuelta en menos de 60 minutos.",
+      "fuente": "brujuladigital.net",
+      "cuerpo": "La autoridad electoral colombiana comunicó que prevé difundir un primer resultado del preconteo en menos de una hora, una vez cerradas las mesas. Es el primer anuncio concreto de tiempos oficiales de la jornada, después de horas centradas en el voto de los candidatos y en la habilitación de la consulta de escrutinio.\n\nPara la segunda vuelta, este anuncio marca el inicio de la fase decisiva: el primer boletín será la primera señal dura capaz de confirmar o desmentir la ventaja de 51-45 que hoy mantiene De la Espriella. Hasta que llegue ese dato, la intención de voto permanece sin variación, pero la ventana de incertidumbre se cierra rápido.",
+      "url": "https://brujuladigital.net/mundo/2026/06/21/autoridad-electoral-colombiana-espera-dar-resultado-de-presidenciales-en-menos-de-una-hora-62408"
+    },
     {
       "ts": "2026-06-21T16:49:36.000Z",
       "tipo": "evento",
@@ -306,30 +336,6 @@
       "fuente": "La Silla Vacía",
       "cuerpo": "Un seguimiento de La Silla Vacía sobre Google Trends muestra que Cepeda repunta en interés de búsqueda frente a De la Espriella justo a horas de la segunda vuelta. El dato no es una encuesta ni mide intención de voto, pero sí captura un pico de atención digital alrededor del candidato del Pacto Histórico en la recta final.\n\nLa señal coincide con un leve retroceso de De la Espriella en Polymarket, que pasó del entorno de 88 a 85. Ninguno de los dos indicadores altera el favoritismo de fondo, pero juntos justifican soltar un punto en nuestra estimación: si el interés se traduce en participación urbana, el piso de 45% de Cepeda podría defenderse mejor de lo que sugieren los mercados.",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOd2RvWF8tbW9vUDlNTEE5X19zMVFhSzZGRGJQRndZUzd5TUVkaFFDeWhlWll0N3hjdVJ1OUt1OTJOeEgybWVsY0FyZTlyQVNmUUJHTVphSEdmZ0k2LU0yVXBLMzlqSzU1eFdUNGdKLVlvamd2UGZCNEVuSnJmMklCdzdLNWZYUGV0YUZZS3c0MXZJY0VwMkl0cjJGZ21fTUI2RFdnUHVNWm5Ib0lD?oc=5"
-    },
-    {
-      "ts": "2026-06-20T23:24:53.000Z",
-      "tipo": "evento",
-      "titulo": "Analistas debaten si De la Espriella es un verdadero 'outsider'",
-      "detalle": "Expertos cuestionan la etiqueta de 'outsider' con la que el 'Tigre' construyó su candidatura.",
-      "fuente": "Infobae",
-      "cuerpo": "A pocas horas del cierre, varios analistas pusieron la lupa sobre el perfil de Abelardo de la Espriella y discutieron hasta qué punto encaja la imagen de político ajeno al establecimiento que ha cultivado su campaña. El abogado y empresario llegó a la segunda vuelta capitalizando el malestar con la política tradicional, pero los expertos recuerdan sus largos vínculos con sectores de poder, lo que matiza el relato de candidato antisistema que lo impulsó frente a la izquierda.\n\nEl debate importa porque la marca de 'outsider' es parte central de su atractivo entre indecisos y abstencionistas que rechazan tanto al petrismo como a la clase dirigente. Si esa narrativa se erosiona en la recta final, puede enfriar la movilización justo cuando su propia campaña insiste en no confiarse; si resiste, refuerza el voto de castigo que lo mantiene como favorito.",
-      "url": "https://www.infobae.com/colombia/2026/06/20/el-tigre-es-un-verdadero-outsider-de-la-politica-expertos-analizan-el-perfil-de-abelardo-de-la-espriella-de-cara-a-la-segunda-vuelta/"
-    },
-    {
-      "ts": "2026-06-20T22:32:40.361Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 88% ▼ 87%",
-      "detalle": "La probabilidad cede un punto hacia Cepeda siguiendo a Polymarket (87-14) y la continuidad; el grueso del cambio es de agenda de jornada, no de fondo electoral.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-20T22:32:39.362Z",
-      "tipo": "evento",
-      "titulo": "Veeduría internacional: el senador Bernie Moreno llega a Bogotá invitado por el CNE",
-      "detalle": "El senador estadounidense aterriza en la capital para acompañar la segunda vuelta a invitación del Consejo Nacional Electoral.",
-      "fuente": "ELTIEMPO.COM",
-      "cuerpo": "El Consejo Nacional Electoral gestionó la presencia de observadores y figuras internacionales para la jornada del 21 de junio, y entre los invitados llegó a Bogotá el senador estadounidense Bernie Moreno. Su arribo se inscribe en el dispositivo de acompañamiento externo habitual en comicios de alta tensión, en una segunda vuelta que la prensa internacional ya venía encuadrando como una Colombia dividida entre dos proyectos opuestos.\n\nPara el balstandce de la segunda vuelta, la veeduría externa no altera el favoritismo de De la Espriella, pero sí eleva el costo político de cualquier irregularidad: una jornada vigilada de cerca presiona a ambas campañas a cuidar la forma. El gesto importa más por legitimidad que por aritmética y, de surgir denuncias, le da a cada bando un testigo al que apelar."
     }
   ],
   "historico": [
@@ -772,6 +778,11 @@
       "ts": "2026-06-21T19:50:01.579Z",
       "delaespriella": 76,
       "cepeda": 24
+    },
+    {
+      "ts": "2026-06-21T20:05:38.994Z",
+      "delaespriella": 85,
+      "cepeda": 15
     }
   ],
   "fuentes": [
@@ -807,13 +818,13 @@
       "cepeda": 45
     },
     "prob_ganar": {
-      "delaespriella": 76,
-      "cepeda": 24
+      "delaespriella": 85,
+      "cepeda": 15
     },
-    "error_muestreo_pts": 5,
+    "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 79,
-      "cepeda": 23
+      "delaespriella": 82,
+      "cepeda": 19
     }
   }
 }
