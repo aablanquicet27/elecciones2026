@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 95,
-    "generado": "2026-06-21T21:43:36.612Z",
-    "proxima_actualizacion": "2026-06-21T21:53:36.612Z",
+    "ciclo": 96,
+    "generado": "2026-06-21T21:59:07.045Z",
+    "proxima_actualizacion": "2026-06-21T22:09:07.045Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -13,11 +13,11 @@
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 85,
+    "probabilidad": 70,
     "confianza": "Media",
-    "titular": "Quinto ciclo en seco: la intención sigue clavada en 51-45 mientras el preconteo aún no arroja cifras propias.",
-    "resumen": "No hay sondeos nuevos ni boletines de la Registraduría con resultados. Todos los titulares de las últimas horas reciclan hechos ya incorporados: los votos de ambos candidatos, la promesa de Cepeda de reconocer pero observar el escrutinio, los 90 decretos de De la Espriella y la confianza de la izquierda en remontar. La intención de voto se mantiene en 51-45 con un bloque de indecisos sin resolver. Polymarket sube a 97-3, pero esa señal de mercado no entra en el cálculo del panel.",
-    "que_cambio": "No cambió nada sustantivo: sin encuestas nuevas ni primer corte oficial, y los titulares frescos repiten eventos ya reportados. La intención sigue en 51-45 a la espera del boletín de la Registraduría."
+    "titular": "El primer dato propio de la jornada: los sondeos a pie de urna ponen a De la Espriella arriba, pero por un margen mínimo.",
+    "resumen": "Aparece la primera señal genuinamente nueva del ciclo: las encuestas a boca de urna muestran a De la Espriella aventajando a Cepeda por muy poco, un cuadro más ajustado que el 51-45 que traíamos. Ajustamos la intención a 50-47 para reflejar ese estrechamiento, todavía dentro del margen de error y sin boletín oficial de la Registraduría que lo confirme. El resto de titulares recicla hechos ya incorporados. Polymarket dispara a 99-1, pero esa señal de mercado no entra en el cálculo del panel.",
+    "que_cambio": "Por primera vez hay un dato propio de la jornada —los sondeos a pie de urna— que apunta a una carrera más cerrada, lo que justifica estrechar la intención de 51-45 a 50-47. Sigue sin haber corte oficial de la Registraduría."
   },
   "candidatos": [
     {
@@ -25,27 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 85,
-      "momentum": "steady",
-      "momentum_label": "Sin cambios",
-      "encuesta_pct": 51,
+      "probabilidad": 70,
+      "momentum": "down",
+      "momentum_label": "ventaja se estrecha",
+      "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en la intención de voto (51%)",
-        "Narrativa de orden y seguridad consolidada",
-        "Agenda de gobierno concreta comunicada (90 decretos)"
+        "Mantiene la delantera en los sondeos a pie de urna",
+        "Ventaja sostenida a lo largo de toda la campaña",
+        "Narrativa de orden y mano dura moviliza a su base"
       ],
       "debilidades": [
-        "Techo de polarización que limita crecimiento",
-        "Tono confrontacional que puede activar voto opositor"
+        "El margen a boca de urna se reduce respecto a las encuestas previas",
+        "Su discurso sobre intervención militar polariza al electorado moderado"
       ],
       "riesgos": [
-        "Triunfalismo que desincentive a su propio electorado",
-        "Disputas por el escrutinio si el margen se estrecha"
+        "Una ventaja estrecha lo expone a un vuelco si el voto urbano tardío favorece a Cepeda",
+        "El triunfalismo puede desmovilizar a indecisos propios"
       ],
       "catalizadores": [
-        "Primer boletín oficial que confirme su ventaja",
-        "Alta participación en sus bastiones regionales"
+        "Confirmación del primer boletín oficial de la Registraduría",
+        "Cierre de mesas en regiones donde es más fuerte"
       ]
     },
     {
@@ -53,53 +53,64 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 15,
-      "momentum": "steady",
-      "momentum_label": "Espera remontada",
-      "encuesta_pct": 45,
+      "probabilidad": 30,
+      "momentum": "up",
+      "momentum_label": "recorta a pie de urna",
+      "encuesta_pct": 47,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Maquinaria del Pacto Histórico movilizada",
-        "Discurso de unidad nacional y defensa de la democracia",
-        "Respaldo activo del oficialismo"
+        "Recorta distancia en el dato a pie de urna",
+        "Maquinaria del Pacto Histórico y apoyo de Petro en territorio",
+        "Mensaje de defensa de la democracia y reconocimiento anticipado del resultado"
       ],
       "debilidades": [
-        "Rezago de ~6 puntos en intención de voto",
-        "Necesidad de capturar casi todo el voto indeciso para remontar"
+        "Sigue por debajo en la medición de boca de urna",
+        "Depende de una remontada en el conteo final para revertir el cuadro"
       ],
       "riesgos": [
-        "Que la remontada esperada no se materialice en el preconteo",
-        "Desgaste asociado al Gobierno saliente"
+        "Que el escrutinio confirme la ventaja del rival y cierre la ventana de remontada",
+        "Indecisos que no terminen de inclinarse a su favor"
       ],
       "catalizadores": [
-        "Sorpresa en regiones donde dependía la movilización",
-        "Cierre del bloque indeciso a su favor"
+        "Conteo de zonas urbanas y de votación tardía donde su voto es más fuerte",
+        "Observación escrupulosa del escrutinio que defienda cada voto"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 97% De la Espriella / 3% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 99% De la Espriella / 1% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Estado previo (encuestas)",
-      "detalle": "La intención de voto se mantiene 51-45 sin sondeos nuevos que la modifiquen.",
+      "fuente": "Sondeos a pie de urna",
+      "detalle": "De la Espriella aventaja a Cepeda por un margen muy estrecho, según las encuestas a boca de urna divulgadas al cierre.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Registraduría",
-      "detalle": "Aún no hay boletín con resultados; el preconteo arrancó pero sin cifras divulgadas.",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Jornada electoral",
-      "detalle": "Votación reportada sin incidentes mayores y con alta afluencia.",
+      "detalle": "El preconteo arrancó pero aún no arroja un boletín con resultados consolidados.",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-21T21:59:07.045Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 85% ▼ 70%",
+      "detalle": "La probabilidad se ajusta levemente a la baja para De la Espriella porque el primer dato propio de la jornada —los sondeos a pie de urna— dibuja una carrera más cerrada que la que traíamos, aunque mantiene la delantera.",
+      "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T21:39:07.000Z",
+      "tipo": "hito",
+      "titulo": "Los sondeos a pie de urna dan a De la Espriella arriba por margen mínimo",
+      "detalle": "Las primeras encuestas a boca de urna de la segunda vuelta ubican a De la Espriella adelante de Cepeda, pero por muy poco.",
+      "fuente": "Sondeos a pie de urna (medios, hace <1h)",
+      "cuerpo": "Al cierre de la jornada aparecieron las primeras encuestas a pie de urna, el primer indicio propio de esta segunda vuelta después de horas de titulares que solo reciclaban la votación de los candidatos y sus mensajes. La medición ubica a Abelardo de la Espriella por delante de Iván Cepeda, pero con una diferencia mínima que contrasta con la holgura que mostraban los sondeos previos a la jornada y que mantiene la contienda dentro del margen de error.\n\nPara la segunda vuelta el dato es doblemente relevante: confirma que De la Espriella llega al conteo como favorito, pero también valida la apuesta de remontada de la izquierda, que necesitaba precisamente un cuadro estrecho para sostener la expectativa hasta los boletines oficiales. Mientras la Registraduría no entregue su primer corte consolidado, este sondeo es la única referencia de resultado y obliga a leer la noche como una carrera abierta, no resuelta.",
+      "url": "https://www.elperiodico.com/es/internacional/20260621/ultraderechista-espriella-aventaja-cepeda-sondeos-131663730"
+    },
     {
       "ts": "2026-06-21T20:21:00.927Z",
       "tipo": "evento",
@@ -323,20 +334,6 @@
       "detalle": "El candidato de derecha amenaza con confrontar al Legislativo si 'traiciona el mandato ciudadano'.",
       "fuente": "EL PAÍS",
       "cuerpo": "A menos de una hora del arranque pleno de la jornada, De la Espriella subió el tono y lanzó una advertencia directa al Congreso: si los legisladores 'traicionan el mandato ciudadano', se encontrarán con el Gobierno. El mensaje llega cuando el candidato lidera mercados y encuestas y proyecta de antemano una relación de fuerza con el Legislativo, en un país donde ningún presidente gobierna sin coaliciones parlamentarias.\n\nPara la segunda vuelta, el gesto consolida la imagen de mano dura que moviliza a su base, pero también ofrece munición a la campaña de Cepeda para advertir sobre un eventual choque institucional. En una elección cuyo margen absoluto cabe en menos de 700.000 votos, endurecer el discurso de cierre es una apuesta que puede tanto cohesionar al electorado propio como espantar a indecisos sensibles al equilibrio de poderes."
-    },
-    {
-      "ts": "2026-06-21T00:36:14.748Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 86% ▲ 87%",
-      "detalle": "La probabilidad sube un punto a De la Espriella (86→87) solo para acompañar el repunte de Polymarket hacia 88; no hay señal informativa nueva detrás del ajuste.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T00:04:59.627Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 87% ▼ 86%",
-      "detalle": "Ajuste de un punto (87→86) para acompañar el leve aflojamiento de Polymarket; no hay señal nueva más allá de ese roce del mercado.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -819,6 +816,11 @@
       "ts": "2026-06-21T21:43:36.612Z",
       "delaespriella": 85,
       "cepeda": 15
+    },
+    {
+      "ts": "2026-06-21T21:59:07.045Z",
+      "delaespriella": 70,
+      "cepeda": 30
     }
   ],
   "fuentes": [
@@ -850,17 +852,17 @@
   "metodologia": {
     "resumen": "La probabilidad de ganar NO sale de mercados de apuestas: se calcula a partir de la intención de voto (encuestas), convirtiendo el margen a dos vías en probabilidad con un modelo normal que asume un error de muestreo típico. Polymarket se muestra solo como referencia.",
     "intencion_voto": {
-      "delaespriella": 51,
-      "cepeda": 45
+      "delaespriella": 50,
+      "cepeda": 47
     },
     "prob_ganar": {
-      "delaespriella": 85,
-      "cepeda": 15
+      "delaespriella": 70,
+      "cepeda": 30
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 97,
-      "cepeda": 3
+      "delaespriella": 99,
+      "cepeda": 1
     }
   }
 }
