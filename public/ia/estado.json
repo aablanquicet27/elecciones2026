@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 136,
-    "generado": "2026-06-22T12:54:36.285Z",
-    "proxima_actualizacion": "2026-06-22T13:54:36.285Z",
+    "ciclo": 137,
+    "generado": "2026-06-22T13:57:55.512Z",
+    "proxima_actualizacion": "2026-06-22T14:57:55.512Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "De la Espriella gana las calles en contra: arranca la protesta contra el presidente electo",
-    "resumen": "La intención de voto sigue clavada en 50-49 y ningún titular aporta un dato nuevo sobre el resultado, que ya está prácticamente cerrado a falta del escrutinio oficial de esta semana. La novedad real de las últimas horas es política, no numérica: miles marchan contra el presidente electo bajo la consigna '¡Resistencia!', y De la Espriella responde prometiendo un gobierno 'absolutamente democrático'. La pelea se traslada del conteo a la gobernabilidad y la calle.",
-    "que_cambio": "No cambió la intención de voto (50-49) ni la fase de cierre. Lo nuevo es la aparición de movilizaciones en contra del presidente electo y su primera promesa de talante democrático, señales del clima de polarización que hereda."
+    "titular": "El preconteo cierra al 100% y De la Espriella convoca a la 'Patria milagro'",
+    "resumen": "La intención de voto sigue inamovible en 50-49: ninguna encuesta nueva altera el cuadro y el resultado solo espera el escrutinio oficial. Lo nuevo de las últimas horas es el cierre del preconteo al 100%, que confirma la victoria por una diferencia inferior al 1%, y el viraje discursivo del presidente electo, que pasa de la advertencia al llamado de unidad bajo la consigna 'Patria milagro' y promete gobernar para todos. La etapa numérica está cerrada; lo que se juega ahora es el tono de la transición.",
+    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el plano institucional: el preconteo llega al 100% y De la Espriella ajusta el tono hacia la conciliación tras el discurso de victoria."
   },
   "candidatos": [
     {
@@ -27,27 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 60,
       "momentum": "steady",
-      "momentum_label": "Tránsito al poder",
+      "momentum_label": "Tránsito a gobierno",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Victoria consolidada en el preconteo a falta del oficial",
-        "Aval internacional implícito al leerse como giro a la derecha",
-        "Iniciativa política: ya fija el tono de su gobierno"
+        "Victoria confirmada con el 100% del preconteo",
+        "Giro discursivo hacia la unidad y la conciliación",
+        "Reconocimiento del rival y aval de observadores"
       ],
       "debilidades": [
-        "Margen mínimo (poco más de un punto) que limita su mandato",
-        "Perfil 'ultra/pro-Trump' que genera rechazo activo",
-        "País partido en dos mitades casi iguales"
+        "Margen mínimo, inferior al 1%, que limita el mandato",
+        "País dividido casi por mitades"
       ],
       "riesgos": [
-        "Escalada de las protestas en las calles",
-        "Que la impugnación de 33.000 mesas alimente el cuestionamiento de legitimidad",
-        "Gobernabilidad difícil con una oposición movilizada desde el día uno"
+        "Movilizaciones de calle en contra del presidente electo",
+        "Gobernabilidad estrecha con oposición activa de Petro y el Pacto"
       ],
       "catalizadores": [
-        "Resultado oficial de la Registraduría esta semana",
-        "Gestos de unidad efectivos hacia el electorado de Cepeda"
+        "Escrutinio oficial que ratifique el preconteo",
+        "Primeros gestos de equipo y agenda de transición"
       ]
     },
     {
@@ -57,26 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 40,
       "momentum": "steady",
-      "momentum_label": "Repliegue y resistencia",
+      "momentum_label": "Repliegue ordenado",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Base social movilizada y dispuesta a salir a la calle",
-        "Más de tres millones de votos y un margen estrechísimo",
-        "Reconoció el resultado preservando capital político"
+        "Más de tres millones de votos y derrota por margen histórico",
+        "Reconocimiento de resultados que le da capital de oposición"
       ],
       "debilidades": [
-        "Derrota electoral consumada",
-        "Sin ruta institucional clara más allá de la impugnación",
-        "Relato periodístico centrado en por qué perdió"
+        "Derrota confirmada con el preconteo al 100%",
+        "Sin margen numérico para revertir el resultado"
       ],
       "riesgos": [
-        "Quedar desbordado por una protesta que no controla",
-        "Que la impugnación no prospere y reste credibilidad"
+        "Quedar desbordado por la protesta que invoca '¡Resistencia!'",
+        "Impugnaciones que no prosperen y desgasten su figura"
       ],
       "catalizadores": [
-        "Liderar una oposición unificada desde la calle",
-        "Eventuales hallazgos en el escrutinio oficial"
+        "Verificación del escrutinio en las mesas impugnadas",
+        "Articular una oposición ordenada desde el Pacto Histórico"
       ]
     }
   ],
@@ -87,22 +83,49 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Google News (hace 6h)",
-      "detalle": "Miles marchan contra el presidente electo bajo la consigna '¡Resistencia!'",
-      "favorece": "cepeda"
-    },
-    {
-      "fuente": "Google News (hace 6h)",
-      "detalle": "De la Espriella promete un gobierno 'absolutamente democrático y garante de la libertad'",
+      "fuente": "Registraduría (preconteo)",
+      "detalle": "El preconteo llega al 100% y ratifica la ventaja por menos de un punto.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (hace 7h)",
-      "detalle": "El escrutinio avanza y el resultado oficial se espera esta semana",
+      "fuente": "Discurso presidente electo",
+      "detalle": "De la Espriella convoca a la 'Patria milagro' y promete gobernar para todos.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Encuestas de intención",
+      "detalle": "Sin sondeos nuevos: la intención de voto permanece en 50-49.",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T13:11:47.010Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella envía mensajes directos a Petro y a Cepeda",
+      "detalle": "El presidente electo se dirige por separado al mandatario saliente y a su rival derrotado.",
+      "fuente": "Medios nacionales",
+      "cuerpo": "Tras consolidarse el resultado, De la Espriella difundió mensajes dirigidos específicamente al presidente Gustavo Petro y al derrotado Iván Cepeda, en un movimiento que busca marcar el inicio del relevo de poder. El gesto interpela tanto al Gobierno saliente, con el que mantuvo fuertes choques en campaña, como al adversario que reconoció el preconteo pero dejó observaciones sobre el escrutinio.\n\nLa señal es de transición ordenada y a la vez de delimitación de campo: De la Espriella intenta proyectar normalidad institucional mientras define los términos de su relación con un Petro que denunció irregularidades en el conteo. El tono de estos intercambios anticipa cómo será la convivencia entre el nuevo Ejecutivo y una oposición de izquierda que conserva la Presidencia hasta el empalme.",
+      "url": "https://www.noticiascaracol.com/politica/elecciones-colombia/los-mensajes-de-abelardo-de-la-espriella-a-petro-y-a-cepeda-tras-ganar-la-segunda-vuelta-rg10"
+    },
+    {
+      "ts": "2026-06-22T13:03:42.000Z",
+      "tipo": "hito",
+      "titulo": "El preconteo se cierra al 100% con diferencia menor al 1%",
+      "detalle": "Con el total de mesas procesadas, De la Espriella conserva la ventaja por debajo de un punto porcentual.",
+      "fuente": "Infobae / Registraduría",
+      "cuerpo": "La Registraduría completó el procesamiento del preconteo de la segunda vuelta y dejó el conteo en el 100% de las mesas. El resultado mantiene la tendencia que ya marcaban los cortes con más del 98% escrutado: De la Espriella por encima de Cepeda con una diferencia que no alcanza el punto porcentual, en la elección presidencial más estrecha que registra el país.\n\nEl cierre del preconteo agota la fase del conteo rápido y traslada toda la atención al escrutinio oficial de esta semana, único trámite con valor legal. Para Cepeda, que reconoció el dato como 'no oficial' e impugnó mesas, el margen confirmado deja poco espacio numérico para revertir el resultado y empuja su estrategia hacia la verificación puntual antes que hacia una impugnación de fondo.",
+      "url": "https://www.infobae.com/colombia/2026/06/22/con-el-100-del-preconteo-este-fue-el-total-de-votos-con-el-que-gano-abelardo-de-la-espriella-la-presidencia-la-diferencia-con-ivan-cepeda-es-de-menos-del-1/"
+    },
+    {
+      "ts": "2026-06-22T11:10:22.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella convoca a la 'Patria milagro' y dice que gobernará para todos",
+      "detalle": "El presidente electo modera el tono y llama a la reconciliación nacional tras la victoria.",
+      "fuente": "Medios nacionales",
+      "cuerpo": "En sus declaraciones de las últimas horas, De la Espriella introdujo la consigna de la 'Patria milagro' y aseguró que su gobierno será para todos los colombianos, un giro respecto al tono de advertencia que marcó su primer discurso como presidente electo. El mensaje busca tender puentes en un país partido casi por la mitad, con la calle movilizada en su contra y una oposición que ya se organiza.\n\nEl viraje conciliador apunta a la gobernabilidad: con un mandato ganado por menos de un punto, De la Espriella necesita ampliar su base más allá del electorado que lo eligió. El llamado a la unidad será leído con escepticismo por el Pacto Histórico, que mide cada gesto del entrante mientras define el carácter de su oposición.",
+      "url": "https://www.eltiempo.com/podcast/el-cafe-de-hoy/abelardo-de-la-espriella-presidente-electo-dice-que-gobernara-para-todos-y-convoca-a-la-patria-milagro-3566033"
+    },
     {
       "ts": "2026-06-22T10:41:21.702Z",
       "tipo": "pulso",
@@ -329,33 +352,6 @@
       "titulo": "De la Espriella 76% ▲ 85%",
       "detalle": "La probabilidad no se mueve por datos electorales: sin boletín ni sondeos de salida, la intención sigue en 51-45 y las novedades del ciclo son operativas, no de tendencia.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T18:25:27.000Z",
-      "tipo": "alerta",
-      "titulo": "Denuncias de compra de votos y capturas en tres departamentos",
-      "detalle": "Reportes de compra de votos en La Guajira y capturas en Cesar y Guainía.",
-      "fuente": "eltiempo.com",
-      "cuerpo": "Entre las incidencias de la jornada figuran denuncias por compra de votos en La Guajira y dos capturas relacionadas con presuntas irregularidades electorales en Cesar y Guainía. Son hechos localizados, sin que las autoridades hayan reportado que afecten el cómputo general, pero alimentan el clima de tensión propio de una elección tan polarizada.\n\nDe cara al cierre, estas denuncias adquieren peso en la medida en que la campaña perdedora anunció observación del escrutinio: cualquier irregularidad documentada puede convertirse en argumento de reclamación. Por el margen estrecho, episodios regionales que en otra elección pasarían desapercibidos quedan bajo la lupa hasta el boletín final.",
-      "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/denuncias-por-compra-de-votos-en-la-guajira-y-dos-capturas-en-cesar-y-guainia-marcan-incidencias-de-la-segunda-vuelta-3565882"
-    },
-    {
-      "ts": "2026-06-21T18:10:41.000Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella dice tener 90 decretos listos para su primer día",
-      "detalle": "El candidato de derecha asegura tener preparado un paquete de 90 decretos para firmar al asumir.",
-      "fuente": "canaltropical.co",
-      "cuerpo": "Abelardo de la Espriella afirmó que tiene listos 90 decretos para firmar desde el primer día de un eventual gobierno. El anuncio, hecho en plena jornada, refuerza su apuesta por proyectar una transición de poder ágil y un giro inmediato respecto al ciclo de Petro, en línea con el tono de confrontación institucional que ha marcado su campaña.\n\nDe cara al desenlace, el gesto busca consolidar la imagen de favorito que reflejan las encuestas y movilizar a los indecisos con la promesa de resultados rápidos. No altera la intención de voto, pero subraya la posición ofensiva de su campaña frente a un Cepeda que pide prudencia y espera el escrutinio definitivo.",
-      "url": "https://canaltropical.co/2026/06/21/abelardo-de-la-espriella-asegura-que-tiene-listos-90-decretos-para-firmar-desde-el-primer-dia-de-gobierno/"
-    },
-    {
-      "ts": "2026-06-21T17:04:00.000Z",
-      "tipo": "hito",
-      "titulo": "La autoridad electoral anticipa un primer resultado en menos de una hora",
-      "detalle": "La Registraduría espera entregar un dato inicial de la segunda vuelta en menos de 60 minutos.",
-      "fuente": "brujuladigital.net",
-      "cuerpo": "La autoridad electoral colombiana comunicó que prevé difundir un primer resultado del preconteo en menos de una hora, una vez cerradas las mesas. Es el primer anuncio concreto de tiempos oficiales de la jornada, después de horas centradas en el voto de los candidatos y en la habilitación de la consulta de escrutinio.\n\nPara la segunda vuelta, este anuncio marca el inicio de la fase decisiva: el primer boletín será la primera señal dura capaz de confirmar o desmentir la ventaja de 51-45 que hoy mantiene De la Espriella. Hasta que llegue ese dato, la intención de voto permanece sin variación, pero la ventana de incertidumbre se cierra rápido.",
-      "url": "https://brujuladigital.net/mundo/2026/06/21/autoridad-electoral-colombiana-espera-dar-resultado-de-presidenciales-en-menos-de-una-hora-62408"
     }
   ],
   "historico": [
@@ -1041,6 +1037,11 @@
     },
     {
       "ts": "2026-06-22T12:54:36.285Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T13:57:55.512Z",
       "delaespriella": 60,
       "cepeda": 40
     }
