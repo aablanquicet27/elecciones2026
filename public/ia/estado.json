@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 139,
-    "generado": "2026-06-22T16:03:13.443Z",
-    "proxima_actualizacion": "2026-06-22T17:03:13.443Z",
+    "ciclo": 140,
+    "generado": "2026-06-22T17:09:22.070Z",
+    "proxima_actualizacion": "2026-06-22T18:09:22.070Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "Cepeda endurece el tono y el petrismo convierte la derrota en una batalla jurídica",
-    "resumen": "La intención de voto sigue inamovible en 50-49 y el preconteo cerrado al 100% no admite sorpresa numérica. Lo nuevo está en el guion poselectoral: Cepeda pasa del reconocimiento con observación a un desafío frontal —'no nos asustan sus alaridos'— mientras su entorno estructura una ofensiva jurídica para forzar la revisión del escrutinio. En paralelo, empiezan a leerse las propuestas de gobierno del presidente electo, que marcan el giro de fondo del nuevo mandato.",
-    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el clima: Cepeda sube el tono contra De la Espriella y el petrismo articula una estrategia jurídica coordinada, más allá de la impugnación ya anunciada."
+    "titular": "El triunfo de De la Espriella se internacionaliza y empieza el escrutinio sobre su patrimonio",
+    "resumen": "La intención de voto sigue clavada en 50-49 y el preconteo cerrado no admite giro numérico. Lo nuevo es el marco que rodea al presidente electo: su victoria se lee en clave internacional por el respaldo explícito de Donald Trump, mientras la prensa global abre el escrutinio sobre el origen de su fortuna y sus negocios cuestionados. Cepeda mantiene la vía jurídica abierta sin reconocer la derrota.",
+    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el foco: aparece la dimensión internacional del resultado (respaldo de Trump) y el escrutinio sobre el patrimonio y los negocios de De la Espriella."
   },
   "candidatos": [
     {
@@ -27,25 +27,26 @@
       "color": "#2563eb",
       "probabilidad": 60,
       "momentum": "steady",
-      "momentum_label": "Triunfo consolidado",
+      "momentum_label": "Tránsito al poder",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Preconteo cerrado al 100% a su favor",
-        "Margen confirmado de casi 249.000 votos",
-        "Antecedente histórico: el escrutinio nunca ha revertido un preconteo"
+        "Respaldo internacional explícito de Trump",
+        "Discurso de unidad y gobernabilidad temprana"
       ],
       "debilidades": [
-        "Triunfo por menos del 1% sin mandato amplio",
-        "País partido en dos mitades casi iguales"
+        "Margen mínimo (<1%) que diluye el mandato",
+        "Escrutinio mediático sobre el origen de su fortuna",
+        "País partido en dos"
       ],
       "riesgos": [
-        "Que la ofensiva jurídica del petrismo erosione la legitimidad de la transición",
-        "Propuestas de choque (dolarización, bases de EEUU, megacárceles) que polaricen antes de posesionarse"
+        "Que la ofensiva jurídica petrista erosione la legitimidad del triunfo",
+        "Que los cuestionamientos patrimoniales se conviertan en desgaste temprano"
       ],
       "catalizadores": [
-        "Aval del CNE a la inviabilidad de las impugnaciones",
-        "Respaldo internacional al resultado"
+        "Aval de OEA y MOE-UE a la jornada",
+        "Gestos de moderación hacia quienes piensan distinto"
       ]
     },
     {
@@ -59,20 +60,21 @@
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Más de tres millones de votos y una base movilizada",
-        "Narrativa de irregularidades que cohesiona al petrismo"
+        "Votación histórica que reduce la brecha a mínimos",
+        "Aparato jurídico y político activo",
+        "Capacidad de movilización en calle"
       ],
       "debilidades": [
-        "Derrota numérica confirmada y sin margen real de reversión",
-        "Carga de la prueba sobre 33.000 mesas impugnadas"
+        "Diferencia numérica desfavorable e irreversible en el preconteo",
+        "Falta de un hecho nuevo que cambie cifras"
       ],
       "riesgos": [
-        "Quedar atrapado entre el reconocimiento institucional y la presión de las bases",
-        "Desgaste si las impugnaciones resultan no tramitables"
+        "Que la no aceptación prolongue una crisis sin réditos electorales",
+        "Desgaste si el escrutinio confirma el resultado"
       ],
       "catalizadores": [
-        "Que el CNE admita parte de las impugnaciones",
-        "Movilización social sostenida en las calles"
+        "Impugnación de 33.000 mesas",
+        "Apoyo de Petro y del Pacto Histórico"
       ]
     }
   ],
@@ -83,27 +85,30 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo (100%)",
-      "detalle": "Diferencia final inferior al 1%, cerca de 249.000 votos a favor de De la Espriella",
+      "fuente": "Análisis internacional",
+      "detalle": "El respaldo de Trump enmarca el triunfo de De la Espriella como parte de un giro regional a la derecha",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "CNE",
-      "detalle": "El presidente del organismo dice esperar las impugnaciones 'para ver cuáles son tramitables'",
+      "fuente": "BBC News Mundo",
+      "detalle": "El reportaje sobre la fortuna y los negocios cuestionados del presidente electo abre un frente de escrutinio",
       "favorece": "incierto"
     },
     {
-      "fuente": "Análisis histórico (El Heraldo)",
-      "detalle": "El escrutinio nunca ha revertido un preconteo en la historia del país",
+      "fuente": "Preconteo 100%",
+      "detalle": "Diferencia inferior al 1% consolidada, sin margen para sorpresa numérica",
       "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Declaraciones de Cepeda",
-      "detalle": "Sube el tono frente a De la Espriella y mantiene la ruta jurídica",
-      "favorece": "cepeda"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T17:09:20.073Z",
+      "tipo": "evento",
+      "titulo": "La prensa internacional escruta la fortuna del presidente electo",
+      "detalle": "Un reportaje de BBC indaga cómo hizo su fortuna De la Espriella y sus negocios cuestionados.",
+      "fuente": "BBC News Mundo",
+      "cuerpo": "Mientras se consolida su llegada a la Presidencia, De la Espriella quedó bajo la lupa de la prensa internacional: BBC News Mundo publicó un perfil sobre el origen de su fortuna y los negocios que han sido cuestionados a lo largo de su trayectoria como abogado. El reportaje examina episodios patrimoniales que, hasta ahora, habían quedado en segundo plano frente a la disputa electoral.\n\nEl escrutinio abre un frente de desgaste temprano para un presidente electo que ganó por menos de un punto y que necesita legitimidad para gobernar un país dividido. La oposición petrista puede capitalizar estos cuestionamientos como argumento político, aunque no inciden en el resultado ni en la intención de voto, ya cristalizada en el preconteo."
+    },
     {
       "ts": "2026-06-22T15:49:13.000Z",
       "tipo": "evento",
@@ -165,6 +170,15 @@
       "fuente": "Infobae / Registraduría",
       "cuerpo": "La Registraduría completó el procesamiento del preconteo de la segunda vuelta y dejó el conteo en el 100% de las mesas. El resultado mantiene la tendencia que ya marcaban los cortes con más del 98% escrutado: De la Espriella por encima de Cepeda con una diferencia que no alcanza el punto porcentual, en la elección presidencial más estrecha que registra el país.\n\nEl cierre del preconteo agota la fase del conteo rápido y traslada toda la atención al escrutinio oficial de esta semana, único trámite con valor legal. Para Cepeda, que reconoció el dato como 'no oficial' e impugnó mesas, el margen confirmado deja poco espacio numérico para revertir el resultado y empuja su estrategia hacia la verificación puntual antes que hacia una impugnación de fondo.",
       "url": "https://www.infobae.com/colombia/2026/06/22/con-el-100-del-preconteo-este-fue-el-total-de-votos-con-el-que-gano-abelardo-de-la-espriella-la-presidencia-la-diferencia-con-ivan-cepeda-es-de-menos-del-1/"
+    },
+    {
+      "ts": "2026-06-22T13:00:59.000Z",
+      "tipo": "evento",
+      "titulo": "Trump respalda el triunfo de De la Espriella",
+      "detalle": "El presidente electo recibe el apoyo explícito de Donald Trump, que internacionaliza la lectura del resultado.",
+      "fuente": "Google News (Colombia)",
+      "cuerpo": "La estrecha victoria de Abelardo de la Espriella en la segunda vuelta colombiana sumó una dimensión internacional con el respaldo público de Donald Trump al ganador. El gesto refuerza la lectura de varios medios extranjeros, que ya habían interpretado el resultado como un giro a la derecha en la región, y alinea al futuro gobierno colombiano con el bloque conservador continental.\n\nPara la segunda vuelta, el espaldarazo le da a De la Espriella un activo simbólico de cara a su tránsito al poder y a la relación con Washington, pero también ofrece munición al petrismo, que busca enmarcar el triunfo como una imposición externa mientras mantiene abierta su ofensiva jurídica. El apoyo no altera las cifras, pero sí el relato sobre la naturaleza del nuevo mandato.",
+      "url": "https://eltiempolatino.com/2026/06/22/nacionales/colombia-elige-presidente-abelardo-de-la-espriella-gana-por-menos-de-1-con-respaldo-de-trump/"
     },
     {
       "ts": "2026-06-22T11:58:17.000Z",
@@ -344,23 +358,6 @@
       "titulo": "De la Espriella 70% ▼ 63%",
       "detalle": "El dato propio del ciclo es el preconteo oficial con 97% escrutado (50,33-48,04), que convierte la ventaja en resultado casi consolidado y eleva la confianza a Alta.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T22:14:50.865Z",
-      "tipo": "evento",
-      "titulo": "Cepeda anuncia reconocimiento con observación rigurosa del escrutinio",
-      "detalle": "Aceptará el resultado, pero ejercerá una vigilancia clara del conteo.",
-      "fuente": "",
-      "cuerpo": "Con el preconteo en contra, la campaña de Iván Cepeda fijó su posición: reconocerá el resultado, pero ejercerá lo que llamó 'una muy clara observación' del proceso. El mensaje busca un equilibrio entre admitir la derecha numérica que muestra la Registraduría y mantener vigilancia sobre la etapa de escrutinio, donde se consolidan las actas mesa por mesa.\n\nLa señal es relevante porque desactiva, al menos por ahora, el escenario de impugnación abierta que algunos temían. Garantiza una transición institucional más ordenada y reduce el riesgo de una disputa poselectoral prolongada, aunque deja la puerta abierta a reclamaciones puntuales si la observación detecta inconsistencias verificables."
-    },
-    {
-      "ts": "2026-06-21T22:07:45.000Z",
-      "tipo": "hito",
-      "titulo": "De la Espriella, virtual presidente electo con el 97% escrutado",
-      "detalle": "El noveno boletín lo da ganador con 50,33% frente al 48,04% de Cepeda.",
-      "fuente": "primicias.ec",
-      "cuerpo": "El preconteo de la Registraduría dejó de ser tendencia para volverse resultado: con el 97% de las mesas contadas, Abelardo de la Espriella aparece como virtual presidente electo con 50,33% de los votos, contra 48,04% de Iván Cepeda. La cifra ratifica lo que los sondeos a pie de urna habían insinuado horas antes —una carrera muy ajustada— pero ahora con respaldo del conteo oficial y un margen superior a los dos puntos que el 3% de mesas pendientes difícilmente alcanza a revertir.\n\nPara la segunda vuelta, esto traslada el eje de la jornada del 'quién gana' al 'cómo se cierra'. De la Espriella llega a la Casa de Nariño con un triunfo legítimo pero estrecho, sin mandato holgado, en un país partido casi por mitades. El desenlace dependerá ahora del boletín final de la Registraduría y de que el reconocimiento del resultado se dé sin sobresaltos en la fase de escrutinio.",
-      "url": "https://www.primicias.ec/internacional/abelardo-espriella-presidente-colombia-elecciones-perfil-resultados-125874/"
     }
   ],
   "historico": [
@@ -1061,6 +1058,11 @@
     },
     {
       "ts": "2026-06-22T16:03:13.443Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T17:09:22.070Z",
       "delaespriella": 60,
       "cepeda": 40
     }
