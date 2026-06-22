@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 117,
-    "generado": "2026-06-22T03:19:01.410Z",
-    "proxima_actualizacion": "2026-06-22T03:29:01.410Z",
+    "ciclo": 118,
+    "generado": "2026-06-22T03:29:51.043Z",
+    "proxima_actualizacion": "2026-06-22T03:39:51.043Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Mismo tablero, otro ciclo: solo eco de lo ya contado.",
-    "resumen": "Las últimas horas no traen un solo hecho genuinamente nuevo. Los titulares reciclan el preconteo que da ganador a De la Espriella, la postura de Cepeda de reconocer el dato pero exigir el escrutinio, la impugnación de 33.000 mesas y la lectura internacional de giro a la derecha afín a Trump, todo ya incorporado en ciclos previos. La intención de voto sigue clavada en 50-49, el margen más estrecho de la historia. Polymarket marca 99-1, un extremo de mercado que no refleja el conteo real y queda fuera del cálculo.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 116. No hay datos que justifiquen mover la intención de voto, que se mantiene en 50-49, ni eventos nuevos que reportar."
+    "titular": "De la Espriella ya habla como presidente electo y dedica su triunfo a Miguel Uribe Turbay.",
+    "resumen": "El único hecho genuinamente nuevo de las últimas horas es el discurso de victoria de De la Espriella, en el que dedicó el resultado a Miguel Uribe Turbay como homenaje. El resto de titulares recicla lo ya contado: el reconocimiento condicionado de Cepeda, la impugnación de 33.000 mesas y la queja de Petro sobre el software. La intención de voto sigue en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla.",
+    "que_cambio": "De la Espriella pasó de virtual ganador a pronunciar discurso de victoria y dedicarlo a Miguel Uribe Turbay; la intención de voto no se mueve porque el preconteo sigue igual de ajustado."
   },
   "candidatos": [
     {
@@ -27,27 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Ganador estable",
+      "momentum_label": "Presidente electo",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja en el preconteo con más del 99% de mesas",
-        "Reconocimiento implícito del rival a la cifra",
-        "Lectura internacional que lo da por ganador"
+        "Preconteo a su favor con más del 98% escrutado",
+        "Tono de presidente electo y discurso de victoria",
+        "Respaldo simbólico al invocar a Miguel Uribe Turbay"
       ],
       "debilidades": [
-        "Margen mínimo que lo deja sin mandato amplio",
-        "País fracturado que hereda gobernar",
-        "Resultado pendiente de validación por escrutinio"
+        "Margen de menos de un punto, sin mandato amplio",
+        "Resultado aún no oficializado por el escrutinio"
       ],
       "riesgos": [
-        "Que el escrutinio de mesas impugnadas estreche o revierta la diferencia",
-        "Conflictividad poscomicial si la izquierda no reconoce",
-        "Expectativas altas frente a sus 90 decretos y la 'Patria Milagro'"
+        "Impugnación de 33.000 mesas que podría estrechar más la cifra",
+        "Cuestionamientos de Petro sobre el software del conteo"
       ],
       "catalizadores": [
-        "Cierre del escrutinio oficial que ratifique la ventaja",
-        "Aval definitivo de OEA y misiones de observación"
+        "Aval de OEA y MOE-UE a la jornada",
+        "Consolidación del preconteo en la franja final"
       ]
     },
     {
@@ -57,26 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resiste sin ceder",
+      "momentum_label": "Resiste en escrutinio",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Mantiene casi la mitad del electorado",
-        "Estrategia ordenada de impugnación dentro de los cauces legales",
-        "Base social movilizada que no reconoce derrota"
+        "Diferencia mínima que mantiene viva la disputa",
+        "Base movilizada que no reconoce la derrota"
       ],
       "debilidades": [
-        "Va por detrás en el preconteo consolidado",
-        "Reconoce el dato aunque lo califique de no vinculante",
-        "Margen exige revertir una tendencia firme"
+        "Queda abajo en el preconteo consolidado",
+        "Reconocimiento ya condicionado al escrutinio"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota y agote el recurso",
-        "Desgaste si la impugnación se lee como no aceptar resultados"
+        "Que el escrutinio confirme la tendencia y cierre el margen de maniobra",
+        "Desgaste si la impugnación no altera el resultado"
       ],
       "catalizadores": [
-        "Hallazgos en las 33.000 mesas impugnadas",
-        "Inconsistencias que valide la autoridad electoral en el escrutinio"
+        "Revisión de las 33.000 mesas impugnadas",
+        "Eventual hallazgo de irregularidades en el escrutinio"
       ]
     }
   ],
@@ -87,22 +83,31 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "De la Espriella encabeza con más del 99% de mesas, diferencia de poco más de un punto.",
+      "fuente": "Discurso De la Espriella (EL ESPECTADOR, EL PAÍS)",
+      "detalle": "Pronuncia discurso de victoria y dedica el triunfo a Miguel Uribe Turbay.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Reconoce el preconteo pero lo declara no oficial ni vinculante y mantiene la impugnación de 33.000 mesas.",
-      "favorece": "cepeda"
+      "fuente": "Pacto Histórico / Cepeda",
+      "detalle": "Reconoce el preconteo pero insiste en que no es oficial ni vinculante y mantiene la impugnación.",
+      "favorece": "incierto"
     },
     {
-      "fuente": "Prensa internacional",
-      "detalle": "Lee el resultado como giro a la derecha y da por ganador a De la Espriella.",
+      "fuente": "Preconteo (más del 98%)",
+      "detalle": "Menos de un punto separa a los candidatos, la segunda vuelta más estrecha en 32 años.",
       "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T02:59:25.000Z",
+      "tipo": "hito",
+      "titulo": "De la Espriella pronuncia su discurso de victoria y lo dedica a Miguel Uribe Turbay",
+      "detalle": "El virtual presidente electo asume el triunfo en un discurso y se lo dedica como homenaje a Miguel Uribe Turbay.",
+      "fuente": "EL ESPECTADOR / EL PAÍS",
+      "cuerpo": "De la Espriella tomó la palabra ante sus seguidores para hablar por primera vez como presidente electo, una vez que el preconteo lo dejó arriba con más del 98% de las mesas. En su intervención dedicó la victoria a Miguel Uribe Turbay, presentándola como un homenaje y anclando su triunfo en la figura que la derecha colombiana convirtió en símbolo durante la campaña. Es el primer pronunciamiento formal del candidato tras consolidarse el resultado preliminar.\n\nEl gesto fija el marco político con el que De la Espriella pretende gobernar: apela a la memoria y a la cohesión de su electorado más duro en lugar de tender puentes hacia el casi medio país que votó por Cepeda. En una segunda vuelta decidida por menos de un punto, asumir el tono de presidente electo antes de que concluya el escrutinio refuerza su narrativa de legitimidad, pero también tensa el ambiente mientras el Pacto Histórico mantiene viva la impugnación de 33.000 mesas.",
+      "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/presidente-electo-abelardo-de-la-espriella-dedico-victoria-en-el-preconteo-de-elecciones-2026-a-miguel-uribe-turbay-esta-victoria-es-un-homenaje-3566011"
+    },
     {
       "ts": "2026-06-22T01:35:43.111Z",
       "tipo": "evento",
@@ -338,13 +343,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 85% ▼ 82%",
       "detalle": "La probabilidad bajó porque Polymarket recortó a De la Espriella hasta 81% implícito al abrir las urnas; lo suavizamos a 82 ponderando que las encuestas no se movieron.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T03:16:21.290Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 84% ▲ 85%",
-      "detalle": "La probabilidad subió un punto (84→85) siguiendo a Polymarket, que recuperó el terreno cedido; no hay un hecho de fondo que altere el pronóstico, solo el ajuste de mercado y el ruido propio del cierre de campaña.",
       "fuente": "Pulso IA"
     }
   ],
@@ -936,6 +934,11 @@
     },
     {
       "ts": "2026-06-22T03:19:01.410Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T03:29:51.043Z",
       "delaespriella": 57,
       "cepeda": 43
     }
