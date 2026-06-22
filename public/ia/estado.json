@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 135,
-    "generado": "2026-06-22T11:48:39.639Z",
-    "proxima_actualizacion": "2026-06-22T12:48:39.639Z",
+    "ciclo": 136,
+    "generado": "2026-06-22T12:54:36.285Z",
+    "proxima_actualizacion": "2026-06-22T13:54:36.285Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "El 50-49 se mantiene mientras empiezan los post-mortem de la derrota de Cepeda",
-    "resumen": "La intención de voto sigue clavada en 50-49: ningún titular de las últimas horas aporta un hecho nuevo sobre el resultado. Lo único genuinamente fresco es el giro del relato periodístico hacia el análisis de por qué perdió Cepeda, mientras el escrutinio oficial avanza y se espera el dato definitivo esta semana. La fase sigue siendo el tránsito al escrutinio, con una diferencia de poco más de un punto por dirimir.",
-    "que_cambio": "No cambió la intención de voto ni la fase respecto al ciclo 134; la mayoría de titulares reciclan hechos ya reportados (victoria por menos de un punto, llamado a la unidad, reconocimiento 'no oficial' de Cepeda). La única novedad es de tono: aparecen las primeras notas analíticas sobre las causas de la derrota de Cepeda."
+    "titular": "De la Espriella gana las calles en contra: arranca la protesta contra el presidente electo",
+    "resumen": "La intención de voto sigue clavada en 50-49 y ningún titular aporta un dato nuevo sobre el resultado, que ya está prácticamente cerrado a falta del escrutinio oficial de esta semana. La novedad real de las últimas horas es política, no numérica: miles marchan contra el presidente electo bajo la consigna '¡Resistencia!', y De la Espriella responde prometiendo un gobierno 'absolutamente democrático'. La pelea se traslada del conteo a la gobernabilidad y la calle.",
+    "que_cambio": "No cambió la intención de voto (50-49) ni la fase de cierre. Lo nuevo es la aparición de movilizaciones en contra del presidente electo y su primera promesa de talante democrático, señales del clima de polarización que hereda."
   },
   "candidatos": [
     {
@@ -27,27 +27,27 @@
       "color": "#2563eb",
       "probabilidad": 60,
       "momentum": "steady",
-      "momentum_label": "Ventaja sostenida",
+      "momentum_label": "Tránsito al poder",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja preliminar consolidada en el preconteo",
-        "Reconocimiento internacional del resultado como triunfo",
-        "Iniciativa política con agenda de decretos lista"
+        "Victoria consolidada en el preconteo a falta del oficial",
+        "Aval internacional implícito al leerse como giro a la derecha",
+        "Iniciativa política: ya fija el tono de su gobierno"
       ],
       "debilidades": [
-        "Margen estrechísimo de poco más de un punto",
-        "Gobernará sobre un país partido en dos",
-        "Legitimidad supeditada al escrutinio oficial"
+        "Margen mínimo (poco más de un punto) que limita su mandato",
+        "Perfil 'ultra/pro-Trump' que genera rechazo activo",
+        "País partido en dos mitades casi iguales"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas podría estrechar la diferencia",
-        "Cuestionamientos de Petro al conteo",
-        "Tono confrontacional que dificulta la transición"
+        "Escalada de las protestas en las calles",
+        "Que la impugnación de 33.000 mesas alimente el cuestionamiento de legitimidad",
+        "Gobernabilidad difícil con una oposición movilizada desde el día uno"
       ],
       "catalizadores": [
-        "Cierre del escrutinio oficial confirmando la ventaja",
-        "Aval definitivo de OEA y misiones de observación"
+        "Resultado oficial de la Registraduría esta semana",
+        "Gestos de unidad efectivos hacia el electorado de Cepeda"
       ]
     },
     {
@@ -57,27 +57,26 @@
       "color": "#e11d48",
       "probabilidad": 40,
       "momentum": "steady",
-      "momentum_label": "Resistencia mínima",
+      "momentum_label": "Repliegue y resistencia",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Votación histórica de más de tres millones de apoyos",
-        "Diferencia mínima que mantiene viva la impugnación",
-        "Base social movilizada y disciplinada"
+        "Base social movilizada y dispuesta a salir a la calle",
+        "Más de tres millones de votos y un margen estrechísimo",
+        "Reconoció el resultado preservando capital político"
       ],
       "debilidades": [
-        "Quedó detrás en el preconteo con más del 98% escrutado",
-        "Reconocimiento de facto del resultado pese a la observación",
-        "Relato público ya girando hacia las causas de la derrota"
+        "Derrota electoral consumada",
+        "Sin ruta institucional clara más allá de la impugnación",
+        "Relato periodístico centrado en por qué perdió"
       ],
       "riesgos": [
-        "Que el escrutinio confirme y cierre el margen",
-        "Desgaste si la impugnación no prospera",
-        "Lectura de derrota que erosione el capital del Pacto Histórico"
+        "Quedar desbordado por una protesta que no controla",
+        "Que la impugnación no prospere y reste credibilidad"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación de las 33.000 mesas",
-        "Inconsistencias en el escrutinio oficial"
+        "Liderar una oposición unificada desde la calle",
+        "Eventuales hallazgos en el escrutinio oficial"
       ]
     }
   ],
@@ -88,18 +87,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "49,77% vs 48,59% con más del 98% escrutado: ventaja mínima pero estable para De la Espriella",
+      "fuente": "Google News (hace 6h)",
+      "detalle": "Miles marchan contra el presidente electo bajo la consigna '¡Resistencia!'",
+      "favorece": "cepeda"
+    },
+    {
+      "fuente": "Google News (hace 6h)",
+      "detalle": "De la Espriella promete un gobierno 'absolutamente democrático y garante de la libertad'",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Escrutinio oficial (en curso)",
-      "detalle": "El conteo definitivo avanza y se espera resultado esta semana; aún no vinculante",
-      "favorece": "incierto"
-    },
-    {
-      "fuente": "Impugnación campaña Cepeda",
-      "detalle": "33.000 mesas en revisión; sin resolución que altere el margen por ahora",
+      "fuente": "Registraduría (hace 7h)",
+      "detalle": "El escrutinio avanza y el resultado oficial se espera esta semana",
       "favorece": "incierto"
     }
   ],
@@ -119,6 +118,24 @@
       "fuente": "semana.com",
       "cuerpo": "A pocas horas del cierre del preconteo, el foco periodístico empieza a desplazarse del resultado hacia sus causas: aparecen las primeras reconstrucciones que intentan explicar cómo Iván Cepeda, con una votación histórica de más de tres millones de apoyos, terminó por debajo por algo más de un punto. Estas notas no aportan un hecho electoral nuevo, sino una lectura analítica de la campaña que cierra la jornada y abre el balance.\n\nPara la segunda vuelta, el giro del relato importa porque empieza a fijar una narrativa de derrota para la izquierda incluso antes del escrutinio oficial. Si esa lectura se consolida, debilita políticamente la impugnación de las 33.000 mesas y refuerza la posición de De la Espriella como presidente electo, aunque el margen siga siendo lo bastante estrecho como para que el conteo definitivo conserve algún suspenso.",
       "url": "https://www.semana.com/politica/articulo/por-que-perdio-ivan-cepeda-semana-documento-la-cadena-de-errores-del-candidato-de-gustavo-petro/202620/"
+    },
+    {
+      "ts": "2026-06-22T07:07:34.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella promete un gobierno 'absolutamente democrático y garante de la libertad'",
+      "detalle": "El presidente electo busca despejar los temores sobre su perfil de derecha dura.",
+      "fuente": "primicias.ec",
+      "cuerpo": "En sus primeras definiciones tras la victoria en el preconteo, Abelardo de la Espriella prometió un gobierno 'absolutamente democrático y garante de la libertad'. El mensaje responde de forma directa a la lectura nacional e internacional que lo describe como un dirigente 'ultra' y pro-Trump, y a las marchas que ya cuestionan su mandato en las calles.\n\nLa declaración es un primer gesto de contención dirigido al electorado que no lo votó y a los socios externos que observan con cautela el giro a la derecha. Su eficacia se medirá en hechos: con un país dividido casi por mitades y una oposición activa, el tono institucional que adopte en estas primeras horas pesará tanto como el resultado oficial que la Registraduría debe confirmar esta semana.",
+      "url": "https://www.primicias.ec/internacional/abelardo-espriella-elecciones-colombia-ivan-cepeda-126028/"
+    },
+    {
+      "ts": "2026-06-22T06:33:18.000Z",
+      "tipo": "evento",
+      "titulo": "Miles marchan contra el presidente electo al grito de '¡Resistencia!'",
+      "detalle": "Movilizaciones en rechazo al triunfo de De la Espriella marcan las primeras horas del poselectoral.",
+      "fuente": "france24.com",
+      "cuerpo": "Pocas horas después de conocerse el preconteo que da ganador a Abelardo de la Espriella, miles de personas salieron a las calles bajo la consigna '¡Resistencia!' para protestar contra el presidente electo. Las marchas, alimentadas por su perfil de derecha dura y por la estrechez del resultado —apenas algo más de un punto—, expresan el rechazo de la mitad del país que votó por Iván Cepeda y que no se siente representada por el nuevo mandato.\n\nPara la segunda vuelta, la protesta confirma que la disputa se traslada del conteo a la calle y a la gobernabilidad. De la Espriella llega al poder con una victoria legítima pero sin colchón de mayoría, y enfrenta desde el primer día a una oposición movilizada. El reto deja de ser electoral y pasa a ser el de administrar un país partido en dos sin que la tensión escale.",
+      "url": "https://www.france24.com/es/minuto-a-minuto/20260622-resistencia-miles-marchan-contra-el-presidente-electo-de-ultraderecha-en-colombia"
     },
     {
       "ts": "2026-06-22T05:28:48.984Z",
@@ -339,24 +356,6 @@
       "fuente": "brujuladigital.net",
       "cuerpo": "La autoridad electoral colombiana comunicó que prevé difundir un primer resultado del preconteo en menos de una hora, una vez cerradas las mesas. Es el primer anuncio concreto de tiempos oficiales de la jornada, después de horas centradas en el voto de los candidatos y en la habilitación de la consulta de escrutinio.\n\nPara la segunda vuelta, este anuncio marca el inicio de la fase decisiva: el primer boletín será la primera señal dura capaz de confirmar o desmentir la ventaja de 51-45 que hoy mantiene De la Espriella. Hasta que llegue ese dato, la intención de voto permanece sin variación, pero la ventana de incertidumbre se cierra rápido.",
       "url": "https://brujuladigital.net/mundo/2026/06/21/autoridad-electoral-colombiana-espera-dar-resultado-de-presidenciales-en-menos-de-una-hora-62408"
-    },
-    {
-      "ts": "2026-06-21T16:49:36.000Z",
-      "tipo": "evento",
-      "titulo": "Cepeda vota en Bogotá y se compromete a reconocer los resultados",
-      "detalle": "El candidato del Pacto Histórico ejerció su voto en la capital y anunció que aceptará el veredicto de las urnas.",
-      "fuente": "lapatilla.com",
-      "cuerpo": "Iván Cepeda acudió este domingo a votar en Bogotá y, tras depositar su tarjetón, declaró que reconocerá los resultados de la segunda vuelta cualquiera que sea el desenlace. El gesto llega después de una campaña en la que su rival ha insistido en que 'no se la van a robar' y ha apelado de forma reiterada a la Fuerza Pública ante un eventual desconocimiento del resultado.\n\nEl mensaje de Cepeda busca instalar un contraste de talante institucional en la recta final de una jornada tensa, posicionándose como garante de la transición democrática frente a la retórica de fraude anticipado. Aunque no altera la intención de voto, que permanece 51-45, refuerza su perfil de moderación de cara al escrutinio y a la etapa posterior, en la que el reconocimiento de resultados será determinante para la estabilidad.",
-      "url": "https://lapatilla.com/2026/06/21/ivan-cepeda-voto-en-bogota-y-afirmo-que-reconocera-los-resultados-video/"
-    },
-    {
-      "ts": "2026-06-21T15:53:31.000Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella vota y se muestra confiado en la victoria",
-      "detalle": "El candidato de la derecha sufragó en la jornada y reiteró su confianza en ganar la segunda vuelta.",
-      "fuente": "portafolio.co",
-      "cuerpo": "Abelardo de la Espriella acudió a votar en la mañana del 21 de junio y, ante la prensa, se mostró seguro de imponerse en el balotaje frente a Iván Cepeda. La imagen del candidato sufragando temprano y proyectando confianza se suma a su mensaje reciente de pedir voto masivo y evitar el 'exceso de confianza', en una jornada que aún no arroja resultados oficiales.\n\nEl gesto busca consolidar el ánimo de su base y trasladar sensación de inevitabilidad en la recta final, donde su ventaja en la intención de voto ronda los seis puntos. El riesgo implícito es que ese mismo optimismo desmovilice a parte de su electorado, justo cuando la participación es la variable que puede estrechar o ampliar el margen de 51-45 antes del primer escrutinio.",
-      "url": "https://www.portafolio.co/economia/gobierno/abelardo-de-la-espriella-voto-en-barranquilla-y-se-mostro-confiado-en-la-victoria-durante-la-jornada-electoral-496621"
     }
   ],
   "historico": [
@@ -1037,6 +1036,11 @@
     },
     {
       "ts": "2026-06-22T11:48:39.639Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T12:54:36.285Z",
       "delaespriella": 60,
       "cepeda": 40
     }
