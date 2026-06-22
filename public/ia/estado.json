@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 113,
-    "generado": "2026-06-22T02:17:04.876Z",
-    "proxima_actualizacion": "2026-06-22T02:27:04.876Z",
+    "ciclo": 114,
+    "generado": "2026-06-22T02:32:44.843Z",
+    "proxima_actualizacion": "2026-06-22T02:42:44.843Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Ciclo sin novedad: el preconteo se confirma y nada se mueve.",
-    "resumen": "Los titulares de las últimas horas repiten hechos ya incorporados: la victoria estrecha de De la Espriella (49,77% vs 48,59%), el reconocimiento de Cepeda con impugnación de 33.000 mesas, el cuestionamiento de Petro y la lectura internacional de un giro a la derecha. El conteo está prácticamente cerrado (99,4% de mesas) sin alterar el resultado ni los márgenes. La intención de voto se mantiene en 50-49, el rango más estrecho de la historia. Polymarket marca 99-1, un extremo que no refleja el conteo real y no se incorpora.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 112: todos los titulares frescos reciclan lo ya reportado. La intención de voto se mantiene en 50-49 por ausencia de datos nuevos que la justifiquen mover."
+    "titular": "De la Espriella toma la palabra como presidente electo; el tablero no se mueve.",
+    "resumen": "La única novedad real de las últimas horas es el discurso de De la Espriella tras consolidarse el preconteo: su primera intervención pública en condición de virtual presidente electo. El resto de titulares recicla hechos ya incorporados (reconocimiento de Cepeda con impugnación de 33.000 mesas, denuncias de Petro, lectura internacional de giro a la derecha). La intención de voto se mantiene en 50-49, el margen más estrecho de la historia. Polymarket marca 99-1, un extremo de mercado que no refleja el conteo real y no se incorpora.",
+    "que_cambio": "Aparece un evento genuinamente nuevo —el discurso de De la Espriella como virtual electo—, pero no altera cifras: la intención de voto sigue en 50-49 por ausencia de datos que justifiquen moverla."
   },
   "candidatos": [
     {
@@ -27,24 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Conteo estable",
+      "momentum_label": "Triunfo consolidado",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera el preconteo con 99,4% de mesas informadas",
-        "Resultado avalado por OEA y MOE-UE",
-        "Reconocimiento condicionado del rival reduce el margen de disputa"
+        "Resultado preliminar favorable con escrutinio casi cerrado",
+        "Narrativa internacional que lo proyecta como triunfador y afín a Trump",
+        "Iniciativa política: ya fija agenda de gobierno"
       ],
       "debilidades": [
-        "Margen mínimo lo deja sin mandato holgado",
-        "Resultado cuestionado por el Gobierno"
+        "Margen de victoria mínimo, sin mandato amplio",
+        "Legitimidad sujeta al cierre formal del escrutinio"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas y los escrutinios pueden tensar el cierre",
-        "Polarización heredada de una elección al filo"
+        "Impugnación de 33.000 mesas por la campaña rival",
+        "Cuestionamientos de Petro sobre irregularidades"
       ],
       "catalizadores": [
-        "Cierre formal del escrutinio sin cambios en el orden"
+        "Declaratoria oficial de la autoridad electoral",
+        "Avales de misiones de observación (OEA, MOE-UE)"
       ]
     },
     {
@@ -54,23 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Sin reacción",
+      "momentum_label": "Resignado, impugna",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Diferencia mínima que sostiene su capital político",
-        "Vía institucional abierta vía impugnación y escrutinios"
+        "Reconoce el preconteo sin desconocer el proceso",
+        "Mantiene vía institucional con verificación voto a voto"
       ],
       "debilidades": [
-        "Reconoció la derrota en el preconteo",
-        "El conteo casi cerrado no deja margen de remonte"
+        "Va por debajo en el preconteo casi cerrado",
+        "Margen demasiado estrecho para revertir sin pruebas"
       ],
       "riesgos": [
-        "La impugnación tiene baja probabilidad de revertir el resultado",
-        "Desgaste si la disputa se percibe como no aceptar el resultado"
+        "Que el escrutinio confirme la derrota y agote el margen de impugnación",
+        "Desgaste si las denuncias no prosperan"
       ],
       "catalizadores": [
-        "Hallazgos en el escrutinio oficial que muevan mesas clave"
+        "Hallazgos en la revisión de las 33.000 mesas impugnadas",
+        "Eventual recuento que estreche aún más la diferencia"
       ]
     }
   ],
@@ -81,19 +83,19 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (preconteo)",
-      "detalle": "De la Espriella 49,77% vs Cepeda 48,59% con 99,4% de mesas informadas.",
+      "fuente": "Preconteo Registraduría (98-99% mesas)",
+      "detalle": "De la Espriella se mantiene arriba por margen mínimo sin variación en las últimas horas.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Misiones de observación",
-      "detalle": "OEA y MOE-UE avalaron la jornada sin incidentes mayores.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Campaña Cepeda / Gobierno",
-      "detalle": "Impugnación de 33.000 mesas y anuncio de escrutinios mantienen abierta la vía institucional.",
+      "fuente": "Campaña de Cepeda",
+      "detalle": "Reconoce el dato preliminar como no vinculante e impugna 33.000 mesas.",
       "favorece": "incierto"
+    },
+    {
+      "fuente": "Prensa internacional",
+      "detalle": "AP, Infobae y otros consolidan la narrativa de triunfo conservador.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -910,6 +912,11 @@
     },
     {
       "ts": "2026-06-22T02:17:04.876Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T02:32:44.843Z",
       "delaespriella": 57,
       "cepeda": 43
     }
