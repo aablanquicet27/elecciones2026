@@ -1,23 +1,23 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 124,
-    "generado": "2026-06-22T04:58:09.454Z",
-    "proxima_actualizacion": "2026-06-22T05:08:09.454Z",
-    "cadencia_min": 10,
+    "ciclo": 125,
+    "generado": "2026-06-22T05:28:48.984Z",
+    "proxima_actualizacion": "2026-06-22T05:58:48.984Z",
+    "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
-    "fase": "conteo",
+    "fase": "vispera",
     "modelo": "IA de análisis electoral en tiempo real"
   },
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 57,
+    "probabilidad": 54,
     "confianza": "Alta",
-    "titular": "De la Espriella habla como presidente electo: promete gobierno 'democrático' y advierte a Cepeda",
-    "resumen": "Lo nuevo del ciclo es el primer discurso de fondo de De la Espriella ya como presidente electo, desde Barranquilla, donde mezcla un mensaje institucional ('un gobierno absolutamente democrático') con un tono de advertencia directa hacia Cepeda. No hay encuesta ni dato oficial nuevo: la intención de voto sigue en 50-49 y la fase continúa en el tránsito del preconteo al escrutinio, con las 33.000 mesas impugnadas todavía en juego. El cuadro de fondo no se mueve; lo que cambia es el tono del ganador preliminar.",
-    "que_cambio": "No cambió la intención de voto ni el resultado preliminar; lo nuevo es el contenido y el tono del primer discurso de De la Espriella como presidente electo (institucional pero con advertencia a Cepeda)."
+    "titular": "Sin novedad real: el cuadro sigue clavado en el 50-49 a la espera del escrutinio oficial",
+    "resumen": "Este ciclo no aporta hechos genuinamente nuevos: los titulares de las últimas horas repiten lo ya consignado en la línea de tiempo (el preconteo apretado, el reconocimiento condicionado de Cepeda y la impugnación de 33.000 mesas). La intención de voto se mantiene en 50-49 y la fase sigue en el tránsito del preconteo al escrutinio. El mercado de apuestas (referencia, no insumo) da por cerrada la elección, pero la diferencia real de poco más de un punto deja el desenlace formal abierto hasta que la autoridad electoral resuelva las mesas reclamadas.",
+    "que_cambio": "No cambió nada sustantivo respecto al ciclo 124: la intención de voto, el resultado preliminar y la fase siguen iguales. No hay eventos nuevos que reportar."
   },
   "candidatos": [
     {
@@ -25,28 +25,27 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 57,
-      "momentum": "steady",
-      "momentum_label": "Presidente electo",
+      "probabilidad": 54,
+      "momentum": "down",
+      "momentum_label": "Ventaja mínima",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja preliminar de ≈247.000 votos consolidada",
-        "Aval de OEA y MOE-UE a la jornada",
-        "Iniciativa política: ya actúa como presidente electo"
+        "Lidera el preconteo con cerca del 98-100% procesado",
+        "Margen de 247.000 votos a su favor",
+        "Aval de OEA y MOE-UE a la jornada"
       ],
       "debilidades": [
-        "Margen estrecho que resta legitimidad de mandato amplio",
-        "Tono confrontacional erosiona el mensaje de unidad",
-        "Depende de que el escrutinio confirme el preconteo"
+        "Ventaja de poco más de un punto, la más estrecha en 32 años",
+        "Resultado aún no es escrutinio oficial"
       ],
       "riesgos": [
-        "Las 33.000 mesas impugnadas podrían estrechar aún más la diferencia",
-        "Una transición agria con la izquierda en la calle"
+        "Que la revisión de las 33.000 mesas impugnadas erosione el margen",
+        "Denuncias de irregularidades alimentadas por Petro y el oficialismo"
       ],
       "catalizadores": [
-        "Confirmación oficial del escrutinio",
-        "Reconocimiento internacional como presidente electo"
+        "Confirmación del escrutinio oficial a su favor",
+        "Reconocimiento internacional consolidado"
       ]
     },
     {
@@ -54,27 +53,27 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 43,
-      "momentum": "steady",
+      "probabilidad": 46,
+      "momentum": "up",
       "momentum_label": "Resiste en escrutinio",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Más de tres millones de votos y fuerte presencia regional",
-        "Vía abierta en el escrutinio formal",
-        "Base movilizada que no reconoce la derrota"
+        "Votación récord superando los tres millones",
+        "Margen tan corto que mantiene viva la disputa formal",
+        "Estructura del Pacto Histórico activa para la verificación"
       ],
       "debilidades": [
-        "Va abajo en el preconteo con más del 98% procesado",
-        "Margen difícil de revertir solo con impugnaciones"
+        "Va abajo en el preconteo consolidado",
+        "Reconoció el resultado preliminar, lo que limita el margen de impugnación pública"
       ],
       "riesgos": [
-        "Que el escrutinio ratifique el resultado y cierre la ventana",
-        "Quedar como oposición sin músculo institucional"
+        "Que el escrutinio confirme la derrota sin cambios",
+        "Desgaste si la impugnación se lee como desconocer el resultado"
       ],
       "catalizadores": [
-        "Hallazgos en las mesas impugnadas",
-        "Irregularidades que validen su observación rigurosa"
+        "Hallazgos en la revisión de las 33.000 mesas",
+        "Anomalías validadas por la autoridad electoral"
       ]
     }
   ],
@@ -85,22 +84,29 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Discurso en Barranquilla (Ventana al Mundo)",
-      "detalle": "De la Espriella se proclama presidente electo y promete un gobierno 'absolutamente democrático'",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "De la Espriella 49,77% vs Cepeda 48,59%, diferencia de ~247.000 votos.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Cobertura de prensa (hace 2h)",
-      "detalle": "El primer discurso incluye advertencias directas hacia Cepeda, marcando un tono confrontacional",
+      "fuente": "Campaña Pacto Histórico",
+      "detalle": "Cepeda reconoce el preliminar pero impugna 33.000 mesas y pide esperar el escrutinio.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Estado del proceso",
-      "detalle": "Sigue pendiente el escrutinio formal con 33.000 mesas impugnadas por la campaña de Cepeda",
-      "favorece": "incierto"
+      "fuente": "OEA y MOE-UE",
+      "detalle": "Avalan la jornada sin incidentes mayores, lo que reduce el espacio para impugnaciones de fondo.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T05:28:48.984Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 57% ▼ 54%",
+      "detalle": "La probabilidad no se mueve: no hay señal nueva este ciclo; todos los titulares de las últimas horas reiteran hechos ya reportados y la intención de voto sigue en 50-49.",
+      "fuente": "Pulso IA"
+    },
     {
       "ts": "2026-06-22T04:58:07.458Z",
       "tipo": "alerta",
@@ -348,13 +354,6 @@
       "fuente": "semana.com",
       "cuerpo": "Los primeros reportes de la jornada describen una afluencia considerable de votantes y filas en puntos de votación de varias ciudades, con zonas señaladas como las de mayor congestión. La participación venía siendo la gran incógnita del balotaje, en una contienda cuyo margen real cabe en menos de 700.000 votos, y este flujo temprano la convierte por fin en un dato observable de la jornada.\n\nPara la segunda vuelta, una participación elevada es un arma de doble filo: puede consolidar la ventaja de De la Espriella si se concentra en sus bastiones, o abrir una ventana a Cepeda si moviliza voto de opinión y abstencionista en las grandes ciudades. Hasta que lleguen los primeros boletines no se sabrá en qué territorios se está votando con más fuerza, de modo que la cifra de hoy es señal, no veredicto.",
       "url": "https://www.semana.com/politica/articulo/elecciones-colombia-2026-hoy-en-vivo-siga-en-directo-los-resultados-de-votacion-y-ultimas-noticias-de-la-jornada/202607/"
-    },
-    {
-      "ts": "2026-06-21T13:00:00Z",
-      "tipo": "clave",
-      "titulo": "Día de la elección",
-      "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
-      "fuente": "Registraduría"
     }
   ],
   "historico": [
@@ -982,6 +981,11 @@
       "ts": "2026-06-22T04:58:09.454Z",
       "delaespriella": 57,
       "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T05:28:48.984Z",
+      "delaespriella": 54,
+      "cepeda": 46
     }
   ],
   "fuentes": [
@@ -1017,10 +1021,10 @@
       "cepeda": 49
     },
     "prob_ganar": {
-      "delaespriella": 57,
-      "cepeda": 43
+      "delaespriella": 54,
+      "cepeda": 46
     },
-    "error_muestreo_pts": 3,
+    "error_muestreo_pts": 5,
     "polymarket_ref": {
       "delaespriella": 99,
       "cepeda": 1
