@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 116,
-    "generado": "2026-06-22T03:03:27.979Z",
-    "proxima_actualizacion": "2026-06-22T03:13:27.979Z",
+    "ciclo": 117,
+    "generado": "2026-06-22T03:19:01.410Z",
+    "proxima_actualizacion": "2026-06-22T03:29:01.410Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "El tablero sigue congelado: solo reciclaje de lo ya reportado.",
-    "resumen": "Las últimas horas no aportan hechos genuinamente nuevos. Los titulares repiten el preconteo que da ganador a De la Espriella con el 99,4% de mesas, la postura de Cepeda de reconocer el dato pero esperar el escrutinio, la impugnación de 33.000 mesas y la lectura internacional de giro a la derecha, todo ya incorporado en ciclos previos. La intención de voto se mantiene en 50-49, el margen más estrecho de la historia. Polymarket marca 99-1, un extremo de mercado que no refleja el conteo real y no entra en el cálculo.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 115. No hay datos que justifiquen mover la intención de voto, que sigue en 50-49, ni eventos nuevos que reportar."
+    "titular": "Mismo tablero, otro ciclo: solo eco de lo ya contado.",
+    "resumen": "Las últimas horas no traen un solo hecho genuinamente nuevo. Los titulares reciclan el preconteo que da ganador a De la Espriella, la postura de Cepeda de reconocer el dato pero exigir el escrutinio, la impugnación de 33.000 mesas y la lectura internacional de giro a la derecha afín a Trump, todo ya incorporado en ciclos previos. La intención de voto sigue clavada en 50-49, el margen más estrecho de la historia. Polymarket marca 99-1, un extremo de mercado que no refleja el conteo real y queda fuera del cálculo.",
+    "que_cambio": "Nada sustantivo respecto al ciclo 116. No hay datos que justifiquen mover la intención de voto, que se mantiene en 50-49, ni eventos nuevos que reportar."
   },
   "candidatos": [
     {
@@ -27,25 +27,27 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "momentum_label": "Ganador estable",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera el preconteo con el 99,4% de mesas informadas",
-        "Resultado leído como mandato de giro a la derecha",
-        "Aval de OEA y MOE-UE a la jornada"
+        "Ventaja en el preconteo con más del 99% de mesas",
+        "Reconocimiento implícito del rival a la cifra",
+        "Lectura internacional que lo da por ganador"
       ],
       "debilidades": [
-        "Margen mínimo resta legitimidad al triunfo",
-        "Gobierna con un país partido casi por mitades"
+        "Margen mínimo que lo deja sin mandato amplio",
+        "País fracturado que hereda gobernar",
+        "Resultado pendiente de validación por escrutinio"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas puede dilatar la oficialización",
-        "Denuncias de Petro sobre el conteo mantienen ruido"
+        "Que el escrutinio de mesas impugnadas estreche o revierta la diferencia",
+        "Conflictividad poscomicial si la izquierda no reconoce",
+        "Expectativas altas frente a sus 90 decretos y la 'Patria Milagro'"
       ],
       "catalizadores": [
-        "Escrutinio oficial que confirme la ventaja",
-        "Transición ordenada y gestos de unidad"
+        "Cierre del escrutinio oficial que ratifique la ventaja",
+        "Aval definitivo de OEA y misiones de observación"
       ]
     },
     {
@@ -59,20 +61,22 @@
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Diferencia mínima deja margen de impugnación creíble",
-        "Base del Pacto Histórico cohesionada y movilizada"
+        "Mantiene casi la mitad del electorado",
+        "Estrategia ordenada de impugnación dentro de los cauces legales",
+        "Base social movilizada que no reconoce derrota"
       ],
       "debilidades": [
-        "Queda por debajo en el preconteo",
-        "Reconoce el dato aunque no lo dé por vinculante"
+        "Va por detrás en el preconteo consolidado",
+        "Reconoce el dato aunque lo califique de no vinculante",
+        "Margen exige revertir una tendencia firme"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota y cierre la vía",
-        "Desgaste si la resistencia se percibe como negar el resultado"
+        "Que el escrutinio confirme la derrota y agote el recurso",
+        "Desgaste si la impugnación se lee como no aceptar resultados"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación voto a voto",
-        "Anomalías significativas en las mesas impugnadas"
+        "Hallazgos en las 33.000 mesas impugnadas",
+        "Inconsistencias que valide la autoridad electoral en el escrutinio"
       ]
     }
   ],
@@ -84,17 +88,17 @@
     },
     {
       "fuente": "Preconteo Registraduría",
-      "detalle": "De la Espriella lidera con el 99,4% de mesas informadas, diferencia mínima.",
+      "detalle": "De la Espriella encabeza con más del 99% de mesas, diferencia de poco más de un punto.",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Campaña Cepeda",
-      "detalle": "Reconoce el preconteo pero lo declara no oficial ni vinculante y anuncia impugnar 33.000 mesas.",
-      "favorece": "incierto"
+      "detalle": "Reconoce el preconteo pero lo declara no oficial ni vinculante y mantiene la impugnación de 33.000 mesas.",
+      "favorece": "cepeda"
     },
     {
-      "fuente": "Observación internacional",
-      "detalle": "OEA y MOE-UE avalaron la jornada sin incidentes mayores.",
+      "fuente": "Prensa internacional",
+      "detalle": "Lee el resultado como giro a la derecha y da por ganador a De la Espriella.",
       "favorece": "delaespriella"
     }
   ],
@@ -927,6 +931,11 @@
     },
     {
       "ts": "2026-06-22T03:03:27.979Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T03:19:01.410Z",
       "delaespriella": 57,
       "cepeda": 43
     }
