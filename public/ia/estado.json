@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 120,
-    "generado": "2026-06-22T04:01:06.786Z",
-    "proxima_actualizacion": "2026-06-22T04:11:06.786Z",
+    "ciclo": 121,
+    "generado": "2026-06-22T04:16:18.394Z",
+    "proxima_actualizacion": "2026-06-22T04:26:18.394Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "De la Espriella pasa de la victoria al llamado a la unidad en un país partido en dos.",
-    "resumen": "Con el resultado ya consolidado, el eje se desplaza del conteo a la gestión del día después. El virtual presidente electo cambia el registro y llama a la unidad de una Colombia dividida casi por la mitad, gesto obligado tras ganar por menos de un punto. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla. La impugnación de 33.000 mesas por parte de Cepeda sigue como vía abierta, pero no altera el cuadro.",
-    "que_cambio": "No cambia el resultado ni la intención de voto. Lo nuevo es el tono: De la Espriella inaugura la etapa poselectoral con un mensaje de unidad, mientras la izquierda mantiene su apuesta por el escrutinio."
+    "titular": "Sin novedad real: el cuadro sigue congelado en 50-49 mientras se abre el escrutinio.",
+    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Todos los titulares de las últimas horas —el llamado a la unidad, la impugnación de las 33.000 mesas, el récord de participación de Cepeda, la lectura del 'software vulnerado' de Petro y los perfiles del ganador— ya están en la línea de tiempo. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla. La fase pasa del conteo al escrutinio formal, con la izquierda sin reconocer del todo y la derecha gestionando el día después.",
+    "que_cambio": "Nada sustantivo respecto al ciclo 120. La prensa repite y desarrolla los mismos hechos ya reportados; no hay evento nuevo que incorporar ni cifra que mover."
   },
   "candidatos": [
     {
@@ -27,27 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Tono conciliador",
+      "momentum_label": "Triunfo consolidado",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Victoria consolidada con más del 98% escrutado",
-        "Mensaje de unidad que amplía su base más allá de la derecha",
-        "Aval de OEA y MOE-UE a la jornada"
+        "Resultado del preconteo a su favor con más del 98% escrutado",
+        "Aval de OEA y MOE-UE a la jornada",
+        "Iniciativa política: ya marca agenda de transición"
       ],
       "debilidades": [
-        "Margen de menos de un punto: mandato sin holgura",
-        "País dividido casi por la mitad",
-        "Legitimidad cuestionada por el oficialismo"
+        "Victoria por menos de un punto, sin mandato amplio",
+        "País dividido casi por la mitad"
       ],
       "riesgos": [
-        "Que la impugnación de 33.000 mesas erosione el relato de victoria",
-        "Tensión con un Petro que habla de 'software vulnerado'",
-        "Gobernar con una oposición de tres millones de votos"
+        "Que el escrutinio formal de las 33.000 mesas estreche o revierta el margen",
+        "Escalada del relato de fraude que erosione su legitimidad de origen"
       ],
       "catalizadores": [
-        "Conformación temprana de equipo de transición",
-        "Gestos de reconciliación con regiones de Cepeda"
+        "Confirmación del escrutinio oficial por la Registraduría",
+        "Gestos de gobernabilidad que amplíen su base"
       ]
     },
     {
@@ -57,25 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resistencia jurídica",
+      "momentum_label": "Resiste en escrutinio",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Caudal récord de más de tres millones de votos",
-        "Bancada y presencia regional fortalecidas para la oposición",
-        "Reconocimiento del preconteo sin desconocer el sistema"
+        "Más de tres millones de votos y fuerte presencia regional",
+        "Margen mínimo que mantiene viva la disputa",
+        "Vía institucional abierta con la impugnación"
       ],
       "debilidades": [
-        "Derrota por margen mínimo pese al esfuerzo movilizador",
-        "Vía del escrutinio con escaso recorrido para revertir"
+        "Quedó debajo en el preconteo",
+        "Reconocimiento preliminar que le resta margen de maniobra"
       ],
       "riesgos": [
-        "Que la impugnación se lea como no aceptar la derrota",
-        "Desgaste si el escrutinio confirma el resultado"
+        "Que el escrutinio confirme la derrota sin variaciones",
+        "Desgaste si el relato de irregularidades no se sostiene con pruebas"
       ],
       "catalizadores": [
-        "Liderazgo de una oposición numerosa y articulada",
-        "Capitalizar la defensa de las 'conquistas sociales'"
+        "Hallazgos en la verificación de mesas",
+        "Pronunciamientos de autoridad electoral sobre las denuncias"
       ]
     }
   ],
@@ -87,18 +85,18 @@
     },
     {
       "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "49,77% vs 48,59%: diferencia inferior a un punto, ya consolidada.",
+      "detalle": "49,77% vs 48,59%, diferencia inferior a un punto.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Declaración pública (hace <1h)",
-      "detalle": "De la Espriella llama a la unidad de un país dividido, abriendo la etapa poselectoral.",
-      "favorece": "delaespriella"
+      "fuente": "Impugnación Pacto Histórico",
+      "detalle": "33.000 mesas llevadas a escrutinio con reconocimiento preliminar.",
+      "favorece": "cepeda"
     },
     {
-      "fuente": "Pacto Histórico",
-      "detalle": "Cepeda mantiene la impugnación de 33.000 mesas como vía abierta.",
-      "favorece": "incierto"
+      "fuente": "Misiones de observación (OEA, MOE-UE)",
+      "detalle": "Avalan la jornada sin incidentes mayores.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -957,6 +955,11 @@
     },
     {
       "ts": "2026-06-22T04:01:06.786Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T04:16:18.394Z",
       "delaespriella": 57,
       "cepeda": 43
     }
