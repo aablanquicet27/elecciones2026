@@ -2,9 +2,9 @@
   "meta": {
     "estado": "en_vivo",
     "boletin": "15",
-    "generado": "2026-06-22T01:31:09.211Z",
+    "generado": "2026-06-22T01:35:19.066Z",
     "fuente_actualizacion": "21/06/2026 17:19h",
-    "proxima_actualizacion": "2026-06-22T01:34:09.211Z",
+    "proxima_actualizacion": "2026-06-22T01:38:19.066Z",
     "cadencia_min": 3,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "cierre_urnas": "2026-06-21T16:00:00-05:00",
@@ -15,7 +15,7 @@
     "pct_mesas": 99.24,
     "mesas_informadas": 121096,
     "mesas_total": 122020,
-    "total_votos": 25875907
+    "total_votos": 25595907
   },
   "candidatos": [
     {
@@ -199,6 +199,12 @@
     },
     {
       "ts": "2026-06-22T01:31:09.211Z",
+      "delaespriella": 12878969,
+      "cepeda": 12617038,
+      "pct_mesas": 99.24
+    },
+    {
+      "ts": "2026-06-22T01:35:19.066Z",
       "delaespriella": 12878969,
       "cepeda": 12617038,
       "pct_mesas": 99.24
