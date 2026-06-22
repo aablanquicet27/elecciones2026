@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 122,
-    "generado": "2026-06-22T04:27:05.508Z",
-    "proxima_actualizacion": "2026-06-22T04:37:05.508Z",
+    "ciclo": 123,
+    "generado": "2026-06-22T04:42:23.676Z",
+    "proxima_actualizacion": "2026-06-22T04:52:23.676Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Cepeda endurece el matiz: el preconteo 'no es oficial ni vinculante'",
-    "resumen": "El único hecho genuinamente nuevo del ciclo es el giro fino en el lenguaje de Cepeda, que ahora califica el preconteo como un dato no oficial ni vinculante, un paso más firme que su reconocimiento 'con observación' previo. El resto de titulares —unidad, perfil del ganador, récord de participación, reclamo de Petro por el software— ya estaba en la línea de tiempo. La intención de voto sigue en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla mientras la fase transita del conteo al escrutinio formal.",
-    "que_cambio": "Cambia el tono de la izquierda, no las cifras: Cepeda pasa de 'reconocer con observación' a marcar que el preconteo no obliga. La intención de voto queda igual porque no hay encuesta ni resultado nuevo que la altere."
+    "titular": "El margen final del preconteo: De la Espriella gana por 247.000 votos",
+    "resumen": "El único dato genuinamente nuevo del ciclo es la cifra exacta del margen: el preconteo cierra con De la Espriella arriba por unos 247.000 votos, una diferencia ajustada que pone número a la 'segunda vuelta más estrecha de la historia'. Confirma el resultado preliminar sin alterar el cuadro: la intención de voto se mantiene en 50-49 y la fase sigue transitando del conteo al escrutinio formal, donde Cepeda mantiene vivas las 33.000 mesas impugnadas. No hay encuesta ni resultado oficial nuevo que justifique mover las cifras.",
+    "que_cambio": "Se conoce el margen numérico final del preconteo (≈247.000 votos), que cuantifica lo estrecho del resultado pero no cambia al ganador preliminar ni la intención de voto."
   },
   "candidatos": [
     {
@@ -31,21 +31,22 @@
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja sostenida en preconteo (49,77% vs 48,59%)",
-        "Aval de OEA y MOE-UE a la jornada",
-        "Narrativa de triunfo ya instalada en prensa nacional e internacional"
+        "Ventaja preliminar confirmada en el preconteo",
+        "Ya ejerce como presidente electo en lo discursivo",
+        "Aval de OEA y MOE-UE a la jornada"
       ],
       "debilidades": [
-        "Margen mínimo que resta legitimidad al mandato",
-        "País partido en dos que obliga a gobernar con la mitad en contra"
+        "Margen estrechísimo de apenas 247.000 votos",
+        "País partido en dos que deberá gobernar",
+        "Legitimidad sujeta al cierre del escrutinio formal"
       ],
       "riesgos": [
-        "Que la impugnación de 33.000 mesas erosione la imagen de victoria limpia",
-        "Tensión institucional si Petro insiste en el reclamo del software"
+        "Que el escrutinio de mesas impugnadas estreche aún más la diferencia",
+        "Tensión institucional si Petro insiste en irregularidades del software"
       ],
       "catalizadores": [
-        "Cierre del escrutinio que oficialice el resultado",
-        "Gestos de transición ordenada que consoliden la legitimidad"
+        "Declaración oficial del escrutinio que ratifique el preconteo",
+        "Reconocimiento pleno de Cepeda"
       ]
     },
     {
@@ -55,25 +56,26 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resiste el preconteo",
+      "momentum_label": "Resiste en escrutinio",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Récord histórico de votación para la izquierda (más de 3 millones)",
-        "Base territorial fortalecida en regiones clave",
-        "Margen tan estrecho que mantiene viva la disputa"
+        "Diferencia mínima que alimenta la impugnación",
+        "Récord de votos propios (más de tres millones)",
+        "Base regional sólida"
       ],
       "debilidades": [
-        "Va por debajo en todos los cortes del preconteo",
-        "Reconocimiento ambiguo que puede leerse como falta de cierre"
+        "Va por debajo en el preconteo",
+        "Sin datos nuevos que reviertan la tendencia",
+        "Carga de probar irregularidades en 33.000 mesas"
       ],
       "riesgos": [
-        "Que la observación del escrutinio no altere el resultado y desgaste su capital político",
-        "Aislarse si el respaldo de Petro se percibe como deslegitimación"
+        "Que el escrutinio confirme el margen y cierre la vía de impugnación",
+        "Desgaste si la resistencia a reconocer se prolonga sin pruebas"
       ],
       "catalizadores": [
-        "Hallazgos en las 33.000 mesas impugnadas",
-        "Diferencias en el escrutinio formal frente al preconteo"
+        "Hallazgos verificables en el escrutinio de las mesas reclamadas",
+        "Respaldo de la autoridad electoral a alguna inconsistencia"
       ]
     }
   ],
@@ -84,22 +86,31 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "49,77% vs 48,59% con más del 98% procesado, sin cambios",
+      "fuente": "Registraduría (preconteo)",
+      "detalle": "Diferencia final de ≈247.000 votos a favor de De la Espriella",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Declaración de Cepeda (hace <1h)",
-      "detalle": "Califica el preconteo como dato 'no oficial ni vinculante', a la espera del escrutinio",
+      "fuente": "Campaña Cepeda",
+      "detalle": "Mantiene la impugnación de 33.000 mesas a la espera del escrutinio",
+      "favorece": "cepeda"
+    },
+    {
+      "fuente": "Fase del proceso",
+      "detalle": "El escrutinio formal aún puede ajustar cifras, pero rara vez revierte márgenes de este tamaño",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Misiones de observación (OEA, MOE-UE)",
-      "detalle": "Jornada avalada sin incidentes, lo que limita el margen de la impugnación",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T04:20:00.000Z",
+      "tipo": "hito",
+      "titulo": "El preconteo cierra con un margen de 247.000 votos",
+      "detalle": "La diferencia final entre De la Espriella y Cepeda en el preconteo se fija en unos 247.000 votos.",
+      "fuente": "Registraduría / medios nacionales",
+      "cuerpo": "La autoridad electoral cerró el preconteo de la segunda vuelta con una diferencia de alrededor de 247.000 votos a favor de Abelardo de la Espriella, la cifra que da contenido numérico al resultado preliminar conocido durante la noche. El dato precisa lo que hasta ahora se describía en porcentajes (49,77% frente a 48,59%) y confirma que se trata del balotaje más ajustado del que se tenga registro en el país, con una participación récord que llevó a Cepeda por encima de los tres millones de votos.\n\nPara la segunda vuelta, la cifra tiene doble lectura. Por un lado, consolida a De la Espriella como presidente electo en términos preliminares y reduce el margen de incertidumbre sobre el ganador. Por otro, una diferencia tan estrecha mantiene oxígeno político a la impugnación de 33.000 mesas que sostiene la campaña de Cepeda: el escrutinio formal será el escenario donde se mida si ese reclamo puede o no alterar un resultado que, por ahora, luce difícil de revertir con un margen de esa magnitud.",
+      "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/abelardo-de-la-espriella-presidente-electo-de-colombia-tras-el-preconteo-se-impone-por-247-000-votos-3566015"
+    },
     {
       "ts": "2026-06-22T04:11:06.000Z",
       "tipo": "evento",
@@ -345,13 +356,6 @@
       "detalle": "La votación de la segunda vuelta arranca con la apertura de mesas y un reporte inicial de tranquilidad.",
       "fuente": "",
       "cuerpo": "La jornada del balotaje entró en su fase operativa con la apertura de mesas en todo el país y un primer reporte de orden público que no registra incidentes de gravedad. El arranque sigue al despliegue de observadores, a las reglas ya fijadas para la jornada —ley seca, horarios y tarjetón— y al refuerzo de seguridad anunciado en los días previos. Ambas campañas habían cerrado su mensaje el sábado: De la Espriella sobre seguridad y resultados, y Cepeda con su llamado a 'defender la vida'.\n\nCon las urnas abiertas, el eje deja de ser el discurso y pasa a la participación. La ventaja de 51-45 favorece a De la Espriella, pero el margen real es estrecho y depende de cuántos indecisos acudan y hacia dónde se inclinen. Una jornada tranquila tiende a consolidar al favorito; cualquier pico de abstención en su bloque o una movilización excepcional del electorado de Cepeda son las dos variables capaces de estrechar la diferencia en el conteo final."
-    },
-    {
-      "ts": "2026-06-21T04:49:54.836Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 77% ▼ 76%",
-      "detalle": "La probabilidad no se mueve: no hay hechos nuevos y la intención de voto se mantiene en 52-45; el leve descenso del mercado es ruido y no entra al cálculo.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -967,6 +971,11 @@
     },
     {
       "ts": "2026-06-22T04:27:05.508Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T04:42:23.676Z",
       "delaespriella": 57,
       "cepeda": 43
     }
