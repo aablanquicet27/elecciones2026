@@ -2,22 +2,22 @@
   "meta": {
     "version": 1,
     "ciclo": 140,
-    "generado": "2026-06-22T17:09:22.070Z",
+    "generado": "2026-06-22T17:46:41.233Z",
     "proxima_actualizacion": "2026-06-22T18:09:22.070Z",
-    "cadencia_min": 60,
+    "cadencia_min": 0,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
     "fase": "cierre",
-    "modelo": "IA de análisis electoral en tiempo real"
+    "modelo": "Cierre — análisis final del Pulso Electoral IA"
   },
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 60,
+    "probabilidad": 100,
     "confianza": "Alta",
-    "titular": "El triunfo de De la Espriella se internacionaliza y empieza el escrutinio sobre su patrimonio",
-    "resumen": "La intención de voto sigue clavada en 50-49 y el preconteo cerrado no admite giro numérico. Lo nuevo es el marco que rodea al presidente electo: su victoria se lee en clave internacional por el respaldo explícito de Donald Trump, mientras la prensa global abre el escrutinio sobre el origen de su fortuna y sus negocios cuestionados. Cepeda mantiene la vía jurídica abierta sin reconocer la derrota.",
-    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el foco: aparece la dimensión internacional del resultado (respaldo de Trump) y el escrutinio sobre el patrimonio y los negocios de De la Espriella."
+    "titular": "Colombia elige a De la Espriella por menos de 1 punto: gana la apuesta iliberal en la jornada más votada de su historia",
+    "resumen": "Abelardo de la Espriella ganó la segunda vuelta con 49,68% (12.878.969 votos) frente al 48,67% de Iván Cepeda, una diferencia de apenas un punto (cerca de 262 mil votos). La elección se definió en un escenario de participación récord del 63,59%, la mayor votación en la historia del país. El resultado confirma el favoritismo que seguía el panel y ratifica que Colombia optó por una alternativa de derecha radical en una contienda estrechísima. El cierre abre una transición tensa, marcada por protestas y por el escrutinio sobre el patrimonio del presidente electo.",
+    "que_cambio": "Resultado final del preconteo: Abelardo de la Espriella se impone por 1 puntos."
   },
   "candidatos": [
     {
@@ -25,9 +25,9 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 60,
-      "momentum": "steady",
-      "momentum_label": "Tránsito al poder",
+      "probabilidad": 100,
+      "momentum": "up",
+      "momentum_label": "Electo",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
@@ -54,9 +54,9 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 40,
-      "momentum": "steady",
-      "momentum_label": "Resistencia jurídica",
+      "probabilidad": 0,
+      "momentum": "down",
+      "momentum_label": "Derrotado",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
@@ -101,6 +101,14 @@
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T17:46:41.233Z",
+      "tipo": "clave",
+      "titulo": "Resultado final: Abelardo de la Espriella gana la Presidencia",
+      "detalle": "49.68% vs 48.67% (1 pts) con 99.24% de mesas.",
+      "cuerpo": "Abelardo de la Espriella ganó la segunda vuelta con 49,68% (12.878.969 votos) frente al 48,67% de Iván Cepeda, una diferencia de apenas un punto (cerca de 262 mil votos). La elección se definió en un escenario de participación récord del 63,59%, la mayor votación en la historia del país. El resultado confirma el favoritismo que seguía el panel y ratifica que Colombia optó por una alternativa de derecha radical en una contienda estrechísima. El cierre abre una transición tensa, marcada por protestas y por el escrutinio sobre el patrimonio del presidente electo.",
+      "fuente": "Registraduría · Pulso IA"
+    },
     {
       "ts": "2026-06-22T17:09:20.073Z",
       "tipo": "evento",
@@ -351,13 +359,6 @@
       "fuente": "Google News (hace 1h)",
       "cuerpo": "El presidente Gustavo Petro denunció irregularidades en el conteo de la segunda vuelta, en momentos en que el preconteo ubica a Abelardo de la Espriella por encima de Iván Cepeda con poco más de un punto de diferencia. La denuncia llega después de que la jornada fuera avalada por las misiones de observación internacional y de que la propia campaña de Cepeda anunciara que reconocería el resultado, aunque con observación rigurosa del escrutinio.\n\nEl pronunciamiento abre un frente político sobre la legitimidad del estrecho triunfo y eleva la tensión en la transición, sin que por ahora altere las cifras del preconteo. Para esta segunda vuelta, marca el tono del tramo final: el resultado numérico apunta a De la Espriella, pero la disputa por su validez se traslada al terreno del escrutinio definitivo y del relato político del Gobierno saliente.",
       "url": "https://www.elconfidencial.com/mundo/2026-06-22/ultra-de-la-espriella-gana-colombia-minima-petro-denuncia-irregularidades_4376434/"
-    },
-    {
-      "ts": "2026-06-21T22:14:52.861Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 70% ▼ 63%",
-      "detalle": "El dato propio del ciclo es el preconteo oficial con 97% escrutado (50,33-48,04), que convierte la ventaja en resultado casi consolidado y eleva la confianza a Alta.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -1108,5 +1109,55 @@
       "delaespriella": 99,
       "cepeda": 1
     }
+  },
+  "cierre": {
+    "cerrado": true,
+    "generado": "2026-06-22T17:46:41.233Z",
+    "ganador": "Abelardo de la Espriella",
+    "ganador_id": "delaespriella",
+    "margen_pts": 1,
+    "resultado": {
+      "delaespriella": 49.68,
+      "cepeda": 48.67
+    },
+    "pct_mesas": 99.24,
+    "total_votos": 25923749,
+    "titular": "Colombia elige a De la Espriella por menos de 1 punto: gana la apuesta iliberal en la jornada más votada de su historia",
+    "resumen": "Abelardo de la Espriella ganó la segunda vuelta con 49,68% (12.878.969 votos) frente al 48,67% de Iván Cepeda, una diferencia de apenas un punto (cerca de 262 mil votos). La elección se definió en un escenario de participación récord del 63,59%, la mayor votación en la historia del país. El resultado confirma el favoritismo que seguía el panel y ratifica que Colombia optó por una alternativa de derecha radical en una contienda estrechísima. El cierre abre una transición tensa, marcada por protestas y por el escrutinio sobre el patrimonio del presidente electo.",
+    "lecciones": [
+      "La elección la definió un margen mínimo —cerca de un punto— lo que confirma que el país quedó partido casi por mitades y que ningún bloque obtuvo un mandato amplio.",
+      "La intención de voto que seguíamos (Abelardo 50% / Cepeda 49%) acertó tanto al ganador como a la estrechez del resultado: el seguimiento fue preciso en tendencia y en magnitud del margen.",
+      "La participación récord del 63,59% (abstención de 36,58%) desmiente la idea de desinterés en balotaje y muestra que la alta movilización no benefició de forma decisiva a un solo lado, pues ambos crecieron.",
+      "Pesó más la capacidad de movilizar la propia base que la conquista del centro: con la votación más alta de la historia, el desenlace dependió de pequeñas diferencias de salida de voto.",
+      "El veredicto previo del panel (favorito De la Espriella, 60%) se cumplió, pero la probabilidad asignada subestimó lo reñido del cierre: ganar no equivalía a ganar con holgura.",
+      "El día después confirma que el costo de una victoria tan ajustada es una transición tensa, con protestas en las calles y cuestionamientos abiertos sobre el patrimonio del electo."
+    ],
+    "hitos": [
+      {
+        "titulo": "Gana De la Espriella",
+        "detalle": "Abelardo de la Espriella se impone con 49,68% frente al 48,67% de Iván Cepeda y será el próximo presidente de Colombia."
+      },
+      {
+        "titulo": "Margen mínimo",
+        "detalle": "Con el 100% del preconteo la diferencia fue inferior al 1%, alrededor de 249–262 mil votos entre ambos candidatos."
+      },
+      {
+        "titulo": "Participación récord",
+        "detalle": "La segunda vuelta registró una participación del 63,59%, la mayor votación de la historia electoral del país."
+      },
+      {
+        "titulo": "Voto en blanco decisivo en simbolismo",
+        "detalle": "El voto en blanco superó la diferencia entre los dos candidatos, subrayando lo apretado del resultado."
+      },
+      {
+        "titulo": "Protestas en las calles",
+        "detalle": "Miles marcharon bajo la consigna '¡Resistencia!' contra el presidente electo el mismo 22 de junio."
+      },
+      {
+        "titulo": "Transición tensa",
+        "detalle": "El triunfo abre una etapa de incertidumbre, con escrutinio internacional y dudas sobre el patrimonio del electo."
+      }
+    ],
+    "fuente": "Resultado: Registraduría (preconteo) · Análisis: Pulso Electoral IA"
   }
 }
