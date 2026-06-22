@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 130,
-    "generado": "2026-06-22T08:04:33.596Z",
-    "proxima_actualizacion": "2026-06-22T08:34:33.596Z",
+    "ciclo": 131,
+    "generado": "2026-06-22T08:35:26.176Z",
+    "proxima_actualizacion": "2026-06-22T09:05:26.176Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 54,
     "confianza": "Alta",
-    "titular": "Sin novedad real: el tablero sigue 50-49 a la espera del escrutinio oficial",
-    "resumen": "Los titulares de las últimas horas reciclan en su totalidad hechos ya consignados: la victoria mínima de De la Espriella en el preconteo (49,77% vs 48,59%), el reconocimiento condicionado de Cepeda con impugnación de 33.000 mesas, el récord de participación del Pacto Histórico y la denuncia de irregularidades de Petro. No hay insumo genuinamente nuevo, así que la intención de voto se mantiene en 50-49. La fase sigue siendo el tránsito hacia el escrutinio oficial, donde se resolverá formalmente una diferencia de poco más de un punto.",
-    "que_cambio": "No cambió nada sustantivo respecto al ciclo 129: intención de voto, resultado preliminar y fase siguen idénticos. Los titulares frescos son repeticiones o reempaques de hechos ya reportados."
+    "titular": "Sin novedad real: el tablero sigue 50-49 rumbo al escrutinio oficial",
+    "resumen": "Los titulares de las últimas horas (5 a 10h) reciclan en su totalidad hechos ya consignados en la línea de tiempo: la victoria por la mínima de De la Espriella en el preconteo (49,77% vs 48,59%), el reconocimiento condicionado de Cepeda con impugnación de 33.000 mesas, la lectura de 'la más apretada en décadas' y la denuncia de irregularidades de Petro. No hay insumo genuinamente nuevo, así que la intención de voto se mantiene en 50-49. La fase sigue siendo el tránsito hacia el escrutinio oficial, donde se dirimirá formalmente una diferencia de poco más de un punto.",
+    "que_cambio": "No cambió nada sustantivo respecto al ciclo 130: intención de voto, resultado preliminar y fase siguen idénticos. Los titulares frescos son reempaques de hechos ya reportados."
   },
   "candidatos": [
     {
@@ -27,25 +27,26 @@
       "color": "#2563eb",
       "probabilidad": 54,
       "momentum": "steady",
-      "momentum_label": "Triunfo mínimo",
+      "momentum_label": "Ventaja mínima",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja en el preconteo con más del 98% escrutado (49,77% vs 48,59%)",
-        "Reconocimiento internacional temprano del triunfo",
-        "Margen consolidado de unos 247.000 votos"
+        "Gana el preconteo con más del 98% escrutado",
+        "Aval de OEA y MOE-UE a la jornada",
+        "Iniciativa política: agenda de decretos lista para el primer día"
       ],
       "debilidades": [
-        "Diferencia de poco más de un punto, la más estrecha en 32 años",
-        "Triunfo aún no oficializado por el escrutinio"
+        "Margen estrechísimo, poco más de un punto",
+        "País dividido en dos mitades casi iguales",
+        "Legitimidad bajo escrutinio mientras no haya dato oficial"
       ],
       "riesgos": [
-        "Que la impugnación de 33.000 mesas altere el margen en el escrutinio",
-        "Denuncias de irregularidades que enturbien la legitimidad del resultado"
+        "Que la impugnación de 33.000 mesas altere el resultado en el escrutinio",
+        "Denuncias de irregularidades que erosionen el mandato"
       ],
       "catalizadores": [
-        "Validación del escrutinio oficial por la autoridad electoral",
-        "Aval de OEA y MOE-UE a la jornada"
+        "Confirmación oficial del escrutinio",
+        "Reconocimiento pleno y sin condiciones del adversario"
       ]
     },
     {
@@ -55,25 +56,26 @@
       "color": "#e11d48",
       "probabilidad": 46,
       "momentum": "steady",
-      "momentum_label": "Resiste impugnando",
+      "momentum_label": "A la espera",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Participación récord con más de tres millones de votos del Pacto Histórico",
-        "Margen mínimo que mantiene viva la disputa",
-        "Reconocimiento condicionado que preserva margen de maniobra legal"
+        "Participación récord: supera los tres millones de votos",
+        "Base movilizada del Pacto Histórico",
+        "Margen de derrota mínimo que mantiene viva la disputa"
       ],
       "debilidades": [
-        "Va abajo en el preconteo consolidado",
-        "Reconoció el resultado preliminar, lo que limita una narrativa de fraude"
+        "Va detrás en el preconteo",
+        "Reconocimiento condicionado que limita margen de maniobra",
+        "Depende de que el escrutinio revierta la tendencia"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota sin variación del margen",
-        "Desgaste si la impugnación no prospera"
+        "Que la impugnación no modifique el resultado y consolide la derrota",
+        "Desgaste por una pelea jurídica prolongada"
       ],
       "catalizadores": [
-        "Que la revisión de las 33.000 mesas impugnadas reduzca la diferencia",
-        "Hallazgos en el escrutinio oficial"
+        "Hallazgos en el escrutinio de las 33.000 mesas",
+        "Respaldo institucional a la verificación"
       ]
     }
   ],
@@ -84,19 +86,19 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo (>98%)",
-      "detalle": "De la Espriella 49,77% vs Cepeda 48,59%, margen ~247.000 votos",
+      "fuente": "Preconteo Registraduría",
+      "detalle": "De la Espriella 49,77% vs Cepeda 48,59% con más del 98% escrutado",
       "favorece": "delaespriella"
     },
     {
       "fuente": "Pacto Histórico",
-      "detalle": "Impugnación anunciada de 33.000 mesas a la espera del escrutinio",
-      "favorece": "cepeda"
+      "detalle": "Cepeda reconoce el preliminar pero impugna 33.000 mesas a escrutinio",
+      "favorece": "incierto"
     },
     {
       "fuente": "OEA / MOE-UE",
       "detalle": "Avalan la jornada sin incidentes",
-      "favorece": "incierto"
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -1009,6 +1011,11 @@
     },
     {
       "ts": "2026-06-22T08:04:33.596Z",
+      "delaespriella": 54,
+      "cepeda": 46
+    },
+    {
+      "ts": "2026-06-22T08:35:26.176Z",
       "delaespriella": 54,
       "cepeda": 46
     }
