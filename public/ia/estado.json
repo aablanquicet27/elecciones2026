@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 137,
-    "generado": "2026-06-22T13:57:55.512Z",
-    "proxima_actualizacion": "2026-06-22T14:57:55.512Z",
+    "ciclo": 138,
+    "generado": "2026-06-22T14:59:42.419Z",
+    "proxima_actualizacion": "2026-06-22T15:59:42.419Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "El preconteo cierra al 100% y De la Espriella convoca a la 'Patria milagro'",
-    "resumen": "La intención de voto sigue inamovible en 50-49: ninguna encuesta nueva altera el cuadro y el resultado solo espera el escrutinio oficial. Lo nuevo de las últimas horas es el cierre del preconteo al 100%, que confirma la victoria por una diferencia inferior al 1%, y el viraje discursivo del presidente electo, que pasa de la advertencia al llamado de unidad bajo la consigna 'Patria milagro' y promete gobernar para todos. La etapa numérica está cerrada; lo que se juega ahora es el tono de la transición.",
-    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el plano institucional: el preconteo llega al 100% y De la Espriella ajusta el tono hacia la conciliación tras el discurso de victoria."
+    "titular": "El resultado no se mueve, pero la disputa poselectoral se enciende por las mesas y el voto en el exterior",
+    "resumen": "La intención de voto sigue clavada en 50-49 y el preconteo al 100% no deja margen a sorpresa numérica. Lo nuevo de las últimas horas no está en las cifras sino en el terreno político: el Centro Democrático y el petrismo abren frentes sobre presunta intimidación en mesas y manipulación del voto en el exterior, mientras analistas recuerdan que en la historia del país el escrutinio nunca ha revertido un preconteo. La batalla ya no es por los votos contados, sino por la legitimidad del conteo.",
+    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el clima poselectoral: aparecen denuncias nuevas y específicas —intimidación armada en mesas donde Cepeda barrió y presunta manipulación del voto exterior— que tensan la transición sin alterar el resultado."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 60,
       "momentum": "steady",
-      "momentum_label": "Tránsito a gobierno",
+      "momentum_label": "Triunfo en firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Victoria confirmada con el 100% del preconteo",
-        "Giro discursivo hacia la unidad y la conciliación",
-        "Reconocimiento del rival y aval de observadores"
+        "Triunfo confirmado con el 100% del preconteo",
+        "Discurso de unidad ya instalado",
+        "Aval de OEA y MOE-UE a la jornada"
       ],
       "debilidades": [
-        "Margen mínimo, inferior al 1%, que limita el mandato",
-        "País dividido casi por mitades"
+        "Margen inferior al 1% que alimenta cuestionamientos",
+        "Legitimidad disputada por el oficialismo saliente"
       ],
       "riesgos": [
-        "Movilizaciones de calle en contra del presidente electo",
-        "Gobernabilidad estrecha con oposición activa de Petro y el Pacto"
+        "Que la fase de escrutinio e impugnaciones erosione el clima de transición",
+        "Movilización de calle contra el presidente electo"
       ],
       "catalizadores": [
-        "Escrutinio oficial que ratifique el preconteo",
-        "Primeros gestos de equipo y agenda de transición"
+        "Cierre del escrutinio oficial sin cambios",
+        "Anuncios de gabinete y agenda de empalme"
       ]
     },
     {
@@ -55,24 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 40,
       "momentum": "steady",
-      "momentum_label": "Repliegue ordenado",
+      "momentum_label": "Ruta de impugnación",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Más de tres millones de votos y derrota por margen histórico",
-        "Reconocimiento de resultados que le da capital de oposición"
+        "Más de tres millones de votos y derrota por margen mínimo",
+        "Base territorial sólida en varias regiones"
       ],
       "debilidades": [
-        "Derrota confirmada con el preconteo al 100%",
-        "Sin margen numérico para revertir el resultado"
+        "Resultado preliminar adverso ya reconocido",
+        "Dependencia de impugnaciones sin precedente de éxito histórico"
       ],
       "riesgos": [
-        "Quedar desbordado por la protesta que invoca '¡Resistencia!'",
-        "Impugnaciones que no prosperen y desgasten su figura"
+        "Que las impugnaciones de 33.000 mesas no prosperen y desgasten su capital político",
+        "Quedar atado al relato de fraude del presidente saliente"
       ],
       "catalizadores": [
-        "Verificación del escrutinio en las mesas impugnadas",
-        "Articular una oposición ordenada desde el Pacto Histórico"
+        "Hallazgos verificables en la auditoría del escrutinio",
+        "Cohesión del Pacto Histórico como oposición"
       ]
     }
   ],
@@ -83,22 +83,44 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (preconteo)",
-      "detalle": "El preconteo llega al 100% y ratifica la ventaja por menos de un punto.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Discurso presidente electo",
-      "detalle": "De la Espriella convoca a la 'Patria milagro' y promete gobernar para todos.",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Encuestas de intención",
-      "detalle": "Sin sondeos nuevos: la intención de voto permanece en 50-49.",
+      "fuente": "Centro Democrático",
+      "detalle": "Denuncia de presunta intimidación armada en mesas donde Cepeda ganó por barrido",
       "favorece": "incierto"
+    },
+    {
+      "fuente": "Gustavo Petro",
+      "detalle": "Cuestiona la legitimidad del triunfo y apunta a presunta manipulación del voto en el exterior",
+      "favorece": "cepeda"
+    },
+    {
+      "fuente": "Análisis electoral (El Heraldo)",
+      "detalle": "En la historia del país el escrutinio nunca ha revertido el resultado de un preconteo",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Infobae",
+      "detalle": "Con el 100% del preconteo, la diferencia se confirma en menos del 1%",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T14:59:39.424Z",
+      "tipo": "hito",
+      "titulo": "El mapa por capitales revela el contraste regional del resultado",
+      "detalle": "El desglose de Bogotá, Medellín y otras capitales muestra cómo se repartió el voto en una elección partida por menos del 1%.",
+      "fuente": "",
+      "cuerpo": "Los primeros desgloses por ciudades muestran cómo votaron Bogotá, Medellín y otras capitales, dibujando un país dividido casi por mitades que explica la estrechez del margen nacional inferior a un punto. El contraste entre los bastiones urbanos de cada candidato confirma que el resultado se construyó sobre geografías políticas muy marcadas y no sobre un desplazamiento generalizado.\n\nEse mapa importa para lo que viene: define dónde se concentran las mesas que Cepeda buscará impugnar y dónde tendrá De la Espriella que trabajar su promesa de 'gobernar para todos'. La fotografía territorial anticipa que la gobernabilidad del presidente electo dependerá de tender puentes con regiones donde quedó en minoría."
+    },
+    {
+      "ts": "2026-06-22T14:40:04.000Z",
+      "tipo": "alerta",
+      "titulo": "El Centro Democrático denuncia presunta intimidación en mesas donde Cepeda arrasó",
+      "detalle": "El partido enciende alarmas por sitios de votación donde Cepeda ganó en todas las mesas y habla de presión armada.",
+      "fuente": "semana.com",
+      "cuerpo": "El Centro Democrático lanzó una denuncia bajo la consigna de que 'todo apunta a fusil', señalando que en varios puestos de votación Iván Cepeda obtuvo la totalidad de las mesas, un patrón que la colectividad atribuye a presunta intimidación armada y no a respaldo espontáneo. La acusación se suma al ambiente de reclamos cruzados que sigue al cierre del preconteo al 100%, en una elección decidida por menos de un punto.\n\nPara la segunda vuelta, el episodio traslada la pelea del tablero numérico al de la legitimidad: mientras la campaña ganadora consolida su triunfo, su propio bloque alimenta un relato de irregularidades en zonas adversas que puede endurecer la confrontación con el Pacto Histórico justo cuando De la Espriella intenta proyectar un tono conciliador.",
+      "url": "https://www.semana.com/politica/articulo/todo-apunta-a-fusil-el-centro-democratico-encendio-las-alarmas-en-sitios-de-votacion-donde-ivan-cepeda-gano-en-todas-las-mesas/202604/"
+    },
     {
       "ts": "2026-06-22T13:11:47.010Z",
       "tipo": "evento",
@@ -116,6 +138,15 @@
       "fuente": "Infobae / Registraduría",
       "cuerpo": "La Registraduría completó el procesamiento del preconteo de la segunda vuelta y dejó el conteo en el 100% de las mesas. El resultado mantiene la tendencia que ya marcaban los cortes con más del 98% escrutado: De la Espriella por encima de Cepeda con una diferencia que no alcanza el punto porcentual, en la elección presidencial más estrecha que registra el país.\n\nEl cierre del preconteo agota la fase del conteo rápido y traslada toda la atención al escrutinio oficial de esta semana, único trámite con valor legal. Para Cepeda, que reconoció el dato como 'no oficial' e impugnó mesas, el margen confirmado deja poco espacio numérico para revertir el resultado y empuja su estrategia hacia la verificación puntual antes que hacia una impugnación de fondo.",
       "url": "https://www.infobae.com/colombia/2026/06/22/con-el-100-del-preconteo-este-fue-el-total-de-votos-con-el-que-gano-abelardo-de-la-espriella-la-presidencia-la-diferencia-con-ivan-cepeda-es-de-menos-del-1/"
+    },
+    {
+      "ts": "2026-06-22T11:58:17.000Z",
+      "tipo": "evento",
+      "titulo": "Petro cuestiona la legitimidad del triunfo y apunta al voto en el exterior",
+      "detalle": "El presidente saliente habla de presunta manipulación del voto exterior y de una 'situación política inestable'.",
+      "fuente": "infobae.com",
+      "cuerpo": "Gustavo Petro elevó el tono de sus reparos al resultado y, más allá del pedido de escrutinio total, puso el foco en una presunta manipulación del voto en el exterior, calificando el momento como una 'situación política inestable'. Es un giro respecto a sus cuestionamientos previos al conteo general, porque ahora individualiza un componente específico del sufragio para sostener la sospecha de fraude.\n\nLa señalización del voto exterior le da a la impugnación de Cepeda un argumento concreto sobre el cual auditar, pero también arriesga radicalizar la transición. Si la observación rigurosa del escrutinio no arroja hallazgos verificables, el oficialismo saliente queda expuesto a que su denuncia se lea como deslegitimación sin sustento de un resultado estrecho pero avalado por las misiones internacionales.",
+      "url": "https://www.infobae.com/colombia/2026/06/22/gustavo-petro-cuestiono-la-legitimidad-del-triunfo-opositor-y-senalo-presunta-manipulacion-del-voto-en-el-exterior-situacion-politica-inestable/"
     },
     {
       "ts": "2026-06-22T11:10:22.000Z",
@@ -328,30 +359,6 @@
       "fuente": "europapress.es",
       "cuerpo": "El preconteo oficial alcanzó más del 98% de mesas y arrojó números concretos: Abelardo de la Espriella suma 49,77% e Iván Cepeda 48,59%, una diferencia de apenas 1,18 puntos. La cifra precisa y casi definitiva avanza sobre el reporte previo del 97% que ya circulaba y deja la elección entre las más reñidas de la historia reciente del país, con el candidato de derecha al frente y el de izquierda muy cerca.\n\nPara esta segunda vuelta, el dato cierra el margen de maniobra: con tan pocas mesas pendientes, la remontada de Cepeda se vuelve aritméticamente muy difícil, pero la estrechez del resultado condiciona desde ya la gobernabilidad del eventual ganador. Un mandato ganado por poco más de un punto obliga a De la Espriella a negociar en un país partido casi por mitades, y le da a Cepeda argumento para una observación rigurosa del escrutinio final.",
       "url": "https://www.europapress.es/internacional/noticia-espriella-506-impone-cepeda-478-presidenciales-colombia-resultados-parciales-20260621233447.html"
-    },
-    {
-      "ts": "2026-06-21T20:30:33.000Z",
-      "tipo": "hito",
-      "titulo": "OEA y MOE-UE avalan la jornada sin incidentes",
-      "detalle": "Las misiones de la OEA y de la Unión Europea entregan un primer balance positivo de la segunda vuelta, sin denuncias formales.",
-      "fuente": "OEA / MOE-UE",
-      "cuerpo": "Las dos principales misiones de observación electoral desplegadas en el país coincidieron en sus primeros balances de la jornada. La OEA destacó una votación sin incidentes ni denuncias formales, mientras la misión de la Unión Europea (MOE-UE) describió la elección como una 'fiesta democrática'. Ambos pronunciamientos llegan mientras la Registraduría sostiene el preconteo que ubica a De la Espriella en 50,33% frente al 48,04% de Cepeda, en una franja en que la atención se traslada del cómputo a la validez del proceso.\n\nPara esta segunda vuelta, el aval internacional tiene un efecto concreto: estrecha el espacio para cuestionar la limpieza del resultado en un escenario de margen apretado. La campaña de Cepeda anunció que ejercerá observación rigurosa sobre el escrutinio pendiente, pero el respaldo de OEA y UE eleva el costo político de cualquier impugnación de fondo y empuja hacia una transición ordenada con el ganador ya perfilado.",
-      "url": "https://www.abc.es/elecciones/generales/oea-destaca-jornada-electoral-incidentes-denuncias-formales-20260621223029-nt.html"
-    },
-    {
-      "ts": "2026-06-21T20:21:00.927Z",
-      "tipo": "evento",
-      "titulo": "La campaña de Cepeda anuncia que verificará el preconteo y el escrutinio",
-      "detalle": "El equipo del candidato del Pacto Histórico dice que ejercerá su derecho a auditar el conteo de votos.",
-      "fuente": "",
-      "cuerpo": "Tras votar en Bogotá, el entorno de Iván Cepeda comunicó que activará su derecho a verificar el preconteo y el escrutinio de la segunda vuelta, en una señal de que desplegará testigos para seguir de cerca cada fase del conteo. El anuncio llega el mismo día en que la autoridad electoral prometió un primer dato en menos de una hora y se suma al tono institucional con que el candidato se comprometió a reconocer el resultado.\n\nEl movimiento es defensivo más que de campaña: con la intención de voto seis puntos abajo, la prioridad de la izquierda pasa a ser blindar la transparencia del conteo antes que mover el sondeo. Para esta segunda vuelta implica que la fase de escrutinio será observada de cerca por ambas partes, lo que reduce el margen para disputas posteriores siempre que el preconteo fluya sin incidentes."
-    },
-    {
-      "ts": "2026-06-21T20:05:38.994Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 76% ▲ 85%",
-      "detalle": "La probabilidad no se mueve por datos electorales: sin boletín ni sondeos de salida, la intención sigue en 51-45 y las novedades del ciclo son operativas, no de tendencia.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -1042,6 +1049,11 @@
     },
     {
       "ts": "2026-06-22T13:57:55.512Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T14:59:42.419Z",
       "delaespriella": 60,
       "cepeda": 40
     }
