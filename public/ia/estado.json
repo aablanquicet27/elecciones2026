@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 118,
-    "generado": "2026-06-22T03:29:51.043Z",
-    "proxima_actualizacion": "2026-06-22T03:39:51.043Z",
+    "ciclo": 119,
+    "generado": "2026-06-22T03:45:24.274Z",
+    "proxima_actualizacion": "2026-06-22T03:55:24.274Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "De la Espriella ya habla como presidente electo y dedica su triunfo a Miguel Uribe Turbay.",
-    "resumen": "El único hecho genuinamente nuevo de las últimas horas es el discurso de victoria de De la Espriella, en el que dedicó el resultado a Miguel Uribe Turbay como homenaje. El resto de titulares recicla lo ya contado: el reconocimiento condicionado de Cepeda, la impugnación de 33.000 mesas y la queja de Petro sobre el software. La intención de voto sigue en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla.",
-    "que_cambio": "De la Espriella pasó de virtual ganador a pronunciar discurso de victoria y dedicarlo a Miguel Uribe Turbay; la intención de voto no se mueve porque el preconteo sigue igual de ajustado."
+    "titular": "Cepeda pierde por menos de un punto, pero deja un caudal récord de tres millones de votos.",
+    "resumen": "Lo nuevo de las últimas horas no cambia el resultado, sino su lectura: la participación marcó récord y Cepeda superó los tres millones de votos, fortaleciendo a la izquierda en regiones clave de cara a la oposición. En paralelo, el propio Cepeda fija su papel poselectoral al advertir que no permitirá que 'retrocedan las conquistas sociales'. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla.",
+    "que_cambio": "El resultado sigue igual de ajustado, pero aparece un dato nuevo: el récord de participación y el caudal de Cepeda reconfiguran la lectura del balotaje hacia el día después. La intención de voto no se mueve."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Presidente electo",
+      "momentum_label": "Triunfo en firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Preconteo a su favor con más del 98% escrutado",
-        "Tono de presidente electo y discurso de victoria",
-        "Respaldo simbólico al invocar a Miguel Uribe Turbay"
+        "Gana el balotaje y habla como presidente electo",
+        "Aval de OEA y MOE-UE a la jornada",
+        "Agenda de gobierno ya anunciada"
       ],
       "debilidades": [
-        "Margen de menos de un punto, sin mandato amplio",
-        "Resultado aún no oficializado por el escrutinio"
+        "Margen mínimo le resta mandato amplio",
+        "Enfrenta una oposición con tres millones de votos detrás"
       ],
       "riesgos": [
-        "Impugnación de 33.000 mesas que podría estrechar más la cifra",
-        "Cuestionamientos de Petro sobre el software del conteo"
+        "Impugnación de 33.000 mesas mantiene abierta la disputa del escrutinio",
+        "Polarización heredada de una elección partida en dos"
       ],
       "catalizadores": [
-        "Aval de OEA y MOE-UE a la jornada",
-        "Consolidación del preconteo en la franja final"
+        "Confirmación oficial del escrutinio",
+        "Transición ordenada y gestos de gobernabilidad"
       ]
     },
     {
@@ -55,24 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resiste en escrutinio",
+      "momentum_label": "Oposición en pie",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Diferencia mínima que mantiene viva la disputa",
-        "Base movilizada que no reconoce la derrota"
+        "Caudal récord de más de tres millones de votos",
+        "Mejora de la izquierda en regiones clave",
+        "Liderazgo natural de la oposición"
       ],
       "debilidades": [
-        "Queda abajo en el preconteo consolidado",
-        "Reconocimiento ya condicionado al escrutinio"
+        "Pierde el balotaje por menos de un punto",
+        "Reconocimiento condicionado debilita su posición jurídica"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la tendencia y cierre el margen de maniobra",
-        "Desgaste si la impugnación no altera el resultado"
+        "La impugnación de mesas puede leerse como desconocer el resultado",
+        "Desgaste si la verificación no altera el conteo"
       ],
       "catalizadores": [
-        "Revisión de las 33.000 mesas impugnadas",
-        "Eventual hallazgo de irregularidades en el escrutinio"
+        "Escrutinio definitivo de las 33.000 mesas",
+        "Capacidad de articular un bloque opositor cohesionado"
       ]
     }
   ],
@@ -83,18 +84,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Discurso De la Espriella (EL ESPECTADOR, EL PAÍS)",
-      "detalle": "Pronuncia discurso de victoria y dedica el triunfo a Miguel Uribe Turbay.",
+      "fuente": "Registraduría / preconteo",
+      "detalle": "Diferencia menor a un punto (49,77% vs 48,59%) con más del 98% escrutado, la más estrecha en 32 años.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Pacto Histórico / Cepeda",
-      "detalle": "Reconoce el preconteo pero insiste en que no es oficial ni vinculante y mantiene la impugnación.",
-      "favorece": "incierto"
+      "fuente": "Infobae",
+      "detalle": "Participación récord; Cepeda supera tres millones de votos y crece en regiones.",
+      "favorece": "cepeda"
     },
     {
-      "fuente": "Preconteo (más del 98%)",
-      "detalle": "Menos de un punto separa a los candidatos, la segunda vuelta más estrecha en 32 años.",
+      "fuente": "OEA / MOE-UE",
+      "detalle": "Avalan la jornada sin incidentes, lo que reduce margen a la impugnación.",
       "favorece": "delaespriella"
     }
   ],
@@ -117,6 +118,15 @@
       "cuerpo": "Con el preconteo prácticamente cerrado, la cobertura de las últimas horas trasladó el foco del dato electoral a su lectura geopolítica. Coberturas de LA NACION, Infobae y otros medios presentaron a Abelardo de la Espriella como presidente electo y describieron su victoria como un viraje hacia la derecha y el cierre del ciclo iniciado por Gustavo Petro, con repetidas referencias a su afinidad con la línea de Donald Trump. Es un marco interpretativo nuevo, distinto de los partes de escrutinio ya conocidos.\n\nPara la segunda vuelta, esta narrativa importa más por su efecto político que por el conteo: consolida internacionalmente la imagen de un ganador y presiona el terreno simbólico mientras la verificación oficial sigue su curso. No altera la intención de voto, que permanece en un empate técnico, pero anticipa el tono del eventual traspaso de mando y el escenario regional que enfrentaría un gobierno De la Espriella."
     },
     {
+      "ts": "2026-06-22T01:06:49.000Z",
+      "tipo": "hito",
+      "titulo": "Participación récord: Cepeda supera los tres millones de votos",
+      "detalle": "El balotaje marcó récord de participación y la izquierda creció en regiones clave pese a perder por menos de un punto.",
+      "fuente": "infobae.com",
+      "cuerpo": "La autoridad electoral confirmó que la segunda vuelta del 21 de junio registró una participación sin precedentes, y dentro de ese caudal Iván Cepeda superó los tres millones de votos, con un avance notable de la izquierda en regiones donde el Pacto Histórico no había tenido fuerza. El dato matiza la derrota: aunque De la Espriella se impuso por menos de un punto, Cepeda termina con una base electoral más amplia y territorialmente más extendida de lo que anticipaban los sondeos previos.\n\nPara esta segunda vuelta el número reordena el día después: De la Espriella gobernará con un mandato estrecho y enfrente a una oposición con respaldo masivo, mientras Cepeda queda en condición de articular y liderar ese bloque. La magnitud del voto opositor será el argumento de fondo tanto para la disputa del escrutinio como para el pulso político de los próximos meses.",
+      "url": "https://www.infobae.com/colombia/2026/06/22/record-de-participacion-en-las-elecciones-ivan-cepeda-sumo-mas-de-tres-millones-de-votos-y-fortalecio-su-presencia-en-regiones-clave/"
+    },
+    {
       "ts": "2026-06-22T00:26:10.000Z",
       "tipo": "hito",
       "titulo": "La segunda vuelta más estrecha de la historia de Colombia",
@@ -124,6 +134,15 @@
       "fuente": "EL NACIONAL / EL ESPECTADOR",
       "cuerpo": "Con más del 98% de las mesas escrutadas, el preconteo deja a Abelardo de la Espriella en 49,77% y a Iván Cepeda en 48,59%: poco más de un punto porcentual de distancia. Varios medios coinciden en encuadrar el dato no solo como una victoria ajustada, sino como la diferencia más estrecha de la que se tenga registro en una segunda vuelta presidencial colombiana. No es una cifra nueva —el cuadro numérico lleva horas sin moverse—, sino la lectura histórica que ese cuadro habilita una vez consolidado el conteo.\n\nLa relevancia es doble de cara al desenlace. Un margen tan delgado convierte cada mesa en potencialmente decisiva y da sustento político a la impugnación de 33.000 mesas que ya formalizó la campaña de Cepeda, porque en un resultado así una corrección acotada podría, en teoría, importar. Al mismo tiempo, estrecha el espacio del ganador: De la Espriella llegaría a la Presidencia sin un mandato holgado y con un país dividido casi por mitades, lo que anticipa una gobernabilidad tensa desde el primer día.",
       "url": "https://www.elnacional.com/2026/06/diferencia-en-segunda-vuelta-es-la-mas-estrecha-de-la-historia-segun-el-preconteo-menos-de-un-punto-porcentual-separo-a-de-la-espriella-y-cepeda/"
+    },
+    {
+      "ts": "2026-06-21T23:52:52.000Z",
+      "tipo": "evento",
+      "titulo": "Cepeda advierte que no dejará 'retroceder las conquistas sociales'",
+      "detalle": "El candidato de izquierda fija su papel poselectoral como líder de la oposición al nuevo gobierno.",
+      "fuente": "cnnchile.com",
+      "cuerpo": "Tras reconocer los resultados preliminares, Iván Cepeda dio un paso más allá del trámite electoral y anunció que no permitirá que 'retrocedan las conquistas sociales', delimitando así su agenda como jefe de la oposición. La declaración llega mientras su campaña insiste en llevar 33.000 mesas a escrutinio, combinando el reconocimiento del resultado con una posición de vigilancia política y jurídica frente al gobierno entrante.\n\nEl mensaje define el terreno de confrontación de la segunda vuelta hacia adelante: con un margen mínimo y un caudal de votos propio muy alto, Cepeda se posiciona para condicionar la gobernabilidad de De la Espriella en torno a programas sociales y reformas. Marca el tono de un cuatrienio que arranca polarizado, con la izquierda derrotada pero lejos de replegarse.",
+      "url": "https://www.cnnchile.com/mundo/elecciones-en-colombia-ivan-cepeda-candidato-de-izquierda-afirma-que-no-permitira-que-retrocedan-las-conquistas-sociales/"
     },
     {
       "ts": "2026-06-21T23:49:51.000Z",
@@ -328,21 +347,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 82% ▲ 83%",
       "detalle": "La probabilidad sube un punto porque Polymarket rebota de 81 a 83 implícito tras el bache del cierre; es un reacomodo de mercado, sin hecho de fondo nuevo.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T03:52:38.750Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella pone cifra a su expectativa de votos",
-      "detalle": "El candidato de derecha adelantó cuántos votos aspira a sumar este 21 de junio.",
-      "fuente": "",
-      "cuerpo": "Abelardo de la Espriella, candidato del bloque de derecha, hizo público el volumen de votos que espera obtener en la segunda vuelta de este domingo, un gesto inusual en plena jornada que combina confianza con cálculo de movilización. La declaración llega después de varios días en los que su campaña ha insistido en 'no bajar la guardia' y evitar el triunfalismo, lo que sugiere que poner una meta concreta busca tanto fijar una expectativa como empujar a los indecisos a las urnas.\n\nPara la segunda vuelta, anclar una cifra pública tiene doble filo: si la supera, refuerza la narrativa de mandato amplio; si se queda corto frente a su propio número, abre espacio para que la oposición relativice el resultado. En un escenario donde el margen real se mide en cientos de miles de votos, la apuesta de De la Espriella apunta a convertir su favoritismo en participación efectiva, justo el factor que el mercado aún no puede anticipar."
-    },
-    {
-      "ts": "2026-06-21T03:19:13.438Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 85% ▼ 82%",
-      "detalle": "La probabilidad bajó porque Polymarket recortó a De la Espriella hasta 81% implícito al abrir las urnas; lo suavizamos a 82 ponderando que las encuestas no se movieron.",
       "fuente": "Pulso IA"
     }
   ],
@@ -939,6 +943,11 @@
     },
     {
       "ts": "2026-06-22T03:29:51.043Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T03:45:24.274Z",
       "delaespriella": 57,
       "cepeda": 43
     }
