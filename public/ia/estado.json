@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 107,
-    "generado": "2026-06-22T00:50:48.684Z",
-    "proxima_actualizacion": "2026-06-22T01:00:48.684Z",
+    "ciclo": 108,
+    "generado": "2026-06-22T01:04:25.991Z",
+    "proxima_actualizacion": "2026-06-22T01:14:25.991Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Sin cifras nuevas: el cuadro sigue clavado y la batalla real es el escrutinio mesa a mesa.",
-    "resumen": "El preconteo se mantiene en 49,77% para De la Espriella frente a 48,59% de Cepeda, poco más de un punto de diferencia con el escrutinio casi completo. Los titulares de las últimas horas reiteran lo ya conocido: el resultado más estrecho del que se tenga registro, el reconocimiento preliminar de Cepeda y su impugnación de 33.000 mesas. No hay dato genuinamente nuevo que mueva la intención de voto, que permanece en 50-49. De la Espriella sigue siendo el favorito, sostenido por un margen frágil que ahora depende de la verificación voto a voto.",
-    "que_cambio": "Nada sustancial cambió: las cifras no se movieron y los titulares frescos repiten hechos ya incorporados a la línea de tiempo (margen histórico, impugnación de 33.000 mesas, reconocimiento preliminar). La intención de voto se mantiene en 50-49."
+    "titular": "Nada nuevo bajo el sol: el cuadro sigue clavado y todo se juega en el escrutinio.",
+    "resumen": "Los titulares de la última hora repiten lo ya incorporado a la línea de tiempo: el margen más estrecho de la historia, el reconocimiento preliminar de Cepeda con impugnación de 33.000 mesas y el preconteo de 49,77% frente a 48,59%. No hay dato genuinamente nuevo que mueva la intención de voto, que se mantiene en 50-49. De la Espriella conserva la condición de favorito por un margen mínimo que depende de la verificación voto a voto.",
+    "que_cambio": "No cambió nada sustancial: los titulares frescos reiteran hechos ya reportados (margen histórico, impugnación de 33.000 mesas, preconteo 49,77% vs 48,59%). La intención de voto permanece en 50-49."
   },
   "candidatos": [
     {
@@ -27,28 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Ventaja mínima",
+      "momentum_label": "Ventaja frágil",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Lidera el preconteo con más del 98% escrutado",
-        "Reconocimiento implícito del rival al hablar solo de impugnación",
-        "Cobertura internacional que lo presenta como presidente electo en el preconteo"
+        "Ventaja consolidada aunque por margen mínimo",
+        "Cierre de ciclo político del petrismo a su favor"
       ],
       "debilidades": [
-        "Margen inferior a un punto, sin colchón",
-        "Resultado sujeto a verificación voto a voto",
-        "Polarización que deja a la mitad del país en la oposición"
+        "Diferencia de poco más de un punto, sin colchón",
+        "Resultado expuesto a ajustes en el escrutinio oficial"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas puede alterar el resultado final",
-        "Eventuales hallazgos en el escrutinio detallado",
-        "Tensión institucional por las denuncias de irregularidades"
+        "Reversión parcial en la verificación de mesas impugnadas",
+        "Disputa jurídica prolongada que retrase la proclamación"
       ],
       "catalizadores": [
-        "Ratificación oficial del escrutinio por la Registraduría",
-        "Aval reiterado de los observadores internacionales",
-        "Cierre del conteo sin variaciones materiales"
+        "Confirmación del escrutinio oficial sin variación",
+        "Aval reiterado de observadores internacionales"
       ]
     },
     {
@@ -58,28 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Empate técnico",
+      "momentum_label": "A la espera",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Solo un punto por debajo, dentro del rango impugnable",
-        "Aparato de verificación desplegado sobre 33.000 mesas",
-        "Respaldo movilizado del Pacto Histórico y del Gobierno"
+        "Diferencia mínima que deja margen para la impugnación",
+        "Estructura para auditar mesa a mesa"
       ],
       "debilidades": [
-        "Va detrás en el preconteo consolidado",
-        "Reconocimiento preliminar que reduce el margen de maniobra política",
-        "Necesita revertir miles de mesas para cambiar el resultado"
+        "Reconocimiento preliminar de la derrota ya emitido",
+        "Necesita revertir un resultado, no solo empatar"
       ],
       "riesgos": [
-        "Que la impugnación no modifique el conteo y agote la vía",
-        "Desgaste si las denuncias no se sostienen con pruebas",
-        "Quedar sin relato tras el reconocimiento preliminar"
+        "Que el escrutinio confirme la tendencia del preconteo",
+        "Desgaste si la impugnación de 33.000 mesas no altera el cómputo"
       ],
       "catalizadores": [
-        "Hallazgos verificables en la revisión de mesas",
-        "Respaldo de la autoridad electoral a alguna reclamación",
-        "Movilización social en torno a la auditoría del escrutinio"
+        "Hallazgos materiales en la verificación de mesas",
+        "Inconsistencias documentadas que muevan el conteo oficial"
       ]
     }
   ],
@@ -90,19 +83,14 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "49,77% vs 48,59% con más del 98% escrutado, diferencia menor a un punto.",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "49,77% De la Espriella vs 48,59% Cepeda, sin variación frente al ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Reconocimiento preliminar del resultado e impugnación formal de 33.000 mesas.",
+      "fuente": "Titulares últimas horas",
+      "detalle": "Reiteran el resultado preliminar y la impugnación; no aportan hecho nuevo.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Prensa internacional",
-      "detalle": "Registra a De la Espriella como ganador del preconteo presidencial.",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -889,6 +877,11 @@
     },
     {
       "ts": "2026-06-22T00:50:48.684Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T01:04:25.991Z",
       "delaespriella": 57,
       "cepeda": 43
     }
