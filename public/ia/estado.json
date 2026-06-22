@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 121,
-    "generado": "2026-06-22T04:16:18.394Z",
-    "proxima_actualizacion": "2026-06-22T04:26:18.394Z",
+    "ciclo": 122,
+    "generado": "2026-06-22T04:27:05.508Z",
+    "proxima_actualizacion": "2026-06-22T04:37:05.508Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Sin novedad real: el cuadro sigue congelado en 50-49 mientras se abre el escrutinio.",
-    "resumen": "El ciclo no aporta hechos genuinamente nuevos. Todos los titulares de las últimas horas —el llamado a la unidad, la impugnación de las 33.000 mesas, el récord de participación de Cepeda, la lectura del 'software vulnerado' de Petro y los perfiles del ganador— ya están en la línea de tiempo. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla. La fase pasa del conteo al escrutinio formal, con la izquierda sin reconocer del todo y la derecha gestionando el día después.",
-    "que_cambio": "Nada sustantivo respecto al ciclo 120. La prensa repite y desarrolla los mismos hechos ya reportados; no hay evento nuevo que incorporar ni cifra que mover."
+    "titular": "Cepeda endurece el matiz: el preconteo 'no es oficial ni vinculante'",
+    "resumen": "El único hecho genuinamente nuevo del ciclo es el giro fino en el lenguaje de Cepeda, que ahora califica el preconteo como un dato no oficial ni vinculante, un paso más firme que su reconocimiento 'con observación' previo. El resto de titulares —unidad, perfil del ganador, récord de participación, reclamo de Petro por el software— ya estaba en la línea de tiempo. La intención de voto sigue en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla mientras la fase transita del conteo al escrutinio formal.",
+    "que_cambio": "Cambia el tono de la izquierda, no las cifras: Cepeda pasa de 'reconocer con observación' a marcar que el preconteo no obliga. La intención de voto queda igual porque no hay encuesta ni resultado nuevo que la altere."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Resultado del preconteo a su favor con más del 98% escrutado",
+        "Ventaja sostenida en preconteo (49,77% vs 48,59%)",
         "Aval de OEA y MOE-UE a la jornada",
-        "Iniciativa política: ya marca agenda de transición"
+        "Narrativa de triunfo ya instalada en prensa nacional e internacional"
       ],
       "debilidades": [
-        "Victoria por menos de un punto, sin mandato amplio",
-        "País dividido casi por la mitad"
+        "Margen mínimo que resta legitimidad al mandato",
+        "País partido en dos que obliga a gobernar con la mitad en contra"
       ],
       "riesgos": [
-        "Que el escrutinio formal de las 33.000 mesas estreche o revierta el margen",
-        "Escalada del relato de fraude que erosione su legitimidad de origen"
+        "Que la impugnación de 33.000 mesas erosione la imagen de victoria limpia",
+        "Tensión institucional si Petro insiste en el reclamo del software"
       ],
       "catalizadores": [
-        "Confirmación del escrutinio oficial por la Registraduría",
-        "Gestos de gobernabilidad que amplíen su base"
+        "Cierre del escrutinio que oficialice el resultado",
+        "Gestos de transición ordenada que consoliden la legitimidad"
       ]
     },
     {
@@ -55,25 +55,25 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resiste en escrutinio",
+      "momentum_label": "Resiste el preconteo",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Más de tres millones de votos y fuerte presencia regional",
-        "Margen mínimo que mantiene viva la disputa",
-        "Vía institucional abierta con la impugnación"
+        "Récord histórico de votación para la izquierda (más de 3 millones)",
+        "Base territorial fortalecida en regiones clave",
+        "Margen tan estrecho que mantiene viva la disputa"
       ],
       "debilidades": [
-        "Quedó debajo en el preconteo",
-        "Reconocimiento preliminar que le resta margen de maniobra"
+        "Va por debajo en todos los cortes del preconteo",
+        "Reconocimiento ambiguo que puede leerse como falta de cierre"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota sin variaciones",
-        "Desgaste si el relato de irregularidades no se sostiene con pruebas"
+        "Que la observación del escrutinio no altere el resultado y desgaste su capital político",
+        "Aislarse si el respaldo de Petro se percibe como deslegitimación"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación de mesas",
-        "Pronunciamientos de autoridad electoral sobre las denuncias"
+        "Hallazgos en las 33.000 mesas impugnadas",
+        "Diferencias en el escrutinio formal frente al preconteo"
       ]
     }
   ],
@@ -84,22 +84,31 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "49,77% vs 48,59%, diferencia inferior a un punto.",
+      "fuente": "Preconteo Registraduría",
+      "detalle": "49,77% vs 48,59% con más del 98% procesado, sin cambios",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Impugnación Pacto Histórico",
-      "detalle": "33.000 mesas llevadas a escrutinio con reconocimiento preliminar.",
-      "favorece": "cepeda"
+      "fuente": "Declaración de Cepeda (hace <1h)",
+      "detalle": "Califica el preconteo como dato 'no oficial ni vinculante', a la espera del escrutinio",
+      "favorece": "incierto"
     },
     {
       "fuente": "Misiones de observación (OEA, MOE-UE)",
-      "detalle": "Avalan la jornada sin incidentes mayores.",
+      "detalle": "Jornada avalada sin incidentes, lo que limita el margen de la impugnación",
       "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T04:11:06.000Z",
+      "tipo": "evento",
+      "titulo": "Cepeda dice que el preconteo 'no es oficial ni vinculante'",
+      "detalle": "El candidato del Pacto Histórico marca distancia del corte preliminar y condiciona cualquier lectura al escrutinio formal.",
+      "fuente": "Iván Cepeda (declaración, hace <1h)",
+      "cuerpo": "Iván Cepeda precisó que su campaña reconoce el preconteo únicamente como un dato que todavía no es oficial ni vinculante, un paso más cauteloso que su anuncio previo de aceptar el resultado con observación rigurosa. La afirmación llega mientras la fase electoral transita del conteo rápido al escrutinio formal, el único proceso que la autoridad electoral considera definitivo, y se suma a la impugnación de 33.000 mesas ya presentada por su equipo.\n\nEl matiz importa porque define cómo se cerrará la segunda vuelta más estrecha en 32 años. Cepeda evita avalar el corte que da ganador a De la Espriella sin desconocerlo abiertamente, y deja abierta la puerta a que el escrutinio detallado modifique cifras en un margen mínimo. Para De la Espriella, virtual presidente electo, supone gestionar la transición con una izquierda que reconoce los números pero no los da por cerrados.",
+      "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/el-preconteo-lo-reconocemos-como-un-dato-que-aun-no-es-oficial-ni-vinculante-ivan-cepeda-3566018"
+    },
     {
       "ts": "2026-06-22T03:45:37.000Z",
       "tipo": "evento",
@@ -342,13 +351,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 77% ▼ 76%",
       "detalle": "La probabilidad no se mueve: no hay hechos nuevos y la intención de voto se mantiene en 52-45; el leve descenso del mercado es ruido y no entra al cálculo.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T04:14:12.692Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 83% ▼ 77%",
-      "detalle": "No se movió nada relevante: no hay hechos nuevos respecto a lo ya reportado y la referencia de mercado quedó casi plana, así que mantenemos la intención de voto y el balance del ciclo anterior.",
       "fuente": "Pulso IA"
     }
   ],
@@ -960,6 +962,11 @@
     },
     {
       "ts": "2026-06-22T04:16:18.394Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T04:27:05.508Z",
       "delaespriella": 57,
       "cepeda": 43
     }
