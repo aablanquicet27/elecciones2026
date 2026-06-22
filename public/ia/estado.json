@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 123,
-    "generado": "2026-06-22T04:42:23.676Z",
-    "proxima_actualizacion": "2026-06-22T04:52:23.676Z",
+    "ciclo": 124,
+    "generado": "2026-06-22T04:58:09.454Z",
+    "proxima_actualizacion": "2026-06-22T05:08:09.454Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "El margen final del preconteo: De la Espriella gana por 247.000 votos",
-    "resumen": "El único dato genuinamente nuevo del ciclo es la cifra exacta del margen: el preconteo cierra con De la Espriella arriba por unos 247.000 votos, una diferencia ajustada que pone número a la 'segunda vuelta más estrecha de la historia'. Confirma el resultado preliminar sin alterar el cuadro: la intención de voto se mantiene en 50-49 y la fase sigue transitando del conteo al escrutinio formal, donde Cepeda mantiene vivas las 33.000 mesas impugnadas. No hay encuesta ni resultado oficial nuevo que justifique mover las cifras.",
-    "que_cambio": "Se conoce el margen numérico final del preconteo (≈247.000 votos), que cuantifica lo estrecho del resultado pero no cambia al ganador preliminar ni la intención de voto."
+    "titular": "De la Espriella habla como presidente electo: promete gobierno 'democrático' y advierte a Cepeda",
+    "resumen": "Lo nuevo del ciclo es el primer discurso de fondo de De la Espriella ya como presidente electo, desde Barranquilla, donde mezcla un mensaje institucional ('un gobierno absolutamente democrático') con un tono de advertencia directa hacia Cepeda. No hay encuesta ni dato oficial nuevo: la intención de voto sigue en 50-49 y la fase continúa en el tránsito del preconteo al escrutinio, con las 33.000 mesas impugnadas todavía en juego. El cuadro de fondo no se mueve; lo que cambia es el tono del ganador preliminar.",
+    "que_cambio": "No cambió la intención de voto ni el resultado preliminar; lo nuevo es el contenido y el tono del primer discurso de De la Espriella como presidente electo (institucional pero con advertencia a Cepeda)."
   },
   "candidatos": [
     {
@@ -27,26 +27,26 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Triunfo consolidado",
+      "momentum_label": "Presidente electo",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja preliminar confirmada en el preconteo",
-        "Ya ejerce como presidente electo en lo discursivo",
-        "Aval de OEA y MOE-UE a la jornada"
+        "Ventaja preliminar de ≈247.000 votos consolidada",
+        "Aval de OEA y MOE-UE a la jornada",
+        "Iniciativa política: ya actúa como presidente electo"
       ],
       "debilidades": [
-        "Margen estrechísimo de apenas 247.000 votos",
-        "País partido en dos que deberá gobernar",
-        "Legitimidad sujeta al cierre del escrutinio formal"
+        "Margen estrecho que resta legitimidad de mandato amplio",
+        "Tono confrontacional erosiona el mensaje de unidad",
+        "Depende de que el escrutinio confirme el preconteo"
       ],
       "riesgos": [
-        "Que el escrutinio de mesas impugnadas estreche aún más la diferencia",
-        "Tensión institucional si Petro insiste en irregularidades del software"
+        "Las 33.000 mesas impugnadas podrían estrechar aún más la diferencia",
+        "Una transición agria con la izquierda en la calle"
       ],
       "catalizadores": [
-        "Declaración oficial del escrutinio que ratifique el preconteo",
-        "Reconocimiento pleno de Cepeda"
+        "Confirmación oficial del escrutinio",
+        "Reconocimiento internacional como presidente electo"
       ]
     },
     {
@@ -60,22 +60,21 @@
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Diferencia mínima que alimenta la impugnación",
-        "Récord de votos propios (más de tres millones)",
-        "Base regional sólida"
+        "Más de tres millones de votos y fuerte presencia regional",
+        "Vía abierta en el escrutinio formal",
+        "Base movilizada que no reconoce la derrota"
       ],
       "debilidades": [
-        "Va por debajo en el preconteo",
-        "Sin datos nuevos que reviertan la tendencia",
-        "Carga de probar irregularidades en 33.000 mesas"
+        "Va abajo en el preconteo con más del 98% procesado",
+        "Margen difícil de revertir solo con impugnaciones"
       ],
       "riesgos": [
-        "Que el escrutinio confirme el margen y cierre la vía de impugnación",
-        "Desgaste si la resistencia a reconocer se prolonga sin pruebas"
+        "Que el escrutinio ratifique el resultado y cierre la ventana",
+        "Quedar como oposición sin músculo institucional"
       ],
       "catalizadores": [
-        "Hallazgos verificables en el escrutinio de las mesas reclamadas",
-        "Respaldo de la autoridad electoral a alguna inconsistencia"
+        "Hallazgos en las mesas impugnadas",
+        "Irregularidades que validen su observación rigurosa"
       ]
     }
   ],
@@ -86,22 +85,30 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría (preconteo)",
-      "detalle": "Diferencia final de ≈247.000 votos a favor de De la Espriella",
+      "fuente": "Discurso en Barranquilla (Ventana al Mundo)",
+      "detalle": "De la Espriella se proclama presidente electo y promete un gobierno 'absolutamente democrático'",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Mantiene la impugnación de 33.000 mesas a la espera del escrutinio",
-      "favorece": "cepeda"
+      "fuente": "Cobertura de prensa (hace 2h)",
+      "detalle": "El primer discurso incluye advertencias directas hacia Cepeda, marcando un tono confrontacional",
+      "favorece": "incierto"
     },
     {
-      "fuente": "Fase del proceso",
-      "detalle": "El escrutinio formal aún puede ajustar cifras, pero rara vez revierte márgenes de este tamaño",
+      "fuente": "Estado del proceso",
+      "detalle": "Sigue pendiente el escrutinio formal con 33.000 mesas impugnadas por la campaña de Cepeda",
       "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T04:58:07.458Z",
+      "tipo": "alerta",
+      "titulo": "Tono de advertencia hacia Cepeda en el primer discurso del presidente electo",
+      "detalle": "El mensaje inaugural de De la Espriella incluyó señalamientos directos a Cepeda, en pleno proceso de impugnaciones.",
+      "fuente": "Cobertura de prensa (hace 2h)",
+      "cuerpo": "Junto al mensaje de gobierno 'democrático', el primer discurso de De la Espriella incorporó advertencias dirigidas explícitamente a Iván Cepeda, según la cobertura de las últimas horas. La intervención llega justo cuando la campaña de la izquierda no reconoce la derrota y mantiene impugnadas alrededor de 33.000 mesas a la espera del escrutinio formal.\n\nEsa combinación —proclamarse presidente electo mientras se confronta al rival que aún disputa el resultado— anticipa una transición tensa más que conciliadora. Para la segunda vuelta, eleva el riesgo de que el tramo del escrutinio se viva en clave de pulso político y no solo técnico, con ambos bandos buscando fijar el relato antes de que la autoridad electoral cierre oficialmente el conteo."
+    },
     {
       "ts": "2026-06-22T04:20:00.000Z",
       "tipo": "hito",
@@ -137,6 +144,15 @@
       "fuente": "EL ESPECTADOR / EL PAÍS",
       "cuerpo": "De la Espriella tomó la palabra ante sus seguidores para hablar por primera vez como presidente electo, una vez que el preconteo lo dejó arriba con más del 98% de las mesas. En su intervención dedicó la victoria a Miguel Uribe Turbay, presentándola como un homenaje y anclando su triunfo en la figura que la derecha colombiana convirtió en símbolo durante la campaña. Es el primer pronunciamiento formal del candidato tras consolidarse el resultado preliminar.\n\nEl gesto fija el marco político con el que De la Espriella pretende gobernar: apela a la memoria y a la cohesión de su electorado más duro en lugar de tender puentes hacia el casi medio país que votó por Cepeda. En una segunda vuelta decidida por menos de un punto, asumir el tono de presidente electo antes de que concluya el escrutinio refuerza su narrativa de legitimidad, pero también tensa el ambiente mientras el Pacto Histórico mantiene viva la impugnación de 33.000 mesas.",
       "url": "https://www.eltiempo.com/politica/elecciones-colombia-2026/presidente-electo-abelardo-de-la-espriella-dedico-victoria-en-el-preconteo-de-elecciones-2026-a-miguel-uribe-turbay-esta-victoria-es-un-homenaje-3566011"
+    },
+    {
+      "ts": "2026-06-22T01:57:00.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella habla por primera vez como presidente electo desde Barranquilla",
+      "detalle": "En la Ventana al Mundo, se presenta como mandatario electo y promete 'un gobierno absolutamente democrático'.",
+      "fuente": "Infobae / Canal 1",
+      "cuerpo": "De la Espriella pronunció en Barranquilla, frente al monumento Ventana al Mundo, su primera intervención de fondo ya en condición de presidente electo, tras un preconteo que lo dejó arriba por unos 247.000 votos. En ese discurso se presentó con su apodo de campaña ('Aquí está tu Tigre') y buscó proyectar un perfil institucional, asegurando que el suyo será 'un gobierno absolutamente democrático', un giro de tono respecto a la retórica más dura de la recta final.\n\nEl gesto busca capitalizar la ventaja preliminar y empezar a construir legitimidad de transición antes de que el escrutinio formal entregue el resultado oficial. Pero el mensaje de moderación convive con un margen estrecho y con una contienda aún no cerrada en lo institucional, de modo que su capacidad de gobernar dependerá tanto de la confirmación del conteo como de cuánto logre tender puentes con una mitad del país que votó por Cepeda.",
+      "url": "https://www.infobae.com/colombia/2026/06/22/abelardo-de-la-espriella-desde-la-ventana-al-mundo-en-barranquilla-hablo-por-primera-vez-como-presidente-electo-aqui-esta-tu-tigre/"
     },
     {
       "ts": "2026-06-22T01:35:43.111Z",
@@ -339,23 +355,6 @@
       "titulo": "Día de la elección",
       "detalle": "Abren las urnas a las 8:00 a.m. y cierran a las 4:00 p.m. ~41,4M de colombianos habilitados eligen al sucesor de Petro.",
       "fuente": "Registraduría"
-    },
-    {
-      "ts": "2026-06-21T12:59:25.000Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella declara objetivo militar a 'Calarcá' y a 'Mordisco'",
-      "detalle": "El candidato endurece su discurso de seguridad y señala a cabecillas armados como objetivo militar el mismo día de la elección.",
-      "fuente": "pulzo.com",
-      "cuerpo": "En plena jornada electoral, De la Espriella elevó el tono de su eje de seguridad al declarar objetivo militar a los cabecillas conocidos como 'Calarcá' y 'Mordisco', en línea con el discurso de mano dura y apelación a la Fuerza Pública que ha marcado su tramo final de campaña. El mensaje refuerza el contraste central de esta segunda vuelta entre su promesa de orden y el llamado de Cepeda a 'votar por la vida' frente al 'pasado de violencia'.\n\nLa apuesta consolida a su base más dura y mantiene el marco de seguridad como tema dominante del día, pero también tensiona el espacio de los votantes moderados e indecisos que el propio candidato ha pedido movilizar. En una contienda decidida por un margen estrecho, cada gesto que active o aleje a ese electorado de centro puede pesar más que el discurso dirigido a los convencidos.",
-      "url": "https://www.pulzo.com/elecciones-colombia-2026/abelardo-espriella-declaro-objetivo-militar-calarca-mordisco-PP5222619"
-    },
-    {
-      "ts": "2026-06-21T06:07:48.530Z",
-      "tipo": "hito",
-      "titulo": "Abren las mesas y el primer parte de orden público transcurre sin incidentes mayores",
-      "detalle": "La votación de la segunda vuelta arranca con la apertura de mesas y un reporte inicial de tranquilidad.",
-      "fuente": "",
-      "cuerpo": "La jornada del balotaje entró en su fase operativa con la apertura de mesas en todo el país y un primer reporte de orden público que no registra incidentes de gravedad. El arranque sigue al despliegue de observadores, a las reglas ya fijadas para la jornada —ley seca, horarios y tarjetón— y al refuerzo de seguridad anunciado en los días previos. Ambas campañas habían cerrado su mensaje el sábado: De la Espriella sobre seguridad y resultados, y Cepeda con su llamado a 'defender la vida'.\n\nCon las urnas abiertas, el eje deja de ser el discurso y pasa a la participación. La ventaja de 51-45 favorece a De la Espriella, pero el margen real es estrecho y depende de cuántos indecisos acudan y hacia dónde se inclinen. Una jornada tranquila tiende a consolidar al favorito; cualquier pico de abstención en su bloque o una movilización excepcional del electorado de Cepeda son las dos variables capaces de estrechar la diferencia en el conteo final."
     }
   ],
   "historico": [
@@ -976,6 +975,11 @@
     },
     {
       "ts": "2026-06-22T04:42:23.676Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T04:58:09.454Z",
       "delaespriella": 57,
       "cepeda": 43
     }
