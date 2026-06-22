@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 126,
-    "generado": "2026-06-22T05:59:51.415Z",
-    "proxima_actualizacion": "2026-06-22T06:29:51.415Z",
+    "ciclo": 127,
+    "generado": "2026-06-22T06:31:09.239Z",
+    "proxima_actualizacion": "2026-06-22T07:01:09.239Z",
     "cadencia_min": 30,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 54,
     "confianza": "Alta",
-    "titular": "Sin novedad real: el cuadro sigue clavado en el 50-49 a la espera del escrutinio oficial",
-    "resumen": "Este ciclo no aporta hechos genuinamente nuevos. Los titulares de las últimas horas reciclan lo ya consignado: la apretada victoria de De la Espriella en el preconteo, el reconocimiento condicionado de Cepeda y la impugnación de 33.000 mesas. La intención de voto se mantiene en 50-49 y la fase sigue en el tránsito del preconteo al escrutinio. El mercado de apuestas (referencia, no insumo) ya da la elección por cerrada, pero la diferencia real de poco más de un punto deja el desenlace formal abierto hasta que la autoridad electoral resuelva las mesas reclamadas.",
-    "que_cambio": "No cambió nada sustantivo respecto al ciclo 125: la intención de voto, el resultado preliminar y la fase siguen iguales. No hay eventos nuevos que reportar."
+    "titular": "Otro ciclo sin hechos nuevos: el cuadro sigue clavado en el 50-49 mientras se pasa al escrutinio",
+    "resumen": "Los titulares de las últimas horas no aportan nada genuinamente nuevo: reciclan la apretada victoria de De la Espriella en el preconteo, el reconocimiento condicionado de Cepeda y la impugnación de 33.000 mesas, todos ya consignados en la línea de tiempo. La intención de voto se mantiene en 50-49 y la fase sigue en el tránsito del preconteo al escrutinio oficial. El mercado de apuestas (referencia, no insumo) da la elección por liquidada, pero la diferencia real de poco más de un punto deja el desenlace formal pendiente de cómo resuelva la autoridad electoral las mesas reclamadas.",
+    "que_cambio": "No cambió nada sustantivo respecto al ciclo 126: intención de voto, resultado preliminar y fase siguen iguales. Los titulares frescos son notas de análisis y perfiles que reproducen hechos ya reportados."
   },
   "candidatos": [
     {
@@ -27,26 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 54,
       "momentum": "steady",
-      "momentum_label": "Ganador confirmado",
+      "momentum_label": "Triunfo en firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Gana el preconteo con margen de unos 247.000 votos y más del 98% escrutado",
-        "Discurso de presidente electo y agenda de gobierno ya anunciada (90 decretos para el primer día)",
-        "Lectura internacional como giro a la derecha y fin del ciclo Petro"
+        "Gana el preconteo con más del 98% escrutado",
+        "Reconocimiento internacional como presidente electo",
+        "Margen consolidado de ~247.000 votos"
       ],
       "debilidades": [
-        "Margen mínimo, el más estrecho en 32 años, que le resta capital político",
-        "Resultado aún no oficializado mientras siguen las impugnaciones",
-        "País partido en dos que dificulta la gobernabilidad"
+        "Victoria por la mínima, sin mandato amplio",
+        "País partido en dos mitades casi iguales"
       ],
       "riesgos": [
-        "Que el escrutinio de las 33.000 mesas reclamadas altere o estreche el margen",
-        "Que la oposición y Petro deslegitimen el resultado antes de la declaratoria"
+        "Las 33.000 mesas impugnadas podrían estrechar aún más la cifra",
+        "Que el escrutinio oficial tarde y mantenga abierta la disputa"
       ],
       "catalizadores": [
-        "Declaratoria oficial de la autoridad electoral",
-        "Aval pleno de las misiones de observación al escrutinio final"
+        "Validación final del escrutinio por la Registraduría",
+        "Aval de OEA y misiones de observación a la jornada"
       ]
     },
     {
@@ -56,25 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 46,
       "momentum": "steady",
-      "momentum_label": "A la espera",
+      "momentum_label": "A la espera del escrutinio",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Supera los tres millones de votos con participación récord",
-        "Mantiene la vía institucional con reconocimiento bajo observación",
-        "Base social movilizada que sostiene a la izquierda como fuerza competitiva"
+        "Participación récord con más de tres millones de votos",
+        "Reconoce el preliminar pero conserva la vía institucional abierta"
       ],
       "debilidades": [
-        "Queda detrás en el preconteo consolidado",
-        "La impugnación de 33.000 mesas tiene baja probabilidad de revertir el margen"
+        "Va por debajo en el preconteo consolidado",
+        "Reconocimiento que enfría el margen de remontada"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota y agote el margen de reclamación",
-        "Desgaste si la disputa se lee como no aceptación del resultado"
+        "Que el escrutinio confirme y amplíe la derrota",
+        "Desgaste si la impugnación no mueve la aguja"
       ],
       "catalizadores": [
-        "Hallazgos relevantes en las mesas impugnadas",
-        "Resolución de la autoridad electoral sobre las reclamaciones"
+        "Hallazgos en la revisión de las 33.000 mesas",
+        "Denuncias de irregularidades respaldadas por la autoridad"
       ]
     }
   ],
@@ -85,23 +83,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "De la Espriella 49,77% vs Cepeda 48,59% con más del 98% escrutado; margen de ~247.000 votos",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "49,77% vs 48,59%, margen de ~247.000 votos a favor de De la Espriella",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Pacto Histórico",
-      "detalle": "Cepeda reconoce el preliminar pero lo declara 'no oficial ni vinculante' e impugna 33.000 mesas",
+      "fuente": "Pacto Histórico",
+      "detalle": "Cepeda reconoce el preliminar pero impugna 33.000 mesas a escrutinio",
       "favorece": "incierto"
     },
     {
-      "fuente": "Misiones de observación (OEA, MOE-UE)",
-      "detalle": "Avalan la jornada sin incidentes, lo que reduce el margen para revertir el resultado",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Prensa internacional",
-      "detalle": "Leen el resultado como giro a la derecha y fin del ciclo Petro",
+      "fuente": "Misiones de observación (OEA / MOE-UE)",
+      "detalle": "Avalan la jornada sin incidentes mayores",
       "favorece": "delaespriella"
     }
   ],
@@ -995,6 +988,11 @@
     },
     {
       "ts": "2026-06-22T05:59:51.415Z",
+      "delaespriella": 54,
+      "cepeda": 46
+    },
+    {
+      "ts": "2026-06-22T06:31:09.239Z",
       "delaespriella": 54,
       "cepeda": 46
     }
