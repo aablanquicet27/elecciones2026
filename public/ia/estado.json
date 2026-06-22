@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 138,
-    "generado": "2026-06-22T14:59:42.419Z",
-    "proxima_actualizacion": "2026-06-22T15:59:42.419Z",
+    "ciclo": 139,
+    "generado": "2026-06-22T16:03:13.443Z",
+    "proxima_actualizacion": "2026-06-22T17:03:13.443Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "El resultado no se mueve, pero la disputa poselectoral se enciende por las mesas y el voto en el exterior",
-    "resumen": "La intención de voto sigue clavada en 50-49 y el preconteo al 100% no deja margen a sorpresa numérica. Lo nuevo de las últimas horas no está en las cifras sino en el terreno político: el Centro Democrático y el petrismo abren frentes sobre presunta intimidación en mesas y manipulación del voto en el exterior, mientras analistas recuerdan que en la historia del país el escrutinio nunca ha revertido un preconteo. La batalla ya no es por los votos contados, sino por la legitimidad del conteo.",
-    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el clima poselectoral: aparecen denuncias nuevas y específicas —intimidación armada en mesas donde Cepeda barrió y presunta manipulación del voto exterior— que tensan la transición sin alterar el resultado."
+    "titular": "Cepeda endurece el tono y el petrismo convierte la derrota en una batalla jurídica",
+    "resumen": "La intención de voto sigue inamovible en 50-49 y el preconteo cerrado al 100% no admite sorpresa numérica. Lo nuevo está en el guion poselectoral: Cepeda pasa del reconocimiento con observación a un desafío frontal —'no nos asustan sus alaridos'— mientras su entorno estructura una ofensiva jurídica para forzar la revisión del escrutinio. En paralelo, empiezan a leerse las propuestas de gobierno del presidente electo, que marcan el giro de fondo del nuevo mandato.",
+    "que_cambio": "No se movió la intención de voto (50-49) ni la fase de cierre. Cambia el clima: Cepeda sube el tono contra De la Espriella y el petrismo articula una estrategia jurídica coordinada, más allá de la impugnación ya anunciada."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 60,
       "momentum": "steady",
-      "momentum_label": "Triunfo en firme",
+      "momentum_label": "Triunfo consolidado",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Triunfo confirmado con el 100% del preconteo",
-        "Discurso de unidad ya instalado",
-        "Aval de OEA y MOE-UE a la jornada"
+        "Preconteo cerrado al 100% a su favor",
+        "Margen confirmado de casi 249.000 votos",
+        "Antecedente histórico: el escrutinio nunca ha revertido un preconteo"
       ],
       "debilidades": [
-        "Margen inferior al 1% que alimenta cuestionamientos",
-        "Legitimidad disputada por el oficialismo saliente"
+        "Triunfo por menos del 1% sin mandato amplio",
+        "País partido en dos mitades casi iguales"
       ],
       "riesgos": [
-        "Que la fase de escrutinio e impugnaciones erosione el clima de transición",
-        "Movilización de calle contra el presidente electo"
+        "Que la ofensiva jurídica del petrismo erosione la legitimidad de la transición",
+        "Propuestas de choque (dolarización, bases de EEUU, megacárceles) que polaricen antes de posesionarse"
       ],
       "catalizadores": [
-        "Cierre del escrutinio oficial sin cambios",
-        "Anuncios de gabinete y agenda de empalme"
+        "Aval del CNE a la inviabilidad de las impugnaciones",
+        "Respaldo internacional al resultado"
       ]
     },
     {
@@ -55,24 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 40,
       "momentum": "steady",
-      "momentum_label": "Ruta de impugnación",
+      "momentum_label": "Resistencia jurídica",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Más de tres millones de votos y derrota por margen mínimo",
-        "Base territorial sólida en varias regiones"
+        "Más de tres millones de votos y una base movilizada",
+        "Narrativa de irregularidades que cohesiona al petrismo"
       ],
       "debilidades": [
-        "Resultado preliminar adverso ya reconocido",
-        "Dependencia de impugnaciones sin precedente de éxito histórico"
+        "Derrota numérica confirmada y sin margen real de reversión",
+        "Carga de la prueba sobre 33.000 mesas impugnadas"
       ],
       "riesgos": [
-        "Que las impugnaciones de 33.000 mesas no prosperen y desgasten su capital político",
-        "Quedar atado al relato de fraude del presidente saliente"
+        "Quedar atrapado entre el reconocimiento institucional y la presión de las bases",
+        "Desgaste si las impugnaciones resultan no tramitables"
       ],
       "catalizadores": [
-        "Hallazgos verificables en la auditoría del escrutinio",
-        "Cohesión del Pacto Histórico como oposición"
+        "Que el CNE admita parte de las impugnaciones",
+        "Movilización social sostenida en las calles"
       ]
     }
   ],
@@ -83,27 +83,36 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Centro Democrático",
-      "detalle": "Denuncia de presunta intimidación armada en mesas donde Cepeda ganó por barrido",
+      "fuente": "Preconteo (100%)",
+      "detalle": "Diferencia final inferior al 1%, cerca de 249.000 votos a favor de De la Espriella",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "CNE",
+      "detalle": "El presidente del organismo dice esperar las impugnaciones 'para ver cuáles son tramitables'",
       "favorece": "incierto"
     },
     {
-      "fuente": "Gustavo Petro",
-      "detalle": "Cuestiona la legitimidad del triunfo y apunta a presunta manipulación del voto en el exterior",
+      "fuente": "Análisis histórico (El Heraldo)",
+      "detalle": "El escrutinio nunca ha revertido un preconteo en la historia del país",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Declaraciones de Cepeda",
+      "detalle": "Sube el tono frente a De la Espriella y mantiene la ruta jurídica",
       "favorece": "cepeda"
-    },
-    {
-      "fuente": "Análisis electoral (El Heraldo)",
-      "detalle": "En la historia del país el escrutinio nunca ha revertido el resultado de un preconteo",
-      "favorece": "delaespriella"
-    },
-    {
-      "fuente": "Infobae",
-      "detalle": "Con el 100% del preconteo, la diferencia se confirma en menos del 1%",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T15:49:13.000Z",
+      "tipo": "evento",
+      "titulo": "Cepeda responde con dureza: 'No nos asustan sus alaridos'",
+      "detalle": "El candidato derrotado endurece el tono contra De la Espriella y pide calma a sus bases mientras insiste en revisar los escrutinios.",
+      "fuente": "efe.com",
+      "cuerpo": "Iván Cepeda salió a fijar posición horas después de confirmarse el cierre del preconteo y dejó un mensaje directo al presidente electo: 'no nos asustan sus alaridos'. El senador combinó el desafío con un llamado a la calma de sus seguidores y reiteró que su atención está puesta en la etapa de escrutinio, no en la del conteo rápido. El gesto marca un paso más allá del reconocimiento con observación que había anunciado al cierre de la jornada.\n\nEl cambio de tono importa porque define cómo se comportará la oposición durante la transición. Cepeda evita validar de plano el triunfo y se posiciona como contrapeso institucional y de calle, lo que tensa el clima sin alterar el resultado. Para De la Espriella implica que deberá construir su llegada al poder con una mitad del país en abierta resistencia.",
+      "url": "https://efe.com/mundo/2026-06-22/colombia-elecciones-cepeda-responde-de-la-espriella-presidente/"
+    },
     {
       "ts": "2026-06-22T14:59:39.424Z",
       "tipo": "hito",
@@ -122,6 +131,15 @@
       "url": "https://www.semana.com/politica/articulo/todo-apunta-a-fusil-el-centro-democratico-encendio-las-alarmas-en-sitios-de-votacion-donde-ivan-cepeda-gano-en-todas-las-mesas/202604/"
     },
     {
+      "ts": "2026-06-22T13:27:50.000Z",
+      "tipo": "alerta",
+      "titulo": "El petrismo activa una ofensiva jurídica para revisar el escrutinio",
+      "detalle": "Más allá de la impugnación de mesas, el entorno de Cepeda estructura una estrategia legal coordinada para intentar mover el resultado en el escrutinio.",
+      "fuente": "semana.com",
+      "cuerpo": "El sector afín al presidente Petro empezó a articular una ofensiva jurídica formal que va más allá del anuncio inicial de impugnar 33.000 mesas. La apuesta es concentrar la disputa en la fase de escrutinio —la única con efectos oficiales— mientras el presidente del CNE advierte que primero habrá que establecer cuáles de esas impugnaciones son tramitables. Es el paso de la denuncia política a la litigación electoral.\n\nLa maniobra tiene un techo claro: ningún escrutinio en la historia del país ha revertido un preconteo, y el margen, aunque estrecho, supera los 248.000 votos. Su efecto real no es numérico sino de legitimidad: prolonga la incertidumbre, mantiene movilizada a la base y obliga al presidente electo a gobernar la transición bajo sospecha permanente sobre el origen de su victoria.",
+      "url": "https://www.semana.com/politica/articulo/la-batalla-por-el-resultado-de-la-segunda-vuelta-el-petrismo-activa-su-ofensiva-juridica-para-intentar-revertir-la-eleccion/202650/"
+    },
+    {
       "ts": "2026-06-22T13:11:47.010Z",
       "tipo": "evento",
       "titulo": "De la Espriella envía mensajes directos a Petro y a Cepeda",
@@ -129,6 +147,15 @@
       "fuente": "Medios nacionales",
       "cuerpo": "Tras consolidarse el resultado, De la Espriella difundió mensajes dirigidos específicamente al presidente Gustavo Petro y al derrotado Iván Cepeda, en un movimiento que busca marcar el inicio del relevo de poder. El gesto interpela tanto al Gobierno saliente, con el que mantuvo fuertes choques en campaña, como al adversario que reconoció el preconteo pero dejó observaciones sobre el escrutinio.\n\nLa señal es de transición ordenada y a la vez de delimitación de campo: De la Espriella intenta proyectar normalidad institucional mientras define los términos de su relación con un Petro que denunció irregularidades en el conteo. El tono de estos intercambios anticipa cómo será la convivencia entre el nuevo Ejecutivo y una oposición de izquierda que conserva la Presidencia hasta el empalme.",
       "url": "https://www.noticiascaracol.com/politica/elecciones-colombia/los-mensajes-de-abelardo-de-la-espriella-a-petro-y-a-cepeda-tras-ganar-la-segunda-vuelta-rg10"
+    },
+    {
+      "ts": "2026-06-22T13:09:19.000Z",
+      "tipo": "evento",
+      "titulo": "Las propuestas de fondo del presidente electo empiezan a leerse",
+      "detalle": "Bases militares de EEUU, megacárceles y dolarización perfilan el giro del nuevo mandato y abren el debate sobre el modelo de gobierno.",
+      "fuente": "france24.com",
+      "cuerpo": "Con el resultado prácticamente sellado, la atención empieza a desplazarse hacia el programa de De la Espriella, que incluye banderas como la instalación de bases militares de Estados Unidos, la construcción de megacárceles y una eventual dolarización de la economía. Son propuestas que condensan un giro a la derecha en seguridad, política exterior y modelo económico, coherentes con el perfil con el que llegó a la presidencia.\n\nPara la segunda vuelta y su desenlace, este viraje marca el verdadero terreno de confrontación de los próximos meses. Cada una de esas medidas tiene alto potencial de polarización y choca de frente con la agenda del petrismo, lo que anticipa que la disputa no terminará en el escrutinio sino que se trasladará al diseño del nuevo gobierno y a la relación con un país dividido casi por mitades.",
+      "url": "https://www.france24.com/es/minuto-a-minuto/20260622-bases-militares-de-eeuu-megac%C3%A1rceles-dolarizaci%C3%B3n-las-propuestas-del-presidente-electo-de-colombia"
     },
     {
       "ts": "2026-06-22T13:03:42.000Z",
@@ -334,31 +361,6 @@
       "fuente": "primicias.ec",
       "cuerpo": "El preconteo de la Registraduría dejó de ser tendencia para volverse resultado: con el 97% de las mesas contadas, Abelardo de la Espriella aparece como virtual presidente electo con 50,33% de los votos, contra 48,04% de Iván Cepeda. La cifra ratifica lo que los sondeos a pie de urna habían insinuado horas antes —una carrera muy ajustada— pero ahora con respaldo del conteo oficial y un margen superior a los dos puntos que el 3% de mesas pendientes difícilmente alcanza a revertir.\n\nPara la segunda vuelta, esto traslada el eje de la jornada del 'quién gana' al 'cómo se cierra'. De la Espriella llega a la Casa de Nariño con un triunfo legítimo pero estrecho, sin mandato holgado, en un país partido casi por mitades. El desenlace dependerá ahora del boletín final de la Registraduría y de que el reconocimiento del resultado se dé sin sobresaltos en la fase de escrutinio.",
       "url": "https://www.primicias.ec/internacional/abelardo-espriella-presidente-colombia-elecciones-perfil-resultados-125874/"
-    },
-    {
-      "ts": "2026-06-21T21:59:07.045Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 85% ▼ 70%",
-      "detalle": "La probabilidad se ajusta levemente a la baja para De la Espriella porque el primer dato propio de la jornada —los sondeos a pie de urna— dibuja una carrera más cerrada que la que traíamos, aunque mantiene la delantera.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T21:39:07.000Z",
-      "tipo": "hito",
-      "titulo": "Los sondeos a pie de urna dan a De la Espriella arriba por margen mínimo",
-      "detalle": "Las primeras encuestas a boca de urna de la segunda vuelta ubican a De la Espriella adelante de Cepeda, pero por muy poco.",
-      "fuente": "Sondeos a pie de urna (medios, hace <1h)",
-      "cuerpo": "Al cierre de la jornada aparecieron las primeras encuestas a pie de urna, el primer indicio propio de esta segunda vuelta después de horas de titulares que solo reciclaban la votación de los candidatos y sus mensajes. La medición ubica a Abelardo de la Espriella por delante de Iván Cepeda, pero con una diferencia mínima que contrasta con la holgura que mostraban los sondeos previos a la jornada y que mantiene la contienda dentro del margen de error.\n\nPara la segunda vuelta el dato es doblemente relevante: confirma que De la Espriella llega al conteo como favorito, pero también valida la apuesta de remontada de la izquierda, que necesitaba precisamente un cuadro estrecho para sostener la expectativa hasta los boletines oficiales. Mientras la Registraduría no entregue su primer corte consolidado, este sondeo es la única referencia de resultado y obliga a leer la noche como una carrera abierta, no resuelta.",
-      "url": "https://www.elperiodico.com/es/internacional/20260621/ultraderechista-espriella-aventaja-cepeda-sondeos-131663730"
-    },
-    {
-      "ts": "2026-06-21T21:34:47.000Z",
-      "tipo": "hito",
-      "titulo": "El preconteo se consolida: 49,77% vs 48,59% con más del 98%",
-      "detalle": "La autoridad electoral fija cifras finas a la ventaja de De la Espriella con casi todas las mesas escrutadas.",
-      "fuente": "europapress.es",
-      "cuerpo": "El preconteo oficial alcanzó más del 98% de mesas y arrojó números concretos: Abelardo de la Espriella suma 49,77% e Iván Cepeda 48,59%, una diferencia de apenas 1,18 puntos. La cifra precisa y casi definitiva avanza sobre el reporte previo del 97% que ya circulaba y deja la elección entre las más reñidas de la historia reciente del país, con el candidato de derecha al frente y el de izquierda muy cerca.\n\nPara esta segunda vuelta, el dato cierra el margen de maniobra: con tan pocas mesas pendientes, la remontada de Cepeda se vuelve aritméticamente muy difícil, pero la estrechez del resultado condiciona desde ya la gobernabilidad del eventual ganador. Un mandato ganado por poco más de un punto obliga a De la Espriella a negociar en un país partido casi por mitades, y le da a Cepeda argumento para una observación rigurosa del escrutinio final.",
-      "url": "https://www.europapress.es/internacional/noticia-espriella-506-impone-cepeda-478-presidenciales-colombia-resultados-parciales-20260621233447.html"
     }
   ],
   "historico": [
@@ -1054,6 +1056,11 @@
     },
     {
       "ts": "2026-06-22T14:59:42.419Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T16:03:13.443Z",
       "delaespriella": 60,
       "cepeda": 40
     }
