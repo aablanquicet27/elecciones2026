@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 119,
-    "generado": "2026-06-22T03:45:24.274Z",
-    "proxima_actualizacion": "2026-06-22T03:55:24.274Z",
+    "ciclo": 120,
+    "generado": "2026-06-22T04:01:06.786Z",
+    "proxima_actualizacion": "2026-06-22T04:11:06.786Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Cepeda pierde por menos de un punto, pero deja un caudal récord de tres millones de votos.",
-    "resumen": "Lo nuevo de las últimas horas no cambia el resultado, sino su lectura: la participación marcó récord y Cepeda superó los tres millones de votos, fortaleciendo a la izquierda en regiones clave de cara a la oposición. En paralelo, el propio Cepeda fija su papel poselectoral al advertir que no permitirá que 'retrocedan las conquistas sociales'. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla.",
-    "que_cambio": "El resultado sigue igual de ajustado, pero aparece un dato nuevo: el récord de participación y el caudal de Cepeda reconfiguran la lectura del balotaje hacia el día después. La intención de voto no se mueve."
+    "titular": "De la Espriella pasa de la victoria al llamado a la unidad en un país partido en dos.",
+    "resumen": "Con el resultado ya consolidado, el eje se desplaza del conteo a la gestión del día después. El virtual presidente electo cambia el registro y llama a la unidad de una Colombia dividida casi por la mitad, gesto obligado tras ganar por menos de un punto. La intención de voto se mantiene en 50-49, el margen más estrecho en 32 años, sin datos que justifiquen moverla. La impugnación de 33.000 mesas por parte de Cepeda sigue como vía abierta, pero no altera el cuadro.",
+    "que_cambio": "No cambia el resultado ni la intención de voto. Lo nuevo es el tono: De la Espriella inaugura la etapa poselectoral con un mensaje de unidad, mientras la izquierda mantiene su apuesta por el escrutinio."
   },
   "candidatos": [
     {
@@ -27,25 +27,27 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Triunfo en firme",
+      "momentum_label": "Tono conciliador",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Gana el balotaje y habla como presidente electo",
-        "Aval de OEA y MOE-UE a la jornada",
-        "Agenda de gobierno ya anunciada"
+        "Victoria consolidada con más del 98% escrutado",
+        "Mensaje de unidad que amplía su base más allá de la derecha",
+        "Aval de OEA y MOE-UE a la jornada"
       ],
       "debilidades": [
-        "Margen mínimo le resta mandato amplio",
-        "Enfrenta una oposición con tres millones de votos detrás"
+        "Margen de menos de un punto: mandato sin holgura",
+        "País dividido casi por la mitad",
+        "Legitimidad cuestionada por el oficialismo"
       ],
       "riesgos": [
-        "Impugnación de 33.000 mesas mantiene abierta la disputa del escrutinio",
-        "Polarización heredada de una elección partida en dos"
+        "Que la impugnación de 33.000 mesas erosione el relato de victoria",
+        "Tensión con un Petro que habla de 'software vulnerado'",
+        "Gobernar con una oposición de tres millones de votos"
       ],
       "catalizadores": [
-        "Confirmación oficial del escrutinio",
-        "Transición ordenada y gestos de gobernabilidad"
+        "Conformación temprana de equipo de transición",
+        "Gestos de reconciliación con regiones de Cepeda"
       ]
     },
     {
@@ -55,25 +57,25 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Oposición en pie",
+      "momentum_label": "Resistencia jurídica",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
         "Caudal récord de más de tres millones de votos",
-        "Mejora de la izquierda en regiones clave",
-        "Liderazgo natural de la oposición"
+        "Bancada y presencia regional fortalecidas para la oposición",
+        "Reconocimiento del preconteo sin desconocer el sistema"
       ],
       "debilidades": [
-        "Pierde el balotaje por menos de un punto",
-        "Reconocimiento condicionado debilita su posición jurídica"
+        "Derrota por margen mínimo pese al esfuerzo movilizador",
+        "Vía del escrutinio con escaso recorrido para revertir"
       ],
       "riesgos": [
-        "La impugnación de mesas puede leerse como desconocer el resultado",
-        "Desgaste si la verificación no altera el conteo"
+        "Que la impugnación se lea como no aceptar la derrota",
+        "Desgaste si el escrutinio confirma el resultado"
       ],
       "catalizadores": [
-        "Escrutinio definitivo de las 33.000 mesas",
-        "Capacidad de articular un bloque opositor cohesionado"
+        "Liderazgo de una oposición numerosa y articulada",
+        "Capitalizar la defensa de las 'conquistas sociales'"
       ]
     }
   ],
@@ -84,22 +86,31 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Registraduría / preconteo",
-      "detalle": "Diferencia menor a un punto (49,77% vs 48,59%) con más del 98% escrutado, la más estrecha en 32 años.",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "49,77% vs 48,59%: diferencia inferior a un punto, ya consolidada.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Infobae",
-      "detalle": "Participación récord; Cepeda supera tres millones de votos y crece en regiones.",
-      "favorece": "cepeda"
+      "fuente": "Declaración pública (hace <1h)",
+      "detalle": "De la Espriella llama a la unidad de un país dividido, abriendo la etapa poselectoral.",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "OEA / MOE-UE",
-      "detalle": "Avalan la jornada sin incidentes, lo que reduce margen a la impugnación.",
-      "favorece": "delaespriella"
+      "fuente": "Pacto Histórico",
+      "detalle": "Cepeda mantiene la impugnación de 33.000 mesas como vía abierta.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T03:45:37.000Z",
+      "tipo": "evento",
+      "titulo": "De la Espriella llama a la unidad de una Colombia partida en dos",
+      "detalle": "El virtual presidente electo cambia el tono y pide unidad tras ganar por menos de un punto.",
+      "fuente": "Infobae",
+      "cuerpo": "Pocas horas después de declararse ganador y dedicar su triunfo a Miguel Uribe Turbay, Abelardo de la Espriella ajustó el registro de su discurso y llamó a la unidad de una Colombia dividida casi por la mitad. El gesto llega tras una segunda vuelta que se definió por menos de un punto porcentual, la más estrecha en 32 años, y con un oficialismo que sigue cuestionando la legitimidad del conteo. El mensaje busca proyectar al litigante costeño como un presidente de todos, más allá del bloque de derecha que lo llevó a la Casa de Nariño.\n\nPara la etapa que se abre, el llamado a la unidad es menos retórica y más necesidad política: De la Espriella deberá gobernar con un mandato sin holgura y frente a una oposición que reunió más de tres millones de votos. El tono conciliador contrasta con la combatividad de su campaña y anticipa que el primer desafío del nuevo gobierno no será electoral, sino de gobernabilidad en un país fracturado y con la izquierda decidida a defender sus conquistas desde la oposición.",
+      "url": "https://www.infobae.com/america/agencias/2026/06/22/de-la-espriella-llama-a-la-unidad-en-una-colombia-dividida-despues-de-las-elecciones/"
+    },
     {
       "ts": "2026-06-22T02:59:25.000Z",
       "tipo": "hito",
@@ -340,13 +351,6 @@
       "tipo": "pulso",
       "titulo": "De la Espriella 83% ▼ 77%",
       "detalle": "No se movió nada relevante: no hay hechos nuevos respecto a lo ya reportado y la referencia de mercado quedó casi plana, así que mantenemos la intención de voto y el balance del ciclo anterior.",
-      "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T03:52:39.748Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 82% ▲ 83%",
-      "detalle": "La probabilidad sube un punto porque Polymarket rebota de 81 a 83 implícito tras el bache del cierre; es un reacomodo de mercado, sin hecho de fondo nuevo.",
       "fuente": "Pulso IA"
     }
   ],
@@ -948,6 +952,11 @@
     },
     {
       "ts": "2026-06-22T03:45:24.274Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T04:01:06.786Z",
       "delaespriella": 57,
       "cepeda": 43
     }
