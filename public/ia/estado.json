@@ -1,23 +1,23 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 133,
-    "generado": "2026-06-22T09:38:09.585Z",
-    "proxima_actualizacion": "2026-06-22T10:08:09.585Z",
-    "cadencia_min": 30,
+    "ciclo": 134,
+    "generado": "2026-06-22T10:41:21.702Z",
+    "proxima_actualizacion": "2026-06-22T11:41:21.702Z",
+    "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
-    "fase": "vispera",
+    "fase": "cierre",
     "modelo": "IA de análisis electoral en tiempo real"
   },
   "veredicto": {
     "favorito": "Abelardo de la Espriella",
     "favorito_id": "delaespriella",
-    "probabilidad": 54,
+    "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "El tablero sigue congelado en 50-49 a la espera del escrutinio oficial",
-    "resumen": "Los titulares de las últimas 5 a 11 horas vuelven a reciclar hechos ya consignados: la victoria por la mínima de De la Espriella en el preconteo, su primer discurso de 'gobernar para todos', el reconocimiento condicionado de Cepeda con impugnación de 33.000 mesas, la lectura de la elección 'más apretada en 32 años' y la denuncia de irregularidades. No hay insumo genuinamente nuevo, así que la intención de voto se mantiene en 50-49. La fase sigue siendo el tránsito hacia el escrutinio oficial, donde se dirimirá una diferencia de poco más de un punto.",
-    "que_cambio": "No cambió nada sustantivo respecto al ciclo 132: intención de voto, resultado preliminar y fase siguen idénticos. Los titulares frescos son reempaques de hechos ya reportados; Polymarket marca 99-1 pero es solo referencia de mercado y no altera la lectura de las encuestas."
+    "titular": "Nada nuevo bajo el sol: el 50-49 aguanta a la espera del escrutinio",
+    "resumen": "Los titulares de las últimas 3 a 8 horas son reempaques de hechos ya consignados: la victoria por menos de un punto en el preconteo, la dedicatoria a Miguel Uribe Turbay, el llamado a la unidad, el reconocimiento 'no oficial ni vinculante' de Cepeda y su impugnación de 33.000 mesas. No hay insumo genuinamente nuevo, así que la intención de voto se mantiene en 50-49. La fase sigue siendo el tránsito hacia el escrutinio oficial, donde se dirimirá una diferencia de poco más de un punto.",
+    "que_cambio": "No cambió nada sustantivo respecto al ciclo 133: intención de voto, resultado preliminar y fase siguen idénticos. Los titulares frescos reciclan hechos ya reportados; Polymarket marca 99-1 pero es solo referencia de mercado y no altera la lectura de las encuestas."
   },
   "candidatos": [
     {
@@ -25,28 +25,29 @@
       "nombre": "Abelardo de la Espriella",
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
-      "probabilidad": 54,
-      "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "probabilidad": 60,
+      "momentum": "up",
+      "momentum_label": "Presidente electo",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja en el preconteo con más del 98% escrutado",
-        "Discurso conciliador de 'gobernar para todos' tras la victoria",
-        "Lectura internacional como giro a la derecha que consolida su narrativa de presidente electo"
+        "Gana el preconteo con más del 98% escrutado",
+        "Aval de OEA y MOE-UE a la jornada",
+        "Narrativa de presidente electo ya instalada en prensa nacional e internacional"
       ],
       "debilidades": [
-        "Margen mínimo de poco más de un punto sin colchón",
-        "Triunfo aún no oficializado por el escrutinio",
-        "Riesgo de deslegitimación por las impugnaciones del rival"
+        "Margen mínimo de poco más de un punto",
+        "Legitimidad sujeta al cierre del escrutinio oficial",
+        "País partido en dos que debe gobernar"
       ],
       "riesgos": [
-        "Que el escrutinio de las 33.000 mesas reduzca o revierta la diferencia",
-        "Que las denuncias de irregularidades erosionen su legitimidad de origen"
+        "Que la impugnación de 33.000 mesas estreche aún más la diferencia",
+        "Denuncias de irregularidades que erosionen el resultado",
+        "Tensión institucional durante el conteo final"
       ],
       "catalizadores": [
-        "Aval de OEA y MOE-UE a la jornada",
-        "Confirmación oficial del resultado por la Registraduría"
+        "Confirmación oficial de la Registraduría",
+        "Reconocimiento pleno de Cepeda tras el escrutinio"
       ]
     },
     {
@@ -54,27 +55,29 @@
       "nombre": "Iván Cepeda",
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
-      "probabilidad": 46,
-      "momentum": "steady",
-      "momentum_label": "Sin cambios",
+      "probabilidad": 40,
+      "momentum": "down",
+      "momentum_label": "Impugnación en curso",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Votación histórica que supera los tres millones en participación récord",
-        "Margen estrecho que mantiene viva la vía del escrutinio",
-        "Base movilizada del Pacto Histórico que respalda la impugnación"
+        "Participación récord con más de tres millones de votos",
+        "Cierre a menos de un punto del rival",
+        "Base social movilizada del Pacto Histórico"
       ],
       "debilidades": [
-        "Va detrás en el preconteo consolidado",
-        "Reconocimiento ya formulado, aunque condicionado, que reduce margen de maniobra"
+        "Pierde el preconteo con más del 98% contado",
+        "Reconocimiento condicionado, no pleno",
+        "Carga de revertir un resultado adverso por vía de impugnación"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota sin cambios relevantes",
-        "Desgaste si las impugnaciones se leen como no reconocer el resultado"
+        "Que el escrutinio confirme la derrota sin cambios",
+        "Desgaste si la impugnación no prospera",
+        "Quedar como oposición en franca minoría institucional"
       ],
       "catalizadores": [
-        "Hallazgos en las 33.000 mesas impugnadas",
-        "Eventual respaldo a las denuncias de irregularidades de Petro"
+        "Hallazgos en la verificación de las 33.000 mesas impugnadas",
+        "Anomalías que documente la observación rigurosa del escrutinio"
       ]
     }
   ],
@@ -86,21 +89,28 @@
     },
     {
       "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "49,77% vs 48,59%, diferencia algo superior a un punto",
+      "detalle": "De la Espriella 49,77% vs Cepeda 48,59%, diferencia de poco más de un punto",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Impugnación campaña Cepeda",
-      "detalle": "Anuncio de llevar 33.000 mesas a escrutinio mantiene abierta la disputa",
-      "favorece": "cepeda"
+      "fuente": "Misiones de observación",
+      "detalle": "OEA y MOE-UE avalaron la jornada sin incidentes",
+      "favorece": "delaespriella"
     },
     {
-      "fuente": "Misiones de observación (OEA/MOE-UE)",
-      "detalle": "Aval a la jornada sin incidentes refuerza la legitimidad del resultado",
-      "favorece": "delaespriella"
+      "fuente": "Campaña Cepeda",
+      "detalle": "Reconocimiento 'no oficial ni vinculante' e impugnación de 33.000 mesas",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T10:41:21.702Z",
+      "tipo": "pulso",
+      "titulo": "De la Espriella 54% ▲ 60%",
+      "detalle": "No se movió nada: los titulares de las últimas horas reciclan hechos ya reportados y la intención de voto se mantiene en 50-49 a la espera del escrutinio oficial.",
+      "fuente": "Pulso IA"
+    },
     {
       "ts": "2026-06-22T05:28:48.984Z",
       "tipo": "pulso",
@@ -346,15 +356,6 @@
       "detalle": "Una plataforma oficial permitirá seguir los resultados en tiempo real y ya circulan los horarios de divulgación.",
       "fuente": "Infobae",
       "cuerpo": "La Registraduría dispuso una herramienta digital para que la ciudadanía consulte el conteo de la segunda vuelta a medida que avance el escrutinio, según la cobertura de la jornada. En paralelo, los medios precisaron las franjas en las que se esperan los primeros boletines tras el cierre de mesas, una información operativa que ordena las expectativas en una contienda donde el margen real cabe en menos de 700.000 votos.\n\nEn un balotaje tan ajustado en percepción, la transparencia y la velocidad de la divulgación pesan tanto como los números. Un flujo de resultados claro y verificable reduce el espacio para reclamos sobre la limpieza del proceso —un terreno sensible después de que De la Espriella apelara reiteradamente a la Fuerza Pública y advirtiera que 'no se la van a robar', y de que la campaña de Cepeda alertara por constreñimiento—. La plataforma se vuelve, así, un árbitro silencioso de la noche electoral."
-    },
-    {
-      "ts": "2026-06-21T13:38:01.000Z",
-      "tipo": "hito",
-      "titulo": "Gran afluencia y congestión en los centros de votación",
-      "detalle": "La jornada arranca con alta participación y puntos de congestión reportados en varias ciudades.",
-      "fuente": "semana.com",
-      "cuerpo": "Los primeros reportes de la jornada describen una afluencia considerable de votantes y filas en puntos de votación de varias ciudades, con zonas señaladas como las de mayor congestión. La participación venía siendo la gran incógnita del balotaje, en una contienda cuyo margen real cabe en menos de 700.000 votos, y este flujo temprano la convierte por fin en un dato observable de la jornada.\n\nPara la segunda vuelta, una participación elevada es un arma de doble filo: puede consolidar la ventaja de De la Espriella si se concentra en sus bastiones, o abrir una ventana a Cepeda si moviliza voto de opinión y abstencionista en las grandes ciudades. Hasta que lleguen los primeros boletines no se sabrá en qué territorios se está votando con más fuerza, de modo que la cifra de hoy es señal, no veredicto.",
-      "url": "https://www.semana.com/politica/articulo/elecciones-colombia-2026-hoy-en-vivo-siga-en-directo-los-resultados-de-votacion-y-ultimas-noticias-de-la-jornada/202607/"
     }
   ],
   "historico": [
@@ -1027,6 +1028,11 @@
       "ts": "2026-06-22T09:38:09.585Z",
       "delaespriella": 54,
       "cepeda": 46
+    },
+    {
+      "ts": "2026-06-22T10:41:21.702Z",
+      "delaespriella": 60,
+      "cepeda": 40
     }
   ],
   "fuentes": [
@@ -1062,10 +1068,10 @@
       "cepeda": 49
     },
     "prob_ganar": {
-      "delaespriella": 54,
-      "cepeda": 46
+      "delaespriella": 60,
+      "cepeda": 40
     },
-    "error_muestreo_pts": 5,
+    "error_muestreo_pts": 2,
     "polymarket_ref": {
       "delaespriella": 99,
       "cepeda": 1
