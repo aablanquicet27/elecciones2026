@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 105,
-    "generado": "2026-06-22T00:18:19.599Z",
-    "proxima_actualizacion": "2026-06-22T00:28:19.599Z",
+    "ciclo": 106,
+    "generado": "2026-06-22T00:33:34.810Z",
+    "proxima_actualizacion": "2026-06-22T00:43:34.810Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Cepeda reconoce la derrota pero impugna 33.000 mesas: el resultado se sostiene, la disputa pasa al terreno jurídico.",
-    "resumen": "El cuadro numérico no se mueve: De la Espriella conserva el 49,77% frente al 48,59% de Cepeda con más del 98% escrutado, una diferencia de algo más de un punto. La novedad de la última hora es que Cepeda admite públicamente la derrota y, al mismo tiempo, anuncia la impugnación de 33.000 mesas, lo que traslada el cierre del plano político al jurídico-electoral. La intención de voto se mantiene en 50-49 y el favorito sigue siendo De la Espriella.",
-    "que_cambio": "El preconteo no varió, pero entra un hecho nuevo: Cepeda reconoce el resultado y a la vez formaliza la impugnación de 33.000 mesas, que abre una batalla en el escrutinio sin alterar las cifras."
+    "titular": "El margen más estrecho de la historia sostiene a De la Espriella mientras la pelea se muda al escrutinio.",
+    "resumen": "El cuadro numérico sigue clavado: De la Espriella 49,77% frente a 48,59% de Cepeda con más del 98% escrutado, poco más de un punto de diferencia. La novedad de las últimas horas no es un cambio de cifras sino la lectura de fondo que confirman los reportes: es la segunda vuelta más reñida de la que se tenga registro en el país. Con la impugnación de 33.000 mesas ya formalizada, la suerte política está echada y lo que queda es la verificación voto a voto. La intención de voto se mantiene en 50-49 y el favorito sigue siendo De la Espriella.",
+    "que_cambio": "Las cifras no se movieron: se mantiene 49,77% vs 48,59%. Lo único genuinamente nuevo es la dimensión histórica del resultado —el margen más estrecho registrado en una segunda vuelta presidencial—, que no altera la intención de voto pero sí el peso simbólico de la disputa en el escrutinio."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Triunfo en firme",
+      "momentum_label": "Ventaja firme",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
         "Ventaja consolidada con más del 98% escrutado",
-        "Reconocimiento de la derrota por parte del rival",
+        "Reconocimiento implícito del rival a la derrota",
         "Aval de OEA y MOE-UE a la jornada"
       ],
       "debilidades": [
-        "Margen estrecho de poco más de un punto",
-        "País dividido casi por mitades"
+        "Margen mínimo, sin mandato amplio",
+        "Resultado expuesto a revisión en 33.000 mesas"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas puede dilatar la declaratoria oficial",
-        "Las denuncias de irregularidades de Petro alimentan el cuestionamiento de legitimidad"
+        "Que la impugnación altere el conteo en mesas puntuales dado lo estrecho del margen",
+        "Gobernabilidad condicionada por un país partido en dos"
       ],
       "catalizadores": [
-        "Confirmación del escrutinio oficial por la autoridad electoral",
-        "Transición ordenada hacia la declaratoria de presidente electo"
+        "Confirmación oficial del escrutinio",
+        "Cierre rápido de la verificación sin sobresaltos"
       ]
     },
     {
@@ -55,25 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Reconoce e impugna",
+      "momentum_label": "Disputa jurídica",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Votación muy alta que deja una oposición robusta",
-        "Reconocimiento que le da estatura institucional",
-        "Respaldo del Pacto Histórico y de Petro"
+        "Derrota por margen mínimo que legitima la revisión",
+        "Base electoral movilizada y casi empatada"
       ],
       "debilidades": [
-        "Quedó por debajo en el preconteo",
-        "Reconocer la derrota reduce el margen de revertir el resultado"
+        "Va abajo en el preconteo consolidado",
+        "Reconoció el resultado preliminar, lo que limita el relato de fraude"
       ],
       "riesgos": [
-        "La impugnación masiva podría no prosperar y leerse como desgaste",
-        "Quedar atrapado entre reconocer y litigar"
+        "Que la verificación de mesas no mueva la diferencia y agote la vía jurídica",
+        "Desgaste si la impugnación no aporta pruebas sustantivas"
       ],
       "catalizadores": [
-        "Que la revisión de las 33.000 mesas altere el conteo",
-        "Hallazgos en el escrutinio que respalden las denuncias"
+        "Hallazgos materiales en el escrutinio de las 33.000 mesas",
+        "Recuento que estreche aún más la diferencia"
       ]
     }
   ],
@@ -85,21 +84,30 @@
     },
     {
       "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "49,77% De la Espriella vs 48,59% Cepeda, diferencia de poco más de un punto.",
+      "detalle": "49,77% vs 48,59%, diferencia de poco más de un punto.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Declaración de Cepeda",
-      "detalle": "Reconoce la derrota pero impugna 33.000 mesas y lleva la disputa al escrutinio.",
+      "fuente": "Prensa (El Nacional, EL ESPECTADOR)",
+      "detalle": "Se reporta como la segunda vuelta más estrecha de la historia del país.",
       "favorece": "incierto"
     },
     {
-      "fuente": "Cobertura nacional",
-      "detalle": "Medios titulan a De la Espriella como presidente electo según el preconteo.",
-      "favorece": "delaespriella"
+      "fuente": "Impugnación campaña Cepeda",
+      "detalle": "33.000 mesas en disputa trasladan el desenlace al terreno del escrutinio.",
+      "favorece": "incierto"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T00:26:10.000Z",
+      "tipo": "hito",
+      "titulo": "La segunda vuelta más estrecha de la historia de Colombia",
+      "detalle": "Menos de un punto porcentual separa a De la Espriella de Cepeda, el margen más reñido registrado en un balotaje presidencial.",
+      "fuente": "EL NACIONAL / EL ESPECTADOR",
+      "cuerpo": "Con más del 98% de las mesas escrutadas, el preconteo deja a Abelardo de la Espriella en 49,77% y a Iván Cepeda en 48,59%: poco más de un punto porcentual de distancia. Varios medios coinciden en encuadrar el dato no solo como una victoria ajustada, sino como la diferencia más estrecha de la que se tenga registro en una segunda vuelta presidencial colombiana. No es una cifra nueva —el cuadro numérico lleva horas sin moverse—, sino la lectura histórica que ese cuadro habilita una vez consolidado el conteo.\n\nLa relevancia es doble de cara al desenlace. Un margen tan delgado convierte cada mesa en potencialmente decisiva y da sustento político a la impugnación de 33.000 mesas que ya formalizó la campaña de Cepeda, porque en un resultado así una corrección acotada podría, en teoría, importar. Al mismo tiempo, estrecha el espacio del ganador: De la Espriella llegaría a la Presidencia sin un mandato holgado y con un país dividido casi por mitades, lo que anticipa una gobernabilidad tensa desde el primer día.",
+      "url": "https://www.elnacional.com/2026/06/diferencia-en-segunda-vuelta-es-la-mas-estrecha-de-la-historia-segun-el-preconteo-menos-de-un-punto-porcentual-separo-a-de-la-espriella-y-cepeda/"
+    },
     {
       "ts": "2026-06-21T23:49:51.000Z",
       "tipo": "hito",
@@ -334,14 +342,6 @@
       "detalle": "El candidato del Pacto Histórico asegura que no eliminará puestos en el sector público y acusa a su rival de querer despedir a más de 700.000 trabajadores.",
       "fuente": "",
       "cuerpo": "En la antesala de la votación, Iván Cepeda llevó la disputa al terreno del empleo estatal: aseguró que su gobierno no recortaría plazas en el sector público y lanzó una pulla directa a Abelardo de la Espriella, a quien atribuyó la intención de despedir a más de 700.000 trabajadores. El mensaje se suma a su apelación de cierre a 'defender la vida' y busca anclar la decisión del votante en consecuencias materiales concretas, no en la polarización ideológica.\n\nLa jugada apunta al electorado de empleados públicos y a los indecisos sensibles a la estabilidad laboral, un segmento que en una contienda de margen estrecho puede pesar. Para Cepeda, que llega rezagado en mercados y encuestas, mover el eje del debate hacia el empleo es un intento de erosionar la ventaja del rival en las horas finales, aunque por sí solo difícilmente alcanza para revertir el pronóstico de fondo."
-    },
-    {
-      "ts": "2026-06-21T03:16:19.294Z",
-      "tipo": "evento",
-      "titulo": "De la Espriella conjura el triunfalismo y pide voto masivo a los indecisos",
-      "detalle": "El favorito llama a 'no bajar la guardia' y advierte a su base que nada está ganado en la recta final.",
-      "fuente": "",
-      "cuerpo": "Pese a encabezar todos los pronósticos, Abelardo de la Espriella dedicó su mensaje de cierre a contener el exceso de confianza: pidió voto masivo, lanzó un llamado expreso a los indecisos y repitió la consigna de 'nada de triunfalismos'. El gesto reconoce el principal riesgo de un favorito cómodo en segunda vuelta: que su propia ventaja desmovilice a los electores que la dan por descontada.\n\nEl mensaje confirma que su campaña lee la elección como más reñida de lo que sugiere el 85% de Polymarket, consciente de que el margen real cabe en menos de 700.000 votos. Para esta segunda vuelta, la prioridad de su comando no es persuadir, sino garantizar que su voto duro acuda a las urnas; de lograrlo, blinda una ventaja que las cifras ya le reconocen."
     }
   ],
   "historico": [
@@ -872,6 +872,11 @@
     },
     {
       "ts": "2026-06-22T00:18:19.599Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T00:33:34.810Z",
       "delaespriella": 57,
       "cepeda": 43
     }
