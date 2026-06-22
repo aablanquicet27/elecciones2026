@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 134,
-    "generado": "2026-06-22T10:41:21.702Z",
-    "proxima_actualizacion": "2026-06-22T11:41:21.702Z",
+    "ciclo": 135,
+    "generado": "2026-06-22T11:48:39.639Z",
+    "proxima_actualizacion": "2026-06-22T12:48:39.639Z",
     "cadencia_min": 60,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 60,
     "confianza": "Alta",
-    "titular": "Nada nuevo bajo el sol: el 50-49 aguanta a la espera del escrutinio",
-    "resumen": "Los titulares de las últimas 3 a 8 horas son reempaques de hechos ya consignados: la victoria por menos de un punto en el preconteo, la dedicatoria a Miguel Uribe Turbay, el llamado a la unidad, el reconocimiento 'no oficial ni vinculante' de Cepeda y su impugnación de 33.000 mesas. No hay insumo genuinamente nuevo, así que la intención de voto se mantiene en 50-49. La fase sigue siendo el tránsito hacia el escrutinio oficial, donde se dirimirá una diferencia de poco más de un punto.",
-    "que_cambio": "No cambió nada sustantivo respecto al ciclo 133: intención de voto, resultado preliminar y fase siguen idénticos. Los titulares frescos reciclan hechos ya reportados; Polymarket marca 99-1 pero es solo referencia de mercado y no altera la lectura de las encuestas."
+    "titular": "El 50-49 se mantiene mientras empiezan los post-mortem de la derrota de Cepeda",
+    "resumen": "La intención de voto sigue clavada en 50-49: ningún titular de las últimas horas aporta un hecho nuevo sobre el resultado. Lo único genuinamente fresco es el giro del relato periodístico hacia el análisis de por qué perdió Cepeda, mientras el escrutinio oficial avanza y se espera el dato definitivo esta semana. La fase sigue siendo el tránsito al escrutinio, con una diferencia de poco más de un punto por dirimir.",
+    "que_cambio": "No cambió la intención de voto ni la fase respecto al ciclo 134; la mayoría de titulares reciclan hechos ya reportados (victoria por menos de un punto, llamado a la unidad, reconocimiento 'no oficial' de Cepeda). La única novedad es de tono: aparecen las primeras notas analíticas sobre las causas de la derrota de Cepeda."
   },
   "candidatos": [
     {
@@ -26,28 +26,28 @@
       "partido": "Defensores de la Patria · Derecha",
       "color": "#2563eb",
       "probabilidad": 60,
-      "momentum": "up",
-      "momentum_label": "Presidente electo",
+      "momentum": "steady",
+      "momentum_label": "Ventaja sostenida",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Gana el preconteo con más del 98% escrutado",
-        "Aval de OEA y MOE-UE a la jornada",
-        "Narrativa de presidente electo ya instalada en prensa nacional e internacional"
+        "Ventaja preliminar consolidada en el preconteo",
+        "Reconocimiento internacional del resultado como triunfo",
+        "Iniciativa política con agenda de decretos lista"
       ],
       "debilidades": [
-        "Margen mínimo de poco más de un punto",
-        "Legitimidad sujeta al cierre del escrutinio oficial",
-        "País partido en dos que debe gobernar"
+        "Margen estrechísimo de poco más de un punto",
+        "Gobernará sobre un país partido en dos",
+        "Legitimidad supeditada al escrutinio oficial"
       ],
       "riesgos": [
-        "Que la impugnación de 33.000 mesas estreche aún más la diferencia",
-        "Denuncias de irregularidades que erosionen el resultado",
-        "Tensión institucional durante el conteo final"
+        "La impugnación de 33.000 mesas podría estrechar la diferencia",
+        "Cuestionamientos de Petro al conteo",
+        "Tono confrontacional que dificulta la transición"
       ],
       "catalizadores": [
-        "Confirmación oficial de la Registraduría",
-        "Reconocimiento pleno de Cepeda tras el escrutinio"
+        "Cierre del escrutinio oficial confirmando la ventaja",
+        "Aval definitivo de OEA y misiones de observación"
       ]
     },
     {
@@ -56,28 +56,28 @@
       "partido": "Pacto Histórico · Izquierda",
       "color": "#e11d48",
       "probabilidad": 40,
-      "momentum": "down",
-      "momentum_label": "Impugnación en curso",
+      "momentum": "steady",
+      "momentum_label": "Resistencia mínima",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Participación récord con más de tres millones de votos",
-        "Cierre a menos de un punto del rival",
-        "Base social movilizada del Pacto Histórico"
+        "Votación histórica de más de tres millones de apoyos",
+        "Diferencia mínima que mantiene viva la impugnación",
+        "Base social movilizada y disciplinada"
       ],
       "debilidades": [
-        "Pierde el preconteo con más del 98% contado",
-        "Reconocimiento condicionado, no pleno",
-        "Carga de revertir un resultado adverso por vía de impugnación"
+        "Quedó detrás en el preconteo con más del 98% escrutado",
+        "Reconocimiento de facto del resultado pese a la observación",
+        "Relato público ya girando hacia las causas de la derrota"
       ],
       "riesgos": [
-        "Que el escrutinio confirme la derrota sin cambios",
+        "Que el escrutinio confirme y cierre el margen",
         "Desgaste si la impugnación no prospera",
-        "Quedar como oposición en franca minoría institucional"
+        "Lectura de derrota que erosione el capital del Pacto Histórico"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación de las 33.000 mesas impugnadas",
-        "Anomalías que documente la observación rigurosa del escrutinio"
+        "Hallazgos en la verificación de las 33.000 mesas",
+        "Inconsistencias en el escrutinio oficial"
       ]
     }
   ],
@@ -88,18 +88,18 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "De la Espriella 49,77% vs Cepeda 48,59%, diferencia de poco más de un punto",
+      "fuente": "Preconteo Registraduría",
+      "detalle": "49,77% vs 48,59% con más del 98% escrutado: ventaja mínima pero estable para De la Espriella",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Misiones de observación",
-      "detalle": "OEA y MOE-UE avalaron la jornada sin incidentes",
-      "favorece": "delaespriella"
+      "fuente": "Escrutinio oficial (en curso)",
+      "detalle": "El conteo definitivo avanza y se espera resultado esta semana; aún no vinculante",
+      "favorece": "incierto"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Reconocimiento 'no oficial ni vinculante' e impugnación de 33.000 mesas",
+      "fuente": "Impugnación campaña Cepeda",
+      "detalle": "33.000 mesas en revisión; sin resolución que altere el margen por ahora",
       "favorece": "incierto"
     }
   ],
@@ -110,6 +110,15 @@
       "titulo": "De la Espriella 54% ▲ 60%",
       "detalle": "No se movió nada: los titulares de las últimas horas reciclan hechos ya reportados y la intención de voto se mantiene en 50-49 a la espera del escrutinio oficial.",
       "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-22T09:46:14.933Z",
+      "tipo": "evento",
+      "titulo": "Arrancan los análisis sobre por qué perdió Cepeda",
+      "detalle": "La prensa abre la fase de post-mortem y reconstruye la cadena de factores detrás de la estrecha derrota del candidato del Pacto Histórico.",
+      "fuente": "semana.com",
+      "cuerpo": "A pocas horas del cierre del preconteo, el foco periodístico empieza a desplazarse del resultado hacia sus causas: aparecen las primeras reconstrucciones que intentan explicar cómo Iván Cepeda, con una votación histórica de más de tres millones de apoyos, terminó por debajo por algo más de un punto. Estas notas no aportan un hecho electoral nuevo, sino una lectura analítica de la campaña que cierra la jornada y abre el balance.\n\nPara la segunda vuelta, el giro del relato importa porque empieza a fijar una narrativa de derrota para la izquierda incluso antes del escrutinio oficial. Si esa lectura se consolida, debilita políticamente la impugnación de las 33.000 mesas y refuerza la posición de De la Espriella como presidente electo, aunque el margen siga siendo lo bastante estrecho como para que el conteo definitivo conserve algún suspenso.",
+      "url": "https://www.semana.com/politica/articulo/por-que-perdio-ivan-cepeda-semana-documento-la-cadena-de-errores-del-candidato-de-gustavo-petro/202620/"
     },
     {
       "ts": "2026-06-22T05:28:48.984Z",
@@ -348,14 +357,6 @@
       "fuente": "portafolio.co",
       "cuerpo": "Abelardo de la Espriella acudió a votar en la mañana del 21 de junio y, ante la prensa, se mostró seguro de imponerse en el balotaje frente a Iván Cepeda. La imagen del candidato sufragando temprano y proyectando confianza se suma a su mensaje reciente de pedir voto masivo y evitar el 'exceso de confianza', en una jornada que aún no arroja resultados oficiales.\n\nEl gesto busca consolidar el ánimo de su base y trasladar sensación de inevitabilidad en la recta final, donde su ventaja en la intención de voto ronda los seis puntos. El riesgo implícito es que ese mismo optimismo desmovilice a parte de su electorado, justo cuando la participación es la variable que puede estrechar o ampliar el margen de 51-45 antes del primer escrutinio.",
       "url": "https://www.portafolio.co/economia/gobierno/abelardo-de-la-espriella-voto-en-barranquilla-y-se-mostro-confiado-en-la-victoria-durante-la-jornada-electoral-496621"
-    },
-    {
-      "ts": "2026-06-21T14:39:05.729Z",
-      "tipo": "hito",
-      "titulo": "La Registraduría habilita la consulta en línea del escrutinio",
-      "detalle": "Una plataforma oficial permitirá seguir los resultados en tiempo real y ya circulan los horarios de divulgación.",
-      "fuente": "Infobae",
-      "cuerpo": "La Registraduría dispuso una herramienta digital para que la ciudadanía consulte el conteo de la segunda vuelta a medida que avance el escrutinio, según la cobertura de la jornada. En paralelo, los medios precisaron las franjas en las que se esperan los primeros boletines tras el cierre de mesas, una información operativa que ordena las expectativas en una contienda donde el margen real cabe en menos de 700.000 votos.\n\nEn un balotaje tan ajustado en percepción, la transparencia y la velocidad de la divulgación pesan tanto como los números. Un flujo de resultados claro y verificable reduce el espacio para reclamos sobre la limpieza del proceso —un terreno sensible después de que De la Espriella apelara reiteradamente a la Fuerza Pública y advirtiera que 'no se la van a robar', y de que la campaña de Cepeda alertara por constreñimiento—. La plataforma se vuelve, así, un árbitro silencioso de la noche electoral."
     }
   ],
   "historico": [
@@ -1031,6 +1032,11 @@
     },
     {
       "ts": "2026-06-22T10:41:21.702Z",
+      "delaespriella": 60,
+      "cepeda": 40
+    },
+    {
+      "ts": "2026-06-22T11:48:39.639Z",
       "delaespriella": 60,
       "cepeda": 40
     }
