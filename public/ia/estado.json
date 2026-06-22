@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 103,
-    "generado": "2026-06-21T23:47:33.419Z",
-    "proxima_actualizacion": "2026-06-21T23:57:33.419Z",
+    "ciclo": 104,
+    "generado": "2026-06-22T00:02:54.888Z",
+    "proxima_actualizacion": "2026-06-22T00:12:54.888Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "Cuadro cerrado: 49,77% vs 48,59% sin sobresaltos en el tramo final.",
-    "resumen": "No hay movimiento real respecto al ciclo anterior. El preconteo oficial sostiene el 49,77% de De la Espriella frente al 48,59% de Cepeda con más del 98% de mesas, una diferencia de poco más de un punto que ya veníamos manejando. Mantenemos la intención en 50-49 y el favorito sin cambios. La jornada sigue avalada y Cepeda conserva su postura de reconocer con observación.",
-    "que_cambio": "Nada sustantivo: los titulares de las últimas horas solo reiteran el preconteo ya reportado (49,77 vs 48,59). El margen y el orden se mantienen idénticos."
+    "titular": "Cuadro definido: De la Espriella sostiene el 49,77% y Petro abre el frente del cuestionamiento.",
+    "resumen": "El resultado se mantiene idéntico al ciclo anterior: 49,77% para De la Espriella frente a 48,59% de Cepeda con más del 98% escrutado, una diferencia de poco más de un punto. La única novedad real de la última hora es que el presidente Petro denunció irregularidades en el conteo, lo que abre un frente político sobre la legitimidad del estrecho triunfo. La intención de voto se queda en 50-49 y el favorito no cambia.",
+    "que_cambio": "El preconteo no se movió, pero entra un hecho nuevo: la denuncia de irregularidades por parte de Petro, que tensiona el cierre aunque no altera las cifras."
   },
   "candidatos": [
     {
@@ -27,25 +27,25 @@
       "color": "#2563eb",
       "probabilidad": 57,
       "momentum": "steady",
-      "momentum_label": "Ventaja firme",
+      "momentum_label": "Triunfo consolidado",
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Ventaja consolidada con más del 98% escrutado",
-        "Resultado avalado por OEA y MOE-UE",
-        "Narrativa de cierre de ciclo instalada en medios"
+        "Ventaja numérica sostenida con más del 98% de mesas",
+        "Reconocimiento implícito del orden internacional tras el aval a la jornada",
+        "Narrativa de presidente electo ya instalada en los medios"
       ],
       "debilidades": [
-        "Margen de apenas poco más de un punto",
+        "Margen de victoria estrechísimo, poco más de un punto",
         "Mandato sin holgura para gobernar"
       ],
       "riesgos": [
-        "Cualquier reproceso de mesas en el tramo final",
-        "Reclamos de la campaña rival sobre el escrutinio"
+        "La denuncia de Petro puede escalar a una disputa sobre la legitimidad del resultado",
+        "Polarización elevada en la transición"
       ],
       "catalizadores": [
-        "Confirmación del escrutinio definitivo",
-        "Reconocimiento explícito del adversario"
+        "Cierre del escrutinio final que ratifique el preconteo",
+        "Declaración oficial de la autoridad electoral"
       ]
     },
     {
@@ -55,48 +55,48 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Cae por poco",
+      "momentum_label": "Derrota estrecha",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Cierre por debajo de un punto y medio",
-        "Postura institucional de reconocer con observación",
-        "Base electoral movilizada hasta el final"
+        "Resultado muy competitivo, a poco más de un punto",
+        "Postura institucional de reconocer con observación rigurosa",
+        "Respaldo expreso del Gobierno saliente"
       ],
       "debilidades": [
-        "Queda corto en el preconteo con casi todo escrutado",
-        "Sin margen para revertir la tendencia"
+        "Va abajo en el preconteo con margen difícil de revertir a esta altura",
+        "Pocas mesas pendientes para cambiar el orden"
       ],
       "riesgos": [
-        "Que la observación no halle inconsistencias materiales",
-        "Desmovilización tras el resultado"
+        "Que la observación anunciada no encuentre soporte y desgaste su capital político",
+        "Quedar atado a una eventual disputa que no controla"
       ],
       "catalizadores": [
-        "Hallazgos en la verificación del escrutinio",
-        "Diferencias finas en mesas pendientes"
+        "Hallazgos verificables en la observación del escrutinio",
+        "Recuento en zonas con votación pendiente"
       ]
     }
   ],
   "indicadores": [
     {
       "fuente": "Polymarket (referencia)",
-      "detalle": "Mercado de apuestas: 99% De la Espriella / 1% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
+      "detalle": "Mercado de apuestas: 98% De la Espriella / 1% Cepeda. Señal de mercado; NO entra en el cálculo del panel.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría",
-      "detalle": "49,77% vs 48,59% con más del 98% de mesas, ventaja de poco más de un punto.",
+      "fuente": "Preconteo Registraduría (>98%)",
+      "detalle": "49,77% De la Espriella vs 48,59% Cepeda, sin variación frente al ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Misiones de observación (OEA, MOE-UE)",
-      "detalle": "Jornada avalada sin incidentes que alteren el resultado.",
-      "favorece": "delaespriella"
+      "fuente": "Presidente Petro",
+      "detalle": "Denuncia irregularidades en el conteo, abriendo un cuestionamiento al resultado.",
+      "favorece": "cepeda"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Reconoce el resultado pero anuncia observación clara del escrutinio.",
-      "favorece": "incierto"
+      "fuente": "Cobertura nacional e internacional",
+      "detalle": "Medios proclaman a De la Espriella presidente electo por margen mínimo.",
+      "favorece": "delaespriella"
     }
   ],
   "timeline": [
@@ -106,6 +106,15 @@
       "titulo": "De la Espriella 63% ▼ 57%",
       "detalle": "El preconteo oficial aporta cifras concretas (49,77 vs 48,59) que estrechan el margen a poco más de un punto; ajustamos la intención a 50-49 sin cambiar el favorito.",
       "fuente": "Pulso IA"
+    },
+    {
+      "ts": "2026-06-21T22:55:00.000Z",
+      "tipo": "alerta",
+      "titulo": "Petro denuncia irregularidades en el conteo de la segunda vuelta",
+      "detalle": "El presidente saliente cuestiona el escrutinio que da ganador a De la Espriella por margen mínimo.",
+      "fuente": "Google News (hace 1h)",
+      "cuerpo": "El presidente Gustavo Petro denunció irregularidades en el conteo de la segunda vuelta, en momentos en que el preconteo ubica a Abelardo de la Espriella por encima de Iván Cepeda con poco más de un punto de diferencia. La denuncia llega después de que la jornada fuera avalada por las misiones de observación internacional y de que la propia campaña de Cepeda anunciara que reconocería el resultado, aunque con observación rigurosa del escrutinio.\n\nEl pronunciamiento abre un frente político sobre la legitimidad del estrecho triunfo y eleva la tensión en la transición, sin que por ahora altere las cifras del preconteo. Para esta segunda vuelta, marca el tono del tramo final: el resultado numérico apunta a De la Espriella, pero la disputa por su validez se traslada al terreno del escrutinio definitivo y del relato político del Gobierno saliente.",
+      "url": "https://www.elconfidencial.com/mundo/2026-06-22/ultra-de-la-espriella-gana-colombia-minima-petro-denuncia-irregularidades_4376434/"
     },
     {
       "ts": "2026-06-21T22:14:52.861Z",
@@ -333,13 +342,6 @@
       "fuente": "elpais.com",
       "cuerpo": "A pocas horas del cierre de la segunda vuelta, Abelardo de la Espriella declaró que, si el Gobierno desconoce el orden institucional, el Ejército debería intervenir para restaurarlo. La afirmación llega después de varios días en los que su propia campaña insistía en 'no bajar la guardia' y evitar el triunfalismo, y marca un giro hacia un lenguaje más confrontacional sobre el papel de la fuerza pública en una eventual disputa por los resultados.\n\nPara la segunda vuelta, el mensaje es de doble filo: refuerza el eje de orden y seguridad que cohesiona a su base, pero también ofrece munición al Pacto Histórico para encuadrarlo como una amenaza institucional y movilizar el voto contrario en una jornada que se define por menos de 700.000 papeletas. En un margen tan estrecho, una frase así puede pesar más por lo que activa en el electorado adversario que por lo que suma en el propio.",
       "url": "https://elpais.com/america-colombia/elecciones-presidenciales/2026-06-21/abelardo-de-la-espriella-si-el-gobierno-desconoce-el-orden-el-ejercito-debe-intervenir-para-restaurarlo.html"
-    },
-    {
-      "ts": "2026-06-21T02:45:03.429Z",
-      "tipo": "pulso",
-      "titulo": "De la Espriella 85% ▼ 84%",
-      "detalle": "La probabilidad bajó un punto siguiendo a Polymarket (de 85 a 84); no hay señal nueva en titulares, solo ajuste de mercado en la apertura.",
-      "fuente": "Pulso IA"
     }
   ],
   "historico": [
@@ -862,6 +864,11 @@
       "ts": "2026-06-21T23:47:33.419Z",
       "delaespriella": 57,
       "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T00:02:54.888Z",
+      "delaespriella": 57,
+      "cepeda": 43
     }
   ],
   "fuentes": [
@@ -902,7 +909,7 @@
     },
     "error_muestreo_pts": 3,
     "polymarket_ref": {
-      "delaespriella": 99,
+      "delaespriella": 98,
       "cepeda": 1
     }
   }
