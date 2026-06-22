@@ -1,6 +1,6 @@
 {
   "meta": {
-    "estado": "en_vivo",
+    "estado": "final",
     "boletin": "15",
     "generado": "2026-06-22T14:33:29.714Z",
     "fuente_actualizacion": "21/06/2026 17:19h",
@@ -15,7 +15,7 @@
     "pct_mesas": 99.24,
     "mesas_informadas": 121096,
     "mesas_total": 122020,
-    "total_votos": 256161007
+    "total_votos": 25923749
   },
   "candidatos": [
     {
