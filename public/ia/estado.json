@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": 1,
-    "ciclo": 109,
-    "generado": "2026-06-22T01:24:52.897Z",
-    "proxima_actualizacion": "2026-06-22T01:34:52.897Z",
+    "ciclo": 110,
+    "generado": "2026-06-22T01:35:44.107Z",
+    "proxima_actualizacion": "2026-06-22T01:45:44.107Z",
     "cadencia_min": 10,
     "evento": "Segunda vuelta presidencial — Colombia 2026",
     "fecha_eleccion": "2026-06-21",
@@ -15,9 +15,9 @@
     "favorito_id": "delaespriella",
     "probabilidad": 57,
     "confianza": "Alta",
-    "titular": "El cuadro sigue congelado: todo depende del escrutinio voto a voto.",
-    "resumen": "Los titulares de la última hora repiten lo ya incorporado a la línea de tiempo: el preconteo de 49,77% frente a 48,59% con más del 98% escrutado, el reconocimiento preliminar de Cepeda condicionado al escrutinio y la impugnación de 33.000 mesas. No hay dato genuinamente nuevo que mueva la intención de voto, que se mantiene en 50-49. De la Espriella conserva la condición de favorito por el margen más estrecho de la historia, pendiente de la verificación oficial.",
-    "que_cambio": "No cambió nada sustancial: los titulares frescos reiteran hechos ya reportados (preconteo 49,77% vs 48,59%, reconocimiento condicionado de Cepeda, impugnación de 33.000 mesas, denuncias de Petro). La intención de voto permanece en 50-49."
+    "titular": "El mundo ya lee la elección como un giro a la derecha, pero el escrutinio sigue abierto.",
+    "resumen": "El preconteo se mantiene congelado en torno a 49,8% frente a 48,6%, el margen más estrecho de la historia. La novedad de las últimas horas no es un dato electoral sino la lectura internacional: medios de la región y de EE. UU. presentan a De la Espriella como presidente electo y leen su triunfo como el fin del ciclo de Petro y un realineamiento hacia la derecha afín a Trump. Cepeda reconoce el preliminar pero insiste en que 'no es un dato oficial ni vinculante' y sostiene la impugnación de 33.000 mesas. La intención de voto permanece en 50-49.",
+    "que_cambio": "No cambió la intención de voto: los datos electorales repiten lo ya incorporado. Lo nuevo es la dimensión internacional, con coberturas que enmarcan el resultado como un viraje geopolítico, sin que ello altere el conteo."
   },
   "candidatos": [
     {
@@ -31,21 +31,21 @@
       "encuesta_pct": 50,
       "primera_vuelta_pct": 43.7,
       "fortalezas": [
-        "Lidera el preconteo con más del 98% escrutado",
-        "Aval de OEA y MOE-UE sobre la jornada",
-        "Sondeos a pie de urna a su favor"
+        "Ventaja sostenida en el preconteo con más del 98% procesado",
+        "Reconocimiento de medios nacionales e internacionales como presidente electo",
+        "Lectura externa de su triunfo como mandato de cambio frente al petrismo"
       ],
       "debilidades": [
-        "Margen inferior a un punto, el más estrecho de la historia",
-        "Victoria aún no oficializada por el escrutinio"
+        "Margen inferior a un punto, sin colchón ante el escrutinio",
+        "Legitimidad expuesta mientras 33.000 mesas siguen impugnadas"
       ],
       "riesgos": [
-        "La impugnación de 33.000 mesas puede alterar un resultado tan ajustado",
-        "Denuncias de irregularidades del oficialismo"
+        "Que el escrutinio voto a voto erosione la diferencia mínima",
+        "Que la narrativa de 'giro a la derecha' polarice y deslegitime la transición"
       ],
       "catalizadores": [
-        "Que el escrutinio confirme la tendencia del preconteo",
-        "Declaración oficial de la autoridad electoral"
+        "Validación oficial del escrutinio por la autoridad electoral",
+        "Respaldo de observadores internacionales ya emitido"
       ]
     },
     {
@@ -55,25 +55,24 @@
       "color": "#e11d48",
       "probabilidad": 43,
       "momentum": "steady",
-      "momentum_label": "Resiste impugnando",
+      "momentum_label": "Resiste sin ceder",
       "encuesta_pct": 49,
       "primera_vuelta_pct": 40.9,
       "fortalezas": [
-        "Diferencia mínima que mantiene viva la disputa",
-        "Estructura de campaña vigilando voto a voto",
-        "Respaldo del Gobierno en las denuncias"
+        "Cercanía a un punto del puntero mantiene viva la disputa",
+        "Estrategia jurídica activa con la impugnación masiva de mesas"
       ],
       "debilidades": [
         "Va detrás en el preconteo consolidado",
-        "Reconocimiento preliminar que reduce margen de maniobra política"
+        "Reconoció el preliminar, lo que limita el margen de impugnación política"
       ],
       "riesgos": [
-        "Que el escrutinio ratifique la ventaja del rival",
-        "Desgaste si las impugnaciones no prosperan"
+        "Que el escrutinio confirme la tendencia y cierre la ventana",
+        "Desgaste si la impugnación no arroja cambios materiales"
       ],
       "catalizadores": [
-        "Que la revisión de las 33.000 mesas reduzca la brecha",
-        "Hallazgos en la verificación voto a voto"
+        "Hallazgos verificables en el escrutinio de las mesas impugnadas",
+        "Reversión del margen al revisar voto a voto"
       ]
     }
   ],
@@ -84,22 +83,30 @@
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Preconteo Registraduría (>98%)",
-      "detalle": "49,77% vs 48,59%, diferencia menor a un punto",
+      "fuente": "Preconteo Registraduría",
+      "detalle": "49,8% vs 48,6% con más del 98% procesado, sin cambios respecto al ciclo previo.",
       "favorece": "delaespriella"
     },
     {
-      "fuente": "Campaña Cepeda",
-      "detalle": "Reconocimiento preliminar condicionado e impugnación de 33.000 mesas",
+      "fuente": "Cobertura internacional (LA NACION, Infobae, agencias)",
+      "detalle": "Medios presentan a De la Espriella como presidente electo y leen un realineamiento hacia la derecha.",
+      "favorece": "delaespriella"
+    },
+    {
+      "fuente": "Campaña de Cepeda",
+      "detalle": "Reconoce el preliminar pero lo declara 'no oficial ni vinculante' y mantiene la impugnación de 33.000 mesas.",
       "favorece": "incierto"
-    },
-    {
-      "fuente": "Observación internacional (OEA / MOE-UE)",
-      "detalle": "Jornada avalada sin incidentes",
-      "favorece": "delaespriella"
     }
   ],
   "timeline": [
+    {
+      "ts": "2026-06-22T01:35:43.111Z",
+      "tipo": "evento",
+      "titulo": "La prensa internacional lee el resultado como un giro a la derecha",
+      "detalle": "Medios de la región y de EE. UU. enmarcan el triunfo de De la Espriella como el fin del ciclo de Petro.",
+      "fuente": "LA NACION / Infobae",
+      "cuerpo": "Con el preconteo prácticamente cerrado, la cobertura de las últimas horas trasladó el foco del dato electoral a su lectura geopolítica. Coberturas de LA NACION, Infobae y otros medios presentaron a Abelardo de la Espriella como presidente electo y describieron su victoria como un viraje hacia la derecha y el cierre del ciclo iniciado por Gustavo Petro, con repetidas referencias a su afinidad con la línea de Donald Trump. Es un marco interpretativo nuevo, distinto de los partes de escrutinio ya conocidos.\n\nPara la segunda vuelta, esta narrativa importa más por su efecto político que por el conteo: consolida internacionalmente la imagen de un ganador y presiona el terreno simbólico mientras la verificación oficial sigue su curso. No altera la intención de voto, que permanece en un empate técnico, pero anticipa el tono del eventual traspaso de mando y el escenario regional que enfrentaría un gobierno De la Espriella."
+    },
     {
       "ts": "2026-06-22T00:26:10.000Z",
       "tipo": "hito",
@@ -335,14 +342,6 @@
       "titulo": "De la Espriella 84% ▲ 85%",
       "detalle": "La probabilidad subió un punto (84→85) siguiendo a Polymarket, que recuperó el terreno cedido; no hay un hecho de fondo que altere el pronóstico, solo el ajuste de mercado y el ruido propio del cierre de campaña.",
       "fuente": "Pulso IA"
-    },
-    {
-      "ts": "2026-06-21T03:16:20.293Z",
-      "tipo": "evento",
-      "titulo": "Cepeda contrasta sobre empleo público y pone cifra al debate",
-      "detalle": "El candidato del Pacto Histórico asegura que no eliminará puestos en el sector público y acusa a su rival de querer despedir a más de 700.000 trabajadores.",
-      "fuente": "",
-      "cuerpo": "En la antesala de la votación, Iván Cepeda llevó la disputa al terreno del empleo estatal: aseguró que su gobierno no recortaría plazas en el sector público y lanzó una pulla directa a Abelardo de la Espriella, a quien atribuyó la intención de despedir a más de 700.000 trabajadores. El mensaje se suma a su apelación de cierre a 'defender la vida' y busca anclar la decisión del votante en consecuencias materiales concretas, no en la polarización ideológica.\n\nLa jugada apunta al electorado de empleados públicos y a los indecisos sensibles a la estabilidad laboral, un segmento que en una contienda de margen estrecho puede pesar. Para Cepeda, que llega rezagado en mercados y encuestas, mover el eje del debate hacia el empleo es un intento de erosionar la ventaja del rival en las horas finales, aunque por sí solo difícilmente alcanza para revertir el pronóstico de fondo."
     }
   ],
   "historico": [
@@ -893,6 +892,11 @@
     },
     {
       "ts": "2026-06-22T01:24:52.897Z",
+      "delaespriella": 57,
+      "cepeda": 43
+    },
+    {
+      "ts": "2026-06-22T01:35:44.107Z",
       "delaespriella": 57,
       "cepeda": 43
     }
